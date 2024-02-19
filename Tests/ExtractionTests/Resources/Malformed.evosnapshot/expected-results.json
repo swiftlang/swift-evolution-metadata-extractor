@@ -1,0 +1,772 @@
+[
+    {
+      "authors" : [
+        {
+          "link" : "https:\/\/github.com\/DougGregor",
+          "name" : "Doug Gregor"
+        }
+      ],
+      "errors" : [
+        {
+          "kind" : "error",
+          "message" : "Missing valid proposal ID; SE-0000 is reserved.",
+          "stage" : "validate"
+        }
+      ],
+      "id" : "SE-0000",
+      "link" : "0000-reserved-proposal-id.md",
+      "reviewManager" : {
+        "link" : "",
+        "name" : ""
+      },
+      "sha" : "",
+      "status" : {
+        "state" : ".implemented",
+        "version" : "2.2"
+      },
+      "summary" : "Argument labels are an important part of the interface of a Swift function,\ndescribing what particular arguments to the function do and improving\nreadability. Sometimes, the most natural label for an argument coincides with a\nlanguage keyword, such as `in`, `repeat`, or `defer`. Such keywords should be\nallowed as argument labels, allowing better expression of these interfaces.\n",
+      "title" : " Allow (most) keywords as argument labels\n",
+      "trackingBugs" : [
+
+      ],
+      "warnings" : [
+        {
+          "kind" : "warning",
+          "message" : "Missing review manager.",
+          "stage" : "parse"
+        }
+      ]
+    },
+    {
+        "authors" : [
+            {
+                "link" : "https:\/\/github.com\/DougGregor",
+                "name" : "Doug Gregor"
+            }
+        ],
+        "errors" : [
+            {
+                "kind" : "error",
+                "message" : "Missing proposal ID link (SE-NNNN)[NNNN-filename.md].",
+                "stage" : "parse"
+            }
+        ],
+        "id" : "",
+        "link" : "",
+        "reviewManager" : {
+            "link" : "",
+            "name" : ""
+        },
+        "sha" : "",
+        "status" : {
+            "state" : ".implemented",
+            "version" : "2.2"
+        },
+        "summary" : "Argument labels are an important part of the interface of a Swift function,\ndescribing what particular arguments to the function do and improving\nreadability. Sometimes, the most natural label for an argument coincides with a\nlanguage keyword, such as `in`, `repeat`, or `defer`. Such keywords should be\nallowed as argument labels, allowing better expression of these interfaces.\n",
+        "title" : " Allow (most) keywords as argument labels\n",
+        "trackingBugs" : [
+            
+        ],
+        "warnings" : [
+            {
+                "kind" : "warning",
+                "message" : "Missing review manager.",
+                "stage" : "parse"
+            }
+        ]
+    },
+    {
+      "authors" : [
+
+      ],
+      "errors" : [
+        {
+          "kind" : "error",
+          "message" : "Missing list of metadata fields.",
+          "stage" : "parse"
+        }
+      ],
+      "id" : "",
+      "link" : "",
+      "reviewManager" : {
+        "link" : "",
+        "name" : ""
+      },
+      "sha" : "",
+      "status" : {
+        "state" : ".error"
+      },
+      "summary" : "Curried function declaration syntax `func foo(x: Int)(y: Int)` is of limited\nusefulness and creates a lot of language and implementation complexity. We\nshould remove it.\n",
+      "title" : " Removing currying func declaration syntax\n"
+    },
+    {
+      "authors" : [
+        {
+          "link" : "https:\/\/github.com\/bitjammer",
+          "name" : "Ashley Garland"
+        }
+      ],
+      "id" : "SE-0003",
+      "implementation" : [
+        {
+          "account" : "apple",
+          "id" : "8a5ed405bf1f92ec3fc97fa46e52528d2e8d67d9",
+          "repository" : "swift",
+          "type" : "commit"
+        }
+      ],
+      "link" : "0003-remove-var-parameters.md",
+      "reviewManager" : {
+        "link" : "https:\/\/github.com\/jopamer",
+        "name" : "Joe Pamer"
+      },
+      "sha" : "",
+      "status" : {
+        "state" : ".error"
+      },
+      "summary" : "There has been some confusion of semantics when a function parameter is marked\nas `inout` compared to `var`. Both give a mutable local copy of a value but\nparameters marked `inout` are automatically written back.\n",
+      "title" : " Removing var from Function Parameters\n",
+      "warnings" : [
+        {
+          "kind" : "warning",
+          "message" : "Status not found in the proposal's details list.",
+          "stage" : "parse"
+        }
+      ]
+    },
+    {
+      "authors" : [
+        {
+          "link" : "https:\/\/github.com\/lattner",
+          "name" : "Chris Lattner"
+        }
+      ],
+      "errors" : [
+        {
+          "kind" : "error",
+          "message" : "Missing or invalid proposal status.",
+          "stage" : "parse"
+        }
+      ],
+      "id" : "SE-0004",
+      "implementation" : [
+        {
+          "account" : "apple",
+          "id" : "8e12008d2b34a605f8766310f53d5668f3d50955",
+          "repository" : "swift",
+          "type" : "commit"
+        }
+      ],
+      "link" : "0004-remove-pre-post-inc-decrement.md",
+      "reviewManager" : {
+        "link" : "",
+        "name" : ""
+      },
+      "sha" : "",
+      "status" : {
+        "state" : ".error"
+      },
+      "summary" : "The increment\/decrement operators in Swift were added very early in the\ndevelopment of Swift, as a carry-over from C. These were added without much\nconsideration, and haven't been thought about much since then. This document\nprovides a fresh look at them, and ultimately recommends we just remove them\nentirely, since they are confusing and not carrying their weight.\n",
+      "title" : " Remove the ++ and -- operators\n",
+      "warnings" : [
+        {
+          "kind" : "warning",
+          "message" : "Missing review manager.",
+          "stage" : "parse"
+        }
+      ]
+    },
+    {
+      "authors" : [
+        {
+          "link" : "https:\/\/github.com\/DougGregor",
+          "name" : "Doug Gregor"
+        },
+        {
+          "link" : "https:\/\/github.com\/dabrahams",
+          "name" : "Dave Abrahams"
+        }
+      ],
+      "id" : "SE-0005",
+      "link" : "0005-objective-c-name-translation.md",
+      "reviewManager" : {
+        "link" : "https:\/\/github.com\/DougGregor",
+        "name" : "Doug Gregor"
+      },
+      "sha" : "",
+      "status" : {
+        "state" : ".error"
+      },
+      "summary" : "This proposal describes how we can improve Swift's \"Clang Importer\", which is\nresponsible for mapping C and Objective-C APIs into Swift, to translate the\nnames of Objective-C functions, types, methods, properties, etc. into names that\nmore closely align with the [Swift API Design\nGuidelines](https:\/\/swift.org\/documentation\/api-design-guidelines \"API Design Guidelines\")\nbeing developed as part of Swift 3. Our approach focuses on the differences\nbetween the Objective-C [Coding Guidelines for\nCocoa](https:\/\/developer.apple.com\/library\/mac\/documentation\/Cocoa\/Conceptual\/CodingGuidelines\/CodingGuidelines.html \"Coding Guidelines for Cocoa\")\nand the Swift API Design Guidelines, using some simple linguistic analysis to\naid the automatic translation from Objective-C names to more \"Swifty\" names.\n",
+      "title" : " Better Translation of Objective-C APIs Into Swift\n",
+      "warnings" : [
+        {
+          "kind" : "warning",
+          "message" : "Status not found in the proposal's details list.",
+          "stage" : "parse"
+        }
+      ]
+    },
+    {
+      "authors" : [
+        {
+          "link" : "https:\/\/github.com\/dabrahams",
+          "name" : "Dave Abrahams"
+        },
+        {
+          "link" : "https:\/\/github.com\/gribozavr",
+          "name" : "Dmitri Gribenko"
+        },
+        {
+          "link" : "https:\/\/github.com\/moiseev",
+          "name" : "Maxim Moiseev"
+        }
+      ],
+      "id" : "SE-0006",
+      "link" : "0006-apply-api-guidelines-to-the-standard-library.md",
+      "reviewManager" : {
+        "link" : "https:\/\/github.com\/DougGregor",
+        "name" : "Doug Gregor"
+      },
+      "sha" : "",
+      "status" : {
+        "state" : ".implemented",
+        "version" : "3"
+      },
+      "summary" : "[Swift API Design\nGuidelines](https:\/\/swift.org\/documentation\/api-design-guidelines \"API Design Guidelines\")\nbeing developed as part of Swift 3. It is important that the Standard Library is\nan exemplar of Swift API Design Guidelines: the APIs from the Standard Library\nare, probably, the most frequently used Swift APIs in any application domain;\nthe Standard Library also sets precedent for other libraries.\n",
+      "title" : " Apply API Guidelines to the Standard Library\n"
+    },
+    {
+      "authors" : [
+
+      ],
+      "errors" : [
+        {
+          "kind" : "error",
+          "message" : "Proposal Markdown file is empty.",
+          "stage" : "parse"
+        }
+      ],
+      "id" : "",
+      "link" : "",
+      "reviewManager" : {
+        "link" : "",
+        "name" : ""
+      },
+      "sha" : "",
+      "status" : {
+        "state" : ".error"
+      },
+      "summary" : "",
+      "title" : ""
+    },
+    {
+      "authors" : [
+
+      ],
+      "errors" : [
+        {
+          "kind" : "error",
+          "message" : "Proposal Markdown file is empty.",
+          "stage" : "parse"
+        }
+      ],
+      "id" : "",
+      "link" : "",
+      "reviewManager" : {
+        "link" : "",
+        "name" : ""
+      },
+      "sha" : "",
+      "status" : {
+        "state" : ".error"
+      },
+      "summary" : "",
+      "title" : ""
+    },
+    {
+      "authors" : [
+        {
+          "link" : "https:\/\/github.com\/hartbit",
+          "name" : "David Hart"
+        }
+      ],
+      "errors" : [
+        {
+          "kind" : "error",
+          "message" : "Proposal contains no content.",
+          "stage" : "parse"
+        }
+      ],
+      "id" : "",
+      "link" : "",
+      "reviewManager" : {
+        "link" : "https:\/\/github.com\/DougGregor",
+        "name" : "Doug Gregor"
+      },
+      "sha" : "",
+      "status" : {
+        "state" : ".rejected"
+      },
+      "summary" : "The current version of Swift (2.1) requires using `self` when accessing instance\nmembers in closures. The proposal suggests extending this to all member accesses\n(as is intrinsically the case in Objective-C). It has the benefit of documenting\ninstance properties vs local variables and instance functions vs local functions\nor closures.\n",
+      "title" : ""
+    },
+    {
+      "authors" : [
+        {
+          "link" : "https:\/\/github.com\/lilyball",
+          "name" : "Lily Ballard"
+        }
+      ],
+      "errors" : [
+        {
+          "kind" : "error",
+          "message" : "Proposal ID must include four decimal digits.",
+          "stage" : "parse"
+        }
+      ],
+      "id" : "",
+      "link" : "",
+      "reviewManager" : {
+        "link" : "https:\/\/github.com\/DougGregor",
+        "name" : "Doug Gregor"
+      },
+      "sha" : "",
+      "status" : {
+        "state" : ".rejected"
+      },
+      "summary" : "There is no way to create a substring of a `StaticString` that is still typed as\n`StaticString`. There should be.\n",
+      "title" : " Add StaticString.UnicodeScalarView\n"
+    },
+    {
+      "authors" : [
+        {
+          "link" : "",
+          "name" : ""
+        }
+      ],
+      "errors" : [
+        {
+          "kind" : "error",
+          "message" : "Missing author(s).",
+          "stage" : "parse"
+        }
+      ],
+      "id" : "SE-0011",
+      "link" : "0011-replace-typealias-associated.md",
+      "reviewManager" : {
+        "link" : "https:\/\/github.com\/DougGregor",
+        "name" : "Doug Gregor"
+      },
+      "sha" : "",
+      "status" : {
+        "state" : ".implemented",
+        "version" : "2.2"
+      },
+      "summary" : "The `typealias` keyword is currently used to declare two kinds of types:\n",
+      "title" : " Replace typealias keyword with associatedtype for associated type declarations\n",
+      "trackingBugs" : [
+
+      ]
+    },
+    {
+      "authors" : [
+        {
+          "link" : "https:\/\/github.com\/bitjammer",
+          "name" : "Ashley Garland"
+        }
+      ],
+      "id" : "SE-0013",
+      "link" : "0013-remove-partial-application-super.md",
+      "reviewManager" : {
+        "link" : "https:\/\/github.com\/DougGregor",
+        "name" : "Doug Gregor"
+      },
+      "sha" : "",
+      "status" : {
+        "state" : ".scheduledForReview"
+      },
+      "summary" : "Prior to Swift 2.2, calls to superclass methods like `super.foo()` in Native\nSwift classes were dispatched statically by recording a reference to the\nfunction and calling it directly by its mangled name. In Swift 2.2, class\nmethods invoked via `super` will use dynamic dispatch. That is, the method will\nbe looked up in the superclass's vtable at runtime. However, if the method is\nmarked with `final`, it will use the old static dispatch, since no class will be\nable to override it.\n",
+      "title" : " Remove Partial Application of Non-Final Super Methods (Swift 2.2)\n",
+      "warnings" : [
+        {
+          "kind" : "warning",
+          "message" : "Missing or invalid dates for a review period.",
+          "stage" : "parse"
+        }
+      ]
+    },
+    {
+      "authors" : [
+        {
+          "link" : "https:\/\/github.com\/moiseev",
+          "name" : "Max Moiseev"
+        }
+      ],
+      "id" : "SE-0014",
+      "link" : "0014-constrained-AnySequence.md",
+      "reviewManager" : {
+        "link" : "https:\/\/github.com\/DougGregor",
+        "name" : "Doug Gregor"
+      },
+      "sha" : "",
+      "status" : {
+        "state" : ".activeReview"
+      },
+      "summary" : "In order to allow `AnySequence` delegate calls to the underlying sequence, its\ninitializer should have extra constraints.\n",
+      "title" : " Constraining AnySequence.init\n",
+      "trackingBugs" : [
+
+      ],
+      "warnings" : [
+        {
+          "kind" : "warning",
+          "message" : "Missing or invalid dates for a review period.",
+          "stage" : "parse"
+        }
+      ]
+    },
+    {
+      "authors" : [
+        {
+          "link" : "https:\/\/github.com\/lilyball",
+          "name" : "Lily Ballard"
+        }
+      ],
+      "id" : "SE-0015",
+      "implementation" : [
+        {
+          "account" : "apple",
+          "id" : "408",
+          "repository" : "swift",
+          "type" : "pull"
+        }
+      ],
+      "link" : "0015-tuple-comparison-operators.md",
+      "reviewManager" : {
+        "link" : "https:\/\/github.com\/dabrahams",
+        "name" : "Dave Abrahams"
+      },
+      "sha" : "",
+      "status" : {
+        "state" : ".implemented",
+        "version" : ""
+      },
+      "summary" : "Implement comparison operators on tuples up to some arity.\n",
+      "title" : " Tuple comparison operators\n"
+    },
+    {
+      "authors" : [
+        {
+          "link" : "https:\/\/github.com\/MichaelBuckley",
+          "name" : "Michael Buckley"
+        }
+      ],
+      "id" : "SE-0016",
+      "link" : "0016-initializers-for-converting-unsafe-pointers-to-ints.md",
+      "reviewManager" : {
+        "link" : "https:\/\/github.com\/lattner",
+        "name" : "Chris Lattner"
+      },
+      "sha" : "",
+      "status" : {
+        "state" : ".implemented",
+        "version" : ""
+      },
+      "summary" : "Just as users can create `Unsafe[Mutable]Pointer`s from `Int`s and `UInt`s, they\nshould be able to create Ints and UInts from `Unsafe[Mutable]Pointer`s. This\nwill allow users to call C functions with `intptr_t` and `uintptr_t` parameters,\nand will allow users to perform more advanced pointer arithmetic than is allowed\nby `UnsafePointer`s.\n",
+      "title" : " Add initializers to Int and UInt to convert from UnsafePointer and UnsafeMutablePointer\n",
+      "trackingBugs" : [
+
+      ]
+    },
+    {
+      "authors" : [
+        {
+          "link" : "https:\/\/github.com\/jtbandes",
+          "name" : ""
+        }
+      ],
+      "errors" : [
+        {
+          "kind" : "error",
+          "message" : "Author name contains extra markup; expected a link with plaintext contents.",
+          "stage" : "parse"
+        }
+      ],
+      "id" : "SE-0017",
+      "link" : "0017-convert-unmanaged-to-use-unsafepointer.md",
+      "reviewManager" : {
+        "link" : "https:\/\/github.com\/lattner",
+        "name" : "Chris Lattner"
+      },
+      "sha" : "",
+      "status" : {
+        "state" : ".implemented",
+        "version" : "3"
+      },
+      "summary" : "The standard library [`Unmanaged<Instance>`\nstruct](https:\/\/github.com\/apple\/swift\/blob\/master\/stdlib\/public\/core\/Unmanaged.swift)\nprovides a type-safe object wrapper that does not participate in ARC; it allows\nthe user to make manual retain\/release calls.\n",
+      "title" : " Change Unmanaged to use UnsafePointer\n",
+      "trackingBugs" : [
+
+      ]
+    },
+    {
+      "authors" : [
+        {
+          "link" : "https:\/\/github.com\/mxcl",
+          "name" : "Max Howell"
+        },
+        {
+          "link" : "https:\/\/github.com\/ddunbar",
+          "name" : "Daniel Dunbar"
+        },
+        {
+          "link" : "https:\/\/github.com\/mattt",
+          "name" : "Mattt Thompson"
+        }
+      ],
+      "id" : "",
+      "link" : "0019-package-manager-testing.md",
+      "reviewManager" : {
+        "link" : "https:\/\/github.com\/rballard",
+        "name" : "Rick Ballard"
+      },
+      "sha" : "",
+      "status" : {
+        "state" : ".implemented",
+        "version" : "3"
+      },
+      "summary" : "Testing is an essential part of modern software development. Tight integration\nof testing into the Swift Package Manager will help ensure a stable and reliable\npackaging ecosystem.\n",
+      "title" : " Swift Testing\n",
+      "trackingBugs" : [
+
+      ],
+      "warnings" : [
+        {
+          "kind" : "warning",
+          "message" : "Proposal ID contains extra markup; expected a link with plaintext contents.",
+          "stage" : "parse"
+        }
+      ]
+    },
+    {
+      "authors" : [
+        {
+          "link" : "https:\/\/github.com\/bitjammer",
+          "name" : "Ashley Garland"
+        }
+      ],
+      "id" : "SE-0020",
+      "implementation" : [
+        {
+          "account" : "apple",
+          "id" : "c32fb8e7b9a67907e8b6580a46717c6a345ec7c6",
+          "repository" : "swift",
+          "type" : "commit"
+        },
+        {
+          "account" : "apple",
+          "id" : "67498",
+          "repository" : "swift",
+          "type" : "pull"
+        }
+      ],
+      "link" : "0020-if-swift-version.md",
+      "reviewManager" : {
+        "link" : "https:\/\/github.com\/DougGregor",
+        "name" : "Doug Gregor"
+      },
+      "sha" : "",
+      "status" : {
+        "state" : ".implemented",
+        "version" : "2.2"
+      },
+      "summary" : "This proposal aims to add a new build configuration option to Swift 2.2: `#if\nswift`.\n",
+      "title" : " Swift Language Version Build Configuration\n",
+      "warnings" : [
+        {
+          "kind" : "warning",
+          "message" : "Implementation links to a non-Swift repository.",
+          "stage" : "validate"
+        }
+      ]
+    },
+    {
+      "authors" : [
+        {
+          "link" : "https:\/\/github.com\/DougGregor",
+          "name" : "Doug Gregor"
+        }
+      ],
+      "id" : "SE-0021",
+      "link" : "0021-generalized-naming.md",
+      "reviewManager" : {
+        "link" : "https:\/\/github.com\/jckarter",
+        "name" : "Joe Groff"
+      },
+      "sha" : "",
+      "status" : {
+        "state" : ".implemented",
+        "version" : "2.2"
+      },
+      "summary" : "Swift includes support for first-class functions, such that any function (or\nmethod) can be placed into a value of function type. However, when specifying\nthe name of a function, one can only provide the base name, (e.g.,\n`insertSubview`) without the argument labels. For overloaded functions, this\nmeans that one must disambiguate based on type information, which is awkward and\nverbose. This proposal allows one to provide argument labels when referencing a\nfunction, eliminating the need to provide type context in most cases.\n",
+      "title" : " Naming Functions with Argument Labels\n",
+      "warnings" : [
+        {
+          "kind" : "warning",
+          "message" : "Implementation links to a non-Swift repository.",
+          "stage" : "validate"
+        }
+      ]
+    },
+    {
+      "authors" : [
+        {
+          "link" : "https:\/\/github.com\/DougGregor",
+          "name" : "Doug Gregor"
+        }
+      ],
+      "id" : "SE-0022",
+      "implementation" : [
+        {
+          "account" : "apple",
+          "id" : "1170",
+          "repository" : "swift",
+          "type" : "pull"
+        }
+      ],
+      "link" : "0022-objc-selectors.md",
+      "reviewManager" : {
+        "link" : "",
+        "name" : "Joe Groff"
+      },
+      "sha" : "",
+      "status" : {
+        "state" : ".implemented",
+        "version" : "2.2"
+      },
+      "summary" : "In Swift 2, Objective-C selectors are written as string literals (e.g.,\n`\"insertSubview:aboveSubview:\"`) in the type context of a `Selector`. This\nproposal seeks to replace this error-prone approach with `Selector`\ninitialization syntax that refers to a specific method via its Swift name.\n",
+      "title" : " Referencing the Objective-C selector of a method\n",
+      "warnings" : [
+        {
+          "kind" : "warning",
+          "message" : "Review manager's link doesn't refer to a GitHub profile. Link removed.",
+          "stage" : "validate"
+        }
+      ]
+    },
+    {
+      "authors" : [
+        {
+          "link" : "https:\/\/github.com\/dabrahams",
+          "name" : "Dave Abrahams"
+        },
+        {
+          "link" : "http:\/\/github.com\/DougGregor",
+          "name" : "Doug Gregor"
+        },
+        {
+          "link" : "\/\/github.com\/gribozavr",
+          "name" : "Dmitri Gribenko"
+        },
+        {
+          "link" : "https:\/\/swift.org",
+          "name" : "Ted Kremenek"
+        },
+        {
+          "link" : "http:\/\/github.com\/lattner",
+          "name" : "Chris Lattner"
+        },
+        {
+          "link" : "https:\/\/github.com\/moiseev",
+          "name" : "Max Moiseev"
+        },
+        {
+          "link" : "https:\/\/github.com\/parkera",
+          "name" : "Tony Parker"
+        },
+        {
+          "link" : "",
+          "name" : "Alex Migicovsky"
+        },
+        {
+          "link" : "",
+          "name" : "Ali Ozer"
+        }
+      ],
+      "id" : "SE-0023",
+      "link" : "0023-api-guidelines.md",
+      "reviewManager" : {
+        "link" : "https:\/\/github.com\/DougGregor",
+        "name" : "Doug Gregor"
+      },
+      "sha" : "",
+      "status" : {
+        "state" : ".implemented",
+        "version" : "3"
+      },
+      "summary" : "The design of commonly-used libraries has a large impact on the overall feel of\na programming language. Great libraries feel like an extension of the language\nitself, and consistency across libraries elevates the overall development\nexperience. To aid in the construction of great Swift libraries, one of the\nmajor goals for Swift 3 is to define a set of API design guidelines and to apply\nthose design guidelines consistently.\n",
+      "title" : " API Design Guidelines\n"
+    },
+    {
+      "authors" : [
+        {
+          "link" : "https:\/\/github.com\/jcampbell05",
+          "name" : "James Campbell"
+        }
+      ],
+      "id" : "SE-0024",
+      "link" : "0024-optional-value-setter.md",
+      "reviewManager" : {
+        "link" : "https:\/\/github.com\/DougGregor",
+        "name" : "Doug Gregor"
+      },
+      "sha" : "",
+      "status" : {
+        "end" : "2024-01-05",
+        "start" : "2024-01-01",
+        "state" : ".activeReview"
+      },
+      "summary" : "Introduce a new operator an \"Optional Value Setter\". If the optional is set via\nthis operator then the new value is only set if there isn't an already existing\nvalue.\n",
+      "title" : " Optional Value Setter ??=\n",
+      "warnings" : [
+        {
+          "kind" : "warning",
+          "message" : "Review ended on 2024-01-05 00:00:00 +0000.",
+          "stage" : "validate"
+        }
+      ]
+    },
+    {
+      "authors" : [
+        {
+          "link" : "",
+          "name" : "Ilya Belenkiy"
+        }
+      ],
+      "id" : "SE-0025",
+      "link" : "0025-scoped-access-level.md",
+      "reviewManager" : {
+        "link" : "http:\/\/github.com\/DougGregor",
+        "name" : "Doug Gregor"
+      },
+      "sha" : "",
+      "status" : {
+        "end" : "2024-01-31",
+        "start" : "2024-01-16",
+        "state" : ".scheduledForReview"
+      },
+      "summary" : "Scoped access level allows hiding implementation details of a class or a class\nextension at the class\/extension level, instead of a file. It is a concise\nexpression of the intent that a particular part of a class or extension\ndefinition is there only to implement a public API for other classes or\nextensions and must not be used directly anywhere outside of the scope of the\nclass or the extension.\n",
+      "title" : " Scoped Access Level\n",
+      "trackingBugs" : [
+
+      ],
+      "warnings" : [
+        {
+          "kind" : "warning",
+          "message" : "Review ended on 2024-01-31 00:00:00 +0000.",
+          "stage" : "validate"
+        }
+      ]
+    }
+]
