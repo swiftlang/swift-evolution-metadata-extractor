@@ -125,7 +125,8 @@ struct StatusExtractor: MarkupWalker, ValueExtractor {
         // Only interested in numbers of one or two digits
         let dayMatches = string.matches(of: integerMatcher).filter { $0.count <= 2 }
         guard dayMatches.count == 2 else {
-            print("ERROR: '\(string)': Unexpected day count of \(dayMatches.count)")
+            // VALIDATION ENHANCEMENT
+//            print("ERROR: '\(string)': Unexpected day count of \(dayMatches.count)")
             return nil
         }
 
