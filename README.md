@@ -22,13 +22,13 @@ The default behavior can be configured in various ways.
 
 Use the `--output-path` option (`-o`) to specify a different location or filename.
 
-Uses default filename and writes `proposals.json` to `~/Desktop`:
+Uses default filename and writes `proposals.json` to `~/Desktop`:  
 `swift-evolution-metadata-extractor --output-path ~/Desktop`
 
-Writes `my-metadata.json` at the specified location
+Writes `my-metadata.json` at the specified location:  
 `swift-evolution-metadata-extractor -o ~/Desktop/my-metadata.json`
 
-If the specified path does not exist, the tool will attempt to creates the necessary directories.
+If the specified path does not exist, the tool will attempt to create the necessary directories.
 
 ### Force extract
 
@@ -36,13 +36,13 @@ By default, the SHA values of previously extracted proposals are used to avoid p
 
 Use the `--force-extract` option to force all or specified proposals to be fetched and processed.
 
-To force all proposals to be processed ignoring previous results:
+To force all proposals to be processed ignoring previous results:  
 `swift-evolution-metadata-extractor --force-extract all`
 
-To force a specific proposal to be processed:
+To force a specific proposal to be processed:  
 `swift-evolution-metadata-extractor --force-extract SE-0287`
 
-Use the `--force-extract` option multiple times for multiple proposals:
+Use the `--force-extract` option multiple times for multiple proposals:  
 `swift-evolution-metadata-extractor --force-extract SE-0287 --force-extract SE-0123`
 
 ### Snapshot path
