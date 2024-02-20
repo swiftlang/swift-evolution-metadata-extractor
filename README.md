@@ -67,15 +67,23 @@ Snapshots are directories with the file extension `evosnapshot` but are not form
 
 `swift-evolution-metadata-extractor snapshot`
 
-The expected contents of an evosnapshot is as follows:
+### Snapshot structure and contents
+A snapshot is a directory with the extension `evosnapshot` containing files with well-known names. As described in _Ad-hoc snapshots_, depending on what it is meant to test, a snapshot can contain a subset of files.
 
-```
-proposals/XXXX-proposal-files.md // Directory of proposal markdown files
-expected-results.json            // Expected results from the source data. If present, will compare at end of run.
-previous-results.json            // Previous results. If present, will be used in processing unless forced extraction is specified.
-proposal-listing.json            // Results of GitHub query of proposals directory. Contains proposal SHA values.
-source-info.json                 // Results of GitHub query about the branch or PR, includes name and an identifier.
-```        
+Directory of proposal markdown files:  
+`proposals/XXXX-proposal-files.md`
+
+Expected results from the source data. If present, will compare at end of run:  
+`expected-results.json`
+
+Results of GitHub query of proposals directory. Contains proposal SHA values:  
+`proposal-listing.json`
+
+Results of GitHub query about the branch or PR, includes name and an identifier:  
+`source-info.json`
+
+Previous results. If present, will be used in processing unless forced extraction is specified:  
+`previous-results.json`
 
 ### Ad-hoc snapshots
 For testing, a variety of situations representing malformed proposals or rarely encountered states can be represented in manually constructed snapshots.
