@@ -35,13 +35,13 @@ struct ExtractCommand: AsyncParsableCommand {
 
     
     mutating func validate() throws {
-        ArgumentValidation.Extract.validate(verbose: verbose)
+        ArgumentValidation.validate(verbose: verbose)
         (forceAll, forcedExtractionIDs) = try ArgumentValidation.Extract.validate(forceExtract: forceExtract)
     }
 
     
     func run() async throws {
-        let extractionJob = try await ExtractionJob.makeExtractionJob(from: extractionSource, output: .metadataJSON(outputURL), ignorePreviousResults: forceAll, forcedExtractionIDs: forcedExtractionIDs, toolVersion: RootCommand.configuration.version)
+        let extractionJob = try await ExtractionJob.makeExtractionJob(from: extractionSource, output: .metadataJSON(outputURL), ignorePreviousResults: forceAll, forcedExtractionIDs: forcedExtractionIDs, toolVersion: RootCommand.toolVersion)
         try await extractionJob.run()
     }
 }

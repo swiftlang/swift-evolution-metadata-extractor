@@ -27,13 +27,13 @@ struct SnapshotCommand: AsyncParsableCommand {
 
 
     mutating func validate() async throws {
-        ArgumentValidation.Snapshot.validate(verbose: verbose)
+        ArgumentValidation.validate(verbose: verbose)
     }
 
 
     func run() async throws {
         // Snapshots always pull values from the network and always ignore previous results
-        let extractionJob = try await ExtractionJob.makeExtractionJob(from: .network, output: .snapshot(outputURL), ignorePreviousResults: true, toolVersion: RootCommand.configuration.version)
+        let extractionJob = try await ExtractionJob.makeExtractionJob(from: .network, output: .snapshot(outputURL), ignorePreviousResults: true, toolVersion: RootCommand.toolVersion)
         try await extractionJob.run()
     }
 }

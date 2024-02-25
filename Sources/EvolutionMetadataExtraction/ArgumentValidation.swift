@@ -12,18 +12,21 @@ import ArgumentParser
 
 var VERBOSE_ENABLED: Bool = false
 func verbosePrint(_ items: Any..., additionalCondition: Bool = true, separator: String = " ", terminator: String = "\n\n") {
-    if VERBOSE_ENABLED && additionalCondition { print(items, separator: separator, terminator: terminator) }
+    if verboseEnabled && additionalCondition { print(items, separator: separator, terminator: terminator) }
 }
-var verboseEnabled: Bool { VERBOSE_ENABLED }
+let verboseEnabled: Bool = { VERBOSE_ENABLED }()
 
 public enum ArgumentValidation {
     
+    public static func validate(verbose: Bool) {
+        // Global flag used by global verbosePrint() function. Set as early as possible
+        VERBOSE_ENABLED = verbose
+        precondition(verboseEnabled == verbose)
+    }
+    
     public enum Extract {
-        public static let defaultFilename = "proposals.json"
         
-        public static func validate(verbose: Bool) {
-            VERBOSE_ENABLED = verbose // Global flag used by global verbosePrint() function. Set as early as possible
-        }
+        public static let defaultFilename = "proposals.json"
         
         static public func validate(forceExtract: [String]) throws -> (forceAll: Bool, forcedExtractionIDs: [String]) {
             
@@ -53,7 +56,7 @@ public enum ArgumentValidation {
         }
         
         // Transforms snapshot-path argument into .snapshot(URL) extraction source
-        public static func extractionSource(_ snapshotPath: String) throws -> ExtractionJob.Source {
+        @Sendable public static func extractionSource(_ snapshotPath: String) throws -> ExtractionJob.Source {
             
             let snapshotURL = FileUtilities.expandedAndStandardizedURL(for: snapshotPath)
             guard snapshotURL.pathExtension == "evosnapshot" else {
@@ -72,21 +75,18 @@ public enum ArgumentValidation {
             return .snapshot(snapshotURL)
         }
         
-    //     Transforms --output--path argument into an output URL
-        public static func outputURL(_ outputPath: String) throws -> URL {
+        //     Transforms --output--path argument into an output URL
+        @Sendable public static func outputURL(_ outputPath: String) throws -> URL {
             return FileUtilities.outputURLForPath(outputPath, defaultFileName: defaultFilename)
         }
     }
     
     public enum Snapshot {
+        
         public static let defaultFilename = "Snapshot.evosnapshot"
         
-        public static func validate(verbose: Bool) {
-            VERBOSE_ENABLED = verbose // Global flag used by global verbosePrint() function. Set as early as possible
-        }
-        
         //     Transforms --output--path argument into an output URL
-        public static func outputURL(_ outputPath: String) throws -> URL {
+        @Sendable public static func outputURL(_ outputPath: String) throws -> URL {
             return FileUtilities.outputURLForPath(outputPath, defaultFileName: defaultFilename)
         }
     }
