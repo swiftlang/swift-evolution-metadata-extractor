@@ -7,6 +7,7 @@
 // See https://swift.org/LICENSE.txt for license information
 // See https://swift.org/CONTRIBUTORS.txt for the list of Swift project authors
 
+import Foundation
 import Markdown
 import EvolutionMetadataModel
 
@@ -17,7 +18,7 @@ struct ProposalMetadataExtractor {
     ///   - markdown: The markdown string of a Swift Evolution proposal
     ///   - proposalID: A string identifier typically of the form _SE-XXXX_ such as _SE-0234_
     /// - Returns: The extracted proposal metadata
-    static func extractProposalMetadata(from markdown: String, proposalID: String, sha: String) -> Proposal {
+    static func extractProposalMetadata(from markdown: String, proposalID: String, sha: String, extractionDate: Date) -> Proposal {
                 
         var proposalMetadata = Proposal()
         proposalMetadata.sha = sha
@@ -69,7 +70,7 @@ struct ProposalMetadataExtractor {
             proposalMetadata.trackingBugs = extractValue(from: headerFieldsByLabel, with: TrackingBugExtractor.self)
             proposalMetadata.implementation = extractValue(from: headerFieldsByLabel, with: ImplementationExtractor.self)
             
-            if let status = extractValue(from: headerFieldsByLabel, with: StatusExtractor.self) {
+            if let status = extractValue(from: (headerFieldsByLabel, extractionDate), with: StatusExtractor.self) {
                 if case .implemented(let version) = status, version == "none" {
                     // VALIDATION ENHANCEMENT: Figure out a better way to special case the missing version strings for these proposals
                     // VALIDATION ENHANCEMENT: Possibly just add version strings to the actual proposals

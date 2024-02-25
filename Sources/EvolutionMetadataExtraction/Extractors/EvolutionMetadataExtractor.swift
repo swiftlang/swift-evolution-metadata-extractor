@@ -11,11 +11,8 @@ import Foundation
 import EvolutionMetadataModel
 
 struct EvolutionMetadataExtractor {
-    static var _extractionDate: Date?
-    static var extractionDate: Date { _extractionDate ?? Date() }
     
     static func extractEvolutionMetadata(for extractionJob: ExtractionJob) async throws -> EvolutionMetadata {
-        _extractionDate = extractionDate
         
         let (filteredProposalSpecs, reusableProposals) = filterProposalSpecs(for: extractionJob)
         
@@ -28,7 +25,7 @@ struct EvolutionMetadataExtractor {
         let proposals = await withTaskGroup(of: Proposal.self, returning: [Proposal].self) { taskGroup in
             
             for spec in filteredProposalSpecs {
-                taskGroup.addTask { await readAndExtractProposalMetadata(from: spec, proposalDirectoryURL: extractionJob.proposalsDirectoryURL) }
+                taskGroup.addTask { await readAndExtractProposalMetadata(from: spec, proposalDirectoryURL: extractionJob.proposalsDirectoryURL, extractionDate: extractionJob.extractionDate) }
             }
             
             var proposals: [Proposal] = []
@@ -57,10 +54,10 @@ struct EvolutionMetadataExtractor {
         let implementationVersions =  implementationVersionSet.sorted(using: SortDescriptor(\.self))
         
         verbosePrint("Implementation Versions:", implementationVersions)
-        let creationDate = EvolutionMetadataExtractor.extractionDate.formatted(.iso8601)
+        let formattedCreationDate = extractionJob.extractionDate.formatted(.iso8601)
 
         return EvolutionMetadata(
-            creationDate: creationDate,
+            creationDate: formattedCreationDate,
             implementationVersions: implementationVersions,
             proposals: combinedProposals,
             sha: extractionJob.branchInfo?.commit.sha ?? "",
@@ -68,7 +65,7 @@ struct EvolutionMetadataExtractor {
         )
     }
     
-    static func readAndExtractProposalMetadata(from proposalSpec: ProposalSpec, proposalDirectoryURL: URL?) async -> Proposal {
+    static func readAndExtractProposalMetadata(from proposalSpec: ProposalSpec, proposalDirectoryURL: URL?, extractionDate: Date) async -> Proposal {
         do {
             let markdownString: String
             if proposalSpec.url.isFileURL {
@@ -83,7 +80,7 @@ struct EvolutionMetadataExtractor {
                 try data.write(to: proposalFileURL)
             }
 
-            let parsedProposal = ProposalMetadataExtractor.extractProposalMetadata(from: markdownString, proposalID: proposalSpec.id, sha: proposalSpec.sha)
+            let parsedProposal = ProposalMetadataExtractor.extractProposalMetadata(from: markdownString, proposalID: proposalSpec.id, sha: proposalSpec.sha, extractionDate: extractionDate)
             
             // For proposals that fail proposal link / id extraction, provides a way to identify the problem file in validation reports
             // When activated, be sure to set the link back to empty string post-validation report

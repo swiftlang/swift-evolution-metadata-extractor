@@ -15,13 +15,16 @@ struct StatusExtractor: MarkupWalker, ValueExtractor {
 
     private var warnings: [Proposal.Issue] = []
     private var errors: [Proposal.Issue] = []
-
+    
+    private var extractionDate: Date = Date()
     var status: Proposal.Status? = nil
     
-    mutating func extractValue(from headerFieldsByLabel: [String : ListItem]) -> ExtractionResult<Proposal.Status> {
+    mutating func extractValue(from sourceValues: (headerFieldsByLabel: [String : ListItem], extractionDate: Date)) -> ExtractionResult<Proposal.Status> {
         
-        // If 'Status' field not found, report 
-        if let proposalField = headerFieldsByLabel["Status"] {
+        extractionDate = sourceValues.extractionDate
+        
+        // If 'Status' field not found, report
+        if let proposalField = sourceValues.headerFieldsByLabel["Status"] {
             visit(proposalField)
         }
         
@@ -50,7 +53,7 @@ struct StatusExtractor: MarkupWalker, ValueExtractor {
             version = StatusExtractor.versionForString(String(statusMatch.details ?? ""))
         }
         else if statusString.contains(/(Scheduled for|Active) Review/.ignoresCase()) {
-            if let result = StatusExtractor.datesForString(String(statusMatch.details ?? ""), processingDate: EvolutionMetadataExtractor.extractionDate) {
+            if let result = StatusExtractor.datesForString(String(statusMatch.details ?? ""), processingDate: extractionDate) {
                 start = result.start
                 end = result.end
                 if let warning = result.reviewEndedWarning {

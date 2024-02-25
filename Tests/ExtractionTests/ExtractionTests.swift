@@ -51,8 +51,6 @@ final class ExtractionTests: XCTestCase {
         
         let date = DateComponents(calendar: Calendar(identifier: .gregorian), timeZone: TimeZone.gmt ,year: 2024, month: 2, day: 14).date!
         print(date)
-
-        EvolutionMetadataExtractor._extractionDate = date
         
         // VALIDATION ENHANCEMENT: Tools like Xcode like to add a newline character to empty files
         // Possibly instead of using 0007-empty-file.md to test, test separately?
@@ -63,7 +61,7 @@ final class ExtractionTests: XCTestCase {
         var extractionResults: [Proposal] = []
         for spec in extractionJob.proposalSpecs {
 //            if spec.name.prefix(4) != "0013" { continue }
-            extractionResults.append(await EvolutionMetadataExtractor.readAndExtractProposalMetadata(from: spec, proposalDirectoryURL: nil))
+            extractionResults.append(await EvolutionMetadataExtractor.readAndExtractProposalMetadata(from: spec, proposalDirectoryURL: nil, extractionDate: date))
         }
         
         // This test zips the extraction results with the expected results
