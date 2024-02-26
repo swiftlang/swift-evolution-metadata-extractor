@@ -54,10 +54,10 @@ struct EvolutionMetadataExtractor {
         let implementationVersions =  implementationVersionSet.sorted(using: SortDescriptor(\.self))
         
         verbosePrint("Implementation Versions:", implementationVersions)
-        let formattedCreationDate = extractionJob.extractionDate.formatted(.iso8601)
+        let formattedExtractionDate = extractionJob.extractionDate.formatted(.iso8601)
 
         return EvolutionMetadata(
-            creationDate: formattedCreationDate,
+            extractionDate: formattedExtractionDate,
             implementationVersions: implementationVersions,
             proposals: combinedProposals,
             sha: extractionJob.branchInfo?.commit.sha ?? "",

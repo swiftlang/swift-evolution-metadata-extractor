@@ -11,14 +11,14 @@ import Foundation
 
 public struct EvolutionMetadata: Equatable, Sendable, Codable {
     public static let schemaVersion = "0.1.0"
-    public var creationDate: String
+    public var extractionDate: String
     public var implementationVersions: [String]
     public var proposals: [Proposal]
     public var sha: String
     public var schemaVersion: String
     public var toolVersion: String
-    public init(creationDate: String, implementationVersions: [String], proposals: [Proposal], sha: String, toolVersion: String) {
-        self.creationDate = creationDate
+    public init(extractionDate: String, implementationVersions: [String], proposals: [Proposal], sha: String, toolVersion: String) {
+        self.extractionDate = extractionDate
         self.implementationVersions = implementationVersions
         self.proposals = proposals
         self.schemaVersion = EvolutionMetadata.schemaVersion
