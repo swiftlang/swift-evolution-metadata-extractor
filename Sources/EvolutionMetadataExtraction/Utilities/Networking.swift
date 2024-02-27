@@ -12,13 +12,22 @@ import EvolutionMetadataModel
 
 struct PreviousResultsFetcher {
     
-    static let previousResultsURL = "https://download.swift.org/swift-evolution/proposals.json"
-
+    static let previousResultsURL = URL(string: "https://download.swift.org/swift-evolution/proposals.json")!
+    
     static func fetchPreviousResults() async throws -> [Proposal] {
-        let (data, _) = try await URLSession.shared.data(from: URL(string: previousResultsURL)!)
-        let decoder = JSONDecoder()
-        let items = try decoder.decode([Proposal].self, from: data)
-        return items
+        verbosePrint("Fetching from \(previousResultsURL)")
+        let request = URLRequest(url: previousResultsURL, cachePolicy: .reloadIgnoringLocalCacheData)
+        do {
+            let (data, _) = try await URLSession.shared.data(for: request)
+            
+            //        let (data, _) = try await URLSession.shared.data(from: URL(string: previousResultsURL)!)
+            let decoder = JSONDecoder()
+            let items = try decoder.decode([Proposal].self, from: data)
+            return items
+        } catch {
+            print(error)
+            throw error
+        }
     }
 }
 
@@ -111,31 +120,32 @@ struct GitHubFetcher {
     
     static func getGitHubAPIValue<T: Decodable>(for endpoint: URL, type: T.Type, cachePolicy: URLRequest.CachePolicy = .useProtocolCachePolicy) async throws -> T {
         
+        verbosePrint("Fetching from \(endpoint)")
         var request = URLRequest(url: endpoint, cachePolicy: cachePolicy)
         request.setValue("application/vnd.github+json", forHTTPHeaderField: "Accept")
         request.setValue("2022-11-28", forHTTPHeaderField: "X-GitHub-Api-Version")
         
-        let (data, response) = try await URLSession.shared.data(for: request)
-        
-        if verboseEnabled, let httpResponse = response as? HTTPURLResponse {
-            print("Fetching from \(endpoint)")
-            let fields = ["x-ratelimit-limit", "x-ratelimit-remaining", "x-ratelimit-used", "x-ratelimit-reset"]
-            for field in fields {
-                if field == "x-ratelimit-reset" {
-                    if let rawValue = httpResponse.value(forHTTPHeaderField: field) {
-                        let date = Date(timeIntervalSince1970: TimeInterval(Int(rawValue) ?? 0))
-                        print("\(field):", DateFormatter.localizedString(from: date, dateStyle: .medium, timeStyle: .long), "(raw value: \(rawValue))")
-                    } else {
-                        print("\(field):", "no value")
-                    }
-                } else {
-                    print("\(field):", httpResponse.value(forHTTPHeaderField: field) ?? "no value")
-                }
-            }
-            print()
-        }
-        
         do {
+            let (data, response) = try await URLSession.shared.data(for: request)
+            
+            if verboseEnabled, let httpResponse = response as? HTTPURLResponse {
+                print("Response from", endpoint)
+                let fields = ["x-ratelimit-limit", "x-ratelimit-remaining", "x-ratelimit-used", "x-ratelimit-reset"]
+                for field in fields {
+                    if field == "x-ratelimit-reset" {
+                        if let rawValue = httpResponse.value(forHTTPHeaderField: field) {
+                            let date = Date(timeIntervalSince1970: TimeInterval(Int(rawValue) ?? 0))
+                            print("\(field):", DateFormatter.localizedString(from: date, dateStyle: .medium, timeStyle: .long), "(raw value: \(rawValue))")
+                        } else {
+                            print("\(field):", "no value")
+                        }
+                    } else {
+                        print("\(field):", httpResponse.value(forHTTPHeaderField: field) ?? "no value")
+                    }
+                }
+                print()
+            }
+            
             let decoder = JSONDecoder()
             let items = try decoder.decode(T.self, from: data)
             return items
