@@ -15,8 +15,8 @@ struct PreviousResultsFetcher {
     static let previousResultsURL = URL(string: "https://download.swift.org/swift-evolution/proposals.json")!
     
     static func fetchPreviousResults() async throws -> [Proposal] {
-        verbosePrint("Fetching from \(previousResultsURL)")
         let request = URLRequest(url: previousResultsURL, cachePolicy: .reloadIgnoringLocalCacheData)
+        verbosePrint("Fetching with URLRequest:\n\(request.requestDump)")
         do {
             let (data, _) = try await URLSession.shared.data(for: request)
             
@@ -120,10 +120,10 @@ struct GitHubFetcher {
     
     static func getGitHubAPIValue<T: Decodable>(for endpoint: URL, type: T.Type, cachePolicy: URLRequest.CachePolicy = .useProtocolCachePolicy) async throws -> T {
         
-        verbosePrint("Fetching from \(endpoint)")
         var request = URLRequest(url: endpoint, cachePolicy: cachePolicy)
         request.setValue("application/vnd.github+json", forHTTPHeaderField: "Accept")
         request.setValue("2022-11-28", forHTTPHeaderField: "X-GitHub-Api-Version")
+        verbosePrint("Fetching with URLRequest:\n\(request.requestDump)")
         
         do {
             let (data, response) = try await URLSession.shared.data(for: request)
@@ -156,3 +156,40 @@ struct GitHubFetcher {
         }
     }
 }
+
+extension URLRequest {
+    fileprivate var requestDump: String {
+        var dump = ""
+        if let method = httpMethod {
+            dump += method + " "
+        }
+        if let url = url {
+            dump += String(describing: url) + "\n"
+        }
+        dump += "Timeout: \(timeoutInterval)\n"
+        
+        let cachePolicyString =  switch(cachePolicy) {
+            case .useProtocolCachePolicy: "useProtocolCachePolicy"
+            case .reloadIgnoringLocalCacheData: "reloadIgnoringLocalCacheData"
+            case .reloadIgnoringLocalAndRemoteCacheData: "reloadIgnoringLocalAndRemoteCacheData"
+            case .returnCacheDataElseLoad: "returnCacheDataElseLoad"
+            case .returnCacheDataDontLoad: "returnCacheDataDontLoad"
+            case .reloadRevalidatingCacheData: "reloadRevalidatingCacheData"
+            default: "unknown cache policy"
+        }
+        dump += "Cache Policy: \(cachePolicyString)"
+
+        if let headers = allHTTPHeaderFields {
+            if !headers.isEmpty {
+                dump += "\n"
+                dump += "Headers:\n"
+            }
+            let lastIndex = headers.count - 1
+            for (index, (key, value)) in headers.enumerated() {
+                dump += "\t\(key) : \(value)\(index == lastIndex ? "" : "\n")"
+            }
+        }
+        return dump
+    }
+}
+
