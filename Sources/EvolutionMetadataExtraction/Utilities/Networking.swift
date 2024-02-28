@@ -18,9 +18,8 @@ struct PreviousResultsFetcher {
         let request = URLRequest(url: previousResultsURL, cachePolicy: .reloadIgnoringLocalCacheData)
         verbosePrint("Fetching with URLRequest:\n\(request.requestDump)")
         do {
-            let (data, _) = try await URLSession.shared.data(for: request)
+            let (data, _) = try await URLSession.customSession.data(for: request)
             
-            //        let (data, _) = try await URLSession.shared.data(from: URL(string: previousResultsURL)!)
             let decoder = JSONDecoder()
             let items = try decoder.decode([Proposal].self, from: data)
             return items
@@ -90,7 +89,7 @@ struct GitHubFetcher {
     
     // Note that fetching proposal contents does not use GitHub API endponts
     static func fetchProposalContents(from url: URL) async throws -> String {
-        let (data, _) =  try await URLSession.shared.data(from: url)
+        let (data, _) =  try await URLSession.customSession.data(from: url)
         return String(decoding: data, as: UTF8.self)
     }
         
@@ -126,7 +125,7 @@ struct GitHubFetcher {
         verbosePrint("Fetching with URLRequest:\n\(request.requestDump)")
         
         do {
-            let (data, response) = try await URLSession.shared.data(for: request)
+            let (data, response) = try await URLSession.customSession.data(for: request)
             
             if verboseEnabled, let httpResponse = response as? HTTPURLResponse {
                 print("Response from", endpoint)
