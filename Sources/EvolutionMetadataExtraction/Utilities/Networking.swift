@@ -20,9 +20,15 @@ struct PreviousResultsFetcher {
         do {
             let (data, _) = try await URLSession.customSession.data(for: request)
             
-            let decoder = JSONDecoder()
-            let items = try decoder.decode([Proposal].self, from: data)
-            return items
+            do {
+                let decoder = JSONDecoder()
+                let items = try decoder.decode([Proposal].self, from: data)
+                return items
+            } catch {
+                print("Unable to decode \([Proposal].self) from:")
+                print(String(decoding: data, as: UTF8.self))
+                throw error
+            }
         } catch {
             print(error)
             throw error
@@ -145,10 +151,15 @@ struct GitHubFetcher {
                 print()
             }
             
-            let decoder = JSONDecoder()
-            let items = try decoder.decode(T.self, from: data)
-            return items
-            
+            do {
+                let decoder = JSONDecoder()
+                let items = try decoder.decode(T.self, from: data)
+                return items
+            } catch {
+                print("Unable to decode \(T.self) from:")
+                print(String(decoding: data, as: UTF8.self))
+                throw error
+            }
         } catch {
             print(error)
             throw error
