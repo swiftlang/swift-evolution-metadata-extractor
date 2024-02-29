@@ -10,61 +10,20 @@
 import Foundation
 import ArgumentParser
 
-var VERBOSE_ENABLED: Bool = false
+private var VERBOSE_ENABLED: Bool = false // Set once in `validate(verbose:)`
 func verbosePrint(_ items: Any..., additionalCondition: Bool = true, separator: String = " ", terminator: String = "\n\n") {
     if verboseEnabled && additionalCondition { print(items, separator: separator, terminator: terminator) }
 }
 let verboseEnabled: Bool = { VERBOSE_ENABLED }()
 
-extension URLSession {
-    static var customSession: URLSession {
-        _customSession
-    }
-}
-var _customSession: URLSession = {
-    var proxyDictionary: [AnyHashable : Any] = [:]
-    
-    let environment = ProcessInfo.processInfo.environment
-    let httpProxy = environment["http_proxy"] ?? environment["HTTP_PROXY"]
-    if let httpProxy, let url = URL(string: httpProxy), let host = url.host, let port = url.port {
-        proxyDictionary[kCFNetworkProxiesHTTPEnable] = true
-        proxyDictionary[kCFNetworkProxiesHTTPProxy] = host
-        proxyDictionary[kCFNetworkProxiesHTTPPort] = port
-    }
-    
-    let httpsProxy = environment["https_proxy"] ?? environment["HTTPS_PROXY"]
-    if let httpsProxy, let url = URL(string: httpsProxy), let host = url.host, let port = url.port {
-        proxyDictionary[kCFNetworkProxiesHTTPSEnable] = true
-        proxyDictionary[kCFNetworkProxiesHTTPSProxy] = host
-        proxyDictionary[kCFNetworkProxiesHTTPSPort] = port
-    }
-
-    let sessionConfig = URLSessionConfiguration.default
-    if !proxyDictionary.isEmpty {
-        verbosePrint("Setting proxy dictionary:", terminator: "\n")
-        for (key, value) in proxyDictionary {
-            verbosePrint("\(key): \(value)", terminator: "\n")
-        }
-        sessionConfig.connectionProxyDictionary = proxyDictionary
-    }
-    return URLSession(configuration: sessionConfig)
-}()
-
+// MARK: -
 
 public enum ArgumentValidation {
     
+    // Call first in the `validate()` method of each command
     public static func validate(verbose: Bool) {
-        // Global flag used by global verbosePrint() function. Set as early as possible
         VERBOSE_ENABLED = verbose
         precondition(verboseEnabled == verbose)
-                
-        if verboseEnabled {
-            print("Environment Variables:")
-            for (key, value) in ProcessInfo.processInfo.environment {
-                print("\(key): \(value)")
-            }
-        }
-        verbosePrint(ProcessInfo.processInfo.environment)
     }
     
     public enum Extract {

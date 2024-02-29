@@ -16,9 +16,9 @@ struct PreviousResultsFetcher {
     
     static func fetchPreviousResults() async throws -> [Proposal] {
         let request = URLRequest(url: previousResultsURL, cachePolicy: .reloadIgnoringLocalCacheData)
-        verbosePrint("Fetching with URLRequest:\n\(request.requestDump)")
+        verbosePrint("Fetching with URLRequest:\n\(request.verboseDescription)")
         do {
-            let (data, _) = try await URLSession.customSession.data(for: request)
+            let (data, _) = try await URLSession.customized.data(for: request)
             
             do {
                 let decoder = JSONDecoder()
@@ -36,7 +36,7 @@ struct PreviousResultsFetcher {
     }
 }
 
-// MARK: -
+// MARK: - GitHub Access
 
 struct GitHubBranch: Codable {
     let name: String
@@ -95,7 +95,7 @@ struct GitHubFetcher {
     
     // Note that fetching proposal contents does not use GitHub API endponts
     static func fetchProposalContents(from url: URL) async throws -> String {
-        let (data, _) =  try await URLSession.customSession.data(from: url)
+        let (data, _) =  try await URLSession.customized.data(from: url)
         return String(decoding: data, as: UTF8.self)
     }
         
@@ -128,10 +128,10 @@ struct GitHubFetcher {
         var request = URLRequest(url: endpoint, cachePolicy: cachePolicy)
         request.setValue("application/vnd.github+json", forHTTPHeaderField: "Accept")
         request.setValue("2022-11-28", forHTTPHeaderField: "X-GitHub-Api-Version")
-        verbosePrint("Fetching with URLRequest:\n\(request.requestDump)")
+        verbosePrint("Fetching with URLRequest:\n\(request.verboseDescription)")
         
         do {
-            let (data, response) = try await URLSession.customSession.data(for: request)
+            let (data, response) = try await URLSession.customized.data(for: request)
             
             if verboseEnabled, let httpResponse = response as? HTTPURLResponse {
                 print("Response from", endpoint)
@@ -166,40 +166,3 @@ struct GitHubFetcher {
         }
     }
 }
-
-extension URLRequest {
-    fileprivate var requestDump: String {
-        var dump = ""
-        if let method = httpMethod {
-            dump += method + " "
-        }
-        if let url = url {
-            dump += String(describing: url) + "\n"
-        }
-        dump += "Timeout: \(timeoutInterval)\n"
-        
-        let cachePolicyString =  switch(cachePolicy) {
-            case .useProtocolCachePolicy: "useProtocolCachePolicy"
-            case .reloadIgnoringLocalCacheData: "reloadIgnoringLocalCacheData"
-            case .reloadIgnoringLocalAndRemoteCacheData: "reloadIgnoringLocalAndRemoteCacheData"
-            case .returnCacheDataElseLoad: "returnCacheDataElseLoad"
-            case .returnCacheDataDontLoad: "returnCacheDataDontLoad"
-            case .reloadRevalidatingCacheData: "reloadRevalidatingCacheData"
-            default: "unknown cache policy"
-        }
-        dump += "Cache Policy: \(cachePolicyString)"
-
-        if let headers = allHTTPHeaderFields {
-            if !headers.isEmpty {
-                dump += "\n"
-                dump += "Headers:\n"
-            }
-            let lastIndex = headers.count - 1
-            for (index, (key, value)) in headers.enumerated() {
-                dump += "\t\(key) : \(value)\(index == lastIndex ? "" : "\n")"
-            }
-        }
-        return dump
-    }
-}
-
