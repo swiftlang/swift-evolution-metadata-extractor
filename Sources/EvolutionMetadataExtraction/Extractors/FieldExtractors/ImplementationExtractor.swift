@@ -22,28 +22,9 @@ struct ImplementationExtractor: MarkupWalker, ValueExtractor {
     private var _implementaton: [Proposal.Implementation] = []
     
     mutating func extractValue(from headerFieldsByLabel: [String : ListItem]) -> ExtractionResult<[Proposal.Implementation]> {
-        var listItem: ListItem? = nil
-        for key in ["Implementation", "Implementations"] {
-            if let value = headerFieldsByLabel[key] {
-                listItem = value
-                break
-            }
+        if let (_ , headerField) = headerFieldsByLabel[["Implementation", "Implementations"]] {
+            visit(headerField)
         }
-        if let field = listItem {
-            visit(field)
-            
-//            var swiftRepositoryDestination: String? {
-//                if impl.account == "apple" {
-//                    // remove it and add a warning
-//                    
-//                    proposal.implementation.remove(at: index)
-//                    proposal._topLevelWarnings.append(.validationWarning("Implementation links to a non-Swift repository."))
-//                }
-//
-//                return nil
-//            }
-        }
-        
         // Implementation field is optional. Take no action / add no warning if it is not found
         
         return ExtractionResult(value: implementaton, warnings: warnings, errors: errors)

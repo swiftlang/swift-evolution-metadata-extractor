@@ -24,10 +24,11 @@ struct StatusExtractor: MarkupWalker, ValueExtractor {
         extractionDate = sourceValues.extractionDate
         
         // If 'Status' field not found, report
-        if let proposalField = sourceValues.headerFieldsByLabel["Status"] {
-            visit(proposalField)
+        if let headerField = sourceValues.headerFieldsByLabel["Status"] {
+            visit(headerField)
         }
         
+        // This checks both that the field is found and is successfully extracted
         if status == nil {
             warnings.append(ValidationIssue.missingStatus)
         }

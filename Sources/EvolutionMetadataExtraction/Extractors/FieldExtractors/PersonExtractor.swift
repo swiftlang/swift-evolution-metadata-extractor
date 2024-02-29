@@ -44,19 +44,12 @@ struct PersonExtractor: MarkupWalker {
     }
     
     mutating func personArray(from headerFields: [String : ListItem]) -> ExtractionResult<[Proposal.Person]> {
-        var listItem: ListItem? = nil
         let headerLabels = switch role {
-        case .author: ["Author", "Authors"]
-        case .reviewManager: ["Review manager", "Review Manager"]
+            case .author: ["Author", "Authors"]
+            case .reviewManager: ["Review manager", "Review Manager"]
         }
-        for key in headerLabels {
-            if let value = headerFields[key] {
-                listItem = value
-                break
-            }
-        }
-        if let proposalField = listItem {
-            visit(proposalField)
+        if let (_, headerField) = headerFields[headerLabels] {
+            visit(headerField)
         }
         
         // VALIDATION ENHANCEMENT: Log a warning if no review manager.  It should be a CI validation error also

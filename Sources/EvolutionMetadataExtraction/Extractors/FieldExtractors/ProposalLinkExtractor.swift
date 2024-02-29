@@ -17,8 +17,8 @@ struct ProposalLinkExtractor: MarkupWalker, ValueExtractor {
     private var errors: [Proposal.Issue] = []
     
     mutating func extractValue(from headerFieldsByLabel: [String : ListItem]) -> ExtractionResult<LinkInfo> {
-        if let proposalField = headerFieldsByLabel["Proposal"] {
-            visit(proposalField)
+        if let headerField = headerFieldsByLabel["Proposal"] {
+            visit(headerField)
         } else {
             errors.append(ValidationIssue.missingProposalIDLink)
         }
