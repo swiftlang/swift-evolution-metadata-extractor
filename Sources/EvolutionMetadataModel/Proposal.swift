@@ -18,13 +18,13 @@ import Foundation
         "summary": String,
         "link": String,
         "sha": String, // SHA of the proposal's Markdown file's latest update
-        "authors": [
+        "authors": [ // [Proposal.Person]
              {
                  "name": String,
                  "link": String // warns on absence
              }
          ],
-        "reviewManager": { // warns
+        "reviewManager": { // Proposal.Person // warns
             "name": String,
             "link": String,
         },
@@ -34,7 +34,7 @@ import Foundation
             "end": String?, // yyyy-MM-dd, same as above
             "version": String?, // swift version number, e.g. "3.0.2"
         },
-        "trackingBugs": [ // [JIRAIssue]?
+        "trackingBugs": [ // [Proposal.TrackingBug]?
             {
                 "assignee": String,
                 "id": String,
@@ -46,7 +46,7 @@ import Foundation
                 "updated": String,
             }
         ],
-        "implementation": [ // [Implementation]?
+        "implementation": [ // [Proposal.Implementation]?
             {
                 "type": String, // "commit" | "pull"
                 "account": String,
@@ -55,12 +55,12 @@ import Foundation
             }
         ],
 
-        "warnings": [{ // [ProposalWarning]?, key missing if array is empty
+        "warnings": [{ // [Proposal.Issue]?, key missing if array is empty
             "kind": "warning", // differentiates this from an error
             "message": String, // human-readable description of what's wrong
             "stage": String // e.g. "parse"
         }],
-        "errors": [{ // [ProposalError]?, key missing if array is empty
+        "errors": [{ // [Proposal.Issue]?, key missing if array is empty
             "kind": "error", // differentiates this from a warning
             "message": String, // human-readable description of what's wrong
             "stage": String // e.g. "parse"
