@@ -21,7 +21,7 @@ enum FileUtilities {
         } else {
             // Warn if output path has a different file extension
             let defaultFileExtension = URL(filePath: defaultFileName).pathExtension
-            if defaultFileExtension != url.lastPathComponent {
+            if defaultFileExtension != url.pathExtension {
                 print("WARNING: Specified filename '\(url.lastPathComponent)' does not have the expected extension '\(defaultFileExtension)'")
             }
         }
