@@ -80,6 +80,10 @@ struct LegacyEqualityAdapter {
         "SE-0321" : [
             ("\"PackageRegistryService\"", ""),
         ],
+        "SE-0424" : [
+            ("\\(", "("),
+            ("\\)", ")"),
+        ],
     ]
     
     static func summariesAreEqual(propID: String, old: String, new: String) -> Bool {

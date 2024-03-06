@@ -60,10 +60,10 @@
       "link" : "",
       "name" : ""
     },
-    "sha" : "490a90e235ac20a2fa0defabac89c6d1b2ff6986",
+    "sha" : "9761465a5ca6df727be91357c695152ed8e3361f",
     "status" : {
       "state" : ".implemented",
-      "version" : "3"
+      "version" : "3.0"
     },
     "summary" : "Curried function declaration syntax `func foo(x: Int)(y: Int)` is of limited\nusefulness and creates a lot of language and implementation complexity. We\nshould remove it.\n",
     "title" : " Removing currying func declaration syntax\n",
@@ -96,10 +96,10 @@
       "link" : "https:\/\/github.com\/jopamer",
       "name" : "Joe Pamer"
     },
-    "sha" : "839f40c251b884f427bba3081826e2ef6a37df96",
+    "sha" : "efcc935d078968d8be95fa0a4e041fad85f18461",
     "status" : {
       "state" : ".implemented",
-      "version" : "3"
+      "version" : "3.0"
     },
     "summary" : "There has been some confusion of semantics when a function parameter is marked\nas `inout` compared to `var`. Both give a mutable local copy of a value but\nparameters marked `inout` are automatically written back.\n",
     "title" : " Removing var from Function Parameters\n"
@@ -125,10 +125,10 @@
       "link" : "",
       "name" : ""
     },
-    "sha" : "56386e0d1045e0a439da33c052b196e4657116ba",
+    "sha" : "c33507a66497d10d002c2b26fb33285da368e530",
     "status" : {
       "state" : ".implemented",
-      "version" : "3"
+      "version" : "3.0"
     },
     "summary" : "The increment\/decrement operators in Swift were added very early in the\ndevelopment of Swift, as a carry-over from C. These were added without much\nconsideration, and haven't been thought about much since then. This document\nprovides a fresh look at them, and ultimately recommends we just remove them\nentirely, since they are confusing and not carrying their weight.\n",
     "title" : " Remove the ++ and -- operators\n",
@@ -157,10 +157,10 @@
       "link" : "https:\/\/github.com\/DougGregor",
       "name" : "Doug Gregor"
     },
-    "sha" : "0ca0809d7adc1a88550872e4893d827919abc711",
+    "sha" : "9a494db4c343219dc589f79832d5dd95fa504d2c",
     "status" : {
       "state" : ".implemented",
-      "version" : "3"
+      "version" : "3.0"
     },
     "summary" : "This proposal describes how we can improve Swift's \"Clang Importer\", which is\nresponsible for mapping C and Objective-C APIs into Swift, to translate the\nnames of Objective-C functions, types, methods, properties, etc. into names that\nmore closely align with the [Swift API Design\nGuidelines](https:\/\/swift.org\/documentation\/api-design-guidelines \"API Design Guidelines\")\nbeing developed as part of Swift 3. Our approach focuses on the differences\nbetween the Objective-C [Coding Guidelines for\nCocoa](https:\/\/developer.apple.com\/library\/mac\/documentation\/Cocoa\/Conceptual\/CodingGuidelines\/CodingGuidelines.html \"Coding Guidelines for Cocoa\")\nand the Swift API Design Guidelines, using some simple linguistic analysis to\naid the automatic translation from Objective-C names to more \"Swifty\" names.\n",
     "title" : " Better Translation of Objective-C APIs Into Swift\n"
@@ -186,10 +186,10 @@
       "link" : "https:\/\/github.com\/DougGregor",
       "name" : "Doug Gregor"
     },
-    "sha" : "86ef04eb883764e089c80f7a503039d5f2e178cd",
+    "sha" : "2b78b786bd506387c4ff56cb8b7ccb31981efba1",
     "status" : {
       "state" : ".implemented",
-      "version" : "3"
+      "version" : "3.0"
     },
     "summary" : "[Swift API Design\nGuidelines](https:\/\/swift.org\/documentation\/api-design-guidelines \"API Design Guidelines\")\nbeing developed as part of Swift 3. It is important that the Standard Library is\nan exemplar of Swift API Design Guidelines: the APIs from the Standard Library\nare, probably, the most frequently used Swift APIs in any application domain;\nthe Standard Library also sets precedent for other libraries.\n",
     "title" : " Apply API Guidelines to the Standard Library\n"
@@ -207,10 +207,10 @@
       "link" : "https:\/\/github.com\/DougGregor",
       "name" : "Doug Gregor"
     },
-    "sha" : "77149118b914dd0a75ab4698af5886591527fb58",
+    "sha" : "1bef3ab55a34b4a46ab5fabe7f2fa8b0a789e099",
     "status" : {
       "state" : ".implemented",
-      "version" : "3"
+      "version" : "3.0"
     },
     "summary" : "The C-style `for-loop` appears to be a mechanical carry-over from C rather than\na genuinely Swift-specific construct. It is rarely used and not very Swift-like.\n",
     "title" : " Remove C-style for-loops with conditions and incrementers\n",
@@ -250,10 +250,10 @@
       "link" : "https:\/\/github.com\/DougGregor",
       "name" : "Doug Gregor"
     },
-    "sha" : "90e7e9e3bc5e42a240ed753382d822f9c570386f",
+    "sha" : "2abda3ceee0b3b46ead1246e27ada1dce702d342",
     "status" : {
       "state" : ".implemented",
-      "version" : "3"
+      "version" : "3.0"
     },
     "summary" : "Currently, the Swift standard library has two versions of `flatMap`. One which\nflattens a sequence of sequences after a transformation:\n",
     "title" : " Add a Lazy flatMap for Sequences of Optionals\n",
@@ -458,10 +458,10 @@
       "link" : "https:\/\/github.com\/lattner",
       "name" : "Chris Lattner"
     },
-    "sha" : "22518458dc27b9f8f4383500cc0a8aea88752d2e",
+    "sha" : "6d8ed7ef1c10e9e9b6ef1051b4533b31d541c58f",
     "status" : {
       "state" : ".implemented",
-      "version" : "3"
+      "version" : "3.0"
     },
     "summary" : "Just as users can create `Unsafe[Mutable]Pointer`s from `Int`s and `UInt`s, they\nshould be able to create Ints and UInts from `Unsafe[Mutable]Pointer`s. This\nwill allow users to call C functions with `intptr_t` and `uintptr_t` parameters,\nand will allow users to perform more advanced pointer arithmetic than is allowed\nby `UnsafePointer`s.\n",
     "title" : " Add initializers to Int and UInt to convert from UnsafePointer and UnsafeMutablePointer\n",
@@ -491,10 +491,10 @@
       "link" : "https:\/\/github.com\/lattner",
       "name" : "Chris Lattner"
     },
-    "sha" : "7799dec5b807d0366e26458329ce6375c89cd938",
+    "sha" : "cc2bb6886019af6d680adc31f72cc9a7053bf868",
     "status" : {
       "state" : ".implemented",
-      "version" : "3"
+      "version" : "3.0"
     },
     "summary" : "The standard library [`Unmanaged<Instance>`\nstruct](https:\/\/github.com\/apple\/swift\/blob\/master\/stdlib\/public\/core\/Unmanaged.swift)\nprovides a type-safe object wrapper that does not participate in ARC; it allows\nthe user to make manual retain\/release calls.\n",
     "title" : " Change Unmanaged to use UnsafePointer\n",
@@ -552,10 +552,10 @@
       "link" : "https:\/\/github.com\/rballard",
       "name" : "Rick Ballard"
     },
-    "sha" : "6502f760e47dc361ffca79c233a1c9c36f0621c4",
+    "sha" : "252c9bdaa05b36ab8f9aa4c6592d9f5a3bce37bd",
     "status" : {
       "state" : ".implemented",
-      "version" : "3"
+      "version" : "3.0"
     },
     "summary" : "Testing is an essential part of modern software development. Tight integration\nof testing into the Swift Package Manager will help ensure a stable and reliable\npackaging ecosystem.\n",
     "title" : " Swift Testing\n",
@@ -704,10 +704,10 @@
       "link" : "https:\/\/github.com\/DougGregor",
       "name" : "Doug Gregor"
     },
-    "sha" : "e131d88831f0c49aa54dec6cec334a5701b8226d",
+    "sha" : "cb6b5abb0d74129cf26301d603fa4802329925c6",
     "status" : {
       "state" : ".implemented",
-      "version" : "3"
+      "version" : "3.0"
     },
     "summary" : "The design of commonly-used libraries has a large impact on the overall feel of\na programming language. Great libraries feel like an extension of the language\nitself, and consistency across libraries elevates the overall development\nexperience. To aid in the construction of great Swift libraries, one of the\nmajor goals for Swift 3 is to define a set of API design guidelines and to apply\nthose design guidelines consistently.\n",
     "title" : " API Design Guidelines\n"
@@ -745,10 +745,10 @@
       "link" : "http:\/\/github.com\/DougGregor",
       "name" : "Doug Gregor"
     },
-    "sha" : "310956cd1107c39231149b42d70d0cf4aab5bd62",
+    "sha" : "ef2900ef7e22271f4de6110dcf4e9b7b89096acb",
     "status" : {
       "state" : ".implemented",
-      "version" : "3"
+      "version" : "3.0"
     },
     "summary" : "Scoped access level allows hiding implementation details of a class or a class\nextension at the class\/extension level, instead of a file. It is a concise\nexpression of the intent that a particular part of a class or extension\ndefinition is there only to implement a public API for other classes or\nextensions and must not be used directly anywhere outside of the scope of the\nclass or the extension.\n",
     "title" : " Scoped Access Level\n",
@@ -859,10 +859,10 @@
       "link" : "http:\/\/github.com\/jckarter",
       "name" : "Joe Groff"
     },
-    "sha" : "9b4c779be68362d56799fdc1fd5ae94032c69583",
+    "sha" : "605a7cec37fb83f0257d895a283fbde06e49b7af",
     "status" : {
       "state" : ".implemented",
-      "version" : "3"
+      "version" : "3.0"
     },
     "summary" : "Function call expressions (which include several syntactic forms that apply an\nargument list to something of function type) currently have a dual nature in\nSwift. Given something like:\n",
     "title" : " Remove implicit tuple splat behavior from function applications\n"
@@ -912,10 +912,10 @@
       "link" : "https:\/\/github.com\/lattner",
       "name" : "Chris Lattner"
     },
-    "sha" : "c4acd2d5933998d96eb784ddacaaa2f7c2758a1e",
+    "sha" : "8dc23b285dc520aa7a400c750c1d67002a5a8a9a",
     "status" : {
       "state" : ".implemented",
-      "version" : "3"
+      "version" : "3.0"
     },
     "summary" : "The `inout` keyword indicates copy-in\/copy-out argument behavior. In its current\nimplementation the keyword prepends argument names. We propose to move the\n`inout` keyword to the right side of the colon to decorate the type instead of\nthe parameter label.\n",
     "title" : " Adjusting inout Declarations for Type Decoration\n"
@@ -933,10 +933,10 @@
       "link" : "https:\/\/github.com\/lattner",
       "name" : "Chris Lattner"
     },
-    "sha" : "9dbd6358a364b9dada044ae3b9026b29ee21a256",
+    "sha" : "b00f3b1bb123e5c5d40fa4b6cfeda454c70b0304",
     "status" : {
       "state" : ".implemented",
-      "version" : "3"
+      "version" : "3.0"
     },
     "summary" : "Add a new extension method to `Sequence` called `first(where:)` that returns the\nfound element.\n",
     "title" : " Add first(where:) method to Sequence\n",
@@ -966,10 +966,10 @@
       "link" : "https:\/\/github.com\/rjmccall",
       "name" : "John McCall"
     },
-    "sha" : "744974b40ebceeff4ede8689376894e77503295a",
+    "sha" : "06e12fcb715a548bd8ca95db66032779af941c6b",
     "status" : {
       "state" : ".implemented",
-      "version" : "3"
+      "version" : "3.0"
     },
     "summary" : "Given a list of constants in an Objective-C file, add an attribute that will\nenable Swift to import them as either an Enum or a Struct, using\n`RawRepresentable` to convert to their original type. This way, instead of\npassing strings around for APIs, we can use more type-safe objects and take\nadvantage of Swift’s code completion, as well as making our Swift (and\nObjective-C\\!) code more readable and more approachable to beginners.\n",
     "title" : " Import Objective-C Constants as Swift Types\n"
@@ -987,10 +987,10 @@
       "link" : "https:\/\/github.com\/lattner",
       "name" : "Chris Lattner"
     },
-    "sha" : "97b2164fe226a415f2248bacd7f9ec9d6297fcaf",
+    "sha" : "dbb3d1d128e093a1ae6adb1c10214bedd3b70808",
     "status" : {
       "state" : ".implemented",
-      "version" : "3"
+      "version" : "3.0"
     },
     "summary" : "In being accepted, Swift Evolution SE-0028\n(0028-modernizing-debug-identifiers.md) overloads the use of `#line` to mean\nboth an identifier that maps to a calling site's line number within a file and\nacts as part of a line control statement. This proposal nominates `#setline` to\nreplace `#line` for file and line syntactic source control.\n",
     "title" : " Disambiguating Line Control Statements from Debugging Identifiers\n",
@@ -1020,10 +1020,10 @@
       "link" : "https:\/\/github.com\/lattner",
       "name" : "Chris Lattner"
     },
-    "sha" : "466df501821c59e28af902fe7c098bda664da04c",
+    "sha" : "4a44fd09ff5eabec6f6ccd942abc73162e03508b",
     "status" : {
       "state" : ".implemented",
-      "version" : "3"
+      "version" : "3.0"
     },
     "summary" : "Swift's behavior when closures capture `inout` parameters and escape their\nenclosing context is a common source of confusion. We should disallow implicit\ncapture of `inout` parameters except in `@noescape` closures.\n",
     "title" : " Limiting inout capture to @noescape contexts\n",
@@ -1057,10 +1057,10 @@
       "link" : "https:\/\/github.com\/DougGregor",
       "name" : "Doug Gregor"
     },
-    "sha" : "8e7f6cfaa07220e48eb6722585d2da45e80db4d0",
+    "sha" : "a8e5293c9855aed2c0d71d933cd619c12c66125f",
     "status" : {
       "state" : ".implemented",
-      "version" : "3"
+      "version" : "3.0"
     },
     "summary" : "Enumeration cases are essentially static not instance type members. Unlike\nstatic members in structures and classes, enumeration cases can be mentioned in\ninitializers and instance methods without referencing a fully qualified type.\nThis makes little sense. In no other case can an instance implementation\ndirectly access a static member. This proposal introduces a rule that requires\nleading dots or fully qualified references (EnumType.caseMember) to provide a\nmore consistent developer experience to clearly disambiguate static cases from\ninstance members.\n",
     "title" : " Requiring Leading Dot Prefixes for Enum Instance Member Implementations\n",
@@ -1090,10 +1090,10 @@
       "link" : "http:\/\/github.com\/lattner",
       "name" : "Chris Lattner"
     },
-    "sha" : "293fd83dc6ea9ac76177fe34b0fb8521c3830b60",
+    "sha" : "42061f70beb0291d16671a7624db24e704793e4e",
     "status" : {
       "state" : ".implemented",
-      "version" : "3"
+      "version" : "3.0"
     },
     "summary" : "There are several inconsistencies in how comments are treated when determining\nwhether an operator is prefix, postfix, or infix. They are sometimes treated as\nwhitespace, sometimes as non-whitespace, and this differs depending on whether\nthey are to the left or right of an operator, and the contents of the comment\nitself. This proposal suggests a uniform set of rules for how these cases should\nbe parsed.\n",
     "title" : " Clarify interaction between comments & operators\n",
@@ -1123,10 +1123,10 @@
       "link" : "https:\/\/github.com\/rballard",
       "name" : "Rick Ballard"
     },
-    "sha" : "9ef4f207156110c6d4508acec471d89c919cd0c6",
+    "sha" : "d86482524e3380e4bb21758bb3cfa2a9aa019aac",
     "status" : {
       "state" : ".implemented",
-      "version" : "3"
+      "version" : "3.0"
     },
     "summary" : "This is a proposal for adding initial package manager support for the C, C++,\nObjective-C, and Objective-C++ languages (henceforth, simply referred to as \"C\"\nlanguages). This proposal is limited in scope to only supporting targets\nconsisting entirely of C languages; there is no provision for supporting targets\nwhich include both C and Swift sources.\n",
     "title" : " Package Manager C Language Target Support\n",
@@ -1156,10 +1156,10 @@
       "link" : "https:\/\/github.com\/lattner",
       "name" : "Chris Lattner"
     },
-    "sha" : "42ccdab79d591268ece0aedccd175c65bb0e0df5",
+    "sha" : "31cd21031aaa207f0b8f2aaa902ef301feef1988",
     "status" : {
       "state" : ".implemented",
-      "version" : "3"
+      "version" : "3.0"
     },
     "summary" : "Playground literals tokenize colors, files, and images. They provide\ndrag-and-drop convenience and in-context visualizations that offer easy\nreference and manipulation when designing playground content. These literals are\nbuilt using a simple square bracket syntax that, in the current form, conflicts\nwith collection literals. This proposal redesigns playground literals to follow\nthe precedent of \\#available and \\#selector.\n",
     "title" : " Modernizing Playground Literals\n",
@@ -1197,10 +1197,10 @@
       "link" : "https:\/\/github.com\/lattner",
       "name" : "Chris Lattner"
     },
-    "sha" : "18f4ced423c98fe6898f41c098b954cd12d99b5f",
+    "sha" : "dc36461d86d76c92c1264395ecc3807c1bd33f3f",
     "status" : {
       "state" : ".implemented",
-      "version" : "3"
+      "version" : "3.0"
     },
     "summary" : "Attribute arguments are unlike other Swift language arguments. At the call site,\nthey use `=` instead of colons to distinguish argument names from passed values.\nThis proposal brings attributes into compliance with Swift standard practices by\nreplacing the use of \"=\" with \":\" in this one-off case.\n",
     "title" : " Replacing Equal Signs with Colons For Attribute Arguments\n"
@@ -1282,10 +1282,10 @@
       "link" : "https:\/\/github.com\/lattner",
       "name" : "Chris Lattner"
     },
-    "sha" : "048a2c520aa98f7579f83aa83e93b3e27544afc7",
+    "sha" : "abc9390c74f8400399fc4d609bba2a8d9246bb16",
     "status" : {
       "state" : ".implemented",
-      "version" : "3"
+      "version" : "3.0"
     },
     "summary" : "In Swift 2, it is possible to match multiple patterns in cases. However cases\ncannot contain multiple patterns if the case declares variables.\n",
     "title" : " Declare variables in 'case' labels with multiple patterns\n"
@@ -1303,10 +1303,10 @@
       "link" : "https:\/\/github.com\/DougGregor",
       "name" : "Doug Gregor"
     },
-    "sha" : "8ea02ed09e3b982b63466d112e3302819c70b9bb",
+    "sha" : "a978919016aa99327a1b7b9bbf4deb50f3125009",
     "status" : {
       "state" : ".implemented",
-      "version" : "3"
+      "version" : "3.0"
     },
     "summary" : "Swift imports C declarations, allowing Swift code to natively interact with C\nlibraries and frameworks. But, such imported APIs do not feel natural to\ninteract with in Swift. This proposal seeks to provide a mechanism for C API\nauthors to specify the capability of importing functions and variables as\nmembers on imported Swift types. It also seeks to provide an automatic inference\noption for APIs that follow a consistent, disciplined naming convention.\n",
     "title" : " Import as member\n",
@@ -1373,10 +1373,10 @@
       "link" : "https:\/\/github.com\/lattner",
       "name" : "Chris Lattner"
     },
-    "sha" : "30b54b17051bc267417a0afed13e6fde8ae607e9",
+    "sha" : "0e1940d728d0c29253614032e0247e2903cd8a5e",
     "status" : {
       "state" : ".implemented",
-      "version" : "3"
+      "version" : "3.0"
     },
     "summary" : "We propose to normalize the first parameter declaration in methods and\nfunctions. In this proposal, first parameter declarations will match the\nexisting behavior of the second and later parameters. All parameters, regardless\nof position, will behave uniformly. This will create a simple, consistent\napproach to parameter declaration throughout the Swift programming language and\nbring method and function declarations in-sync with initializers, which already\nuse this standard.\n",
     "title" : " Establish consistent label behavior across all parameters including first labels\n",
@@ -1410,10 +1410,10 @@
       "link" : "https:\/\/github.com\/lattner",
       "name" : "Chris Lattner"
     },
-    "sha" : "8026a5e3ee18d8a1b5f90277bb58b91fc0e70d90",
+    "sha" : "6487d18d2da62b13ed504b2169c89e9855be1d76",
     "status" : {
       "state" : ".implemented",
-      "version" : "3"
+      "version" : "3.0"
     },
     "summary" : "In Swift's current incarnation, annotating methods and functions with\n`@warn_unused_result` informs the compiler that a non-void return type *should\nbe consumed*. It is an affirmative declaration. In its absence, ignored results\ndo not raise warnings or errors.\n",
     "title" : " Defaulting non-Void functions so they warn on unused results\n",
@@ -1443,10 +1443,10 @@
       "link" : "https:\/\/github.com\/DougGregor",
       "name" : "Doug Gregor"
     },
-    "sha" : "214861b5ec4064fdba7c6f3301c85ecdf2a3bcd8",
+    "sha" : "4f6efecb5ad078f9740a5be2e26b70ca6bf1274c",
     "status" : {
       "state" : ".implemented",
-      "version" : "3"
+      "version" : "3.0"
     },
     "summary" : "This proposal aims to add generic typealiases to Swift.\n",
     "title" : " Generic Type Aliases\n"
@@ -1464,10 +1464,10 @@
       "link" : "https:\/\/github.com\/DougGregor",
       "name" : "Doug Gregor"
     },
-    "sha" : "6b6e5eb406607fa27c36e3f593351f08ce43e2bd",
+    "sha" : "a6572f2c8293a7f0ab403d07bf89e0f8d29c971a",
     "status" : {
       "state" : ".implemented",
-      "version" : "3"
+      "version" : "3.0"
     },
     "summary" : "This proposal suggests moving the existing `@noescape` and `@autoclosure`\nattributes from being declaration attributes on a parameter to being type\nattributes. This improves consistency and reduces redundancy within the\nlanguage, e.g. aligning with [SE-0031](0031-adjusting-inout-declarations.md),\nwhich moved `inout`, making declaration and type syntax more consistent.\n",
     "title" : " Move @noescape and @autoclosure to be type attributes\n",
@@ -1549,10 +1549,10 @@
       "link" : "https:\/\/github.com\/lattner",
       "name" : "Chris Lattner"
     },
-    "sha" : "28d321902009440ac7b812cd8def3d4bec518c40",
+    "sha" : "7b9c287fe7cf4fc7168d4ed6f13ff23c0fe09c09",
     "status" : {
       "state" : ".implemented",
-      "version" : "3"
+      "version" : "3.0"
     },
     "summary" : "Currently, the documentation for `IteratorType.next()` has the precondition that\nwhen calling `next()`, no preceding call to `next()` should have returned `nil`,\nand in fact encourages implementations to raise a `preconditionFailure()` for\nviolations of this requirement. However, all current 27 `IteratorType`\nimplementations in the standard library return `nil` indefinitely. Many users\nare likely unaware of the precondition, expecting all iterators to return `nil`\nindefinitely and writing code that might rely on this assumption. Such code will\nusually run fine, until someone does in fact pass in an iterator not repeating\n`nil` (it's a silent corner case).\n",
     "title" : " Change IteratorType post-nil guarantee\n"
@@ -1578,10 +1578,10 @@
       "link" : "https:\/\/github.com\/lattner",
       "name" : "Chris Lattner"
     },
-    "sha" : "8d2fcd172754e52afa4ffe97ae5f17dfea57e52d",
+    "sha" : "c3b22b490771fea66a28f7ae8e894ca093b6b108",
     "status" : {
       "state" : ".implemented",
-      "version" : "3"
+      "version" : "3.0"
     },
     "summary" : "Since function parameters are immutable by default, allowing function parameters\nto be explicitly labeled as `let` is a bit of a syntactic redundancy that would\nbest be removed. Not allowing function parameters to be explicitly declared as\n`let` would permit a more simple and uniform function declaration syntax for\nswift. Furthermore proposal [SE-0003​: \"Removing `var` from Function\nParameters\"](0003-remove-var-parameters.md) removes `var` from function\nparameters removing any possible ambiguity as to whether a function parameter is\nimmutable or not.\n",
     "title" : " Remove explicit use of let from Function Parameters\n"
@@ -1636,10 +1636,10 @@
       "link" : "https:\/\/github.com\/lattner",
       "name" : "Chris Lattner"
     },
-    "sha" : "cc8e6453425095710aaa45cb77792d35e3313d34",
+    "sha" : "6c69e20408b1742140c32f93e3c38399805ca722",
     "status" : {
       "state" : ".implemented",
-      "version" : "3"
+      "version" : "3.0"
     },
     "summary" : "In Objective-C, pointers (whether to objects or to a non-object type) can be\nmarked as `nullable` or `nonnull`, depending on whether the pointer value can\never be null. In Swift, however, there is no such way to make this distinction\nfor pointers to non-object types: an `UnsafePointer<Int>` might be null, or it\nmight never be.\n",
     "title" : " Make unsafe pointer nullability explicit using Optional\n"
@@ -1677,10 +1677,10 @@
       "link" : "https:\/\/github.com\/lattner",
       "name" : "Chris Lattner"
     },
-    "sha" : "3a5edd1577e5c18168dcbbb5c95a97feff3a67cc",
+    "sha" : "5b3b7892a02a364e7494299eaff9b84a458042ca",
     "status" : {
       "state" : ".implemented",
-      "version" : "3"
+      "version" : "3.0"
     },
     "summary" : "Objective-C's *lightweight generics* feature allows Objective-C classes to be\nparameterized on the types they work with, similarly to Swift's generics syntax.\nTheir adoption in Foundation's collection classes allow Objective-C APIs to be\nbridged more effectively into Swift. For example, an `NSArray<NSString *> *`\nbridges to `[String]` rather than the far-weaker `[AnyObject]`. However,\nparameterized Objective-C classes lose their type parameters when they are\nimported into Swift, so uses of type parameters outside of bridged, typed\ncollections (`NSArray`, `NSDictionary`, `NSSet`) don't benefit in Swift. This\nproposal introduces a way to import the type parameters of Objective-C classes\ninto Swift.\n",
     "title" : " Importing Objective-C Lightweight Generics\n"
@@ -1722,10 +1722,10 @@
       "link" : "https:\/\/github.com\/DougGregor",
       "name" : "Doug Gregor"
     },
-    "sha" : "e38ab57229e74e5e914e9386d62e8ac2058b9d38",
+    "sha" : "1d69edb0c48e31433bc7151ad84e53d9374d0d51",
     "status" : {
       "state" : ".implemented",
-      "version" : "3"
+      "version" : "3.0"
     },
     "summary" : "When [SE-0006, *Apply API Guidelines to the Standard\nLibrary*](0006-apply-api-guidelines-to-the-standard-library.md) was proposed,\nthe lack of an acceptable naming convention for some mutating\/nonmutating method\npairs meant that the APIs of `SetAlgebra`, `Set<T>` and `OptionSet<T>` were not\nadjusted accordingly. This proposal remedies both problems by:\n",
     "title" : " Update API Naming Guidelines and Rewrite Set APIs Accordingly\n"
@@ -1743,10 +1743,10 @@
       "link" : "http:\/\/github.com\/lattner",
       "name" : "Chris Lattner"
     },
-    "sha" : "70e3fa69b607c5300556770f47d83e3dcb24bdbf",
+    "sha" : "ad7bfd59c9f920abeb3efcc6e4205801432d8cc7",
     "status" : {
       "state" : ".implemented",
-      "version" : "3"
+      "version" : "3.0"
     },
     "summary" : "Swift generally follows in the Smalltalk\/Objective-C tradition of compound\nmethod names with significant, order-sensitive argument labels, but an exception\nis made for parameters with default arguments. We should remove this exception.\n",
     "title" : " Enforcing order of defaulted parameters\n",
@@ -1776,10 +1776,10 @@
       "link" : "http:\/\/github.com\/dabrahams",
       "name" : "Dave Abrahams"
     },
-    "sha" : "27c5d2346d761fd518a792d1177073a2891e0f09",
+    "sha" : "5d81771c92aecedd864a44f515b126664ac6527a",
     "status" : {
       "state" : ".implemented",
-      "version" : "3"
+      "version" : "3.0"
     },
     "summary" : "The `autoreleasepool` function in the standard library does not currently\nsupport a return value or error handling, making it difficult and error-prone to\npass results or errors from the body to the calling context.\n",
     "title" : " Add Generic Result and Error Handling to autoreleasepool()\n",
@@ -1819,10 +1819,10 @@
       "link" : "https:\/\/github.com\/DougGregor",
       "name" : "Doug Gregor"
     },
-    "sha" : "952c2c78a30132e2e08dbaad77e07972325f0be2",
+    "sha" : "54fa946647ae22bc2fac780debf41a6a214b4fa2",
     "status" : {
       "state" : ".implemented",
-      "version" : "3"
+      "version" : "3.0"
     },
     "summary" : "In Objective-C and Swift, key-paths used by KVC and KVO are represented as\nstring literals (e.g., `\"friend.address.streetName\"`). This proposal seeks to\nimprove the safety and resilience to modification of code using key-paths by\nintroducing a compiler-checked expression.\n",
     "title" : " Referencing Objective-C key-paths\n",
@@ -1860,10 +1860,10 @@
       "link" : "https:\/\/github.com\/abertelrud",
       "name" : "Anders Bertelrud"
     },
-    "sha" : "92aa798404b5e2811e8aa200311d760731498ae2",
+    "sha" : "cb11562abf3e763cea948e456c5c6bde3b1d760d",
     "status" : {
       "state" : ".implemented",
-      "version" : "3"
+      "version" : "3.0"
     },
     "summary" : "Swift is able to `import` C libraries in the same manner as Swift libraries.\n",
     "title" : " SwiftPM System Module Search Paths\n"
@@ -1881,10 +1881,10 @@
       "link" : "https:\/\/github.com\/DougGregor",
       "name" : "Doug Gregor"
     },
-    "sha" : "92d670a3c0e2e81b37ba5d087aee2c7eb97c8c1e",
+    "sha" : "e3e7b61e350a0fcbf16ae21ba233b78f4d1e51f0",
     "status" : {
       "state" : ".implemented",
-      "version" : "3"
+      "version" : "3.0"
     },
     "summary" : "Proposal [SE-0022](0022-objc-selectors.md) was accepted and implemented to\nprovide a `#selector` expression to reference Objective-C method selectors.\nUnfortunately, it does not allow referencing the getter and setter methods of\nproperties. This proposal seeks to provide a design to reference those methods\nfor the Swift 3.0 timeframe.\n",
     "title" : " Referencing the Objective-C selector of property getters and setters\n",
@@ -1930,10 +1930,10 @@
       "link" : "https:\/\/github.com\/lattner",
       "name" : "Chris Lattner"
     },
-    "sha" : "68e3c89589bf8edd42ce920b4352ca8480e53582",
+    "sha" : "ed31fb20e78ca3f16b11e9709b8b83117d0465d2",
     "status" : {
       "state" : ".implemented",
-      "version" : "3"
+      "version" : "3.0"
     },
     "summary" : "",
     "title" : " A New Model for Collections and Indices\n"
@@ -1959,10 +1959,10 @@
       "link" : "https:\/\/github.com\/DougGregor",
       "name" : "Doug Gregor"
     },
-    "sha" : "0e65fa04ff573554d43171c4eeedc028aa702db8",
+    "sha" : "e5cd1c72a7456959c43bfb5e76400f4600b9988c",
     "status" : {
       "state" : ".implemented",
-      "version" : "3"
+      "version" : "3.0"
     },
     "summary" : "Function types in Swift use parentheses around their parameter list (aligning\nwith the function declaration syntax, as well as the syntax used to call a\nfunction). However, in the degenerate case of a single non-variadic, unlabeled\nargument with no attributes, Swift allows the parentheses to be omitted. For\nexample, these types:\n",
     "title" : " Standardize function type argument syntax to require parentheses\n"
@@ -1988,10 +1988,10 @@
       "link" : "https:\/\/github.com\/lattner",
       "name" : "Chris Lattner"
     },
-    "sha" : "ec72adab3413471c1f85d3d97f91511e6dcbb819",
+    "sha" : "0097be9c5bf62d5c32af9d0d18149a7aa596ab3b",
     "status" : {
       "state" : ".implemented",
-      "version" : "3"
+      "version" : "3.0"
     },
     "summary" : "The current FloatingPoint protocol is quite limited, and provides only a small\nsubset of the features expected of an IEEE 754 conforming type. This proposal\nexpands the protocol to cover most of the expected basic operations, and adds a\nsecond protocol, BinaryFloatingPoint, that provides a number of useful tools for\ngeneric programming with the most commonly used types.\n",
     "title" : " Enhanced Floating Point Protocols\n"
@@ -2050,10 +2050,10 @@
       "link" : "https:\/\/github.com\/lattner",
       "name" : "Chris Lattner"
     },
-    "sha" : "c7d67696032ba5ebd2aee8cc25f0206588f0b352",
+    "sha" : "e16169cf97a2cfcf9a1da7ade8e9fbb1f688bb8e",
     "status" : {
       "state" : ".implemented",
-      "version" : "3"
+      "version" : "3.0"
     },
     "summary" : "One of the core principles of Swift is \"mutability when you need it.\" This is\nespoused by Apple's official documentation about Swift:\n",
     "title" : " Mutability and Foundation Value Types\n"
@@ -2071,10 +2071,10 @@
       "link" : "http:\/\/github.com\/lattner",
       "name" : "Chris Lattner"
     },
-    "sha" : "443e8258b934aae9b40c7a4a4fc8a0c4fc49c4e0",
+    "sha" : "ee2d148c2bd50f6e77e6fdf3e86d074c5f9d6ae9",
     "status" : {
       "state" : ".implemented",
-      "version" : "3"
+      "version" : "3.0"
     },
     "summary" : "Swift currently has support for \"optional\" requirements in Objective-C\nprotocols, to match with the corresponding feature of Objective-C. We don't want\nto make optional requirements a feature of Swift protocols (for reasons\ndescribed below), nor can we completely eliminate the notion of the language\n(for different reasons also described below). Therefore, to prevent confusion\nabout our direction, this proposal requires an explicit '@objc' attribute on\neach `optional` requirement to indicate that this is an Objective-C\ncompatibility feature.\n",
     "title" : " Make Optional Requirements Objective-C-only\n",
@@ -2104,10 +2104,10 @@
       "link" : "https:\/\/github.com\/lattner",
       "name" : "Chris Lattner"
     },
-    "sha" : "8e10769fd572cdb0545f406659d012827e5d76f0",
+    "sha" : "3ac330d7b07c534ebee3e3bd4b5504c617d3a4b4",
     "status" : {
       "state" : ".implemented",
-      "version" : "3"
+      "version" : "3.0"
     },
     "summary" : "The [Swift API Design\nGuidelines](https:\/\/swift.org\/documentation\/api-design-guidelines\/) consider\nenum cases as values that use the lowerCamelCase naming conventions. This means\nthat case names that previously did not conflict with keywords (such as\n`Default`, `Private`, `Repeat`) now cause conflicts, a problem that is\nparticularly acute when the naming conventions are applied by the Clang importer\n(per [SE-0005](0005-objective-c-name-translation.md)). To mitigate this issue,\nthis proposal allows the use of most keywords after a \".\", similarly to how\n[SE-0001](0001-keywords-as-argument-labels.md) allows keywords are argument\nlabels.\n",
     "title" : " Allow (most) keywords in member references\n"
@@ -2133,10 +2133,10 @@
       "link" : "https:\/\/github.com\/lattner",
       "name" : "Chris Lattner"
     },
-    "sha" : "76f2f2d26644bc81473be9235e8532b54fc667f9",
+    "sha" : "47910a312acd4a2d46c68b276e6e596e84bf8701",
     "status" : {
       "state" : ".implemented",
-      "version" : "3"
+      "version" : "3.0"
     },
     "summary" : "In Swift 1.2, we attempted to remove all implicit bridging conversions from the\nlanguage. Unfortunately, problems with how the v1.2 compiler imported various\nun-annotated Objective-C APIs caused us to scale back on our ambitions. In the\ninterest of further simplifying our type system and our user model, we would\nlike to complete this work and fully remove implicit bridging conversions from\nthe language in Swift 3.\n",
     "title" : " Fully eliminate implicit bridging conversions from Swift\n"
@@ -2239,10 +2239,10 @@
       "link" : "http:\/\/github.com\/lattner",
       "name" : "Chris Lattner"
     },
-    "sha" : "d46f18ddd6371c0ec1c4b1c9407b3b81797227ee",
+    "sha" : "2de79eb0c0a831280269a410bc84796207f852fe",
     "status" : {
       "state" : ".implemented",
-      "version" : "3"
+      "version" : "3.0"
     },
     "summary" : "`UnsafeMutablePointer` includes several methods to non-destructively copy\nelements from memory pointed to by another `UnsafeMutablePointer` instance. I\npropose adding overloads of these methods to `UnsafeMutablePointer` that allow\nan `UnsafePointer` source.\n",
     "title" : " Add overrides taking an UnsafePointer source to non-destructive copying methods on UnsafeMutablePointer\n",
@@ -2272,10 +2272,10 @@
       "link" : "http:\/\/github.com\/jckarter",
       "name" : "Joe Groff"
     },
-    "sha" : "9274ca6a461c78b3b6d34c72dcae2348f3fa66e3",
+    "sha" : "e5fde9f13457636aebc65f47cf8f978a4ea6a5e5",
     "status" : {
       "state" : ".implemented",
-      "version" : "3"
+      "version" : "3.0"
     },
     "summary" : "Replace syntax of operator declaration, and replace numerical precedence with\npartial ordering of operators:\n",
     "title" : " Improved operator declarations\n"
@@ -2387,10 +2387,10 @@
       "link" : "http:\/\/github.com\/lattner",
       "name" : "Chris Lattner"
     },
-    "sha" : "e8ada129531c2be15906b695df85bce46e6d0b24",
+    "sha" : "c0db347b00d67df831a75644ebb104e909b99be0",
     "status" : {
       "state" : ".implemented",
-      "version" : "3"
+      "version" : "3.0"
     },
     "summary" : "This proposal suggests moving the `where` clause to the end of the declaration\nsyntax, but before the body, for readability reasons. It has been discussed at\nlength on the following swift-evolution thread:\n",
     "title" : " Move where clause to end of declaration\n",
@@ -2497,10 +2497,10 @@
       "link" : "http:\/\/github.com\/ddunbar",
       "name" : "Daniel Dunbar"
     },
-    "sha" : "23bb18e9b6fec4057d9bb2555decfc4faac508c9",
+    "sha" : "b2c77357fc33900f9261e62b77ab7a2f1913d0c4",
     "status" : {
       "state" : ".implemented",
-      "version" : "3"
+      "version" : "3.0"
     },
     "summary" : "This is a proposal for changing the command names used for invoking the Swift\npackage manager. Instead of hanging all functionality off of `swift build` and\n`swift test`, we will introduce a new `swift package` command with multiple\nsubcommands. `swift build` and `swift test` will remain as top-level commands\ndue to their frequency of use.\n",
     "title" : " Package Manager Command Names\n"
@@ -2522,10 +2522,10 @@
       "link" : "https:\/\/github.com\/DougGregor",
       "name" : "Doug Gregor"
     },
-    "sha" : "b8f1da71860b969b8065360e8a8b3174562e8445",
+    "sha" : "1fb18ea38a67557d0b8920a146ab1edc17093f80",
     "status" : {
       "state" : ".implemented",
-      "version" : "3"
+      "version" : "3.0"
     },
     "summary" : "As part of *Swift 3 API Naming* and the introduction of *Swift Core Libraries*,\nwe are dropping the `NS` prefix from key Foundation types in Swift.\n",
     "title" : " Drop NS Prefix in Swift Foundation\n"
@@ -2563,10 +2563,10 @@
       "link" : "http:\/\/github.com\/lattner",
       "name" : "Chris Lattner"
     },
-    "sha" : "0d1cd5c8e0e4d9422c9ec330c4aa3ffdc267fe32",
+    "sha" : "d87567e22aa47e9cd2fc8ed9ed4f3311795c878a",
     "status" : {
       "state" : ".implemented",
-      "version" : "3"
+      "version" : "3.0"
     },
     "summary" : "The existing libdispatch module imports the C API almost verbatim. To move\ntowards a more natural Swift interface and away from the C API, this proposal\noutlines changes to the libdispatch module and the motivation behind them.\n",
     "title" : " Modernize libdispatch for Swift 3 naming conventions\n"
@@ -2588,10 +2588,10 @@
       "link" : "http:\/\/github.com\/lattner",
       "name" : "Chris Lattner"
     },
-    "sha" : "5c627f9c20b3ca4d39f3123e542e8d43f976fcdb",
+    "sha" : "c9230135c05fdb82b7a1b28a83077ca1419ddd79",
     "status" : {
       "state" : ".implemented",
-      "version" : "3"
+      "version" : "3.0"
     },
     "summary" : "Swift's `String` type ships with a large number of initializers that take one\nunlabeled argument. One of these initializers, defined as `init<T>(_: T)`, is\nused to create a string containing the textual representation of an object. It\nis very easy to write code which accidentally invokes this initializer, when one\nof the other synonymous initializers was desired. Such code will compile without\nwarnings and can be very difficult to detect.\n",
     "title" : " Renaming String.init<T>(_: T)\n",
@@ -2649,10 +2649,10 @@
       "link" : "http:\/\/github.com\/lattner",
       "name" : "Chris Lattner"
     },
-    "sha" : "563722a9f1764516b473b00400ef216b2afec649",
+    "sha" : "afa8462219e8367a635b4a64d6058457365984c0",
     "status" : {
       "state" : ".implemented",
-      "version" : "3"
+      "version" : "3.0"
     },
     "summary" : "When a type conforms to a protocol that declares an operator as a requirement,\nthat operator must be implemented as a global function defined outside of the\nconforming type. This can lead both to user confusion and to poor type checker\nperformance since the global namespace is overcrowded with a large number of\noperator overloads. This proposal mitigates both of those issues by proposing\nthat operators in protocols be declared statically (to change and clarify where\nthe conforming type implements it) and that Swift use universal lookup for\noperators that finds candidates both at the global scope and within types.\n",
     "title" : " Improving operator requirements in protocols\n",
@@ -2686,10 +2686,10 @@
       "link" : "http:\/\/github.com\/lattner",
       "name" : "Chris Lattner"
     },
-    "sha" : "016c03f3626859658cd70fd984affeb7173f08be",
+    "sha" : "ec16339c47d12aa5248e331778e9cd2ed01514b3",
     "status" : {
       "state" : ".implemented",
-      "version" : "3"
+      "version" : "3.0"
     },
     "summary" : "This proposal is from the [Generics\nManifesto](https:\/\/github.com\/apple\/swift\/blob\/master\/docs\/GenericsManifesto.md)\nand brings the `typealias` keyword back into protocols for type aliasing.\n",
     "title" : " Typealiases in protocols and protocol extensions\n",
@@ -2727,10 +2727,10 @@
       "link" : "https:\/\/github.com\/dabrahams",
       "name" : "Dave Abrahams"
     },
-    "sha" : "6d9035777cd841ea33fa8f0e526561191797bf03",
+    "sha" : "361c42c159c65f9820d7d2413964605b3995ca32",
     "status" : {
       "state" : ".implemented",
-      "version" : "3"
+      "version" : "3.0"
     },
     "summary" : "Slice types [provided by the standard\nlibrary](https:\/\/github.com\/apple\/swift\/blob\/master\/stdlib\/public\/core\/Slice.swift.gyb)\nshould allow public readonly access to their base collections to make efficient\nimplementations of protocol requirements possible in conforming types.\n",
     "title" : " Adding a public base property to slices\n"
@@ -2752,10 +2752,10 @@
       "link" : "http:\/\/github.com\/lattner",
       "name" : "Chris Lattner"
     },
-    "sha" : "5070e09c644effb846936a56a81e956b9c35c5c2",
+    "sha" : "8ad63f4c59222b54cea2d82804b9831e9f244745",
     "status" : {
       "state" : ".implemented",
-      "version" : "3"
+      "version" : "3.0"
     },
     "summary" : "This proposal introduces `sequence(first:next:)` and `sequence(state:next:)`, a\npair of global functions that return (potentially-infinite) sequences of lazy\napplications of a closure to an initial value or a mutable state.\n",
     "title" : " Add sequence(first:next:) and sequence(state:next:) to the stdlib\n",
@@ -2789,10 +2789,10 @@
       "link" : "http:\/\/github.com\/lattner",
       "name" : "Chris Lattner"
     },
-    "sha" : "1f74a7e05ff1c49abcf51d39bbecc494b036a517",
+    "sha" : "94aa3fc309b87ce982653a45a6e23b4dedda74aa",
     "status" : {
       "state" : ".implemented",
-      "version" : "3"
+      "version" : "3.0"
     },
     "summary" : "The current `protocol<>` construct, which defines an existential type consisting\nof zero or more protocols, should be replaced by an infix `&` type operator\njoining bare protocol type names.\n",
     "title" : " Replace protocol<P1,P2> syntax with P1 & P2 syntax\n",
@@ -2822,10 +2822,10 @@
       "link" : "http:\/\/github.com\/lattner",
       "name" : "Chris Lattner"
     },
-    "sha" : "a2daa67db9ac0a68660d39c7e8108fdbbe288121",
+    "sha" : "4222d619c8ee53df111844885a45f9b9f01b350d",
     "status" : {
       "state" : ".implemented",
-      "version" : "3"
+      "version" : "3.0"
     },
     "summary" : "This proposal establishes `dynamicType` as a named operator rather than a\nproperty.\n",
     "title" : " Converting dynamicType from a property to an operator\n",
@@ -2899,10 +2899,10 @@
       "link" : "https:\/\/github.com\/jckarter",
       "name" : "Joe Groff"
     },
-    "sha" : "dd12a4e19e2c2746d639b0ef6594652b6a91fd17",
+    "sha" : "db41664fc6f9682e936268e070bc3baed186be68",
     "status" : {
       "state" : ".implemented",
-      "version" : "3"
+      "version" : "3.0"
     },
     "summary" : "Swift condition clauses appear in `guard`, `if`, and `while` statements. This\nproposal re-architects the condition grammar to enable an arbitrary mix of\nBoolean expressions, `let` conditions (which test and unwrap optionals), general\n`case` clauses for arbitrary pattern matching, and availability tests. It\nremoves `where` clauses from optional binding conditions and case conditions,\nand eliminates gramatical ambiguity by using commas for separation between\nclauses instead of using them both to separate clauses and terms within each\nclause. These modifications streamline Swift's syntax and alleviate the\nsituation where many Swift developers don't know they can use arbitrary Boolean\nconditions after a value binding.\n",
     "title" : " Restructuring Condition Clauses\n"
@@ -2944,10 +2944,10 @@
       "link" : "http:\/\/github.com\/lattner",
       "name" : "Chris Lattner"
     },
-    "sha" : "280e7d45bdfb0cdf0d904744b018e88fa89291ba",
+    "sha" : "445a5447b8fccbba681ca4f7222cad0634d6e3d4",
     "status" : {
       "state" : ".implemented",
-      "version" : "3"
+      "version" : "3.0"
     },
     "summary" : "This proposal addresses `sizeof`, `sizeofValue`, `strideof`, `strideofValue`,\n`align`, and `alignOf`. It discards the value-style standalone functions and\ncombines the remaining items into a unified structure.\n",
     "title" : " Reconfiguring sizeof and related functions into a unified MemoryLayout struct\n"
@@ -2965,10 +2965,10 @@
       "link" : "http:\/\/github.com\/lattner",
       "name" : "Chris Lattner"
     },
-    "sha" : "b73de7bfbbe8a383791b3566ccfdf75b9aa6c939",
+    "sha" : "a500061f8ebfc5faba23ef7472b68a826408077d",
     "status" : {
       "state" : ".implemented",
-      "version" : "3"
+      "version" : "3.0"
     },
     "summary" : "We should remove the rarely-used `@noreturn` function type attribute and instead\nexpress functions that don't return in terms of a standard uninhabited type.\n",
     "title" : " Remove @noreturn attribute and introduce an empty Never type\n",
@@ -2998,10 +2998,10 @@
       "link" : "http:\/\/github.com\/lattner",
       "name" : "Chris Lattner"
     },
-    "sha" : "e6e9f634cf747c50839053e0109cfd4556ea7e7b",
+    "sha" : "c1982da464866d7be03768baf41bb196637745d0",
     "status" : {
       "state" : ".implemented",
-      "version" : "3"
+      "version" : "3.0"
     },
     "summary" : "The current default of closure arguments to functions (i.e., arguments to\nfunctions that themselves have function type such as `(T) -> U`) is to be\n\"escaping\", meaning they can escape the function body such as saving it to a\nfield in a struct or a global variable. In order to say that a closure argument\ncannot possibly escape the function body (\"non-escaping\"), the developer must\nexplicitly add an `@noescape` annotation to the argument type.\n",
     "title" : " Make non-escaping closures the default\n",
@@ -3035,10 +3035,10 @@
       "link" : "https:\/\/github.com\/airspeedswift",
       "name" : "Ben Cohen"
     },
-    "sha" : "c8253fee25f9fc35b4aaa0ccfd381bbefe80cad0",
+    "sha" : "42a7b3cf899f22fa2852a7d712b4ccbceb7ad544",
     "status" : {
       "state" : ".implemented",
-      "version" : "4"
+      "version" : "4.0"
     },
     "summary" : "This proposal cleans up Swifts integer APIs and makes them more useful for\ngeneric programming.\n",
     "title" : " Protocol-oriented integers\n",
@@ -3088,10 +3088,10 @@
       "link" : "http:\/\/github.com\/lattner",
       "name" : "Chris Lattner"
     },
-    "sha" : "c04de3c4c13c2e5f69005e4480c36b72998649b3",
+    "sha" : "749830720d9aa7282ac5046a7581475bcd5295aa",
     "status" : {
       "state" : ".implemented",
-      "version" : "3"
+      "version" : "3.0"
     },
     "summary" : "Starting in Sierra, Apple's Mac-based OS (OS X) will be renamed \"macOS\". All\nuser-facing Swift APIs must go through Swift Evolution. While this is a trivial\nAPI change, I have put together a formal proposal as is normal and usual for\nthis process.\n",
     "title" : " Add a macOS Alias for the OSX Platform Configuration Test\n",
@@ -3131,10 +3131,10 @@
       "link" : "http:\/\/github.com\/lattner",
       "name" : "Chris Lattner"
     },
-    "sha" : "e70f518f5470e7f39847101e563bff5742c9063b",
+    "sha" : "22614707d9f5764c66789d5c418c6a1b72316e0b",
     "status" : {
       "state" : ".implemented",
-      "version" : "3"
+      "version" : "3.0"
     },
     "summary" : "Swift enforces type safe access to memory and follows strict aliasing rules.\nHowever, code that uses unsafe APIs or imported types can circumvent the\nlanguage's natural type safety. Consider the following example of *type punning*\nusing the `UnsafePointer` type:\n",
     "title" : " UnsafeRawPointer API\n"
@@ -3194,10 +3194,10 @@
       "link" : "http:\/\/github.com\/DougGregor",
       "name" : "Doug Gregor"
     },
-    "sha" : "8534b283540fbb16a6bdf3cf9972c190c4d5093e",
+    "sha" : "3b1bde8fada5c4332743b8c064bec12b56bd8e09",
     "status" : {
       "state" : ".implemented",
-      "version" : "3"
+      "version" : "3.0"
     },
     "summary" : "For legacy and historical reasons Swift has supported a protocol named `Boolean`\nfor abstracting over different concrete Boolean types. This causes problems\nprimarily because it is pointless and very confusing to newcomers to Swift: is\nquite different than `Bool`, but shows up right next to it in documentation and\ncode completion. Once you know that it is something you don't want, you\nconstantly ignore it. Boolean values are simple enough that we don't need a\nprotocol to abstract over multiple concrete implementations.\n",
     "title" : " Remove the Boolean protocol\n"
@@ -3252,10 +3252,10 @@
       "link" : "http:\/\/github.com\/lattner",
       "name" : "Chris Lattner"
     },
-    "sha" : "29ba3c20b69f84cc2e49f5b8bb0345c623197b10",
+    "sha" : "99a23db8ac9b573d2624a79d7a9c688ba9d689e7",
     "status" : {
       "state" : ".implemented",
-      "version" : "3"
+      "version" : "3.0"
     },
     "summary" : "Swift's type system should not allow function argument labels to be expressed as\npart of a function type.\n",
     "title" : " Remove type system significance of function argument labels\n",
@@ -3289,10 +3289,10 @@
       "link" : "http:\/\/github.com\/lattner",
       "name" : "Chris Lattner"
     },
-    "sha" : "ac806b8268b8a3dc66567f86eee529f9f0260b94",
+    "sha" : "22a428d830bbba1cec6ce1aadbd2b7d979d3206f",
     "status" : {
       "state" : ".implemented",
-      "version" : "3"
+      "version" : "3.0"
     },
     "summary" : "Swift's error handling model interoperates directly with Cocoa's NSError\nconventions. For example, an Objective-C method with an `NSError**` parameter,\ne.g.,\n",
     "title" : " Improved NSError Bridging\n"
@@ -3310,10 +3310,10 @@
       "link" : "http:\/\/github.com\/lattner",
       "name" : "Chris Lattner"
     },
-    "sha" : "833eac6849c8d1004e6c896db69e8ce2962049ba",
+    "sha" : "ba3daf9d22291ade430286d6ef6682a1834fe9ef",
     "status" : {
       "state" : ".implemented",
-      "version" : "3"
+      "version" : "3.0"
     },
     "summary" : "The standard library lacks equivalents to the `floor()` and `ceil()` functions\nfound in the standard libraries of most other languages. Currently, we need to\nimport `Darwin` or `Glibc` in order to access the C standard library versions.\n",
     "title" : " Add integral rounding functions to FloatingPoint\n",
@@ -3351,10 +3351,10 @@
       "link" : "http:\/\/github.com\/lattner",
       "name" : "Chris Lattner"
     },
-    "sha" : "3997103db4df230a3bbf3850a0c0e34b8f4d6a01",
+    "sha" : "5db2fb369f7b03aee689c42f3c5a4a99a80354df",
     "status" : {
       "state" : ".implemented",
-      "version" : "3"
+      "version" : "3.0"
     },
     "summary" : "This proposal updates parameters and generic type parameters from `value` names\nto `header` names for `ManagedBuffer`, `ManagedProtoBuffer`, and\n`ManagedBufferPointer`.\n",
     "title" : " Updating Buffer \"Value\" Names to \"Header\" Names\n"
@@ -3372,10 +3372,10 @@
       "link" : "http:\/\/github.com\/lattner",
       "name" : "Chris Lattner"
     },
-    "sha" : "12e8c096b6a5f796c131a5a9ad358dafe1f3a549",
+    "sha" : "9cb4ac44d638ef642d0275018ca0ec3a4762b3ee",
     "status" : {
       "state" : ".implemented",
-      "version" : "3"
+      "version" : "3.0"
     },
     "summary" : "This proposal renames the `*LiteralConvertible` protocols to\n`ExpressibleBy*Literal`.\n",
     "title" : " Rename Literal Syntax Protocols\n",
@@ -3405,10 +3405,10 @@
       "link" : "http:\/\/github.com\/lattner",
       "name" : "Chris Lattner"
     },
-    "sha" : "6168ac6b3ca9d7920bef8423dcd1b91355cb199b",
+    "sha" : "36d72cd39974a3ec937c231c33c882727e049f80",
     "status" : {
       "state" : ".implemented",
-      "version" : "3"
+      "version" : "3.0"
     },
     "summary" : "Objective-C interfaces that use `id` and untyped collections should be imported\ninto Swift as taking the `Any` type instead of `AnyObject`.\n",
     "title" : " Import Objective-C id as Swift Any type\n"
@@ -3438,10 +3438,10 @@
       "link" : "http:\/\/github.com\/lattner",
       "name" : "Chris Lattner"
     },
-    "sha" : "a47ba3df158f5b7383dad5ea0951b101d32e00d4",
+    "sha" : "54f7bf61d8d142ed4d2f7ee717a098337ed8bd2c",
     "status" : {
       "state" : ".implemented",
-      "version" : "3"
+      "version" : "3.0"
     },
     "summary" : "Since the first release of Swift, marking a class `public` has provided two\ncapabilities: it allows other modules to instantiate and use the class, and it\nalso allows other modules to define subclasses of it. Similarly, marking a class\nmember (a method, property, or subscript) `public` has provided two\ncapabilities: it allows other modules to use the member, and it also allows\nthose modules to override it.\n",
     "title" : " Allow distinguishing between public access and public overridability\n"
@@ -3467,10 +3467,10 @@
       "link" : "http:\/\/github.com\/lattner",
       "name" : "Chris Lattner"
     },
-    "sha" : "66f8d57dbb1f51ca083cb459c21db7f906bfefbf",
+    "sha" : "0cd69955d18621c84709786b16631a04d9fff1da",
     "status" : {
       "state" : ".implemented",
-      "version" : "3"
+      "version" : "3.0"
     },
     "summary" : "We propose a revision to the names and argument labels of closure parameters in\nstandard library APIs.\n",
     "title" : " Closure Parameter Names and Labels\n",
@@ -3528,10 +3528,10 @@
       "link" : "http:\/\/github.com\/lattner",
       "name" : "Chris Lattner"
     },
-    "sha" : "275f6a749700f3f7016bfcb6806c0f5380f5d520",
+    "sha" : "49e38a78ed06106fe5ecde2864242878835411e7",
     "status" : {
       "state" : ".implemented",
-      "version" : "3"
+      "version" : "3.0"
     },
     "summary" : "This proposal revises the signature for the collection partition algorithm.\nPartitioning is a foundational API for sorting and for searching through sorted\ncollections.\n",
     "title" : " Revise partition Method Signature\n",
@@ -3569,10 +3569,10 @@
       "link" : "http:\/\/github.com\/lattner",
       "name" : "Chris Lattner"
     },
-    "sha" : "34ce81316506ec4297a5017ea72e188e71a02869",
+    "sha" : "44cd28bb4fed19037e7ff68f5667c534fad00c51",
     "status" : {
       "state" : ".implemented",
-      "version" : "3"
+      "version" : "3.0"
     },
     "summary" : "Swift's [`Comparable`\nprotocol](https:\/\/developer.apple.com\/reference\/swift\/comparable) requires 4\noperators, [`<`, `<=`, `>`, and\n`>=`](https:\/\/github.com\/apple\/swift\/blob\/5868f9c597088793f7131d4655dd0f702a04dea3\/stdlib\/public\/core\/Policy.swift#L729-L763),\nbeyond the requirements of Equatable.\n",
     "title" : " Remove Optional Comparison Operators\n"
@@ -3638,10 +3638,10 @@
       "link" : "http:\/\/github.com\/lattner",
       "name" : "Chris Lattner"
     },
-    "sha" : "29ee149442febbbe71cbd5ff417c654537ee4341",
+    "sha" : "936ab9682675b8562826428de22a7f7ae08445a6",
     "status" : {
       "state" : ".implemented",
-      "version" : "3"
+      "version" : "3.0"
     },
     "summary" : "`Int.init(ObjectIdentifier)` and `UInt.init(ObjectIdentifier)` should have a\n'bitPattern:’ label to make it clear at the use site that we interpret the value\nas a bit pattern.\n",
     "title" : " Int.init(ObjectIdentifier) and UInt.init(ObjectIdentifier) should have a bitPattern: label\n",
@@ -3671,10 +3671,10 @@
       "link" : "http:\/\/github.com\/lattner",
       "name" : "Chris Lattner"
     },
-    "sha" : "5e51de4b5f089262160a6120624fa468a3812df0",
+    "sha" : "03e8844dc91d4bcd1492a724d36be9519ad856aa",
     "status" : {
       "state" : ".implemented",
-      "version" : "3"
+      "version" : "3.0"
     },
     "summary" : "Remove `NonObjectiveCBase` and `isUniquelyReferenced<T: NonObjectiveCBase>(_\nobject: T)`. `isUniquelyReferenced` can be replaced by\n`isUniquelyReferencedNonObjC<T: AnyObject>(_ object: T)`. This replacement is as\nperformant as the call to `isUniquelyReferenced` in cases where the compiler has\nstatic knowledge that the type of `object` is a native Swift class and\ndynamically has the same semantics for native swift classes. This change will\nremove surface API. Rename `isUniquelyReferencedNonObjC` to\n`isKnownUniquelyReferenced` and no longer promise to return false for `@objc`\nclass instances. Cleanup the `ManagedBufferPointer` API by renaming\n`holdsUniqueReference` to `isUniqueReference` and removing\n`holdsUniqueOrPinnedReference`.\n",
     "title" : " Remove NonObjectiveCBase and isUniquelyReferenced\n",
@@ -3728,10 +3728,10 @@
       "link" : "http:\/\/github.com\/lattner",
       "name" : "Chris Lattner"
     },
-    "sha" : "19656321869390f948b06dba924d299d33f4e280",
+    "sha" : "bc7461188a777f0df68ff92e0082306648f4eabc",
     "status" : {
       "state" : ".implemented",
-      "version" : "3"
+      "version" : "3.0"
     },
     "summary" : "This proposal deals with three routines and one class related to pointers and\nbuffers. The goal of this proposal is to update the API to match new API\nguidelines and remove redundant identifiers.\n",
     "title" : " Cleaning up stdlib Pointer and Buffer Routines\n",
@@ -3789,10 +3789,10 @@
       "link" : "http:\/\/github.com\/lattner",
       "name" : "Chris Lattner"
     },
-    "sha" : "39472db3b5d6e6f680da635035d453df49cc4733",
+    "sha" : "88cb74f1482319d80e8dd786c5f11ac06964bdae",
     "status" : {
       "state" : ".implemented",
-      "version" : "3"
+      "version" : "3.0"
     },
     "summary" : "This proposal aims to change some `UnicodeScalar` initializers (ones that are\nnon-failable) from non-failable to failable. i.e., in case a `UnicodeScalar` can\nnot be constructed, nil is returned.\n",
     "title" : " Change failable UnicodeScalar initializers to failable\n"
@@ -3810,10 +3810,10 @@
       "link" : "https:\/\/github.com\/ddunbar",
       "name" : "Daniel Dunbar"
     },
-    "sha" : "81c555605cfe06c63d7ab617cf5a1b1ba3d3b27a",
+    "sha" : "f3e218b70c63b0bda98063e72c059a96a3e50798",
     "status" : {
       "state" : ".implemented",
-      "version" : "3"
+      "version" : "3.0"
     },
     "summary" : "The Swift Package Manager uses a convention-based rather than a declarative\napproach for various aspects of package configuration. This is as true of the\nnaming and structure of tests as of other kinds of targets.\n",
     "title" : " Package Manager Test Naming Conventions\n"
@@ -3831,10 +3831,10 @@
       "link" : "http:\/\/github.com\/lattner",
       "name" : "Chris Lattner"
     },
-    "sha" : "7cbd97d8de7b36ec8421fce4de6cec12b14165e0",
+    "sha" : "3f70b278840a2a811ab2d032ab3b2888c7a1067f",
     "status" : {
       "state" : ".implemented",
-      "version" : "3"
+      "version" : "3.0"
     },
     "summary" : "This proposal suggest replacing String initializers taking Character or\nUnicodeScalar as a repeating value by a more general initializer that takes a\nString as a repeating value. This is done to avoid the ambiguities in the\ncurrent String API, which can be only resolved by explicit casting. It is also\nproposed to remove one of the String.append APIs to match these changes.\n",
     "title" : " Replace repeating Character and UnicodeScalar forms of String.init\n"
@@ -3852,10 +3852,10 @@
       "link" : "http:\/\/github.com\/lattner",
       "name" : "Chris Lattner"
     },
-    "sha" : "4a4621cfd6a2a7634be2cdfe85e54dcacb0fed6e",
+    "sha" : "9c9045989571e2d8fa6658a1a95bcb19fec3c777",
     "status" : {
       "state" : ".implemented",
-      "version" : "3"
+      "version" : "3.0"
     },
     "summary" : "We propose to add a type-erased `AnyHashable` container to the standard library.\n",
     "title" : " Add AnyHashable to the standard library\n"
@@ -3917,10 +3917,10 @@
       "link" : "http:\/\/github.com\/lattner",
       "name" : "Chris Lattner"
     },
-    "sha" : "600065785f55e104b209fec872c4c7eadf41ea08",
+    "sha" : "8386e527b8d8a27976dd02679af91b65b04c3088",
     "status" : {
       "state" : ".implemented",
-      "version" : "3"
+      "version" : "3.0"
     },
     "summary" : "Swift currently defines two similar functions, `joined(separator:)` and\n`flatten()`. `joined(separator:)` has a specialized implementation for Strings,\nand `flatten()` has implementations for various kinds of collections.\n",
     "title" : " Rename flatten() to joined()\n"
@@ -3950,10 +3950,10 @@
       "link" : "http:\/\/github.com\/lattner",
       "name" : "Chris Lattner"
     },
-    "sha" : "a406bef70ce879bc388623912151df8b7e762d5f",
+    "sha" : "5e41274c4ab30f7d8e7e49d58ea51f050cf78a04",
     "status" : {
       "state" : ".implemented",
-      "version" : "3"
+      "version" : "3.0"
     },
     "summary" : "This proposal removes `nulTerminatedUTF8` and renames `nulTerminatedUTF8CString`\nto enhance clarity and reduce mismatch between user expectations and the Swift\nprogramming language.\n",
     "title" : " Rename two UTF8-related properties on String\n"
@@ -3971,10 +3971,10 @@
       "link" : "https:\/\/github.com\/ddunbar",
       "name" : "Daniel Dunbar"
     },
-    "sha" : "78b13b2d3b0194828e9038325d43ae10d84a9f15",
+    "sha" : "ef8c7fbad46868dfb1f6e21b60a30e130fda068a",
     "status" : {
       "state" : ".implemented",
-      "version" : "3"
+      "version" : "3.0"
     },
     "summary" : "As new, source-incompatible versions of Swift come into use, there is a growing\nneed for packages to be authored in a way that makes them usable from multiple\nversions of Swift. While package authors want to adopt new Swift versions as\nsoon as possible, they also need to support their existing clients.\n",
     "title" : " Package Manager Support for Differentiating Packages by Swift version\n"
@@ -4000,10 +4000,10 @@
       "link" : "https:\/\/github.com\/dabrahams",
       "name" : "Dave Abrahams"
     },
-    "sha" : "fa1d39cd2daec593935eededdb2f8ce52a1ee0da",
+    "sha" : "9705baaa850bf1b3cfebb2012578b0ded2f58a13",
     "status" : {
       "state" : ".implemented",
-      "version" : "3"
+      "version" : "3.0"
     },
     "summary" : "This proposal is to introduce, as a bugfix, a replacement for `sizeofValue(_:)`\nand related functions.\n",
     "title" : " Memory layout of values\n"
@@ -4025,10 +4025,10 @@
       "link" : "https:\/\/github.com\/rjmccall",
       "name" : "John McCall"
     },
-    "sha" : "23b7fe33253b9e0dd63809d48e0b4acc08c6d758",
+    "sha" : "43136b648add45eef0b50c5ce76db86dcbfff519",
     "status" : {
       "state" : ".implemented",
-      "version" : "3"
+      "version" : "3.0"
     },
     "summary" : "We propose to deprecate or move protocols that shouldn't be a part of the\nstandard library's public API going forward.\n",
     "title" : " Avoiding Lock-In to Legacy Protocol Designs\n"
@@ -4150,10 +4150,10 @@
       "link" : "https:\/\/github.com\/DougGregor",
       "name" : "Doug Gregor"
     },
-    "sha" : "5a61e84ae27db663330b88c67dd8224efffe6f68",
+    "sha" : "86792f029541cf1921c0457765766645a1779db1",
     "status" : {
       "state" : ".implemented",
-      "version" : "4"
+      "version" : "4.0"
     },
     "summary" : "This proposal seeks to introduce a `where` clause to associated type\ndeclarations and improvements to protocol constraints to bring associated types\nthe same expressive power as generic type parameters.\n",
     "title" : " Permit where clauses to constrain associated types\n",
@@ -4253,10 +4253,10 @@
       "link" : "",
       "name" : "Daniel Dunbar"
     },
-    "sha" : "4755e6fb7fbdbee0c2ed08089f88acfc21cfdbcc",
+    "sha" : "ce87eeb8feda08210c4844218de25d7816917739",
     "status" : {
       "state" : ".implemented",
-      "version" : "4"
+      "version" : "4.0"
     },
     "summary" : "This proposal introduces the concept of *products* to the Swift Package Manager,\nand proposes enhancements to the `Package.swift` syntax to let packages define\nproducts that can be referenced by other packages.\n",
     "title" : " Package Manager Product Definitions\n",
@@ -4315,10 +4315,10 @@
       "link" : "https:\/\/github.com\/DougGregor",
       "name" : "Doug Gregor"
     },
-    "sha" : "b692a50f8f6c797718273079a421538f75548b82",
+    "sha" : "6cda991f13d14af81c018846a20a1e43e630f47a",
     "status" : {
       "state" : ".implemented",
-      "version" : "4"
+      "version" : "4.0"
     },
     "summary" : "Make it possible to have generic subscripts. Example:\n",
     "title" : " Generic Subscripts\n",
@@ -4348,10 +4348,10 @@
       "link" : "https:\/\/github.com\/ddunbar",
       "name" : "Daniel Dunbar"
     },
-    "sha" : "e224afea7b9927eaa054af41fb91b555bf6638b4",
+    "sha" : "8b30f65cde10fed7e52c2093bb144f205af1635b",
     "status" : {
       "state" : ".implemented",
-      "version" : "4"
+      "version" : "4.0"
     },
     "summary" : "This proposal adds enhancements to `swift package edit` to support development\nof packages without strict versioning (\"top of tree\" development).\n",
     "title" : " Package Manager Support for Top of Tree development\n",
@@ -4381,10 +4381,10 @@
       "link" : "https:\/\/github.com\/ddunbar",
       "name" : "Daniel Dunbar"
     },
-    "sha" : "316ae8bddcf655319db3229ef132f66f6ae55004",
+    "sha" : "6fa969c889096cd9e5ad382b20172d69066b10d8",
     "status" : {
       "state" : ".implemented",
-      "version" : "4"
+      "version" : "4.0"
     },
     "summary" : "This proposal adds enhancements to the package manifest to support development\nof packages without strict versioning. This is one of two features, along with\n\"Package Manager Support for Top of Tree development\", being proposed to enable\nuse of SwiftPM to develop on \"top of tree\" of related packages.\n",
     "title" : " Package Manager Support for branches\n",
@@ -4516,10 +4516,10 @@
       "link" : "https:\/\/github.com\/DougGregor",
       "name" : "Doug Gregor"
     },
-    "sha" : "f0dd0d9b95fdd69ff305fbadbf8e5192bc69c1dd",
+    "sha" : "f5ad8d6d71c93b3900d1e9ceafeaf925e8c4bf8d",
     "status" : {
       "state" : ".implemented",
-      "version" : "4"
+      "version" : "4.0"
     },
     "summary" : "This proposal addresses significant unexpected performance gaps when using\ndictionaries. It introduces type-specific collections for a `Dictionary`\ninstance's `keys` and `values` properties.\n",
     "title" : " Provide Custom Collections for Dictionary Keys and Values\n"
@@ -4541,10 +4541,10 @@
       "link" : "https:\/\/github.com\/rjmccall",
       "name" : "John McCall"
     },
-    "sha" : "faf802867a53b32fec7b2a9c1fafbad12831d547",
+    "sha" : "d004bed25ac9114c5f4a91153c5e8c9efa9f221b",
     "status" : {
       "state" : ".implemented",
-      "version" : "3"
+      "version" : "3.0"
     },
     "summary" : "In Swift 3, associated values of an enum case are represented by a tuple. This\nimplementation causes inconsistencies in case declaration, construction and\npattern matching in several places.\n",
     "title" : " Normalize Enum Case Representation\n",
@@ -4598,10 +4598,10 @@
       "link" : "https:\/\/github.com\/DougGregor",
       "name" : "Doug Gregor"
     },
-    "sha" : "e0a66e111747789b48cb9cca0fcee937d0e14fbb",
+    "sha" : "24a705bdc70454cb72ffffb5d6557dfefefa113a",
     "status" : {
       "state" : ".implemented",
-      "version" : "4"
+      "version" : "4.0"
     },
     "summary" : "This proposal brings more expressive power to the type system by allowing Swift\nto represent existentials of classes and subtypes which conform to protocols.\n",
     "title" : " Class and Subtype existentials\n",
@@ -4672,10 +4672,10 @@
       "link" : "https:\/\/github.com\/rballard",
       "name" : "Rick Ballard"
     },
-    "sha" : "0ef23dfd0ab9c19db2943554efafa05a272916fd",
+    "sha" : "dfd15e53475659d19c6f607dc4edaa1d20ba12fe",
     "status" : {
       "state" : ".implemented",
-      "version" : "4"
+      "version" : "4.0"
     },
     "summary" : "This is a proposal for redesigning the `Package.swift` manifest APIs provided by\nSwift Package Manager.  \nThis proposal only redesigns the existing public APIs and does not add any new\nfunctionality; any API to be added for new functionality will happen in separate\nproposals.\n",
     "title" : " Package Manager Manifest API Redesign\n",
@@ -4733,10 +4733,10 @@
       "link" : "https:\/\/github.com\/lattner",
       "name" : "Chris Lattner"
     },
-    "sha" : "7cb90a51c8823a5e2a0e35e76a9740b589d27e09",
+    "sha" : "54683f879f08816f315c08867751a3092aa60949",
     "status" : {
       "state" : ".implemented",
-      "version" : "4"
+      "version" : "4.0"
     },
     "summary" : "One can explicitly write `@objc` on any Swift declaration that can be expressed\nin Objective-C. As a convenience, Swift also *infers* `@objc` in a number of\nplaces to improve interoperability with Objective-C and eliminate boilerplate.\nThis proposal scales back the inference of `@objc` to only those cases where the\ndeclaration *must* be available to Objective-C to maintain semantic coherence of\nthe model, e.g., when overriding an `@objc` method or implementing a requirement\nof an `@objc` protocol. Other cases currently supported (e.g., a method declared\nin a subclass of `NSObject`) would no longer infer `@objc`, but one could\ncontinue to write it explicitly to produce Objective-C entry points.\n",
     "title" : " Limiting @objc inference\n",
@@ -4774,10 +4774,10 @@
       "link" : "https:\/\/github.com\/DougGregor",
       "name" : "Doug Gregor"
     },
-    "sha" : "1a6299ee0f2a617e66727025ff19588cae5d436f",
+    "sha" : "4df7fee45ccb71011a9e62ae88bc6a7ba966c88f",
     "status" : {
       "state" : ".implemented",
-      "version" : "4"
+      "version" : "4.0"
     },
     "summary" : "We propose a family of concrete *Key Path* types that represent uninvoked\nreferences to properties that can be composed to form paths through many values\nand directly get\/set their underlying values.\n",
     "title" : " Smart KeyPaths: Better Key-Value Coding for Swift\n"
@@ -4795,10 +4795,10 @@
       "link" : "https:\/\/github.com\/rballard",
       "name" : "Rick Ballard"
     },
-    "sha" : "f19ee92f50b63df3e29777cbbf0d3ed898101f6e",
+    "sha" : "9cce18f915ddf7060f828f424107476b6d21917e",
     "status" : {
       "state" : ".implemented",
-      "version" : "4"
+      "version" : "4.0"
     },
     "summary" : "This proposal enhances the `Package.swift` manifest APIs to support custom\ntarget layouts, and removes a convention which allowed omission of targets from\nthe manifest.\n",
     "title" : " Package Manager Custom Target Layouts\n",
@@ -4832,10 +4832,10 @@
       "link" : "https:\/\/github.com\/rjmccall",
       "name" : "John McCall"
     },
-    "sha" : "23cff3b3945646ef2ce2a54aae56a73a29e5b08d",
+    "sha" : "885e6407687b8c92f474c0b1a04756bb39f0a4e1",
     "status" : {
       "state" : ".implemented",
-      "version" : "4"
+      "version" : "4.0"
     },
     "summary" : "This proposal is to implement a subset of the changes from the [Swift 4 String\nManifesto](https:\/\/github.com\/apple\/swift\/blob\/master\/docs\/StringManifesto.md).\n",
     "title" : " String Revision: Collection Conformance, C Interop, Transcoding\n"
@@ -4853,10 +4853,10 @@
       "link" : "https:\/\/github.com\/DougGregor",
       "name" : "Doug Gregor"
     },
-    "sha" : "5ae21b0f815900a58d89d6e6f6b6b0d7e4796032",
+    "sha" : "5e807e4bd3fdcccfc768fd6e491510cd349fe8dc",
     "status" : {
       "state" : ".implemented",
-      "version" : "4"
+      "version" : "4.0"
     },
     "summary" : "This proposal disallows the `final` keyword when declaring functions in protocol\nextensions.\n",
     "title" : " Remove final support in protocol extensions\n",
@@ -4886,10 +4886,10 @@
       "link" : "https:\/\/github.com\/airspeedswift",
       "name" : "Ben Cohen"
     },
-    "sha" : "d33a7b192cdcda58e10572e58d8c8735bb6ba426",
+    "sha" : "1b4cc21cec0f02e0cd3479801d88f0fe3b0de0a1",
     "status" : {
       "state" : ".implemented",
-      "version" : "4"
+      "version" : "4.0"
     },
     "summary" : "This proposal comprises a variety of commonly (and less commonly) suggested\nimprovements to the standard library's `Dictionary` type, from merging\ninitializers to dictionary-specific `filter` and `mapValues` methods. The\nproposed additions to `Dictionary`, and the corresponding changes to `Set`, are\ndetailed in the sections below.\n",
     "title" : " Dictionary & Set Enhancements\n"
@@ -4923,10 +4923,10 @@
       "link" : "https:\/\/github.com\/DougGregor",
       "name" : "Doug Gregor"
     },
-    "sha" : "00f5815005c16a1f2590334ed945c125394a3db3",
+    "sha" : "53a9a69229d5f987d32ee5350865565ff2f99f28",
     "status" : {
       "state" : ".implemented",
-      "version" : "4"
+      "version" : "4.0"
     },
     "summary" : "Foundation's current archival and serialization APIs (`NSCoding`,\n`NSJSONSerialization`, `NSPropertyListSerialization`, etc.), while fitting for\nthe dynamism of Objective-C, do not always map optimally into Swift. This\ndocument lays out the design of an updated API that improves the developer\nexperience of performing archival and serialization in Swift.\n",
     "title" : " Swift Archival & Serialization\n"
@@ -4960,10 +4960,10 @@
       "link" : "https:\/\/github.com\/DougGregor",
       "name" : "Doug Gregor"
     },
-    "sha" : "dce5f312e8cba40b036632eb0862a9e52db9cbae",
+    "sha" : "223aa7f3909303bb43cf18c17f6238cbd484cf45",
     "status" : {
       "state" : ".implemented",
-      "version" : "4"
+      "version" : "4.0"
     },
     "summary" : "As part of the proposal for a Swift archival and serialization API\n([SE-0166](0166-swift-archival-serialization.md)), we are also proposing new API\nfor specific new encoders and decoders, as well as introducing support for new\n`Codable` types in `NSKeyedArchiver` and `NSKeyedUnarchiver`.\n",
     "title" : " Swift Encoders\n"
@@ -4997,10 +4997,10 @@
       "link" : "https:\/\/github.com\/jckarter",
       "name" : "Joe Groff"
     },
-    "sha" : "af6b60123972b6cb3510b6b0b67e25e3e4c98717",
+    "sha" : "bf8baa4a2a1dc47aae12d7d4284c0eccc7e71235",
     "status" : {
       "state" : ".implemented",
-      "version" : "4"
+      "version" : "4.0"
     },
     "summary" : "This proposal introduces multi-line string literals to Swift source code. This\nhas been discussed a few times on swift-evolution most recently putting forward\na number of different syntaxes that could achieve this goal each of which has\ntheir own use case and constituency for discussion.\n",
     "title" : " Multi-Line String Literals\n",
@@ -5064,10 +5064,10 @@
       "link" : "https:\/\/github.com\/DougGregor",
       "name" : "Doug Gregor"
     },
-    "sha" : "2705eceb083c07092847be8700c040a790b502ae",
+    "sha" : "88a73860c3c077d6e323f89338483ed47e2ba84a",
     "status" : {
       "state" : ".implemented",
-      "version" : "4"
+      "version" : "4.0"
     },
     "summary" : "In Swift 3, a declaration marked `private` may be accessed by anything nested in\nthe scope of the private declaration. For example, a private property or method\ndefined on a struct may be accessed by other methods defined within that struct.\n",
     "title" : " Improve Interaction Between private Declarations and Extensions\n",
@@ -5097,10 +5097,10 @@
       "link" : "https:\/\/github.com\/airspeedswift",
       "name" : "Ben Cohen"
     },
-    "sha" : "4a426759caa772aecaea58235bc7bfbbde84da66",
+    "sha" : "3dff41e9b77d93ffd8a3330e817fbe630ae3bc9b",
     "status" : {
       "state" : ".implemented",
-      "version" : "4"
+      "version" : "4.0"
     },
     "summary" : "`NSNumber` has been a strange duck in the Swift world especially when it has\ncome to bridging and interacting with other protocols. An attempt was made to\nmake a type preserving `NSNumber` subclass; however that defeated numerous\noptimizations in Foundation and also caused some rather unfortunate disparity\nbetween where and how the NSNumbers were created.\n",
     "title" : " NSNumber bridging and Numeric types\n"
@@ -5118,10 +5118,10 @@
       "link" : "https:\/\/github.com\/airspeedswift",
       "name" : "Ben Cohen"
     },
-    "sha" : "dad7187fa62571b54a758eb7af5b9ed952d418b4",
+    "sha" : "d1ab3d448c42864e55c60a7755952d085daf87ec",
     "status" : {
       "state" : ".implemented",
-      "version" : "4"
+      "version" : "4.0"
     },
     "summary" : "A new variant of `reduce` should be added to the standard library. Instead of\ntaking a `combine` function that is of type `(A, Iterator.Element) -> A`, the\nfull type and implementation of the added `reduce` will be:\n",
     "title" : " Reduce with inout\n"
@@ -5147,10 +5147,10 @@
       "link" : "https:\/\/github.com\/DougGregor",
       "name" : "Doug Gregor"
     },
-    "sha" : "00522d4bfc6cb59ac74dbb379dd8eedf58451fcc",
+    "sha" : "83286f50cd8d9260c8ddd824f8d5f246a2ae04ec",
     "status" : {
       "state" : ".implemented",
-      "version" : "4"
+      "version" : "4.0"
     },
     "summary" : "This proposal introduces the concept of a \"one-sided\" range, created via\nprefix\/postfix versions of the existing range operators.\n",
     "title" : " One-sided Ranges\n"
@@ -5176,10 +5176,10 @@
       "link" : "https:\/\/github.com\/tkremenek",
       "name" : "Ted Kremenek"
     },
-    "sha" : "6c6b6c080a442b62cb6df67ac1928fb7a91384fe",
+    "sha" : "edf2cd57ed2905436138d31d67418878f43725ac",
     "status" : {
       "state" : ".implemented",
-      "version" : "4"
+      "version" : "4.0"
     },
     "summary" : "As part of the introduction of the Law of Exclusivity, the current `swap(_:_:)`\nfunction must be addressed, as this most common uses of `swap` directly violate\nthe law. This proposal introduces an alternative: a method on\n`MutableCollection` that takes two indices for swapping two elements in the same\ncollection.\n",
     "title" : " Add MutableCollection.swapAt(_:_:)\n"
@@ -5230,10 +5230,10 @@
       "link" : "https:\/\/github.com\/aciidb0mb3r",
       "name" : "Ankit Aggarwal"
     },
-    "sha" : "8f236f3606b65627cdf70e1b878247751b4f6590",
+    "sha" : "9f1b53264fd85ffd04859d4a5a827c272bebd400",
     "status" : {
       "state" : ".implemented",
-      "version" : "4"
+      "version" : "4.0"
     },
     "summary" : "This proposal makes the package manager's dependency resolution behavior clearer\nand more intuitive. It removes the pinning commands (`swift package pin` &\n`swift package unpin`), replaces the `swift package fetch` command with a new\n`swift package resolve` command with improved behavior, and replaces the\noptional `Package.pins` file with a `Package.resolved` file which is always\ncreated during dependency resolution.\n",
     "title" : " Package Manager Revised Dependency Resolution\n"
@@ -5251,10 +5251,10 @@
       "link" : "https:\/\/github.com\/airspeedswift",
       "name" : "Ben Cohen"
     },
-    "sha" : "70679c3a1825b3668ae00fa9265f7262d705b842",
+    "sha" : "3a23331c3d8a9815c69b42133946a36b9997032d",
     "status" : {
       "state" : ".implemented",
-      "version" : "4"
+      "version" : "4.0"
     },
     "summary" : "In Swift 3, it is possible to modify a variable while it's being used or\nmodified by another part of the program. This can lead to unexpected and\nconfusing results. It also forces a great deal of conservatism onto the\nimplementation of the compiler and the standard libraries, which must generally\nensure the basic soundness of the program (no crashes or undefined behavior)\neven in unusual circumstances.\n",
     "title" : " Enforce Exclusive Access to Memory\n"
@@ -5300,10 +5300,10 @@
       "link" : "https:\/\/github.com\/tkremenek",
       "name" : "Ted Kremenek"
     },
-    "sha" : "2174ddb2b34e61e7b9b2709b33cb0692d3e30b5c",
+    "sha" : "64264a6e97f8c466e28228a80e1ba6b62b580126",
     "status" : {
       "state" : ".implemented",
-      "version" : "4"
+      "version" : "4.0"
     },
     "summary" : "This proposal adds a `unicodeScalars` view to `Character`, similar to that on\n`String`.\n",
     "title" : " Add unicodeScalars property to Character\n"
@@ -5329,10 +5329,10 @@
       "link" : "https:\/\/github.com\/ddunbar",
       "name" : "Daniel Dunbar"
     },
-    "sha" : "9f50affd697b9086d6f6e67b48163de1732a3fcc",
+    "sha" : "c06189e391be7e1b5e638a9b825f8fb9b73653fd",
     "status" : {
       "state" : ".implemented",
-      "version" : "4"
+      "version" : "4.0"
     },
     "summary" : "The proposal introduces a new `swift run` command to build and run an executable\ndefined in the current package.\n",
     "title" : " Swift run Command\n"
@@ -5358,10 +5358,10 @@
       "link" : "https:\/\/github.com\/tkremenek",
       "name" : "Ted Kremenek"
     },
-    "sha" : "be0025edf0714c0a3c08cb803f6f4efe8d8f673c",
+    "sha" : "26325c9ed8061476d76306631e88999b54f1818a",
     "status" : {
       "state" : ".implemented",
-      "version" : "4"
+      "version" : "4.0"
     },
     "summary" : "Today `String` shares an `Index` type with its `CharacterView` but not with its\n`UTF8View`, `UTF16View`, or `UnicodeScalarView`. This proposal redefines\n`String.UTF8View.Index`, `String.UTF16View.Index`, and\n`String.CharacterView.Index` as typealiases for `String.Index`, and exposes a\npublic `encodedOffset` property and initializer that can be used to serialize\nand deserialize positions in a `String` or `Substring`.\n",
     "title" : " String Index Overhaul\n"
@@ -5387,10 +5387,10 @@
       "link" : "https:\/\/github.com\/ddunbar",
       "name" : "Daniel Dunbar"
     },
-    "sha" : "2c1bf3a9ffb596a1d91277631240848859184eb9",
+    "sha" : "5fd52c8f02a4af59b04af43df51f7282327abfcd",
     "status" : {
       "state" : ".implemented",
-      "version" : "4"
+      "version" : "4.0"
     },
     "summary" : "This proposal adds support for declaring the language standard for C and C++\ntargets in a SwiftPM package.\n",
     "title" : " Package Manager C\/C++ Language Standard Support\n"
@@ -5424,10 +5424,10 @@
       "link" : "https:\/\/github.com\/lattner",
       "name" : "Chris Lattner"
     },
-    "sha" : "285999e649590c84075e82d148f6fb32a312dc9d",
+    "sha" : "6f3cfb9fc952c1bdf7188cdb4b656840dacf13cc",
     "status" : {
       "state" : ".implemented",
-      "version" : "4"
+      "version" : "4.0"
     },
     "summary" : "This proposal is a refinement of [SE-0168](0168-multi-line-string-literals.md)\nwhich introduces the ability to escape newlines in single and multi-line strings\nto improve readability and maintenance of source material containing excessively\nlong lines.\n",
     "title" : " String Newline Escaping\n"
@@ -5445,10 +5445,10 @@
       "link" : "https:\/\/github.com\/lattner",
       "name" : "Chris Lattner"
     },
-    "sha" : "521a82f3ae2e4d540bd15a91f519182b108a1b24",
+    "sha" : "854ec865ef5f40048e7719f4e7e586098f6f5f71",
     "status" : {
       "state" : ".implemented",
-      "version" : "4"
+      "version" : "4.0"
     },
     "summary" : "This proposal modifies a small number of methods in the standard library that\nare commonly used with the `Substring` type:\n",
     "title" : " Substring performance affordances\n",
@@ -5734,10 +5734,10 @@
       "link" : "https:\/\/github.com\/tkremenek",
       "name" : "Ted Kremenek"
     },
-    "sha" : "e9ba9a042ca668f65fa3b104f65cd7a48f7bf4ff",
+    "sha" : "e14acb3eb47bca3d432967e7cd4a3ec6d73160ba",
     "status" : {
       "state" : ".implemented",
-      "version" : "5"
+      "version" : "5.0"
     },
     "summary" : "Currently, adding a new case to an enum is a source-breaking change, something\nthat's at odds with Apple's established process for evolving APIs. This proposal\naims to distinguish between enums that are *frozen* (meaning they will never get\nany new cases) and those that are *non-frozen,* and to ensure that clients\nhandle any future cases when dealing with the latter.\n",
     "title" : " Handling Future Enum Cases\n"
@@ -5973,7 +5973,7 @@
   {
     "authors" : [
       {
-        "link" : "http:\/\/chris.eidhof.nl",
+        "link" : "https:\/\/github.com\/chriseidhof",
         "name" : "Chris Eidhof"
       }
     ],
@@ -5991,7 +5991,7 @@
       "link" : "https:\/\/github.com\/airspeedswift\/",
       "name" : "Ben Cohen"
     },
-    "sha" : "819153e336302c5c36db6d4141d15f532c84b6f4",
+    "sha" : "b9a4c223846fc8092ef8aeaf46cb1a5e6f356880",
     "status" : {
       "state" : ".implemented",
       "version" : "4.2"
@@ -6028,10 +6028,10 @@
       "link" : "https:\/\/github.com\/DougGregor",
       "name" : "Doug Gregor"
     },
-    "sha" : "1032224a4ebbdc04635150534fc16f283bcfb903",
+    "sha" : "1c4d4b574571b43cde72caa91cbf3af2f5fb02f2",
     "status" : {
       "state" : ".implemented",
-      "version" : "5"
+      "version" : "5.0"
     },
     "summary" : "Like many computer languages, Swift uses an escape character (`\\`) to create a\nspecial interpretation of subsequent characters within a string literal. Escape\ncharacter sequences represent a set of predefined, non-printing characters as\nwell as string delimiters (the double quote), the escape character (the\nbackslash itself), and (uniquely in Swift) to allow in-string expression\ninterpolation.\n",
     "title" : " Enhancing String Literals Delimiters to Support Raw Text\n",
@@ -6438,10 +6438,10 @@
       "link" : "https:\/\/github.com\/airspeedswift",
       "name" : "Ben Cohen"
     },
-    "sha" : "8b445efa0d1835bc9eb3d8607ed6001a5d8de1be",
+    "sha" : "7ecd637a2831d6f8c3d0c028fd79ff6b4538bf60",
     "status" : {
       "state" : ".implemented",
-      "version" : "5"
+      "version" : "5.0"
     },
     "summary" : "We propose adding a number of properties to the `Unicode.Scalar` type to support\nboth common and advanced text processing use cases, filling in a number of gaps\nin Swift's text support compared to other programming languages.\n",
     "title" : " Add Unicode Properties to Unicode.Scalar\n"
@@ -6496,10 +6496,10 @@
       "link" : "https:\/\/github.com\/rjmccall",
       "name" : "John McCall"
     },
-    "sha" : "d8d086dad64e9139c7e1c8ab07ebc21a66af4809",
+    "sha" : "9fe4ecbd980387bca929acf63ca00bef5305b17d",
     "status" : {
       "state" : ".implemented",
-      "version" : "5"
+      "version" : "5.0"
     },
     "summary" : "`T(literal)` should construct T using the appropriate literal protocol if\npossible.\n",
     "title" : " Literal initialization via coercion\n"
@@ -6529,10 +6529,10 @@
       "link" : "https:\/\/github.com\/lattner",
       "name" : "Chris Lattner"
     },
-    "sha" : "00751f010a3764f5a838fd4a02ee82e0858df1cb",
+    "sha" : "763158624275e36e34bb5b727bddfd0bf7cd05ea",
     "status" : {
       "state" : ".implemented",
-      "version" : "5"
+      "version" : "5.0"
     },
     "summary" : "This proposal renames the confusing and misnamed\n[`DictionaryLiteral`](https:\/\/github.com\/apple\/swift\/blob\/c25188bafd1c775d4ceecc4a795f614f00451bf9\/stdlib\/public\/core\/Mirror.swift#L646)\ntype to `KeyValuePairs`. This type is neither a dictionary nor a literal. It is\na list of key-value pairs.\n",
     "title" : " Renaming the DictionaryLiteral type to KeyValuePairs\n"
@@ -6558,10 +6558,10 @@
       "link" : "https:\/\/github.com\/tkremenek",
       "name" : "Ted Kremenek"
     },
-    "sha" : "089b7c63df1065bd7a6cd946ddeb45eb1b87eb32",
+    "sha" : "43828f15ba40eb2b7df60ee1e4308e92b3dd0214",
     "status" : {
       "state" : ".implemented",
-      "version" : "5"
+      "version" : "5.0"
     },
     "summary" : "Extend `Never` so it conforms to `Equatable` and `Hashable`.\n",
     "title" : " Conform Never to Equatable and Hashable\n"
@@ -6591,10 +6591,10 @@
       "link" : "https:\/\/github.com\/rjmccall",
       "name" : "John McCall"
     },
-    "sha" : "bde60e1bbbf47be27f5b38698d2018cc9c368213",
+    "sha" : "4c94f6ee45b26ffcf676776848e0167c56221de1",
     "status" : {
       "state" : ".implemented",
-      "version" : "5"
+      "version" : "5.0"
     },
     "summary" : "This proposal is a follow-up to [SE-0195 - Introduce User-defined \"Dynamic\nMember Lookup\"\nTypes](https:\/\/github.com\/apple\/swift-evolution\/blob\/master\/proposals\/0195-dynamic-member-lookup.md),\nwhich shipped in Swift 4.2. It introduces a new `@dynamicCallable` attribute,\nwhich marks a type as being \"callable\" with normal syntax. It is simple\nsyntactic sugar which allows the user to write:\n",
     "title" : " Introduce user-defined dynamically \"callable\" types\n"
@@ -6656,10 +6656,10 @@
       "link" : "https:\/\/github.com\/airspeedswift",
       "name" : "Ben Cohen"
     },
-    "sha" : "b5b97fe62e74bdf8d28cee0ac198b5f03e3dccca",
+    "sha" : "f47cf887a148c39f247dfd028d9dafb03d560ce6",
     "status" : {
       "state" : ".implemented",
-      "version" : "5"
+      "version" : "5.0"
     },
     "summary" : "This proposal adds a combined filter\/map operation to `Dictionary`, as a\ncompanion to the `mapValues` and filter methods introduced by\n[SE-0165](https:\/\/github.com\/apple\/swift-evolution\/blob\/master\/proposals\/0165-dict.md).\nThe new compactMapValues operation corresponds to compactMap on Sequence.\n",
     "title" : " Introduce compactMapValues to Dictionary\n"
@@ -6685,10 +6685,10 @@
       "link" : "https:\/\/github.com\/neonichu",
       "name" : "Boris Bügling"
     },
-    "sha" : "21cd61f6c6cb6a29fcd165a07a4330467efc1066",
+    "sha" : "ecf960870f6bc7c6558bf302bacb33dbfaedbefa",
     "status" : {
       "state" : ".implemented",
-      "version" : "5"
+      "version" : "5.0"
     },
     "summary" : "A dependency mirror refers to an alternate source location which exactly\nreplicates the contents of the original source. This is a proposal for adding\nsupport for dependency mirroring in SwiftPM.\n",
     "title" : " Package Manager Dependency Mirroring\n",
@@ -6764,10 +6764,10 @@
       "link" : "https:\/\/github.com\/airspeedswift",
       "name" : "Ben Cohen"
     },
-    "sha" : "95ff344375154b46df7b3c088d32c5ec229828ba",
+    "sha" : "507f7fd9d52050102b85a25e06dbcfe5484b325f",
     "status" : {
       "state" : ".implemented",
-      "version" : "5"
+      "version" : "5.0"
     },
     "summary" : "@allevato (a co-author here) proposed [Add Unicode Properties to\nUnicode.Scalar](https:\/\/github.com\/apple\/swift-evolution\/blob\/master\/proposals\/0211-unicode-scalar-properties.md),\nwhich exposes Unicode properties from the [Unicode Character\nDatabase](http:\/\/unicode.org\/reports\/tr44\/). These are Unicode expert\/enthusiast\noriented properties that give a finer granularity of control and answer\nhighly-technical and specific Unicody enquiries.\n",
     "title" : " Character Properties\n"
@@ -6871,10 +6871,10 @@
       "link" : "https:\/\/github.com\/tkremenek",
       "name" : "Ted Kremenek"
     },
-    "sha" : "02053e5e134b2a5cdba9d0823e63cd5f4eabfdaa",
+    "sha" : "3c997ee9c4aa95706d01b6a2845070815f2491e8",
     "status" : {
       "state" : ".implemented",
-      "version" : "5"
+      "version" : "5.0"
     },
     "summary" : "This proposal augments the functionality implemented for proposal\n[SE-0020](https:\/\/github.com\/apple\/swift-evolution\/blob\/master\/proposals\/0020-if-swift-version.md)\nwith the introduction of a new valid operator in compilation condition: \"\\<\".\nThe aim is that the syntax `#if swift(<4.2)` is supported by the language.\n",
     "title" : " Support 'less than' operator in compilation conditions\n",
@@ -6908,10 +6908,10 @@
       "link" : "https:\/\/github.com\/rjmccall",
       "name" : "John McCall"
     },
-    "sha" : "422df64a24e80ba510d37f37ce4a61fddce71aa5",
+    "sha" : "cdcb90b7e1bda68488fce36ef86b9161a67c93de",
     "status" : {
       "state" : ".implemented",
-      "version" : "5"
+      "version" : "5.0"
     },
     "summary" : "This proposal adds `var isEven: Bool`, `var isOdd: Bool`, and `func\nisMultiple(of other: Self) -> Bool` to the `BinaryInteger` protocol. `isEven`\nand `isOdd` are convenience properties for querying the\n[parity](https:\/\/en.wikipedia.org\/wiki\/Parity_\\(mathematics\\)) of the integer\nand `isMultiple` is a more general function to determine whether an integer is a\nmultiple of another integer.\n",
     "title" : " Adding isMultiple to BinaryInteger\n"
@@ -6976,10 +6976,10 @@
       "link" : "https:\/\/github.com\/airspeedswift",
       "name" : "Ben Cohen"
     },
-    "sha" : "b3fb12a2ed750bdbebbddbad8b1304025e07e3d8",
+    "sha" : "1151ae35ab558b9d068de621409e3a4d4e5b88c7",
     "status" : {
       "state" : ".implemented",
-      "version" : "5"
+      "version" : "5.0"
     },
     "summary" : "Add the ability to reference the identity key path, which refers to the entire\ninput value it is applied to.\n",
     "title" : " Identity key path\n"
@@ -7009,10 +7009,10 @@
       "link" : "https:\/\/github.com\/DougGregor",
       "name" : "Doug Gregor"
     },
-    "sha" : "3fa6e757aa7a5d7225e925cbae657b2e51d82317",
+    "sha" : "2acc16717bd0e07fe5dba528294414f31db2f4a8",
     "status" : {
       "state" : ".implemented",
-      "version" : "5"
+      "version" : "5.0"
     },
     "summary" : "String interpolation is a simple and powerful feature for expressing complex,\nruntime-created strings, but the current version of the\n`ExpressibleByStringInterpolation` protocol has been deprecated since Swift 3.\nWe propose a new design that improves its performance, clarity, and efficiency.\n",
     "title" : " Fix ExpressibleByStringInterpolation\n"
@@ -7038,10 +7038,10 @@
       "link" : "https:\/\/github.com\/airspeedswift",
       "name" : "Ben Cohen"
     },
-    "sha" : "ad8de6fc8aee20c04f5a8938454f675690d183d8",
+    "sha" : "b6e05bfe0ccc45c795b07dea24e19f981c1c6269",
     "status" : {
       "state" : ".implemented",
-      "version" : "5"
+      "version" : "5.0"
     },
     "summary" : "This proposal would expose a common subset of operations on the SIMD types\nsupported by most processors in the standard library. It is based on Apple's\n\\<simd\/simd.h\\> module, which is used throughout Apple's platforms as the common\ncurrency type for fixed-size vectors and matrices. It is not a complete\nre-implementation; rather it provides the low-level support needed to import any\nsuch library, and tries to make a number of things much nicer in Swift than they\nare in C or C++.\n",
     "title" : " SIMD Vectors\n"
@@ -7067,10 +7067,10 @@
       "link" : "https:\/\/github.com\/rjmccall",
       "name" : "John McCall"
     },
-    "sha" : "80be7e5aed0548ab7a906d608bd57611f59dbfc4",
+    "sha" : "62d9faef581bfe9b73094211e0e4dbb401a6cb47",
     "status" : {
       "state" : ".implemented",
-      "version" : "5"
+      "version" : "5.0"
     },
     "summary" : "Swift's `try?` statement currently makes it easy to introduce a nested optional.\nNested optionals are difficult for users to reason about, and Swift tries to\navoid producing them in other common cases.\n",
     "title" : " Flatten nested optionals resulting from 'try?'\n"
@@ -7124,10 +7124,10 @@
       "link" : "https:\/\/github.com\/tkremenek",
       "name" : "Ted Kremenek"
     },
-    "sha" : "a4690680c5d940862102405bfd2f80af12d7453a",
+    "sha" : "a9fc872825c7a375d48cedd7ac2a039c19beec74",
     "status" : {
       "state" : ".implemented",
-      "version" : "5"
+      "version" : "5.0"
     },
     "summary" : "This proposal removes four customization points from protocols in the standard\nlibrary:\n",
     "title" : " Remove Some Customization Points from the Standard Library's Collection Hierarchy\n"
@@ -7153,10 +7153,10 @@
       "link" : "https:\/\/github.com\/lattner",
       "name" : "Chris Lattner"
     },
-    "sha" : "9cb6bcbbff868be7ff9e81bf6c8a77fea91a094d",
+    "sha" : "dca603f18c254f146ce1b7adc7dff1ac70ba2f03",
     "status" : {
       "state" : ".implemented",
-      "version" : "5"
+      "version" : "5.0"
     },
     "summary" : "This proposal introduces a weakening of the existing `Numeric` protocol named\n`AdditiveArithmetic` , which defines additive arithmetic operators and a zero,\nmaking conforming types roughly correspond to the mathematic notion of an\n[additive group](https:\/\/en.wikipedia.org\/wiki\/Additive_group). This makes it\npossible for vector types to share additive arithmetic operators with scalar\ntypes, which enables generic algorithms over `AdditiveArithmetic` to apply to\nboth scalars and vectors.\n",
     "title" : " Make  Numeric  Refine a new  AdditiveArithmetic  Protocol\n"
@@ -7182,10 +7182,10 @@
       "link" : "https:\/\/github.com\/rjmccall",
       "name" : "John McCall"
     },
-    "sha" : "f72379748f02914b397f0025fd7ad505cb68d409",
+    "sha" : "e9d85a165868c10d43f0a1eece623eb52affab5b",
     "status" : {
       "state" : ".implemented",
-      "version" : "5"
+      "version" : "5.0"
     },
     "summary" : "This proposal recommends eliminating the associated type from `Sequence`, moving\nit up to start at `Collection`. Current customization points on `Sequence`\nreturning a `SubSequence` will be amended to be extensions returning concrete\ntypes.\n",
     "title" : " Remove Sequence.SubSequence\n"
@@ -7223,10 +7223,10 @@
       "link" : "https:\/\/github.com\/lattner",
       "name" : "Chris Lattner"
     },
-    "sha" : "970e0b724422341174b017c4e2e054e758f24f92",
+    "sha" : "d7e7f7d7331a9ab825684a8b78b01fd6cb36af94",
     "status" : {
       "state" : ".implemented",
-      "version" : "5"
+      "version" : "5.0"
     },
     "summary" : "Swift's current error-handling, using `throws`, `try`, and `catch`, offers\nautomatic and synchronous handling of errors through explicit syntax and runtime\nbehavior. However, it lacks the flexibility needed to cover all error\npropagation and handling in the language. `Result` is a type commonly used for\nmanual propagation and handling of errors in other languages and within the\nSwift community. Therefore this proposal seeks to add such a type to the Swift\nstandard library.\n",
     "title" : " Add Result to the Standard Library\n"
@@ -7244,10 +7244,10 @@
       "link" : "https:\/\/github.com\/neonichu",
       "name" : "Boris Bügling"
     },
-    "sha" : "d960b744e8dbf72acf4716616995c988cbae8bdf",
+    "sha" : "1975c500f0f83aeccde52d2d487945b634ffaf13",
     "status" : {
       "state" : ".implemented",
-      "version" : "5"
+      "version" : "5.0"
     },
     "summary" : "This is a proposal for adding support for specifying a per-platform minimum\nrequired deployment target in the `Package.swift` manifest file.\n",
     "title" : " Package Manager Platform Deployment Settings\n"
@@ -7273,10 +7273,10 @@
       "link" : "https:\/\/github.com\/DougGregor",
       "name" : "Doug Gregor"
     },
-    "sha" : "907fefbb7065394cf063473389fffac82200f8ef",
+    "sha" : "f8877796f8753084d8e1b2a11b0a280e936441e1",
     "status" : {
       "state" : ".implemented",
-      "version" : "5"
+      "version" : "5.0"
     },
     "summary" : "This proposal introduces two new methods, on `Sequence` and `MutableCollection`.\nThese methods will allow generic code to make use of the\n`withUnsafe{Mutable}BufferPointer` idiom, as well as provide fast paths in the\nstandard library for adopting types.\n",
     "title" : " Introduce withContiguous{Mutable}StorageIfAvailable methods\n"
@@ -7294,10 +7294,10 @@
       "link" : "https:\/\/github.com\/neonichu",
       "name" : "Boris Bügling"
     },
-    "sha" : "a739eb65a88f7cbbba7efd3dba0d6402e0d49d20",
+    "sha" : "7c9b3c5ebdf0b7be73ebf827489b066d1f3ff591",
     "status" : {
       "state" : ".implemented",
-      "version" : "5"
+      "version" : "5.0"
     },
     "summary" : "This is a proposal for adding support for declaring some commonly used\ntarget-specific build settings in the `Package.swift` manifest file. As the name\nsuggests, target-specific build settings are only applied to a particular\ntarget. SwiftPM also aims to support cross-target build settings that go across\nthe target boundary and impart certain settings on a target's dependees, but\nthis proposal is only concerned with the former type of build settings and the\nlatter will be explored with a future proposal.\n",
     "title" : " Package Manager Target Specific Build Settings\n"
@@ -7337,10 +7337,10 @@
       "link" : "https:\/\/github.com\/tkremenek",
       "name" : "Ted Kremenek"
     },
-    "sha" : "db707108b8497a208a6e4becc5e8dafee9650f21",
+    "sha" : "2acdb63d64f9d9b727a1c0971a72fb895ea151cb",
     "status" : {
       "state" : ".implemented",
-      "version" : "5"
+      "version" : "5.0"
     },
     "summary" : "[SE-0167](0167-swift-encoders.md) introduced `Codable` conformance for some\ntypes in the standard library, but not the `Range` family of types. This\nproposal adds that conformance.\n",
     "title" : " Add Codable conformance to Range types\n"
@@ -7399,10 +7399,10 @@
       "link" : "https:\/\/github.com\/rjmccall",
       "name" : "John McCall"
     },
-    "sha" : "e1ceb3a54cf148274da7fee0742d485073b46c57",
+    "sha" : "aaa5e3486b0564c17dd5a1fe84d3ef1bdcf308c2",
     "status" : {
       "state" : ".implemented",
-      "version" : "5"
+      "version" : "5.0"
     },
     "summary" : "[SE-0180](https:\/\/github.com\/apple\/swift-evolution\/blob\/master\/proposals\/0180-string-index-overhaul.md)\nintroduced a computed variable and initializer surrounding the concept of an\n`encodedOffset` for serialization purposes. Unfortunately, that approach is\nflawed for its intended purpose and is commonly misused in ways that Swift 5 is\n[more likely to expose](https:\/\/bugs.swift.org\/browse\/SR-9749). It is too late\nin the Swift 5.0 release to solve all existing problems, so we propose\ndeprecating `encodedOffset` and introducing a targeted, semantics-preserving\nalternative.\n",
     "title" : " Deprecate String Index Encoded Offsets\n"
@@ -8186,7 +8186,7 @@
   {
     "authors" : [
       {
-        "link" : "https:\/\/forums.swift.org\/u\/taylorswift",
+        "link" : "https:\/\/github.com\/tayloraswift",
         "name" : "Dianna Ma (taylorswift)"
       }
     ],
@@ -8204,7 +8204,7 @@
       "link" : "https:\/\/github.com\/airspeedswift",
       "name" : "Ben Cohen"
     },
-    "sha" : "ef075cb97b6b0755be1d2ef4eef293e952e2b8bd",
+    "sha" : "b4de6b3cdd6af2ccfd980d200731fae8fb292ac6",
     "status" : {
       "state" : ".implemented",
       "version" : "5.3"
@@ -10715,12 +10715,20 @@
       }
     ],
     "id" : "SE-0342",
+    "implementation" : [
+      {
+        "account" : "apple",
+        "id" : "3905",
+        "repository" : "swift-package-manager",
+        "type" : "pull"
+      }
+    ],
     "link" : "0342-static-link-runtime-libraries-by-default-on-supported-platforms.md",
     "reviewManager" : {
       "link" : "https:\/\/github.com\/tkremenek",
       "name" : "Ted Kremenek"
     },
-    "sha" : "c532b0179c73a3d09c20809ff138cc10e1fe304d",
+    "sha" : "c8ade71a5f0ba955a1b4eb5e727829e90d9b462b",
     "status" : {
       "state" : ".accepted"
     },
@@ -11913,12 +11921,20 @@
       }
     ],
     "id" : "SE-0381",
+    "implementation" : [
+      {
+        "account" : "apple",
+        "id" : "62361",
+        "repository" : "swift",
+        "type" : "pull"
+      }
+    ],
     "link" : "0381-task-group-discard-results.md",
     "reviewManager" : {
       "link" : "https:\/\/github.com\/DougGregor",
       "name" : "Doug Gregor"
     },
-    "sha" : "7c4a2c0d3b1a0daf972d87995abfdeb4b94753ca",
+    "sha" : "726f6b303bd2f01a9111027e2aa0eb3119f69472",
     "status" : {
       "state" : ".implemented",
       "version" : "5.9"
@@ -11968,7 +11984,7 @@
       "link" : "https:\/\/github.com\/rjmccall",
       "name" : "John McCall"
     },
-    "sha" : "d3fb74e5ca400a849a77548bfd84831656ac96fb",
+    "sha" : "5461750ea04ab290dbf5277a50cd7d58fd4ba849",
     "status" : {
       "state" : ".implemented",
       "version" : "5.10"
@@ -11984,12 +12000,20 @@
       }
     ],
     "id" : "SE-0384",
+    "implementation" : [
+      {
+        "account" : "apple",
+        "id" : "61606",
+        "repository" : "swift",
+        "type" : "pull"
+      }
+    ],
     "link" : "0384-importing-forward-declared-objc-interfaces-and-protocols.md",
     "reviewManager" : {
       "link" : "https:\/\/github.com\/allevato",
       "name" : "Tony Allevato"
     },
-    "sha" : "9669e7d0199123f475acd5e0dfada1287e568181",
+    "sha" : "6718630157e51125ed0b2f1dde73ba00d93ad1c7",
     "status" : {
       "state" : ".implemented",
       "version" : "5.9"
@@ -12817,12 +12841,20 @@
       }
     ],
     "id" : "SE-0410",
+    "implementation" : [
+      {
+        "account" : "apple",
+        "id" : "68857",
+        "repository" : "swift",
+        "type" : "pull"
+      }
+    ],
     "link" : "0410-atomics.md",
     "reviewManager" : {
       "link" : "https:\/\/github.com\/jckarter",
       "name" : "Joe Groff"
     },
-    "sha" : "7a3f5dca0bf5e0626e9c119a941fe1dc1a39d5f0",
+    "sha" : "38b8c99ce8c4a2fda498199bf75e38d1e16088c6",
     "status" : {
       "state" : ".implemented",
       "version" : "6.0"
@@ -13009,9 +13041,10 @@
       "link" : "https:\/\/github.com\/rjmccall",
       "name" : "John McCall"
     },
-    "sha" : "bf28446a715705bde596af77de99a2efc8de4183",
+    "sha" : "0d975319beed71b07e155d0cabf81d6d7caca37d",
     "status" : {
-      "state" : ".accepted"
+      "state" : ".implemented",
+      "version" : "6.0"
     },
     "summary" : "Today, keypath literals can only be narrowly converted to a function which\nexactly matches the argument and return type. This proposal allows key path\nliterals to partake in the full generality of the conversions we allow between\narbitrary function types, so that the following code compiles without error:\n",
     "title" : " Subtyping for keypath literals as functions\n"
@@ -13108,21 +13141,12 @@
       "link" : "https:\/\/github.com\/stephentyrone",
       "name" : "Steve Canon"
     },
-    "sha" : "5c4f7aea4e580b04dce11bb4a2686f1641f61cfe",
+    "sha" : "a458d6f3537f4514a545ca6f484dae30902537e6",
     "status" : {
-      "end" : "2024-02-06",
-      "start" : "2024-01-23",
-      "state" : ".activeReview"
+      "state" : ".accepted"
     },
     "summary" : "This year we are improving the usability of Swift for command line and\nserver-side development by adding first-class support for backtraces to Swift.\n",
-    "title" : " Swift Backtrace API\n",
-    "warnings" : [
-      {
-        "kind" : "warning",
-        "message" : "Review ended on 2024-02-06 08:00:00 +0000.",
-        "stage" : "validate"
-      }
-    ]
+    "title" : " Swift Backtrace API\n"
   },
   {
     "authors" : [
@@ -13140,12 +13164,26 @@
       }
     ],
     "id" : "SE-0420",
+    "implementation" : [
+      {
+        "account" : "apple",
+        "id" : "70758",
+        "repository" : "swift",
+        "type" : "pull"
+      },
+      {
+        "account" : "apple",
+        "id" : "70902",
+        "repository" : "swift",
+        "type" : "pull"
+      }
+    ],
     "link" : "0420-inheritance-of-actor-isolation.md",
     "reviewManager" : {
       "link" : "https:\/\/github.com\/xwu",
       "name" : "Xiaodi Wu"
     },
-    "sha" : "d08f15153fac22880b2ef64cec2b7f4c84dcc26b",
+    "sha" : "a34c0f1cd2e878d544c16c7322873718b141db7f",
     "status" : {
       "state" : ".implemented",
       "version" : "6.0"
@@ -13170,7 +13208,7 @@
       "link" : "https:\/\/github.com\/Jumhyn",
       "name" : "Freddy Kellison-Linn"
     },
-    "sha" : "31c20d8eff260df8b55c78e0e092ac09433503c7",
+    "sha" : "94717d569e8d304ac2cda137ddbf7ea584665fc6",
     "status" : {
       "state" : ".implemented",
       "version" : "6.0"
@@ -13206,5 +13244,117 @@
     },
     "summary" : "This proposal aims to lift the restriction afore set in [SE-0382 \"Expression\nmacros\"](https:\/\/github.com\/apple\/swift-evolution\/blob\/main\/proposals\/0382-expression-macros.md)\nto allow non-built-in expression macros as caller-side default argument\nexpressions.\n",
     "title" : " Expression macro as caller-side default argument\n"
+  },
+  {
+    "authors" : [
+      {
+        "link" : "https:\/\/github.com\/hborla",
+        "name" : "Holly Borla"
+      },
+      {
+        "link" : "https:\/\/github.com\/xedin",
+        "name" : "Pavel Yaskevich"
+      }
+    ],
+    "id" : "SE-0423",
+    "implementation" : [
+      {
+        "account" : "apple",
+        "id" : "70867",
+        "repository" : "swift",
+        "type" : "pull"
+      },
+      {
+        "account" : "apple",
+        "id" : "71261",
+        "repository" : "swift",
+        "type" : "pull"
+      },
+      {
+        "account" : "apple",
+        "id" : "2419",
+        "repository" : "swift-syntax",
+        "type" : "pull"
+      }
+    ],
+    "link" : "0423-dynamic-actor-isolation.md",
+    "reviewManager" : {
+      "link" : "https:\/\/github.com\/airspeedswift",
+      "name" : "Ben Cohen"
+    },
+    "sha" : "f6cbf7729df7b0c5ce090801e9e60fd05f9df5ac",
+    "status" : {
+      "end" : "2024-03-01",
+      "start" : "2024-02-20",
+      "state" : ".activeReview"
+    },
+    "summary" : "Many Swift programs need to interoperate with frameworks written in\nC\/C++\/Objective-C whose implementations cannot participate in static data race\nsafety. Similarly, many Swift programs have dependencies that have not yet\nadopted strict concurrency checking. A `@preconcurrency import` statement\ndowngrades concurrency-related error messages that the programmer cannot resolve\nbecause the fundamental issue is in one of the dependencies. To strengthen\nSwift's data-race safety guarantees while working with preconcurrency\ndependencies, this proposals adds actor isolation checking at runtime for\nsynchronous isolated functions.\n",
+    "title" : " Dynamic actor isolation enforcement from non-strict-concurrency contexts\n",
+    "warnings" : [
+      {
+        "kind" : "warning",
+        "message" : "Review ended on 2024-03-01 08:00:00 +0000.",
+        "stage" : "validate"
+      }
+    ]
+  },
+  {
+    "authors" : [
+      {
+        "link" : "https:\/\/github.com\/ktoso",
+        "name" : "Konrad 'ktoso' Malawski"
+      }
+    ],
+    "id" : "SE-0424",
+    "implementation" : [
+      {
+        "account" : "apple",
+        "id" : "71172",
+        "repository" : "swift",
+        "type" : "pull"
+      }
+    ],
+    "link" : "0424-custom-isolation-checking-for-serialexecutor.md",
+    "reviewManager" : {
+      "link" : "https:\/\/github.com\/rjmccall",
+      "name" : "John McCall"
+    },
+    "sha" : "746d920522806dba3e730878d7a7964163d7170d",
+    "status" : {
+      "end" : "2024-03-04",
+      "start" : "2024-02-22",
+      "state" : ".activeReview"
+    },
+    "summary" : "[SE-0392 (Custom Actor\nExecutors)](https:\/\/github.com\/apple\/swift-evolution\/blob\/main\/proposals\/0392-custom-actor-executors.md)\nadded support for custom actor executors, but its support is incomplete. Safety\nchecks like\n[`Actor.assumeIsolated`](https:\/\/developer.apple.com\/documentation\/swift\/actor\/assumeisolated\\(_:file:line:\\))\nwork correctly when code is running on the actor through a task, but they don't\nwork when code is scheduled to run on the actor's executor through some other\nmechanism. For example, if an actor uses a serial `DispatchQueue` as its\nexecutor, a function dispatched *directly* to the queue with DispatchQueue.async\ncannot use `assumeIsolated` to assert that the actor is currently isolated. This\nproposal fixes this by allowing custom actor executors to provide their own\nlogic for these safety checks.\n",
+    "title" : " Custom isolation checking for SerialExecutor\n",
+    "warnings" : [
+      {
+        "kind" : "warning",
+        "message" : "Review ended on 2024-03-04 00:00:00 +0000.",
+        "stage" : "validate"
+      }
+    ]
+  },
+  {
+    "authors" : [
+      {
+        "link" : "https:\/\/github.com\/stephentyrone",
+        "name" : "Stephen Canon"
+      }
+    ],
+    "id" : "SE-0425",
+    "link" : "0425-int128.md",
+    "reviewManager" : {
+      "link" : "https:\/\/github.com\/DougGregor",
+      "name" : "Doug Gregor"
+    },
+    "sha" : "2ba45cd4119f38be490de7bbc24a210ac764cee8",
+    "status" : {
+      "end" : "2024-03-19",
+      "start" : "2024-03-05",
+      "state" : ".activeReview"
+    },
+    "summary" : "",
+    "title" : " 128-bit Integer Types\n"
   }
 ]

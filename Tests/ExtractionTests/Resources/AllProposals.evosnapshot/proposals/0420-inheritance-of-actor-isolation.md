@@ -4,7 +4,7 @@
 * Authors: [John McCall](https://github.com/rjmccall), [Holly Borla](https://github.com/hborla), [Doug Gregor](https://github.com/douggregor)
 * Review Manager: [Xiaodi Wu](https://github.com/xwu)
 * Status: **Implemented (Swift 6.0)**
-* Implementation: https://github.com/apple/swift/pull/70758, https://github.com/apple/swift/pull/70902
+* Implementation: [apple/swift#70758](https://github.com/apple/swift/pull/70758), [apple/swift#70902](https://github.com/apple/swift/pull/70902)
 * Review: ([pitch](https://forums.swift.org/t/pitch-inheriting-the-callers-actor-isolation/68391)) ([review](https://forums.swift.org/t/se-0420-inheritance-of-actor-isolation/69638)) ([acceptance](https://forums.swift.org/t/accepted-se-0420-inheritance-of-actor-isolation/69913))
 
 [SE-0302]: https://github.com/apple/swift-evolution/blob/main/proposals/0302-concurrent-value-and-concurrent-closures.md
@@ -116,7 +116,7 @@ it can be passed an arbitrary function and work with arbitrary types.
 But if it's called from an *isolated* asynchronous function, Swift will
 treat the call as crossing an isolation barrier and enforce three restrictions:
 
-- First, the result of the call must be `Sendbale`. This restriction prevents
+- First, the result of the call must be `Sendable`. This restriction prevents
   `next()` from being used from an actor to produce non-`Sendable` element
   values.
 
@@ -250,7 +250,7 @@ extension DistributedActor {
   /// as only a local distributed actor can be isolated on and may be automatically
   /// erased to such `any Actor` when calling methods implicitly accepting the
   /// caller's actor isolation, e.g. by using the `#isolation` macro.
-  @backDeployed(before: SwiftStdlib 5.11)
+  @backDeployed(before: SwiftStdlib 6.0)
   public var asLocalActor: any Actor {
 }
 ```
