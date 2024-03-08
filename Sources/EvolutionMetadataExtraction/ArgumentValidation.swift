@@ -64,7 +64,28 @@ public enum ArgumentValidation {
         // Transforms snapshot-path argument into .snapshot(URL) extraction source
         @Sendable public static func extractionSource(_ snapshotPath: String) throws -> ExtractionJob.Source {
             
-            let snapshotURL = FileUtilities.expandedAndStandardizedURL(for: snapshotPath)
+            let snapshotURL: URL
+            
+            // Check for value 'default' to use the AllProposals snapshot in the test bundle
+            if snapshotPath == "default" {
+                guard let processURL = FileUtilities.processDirectory() else {
+                    throw ValidationError("Unable to get path to the swift-evolution-metadata-extractor executable.")
+                }
+                
+                let testBundleName = "swift-evolution-metadata-extractor_ExtractionTests.bundle"
+                let testBundleURL = processURL.appending(component: testBundleName)
+                guard let testBundle = Bundle(url: testBundleURL) else {
+                    throw ValidationError("To use the default snapshot, the test bundle '\(testBundleName)' must be located in the same directory as the swift-evolution-metadata-extractor executable.\nUse `swift test` or the Xcode test action to generate the default snapshot for the package.")
+                }
+                
+                guard let url = testBundle.url(forResource: "AllProposals", withExtension: "evosnapshot", subdirectory: "Resources") else {
+                    throw ValidationError("Default snapshot does not exist.\nUse `swift test` or the Xcode test action to generate the default snapshot for the package.")
+                }
+                snapshotURL = url
+            } else {
+                snapshotURL = FileUtilities.expandedAndStandardizedURL(for: snapshotPath)
+            }
+            
             guard snapshotURL.pathExtension == "evosnapshot" else {
                 throw ValidationError("Snapshot must be a directory with 'evosnapshot' extension")
             }

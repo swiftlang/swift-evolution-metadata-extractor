@@ -44,7 +44,7 @@ enum Help {
         
         enum Argument {
             static let forceExtract: ArgumentHelp = "Forces extraction of all or specified proposals. Valid values are 'all' or `SE-XXXX'"
-            static let snapshotPath: ArgumentHelp = "Path to a local .evosnapshot directory for testing during development"
+            static let snapshotPath: ArgumentHelp = "Path to a local .evosnapshot directory for testing during development. Use 'default' to use AllProposals snapshot in the test bundle."
             static let outputPath: ArgumentHelp = "Path to output file"
             static let verbose: ArgumentHelp = "Verbose output"
         }

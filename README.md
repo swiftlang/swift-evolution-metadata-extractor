@@ -49,6 +49,9 @@ Use the `--force-extract` option multiple times for multiple proposals:
 
 Use the `--snapshot-path` option to specify a local `evosnapshot` directory during development.
 
+Use the value 'default' to specify the AllProfiles snapshot in the test resources bundle.
+`swift-evolution-metadata-extractor --snapshot-path default`
+
 See _Snapshots for development and testing_ for more information about snapshots.
 
 ### Verbose output
