@@ -26,6 +26,10 @@ public enum ArgumentValidation {
         precondition(verboseEnabled == verbose)
     }
     
+    public static func validateHTTPProxies() {
+        _ = URLSession.customized // Reads and validates HTTP Proxy environment variables if present
+    }
+    
     public enum Extract {
         
         public static let defaultFilename = "proposals.json"

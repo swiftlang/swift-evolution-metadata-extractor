@@ -26,8 +26,9 @@ struct SnapshotCommand: AsyncParsableCommand {
     var verbose: Bool = false
 
 
-    mutating func validate() async throws {
+    mutating func validate() throws {
         ArgumentValidation.validate(verbose: verbose)
+        ArgumentValidation.validateHTTPProxies()
     }
 
 

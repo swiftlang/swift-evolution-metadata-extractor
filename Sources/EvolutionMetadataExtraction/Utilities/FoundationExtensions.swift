@@ -56,6 +56,7 @@ extension URLSession {
             for (key, value) in proxyDictionary {
                 print("\(key): \(value)", terminator: "\n")
             }
+            print()
             sessionConfig.connectionProxyDictionary = proxyDictionary
         }
         return URLSession(configuration: sessionConfig)
