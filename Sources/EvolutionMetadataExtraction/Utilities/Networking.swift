@@ -93,6 +93,14 @@ struct GitHubFetcher {
         }
     }
     
+    static let gitHubTokenHeaderValue: String? = {
+        if let githubToken = ProcessInfo.processInfo.environment["GITHUB_TOKEN"] {
+            "Bearer \(githubToken)"
+        } else {
+            nil
+        }
+    }()
+    
     // Note that fetching proposal contents does not use GitHub API endponts
     static func fetchProposalContents(from url: URL) async throws -> String {
         let (data, _) =  try await URLSession.customized.data(from: url)
@@ -126,6 +134,7 @@ struct GitHubFetcher {
     static func getGitHubAPIValue<T: Decodable>(for endpoint: URL, type: T.Type, cachePolicy: URLRequest.CachePolicy = .useProtocolCachePolicy) async throws -> T {
         
         var request = URLRequest(url: endpoint, cachePolicy: cachePolicy)
+        request.setValue(gitHubTokenHeaderValue, forHTTPHeaderField: "Authorization")
         request.setValue("application/vnd.github+json", forHTTPHeaderField: "Accept")
         request.setValue("2022-11-28", forHTTPHeaderField: "X-GitHub-Api-Version")
         verbosePrint("Fetching with URLRequest:\n\(request.verboseDescription)")
