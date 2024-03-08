@@ -6,7 +6,7 @@ The `swift-evolution-metadata-extractor` tool reads the main branch of the `swif
 
 In addition to the extraction tool, this package vends the `EvolutionMetadataModel` library which provides types for encoding and decoding evolution metadata JSON files. This library is intended for use by clients of the metadata file that drives the evolution dashboard. 
 
-## Basic usage
+## Usage
 
 `swift-evolution-metadata-extractor`
 
@@ -54,6 +54,18 @@ See _Snapshots for development and testing_ for more information about snapshots
 ### Verbose output
 
 Use the `--verbose` option (`-v`) for verbose output as the tool runs.
+
+### Environment variables
+Use optional environment variables to provide proxy and authorization information.
+
+**HTTP_PROXY | http_proxy**  
+When present, HTTP networking requests will use the specified proxy.
+
+**HTTPS_PROXY | https_proxy**  
+When present, HTTPS networking requests will use the specified proxy.
+
+**GITHUB_TOKEN**  
+When present, the provided token will be included as an authorization header in GitHub API requests.
 
 ## EvolutionMetadataModel library
 The package vends the `EvolutionMetadataModel` library. The library defines `Codable` types that are suitable for decoding the generated evolution metadata file.
