@@ -95,7 +95,8 @@ extension URLRequest {
             }
             let lastIndex = headers.count - 1
             for (index, (key, value)) in headers.enumerated() {
-                logString += "\t\(key) : \(value)\(index == lastIndex ? "" : "\n")"
+                let logValue = (key == "Authorization") ? "Bearer ****" : value
+                logString += "\t\(key): \(logValue)\(index == lastIndex ? "" : "\n")"
             }
         }
         return logString
