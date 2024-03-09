@@ -26,8 +26,6 @@ struct TitleExtractor: ValueExtractor {
 //            }
             
             title = titleElement.plainText
-            title = title?.replacingOccurrences(of: "`", with: "") // legacy tool did not include backticks
-            title = title?.replacingOccurrences(of: "#", with: "") // Single case for SE-0308
             
         } else {
             errors.append(ValidationIssue.proposalContainsNoContent)

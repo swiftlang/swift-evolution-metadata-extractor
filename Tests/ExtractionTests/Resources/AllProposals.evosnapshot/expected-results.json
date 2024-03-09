@@ -66,7 +66,7 @@
       "version" : "3.0"
     },
     "summary" : "Curried function declaration syntax `func foo(x: Int)(y: Int)` is of limited\nusefulness and creates a lot of language and implementation complexity. We\nshould remove it.\n",
-    "title" : "Removing currying func declaration syntax",
+    "title" : "Removing currying `func` declaration syntax",
     "warnings" : [
       {
         "kind" : "warning",
@@ -102,7 +102,7 @@
       "version" : "3.0"
     },
     "summary" : "There has been some confusion of semantics when a function parameter is\nmarked as `inout` compared to `var`. Both give a mutable local copy of a\nvalue but parameters marked `inout` are automatically written back.\n",
-    "title" : "Removing var from Function Parameters"
+    "title" : "Removing `var` from Function Parameters"
   },
   {
     "authors" : [
@@ -131,7 +131,7 @@
       "version" : "3.0"
     },
     "summary" : "The increment\/decrement operators in Swift were added very early in the\ndevelopment of Swift, as a carry-over from C.  These were added without much\nconsideration, and haven't been thought about much since then.  This document\nprovides a fresh look at them, and ultimately recommends we just remove them\nentirely, since they are confusing and not carrying their weight.\n",
-    "title" : "Remove the ++ and -- operators",
+    "title" : "Remove the `++` and `--` operators",
     "warnings" : [
       {
         "kind" : "warning",
@@ -329,7 +329,7 @@
       "version" : "2.2"
     },
     "summary" : "The `typealias` keyword is currently used to declare two kinds of types:\n",
-    "title" : "Replace typealias keyword with associatedtype for associated type declarations",
+    "title" : "Replace `typealias` keyword with `associatedtype` for associated type declarations",
     "trackingBugs" : [
       {
         "assignee" : "",
@@ -361,7 +361,7 @@
       "state" : ".rejected"
     },
     "summary" : "",
-    "title" : "Add @noescape to public library API"
+    "title" : "Add `@noescape` to public library API"
   },
   {
     "authors" : [
@@ -402,7 +402,7 @@
       "version" : "2.2"
     },
     "summary" : "In order to allow `AnySequence` delegate calls to the underlying sequence,\nits initializer should have extra constraints.\n",
-    "title" : "Constraining AnySequence.init",
+    "title" : "Constraining `AnySequence.init`",
     "trackingBugs" : [
       {
         "assignee" : "",
@@ -497,7 +497,7 @@
       "version" : "3.0"
     },
     "summary" : "The standard library [`Unmanaged<Instance>` struct](https:\/\/github.com\/apple\/swift\/blob\/master\/stdlib\/public\/core\/Unmanaged.swift) provides a type-safe object wrapper that does not participate in ARC; it allows the user to make manual retain\/release calls.\n",
-    "title" : "Change Unmanaged to use UnsafePointer",
+    "title" : "Change `Unmanaged` to use `UnsafePointer`",
     "trackingBugs" : [
       {
         "assignee" : "",
@@ -682,8 +682,8 @@
         "name" : "Chris Lattner"
       },
       {
-          "link" : "",
-          "name" : "Alex Migicovsky"
+        "link" : "",
+        "name" : "Alex Migicovsky"
       },
       {
         "link" : "https:\/\/github.com\/moiseev",
@@ -694,8 +694,8 @@
         "name" : "Ali Ozer"
       },
       {
-          "link" : "https:\/\/github.com\/parkera",
-          "name" : "Tony Parker"
+        "link" : "https:\/\/github.com\/parkera",
+        "name" : "Tony Parker"
       }
     ],
     "id" : "SE-0023",
@@ -730,7 +730,7 @@
       "state" : ".rejected"
     },
     "summary" : "Introduce a new operator an \"Optional Value Setter\". If the optional is set via this operator then the new value is\nonly set if there isn't an already existing value.\n",
-    "title" : "Optional Value Setter ??="
+    "title" : "Optional Value Setter `??=`"
   },
   {
     "authors" : [
@@ -918,7 +918,7 @@
       "version" : "3.0"
     },
     "summary" : "The `inout` keyword indicates copy-in\/copy-out argument behavior. In its current implementation the keyword prepends argument names. We propose to move the `inout` keyword to the right side of the colon to decorate the type instead of the parameter label.\n",
-    "title" : "Adjusting inout Declarations for Type Decoration"
+    "title" : "Adjusting `inout` Declarations for Type Decoration"
   },
   {
     "authors" : [
@@ -939,7 +939,7 @@
       "version" : "3.0"
     },
     "summary" : "Add a new extension method to `Sequence` called `first(where:)` that returns the\nfound element.\n",
-    "title" : "Add first(where:) method to Sequence",
+    "title" : "Add `first(where:)` method to `Sequence`",
     "trackingBugs" : [
       {
         "assignee" : "",
@@ -1026,7 +1026,7 @@
       "version" : "3.0"
     },
     "summary" : "Swift's behavior when closures capture `inout` parameters and escape their enclosing context is a common source of confusion. We should disallow implicit capture of `inout` parameters\nexcept in `@noescape` closures.\n",
-    "title" : "Limiting inout capture to @noescape contexts",
+    "title" : "Limiting `inout` capture to `@noescape` contexts",
     "trackingBugs" : [
       {
         "assignee" : "",
@@ -1526,7 +1526,7 @@
       "state" : ".withdrawn"
     },
     "summary" : "",
-    "title" : "Conventionalizing stride semantics"
+    "title" : "Conventionalizing `stride` semantics"
   },
   {
     "authors" : [
@@ -1584,7 +1584,7 @@
       "version" : "3.0"
     },
     "summary" : "Since function parameters are immutable by default, allowing function parameters to be explicitly labeled\nas `let` is a bit of a syntactic redundancy that would best be removed.\nNot allowing function parameters to be explicitly declared as `let` would permit a more simple and uniform function declaration syntax for swift.\nFurthermore proposal [SE-0003​: \"Removing `var` from Function Parameters\"](0003-remove-var-parameters.md) removes `var` from function parameters removing any possible ambiguity as to whether a function parameter is immutable or not.\n",
-    "title" : "Remove explicit use of let from Function Parameters"
+    "title" : "Remove explicit use of `let` from Function Parameters"
   },
   {
     "authors" : [
@@ -1613,7 +1613,7 @@
       "version" : "4.2"
     },
     "summary" : "This proposal seeks to remove the `ImplicitlyUnwrappedOptional` type from the\nSwift type system and replace it with an IUO attribute on declarations.\nAppending `!` to the type of a Swift declaration will give it optional type and\nannotate the declaration with an attribute stating that it may be implicitly\nunwrapped when used.\n",
-    "title" : "Abolish ImplicitlyUnwrappedOptional type"
+    "title" : "Abolish `ImplicitlyUnwrappedOptional` type"
   },
   {
     "authors" : [
@@ -1662,7 +1662,7 @@
       "state" : ".rejected"
     },
     "summary" : "Swift-evolution thread: [\"Allow trailing closures in 'guard' conditions\"](https:\/\/forums.swift.org\/t\/proposal-allow-trailing-closures-in-guard-conditions\/1909)\n",
-    "title" : "Allow trailing closures in guard conditions"
+    "title" : "Allow trailing closures in `guard` conditions"
   },
   {
     "authors" : [
@@ -2023,7 +2023,7 @@
       "version" : "5.1"
     },
     "summary" : "Within a class scope, `Self` means \"the dynamic class of `self`\". This proposal extends that courtesy to value types and to the bodies of class members\nby renaming `dynamicType` to `Self`. This establishes a universal and consistent\nway to refer to the dynamic type of the current receiver.\n",
-    "title" : "Expanding Swift Self to class members and value types",
+    "title" : "Expanding Swift `Self` to class members and value types",
     "trackingBugs" : [
       {
         "assignee" : "",
@@ -2331,7 +2331,7 @@
       "version" : "4.2"
     },
     "summary" : "When working with escaping Swift closures, it is a common pattern to have the closure capture `self` weakly to avoid creating an object reference cycle.\n",
-    "title" : "Allow using optional binding to upgrade self from a weak to strong reference"
+    "title" : "Allow using optional binding to upgrade `self` from a weak to strong reference"
   },
   {
     "authors" : [
@@ -2393,7 +2393,7 @@
       "version" : "3.0"
     },
     "summary" : "This proposal suggests moving the `where` clause to the end of the declaration syntax, but before the body, for readability reasons. It has been discussed at length on the following swift-evolution thread:\n",
-    "title" : "Move where clause to end of declaration",
+    "title" : "Move `where` clause to end of declaration",
     "trackingBugs" : [
       {
         "assignee" : "",
@@ -2548,7 +2548,7 @@
       "state" : ".rejected"
     },
     "summary" : "Make `lazy` declaration modifier an attribute by renaming it to `@lazy`. Example:\n",
-    "title" : "Rename lazy to @lazy"
+    "title" : "Rename `lazy` to `@lazy`"
   },
   {
     "authors" : [
@@ -2594,7 +2594,7 @@
       "version" : "3.0"
     },
     "summary" : "Swift's `String` type ships with a large number of initializers that take one unlabeled argument. One of these initializers, defined as `init<T>(_: T)`, is used to create a string containing the textual representation of an object. It is very easy to write code which accidentally invokes this initializer, when one of the other synonymous initializers was desired. Such code will compile without warnings and can be very difficult to detect.\n",
-    "title" : "Renaming String.init<T>(_: T)",
+    "title" : "Renaming `String.init<T>(_: T)`",
     "trackingBugs" : [
       {
         "assignee" : "",
@@ -2630,7 +2630,7 @@
       "state" : ".returnedForRevision"
     },
     "summary" : "Swift's grammar currently requires that type references only appear as part of\na constructor call `T(x)` or member access `T.x`. To get the metatype object\nfor `T`, one must refer to the special member `T.self`. I propose allowing\ntype references to appear freely in expressions and removing the `.self` member\nfrom the language.\n",
-    "title" : "Remove .self and freely allow type references in expressions"
+    "title" : "Remove `.self` and freely allow type references in expressions"
   },
   {
     "authors" : [
@@ -2733,7 +2733,7 @@
       "version" : "3.0"
     },
     "summary" : "Slice types [provided by the standard library](https:\/\/github.com\/apple\/swift\/blob\/master\/stdlib\/public\/core\/Slice.swift.gyb) should allow public readonly access to their base collections to make efficient implementations of protocol requirements possible in conforming types.\n",
-    "title" : "Adding a public base property to slices"
+    "title" : "Adding a public `base` property to slices"
   },
   {
     "authors" : [
@@ -2795,7 +2795,7 @@
       "version" : "3.0"
     },
     "summary" : "The current `protocol<>` construct, which defines an existential type consisting of zero or more protocols, should be replaced by an infix `&` type operator joining bare protocol type names.\n",
-    "title" : "Replace protocol<P1,P2> syntax with P1 & P2 syntax",
+    "title" : "Replace `protocol<P1,P2>` syntax with `P1 & P2` syntax",
     "trackingBugs" : [
       {
         "assignee" : "",
@@ -2828,7 +2828,7 @@
       "version" : "3.0"
     },
     "summary" : "This proposal establishes `dynamicType` as a named operator rather than a property.\n",
-    "title" : "Converting dynamicType from a property to an operator",
+    "title" : "Converting `dynamicType` from a property to an operator",
     "trackingBugs" : [
       {
         "assignee" : "",
@@ -2880,7 +2880,7 @@
       "state" : ".rejected"
     },
     "summary" : "This proposal adopts consistent conjoined keyword lowercasing.\n",
-    "title" : "Lowercase didSet and willSet for more consistent keyword casing"
+    "title" : "Lowercase `didSet` and `willSet` for more consistent keyword casing"
   },
   {
     "authors" : [
@@ -2950,7 +2950,7 @@
       "version" : "3.0"
     },
     "summary" : "This proposal addresses `sizeof`, `sizeofValue`, `strideof`, `strideofValue`, `align`, and `alignOf`. It discards the value-style standalone functions and combines the remaining items into a unified structure.\n",
-    "title" : "Reconfiguring sizeof and related functions into a unified MemoryLayout struct"
+    "title" : "Reconfiguring `sizeof` and related functions into a unified `MemoryLayout` struct"
   },
   {
     "authors" : [
@@ -2971,7 +2971,7 @@
       "version" : "3.0"
     },
     "summary" : "We should remove the rarely-used `@noreturn` function type attribute and\ninstead express functions that don't return in terms of a standard\nuninhabited type.\n",
-    "title" : "Remove @noreturn attribute and introduce an empty Never type",
+    "title" : "Remove `@noreturn` attribute and introduce an empty `Never` type",
     "trackingBugs" : [
       {
         "assignee" : "",
@@ -3094,7 +3094,7 @@
       "version" : "3.0"
     },
     "summary" : "Starting in Sierra, Apple's Mac-based OS (OS X) will be renamed \"macOS\". All user-facing Swift APIs must go through Swift Evolution. While this is a trivial API change, I have put together a formal proposal as is normal and usual for this process.\n",
-    "title" : "Add a macOS Alias for the OSX Platform Configuration Test",
+    "title" : "Add a `macOS` Alias for the `OSX` Platform Configuration Test",
     "trackingBugs" : [
       {
         "assignee" : "",
@@ -3200,17 +3200,17 @@
       "version" : "3.0"
     },
     "summary" : "For legacy and historical reasons Swift has supported a protocol named `Boolean`\nfor abstracting over different concrete Boolean types.  This causes problems\nprimarily because it is pointless and very confusing to newcomers to Swift: is\nquite different than `Bool`, but shows up right next to it in documentation and\ncode completion.  Once you know that it is something you don't want, you\nconstantly ignore it.  Boolean values are simple enough that we don't need a\nprotocol to abstract over multiple concrete implementations.\n",
-    "title" : "Remove the Boolean protocol"
+    "title" : "Remove the `Boolean` protocol"
   },
   {
     "authors" : [
       {
-          "link" : "",
-          "name" : "Vladimir S."
+        "link" : "",
+        "name" : "Vladimir S."
       },
       {
-          "link" : "https:\/\/github.com\/austinzheng",
-          "name" : "Austin Zheng"
+        "link" : "https:\/\/github.com\/austinzheng",
+        "name" : "Austin Zheng"
       }
     ],
     "id" : "SE-0110",
@@ -3411,7 +3411,7 @@
       "version" : "3.0"
     },
     "summary" : "Objective-C interfaces that use `id` and untyped collections should be imported\ninto Swift as taking the `Any` type instead of `AnyObject`.\n",
-    "title" : "Import Objective-C id as Swift Any type"
+    "title" : "Import Objective-C `id` as Swift `Any` type"
   },
   {
     "authors" : [
@@ -3534,7 +3534,7 @@
       "version" : "3.0"
     },
     "summary" : "This proposal revises the signature for the collection partition algorithm. Partitioning is a foundational API for sorting and for searching through sorted collections.\n",
-    "title" : "Revise partition Method Signature",
+    "title" : "Revise `partition` Method Signature",
     "trackingBugs" : [
       {
         "assignee" : "",
@@ -3575,7 +3575,7 @@
       "version" : "3.0"
     },
     "summary" : "Swift's [`Comparable` protocol](https:\/\/developer.apple.com\/reference\/swift\/comparable) requires 4 operators, [`<`, `<=`, `>`, and `>=`](https:\/\/github.com\/apple\/swift\/blob\/5868f9c597088793f7131d4655dd0f702a04dea3\/stdlib\/public\/core\/Policy.swift#L729-L763), beyond the requirements of Equatable.\n",
-    "title" : "Remove Optional Comparison Operators"
+    "title" : "Remove `Optional` Comparison Operators"
   },
   {
     "authors" : [
@@ -3644,7 +3644,7 @@
       "version" : "3.0"
     },
     "summary" : "`Int.init(ObjectIdentifier)` and `UInt.init(ObjectIdentifier)` should have a\n'bitPattern:’ label to make it clear at the use site that we interpret the value\nas a bit pattern.\n",
-    "title" : "Int.init(ObjectIdentifier) and UInt.init(ObjectIdentifier) should have a bitPattern: label",
+    "title" : "`Int.init(ObjectIdentifier)` and `UInt.init(ObjectIdentifier)` should have a `bitPattern:` label",
     "trackingBugs" : [
       {
         "assignee" : "",
@@ -3677,7 +3677,7 @@
       "version" : "3.0"
     },
     "summary" : "Remove `NonObjectiveCBase` and`isUniquelyReferenced<T: NonObjectiveCBase>(_ object: T)`.`isUniquelyReferenced` can be replaced by`isUniquelyReferencedNonObjC<T: AnyObject>(_ object: T)`. This\nreplacement is as performant as the call to `isUniquelyReferenced` in cases\nwhere the compiler has static knowledge that the type of `object` is a native\nSwift class and dynamically has the same semantics for native swift classes.\nThis change will remove surface API.\nRename `isUniquelyReferencedNonObjC` to `isKnownUniquelyReferenced` and no\nlonger promise to return false for `@objc` class instances.\nCleanup the `ManagedBufferPointer` API by renaming `holdsUniqueReference` to`isUniqueReference` and removing `holdsUniqueOrPinnedReference`.\n",
-    "title" : "Remove NonObjectiveCBase and isUniquelyReferenced",
+    "title" : "Remove `NonObjectiveCBase` and `isUniquelyReferenced`",
     "trackingBugs" : [
       {
         "assignee" : "",
@@ -3713,7 +3713,7 @@
       "state" : ".withdrawn"
     },
     "summary" : "This proposal wants to revise metatypes `T.Type`, repurpose *public* `T.self` notation to return a new `Type<T>` type instance rather than a metatype, merge **SE-0101** into `Type<T>`, rename the global function from **SE-0096** to match the changes of this proposal and finally rename current `Mirror` type to introduce a new (lazy) `Mirror` type.\n",
-    "title" : "Refactor Metatypes, repurpose T.self and Mirror"
+    "title" : "Refactor Metatypes, repurpose `T.self` and `Mirror`"
   },
   {
     "authors" : [
@@ -3837,7 +3837,7 @@
       "version" : "3.0"
     },
     "summary" : "This proposal suggest replacing String initializers taking Character or UnicodeScalar as a repeating value by a more general initializer that takes a String as a repeating value. This is done to avoid the ambiguities in the current String API, which can be only resolved by explicit casting. It is also proposed to remove one of the String.append APIs to match these changes.\n",
-    "title" : "Replace repeating Character and UnicodeScalar forms of String.init"
+    "title" : "Replace repeating `Character` and `UnicodeScalar` forms of String.init"
   },
   {
     "authors" : [
@@ -3858,7 +3858,7 @@
       "version" : "3.0"
     },
     "summary" : "We propose to add a type-erased `AnyHashable` container to the\nstandard library.\n",
-    "title" : "Add AnyHashable to the standard library"
+    "title" : "Add `AnyHashable` to the standard library"
   },
   {
     "authors" : [
@@ -3923,7 +3923,7 @@
       "version" : "3.0"
     },
     "summary" : "Swift currently defines two similar functions, `joined(separator:)` and `flatten()`. `joined(separator:)` has a specialized implementation for Strings, and `flatten()` has implementations for various kinds of collections.\n",
-    "title" : "Rename flatten() to joined()"
+    "title" : "Rename `flatten()` to `joined()`"
   },
   {
     "authors" : [
@@ -4073,7 +4073,7 @@
       "version" : "3.0.1"
     },
     "summary" : "A handful of Swift numeric types are bridged to `NSNumber` when passed\ninto Objective-C object contexts. We should extend this bridging behavior\nto all Swift numeric types. We should also bridge common Cocoa structs such as`NSRange` by boxing them into `NSValue` objects.\n",
-    "title" : "Bridge Numeric Types to NSNumber and Cocoa Structs to NSValue"
+    "title" : "Bridge Numeric Types to `NSNumber` and Cocoa Structs to `NSValue`"
   },
   {
     "authors" : [
@@ -4094,7 +4094,7 @@
       "version" : "3.0.1"
     },
     "summary" : "`Optional`s can be used as values of `Any` type. After[SE-0116](0116-id-as-any.md),\nthis means you can pass an `Optional` to an Objective-C method expecting\nnonnull `id`:\n",
-    "title" : "Warn when Optional converts to Any, and bridge Optional As Its Payload Or NSNull"
+    "title" : "Warn when `Optional` converts to `Any`, and bridge `Optional` As Its Payload Or `NSNull`"
   },
   {
     "authors" : [
@@ -4489,7 +4489,7 @@
       "state" : ".rejected"
     },
     "summary" : "First of all, in Swift, the Objective-C `copy` property attribute translates to `@NSCopying`.\n",
-    "title" : "Compensate for the inconsistency of @NSCopying's behaviour",
+    "title" : "Compensate for the inconsistency of `@NSCopying`'s behaviour",
     "trackingBugs" : [
       {
         "assignee" : "",
@@ -4739,7 +4739,7 @@
       "version" : "4.0"
     },
     "summary" : "One can explicitly write `@objc` on any Swift declaration that can be\nexpressed in Objective-C. As a convenience, Swift also *infers*`@objc` in a number of places to improve interoperability with\nObjective-C and eliminate boilerplate. This proposal scales back the\ninference of `@objc` to only those cases where the declaration *must*\nbe available to Objective-C to maintain semantic coherence of the model,\ne.g., when overriding an `@objc` method or implementing a requirement\nof an `@objc` protocol. Other cases currently supported (e.g., a\nmethod declared in a subclass of `NSObject`) would no longer infer`@objc`, but one could continue to write it explicitly to produce\nObjective-C entry points.\n",
-    "title" : "Limiting @objc inference",
+    "title" : "Limiting `@objc` inference",
     "trackingBugs" : [
       {
         "assignee" : "",
@@ -5070,7 +5070,7 @@
       "version" : "4.0"
     },
     "summary" : "In Swift 3, a declaration marked `private` may be accessed by anything nested in the scope of the private declaration. For example, a private property or method defined on a struct may be accessed by other methods defined within that struct.\n",
-    "title" : "Improve Interaction Between private Declarations and Extensions",
+    "title" : "Improve Interaction Between `private` Declarations and Extensions",
     "trackingBugs" : [
       {
         "assignee" : "",
@@ -5124,7 +5124,7 @@
       "version" : "4.0"
     },
     "summary" : "A new variant of `reduce` should be added to the standard library. Instead of taking a `combine` function that is of type `(A, Iterator.Element) -> A`, the full type and implementation of the added `reduce` will be:\n",
-    "title" : "Reduce with inout"
+    "title" : "Reduce with `inout`"
   },
   {
     "authors" : [
@@ -5182,7 +5182,7 @@
       "version" : "4.0"
     },
     "summary" : "As part of the introduction of the Law of Exclusivity, the current `swap(_:_:)`\nfunction must be addressed, as this most common uses of `swap` directly violate\nthe law. This proposal introduces an alternative: a method on`MutableCollection` that takes two indices for swapping two elements in the\nsame collection.\n",
-    "title" : "Add MutableCollection.swapAt(_:_:)"
+    "title" : "Add `MutableCollection.swapAt(_:_:)`"
   },
   {
     "authors" : [
@@ -5203,7 +5203,7 @@
       "version" : "4.2"
     },
     "summary" : "This proposal implements the `filter` operation on `RangeReplaceableCollection`\nto return the same type as the filtered collection.\n",
-    "title" : "Change RangeReplaceableCollection.filter to return Self",
+    "title" : "Change `RangeReplaceableCollection.filter` to return `Self`",
     "trackingBugs" : [
       {
         "assignee" : "",
@@ -5306,7 +5306,7 @@
       "version" : "4.0"
     },
     "summary" : "This proposal adds a `unicodeScalars` view to `Character`, similar to that on `String`.\n",
-    "title" : "Add unicodeScalars property to Character"
+    "title" : "Add `unicodeScalars` property to `Character`"
   },
   {
     "authors" : [
@@ -5335,7 +5335,7 @@
       "version" : "4.0"
     },
     "summary" : "The proposal introduces a new `swift run` command to build and run an executable defined in the current package.\n",
-    "title" : "Swift run Command"
+    "title" : "Swift `run` Command"
   },
   {
     "authors" : [
@@ -5521,7 +5521,7 @@
       "version" : "4.1"
     },
     "summary" : "Developers have to write large amounts of boilerplate code to support\nequatability and hashability of complex types. This proposal offers a way for\nthe compiler to automatically synthesize conformance to `Equatable` and`Hashable` to reduce this boilerplate, in a subset of scenarios where generating\nthe correct implementation is known to be possible.\n",
-    "title" : "Synthesizing Equatable and Hashable conformance"
+    "title" : "Synthesizing `Equatable` and `Hashable` conformance"
   },
   {
     "authors" : [
@@ -5711,7 +5711,7 @@
       "version" : "4.1"
     },
     "summary" : "Eliminate the associated type `IndexDistance` from `Collection`, and modify all uses to the concrete type `Int` instead.\n",
-    "title" : "Eliminate IndexDistance from Collection"
+    "title" : "Eliminate `IndexDistance` from `Collection`"
   },
   {
     "authors" : [
@@ -5915,7 +5915,7 @@
       "version" : "4.2"
     },
     "summary" : "It is common to want to remove all occurrences of a certain element from a\ncollection. This proposal is to add a `removeAll` algorithm to the\nstandard library, which will remove all entries in a collection in-place\nmatching a given predicate.\n",
-    "title" : "Adding in-place removeAll(where:) to the Standard Library"
+    "title" : "Adding in-place `removeAll(where:)` to the Standard Library"
   },
   {
     "authors" : [
@@ -5997,7 +5997,7 @@
       "version" : "4.2"
     },
     "summary" : "I propose adding a `mutating func toggle` to `Bool`. It toggles the `Bool`.\n",
-    "title" : "Adding toggle to Bool"
+    "title" : "Adding `toggle` to `Bool`"
   },
   {
     "authors" : [
@@ -6185,7 +6185,7 @@
       "version" : "4.2"
     },
     "summary" : "The standard library should include methods for finding the last element in a sequence, and the index of the last element in a collection, that match a given predicate.\n",
-    "title" : "Add last(where:) and lastIndex(where:) Methods",
+    "title" : "Add `last(where:)` and `lastIndex(where:)` Methods",
     "trackingBugs" : [
       {
         "assignee" : "",
@@ -6226,7 +6226,7 @@
       "version" : "4.2"
     },
     "summary" : "We propose to extend the toplevel `withUnsafePointer(to:_:)` and`withUnsafeBytes(of:_:)` functions to work with read-only values.\n",
-    "title" : "withUnsafePointer(to:_:) and withUnsafeBytes(of:_:) for immutable values"
+    "title" : "`withUnsafePointer(to:_:)` and `withUnsafeBytes(of:_:)` for immutable values"
   },
   {
     "authors" : [
@@ -6300,7 +6300,7 @@
       "version" : "4.2"
     },
     "summary" : "It is common to want to confirm that every element of a sequence equals a\nvalue, or matches certain criteria. Many implementations of this can be found\nin use on GitHub. This proposal adds such a method to `Sequence`.\n",
-    "title" : "Add an allSatisfy algorithm to Sequence"
+    "title" : "Add an `allSatisfy` algorithm to `Sequence`"
   },
   {
     "authors" : [
@@ -6415,7 +6415,7 @@
       "version" : "4.2"
     },
     "summary" : "This proposal introduces the ability for Swift code to query the in-memory\nlayout of stored properties in aggregates using key paths. Like the`offsetof` macro in C, `MemoryLayout<T>.offset(of:)` returns the distance in\nbytes between a pointer to a value and a pointer to one of its fields.\n",
-    "title" : "Add an offset(of:) method to MemoryLayout"
+    "title" : "Add an `offset(of:)` method to `MemoryLayout`"
   },
   {
     "authors" : [
@@ -6444,7 +6444,7 @@
       "version" : "5.0"
     },
     "summary" : "We propose adding a number of properties to the `Unicode.Scalar` type to support\nboth common and advanced text processing use cases, filling in a number of gaps\nin Swift's text support compared to other programming languages.\n",
-    "title" : "Add Unicode Properties to Unicode.Scalar"
+    "title" : "Add Unicode Properties to `Unicode.Scalar`"
   },
   {
     "authors" : [
@@ -6535,7 +6535,7 @@
       "version" : "5.0"
     },
     "summary" : "This proposal renames the confusing and misnamed [`DictionaryLiteral`](https:\/\/github.com\/apple\/swift\/blob\/c25188bafd1c775d4ceecc4a795f614f00451bf9\/stdlib\/public\/core\/Mirror.swift#L646) type to `KeyValuePairs`. This type is neither a dictionary nor a literal. It is a list of key-value pairs.\n",
-    "title" : "Renaming the DictionaryLiteral type to KeyValuePairs"
+    "title" : "Renaming the `DictionaryLiteral` type to `KeyValuePairs`"
   },
   {
     "authors" : [
@@ -6564,7 +6564,7 @@
       "version" : "5.0"
     },
     "summary" : "Extend `Never` so it conforms to `Equatable` and `Hashable`.\n",
-    "title" : "Conform Never to Equatable and Hashable"
+    "title" : "Conform `Never` to `Equatable` and `Hashable`"
   },
   {
     "authors" : [
@@ -6633,7 +6633,7 @@
       "state" : ".rejected"
     },
     "summary" : "This proposal introduces an annotating forced-unwrapping operator to the Swift standard library. It augments the `?`, `??`, and `!` family, adding `!!`. This \"unwrap or die\" operator provides code-sourced rationales for failed unwraps, supporting self-documentation and safer development. The `!!` operator is commonly implemented in the wider Swift Community and should be considered for official adoption.\n",
-    "title" : "Introducing the !! \"Unwrap or Die\" operator to the Swift Standard Library"
+    "title" : "Introducing the `!!` \"Unwrap or Die\" operator to the Swift Standard Library"
   },
   {
     "authors" : [
@@ -6662,7 +6662,7 @@
       "version" : "5.0"
     },
     "summary" : "This proposal adds a combined filter\/map operation to `Dictionary`, as a companion to the `mapValues` and filter methods introduced by [SE-0165](https:\/\/github.com\/apple\/swift-evolution\/blob\/master\/proposals\/0165-dict.md). The new compactMapValues operation corresponds to compactMap on Sequence.\n",
-    "title" : "Introduce compactMapValues to Dictionary"
+    "title" : "Introduce `compactMapValues` to Dictionary"
   },
   {
     "authors" : [
@@ -6737,7 +6737,7 @@
       "state" : ".accepted"
     },
     "summary" : "While Swift's `Sequence` models brings a lot of niceties that we didn't have access to in Objective-C, like `map` and `filter`, there are other useful operations on sequences that the standard library doesn't support yet. One current missing operation is  `count(where:)`, which counts the number of elements in a `Sequence` that pass some test.\n",
-    "title" : "count(where:)"
+    "title" : "`count(where:)`"
   },
   {
     "authors" : [
@@ -6922,7 +6922,7 @@
       "version" : "5.0"
     },
     "summary" : "This proposal adds `var isEven: Bool`, `var isOdd: Bool`, and `func isMultiple(of other: Self) -> Bool` to the `BinaryInteger` protocol. `isEven` and `isOdd` are convenience properties for querying the [parity](https:\/\/en.wikipedia.org\/wiki\/Parity_(mathematics)) of the integer and `isMultiple` is a more general function to determine whether an integer is a multiple of another integer.\n",
-    "title" : "Adding isMultiple to BinaryInteger"
+    "title" : "Adding `isMultiple` to `BinaryInteger`"
   },
   {
     "authors" : [
@@ -7023,7 +7023,7 @@
       "version" : "5.0"
     },
     "summary" : "String interpolation is a simple and powerful feature for expressing complex, runtime-created strings, but the current version of the `ExpressibleByStringInterpolation` protocol has been deprecated since Swift 3. We propose a new design that improves its performance, clarity, and efficiency.\n",
-    "title" : "Fix ExpressibleByStringInterpolation"
+    "title" : "Fix `ExpressibleByStringInterpolation`"
   },
   {
     "authors" : [
@@ -7138,7 +7138,7 @@
       "version" : "5.0"
     },
     "summary" : "This proposal removes four customization points from protocols in the\nstandard library:\n",
-    "title" : "Remove Some Customization Points from the Standard Library's Collection Hierarchy"
+    "title" : "Remove Some Customization Points from the Standard Library's `Collection` Hierarchy"
   },
   {
     "authors" : [
@@ -7167,7 +7167,7 @@
       "version" : "5.0"
     },
     "summary" : "This proposal introduces a weakening of the existing  `Numeric`  protocol named  `AdditiveArithmetic` , which defines additive arithmetic operators and a zero, making conforming types roughly correspond to the mathematic notion of an [additive group](https:\/\/en.wikipedia.org\/wiki\/Additive_group). This makes it possible for vector types to share additive arithmetic operators with scalar types, which enables generic algorithms over `AdditiveArithmetic` to apply to both scalars and vectors.\n",
-    "title" : "Make  Numeric  Refine a new  AdditiveArithmetic  Protocol"
+    "title" : "Make  `Numeric`  Refine a new  `AdditiveArithmetic`  Protocol"
   },
   {
     "authors" : [
@@ -7196,7 +7196,7 @@
       "version" : "5.0"
     },
     "summary" : "This proposal recommends eliminating the associated type from `Sequence`,\nmoving it up to start at `Collection`. Current customization points on`Sequence` returning a `SubSequence` will be amended to be extensions returning\nconcrete types.\n",
-    "title" : "Remove Sequence.SubSequence"
+    "title" : "Remove `Sequence.SubSequence`"
   },
   {
     "authors" : [
@@ -7287,7 +7287,7 @@
       "version" : "5.0"
     },
     "summary" : "This proposal introduces two new methods, on `Sequence` and`MutableCollection`. These methods will allow generic code to make use of the`withUnsafe{Mutable}BufferPointer` idiom, as well as provide fast paths in the\nstandard library for adopting types.\n",
-    "title" : "Introduce withContiguous{Mutable}StorageIfAvailable methods"
+    "title" : "Introduce `withContiguous{Mutable}StorageIfAvailable` methods"
   },
   {
     "authors" : [
@@ -7906,7 +7906,7 @@
       "state" : ".rejected"
     },
     "summary" : "This proposal introduces two new protocols: `ContiguousCollection`, which\nrefines `Collection`, and `MutableContiguousCollection`, which refines`MutableCollection`. Both provide guaranteed access to an underlying\nunsafe buffer.\n",
-    "title" : "Introduce {Mutable}ContiguousCollection protocol"
+    "title" : "Introduce `{Mutable}ContiguousCollection` protocol"
   },
   {
     "authors" : [
@@ -8238,7 +8238,7 @@
       "version" : "5.3"
     },
     "summary" : "[SE-185](https:\/\/github.com\/apple\/swift-evolution\/blob\/master\/proposals\/0185-synthesize-equatable-hashable.md) introduced synthesized, opt-in `Equatable` and `Hashable` conformances for eligible types. Their sibling protocol `Comparable` was left out at the time, since it was less obvious what types ought to be eligible for a synthesized `Comparable` conformance and where a comparison order might be derived from. This proposal seeks to allow users to opt-in to synthesized `Comparable` conformances for `enum` types without raw values or associated values not themselves conforming to `Comparable`, a class of types which I believe make excellent candidates for this feature. The synthesized comparison order would be based on the declaration order of the `enum` cases, and then the lexicographic comparison order of the associated values for an `enum` case tie.\n",
-    "title" : "Synthesized Comparable conformance for enum types"
+    "title" : "Synthesized `Comparable` conformance for `enum` types"
   },
   {
     "authors" : [
@@ -8267,7 +8267,7 @@
       "version" : "5.3"
     },
     "summary" : "This proposal aims to lift the restriction on attaching `where` clauses to member declarations that can reference only outer generic parameters. Simply put, this means the `'where' clause cannot be attached` error will be relaxed for most declarations nested inside generic contexts:\n",
-    "title" : "where clauses on contextually generic declarations"
+    "title" : "`where` clauses on contextually generic declarations"
   },
   {
     "authors" : [
@@ -8296,7 +8296,7 @@
       "version" : "5.3"
     },
     "summary" : "Introduce two changes to `didSet` semantics -\n",
-    "title" : "Refine didSet Semantics",
+    "title" : "Refine `didSet` Semantics",
     "trackingBugs" : [
       {
         "assignee" : "",
@@ -8337,7 +8337,7 @@
       "version" : "5.3"
     },
     "summary" : "Modify the rule that all uses of `self` in escaping closures must be explicit by allowing for implicit uses of `self` in situations where the user has already made their intent explicit, or where strong reference cycles are otherwise unlikely to occur. There are two situations covered by this proposal. The first is when the user has explicitly captured `self` in the closure's capture list, so that the following would compile without error:\n",
-    "title" : "Increase availability of implicit self in @escaping closures when reference cycles are unlikely to occur",
+    "title" : "Increase availability of implicit `self` in `@escaping` closures when reference cycles are unlikely to occur",
     "trackingBugs" : [
       {
         "assignee" : "",
@@ -8788,7 +8788,7 @@
       "version" : "5.3"
     },
     "summary" : "A Swift language feature for designating a type as the entry point for beginning program execution. Instead of writing top-level code, users can use the `@main` attribute on a single type. Libraries and frameworks can then provide custom entry-point behavior through protocols or class inheritance.\n",
-    "title" : "@main: Type-Based Program Entry Points"
+    "title" : "`@main`: Type-Based Program Entry Points"
   },
   {
     "authors" : [
@@ -8849,7 +8849,7 @@
       "state" : ".accepted"
     },
     "summary" : "Introduce `Equatable`, `Comparable`, and `Hashable` conformance for all tuples whose elements are themselves `Equatable`, `Comparable`, and `Hashable`.\n",
-    "title" : "Tuples Conform to Equatable, Comparable, and Hashable"
+    "title" : "Tuples Conform to `Equatable`, `Comparable`, and `Hashable`"
   },
   {
     "authors" : [
@@ -8993,7 +8993,7 @@
       "state" : ".previewing"
     },
     "summary" : "Checking some mathematical properties of integers (e.g. parity, divisibility, etc.) is widely used in scientific and engineering applications.  Swift brings a lot of convenience when performing such checks, thanks to the relevant methods (e.g. `isMultiple(of:)`) provided by the standard library.  However there are still some other cases not yet supported.  One of those useful checks that are currently missing is to tell if an integer is power of another, of which the implementation is non-trivial.  Apart from inconvenience, user-implemented code can bring inefficiency, poor readability, and even incorrectness.  To address this problem, this proposal would like to add a public API `isPower(of:)`, as an extension method, to the `BinaryInteger` protocol.\n",
-    "title" : "Adding isPower(of:) to BinaryInteger"
+    "title" : "Adding `isPower(of:)` to `BinaryInteger`"
   },
   {
     "authors" : [
@@ -9440,7 +9440,7 @@
       "version" : "5.7"
     },
     "summary" : "A key goal of the Swift Concurrency effort is to “provide a mechanism for isolating state in concurrent programs to eliminate data races.”  Such a mechanism will be a major progression for widely used programming languages — most of them provide concurrent programming abstractions in a way that subjects programmers to a wide range of bugs, including race conditions, deadlocks and other problems.\n",
-    "title" : "Sendable and @Sendable closures"
+    "title" : "`Sendable` and `@Sendable` closures"
   },
   {
     "authors" : [
@@ -9589,7 +9589,7 @@
       "version" : "5.5"
     },
     "summary" : "I propose to extend the language and allow Double and CGFloat types to be used interchangeably by means of transparently converting one type into the other as a sort of retroactive typealias between these two types.  This is a *narrowly* defined implicit conversion intended to be part of the *existing family* of implicit conversions (including NSType <=> CFType conversions) supported by Swift to strengthen Objective-C and Swift interoperability. The only difference between the proposed conversion and existing ones is related to the fact that interchangeability implies both narrowing conversion (`Double` -> `CGFloat`) and widening one (`CGFloat` -> `Double`) on 32-bit platforms. This proposal is not about generalizing support for implicit conversions to the language.\n",
-    "title" : "Allow interchangeable use of CGFloat and Double types"
+    "title" : "Allow interchangeable use of `CGFloat` and `Double` types"
   },
   {
     "authors" : [
@@ -9618,7 +9618,7 @@
       "version" : "5.5"
     },
     "summary" : "Swift has conditional compilation block `#if ... #endif` which allows code to be conditionally compiled depending on the value of one or more compilation conditions. Currently, unlike `#if` in C family languages, the body of each clause must surround complete statements. However, in some cases, especially in result builder contexts, demand for applying `#if` to partial expressions has emerged. This proposal expands `#if ... #endif` to be able to surround postfix member expressions.\n",
-    "title" : "if for postfix member expressions"
+    "title" : "`#if` for postfix member expressions"
   },
   {
     "authors" : [
@@ -9757,7 +9757,7 @@
       "state" : ".returnedForRevision"
     },
     "summary" : "This proposal aims to fix the lack of `Collection` conformance of the sequences returned by `zip(_:_:)` and `enumerated()`, preventing them from being used in a context that requires a `Collection`. Also included is the addition of the `indexed()` method on `Collection` as a more ergonomic, efficient, and correct alternative to `c.enumerated()` and `zip(c.indices, c)`.\n",
-    "title" : "Add indexed() and Collection conformances for enumerated() and zip(_:_:)"
+    "title" : "Add `indexed()` and `Collection` conformances for `enumerated()` and `zip(_:_:)`"
   },
   {
     "authors" : [
@@ -9823,7 +9823,7 @@
       "version" : "5.5"
     },
     "summary" : "The continuation types added in [SE-0300](https:\/\/github.com\/apple\/swift-evolution\/blob\/main\/proposals\/0300-continuation.md) act as adaptors for synchronous code that signals completion by calling a delegate method or callback function. For code that instead yields multiple values over time, this proposal adds new types to support implementing an `AsyncSequence` interface.\n",
-    "title" : "AsyncStream and AsyncThrowingStream"
+    "title" : "`AsyncStream` and `AsyncThrowingStream`"
   },
   {
     "authors" : [
@@ -9910,7 +9910,7 @@
       "version" : "5.5"
     },
     "summary" : "[Structured concurrency](0304-structured-concurrency.md) provides a paradigm for spawning concurrent *child tasks* in scoped *task groups*, establishing a well-defined hierarchy of tasks which allows for cancellation, error propagation, priority management, and other tricky details of concurrency management to be handled transparently.\n",
-    "title" : "async let bindings"
+    "title" : "`async let` bindings"
   },
   {
     "authors" : [
@@ -9996,7 +9996,7 @@
       "version" : "5.6"
     },
     "summary" : "The current conformance of Swift's `Dictionary` to the `Codable` protocols has a somewhat-surprising limitation in that dictionaries whose key type is not `String` or `Int` (values directly representable in `CodingKey` types) encode not as `KeyedContainer`s but as `UnkeyedContainer`s. This behavior has caused much confusion for users and I would like to offer a way to improve the situation.\n",
-    "title" : "Allow coding of non String \/ Int keyed Dictionary into a KeyedContainer"
+    "title" : "Allow coding of non `String` \/ `Int` keyed `Dictionary` into a `KeyedContainer`"
   },
   {
     "authors" : [
@@ -10423,7 +10423,7 @@
       "version" : "5.7"
     },
     "summary" : "The function `withMemoryRebound(to:capacity:_ body:)`\nexecutes a closure while temporarily binding a range of memory to a different type than the callee is bound to.\nWe propose to lift some notable limitations of `withMemoryRebound` and enable rebinding to a larger set of types,\nas well as rebinding the memory pointed to by raw memory pointers and buffers.\n",
-    "title" : "Expand usability of withMemoryRebound",
+    "title" : "Expand usability of `withMemoryRebound`",
     "trackingBugs" : [
       {
         "assignee" : "",
@@ -10549,7 +10549,7 @@
       "version" : "5.6"
     },
     "summary" : "Existential types in Swift have an extremely lightweight spelling: a plain protocol name in type context means an existential type. Over the years, this has risen to the level of **active harm** by causing confusion, leading programmers down the wrong path that often requires them to re-write code once they hit a fundamental [limitation of value-level abstraction](https:\/\/forums.swift.org\/t\/improving-the-ui-of-generics\/22814#heading--limits-of-existentials). This proposal makes the impact of existential types explicit in the language by annotating such types with `any`.\n",
-    "title" : "Introduce existential any"
+    "title" : "Introduce existential `any`"
   },
   {
     "authors" : [
@@ -10872,7 +10872,7 @@
       "version" : "5.7"
     },
     "summary" : "Optional binding using `if let foo = foo { ... }`, to create an unwrapped variable that shadows an existing optional variable, is an extremely common pattern. This pattern requires the author to repeat the referenced identifier twice, which can cause these optional binding conditions to be verbose, especially when using lengthy variable names. We should introduce a shorthand syntax for optional binding when shadowing an existing variable:\n",
-    "title" : "if let shorthand for shadowing an existing optional variable"
+    "title" : "`if let` shorthand for shadowing an existing optional variable"
   },
   {
     "authors" : [
@@ -10959,7 +10959,7 @@
       "version" : "5.7"
     },
     "summary" : "",
-    "title" : "buildPartialBlock for result builders"
+    "title" : "`buildPartialBlock` for result builders"
   },
   {
     "authors" : [
@@ -11512,7 +11512,7 @@
       "version" : "5.8"
     },
     "summary" : "As of [SE-0269](https:\/\/github.com\/apple\/swift-evolution\/blob\/main\/proposals\/0269-implicit-self-explicit-capture.md), implicit `self` is permitted in closures when `self` is written explicitly in the capture list. We should extend this support to `weak self` captures, and permit implicit `self` as long as `self` has been unwrapped.\n",
-    "title" : "Allow implicit self for weak self captures, after self is unwrapped"
+    "title" : "Allow implicit `self` for `weak self` captures, after `self` is unwrapped"
   },
   {
     "authors" : [
@@ -11541,7 +11541,7 @@
       "version" : "5.9"
     },
     "summary" : "In this document, we propose adding a new operator, marked by the\ncontext-sensitive keyword `consume`, to the\nlanguage. `consume` ends the lifetime of a specific local `let`,\nlocal `var`, or function parameter, and enforces this\nby causing the compiler to emit a diagnostic upon any use after the\nconsume. This allows for code that relies on **forwarding ownership**\nof values for performance or correctness to communicate that requirement to\nthe compiler and to human readers. As an example:\n",
-    "title" : "consume operator to end the lifetime of a variable binding"
+    "title" : "`consume` operator to end the lifetime of a variable binding"
   },
   {
     "authors" : [
@@ -11883,7 +11883,7 @@
       "version" : "5.9"
     },
     "summary" : "We propose new `borrowing` and `consuming` parameter modifiers to allow developers to\nexplicitly choose the ownership convention that a function uses to receive\nimmutable parameters. Applying one of these modifiers to a parameter causes\nthat parameter binding to no longer be implicitly copyable, and potential\ncopies need to be marked with the new `copy x` operator. This allows for\nfine-tuning of performance by reducing the number of ARC calls or copies needed\nto call a function, and provides a necessary prerequisite feature for\nnoncopyable types to specify whether a function consumes a noncopyable value or\nnot.\n",
-    "title" : "borrowing and consuming parameter ownership modifiers"
+    "title" : "`borrowing` and `consuming` parameter ownership modifiers"
   },
   {
     "authors" : [
@@ -11973,7 +11973,7 @@
       "version" : "5.9"
     },
     "summary" : "This proposal introduces the ability to use `if` and `switch` statements as expressions, for the purpose of:\n",
-    "title" : "if and switch expressions"
+    "title" : "`if` and `switch` expressions"
   },
   {
     "authors" : [
@@ -12206,7 +12206,7 @@
       "version" : "5.9"
     },
     "summary" : "This proposal introduces `package` as a new access modifier.  Currently, to access a symbol in another module, that symbol needs to be declared `public`.  However, a symbol being `public` allows it to be accessed from any module at all, both within a package and from outside of a package, which is sometimes undesirable.  We need a new access modifier to enable more control over the visibility scope of such symbols.\n",
-    "title" : "New access modifier: package"
+    "title" : "New access modifier: `package`"
   },
   {
     "authors" : [
@@ -12523,7 +12523,7 @@
       "version" : "5.9"
     },
     "summary" : "Extend `Never` so that it conforms to the `Encodable` and `Decodable` protocols, together known as `Codable`.\n",
-    "title" : "Conform Never to Codable"
+    "title" : "Conform `Never` to `Codable`"
   },
   {
     "authors" : [
@@ -12691,7 +12691,7 @@
       "version" : "5.9"
     },
     "summary" : "This proposal generalizes the `conformance` macro role as an `extension` macro role that can add a member list to an extension in addition to a protocol and `where` clause.\n",
-    "title" : "Generalize conformance macros as extension macros"
+    "title" : "Generalize `conformance` macros as `extension` macros"
   },
   {
     "authors" : [
@@ -13192,7 +13192,7 @@
       "version" : "6.0"
     },
     "summary" : "This proposal is focused on a few corner cases in the language surrounding functions as values and key path literals when using concurrency. We propose Sendability should be inferred for partial and unapplied methods. We also propose to lift a Sendability restriction placed on key path literals in [SE-0302](https:\/\/github.com\/apple\/swift-evolution\/blob\/main\/proposals\/0302-concurrent-value-and-concurrent-closures.md#key-path-literals) by allowing the developers to control whether key path literal is Sendable or not. The goal is to improve flexibility, simplicity, and ergonomics without significant changes to Swift.\n",
-    "title" : "Inferring Sendable for methods and key path literals"
+    "title" : "Inferring `Sendable` for methods and key path literals"
   },
   {
     "authors" : [
@@ -13280,7 +13280,7 @@
       "version" : "6.0"
     },
     "summary" : "This proposal generalizes `AsyncSequence` in two ways:\n",
-    "title" : "Generalize effect polymorphism for AsyncSequence and AsyncIteratorProtocol"
+    "title" : "Generalize effect polymorphism for `AsyncSequence` and `AsyncIteratorProtocol`"
   },
   {
     "authors" : [

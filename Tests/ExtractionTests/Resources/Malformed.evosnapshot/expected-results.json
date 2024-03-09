@@ -97,7 +97,7 @@
         "state" : ".error"
       },
       "summary" : "Curried function declaration syntax `func foo(x: Int)(y: Int)` is of limited\nusefulness and creates a lot of language and implementation complexity. We\nshould remove it.\n",
-      "title" : " Removing currying func declaration syntax\n"
+      "title" : " Removing currying `func` declaration syntax\n"
     },
     {
       "authors" : [
@@ -125,7 +125,7 @@
         "state" : ".error"
       },
       "summary" : "There has been some confusion of semantics when a function parameter is marked\nas `inout` compared to `var`. Both give a mutable local copy of a value but\nparameters marked `inout` are automatically written back.\n",
-      "title" : " Removing var from Function Parameters\n",
+      "title" : " Removing `var` from Function Parameters\n",
       "warnings" : [
         {
           "kind" : "warning",
@@ -167,7 +167,7 @@
         "state" : ".error"
       },
       "summary" : "The increment\/decrement operators in Swift were added very early in the\ndevelopment of Swift, as a carry-over from C. These were added without much\nconsideration, and haven't been thought about much since then. This document\nprovides a fresh look at them, and ultimately recommends we just remove them\nentirely, since they are confusing and not carrying their weight.\n",
-      "title" : " Remove the ++ and -- operators\n",
+      "title" : " Remove the `++` and `--` operators\n",
       "warnings" : [
         {
           "kind" : "warning",
@@ -360,7 +360,7 @@
         "version" : "2.2"
       },
       "summary" : "The `typealias` keyword is currently used to declare two kinds of types:\n",
-      "title" : " Replace typealias keyword with associatedtype for associated type declarations\n",
+      "title" : " Replace `typealias` keyword with `associatedtype` for associated type declarations\n",
       "trackingBugs" : [
 
       ]
@@ -410,7 +410,7 @@
         "state" : ".activeReview"
       },
       "summary" : "In order to allow `AnySequence` delegate calls to the underlying sequence, its\ninitializer should have extra constraints.\n",
-      "title" : " Constraining AnySequence.init\n",
+      "title" : " Constraining `AnySequence.init`\n",
       "trackingBugs" : [
 
       ],
@@ -501,7 +501,7 @@
         "version" : "3"
       },
       "summary" : "The standard library [`Unmanaged<Instance>`\nstruct](https:\/\/github.com\/apple\/swift\/blob\/master\/stdlib\/public\/core\/Unmanaged.swift)\nprovides a type-safe object wrapper that does not participate in ARC; it allows\nthe user to make manual retain\/release calls.\n",
-      "title" : " Change Unmanaged to use UnsafePointer\n",
+      "title" : " Change `Unmanaged` to use `UnsafePointer`\n",
       "trackingBugs" : [
 
       ]
@@ -731,7 +731,7 @@
         "state" : ".activeReview"
       },
       "summary" : "Introduce a new operator an \"Optional Value Setter\". If the optional is set via\nthis operator then the new value is only set if there isn't an already existing\nvalue.\n",
-      "title" : " Optional Value Setter ??=\n",
+      "title" : " Optional Value Setter `??=`\n",
       "warnings" : [
         {
           "kind" : "warning",
