@@ -39,7 +39,7 @@ final class ExtractionTests: XCTestCase {
                 continue
             }
             
-            XCTAssertTrue(newProposal.isEqualToLegacyProposal(sourceProposal))
+            XCTAssertEqual(newProposal, sourceProposal)
         }
     }
     

@@ -176,12 +176,12 @@ public struct ExtractionJob: Sendable {
             guard !id.isEmpty  else {
                 continue
             }
-            guard let legacyProposal = expectedResultsById[id] else {
+            guard let expectedResult = expectedResultsById[id] else {
                 print("Could not find id \(id)")
                 continue
             }
                         
-            if newProposal.isEqualToLegacyProposal(legacyProposal) {
+            if newProposal == expectedResult {
                 passingProposals += 1
             } else {
                 failingProposals += 1
