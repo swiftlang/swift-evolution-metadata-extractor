@@ -726,8 +726,8 @@
       },
       "sha" : "",
       "status" : {
-        "end" : "2024-01-05",
-        "start" : "2024-01-01",
+        "end" : "2024-01-05T00:00:00Z",
+        "start" : "2024-01-01T00:00:00Z",
         "state" : ".activeReview"
       },
       "summary" : "Introduce a new operator an \"Optional Value Setter\". If the optional is set via\nthis operator then the new value is only set if there isn't an already existing\nvalue.\n",
@@ -755,8 +755,8 @@
       },
       "sha" : "",
       "status" : {
-        "end" : "2024-01-31",
-        "start" : "2024-01-16",
+        "end" : "2024-01-31T00:00:00Z",
+        "start" : "2024-01-16T00:00:00Z",
         "state" : ".scheduledForReview"
       },
       "summary" : "Scoped access level allows hiding implementation details of a class or a class\nextension at the class\/extension level, instead of a file. It is a concise\nexpression of the intent that a particular part of a class or extension\ndefinition is there only to implement a public API for other classes or\nextensions and must not be used directly anywhere outside of the scope of the\nclass or the extension.\n",

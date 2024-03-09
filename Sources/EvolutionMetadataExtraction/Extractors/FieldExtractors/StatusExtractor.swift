@@ -135,15 +135,16 @@ struct StatusExtractor: MarkupWalker, ValueExtractor {
         }
 
         let (startDay, endDay) = (String(dayMatches[0].0), String(dayMatches[1].0))
+        
+        let en_us_POSIXLocale = Locale(identifier: "en_US_POSIX")
 
+        // Specify GMT time zone so parsed date is normalized to midnight GMT
+        // Setting explicit locale to ensure repeatable results
         let formatter = DateFormatter()
         formatter.dateFormat = "MMMM' 'd' 'yyyy"
+        formatter.timeZone = TimeZone.gmt
+        formatter.locale = en_us_POSIXLocale
         
-        // Use ISO8601DateFormatter once it is available in Linux.
-        let outputFormatter = DateFormatter()
-        outputFormatter.dateFormat = "yyyy-MM-dd"
-        outputFormatter.locale = Locale(identifier: "en_US_POSIX")
-                
         let presentFormatter = DateFormatter()
         presentFormatter.dateFormat = "y"
         let presentYear: Int = Int(presentFormatter.string(from: processingDate))!
@@ -181,19 +182,15 @@ struct StatusExtractor: MarkupWalker, ValueExtractor {
             wrappedEndDate = formatter.date(from: "\(endMonth) \(endDay) \(presentYear + 1)")!
         }
 
-//        let reviewRange: (Date, Date)? = (startDate, wrappedEndDate)
-        
-//        guard let dates = dates else {
-//            warnings.append(.parseWarning("Missing or invalid dates for a review period."))
-//            break
-//        }
-
         // Note this is not an error, it would be added as a warning.
         // VALIDATION ENHANCEMENT: Add (x) days before showing this.
         var reviewEndedWarning: Proposal.Issue?
         if processingDate > wrappedEndDate {
             reviewEndedWarning = ValidationIssue.reviewEnded(on: wrappedEndDate)
         }
-        return (outputFormatter.string(from: startDate), outputFormatter.string(from: wrappedEndDate), reviewEndedWarning)
+        
+        // Although not strictly required, explicitly specify GMT time zone and "en_US_POSIX" locale
+        let dateFormatStyle = Date.ISO8601FormatStyle(timeZone: TimeZone.gmt).locale(en_us_POSIXLocale)
+        return (startDate.formatted(dateFormatStyle), wrappedEndDate.formatted(dateFormatStyle), reviewEndedWarning)
     }
 }

@@ -29,9 +29,9 @@ import Foundation
             "link": String,
         },
         "status": {
-            "state": String, // RawStatus case name, e.g. ".implemented"
-            "start": String?, // yyyy-MM-dd, key only present for RawStatuses with dates
-            "end": String?, // yyyy-MM-dd, same as above
+            "state": String, // Proposal.Status case name, e.g. ".implemented"
+            "start": String?, // ISO 8601 date string, key only present for status states with dates
+            "end": String?, // ISO 8601 date string, same as above
             "version": String?, // swift version number, e.g. "3.0.2"
         },
         "trackingBugs": [ // [Proposal.TrackingBug]?

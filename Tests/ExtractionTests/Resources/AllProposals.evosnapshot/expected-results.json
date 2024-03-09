@@ -13350,8 +13350,8 @@
     },
     "sha" : "f6cbf7729df7b0c5ce090801e9e60fd05f9df5ac",
     "status" : {
-      "end" : "2024-03-01",
-      "start" : "2024-02-20",
+      "end" : "2024-03-01T00:00:00Z",
+      "start" : "2024-02-20T00:00:00Z",
       "state" : ".activeReview"
     },
     "summary" : "Many Swift programs need to interoperate with frameworks written in C\/C++\/Objective-C whose implementations cannot participate in static data race safety. Similarly, many Swift programs have dependencies that have not yet adopted strict concurrency checking. A `@preconcurrency import` statement downgrades concurrency-related error messages that the programmer cannot resolve because the fundamental issue is in one of the dependencies. To strengthen Swift's data-race safety guarantees while working with preconcurrency dependencies, this proposals adds actor isolation checking at runtime for synchronous isolated functions.\n",
@@ -13407,8 +13407,8 @@
     },
     "sha" : "2ba45cd4119f38be490de7bbc24a210ac764cee8",
     "status" : {
-      "end" : "2024-03-19",
-      "start" : "2024-03-05",
+      "end" : "2024-03-19T00:00:00Z",
+      "start" : "2024-03-05T00:00:00Z",
       "state" : ".activeReview"
     },
     "summary" : "",
@@ -13441,8 +13441,8 @@
     },
     "sha" : "79989a3e820370dc090f24363bb1f0c29ff07105",
     "status" : {
-      "end" : "2024-03-20",
-      "start" : "2024-03-06",
+      "end" : "2024-03-20T00:00:00Z",
+      "start" : "2024-03-06T00:00:00Z",
       "state" : ".activeReview"
     },
     "summary" : "We propose a new marker protocol `BitwiseCopyable` that can be conformed to by types that can be moved or copied with direct calls to `memcpy` and which require no special destroy operation[^1].\nWhen compiling generic code with such constraints, the compiler can emit these efficient operations directly, only requiring minimal overhead to look up the size of the value at runtime.\nAlternatively, developers can use this constraint to selectively provide high-performance variations of specific operations, such as bulk copying of a container.\n",
@@ -13471,8 +13471,8 @@
     },
     "sha" : "d1a4c7f61f297420314944b2a9a94f170bd8c7c1",
     "status" : {
-      "end" : "2024-03-22",
-      "start" : "2024-03-08",
+      "end" : "2024-03-22T00:00:00Z",
+      "start" : "2024-03-08T00:00:00Z",
       "state" : ".activeReview"
     },
     "summary" : "The noncopyable types introduced in[SE-0390: Noncopyable structs and enums](0390-noncopyable-structs-and-enums.md)\ncannot be used with generics, protocols, or existentials,\nleaving an expressivity gap in the language. This proposal extends Swift's\ntype system to fill this gap.\n",
