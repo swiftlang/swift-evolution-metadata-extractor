@@ -56,8 +56,6 @@ struct ProposalMetadataExtractor {
             if let authors = extractValue(from: headerFieldsByLabel, with: AuthorExtractor.self), authors.count > 0 {
                 proposalMetadata.authors = authors
             } else {
-                // VALIDATION ENHANCEMENT: After migration remove this extra person. Setting blank person is to match legacy behavior for testing
-                proposalMetadata.authors.append(Proposal.Person())
                 errors.append(ValidationIssue.missingAuthors)
             }
             
