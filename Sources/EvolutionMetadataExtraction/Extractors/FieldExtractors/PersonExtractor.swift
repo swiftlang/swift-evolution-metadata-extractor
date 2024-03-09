@@ -66,28 +66,20 @@ struct PersonExtractor: MarkupWalker {
             errors.append(ValidationIssue.authorsHaveExtraMarkup)
         }
         
-        // VALIDATION ENHANCEMENT: This error was in the legacy tool, but never triggered for authors due to a bug
-        // Once move to new tool happens, validation against previous results is no longer needed.
-        // Can re-enable for both person roles
-        let person: Proposal.Person
-        if role == .reviewManager {
-            let destination: String
-            if let validatedDestination = linkInfo.gitHubDestination {
-                destination = validatedDestination
-            } else {
-                switch role {
-                    case .author: warnings.append(ValidationIssue.invalidAuthorLink)
-                    case .reviewManager: warnings.append(ValidationIssue.invalidReviewManagerLink)
-                }
-                destination = ""
-            }
-            person = Proposal.Person(name: linkInfo.text, link: destination)
+        let destination: String
+        if let validatedDestination = linkInfo.gitHubDestination {
+            destination = validatedDestination
         } else {
-            person = Proposal.Person(name: linkInfo.text, link: linkInfo.destination)
+            switch role {
+                case .author: warnings.append(ValidationIssue.invalidAuthorLink)
+                case .reviewManager: warnings.append(ValidationIssue.invalidReviewManagerLink)
+            }
+            destination = ""
         }
+        let person = Proposal.Person(name: linkInfo.text, link: destination)
         linkPersonList.append(person)
     }
-
+    
     // Find plain names after header label (e.g. Authors: ) or as comma-separated list items
     mutating func visitText(_ text: Text) -> () {
         let textString = text.string

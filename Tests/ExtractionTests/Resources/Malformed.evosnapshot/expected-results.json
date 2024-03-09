@@ -670,7 +670,7 @@
           "name" : "Dmitri Gribenko"
         },
         {
-          "link" : "https:\/\/swift.org",
+          "link" : "",
           "name" : "Ted Kremenek"
         },
         {
@@ -706,7 +706,14 @@
         "version" : "3"
       },
       "summary" : "The design of commonly-used libraries has a large impact on the overall feel of\na programming language. Great libraries feel like an extension of the language\nitself, and consistency across libraries elevates the overall development\nexperience. To aid in the construction of great Swift libraries, one of the\nmajor goals for Swift 3 is to define a set of API design guidelines and to apply\nthose design guidelines consistently.\n",
-      "title" : " API Design Guidelines\n"
+      "title" : " API Design Guidelines\n",
+      "warnings" : [
+        {
+          "kind" : "warning",
+          "message" : "Author's link doesn't refer to a GitHub profile. Link removed.",
+          "stage" : "validate"
+        }
+      ]
     },
     {
       "authors" : [
