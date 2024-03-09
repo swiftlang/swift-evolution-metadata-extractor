@@ -24,11 +24,20 @@
         "state" : ".implemented",
         "version" : "2.2"
       },
-      "summary" : "Argument labels are an important part of the interface of a Swift function,\ndescribing what particular arguments to the function do and improving\nreadability. Sometimes, the most natural label for an argument coincides with a\nlanguage keyword, such as `in`, `repeat`, or `defer`. Such keywords should be\nallowed as argument labels, allowing better expression of these interfaces.\n",
-      "title" : " Allow (most) keywords as argument labels\n",
-      "trackingBugs" : [
-
-      ],
+    "summary" : "Argument labels are an important part of the interface of a Swift function, describing what particular arguments to the function do and improving readability. Sometimes, the most natural label for an argument coincides with a language keyword, such as `in`, `repeat`, or `defer`. Such keywords should be allowed as argument labels, allowing better expression of these interfaces.\n",
+      "title" : "Allow (most) keywords as argument labels",
+    "trackingBugs" : [
+      {
+        "assignee" : "",
+        "id" : "SR-344",
+        "link" : "https:\/\/bugs.swift.org\/browse\/SR-344",
+        "radar" : "",
+        "resolution" : "",
+        "status" : "",
+        "title" : "",
+        "updated" : ""
+      }
+    ],
       "warnings" : [
         {
           "kind" : "warning",
@@ -62,11 +71,20 @@
             "state" : ".implemented",
             "version" : "2.2"
         },
-        "summary" : "Argument labels are an important part of the interface of a Swift function,\ndescribing what particular arguments to the function do and improving\nreadability. Sometimes, the most natural label for an argument coincides with a\nlanguage keyword, such as `in`, `repeat`, or `defer`. Such keywords should be\nallowed as argument labels, allowing better expression of these interfaces.\n",
-        "title" : " Allow (most) keywords as argument labels\n",
-        "trackingBugs" : [
-            
-        ],
+    "summary" : "Argument labels are an important part of the interface of a Swift function, describing what particular arguments to the function do and improving readability. Sometimes, the most natural label for an argument coincides with a language keyword, such as `in`, `repeat`, or `defer`. Such keywords should be allowed as argument labels, allowing better expression of these interfaces.\n",
+        "title" : "Allow (most) keywords as argument labels",
+    "trackingBugs" : [
+      {
+        "assignee" : "",
+        "id" : "SR-344",
+        "link" : "https://bugs.swift.org/browse/SR-344",
+        "radar" : "",
+        "resolution" : "",
+        "status" : "",
+        "title" : "",
+        "updated" : ""
+      }
+    ],
         "warnings" : [
             {
                 "kind" : "warning",
@@ -97,7 +115,7 @@
         "state" : ".error"
       },
       "summary" : "Curried function declaration syntax `func foo(x: Int)(y: Int)` is of limited\nusefulness and creates a lot of language and implementation complexity. We\nshould remove it.\n",
-      "title" : " Removing currying `func` declaration syntax\n"
+      "title" : "Removing currying `func` declaration syntax"
     },
     {
       "authors" : [
@@ -124,8 +142,8 @@
       "status" : {
         "state" : ".error"
       },
-      "summary" : "There has been some confusion of semantics when a function parameter is marked\nas `inout` compared to `var`. Both give a mutable local copy of a value but\nparameters marked `inout` are automatically written back.\n",
-      "title" : " Removing `var` from Function Parameters\n",
+    "summary" : "There has been some confusion of semantics when a function parameter is\nmarked as `inout` compared to `var`. Both give a mutable local copy of a\nvalue but parameters marked `inout` are automatically written back.\n",
+      "title" : "Removing `var` from Function Parameters",
       "warnings" : [
         {
           "kind" : "warning",
@@ -166,8 +184,8 @@
       "status" : {
         "state" : ".error"
       },
-      "summary" : "The increment\/decrement operators in Swift were added very early in the\ndevelopment of Swift, as a carry-over from C. These were added without much\nconsideration, and haven't been thought about much since then. This document\nprovides a fresh look at them, and ultimately recommends we just remove them\nentirely, since they are confusing and not carrying their weight.\n",
-      "title" : " Remove the `++` and `--` operators\n",
+    "summary" : "The increment/decrement operators in Swift were added very early in the\ndevelopment of Swift, as a carry-over from C.  These were added without much\nconsideration, and haven't been thought about much since then.  This document\nprovides a fresh look at them, and ultimately recommends we just remove them\nentirely, since they are confusing and not carrying their weight.\n",
+      "title" : "Remove the `++` and `--` operators",
       "warnings" : [
         {
           "kind" : "warning",
@@ -197,8 +215,8 @@
       "status" : {
         "state" : ".error"
       },
-      "summary" : "This proposal describes how we can improve Swift's \"Clang Importer\", which is\nresponsible for mapping C and Objective-C APIs into Swift, to translate the\nnames of Objective-C functions, types, methods, properties, etc. into names that\nmore closely align with the [Swift API Design\nGuidelines](https:\/\/swift.org\/documentation\/api-design-guidelines \"API Design Guidelines\")\nbeing developed as part of Swift 3. Our approach focuses on the differences\nbetween the Objective-C [Coding Guidelines for\nCocoa](https:\/\/developer.apple.com\/library\/mac\/documentation\/Cocoa\/Conceptual\/CodingGuidelines\/CodingGuidelines.html \"Coding Guidelines for Cocoa\")\nand the Swift API Design Guidelines, using some simple linguistic analysis to\naid the automatic translation from Objective-C names to more \"Swifty\" names.\n",
-      "title" : " Better Translation of Objective-C APIs Into Swift\n",
+    "summary" : "This proposal describes how we can improve Swift's \"Clang Importer\", which is responsible for mapping C and Objective-C APIs into Swift, to translate the names of Objective-C functions, types, methods, properties, etc. into names that more closely align with the [Swift API Design Guidelines](https://swift.org/documentation/api-design-guidelines) being developed as part of Swift 3. Our approach focuses on the differences between the Objective-C [Coding Guidelines for Cocoa](https://developer.apple.com/library/mac/documentation/Cocoa/Conceptual/CodingGuidelines/CodingGuidelines.html) and the Swift API Design Guidelines, using some simple linguistic analysis to aid the automatic translation from Objective-C names to more \"Swifty\" names.\n",
+      "title" : "Better Translation of Objective-C APIs Into Swift",
       "warnings" : [
         {
           "kind" : "warning",
@@ -233,8 +251,8 @@
         "state" : ".implemented",
         "version" : "3"
       },
-      "summary" : "[Swift API Design\nGuidelines](https:\/\/swift.org\/documentation\/api-design-guidelines \"API Design Guidelines\")\nbeing developed as part of Swift 3. It is important that the Standard Library is\nan exemplar of Swift API Design Guidelines: the APIs from the Standard Library\nare, probably, the most frequently used Swift APIs in any application domain;\nthe Standard Library also sets precedent for other libraries.\n",
-      "title" : " Apply API Guidelines to the Standard Library\n"
+    "summary" : "[Swift API Design Guidelines](https:\/\/swift.org\/documentation\/api-design-guidelines) being developed as\npart of Swift 3.  It is important that the Standard Library is an exemplar of\nSwift API Design Guidelines: the APIs from the Standard Library are, probably,\nthe most frequently used Swift APIs in any application domain; the Standard\nLibrary also sets precedent for other libraries.\n",
+      "title" : "Apply API Guidelines to the Standard Library"
     },
     {
       "authors" : [
@@ -298,8 +316,8 @@
           "stage" : "parse"
         }
       ],
-      "id" : "",
-      "link" : "",
+    "id" : "SE-0009",
+    "link" : "0009-require-self-for-accessing-instance-members.md",
       "reviewManager" : {
         "link" : "https:\/\/github.com\/DougGregor",
         "name" : "Doug Gregor"
@@ -308,7 +326,7 @@
       "status" : {
         "state" : ".rejected"
       },
-      "summary" : "The current version of Swift (2.1) requires using `self` when accessing instance\nmembers in closures. The proposal suggests extending this to all member accesses\n(as is intrinsically the case in Objective-C). It has the benefit of documenting\ninstance properties vs local variables and instance functions vs local functions\nor closures.\n",
+    "summary" : "The current version of Swift (2.1) requires using `self` when accessing instance members in closures. The proposal suggests extending this to all member accesses (as is intrinsically the case in Objective-C). It has the benefit of documenting instance properties vs local variables and instance functions vs local functions or closures.\n",
       "title" : ""
     },
     {
@@ -325,8 +343,8 @@
           "stage" : "parse"
         }
       ],
-      "id" : "",
-      "link" : "",
+    "id" : "SE-010",
+    "link" : "010-add-staticstring-unicodescalarview.md",
       "reviewManager" : {
         "link" : "https:\/\/github.com\/DougGregor",
         "name" : "Doug Gregor"
@@ -335,8 +353,8 @@
       "status" : {
         "state" : ".rejected"
       },
-      "summary" : "There is no way to create a substring of a `StaticString` that is still typed as\n`StaticString`. There should be.\n",
-      "title" : " Add StaticString.UnicodeScalarView\n"
+    "summary" : "There is no way to create a substring of a `StaticString` that is still typed\nas `StaticString`. There should be.\n",
+      "title" : "Add StaticString.UnicodeScalarView"
     },
     {
       "authors" : [
@@ -360,10 +378,19 @@
         "version" : "2.2"
       },
       "summary" : "The `typealias` keyword is currently used to declare two kinds of types:\n",
-      "title" : " Replace `typealias` keyword with `associatedtype` for associated type declarations\n",
-      "trackingBugs" : [
-
-      ]
+      "title" : "Replace `typealias` keyword with `associatedtype` for associated type declarations",
+    "trackingBugs" : [
+      {
+        "assignee" : "",
+        "id" : "SR-511",
+        "link" : "https://bugs.swift.org/browse/SR-511",
+        "radar" : "",
+        "resolution" : "",
+        "status" : "",
+        "title" : "",
+        "updated" : ""
+      }
+    ]
     },
     {
       "authors" : [
@@ -380,10 +407,12 @@
       },
       "sha" : "",
       "status" : {
+      	"end" : "",
+      	"start" : "",
         "state" : ".scheduledForReview"
       },
-      "summary" : "Prior to Swift 2.2, calls to superclass methods like `super.foo()` in Native\nSwift classes were dispatched statically by recording a reference to the\nfunction and calling it directly by its mangled name. In Swift 2.2, class\nmethods invoked via `super` will use dynamic dispatch. That is, the method will\nbe looked up in the superclass's vtable at runtime. However, if the method is\nmarked with `final`, it will use the old static dispatch, since no class will be\nable to override it.\n",
-      "title" : " Remove Partial Application of Non-Final Super Methods (Swift 2.2)\n",
+	"summary" : "Prior to Swift 2.2, calls to superclass methods like `super.foo()` in\nNative Swift classes were dispatched statically by recording a reference\nto the function and calling it directly by its mangled name. In Swift\n2.2, class methods invoked via `super` will use dynamic dispatch. That\nis, the method will be looked up in the superclass's vtable at runtime.\nHowever, if the method is marked with `final`, it will use the old\nstatic dispatch, since no class will be able to override it.\n",
+      "title" : "Remove Partial Application of Non-Final Super Methods (Swift 2.2)",
       "warnings" : [
         {
           "kind" : "warning",
@@ -407,13 +436,24 @@
       },
       "sha" : "",
       "status" : {
+		"end" : "",
+      	"start" : "",
         "state" : ".activeReview"
       },
-      "summary" : "In order to allow `AnySequence` delegate calls to the underlying sequence, its\ninitializer should have extra constraints.\n",
-      "title" : " Constraining `AnySequence.init`\n",
-      "trackingBugs" : [
-
-      ],
+    "summary" : "In order to allow `AnySequence` delegate calls to the underlying sequence,\nits initializer should have extra constraints.\n",
+      "title" : "Constraining `AnySequence.init`",
+    "trackingBugs" : [
+      {
+        "assignee" : "",
+        "id" : "SR-474",
+        "link" : "https://bugs.swift.org/browse/SR-474",
+        "radar" : "",
+        "resolution" : "",
+        "status" : "",
+        "title" : "",
+        "updated" : ""
+      }
+    ],
       "warnings" : [
         {
           "kind" : "warning",
@@ -449,7 +489,7 @@
         "version" : ""
       },
       "summary" : "Implement comparison operators on tuples up to some arity.\n",
-      "title" : " Tuple comparison operators\n"
+      "title" : "Tuple comparison operators"
     },
     {
       "authors" : [
@@ -469,11 +509,20 @@
         "state" : ".implemented",
         "version" : ""
       },
-      "summary" : "Just as users can create `Unsafe[Mutable]Pointer`s from `Int`s and `UInt`s, they\nshould be able to create Ints and UInts from `Unsafe[Mutable]Pointer`s. This\nwill allow users to call C functions with `intptr_t` and `uintptr_t` parameters,\nand will allow users to perform more advanced pointer arithmetic than is allowed\nby `UnsafePointer`s.\n",
-      "title" : " Add initializers to Int and UInt to convert from UnsafePointer and UnsafeMutablePointer\n",
-      "trackingBugs" : [
-
-      ]
+    "summary" : "Just as users can create `Unsafe[Mutable]Pointer`s from `Int`s and `UInt`s, they\nshould be able to create Ints and UInts from `Unsafe[Mutable]Pointer`s. This will\nallow users to call C functions with `intptr_t` and `uintptr_t` parameters, and will\nallow users to perform more advanced pointer arithmetic than is allowed by`UnsafePointer`s.\n",
+      "title" : "Add initializers to Int and UInt to convert from UnsafePointer and UnsafeMutablePointer",
+    "trackingBugs" : [
+      {
+        "assignee" : "",
+        "id" : "SR-1115",
+        "link" : "https://bugs.swift.org/browse/SR-1115",
+        "radar" : "",
+        "resolution" : "",
+        "status" : "",
+        "title" : "",
+        "updated" : ""
+      }
+    ]
     },
     {
       "authors" : [
@@ -500,52 +549,70 @@
         "state" : ".implemented",
         "version" : "3"
       },
-      "summary" : "The standard library [`Unmanaged<Instance>`\nstruct](https:\/\/github.com\/apple\/swift\/blob\/master\/stdlib\/public\/core\/Unmanaged.swift)\nprovides a type-safe object wrapper that does not participate in ARC; it allows\nthe user to make manual retain\/release calls.\n",
-      "title" : " Change `Unmanaged` to use `UnsafePointer`\n",
-      "trackingBugs" : [
-
-      ]
+    "summary" : "The standard library [`Unmanaged<Instance>` struct](https://github.com/apple/swift/blob/master/stdlib/public/core/Unmanaged.swift) provides a type-safe object wrapper that does not participate in ARC; it allows the user to make manual retain/release calls.\n",
+      "title" : "Change `Unmanaged` to use `UnsafePointer`",
+    "trackingBugs" : [
+      {
+        "assignee" : "",
+        "id" : "SR-1485",
+        "link" : "https://bugs.swift.org/browse/SR-1485",
+        "radar" : "",
+        "resolution" : "",
+        "status" : "",
+        "title" : "",
+        "updated" : ""
+      }
+    ]
     },
-    {
-      "authors" : [
-        {
-          "link" : "https:\/\/github.com\/mxcl",
-          "name" : "Max Howell"
-        },
-        {
-          "link" : "https:\/\/github.com\/ddunbar",
-          "name" : "Daniel Dunbar"
-        },
-        {
-          "link" : "https:\/\/github.com\/mattt",
-          "name" : "Mattt Thompson"
-        }
-      ],
-      "id" : "",
-      "link" : "0019-package-manager-testing.md",
-      "reviewManager" : {
-        "link" : "https:\/\/github.com\/rballard",
-        "name" : "Rick Ballard"
+  {
+    "authors" : [
+      {
+        "link" : "https:\/\/github.com\/mxcl",
+        "name" : "Max Howell"
       },
-      "sha" : "",
-      "status" : {
-        "state" : ".implemented",
-        "version" : "3"
+      {
+        "link" : "https:\/\/github.com\/ddunbar",
+        "name" : "Daniel Dunbar"
       },
-      "summary" : "Testing is an essential part of modern software development. Tight integration\nof testing into the Swift Package Manager will help ensure a stable and reliable\npackaging ecosystem.\n",
-      "title" : " Swift Testing\n",
-      "trackingBugs" : [
-
-      ],
-      "warnings" : [
-        {
-          "kind" : "warning",
-          "message" : "Proposal ID contains extra markup; expected a link with plaintext contents.",
-          "stage" : "parse"
-        }
-      ]
+      {
+        "link" : "https:\/\/github.com\/mattt",
+        "name" : "Mattt Thompson"
+      }
+    ],
+    "id" : "",
+    "link" : "0019-package-manager-testing.md",
+    "reviewManager" : {
+      "link" : "https:\/\/github.com\/rballard",
+      "name" : "Rick Ballard"
     },
-    {
+    "sha" : "",
+    "status" : {
+      "state" : ".implemented",
+      "version" : "3"
+    },
+    "summary" : "Testing is an essential part of modern software development.\nTight integration of testing into the Swift Package Manager\nwill help ensure a stable and reliable packaging ecosystem.\n",
+    "title" : "Swift Testing",
+    "trackingBugs" : [
+      {
+        "assignee" : "",
+        "id" : "SR-592",
+        "link" : "https:\/\/bugs.swift.org\/browse\/SR-592",
+        "radar" : "",
+        "resolution" : "",
+        "status" : "",
+        "title" : "",
+        "updated" : ""
+      }
+    ],
+    "warnings" : [
+      {
+        "kind" : "warning",
+        "message" : "Proposal ID contains extra markup; expected a link with plaintext contents.",
+        "stage" : "parse"
+      }
+    ]
+  },
+  {
       "authors" : [
         {
           "link" : "https:\/\/github.com\/bitjammer",
@@ -577,8 +644,8 @@
         "state" : ".implemented",
         "version" : "2.2"
       },
-      "summary" : "This proposal aims to add a new build configuration option to Swift 2.2: `#if\nswift`.\n",
-      "title" : " Swift Language Version Build Configuration\n",
+    "summary" : "This proposal aims to add a new build configuration option to Swift\n2.2: `#if swift`.\n",
+      "title" : "Swift Language Version Build Configuration",
       "warnings" : [
         {
           "kind" : "warning",
@@ -605,8 +672,8 @@
         "state" : ".implemented",
         "version" : "2.2"
       },
-      "summary" : "Swift includes support for first-class functions, such that any function (or\nmethod) can be placed into a value of function type. However, when specifying\nthe name of a function, one can only provide the base name, (e.g.,\n`insertSubview`) without the argument labels. For overloaded functions, this\nmeans that one must disambiguate based on type information, which is awkward and\nverbose. This proposal allows one to provide argument labels when referencing a\nfunction, eliminating the need to provide type context in most cases.\n",
-      "title" : " Naming Functions with Argument Labels\n",
+    "summary" : "Swift includes support for first-class functions, such that any\nfunction (or method) can be placed into a value of function\ntype. However, when specifying the name of a function, one can only provide the base name, (e.g., `insertSubview`) without the argument labels. For overloaded functions, this means that one must disambiguate based on type information, which is awkward and verbose. This proposal allows one to provide argument labels when referencing a function, eliminating the need to provide type context in most cases.\n",
+      "title" : "Naming Functions with Argument Labels",
       "warnings" : [
         {
           "kind" : "warning",
@@ -641,8 +708,8 @@
         "state" : ".implemented",
         "version" : "2.2"
       },
-      "summary" : "In Swift 2, Objective-C selectors are written as string literals (e.g.,\n`\"insertSubview:aboveSubview:\"`) in the type context of a `Selector`. This\nproposal seeks to replace this error-prone approach with `Selector`\ninitialization syntax that refers to a specific method via its Swift name.\n",
-      "title" : " Referencing the Objective-C selector of a method\n",
+    "summary" : "In Swift 2, Objective-C selectors are written as string literals\n(e.g., `\"insertSubview:aboveSubview:\"`) in the type context of a`Selector`. This proposal seeks to replace this error-prone approach\nwith `Selector` initialization syntax that refers to a specific method\nvia its Swift name.\n",
+      "title" : "Referencing the Objective-C selector of a method",
       "warnings" : [
         {
           "kind" : "warning",
@@ -701,8 +768,8 @@
         "state" : ".implemented",
         "version" : "3"
       },
-      "summary" : "The design of commonly-used libraries has a large impact on the overall feel of\na programming language. Great libraries feel like an extension of the language\nitself, and consistency across libraries elevates the overall development\nexperience. To aid in the construction of great Swift libraries, one of the\nmajor goals for Swift 3 is to define a set of API design guidelines and to apply\nthose design guidelines consistently.\n",
-      "title" : " API Design Guidelines\n",
+    "summary" : "The design of commonly-used libraries has a large impact on the\noverall feel of a programming language. Great libraries feel like an\nextension of the language itself, and consistency across libraries\nelevates the overall development experience. To aid in the\nconstruction of great Swift libraries, one of the major goals for\nSwift 3 is to define a set of API design guidelines and to apply those\ndesign guidelines consistently.\n",
+      "title" : "API Design Guidelines",
       "warnings" : [
         {
           "kind" : "warning",
@@ -730,8 +797,8 @@
         "start" : "2024-01-01T00:00:00Z",
         "state" : ".activeReview"
       },
-      "summary" : "Introduce a new operator an \"Optional Value Setter\". If the optional is set via\nthis operator then the new value is only set if there isn't an already existing\nvalue.\n",
-      "title" : " Optional Value Setter `??=`\n",
+    "summary" : "Introduce a new operator an \"Optional Value Setter\". If the optional is set via this operator then the new value is\nonly set if there isn't an already existing value.\n",
+      "title" : "Optional Value Setter `??=`",
       "warnings" : [
         {
           "kind" : "warning",
@@ -759,11 +826,20 @@
         "start" : "2024-01-16T00:00:00Z",
         "state" : ".scheduledForReview"
       },
-      "summary" : "Scoped access level allows hiding implementation details of a class or a class\nextension at the class\/extension level, instead of a file. It is a concise\nexpression of the intent that a particular part of a class or extension\ndefinition is there only to implement a public API for other classes or\nextensions and must not be used directly anywhere outside of the scope of the\nclass or the extension.\n",
-      "title" : " Scoped Access Level\n",
-      "trackingBugs" : [
-
-      ],
+    "summary" : "Scoped access level allows hiding implementation details of a class or a class extension at the class/extension level, instead of a file. It is a concise expression of the intent that a particular part of a class or extension definition is there only to implement a public API for other classes or extensions and must not be used directly anywhere outside of the scope of the class or the extension.\n",
+      "title" : "Scoped Access Level",
+    "trackingBugs" : [
+      {
+        "assignee" : "",
+        "id" : "SR-1275",
+        "link" : "https://bugs.swift.org/browse/SR-1275",
+        "radar" : "",
+        "resolution" : "",
+        "status" : "",
+        "title" : "",
+        "updated" : ""
+      }
+    ],
       "warnings" : [
         {
           "kind" : "warning",

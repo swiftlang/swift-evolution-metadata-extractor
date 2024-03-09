@@ -60,7 +60,6 @@ final class ExtractionTests: XCTestCase {
         // and sorted afterwards by id, but this test includes proposals with missing ids.
         var extractionResults: [Proposal] = []
         for spec in extractionJob.proposalSpecs {
-//            if spec.name.prefix(4) != "0013" { continue }
             extractionResults.append(await EvolutionMetadataExtractor.readAndExtractProposalMetadata(from: spec, proposalDirectoryURL: nil, extractionDate: date))
         }
         
@@ -68,31 +67,8 @@ final class ExtractionTests: XCTestCase {
         // If the two arrays don't have the same count, the test data itself has an error
         XCTAssertEqual(extractionResults.count, expectedResults.count)
         
-        let proposalLinkExceptions: Set<String> = ["SE-0009", "SE-010"]
         for (actualResult, expectedResult) in zip(extractionResults, expectedResults) {
-            
-//            if expectedResult.id != "SE-0025" { continue }
-//            if expectedResult.id == "SE-0019" { continue }
-
-            // These should be equal, even in error cases where the id is an empty string
-            // Except in cases where the legacy tool does not include the id / link for that error
-            // Matching that exact behavior in the new tool is onerous, so
-            if !proposalLinkExceptions.contains(actualResult.id) {
-                XCTAssertEqual(actualResult.id, expectedResult.id)
-                XCTAssertEqual(actualResult.link, expectedResult.link)
-            }
-            
-            XCTAssertEqual(actualResult.warnings, expectedResult.warnings)
-            XCTAssertEqual(actualResult.errors, expectedResult.errors)
-            
-            XCTAssertEqual(actualResult.sha, expectedResult.sha)
-            XCTAssertEqual(expectedResult.title.trimmingCharacters(in: .whitespacesAndNewlines), actualResult.title)
-            XCTAssertEqual(actualResult.status, expectedResult.status)
-            XCTAssertEqual(actualResult.reviewManager, expectedResult.reviewManager)
-            XCTAssertEqual(actualResult.authors, expectedResult.authors)
-//                        XCTAssertEqual(actualResult.trackingBugs, expectedResult.trackingBugs)
-            //            XCTAssertTrue(EqualityAdapter.implementationsAreEqual(propID: actualResult.id, old: expectedResult.implementation, new: actualResult.implementation))
-            //            XCTAssertTrue(EqualityAdapter.summariesAreEqual(propID: actualResult.id, old: expectedResult.summary, new: actualResult.summary))
+            XCTAssertEqual(actualResult, expectedResult)
         }
     }
     
