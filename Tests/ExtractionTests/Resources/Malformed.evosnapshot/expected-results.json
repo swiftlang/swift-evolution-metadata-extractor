@@ -674,20 +674,20 @@
           "name" : "Chris Lattner"
         },
         {
+            "link" : "",
+            "name" : "Alex Migicovsky"
+        },
+        {
           "link" : "https:\/\/github.com\/moiseev",
           "name" : "Max Moiseev"
         },
         {
+            "link" : "",
+            "name" : "Ali Ozer"
+        },
+        {
           "link" : "https:\/\/github.com\/parkera",
           "name" : "Tony Parker"
-        },
-        {
-          "link" : "",
-          "name" : "Alex Migicovsky"
-        },
-        {
-          "link" : "",
-          "name" : "Ali Ozer"
         }
       ],
       "id" : "SE-0023",

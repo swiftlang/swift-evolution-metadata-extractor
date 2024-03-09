@@ -35,9 +35,7 @@ struct PersonExtractor: MarkupWalker {
     private var warnings: [Proposal.Issue] = []
     private var errors: [Proposal.Issue] = []
 
-    private var personList: [Proposal.Person] { linkPersonList + plainPersonList }
-    private var linkPersonList: [Proposal.Person] = []
-    private var plainPersonList: [Proposal.Person] = []
+    private var personList: [Proposal.Person] = []
     
     init(role: Role) {
         self.role = role
@@ -77,7 +75,7 @@ struct PersonExtractor: MarkupWalker {
             destination = ""
         }
         let person = Proposal.Person(name: linkInfo.text, link: destination)
-        linkPersonList.append(person)
+        personList.append(person)
     }
     
     // Find plain names after header label (e.g. Authors: ) or as comma-separated list items
@@ -88,7 +86,7 @@ struct PersonExtractor: MarkupWalker {
             if !labelMatch.2.isEmpty {
                 //                print("'\(labelMatch.2)'")
                 let person = Proposal.Person(name: String(labelMatch.2))
-                plainPersonList.append(person)
+                personList.append(person)
             }
         }
     }

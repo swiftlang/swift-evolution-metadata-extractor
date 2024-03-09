@@ -682,20 +682,20 @@
         "name" : "Chris Lattner"
       },
       {
+          "link" : "",
+          "name" : "Alex Migicovsky"
+      },
+      {
         "link" : "https:\/\/github.com\/moiseev",
         "name" : "Max Moiseev"
       },
       {
-        "link" : "https:\/\/github.com\/parkera",
-        "name" : "Tony Parker"
-      },
-      {
-        "link" : "",
-        "name" : "Alex Migicovsky"
-      },
-      {
         "link" : "",
         "name" : "Ali Ozer"
+      },
+      {
+          "link" : "https:\/\/github.com\/parkera",
+          "name" : "Tony Parker"
       }
     ],
     "id" : "SE-0023",
@@ -3205,12 +3205,12 @@
   {
     "authors" : [
       {
-        "link" : "https:\/\/github.com\/austinzheng",
-        "name" : "Austin Zheng"
+          "link" : "",
+          "name" : "Vladimir S."
       },
       {
-        "link" : "",
-        "name" : "Vladimir S."
+          "link" : "https:\/\/github.com\/austinzheng",
+          "name" : "Austin Zheng"
       }
     ],
     "id" : "SE-0110",
