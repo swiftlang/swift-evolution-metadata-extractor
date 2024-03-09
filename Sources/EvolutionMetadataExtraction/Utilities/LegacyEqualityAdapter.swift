@@ -56,35 +56,26 @@ struct LegacyEqualityAdapter {
         "SE-0006" : [
             ("\"APIDesignGuidelines\"", ""),
         ],
-        "SE-0033" : [
-            ("\\!", "!"),
-        ],
-        "SE-0039" : [
-            ("\\#", "#"),
-        ],
-        "SE-0224" : [
-            ("\\<", "<"),
-        ],
-        "SE-0229" : [
-            ("\\<", "<"),
-            ("\\>", ">"),
-        ],
-        "SE-0225" : [
-            ("\\(", "("),
-            ("\\)", ")"),
-        ],
-        "SE-0307" : [
-            ("\\<", "<"),
-            ("\\>", ">"),
-        ],
         "SE-0321" : [
             ("\"PackageRegistryService\"", ""),
         ],
-        "SE-0424" : [
+    ]
+    
+    static func replacementsForProposalID(_ propID: String) -> [(String, String)] {
+        var replacements = [
             ("\\(", "("),
             ("\\)", ")"),
-        ],
-    ]
+            ("\\<", "<"),
+            ("\\>", ">"),
+            ("\\[", "["),
+            ("\\]", "]"),
+            ("\\#", "#"),
+            ("\\!", "!"),
+            ("\\!", "!"),
+        ]
+        replacements.append(contentsOf: LegacyEqualityAdapter.summaryEqualityAdapter[propID] ?? [])
+        return replacements
+    }
     
     static func summariesAreEqual(propID: String, old: String, new: String) -> Bool {
         if old == new {
@@ -96,9 +87,9 @@ struct LegacyEqualityAdapter {
             
             if oldWithoutWhitespace == newWithoutWhitespace {
                 return true
-            } else if let valuesForProposal = LegacyEqualityAdapter.summaryEqualityAdapter[propID] {
+            } else {
                 var oldWithLinkTitlesRemoved = oldWithoutWhitespace
-                for (linkTitle, replacement) in valuesForProposal {
+                for (linkTitle, replacement) in replacementsForProposalID(propID) {
                     oldWithLinkTitlesRemoved = oldWithLinkTitlesRemoved.replacingOccurrences(of: linkTitle, with: replacement)
                 }
                 //            print(oldWithLinkTitlesRemoved)
