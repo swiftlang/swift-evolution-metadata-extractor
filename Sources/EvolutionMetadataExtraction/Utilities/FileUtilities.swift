@@ -39,13 +39,13 @@ enum FileUtilities {
         return URL(filePath: fullPath).standardizedFileURL
     }
     
-    static func processDirectory() -> URL? {
+    static let processDirectory: URL? = {
         if let commandPath = CommandLine.arguments.first {
             let commandURL = URL(filePath: commandPath)
             return commandURL.deletingLastPathComponent()
         }
         return nil
-    }
+    }()
     
     static func decode<T: Decodable>(_ type: T.Type, from fileURL: URL, required: Bool = false) throws -> T? {
         do { let data = try Data(contentsOf: fileURL)

@@ -69,7 +69,7 @@ public enum ArgumentValidation {
             
             // Check for value 'default' to use the AllProposals snapshot in the test bundle
             if snapshotPath == "default" {
-                guard let processURL = FileUtilities.processDirectory() else {
+                guard let processURL = FileUtilities.processDirectory else {
                     throw ValidationError("Unable to get path to the swift-evolution-metadata-extractor executable.")
                 }
                 
