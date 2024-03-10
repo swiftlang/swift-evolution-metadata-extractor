@@ -39,14 +39,7 @@ public struct ExtractionJob: Sendable {
     let toolVersion: String
     let extractionDate: Date
     let output: Output
-    
-    var proposalsDirectoryURL: URL? {
-        if case .snapshot(let snapshotURL) = output {
-            return snapshotURL.appending(component: "proposals")
-        } else {
-            return nil
-        }
-    }
+    let temporaryProposalsDirectory: URL?
     
     private init(output: Output, branchInfo: GitHubBranch? = nil, proposalListing: [GitHubContentItem]?, proposalSpecs: [ProposalSpec], previousResults: [Proposal], expectedResults: [Proposal]?, forcedExtractionIDs: [String], toolVersion: String, extractionDate: Date = Date()) {
         self.branchInfo = branchInfo
@@ -58,6 +51,12 @@ public struct ExtractionJob: Sendable {
         self.toolVersion = toolVersion
         self.extractionDate = extractionDate
         self.output = output
+        self.temporaryProposalsDirectory = switch output {
+            case .snapshot:
+                FileManager.default.temporaryDirectory.appending(component: "proposals")
+            default:
+                nil
+        }
     }
     
     public func run() async throws {
@@ -224,9 +223,19 @@ public struct ExtractionJob: Sendable {
     }
     
     private func writeSnapshot(results: EvolutionMetadata, outputURL: URL) throws {
+
+        guard let temporaryProposalsDirectory else {
+            fatalError("When snapshot command is being run temporaryProposalsDirectory should never be nil")
+        }
+        
         print("Writing snapshot '\(outputURL.lastPathComponent)' to '\(outputURL.absoluteURL.path())'\n")
         let encoder = JSONEncoder()
         encoder.outputFormatting = [.prettyPrinted, .sortedKeys]
+        
+        try FileManager.default.createDirectory(at: outputURL, withIntermediateDirectories: true)
+        
+        let proposalsDirectory = outputURL.appending(component: "proposals")
+        try FileManager.default.moveItem(at: temporaryProposalsDirectory, to: proposalsDirectory)
     
         if let branchInfo {
             let branchInfoData = try encoder.encode(branchInfo)

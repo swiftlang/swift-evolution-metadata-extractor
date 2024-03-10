@@ -16,16 +16,16 @@ struct EvolutionMetadataExtractor {
         
         let (filteredProposalSpecs, reusableProposals) = filterProposalSpecs(for: extractionJob)
         
-        // If writing out a snapshot, will want to write proposal files when fetching.
-        // Create the .evosnapshot directory and proposals directory to write to
-        if let proposalsDirectoryURL = extractionJob.proposalsDirectoryURL {
-            try FileManager.default.createDirectory(at: proposalsDirectoryURL, withIntermediateDirectories: true)
+        // If creating a snapshot, write proposal files when fetching.
+        // Create a temporary proposals directory to write proposal files into.
+        if let temporaryProposalsDirectory = extractionJob.temporaryProposalsDirectory {
+            try FileManager.default.createDirectory(at: temporaryProposalsDirectory, withIntermediateDirectories: true)
         }
 
         let proposals = await withTaskGroup(of: Proposal.self, returning: [Proposal].self) { taskGroup in
             
             for spec in filteredProposalSpecs {
-                taskGroup.addTask { await readAndExtractProposalMetadata(from: spec, proposalDirectoryURL: extractionJob.proposalsDirectoryURL, extractionDate: extractionJob.extractionDate) }
+                taskGroup.addTask { await readAndExtractProposalMetadata(from: spec, proposalDirectoryURL: extractionJob.temporaryProposalsDirectory, extractionDate: extractionJob.extractionDate) }
             }
             
             var proposals: [Proposal] = []
