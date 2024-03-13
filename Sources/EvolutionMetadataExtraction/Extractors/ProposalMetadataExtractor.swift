@@ -18,10 +18,10 @@ struct ProposalMetadataExtractor {
     ///   - markdown: The markdown string of a Swift Evolution proposal
     ///   - proposalID: A string identifier typically of the form _SE-XXXX_ such as _SE-0234_
     /// - Returns: The extracted proposal metadata
-    static func extractProposalMetadata(from markdown: String, proposalID: String, sha: String, extractionDate: Date) -> Proposal {
+    static func extractProposalMetadata(from markdown: String, proposalSpec: ProposalSpec, extractionDate: Date) -> Proposal {
                 
         var proposalMetadata = Proposal()
-        proposalMetadata.sha = sha
+        proposalMetadata.sha = proposalSpec.sha
         
         var warnings: [Proposal.Issue] = []
         var errors: [Proposal.Issue] = []
@@ -72,7 +72,7 @@ struct ProposalMetadataExtractor {
                 if case .implemented(let version) = status, version == "none" {
                     // VALIDATION ENHANCEMENT: Figure out a better way to special case the missing version strings for these proposals
                     // VALIDATION ENHANCEMENT: Possibly just add version strings to the actual proposals
-                    if proposalID == "SE-0264" || proposalID == "SE-0110" {
+                    if proposalSpec.id == "SE-0264" || proposalSpec.id == "SE-0110" {
                         proposalMetadata.status = .implemented("")
                     } else {
                         // VALIDATION ENHANCEMENT: This *should* be a validation error

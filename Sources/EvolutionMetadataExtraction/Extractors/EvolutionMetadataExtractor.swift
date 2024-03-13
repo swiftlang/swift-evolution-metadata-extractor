@@ -40,7 +40,7 @@ struct EvolutionMetadataExtractor {
         verbosePrint("Processed Proposal Count:", proposals.count)
         
         // Combine and sort reused and newly extracted proposal metadata
-        let combinedProposals = (reusableProposals + proposals).sorted(using: SortDescriptor(\.id))
+        let combinedProposals = (reusableProposals + proposals).sorted(using: SortDescriptor(\.link))
         
         // Add top-level metadata
         
@@ -80,7 +80,7 @@ struct EvolutionMetadataExtractor {
                 try data.write(to: proposalFileURL)
             }
 
-            let parsedProposal = ProposalMetadataExtractor.extractProposalMetadata(from: markdownString, proposalID: proposalSpec.id, sha: proposalSpec.sha, extractionDate: extractionDate)
+            let parsedProposal = ProposalMetadataExtractor.extractProposalMetadata(from: markdownString, proposalSpec: proposalSpec, extractionDate: extractionDate)
             
             // For proposals that fail proposal link / id extraction, provides a way to identify the problem file in validation reports
             // When activated, be sure to set the link back to empty string post-validation report
