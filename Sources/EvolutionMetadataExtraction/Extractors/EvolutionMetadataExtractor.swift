@@ -66,7 +66,7 @@ struct EvolutionMetadataExtractor {
         )
     }
     
-    static func readAndExtractProposalMetadata(from proposalSpec: ProposalSpec, proposalDirectoryURL: URL?, extractionDate: Date) async -> SortableProposalWrapper {
+    private static func readAndExtractProposalMetadata(from proposalSpec: ProposalSpec, proposalDirectoryURL: URL?, extractionDate: Date) async -> SortableProposalWrapper {
         do {
             let markdownString: String
             if proposalSpec.url.isFileURL {

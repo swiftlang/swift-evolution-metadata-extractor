@@ -49,26 +49,17 @@ final class ExtractionTests: XCTestCase {
         let extractionJob = try await ExtractionJob.makeExtractionJob(from: .snapshot(snapshotURL), output: .none, ignorePreviousResults: true)
         let expectedResults = try XCTUnwrap(extractionJob.expectedResults, "No expected results found in bundle '\(snapshotURL.absoluteString)'")
         
-        let date = DateComponents(calendar: Calendar(identifier: .gregorian), timeZone: TimeZone.gmt ,year: 2024, month: 2, day: 14).date!
-        print(date)
-        
         // VALIDATION ENHANCEMENT: Tools like Xcode like to add a newline character to empty files
         // Possibly instead of using 0007-empty-file.md to test, test separately?
         // Or test that the file hasn't been corrupted. (Can you even check it into github?)
 
-        // It is important to preserve the order of the proposals. Normally, they can be processed in a task group
-        // and sorted afterwards by id, but this test includes proposals with missing ids.
-        var sortableRecords: [SortableProposalWrapper] = []
-        for spec in extractionJob.proposalSpecs {
-            sortableRecords.append(await EvolutionMetadataExtractor.readAndExtractProposalMetadata(from: spec, proposalDirectoryURL: nil, extractionDate: date))
-        }
-        let extractionResults = sortableRecords.map { $0.proposal }
+        let extractionMetadata = try await EvolutionMetadataExtractor.extractEvolutionMetadata(for: extractionJob)
         
         // This test zips the extraction results with the expected results
         // If the two arrays don't have the same count, the test data itself has an error
-        XCTAssertEqual(extractionResults.count, expectedResults.count)
+        XCTAssertEqual(extractionMetadata.proposals.count, expectedResults.count)
         
-        for (actualResult, expectedResult) in zip(extractionResults, expectedResults) {
+        for (actualResult, expectedResult) in zip(extractionMetadata.proposals, expectedResults) {
             XCTAssertEqual(actualResult, expectedResult)
         }
     }

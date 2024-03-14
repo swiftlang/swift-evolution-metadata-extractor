@@ -166,22 +166,15 @@ public struct ExtractionJob: Sendable {
         guard let expectedResults else {
             return
         }
-
-        let expectedResultsById = expectedResults.reduce(into: [:]) { $0[$1.id] = $1 }
+        
+        if results.proposals.count != expectedResults.count {
+            verbosePrint("Extracted proposal count \(results.proposals.count) does not match expected proposal count of \(expectedResults.count)")
+        }
+        
         var passingProposals = 0
         var failingProposals = 0
-
-        for newProposal in results.proposals {
-            let id = newProposal.id
-            guard !id.isEmpty  else {
-                continue
-            }
-            guard let expectedResult = expectedResultsById[id] else {
-                print("Could not find id \(id)")
-                continue
-            }
-                        
-            if newProposal == expectedResult {
+        for (actualResult, expectedResult) in zip(results.proposals, expectedResults) {
+            if actualResult == expectedResult {
                 passingProposals += 1
             } else {
                 failingProposals += 1
