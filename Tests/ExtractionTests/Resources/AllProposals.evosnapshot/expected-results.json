@@ -3214,12 +3214,12 @@
       }
     ],
     "id" : "SE-0110",
-    "link" : "0110-distingish-single-tuple-arg.md",
+    "link" : "0110-distinguish-single-tuple-arg.md",
     "reviewManager" : {
       "link" : "https:\/\/github.com\/lattner",
       "name" : "Chris Lattner"
     },
-    "sha" : "ed7c4b9bb272b60dbe53df4f036d9d0c290c45ed",
+    "sha" : "afe39655adc136a91acbebc297e0ad06b687e172",
     "status" : {
       "state" : ".implemented",
       "version" : ""

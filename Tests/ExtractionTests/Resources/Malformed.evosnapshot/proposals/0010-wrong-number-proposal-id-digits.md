@@ -1,6 +1,6 @@
 # Add StaticString.UnicodeScalarView
 
-* Proposal: [SE-010](010-add-staticstring-unicodescalarview.md)
+* Proposal: [SE-010](010-wrong-number-proposal-id-digits.md)
 * Author: [Lily Ballard](https://github.com/lilyball)
 * Review Manager: [Doug Gregor](https://github.com/DougGregor)
 * Status: **Rejected**

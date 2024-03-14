@@ -1,6 +1,6 @@
 # Referencing the Objective-C selector of a method
 
-* Proposal: [SE-0022](0022-objc-selectors.md)
+* Proposal: [SE-0022](0022-invalid-review-manager-link.md)
 * Author: [Doug Gregor](https://github.com/DougGregor)
 * Review Manager: [Joe Groff](https://forums.swift.org/u/joe_groff/summary)
 * Status: **Implemented (Swift 2.2)**

@@ -1,6 +1,6 @@
 # Removing `var` from Function Parameters
 
-* Proposal: [SE-0003](0003-remove-var-parameters.md)
+* Proposal: [SE-0003](0003-missing-status-field.md)
 * Author: [Ashley Garland](https://github.com/bitjammer)
 * Review Manager: [Joe Pamer](https://github.com/jopamer)
 * Decision Notes: [Rationale](https://forums.swift.org/t/se-0003-removing-var-from-function-parameters-and-pattern-matching/1230)

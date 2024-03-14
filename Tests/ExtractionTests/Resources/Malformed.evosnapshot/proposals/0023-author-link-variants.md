@@ -1,6 +1,6 @@
 # API Design Guidelines
 
-* Proposal: [SE-0023](0023-api-guidelines.md)
+* Proposal: [SE-0023](0023-author-link-variants.md)
 * Authors: [Dave Abrahams](https://github.com/dabrahams), [Doug Gregor](http://github.com/DougGregor), [Dmitri Gribenko](//github.com/gribozavr), [Ted Kremenek](https://swift.org), [Chris Lattner](http://github.com/lattner), Alex Migicovsky, [Max Moiseev](https://github.com/moiseev), Ali Ozer, [Tony Parker](https://github.com/parkera)
 * Review Manager: [Doug Gregor](https://github.com/DougGregor)
 * Status: **Implemented (Swift 3)**

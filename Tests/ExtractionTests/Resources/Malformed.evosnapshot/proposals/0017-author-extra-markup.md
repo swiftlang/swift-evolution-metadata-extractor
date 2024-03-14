@@ -1,6 +1,6 @@
 # Change `Unmanaged` to use `UnsafePointer`
 
-* Proposal: [SE-0017](0017-convert-unmanaged-to-use-unsafepointer.md)
+* Proposal: [SE-0017](0017-author-extra-markup.md)
 * Author: [*Jacob Bandes-Storch*](https://github.com/jtbandes)
 * Review Manager: [Chris Lattner](https://github.com/lattner)
 * Status: **Implemented (Swift 3)**

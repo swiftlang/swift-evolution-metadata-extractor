@@ -1,6 +1,6 @@
 # Constraining `AnySequence.init`
 
-* Proposal: [SE-0014](0014-constrained-AnySequence.md)
+* Proposal: [SE-0014](0014-active-review-missing-dates.md)
 * Author: [Max Moiseev](https://github.com/moiseev)
 * Review Manager: [Doug Gregor](https://github.com/DougGregor)
 * Status: **Active review**

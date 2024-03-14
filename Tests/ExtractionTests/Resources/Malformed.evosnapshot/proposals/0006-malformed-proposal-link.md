@@ -1,6 +1,6 @@
 # Apply API Guidelines to the Standard Library
 
-* Proposal: [SE-0006](https://github.com/apple/swift-evolution/blob/main/proposals/0006-apply-api-guidelines-to-the-standard-library.md)
+* Proposal: [SE-0006](https://github.com/apple/swift-evolution/blob/main/proposals/0006-malformed-proposal-link.md)
 * Authors: [Dave Abrahams](https://github.com/dabrahams), [Dmitri Gribenko](https://github.com/gribozavr), [Maxim Moiseev](https://github.com/moiseev)
 * Review Manager: [Doug Gregor](https://github.com/DougGregor)
 * Status: **Implemented (Swift 3)**

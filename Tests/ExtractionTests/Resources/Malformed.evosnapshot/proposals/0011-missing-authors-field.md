@@ -1,6 +1,6 @@
 # Replace `typealias` keyword with `associatedtype` for associated type declarations
 
-* Proposal: [SE-0011](0011-replace-typealias-associated.md)
+* Proposal: [SE-0011](0011-missing-authors-field.md)
 * Review Manager: [Doug Gregor](https://github.com/DougGregor)
 * Status: **Implemented (Swift 2.2)**
 * Decision Notes: [Rationale](https://forums.swift.org/t/accepted-se-0011-replace-typealias-keyword-with-associatedtype-for-associated-type-declarations/990)

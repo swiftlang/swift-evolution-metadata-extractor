@@ -1,6 +1,6 @@
 # Remove Partial Application of Non-Final Super Methods (Swift 2.2)
 
-* Proposal: [SE-0013](0013-remove-partial-application-super.md)
+* Proposal: [SE-0013](0013-scheduled-for-review-malformed-date-range.md)
 * Author: [Ashley Garland](https://github.com/bitjammer)
 * Review Manager: [Doug Gregor](https://github.com/DougGregor)
 * Status: **Scheduled for Review (Jan 3 - 15, 2024)**

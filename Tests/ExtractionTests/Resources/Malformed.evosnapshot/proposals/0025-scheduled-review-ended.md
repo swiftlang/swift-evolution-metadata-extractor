@@ -1,6 +1,6 @@
 # Scoped Access Level
 
-* Proposal: [SE-0025](0025-scoped-access-level.md)
+* Proposal: [SE-0025](0025-scheduled-review-ended.md)
 * Author: Ilya Belenkiy
 * Status: **Scheduled for review (January 16 - January 31, 2024)**
 * Review Manager: [Doug Gregor](http://github.com/DougGregor)
