@@ -64,8 +64,8 @@ struct GitHubContentItem: Codable {
         var html: String
     }
     
-    var proposalSpec: ProposalSpec {
-        ProposalSpec(url: URL(string: download_url)!, sha: sha)
+    func proposalSpec(sortIndex: Int) ->  ProposalSpec {
+        ProposalSpec(url: URL(string: download_url)!, sha: sha, sortIndex: sortIndex)
     }
 }
 
@@ -80,6 +80,11 @@ struct GitHubPullFileItem: Codable {
     var raw_url: String
     var contents_url: String
     var patch: String
+    
+    func proposalSpec(sortIndex: Int) ->  ProposalSpec {
+        ProposalSpec(url: URL(string: raw_url)!, sha: sha, sortIndex: sortIndex)
+    }
+
 }
 
 struct GitHubFetcher {
@@ -123,12 +128,11 @@ struct GitHubFetcher {
         return try await getGitHubAPIValue(for: endpoint, type: [GitHubContentItem].self)
     }
 
-    static func fetchPullRequestProposalList(for pullNumber: String) async throws -> [ProposalSpec] {
+    static func fetchPullRequestProposalList(for pullNumber: String) async throws -> [GitHubPullFileItem] {
         let endpointURL = Endpoint.githubPullEndpoint(for: pullNumber)
         let contents = try await getGitHubAPIValue(for: endpointURL, type: [GitHubPullFileItem].self)
         return contents
             .filter { $0.filename.hasPrefix("proposals/") }
-            .map { ProposalSpec(url: URL(string: $0.raw_url)!, sha: $0.sha) }
     }
     
     static func getGitHubAPIValue<T: Decodable>(for endpoint: URL, type: T.Type, cachePolicy: URLRequest.CachePolicy = .useProtocolCachePolicy) async throws -> T {

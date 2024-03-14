@@ -58,10 +58,11 @@ final class ExtractionTests: XCTestCase {
 
         // It is important to preserve the order of the proposals. Normally, they can be processed in a task group
         // and sorted afterwards by id, but this test includes proposals with missing ids.
-        var extractionResults: [Proposal] = []
+        var sortableRecords: [SortableProposalWrapper] = []
         for spec in extractionJob.proposalSpecs {
-            extractionResults.append(await EvolutionMetadataExtractor.readAndExtractProposalMetadata(from: spec, proposalDirectoryURL: nil, extractionDate: date))
+            sortableRecords.append(await EvolutionMetadataExtractor.readAndExtractProposalMetadata(from: spec, proposalDirectoryURL: nil, extractionDate: date))
         }
+        let extractionResults = sortableRecords.map { $0.proposal }
         
         // This test zips the extraction results with the expected results
         // If the two arrays don't have the same count, the test data itself has an error

@@ -22,13 +22,13 @@ struct EvolutionMetadataExtractor {
             try FileManager.default.createDirectory(at: temporaryProposalsDirectory, withIntermediateDirectories: true)
         }
 
-        let proposals = await withTaskGroup(of: Proposal.self, returning: [Proposal].self) { taskGroup in
+        let proposals = await withTaskGroup(of: SortableProposalWrapper.self, returning: [SortableProposalWrapper].self) { taskGroup in
             
             for spec in filteredProposalSpecs {
                 taskGroup.addTask { await readAndExtractProposalMetadata(from: spec, proposalDirectoryURL: extractionJob.temporaryProposalsDirectory, extractionDate: extractionJob.extractionDate) }
             }
             
-            var proposals: [Proposal] = []
+            var proposals: [SortableProposalWrapper] = []
             for await result in taskGroup {
                 proposals.append(result)
             }
@@ -40,7 +40,8 @@ struct EvolutionMetadataExtractor {
         verbosePrint("Processed Proposal Count:", proposals.count)
         
         // Combine and sort reused and newly extracted proposal metadata
-        let combinedProposals = (reusableProposals + proposals).sorted(using: SortDescriptor(\.link))
+        let sortedRecords = (reusableProposals + proposals).sorted(using: SortDescriptor(\.sortIndex))
+        let combinedProposals = sortedRecords.map { $0.proposal }
         
         // Add top-level metadata
         
@@ -65,7 +66,7 @@ struct EvolutionMetadataExtractor {
         )
     }
     
-    static func readAndExtractProposalMetadata(from proposalSpec: ProposalSpec, proposalDirectoryURL: URL?, extractionDate: Date) async -> Proposal {
+    static func readAndExtractProposalMetadata(from proposalSpec: ProposalSpec, proposalDirectoryURL: URL?, extractionDate: Date) async -> SortableProposalWrapper {
         do {
             let markdownString: String
             if proposalSpec.url.isFileURL {
@@ -89,28 +90,37 @@ struct EvolutionMetadataExtractor {
             // VALIDATION ENHANCEMENT: Validate that the 'link' value matches the filename
             // VALIDATION ENHANCEMENT: Note that items in Malformed test would need to be updated, since their filename matches the problem exhibited
             
-            return parsedProposal
+            return SortableProposalWrapper(proposal: parsedProposal, sortIndex: proposalSpec.sortIndex)
 
         } catch {
             print(error)
-            return Proposal(errors:[ValidationIssue.proposalContainsNoContent])
+            return SortableProposalWrapper(proposal: Proposal(errors:[ValidationIssue.proposalContainsNoContent]), sortIndex: proposalSpec.sortIndex)
         }
     }
     
-    private static func filterProposalSpecs(for extractionJob: ExtractionJob) -> ([ProposalSpec], [Proposal]) {
+    private static func filterProposalSpecs(for extractionJob: ExtractionJob) -> ([ProposalSpec], [SortableProposalWrapper]) {
+        
+        let sortablePreviousResults = extractionJob.previousResults
+            .enumerated()
+            .map { SortableProposalWrapper(proposal: $1, sortIndex: $0)}
+
         
         // If reusableProposals is empty, there can be no reuse. Return early.
         guard !extractionJob.previousResults.isEmpty else {
-            return (extractionJob.proposalSpecs, extractionJob.previousResults)
+            return (extractionJob.proposalSpecs, sortablePreviousResults)
         }
         
-        var parsedProposalsById = extractionJob.previousResults.reduce(into: [String:Proposal]()) { $0[$1.id] = $1 }
-        var reusableProposals: [Proposal] = []
-        var deletedProposals: [Proposal] = []
+        var parsedProposalsById = sortablePreviousResults.reduce(into: [String:SortableProposalWrapper]()) { $0[$1.id] = $1 }
+        var reusableProposals: [SortableProposalWrapper] = []
+        var deletedProposals: [SortableProposalWrapper] = []
 
         let needsParsing = extractionJob.proposalSpecs.reduce(into: [ProposalSpec]()) { partialResult, githubProposal in
             if let parsedProposal = parsedProposalsById.removeValue(forKey: githubProposal.id) {
                 if parsedProposal.sha == githubProposal.sha && !extractionJob.forcedExtractionIDs.contains(githubProposal.id) {
+                    // This assertion tests the assumption that proposals with the same ID will have same sort index
+                    // In the repository, because proposals are only added and never change sort order
+                    // In snapshots because they are static
+                    assert(parsedProposal.sortIndex == githubProposal.sortIndex)
                     reusableProposals.append(parsedProposal)
                 }
                 else {
@@ -142,13 +152,22 @@ struct EvolutionMetadataExtractor {
 ///
 /// The listing of proposals to be processed may come from a GitHub proposal listing or scanning the contents of a directory.
 struct ProposalSpec: Sendable {
-    var url: URL
-    var sha: String
+    let url: URL
+    let sha: String
+    let sortIndex: Int
     var id: String { "SE-" + url.lastPathComponent.prefix(4) }
     var filename: String { url.lastPathComponent }
     
-    init(url: URL, sha: String) {
+    init(url: URL, sha: String, sortIndex: Int) {
         self.url = url
         self.sha = sha
+        self.sortIndex = sortIndex
     }
+}
+
+struct SortableProposalWrapper {
+    let proposal: Proposal
+    let sortIndex: Int
+    var id: String { proposal.id }
+    var sha: String { proposal.sha }
 }

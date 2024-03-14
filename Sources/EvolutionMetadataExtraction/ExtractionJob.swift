@@ -105,11 +105,12 @@ public struct ExtractionJob: Sendable {
         directoryContents = try FileManager.default.contentsOfDirectory(at: proposalDirectoryURL, includingPropertiesForKeys: nil)
             .sorted(by: { $0.lastPathComponent < $1.lastPathComponent })
             .filter { $0.pathExtension == "md"}
-            .map { ProposalSpec(url: $0, sha: "") } // try! SHA1.hexForData(Data(contentsOf: $0)))
+            .enumerated()
+            .map { ProposalSpec(url: $1, sha: "", sortIndex: $0) } // try! SHA1.hexForData(Data(contentsOf: $0)))
 
         if let contentItems = try FileUtilities.decode([GitHubContentItem].self, from: proposalListingURL) {
             proposalListing = contentItems
-            proposalSpecs = contentItems.map { ProposalSpec(url: snapshotURL.appending(path: $0.path), sha: $0.sha) }
+            proposalSpecs = contentItems.enumerated().map { ProposalSpec(url: snapshotURL.appending(path: $1.path), sha: $1.sha, sortIndex: $0) }
             proposalListingFound = true
             if directoryContents.count != proposalSpecs.count {
                 print("WARNING: Number of proposals in proposals directory does not match number of proposals in 'proposal-listing.json")
@@ -154,7 +155,7 @@ public struct ExtractionJob: Sendable {
         let mainBranchInfo = try await GitHubFetcher.fetchMainBranch()
         async let proposalContentItems = GitHubFetcher.fetchProposalContentItems(for: mainBranchInfo.commit.sha)
         
-        let proposalSpecs = try await proposalContentItems.map { $0.proposalSpec }
+        let proposalSpecs = try await proposalContentItems.enumerated().map { $1.proposalSpec(sortIndex: $0) }
         
         return await ExtractionJob(output: output, branchInfo: mainBranchInfo, proposalListing: try proposalContentItems, proposalSpecs: proposalSpecs, previousResults: try await previousResults, expectedResults: nil, forcedExtractionIDs: forcedExtractionIDs, toolVersion: toolVersion, extractionDate: extractionDate)
     }
