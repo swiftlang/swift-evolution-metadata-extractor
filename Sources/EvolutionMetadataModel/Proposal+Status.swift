@@ -14,13 +14,13 @@ extension Proposal {
         case awaitingReview
         case scheduledForReview(start: String, end: String)
         case activeReview(start: String, end: String)
-        case returnedForRevision
-        case withdrawn
         case accepted
         case acceptedWithRevisions
-        case rejected
-        case implemented(version: String)
         case previewing
+        case implemented(version: String)
+        case returnedForRevision
+        case rejected
+        case withdrawn
         case error
     }
 }
@@ -54,15 +54,15 @@ extension Proposal.Status: Codable {
                 let start = try? container.decode(String.self, forKey: .start)
                 let end = try? container.decode(String.self, forKey: .end)
                 self = .activeReview(start: start ?? "", end: end ?? "")
-            case ".returnedForRevision": self = .returnedForRevision
-            case ".withdrawn": self = .withdrawn
             case ".accepted": self = .accepted
             case ".acceptedWithRevisions": self = .acceptedWithRevisions
-            case ".rejected": self = .rejected
+            case ".previewing": self = .previewing
             case ".implemented":
                 let version = try container.decode(String.self, forKey: .version)
                 self = .implemented(version: version)
-            case ".previewing": self = .previewing
+            case ".returnedForRevision": self = .returnedForRevision
+            case ".rejected": self = .rejected
+            case ".withdrawn": self = .withdrawn
             case ".error": self = .error
             default: throw DecodingError.dataCorruptedError(forKey: .state, in: container,
                                                             debugDescription: "Unknown status value \(status)"
@@ -94,13 +94,13 @@ extension Proposal.Status: Codable {
             case .awaitingReview: ".awaitingReview"
             case .scheduledForReview: ".scheduledForReview"
             case .activeReview: ".activeReview"
-            case .returnedForRevision: ".returnedForRevision"
-            case .withdrawn: ".withdrawn"
             case .accepted: ".accepted"
             case .acceptedWithRevisions: ".acceptedWithRevisions"
-            case .rejected: ".rejected"
-            case .implemented: ".implemented"
             case .previewing: ".previewing"
+            case .implemented: ".implemented"
+            case .returnedForRevision: ".returnedForRevision"
+            case .rejected: ".rejected"
+            case .withdrawn: ".withdrawn"
             case .error: ".error"
         }
     }
@@ -113,13 +113,13 @@ extension Proposal.Status {
             case "Awaiting Review".lowercased(): self = .awaitingReview
             case "Scheduled For Review".lowercased(): self = .scheduledForReview(start: start, end: end)
             case "Active Review".lowercased(): self = .activeReview(start: start, end: end)
-            case "Returned For Revision".lowercased(): self = .returnedForRevision
-            case "Withdrawn".lowercased(): self = .withdrawn
             case "Accepted".lowercased(): self = .accepted
             case "Accepted With Revisions".lowercased(): self = .acceptedWithRevisions
-            case "Rejected".lowercased(): self = .rejected
-            case "Implemented".lowercased(): self = .implemented(version: version)
             case "Previewing".lowercased(): self = .previewing
+            case "Implemented".lowercased(): self = .implemented(version: version)
+            case "Returned For Revision".lowercased(): self = .returnedForRevision
+            case "Rejected".lowercased(): self = .rejected
+            case "Withdrawn".lowercased(): self = .withdrawn
             case "Error".lowercased(): self = .error
             // VALIDATION ENHANCEMENT: The following are non-standard statuses that are in current proposals
             // VALIDATION ENHANCEMENT: The mapped values match the legacy tool implemenation
@@ -136,13 +136,13 @@ extension Proposal.Status {
             case .awaitingReview: "Awaiting Review"
             case .scheduledForReview: "Scheduled For Review"
             case .activeReview: "Active Review"
-            case .returnedForRevision: "Returned For Revision"
-            case .withdrawn: "Withdrawn"
             case .accepted: "Accepted"
             case .acceptedWithRevisions: "Accepted With Revisions"
-            case .rejected: "Rejected"
-            case .implemented: "Implemented"
             case .previewing: "Previewing"
+            case .implemented: "Implemented"
+            case .returnedForRevision: "Returned For Revision"
+            case .rejected: "Rejected"
+            case .withdrawn: "Withdrawn"
             case .error: "Error"
         }
     }
