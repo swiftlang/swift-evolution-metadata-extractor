@@ -136,14 +136,12 @@ struct StatusExtractor: MarkupWalker, ValueExtractor {
 
         let (startDay, endDay) = (String(dayMatches[0].0), String(dayMatches[1].0))
         
-        let en_us_POSIXLocale = Locale(identifier: "en_US_POSIX")
-
         // Specify GMT time zone so parsed date is normalized to midnight GMT
         // Setting explicit locale to ensure repeatable results
         let formatter = DateFormatter()
         formatter.dateFormat = "MMMM' 'd' 'yyyy"
         formatter.timeZone = TimeZone.gmt
-        formatter.locale = en_us_POSIXLocale
+        formatter.locale = Locale.en_US_POSIX
         
         let presentFormatter = DateFormatter()
         presentFormatter.dateFormat = "y"
@@ -189,8 +187,8 @@ struct StatusExtractor: MarkupWalker, ValueExtractor {
             reviewEndedWarning = ValidationIssue.reviewEnded(on: wrappedEndDate)
         }
         
-        // Although not strictly required, explicitly specify GMT time zone and "en_US_POSIX" locale
-        let dateFormatStyle = Date.ISO8601FormatStyle(timeZone: TimeZone.gmt).locale(en_us_POSIXLocale)
+        // Specify explicit GMT time zone and 'en_US_POSIX' locale
+        let dateFormatStyle = Date.ISO8601FormatStyle(timeZone: TimeZone.gmt).locale(Locale.en_US_POSIX)
         return (startDate.formatted(dateFormatStyle), wrappedEndDate.formatted(dateFormatStyle), reviewEndedWarning)
     }
 }

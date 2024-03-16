@@ -25,6 +25,14 @@ extension Dictionary {
 
 // MARK: -
 
+// Use 'en_US_POSIX' as locale for consistent results
+// Define once to prevent identifier typos at call sites
+extension Locale {
+    static let en_US_POSIX = Locale(identifier: "en_US_POSIX")
+}
+
+// MARK: -
+
 // The tool runs in an environment where HTTP proxy info is provided through environment variables.
 // On first access, create the session using the proxy configuraton information, if present.
 extension URLSession {
