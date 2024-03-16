@@ -16,7 +16,6 @@ extension Proposal {
         case activeReview(start: String, end: String)
         case returnedForRevision
         case withdrawn
-        case deferred
         case accepted
         case acceptedWithRevisions
         case rejected
@@ -57,7 +56,6 @@ extension Proposal.Status: Codable {
                 self = .activeReview(start: start ?? "", end: end ?? "")
             case ".returnedForRevision": self = .returnedForRevision
             case ".withdrawn": self = .withdrawn
-            case ".deferred": self = .deferred
             case ".accepted": self = .accepted
             case ".acceptedWithRevisions": self = .acceptedWithRevisions
             case ".rejected": self = .rejected
@@ -98,7 +96,6 @@ extension Proposal.Status: Codable {
             case .activeReview: ".activeReview"
             case .returnedForRevision: ".returnedForRevision"
             case .withdrawn: ".withdrawn"
-            case .deferred: ".deferred"
             case .accepted: ".accepted"
             case .acceptedWithRevisions: ".acceptedWithRevisions"
             case .rejected: ".rejected"
@@ -118,7 +115,6 @@ extension Proposal.Status {
             case "Active Review".lowercased(): self = .activeReview(start: start, end: end)
             case "Returned For Revision".lowercased(): self = .returnedForRevision
             case "Withdrawn".lowercased(): self = .withdrawn
-            case "Deferred".lowercased(): self = .deferred
             case "Accepted".lowercased(): self = .accepted
             case "Accepted With Revisions".lowercased(): self = .acceptedWithRevisions
             case "Rejected".lowercased(): self = .rejected
@@ -142,7 +138,6 @@ extension Proposal.Status {
             case .activeReview: "Active Review"
             case .returnedForRevision: "Returned For Revision"
             case .withdrawn: "Withdrawn"
-            case .deferred: "Deferred"
             case .accepted: "Accepted"
             case .acceptedWithRevisions: "Accepted With Revisions"
             case .rejected: "Rejected"
