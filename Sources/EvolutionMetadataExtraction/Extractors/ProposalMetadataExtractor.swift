@@ -73,10 +73,10 @@ struct ProposalMetadataExtractor {
                     // VALIDATION ENHANCEMENT: Figure out a better way to special case the missing version strings for these proposals
                     // VALIDATION ENHANCEMENT: Possibly just add version strings to the actual proposals
                     if proposalSpec.id == "SE-0264" || proposalSpec.id == "SE-0110" {
-                        proposalMetadata.status = .implemented("")
+                        proposalMetadata.status = .implemented(version: "")
                     } else {
                         // VALIDATION ENHANCEMENT: This *should* be a validation error
-                        proposalMetadata.status = .implemented("")
+                        proposalMetadata.status = .implemented(version: "")
                     }
                 } else {
                     proposalMetadata.status = status

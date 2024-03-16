@@ -12,15 +12,15 @@ import Foundation
 extension Proposal {
     public enum Status: Equatable, Sendable, Comparable {
         case awaitingReview
-        case scheduledForReview(String, String)
-        case activeReview(String, String)
+        case scheduledForReview(start: String, end: String)
+        case activeReview(start: String, end: String)
         case returnedForRevision
         case withdrawn
         case deferred
         case accepted
         case acceptedWithRevisions
         case rejected
-        case implemented(String)
+        case implemented(version: String)
         case previewing
         case error
     }
@@ -47,14 +47,14 @@ extension Proposal.Status: Codable {
                 // VALIDATION ENHANCEMENT: For this status, there should *always* be start and end values, even if empty strings
                 let start = try? container.decode(String.self, forKey: .start)
                 let end = try? container.decode(String.self, forKey: .end)
-                self = .scheduledForReview(start ?? "", end ?? "")
+                self = .scheduledForReview(start: start ?? "", end: end ?? "")
             case ".activeReview":
                 // VALIDATION ENHANCEMENT: On date parsing failure, legacy tool omits start and end keys
                 // VALIDATION ENHANCEMENT: After move to new tool, revert to this being 'try' with failure
                 // VALIDATION ENHANCEMENT: For this status, there should *always* be start and end values, even if empty strings
                 let start = try? container.decode(String.self, forKey: .start)
                 let end = try? container.decode(String.self, forKey: .end)
-                self = .activeReview(start ?? "", end ?? "")
+                self = .activeReview(start: start ?? "", end: end ?? "")
             case ".returnedForRevision": self = .returnedForRevision
             case ".withdrawn": self = .withdrawn
             case ".deferred": self = .deferred
@@ -63,7 +63,7 @@ extension Proposal.Status: Codable {
             case ".rejected": self = .rejected
             case ".implemented":
                 let version = try container.decode(String.self, forKey: .version)
-                self = .implemented(version)
+                self = .implemented(version: version)
             case ".previewing": self = .previewing
             case ".error": self = .error
             default: throw DecodingError.dataCorruptedError(forKey: .state, in: container,
@@ -114,23 +114,23 @@ extension Proposal.Status {
     public init?(name: String, version: String = "", start: String = "", end: String = "") {
         switch name.lowercased() {
             case "Awaiting Review".lowercased(): self = .awaitingReview
-            case "Scheduled For Review".lowercased(): self = .scheduledForReview(start, end)
-            case "Active Review".lowercased(): self = .activeReview(start, end)
+            case "Scheduled For Review".lowercased(): self = .scheduledForReview(start: start, end: end)
+            case "Active Review".lowercased(): self = .activeReview(start: start, end: end)
             case "Returned For Revision".lowercased(): self = .returnedForRevision
             case "Withdrawn".lowercased(): self = .withdrawn
             case "Deferred".lowercased(): self = .deferred
             case "Accepted".lowercased(): self = .accepted
             case "Accepted With Revisions".lowercased(): self = .acceptedWithRevisions
             case "Rejected".lowercased(): self = .rejected
-            case "Implemented".lowercased(): self = .implemented(version)
+            case "Implemented".lowercased(): self = .implemented(version: version)
             case "Previewing".lowercased(): self = .previewing
             case "Error".lowercased(): self = .error
             // VALIDATION ENHANCEMENT: The following are non-standard statuses that are in current proposals
             // VALIDATION ENHANCEMENT: The mapped values match the legacy tool implemenation
             // VALIDATION ENHANCEMENT: In the future may want to formalize or normalize
             case "Accepted with modifications".lowercased(): self = .accepted
-            case "Partially implemented".lowercased(): self = .implemented(version)
-            case "Implemented with Modifications".lowercased(): self = .implemented(version)
+            case "Partially implemented".lowercased(): self = .implemented(version: version)
+            case "Implemented with Modifications".lowercased(): self = .implemented(version: version)
             default: return nil
         }
     }
