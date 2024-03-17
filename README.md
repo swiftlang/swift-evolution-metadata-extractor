@@ -20,39 +20,50 @@ The default behavior can be configured in various ways.
 
 ### Output path
 
-Use the `--output-path` option (`-o`) to specify a different location or filename.
-
-Uses default filename and writes `proposals.json` to `~/Desktop`:  
-`swift-evolution-metadata-extractor --output-path ~/Desktop`
-
-Writes `my-metadata.json` at the specified location:  
-`swift-evolution-metadata-extractor -o ~/Desktop/my-metadata.json`
+Use the `--output-path` option (`-o`) to specify a different output location or filename.
 
 If the specified path does not exist, the tool will attempt to create the necessary directories.
 
+- Use a path ending with no file extension to specify path and use default file name:  
+
+  `swift-evolution-metadata-extractor --output-path ~/Desktop`  
+  
+  > Will write output to `~/Desktop/proposals.json`
+
+- Use a path ending with a file extension to specify path and file name:
+
+  `swift-evolution-metadata-extractor -o ~/Desktop/my-metadata.json`  
+  
+  > Will write output to `~/Desktop/my-metadata.json`
+
+- Use the value 'none' to supress output:  
+
+  `swift-evolution-metadata-extractor --output-path none`
+
+
 ### Force extract
 
-By default, the SHA values of previously extracted proposals are used to avoid processing proposals with no changes.
+By default, the SHA values of previously extracted proposals are checked to avoid processing proposals with no changes.
 
 Use the `--force-extract` option to force all or specified proposals to be fetched and processed.
 
-To force all proposals to be processed ignoring previous results:  
-`swift-evolution-metadata-extractor --force-extract all`
+- Use the value 'all' to force all proposals to be processed, ignoring previous results:  
+  `swift-evolution-metadata-extractor --force-extract all`
 
-To force a specific proposal to be processed:  
-`swift-evolution-metadata-extractor --force-extract SE-0287`
+- Use a proposal identifier to force a specific proposal to be processed:  
+  `swift-evolution-metadata-extractor --force-extract SE-0287`
 
-Use the `--force-extract` option multiple times for multiple proposals:  
-`swift-evolution-metadata-extractor --force-extract SE-0287 --force-extract SE-0123`
+- Use the `--force-extract` option multiple times for multiple proposals:  
+  `swift-evolution-metadata-extractor --force-extract SE-0287 --force-extract SE-0123`
 
 ### Snapshot path
 
-Use the `--snapshot-path` option to specify a local `evosnapshot` directory during development.
+Use the `--snapshot-path` option to specify a local `evosnapshot` directory as a data source during development.
 
-Use the value 'default' to specify a default snapshot of all evolution proposals.  
-`swift-evolution-metadata-extractor --snapshot-path default`
+- Use the value 'default' to specify a default snapshot of all evolution proposals:  
+  `swift-evolution-metadata-extractor --snapshot-path default`
 
-See _Snapshots for development and testing_ for more information about snapshots.
+See [Snapshots for Development and Testing](#snapshots-for-development-and-testing) for more information about snapshots.
 
 ### Verbose output
 
@@ -70,41 +81,51 @@ When present, HTTPS networking requests will use the specified proxy.
 **GITHUB_TOKEN**  
 When present, the provided token will be included as an authorization header in GitHub API requests.
 
-## EvolutionMetadataModel library
-The package vends the `EvolutionMetadataModel` library. The library defines `Codable` types that are suitable for decoding the generated evolution metadata file.
+## EvolutionMetadataModel Library
+The package vends the `EvolutionMetadataModel` library. The library defines `Codable`, `Equatable`, `Sendable` value types that are suitable for decoding the generated evolution metadata file.
 
-## Snapshots for development and testing
-The tool is able to record snapshots of input files and expected results for use in development and testing.
-
-Ad-hoc snapshots can also be manually created to create content for specifc tests such as verifying that validation errors are correctly detected in malformed proposals.
-
-Snapshots are directories with the file extension `evosnapshot` but are not formally declared as bundles on macOS.
+## Snapshots for Development and Testing
+Use the `snapshot` subcommand to record snapshots.
 
 `swift-evolution-metadata-extractor snapshot`
 
-### Snapshot structure and contents
-A snapshot is a directory with the extension `evosnapshot` containing files with well-known names. As described in _Ad-hoc snapshots_, depending on what it is meant to test, a snapshot can contain a subset of files.
+A snapshot is a directory of input files and expected results for use in development and testing.  Snapshot directories use the file extension `evosnapshot` but are not formally declared as bundles on macOS.
 
-Directory of proposal markdown files:  
+Ad hoc snapshots can also be manually constructed to create content for specifc tests such as verifying that validation errors are correctly detected in malformed proposals.
+
+### Options
+The snapshot subcommand has options that work similar to extract command options:
+- Use the `--output-path` option (`-o`) to specify a different output location or filename.
+
+- Use the `--verbose` option (`-v`) for verbose output as the tool runs.
+
+### Snapshot structure and contents
+A snapshot is a directory with the extension `evosnapshot` containing files with well-known names.
+
+As described in [Ad hoc snapshots](#ad-hoc-snapshots), a snapshot can contain a subset of files.
+
+For example, the snapshot generated by the `snapshot` subcommand does not include a `previous-results.json` file.
+
+- Directory of proposal markdown files:  
 `proposals/XXXX-proposal-files.md`
 
-Expected results from the source data. If present, will compare at end of run:  
+- Expected results from the source data:  
 `expected-results.json`
 
-Results of GitHub query of proposals directory. Contains proposal SHA values:  
+- Results of GitHub query of proposals directory. Contains proposal SHA values:  
 `proposal-listing.json`
 
-Results of GitHub query about the branch or PR, includes name and an identifier:  
+- Results of GitHub query about the branch or PR. Includes name and an identifier:  
 `source-info.json`
 
-Previous results. If present, will be used in processing unless forced extraction is specified:  
+- Previous results. If present, will be used in processing unless forced extraction is specified:  
 `previous-results.json`
 
-### Ad-hoc snapshots
+### Ad hoc snapshots
 For testing, a variety of situations representing malformed proposals or rarely encountered states can be represented in manually constructed snapshots.
 
-For example, the `Malformed.evosnapshot` is used to test content validation warnings and errors.
+For example, the `Malformed.evosnapshot` in the `ExtractionTests` target is used to test content validation warnings and errors.
 
-These ad hoc snapshots often include only a `proposals` directory and a `expected-results.json` file.
+These ad hoc snapshots often include only a `proposals` directory and an `expected-results.json` file.
 
 Generally there is no `previous-results.json` file present in a snapshot, but could be present in snapshots that are used to test using previous results or forced extraction.
