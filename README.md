@@ -99,6 +99,10 @@ The snapshot subcommand has options that work similar to extract command options
 
 - Use the `--verbose` option (`-v`) for verbose output as the tool runs.
 
+- Use the `--snapshot-path` option to specify a local `evosnapshot` directory as a data source.
+  
+  When the expected results change for an existing snapshot, use this option to create a new snapshot containing the existing snapshot input files and the most recent expected results. This would be useful, for example when adding validation cases that generate new or different errors and warnings for proposals in the `Malformed.evosnapshot` snapshot.
+  
 ### Snapshot structure and contents
 A snapshot is a directory with the extension `evosnapshot` containing files with well-known names.
 

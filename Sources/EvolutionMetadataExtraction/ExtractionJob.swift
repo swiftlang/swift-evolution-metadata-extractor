@@ -229,7 +229,7 @@ public struct ExtractionJob: Sendable {
         try FileManager.default.createDirectory(at: outputURL, withIntermediateDirectories: true)
         
         let proposalsDirectory = outputURL.appending(component: "proposals")
-        try FileManager.default.moveItem(at: temporaryProposalsDirectory, to: proposalsDirectory)
+        _ = try FileManager.default.replaceItemAt(proposalsDirectory, withItemAt: temporaryProposalsDirectory, options: [.usingNewMetadataOnly])
     
         if let branchInfo {
             let branchInfoData = try encoder.encode(branchInfo)
@@ -237,7 +237,7 @@ public struct ExtractionJob: Sendable {
             try branchInfoData.write(to: branchInfoURL)
         }
         
-        if !proposalSpecs.isEmpty {
+        if let proposalListing, !proposalListing.isEmpty {
             let proposalListingData = try encoder.encode(proposalListing)
             let proposalListingURL = outputURL.appending(component: "proposal-listing.json")
             try proposalListingData.write(to: proposalListingURL)

@@ -19,11 +19,14 @@ struct SnapshotCommand: AsyncParsableCommand {
         discussion: Help.Snapshot.discussion
     )
     
-    @Option(name: [.short, .customLong("output-path")], help: Help.Snapshot.Argument.outputPath, transform: ArgumentValidation.Snapshot.output)
+    @Option(name: [.short, .customLong("output-path")], help: Help.Shared.Argument.outputPath, transform: ArgumentValidation.Snapshot.output)
     var output: ExtractionJob.Output = ArgumentValidation.Snapshot.defaultOutput
     
-    @Flag(name: .shortAndLong, help: Help.Snapshot.Argument.verbose)
+    @Flag(name: .shortAndLong, help: Help.Shared.Argument.verbose)
     var verbose: Bool = false
+    
+    @Option(name: .customLong("snapshot-path"), help: Help.Shared.Argument.snapshotPath, transform: ArgumentValidation.extractionSource)
+    var extractionSource: ExtractionJob.Source = .network
 
 
     mutating func validate() throws {
@@ -33,8 +36,8 @@ struct SnapshotCommand: AsyncParsableCommand {
 
 
     func run() async throws {
-        // Snapshots always pull values from the network and always ignore previous results
-        let extractionJob = try await ExtractionJob.makeExtractionJob(from: .network, output: output, ignorePreviousResults: true, toolVersion: RootCommand.toolVersion)
+        // Always ignore previous results when generating a snapshot
+        let extractionJob = try await ExtractionJob.makeExtractionJob(from: extractionSource, output: output, ignorePreviousResults: true, toolVersion: RootCommand.toolVersion)
         try await extractionJob.run()
     }
 }

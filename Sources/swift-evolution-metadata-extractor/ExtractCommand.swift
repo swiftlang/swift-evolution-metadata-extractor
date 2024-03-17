@@ -19,10 +19,10 @@ struct ExtractCommand: AsyncParsableCommand {
         discussion: Help.Extract.discussion
     )
     
-    @Option(name: [.short, .customLong("output-path")], help: Help.Extract.Argument.outputPath, transform: ArgumentValidation.Extract.output)
+    @Option(name: [.short, .customLong("output-path")], help: Help.Shared.Argument.outputPath, transform: ArgumentValidation.Extract.output)
     var output: ExtractionJob.Output = ArgumentValidation.Extract.defaultOutput
     
-    @Flag(name: .shortAndLong, help: Help.Extract.Argument.verbose)
+    @Flag(name: .shortAndLong, help: Help.Shared.Argument.verbose)
     var verbose: Bool = false
     
     @Option(help: Help.Extract.Argument.forceExtract)
@@ -30,7 +30,7 @@ struct ExtractCommand: AsyncParsableCommand {
     var forceAll = false
     var forcedExtractionIDs: [String] = []
     
-    @Option(name: .customLong("snapshot-path"), help: Help.Extract.Argument.snapshotPath, transform: ArgumentValidation.Extract.extractionSource)
+    @Option(name: .customLong("snapshot-path"), help: Help.Shared.Argument.snapshotPath, transform: ArgumentValidation.extractionSource)
     var extractionSource: ExtractionJob.Source = .network
 
     

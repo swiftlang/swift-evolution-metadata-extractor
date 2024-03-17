@@ -31,6 +31,47 @@ public enum ArgumentValidation {
         _ = URLSession.customized // Reads and validates HTTP Proxy environment variables if present
     }
     
+    // Transforms snapshot-path argument into .snapshot(URL) extraction source
+    @Sendable public static func extractionSource(_ snapshotPath: String) throws -> ExtractionJob.Source {
+        
+        let snapshotURL: URL
+        
+        // Check for value 'default' to use the AllProposals snapshot in the test bundle
+        if snapshotPath == "default" {
+            guard let processURL = FileUtilities.processDirectory else {
+                throw ValidationError("Unable to get path to the swift-evolution-metadata-extractor executable.")
+            }
+            
+            let testBundleName = "swift-evolution-metadata-extractor_ExtractionTests.bundle"
+            let testBundleURL = processURL.appending(component: testBundleName)
+            guard let testBundle = Bundle(url: testBundleURL) else {
+                throw ValidationError("To use the default snapshot, the test bundle '\(testBundleName)' must be located in the same directory as the swift-evolution-metadata-extractor executable.\nUse `swift test` or the Xcode test action to generate the default snapshot for the package.")
+            }
+            
+            guard let url = testBundle.url(forResource: "AllProposals", withExtension: "evosnapshot", subdirectory: "Resources") else {
+                throw ValidationError("Default snapshot does not exist.\nUse `swift test` or the Xcode test action to generate the default snapshot for the package.")
+            }
+            snapshotURL = url
+        } else {
+            snapshotURL = FileUtilities.expandedAndStandardizedURL(for: snapshotPath)
+        }
+        
+        guard snapshotURL.pathExtension == "evosnapshot" else {
+            throw ValidationError("Snapshot must be a directory with 'evosnapshot' extension")
+        }
+        
+        do {
+            guard let isDirectory = try snapshotURL.resourceValues(forKeys: [.isDirectoryKey]).isDirectory, isDirectory else {
+                throw ValidationError("Snapshot must be a directory with 'evosnapshot' extension")
+            }
+        } catch CocoaError.fileReadNoSuchFile {
+            throw ValidationError("Directory does not exist at path: '\(snapshotPath)'")
+        } catch {
+            throw ValidationError("Snapshot must be a directory with 'evosnapshot' extension")
+        }
+        return .snapshot(snapshotURL)
+    }
+    
     public enum Extract {
         
         public static let defaultFilename = "proposals.json"
@@ -61,47 +102,6 @@ public enum ArgumentValidation {
             }
                         
             return (forceAll, forcedExtractionIDs)
-        }
-        
-        // Transforms snapshot-path argument into .snapshot(URL) extraction source
-        @Sendable public static func extractionSource(_ snapshotPath: String) throws -> ExtractionJob.Source {
-            
-            let snapshotURL: URL
-            
-            // Check for value 'default' to use the AllProposals snapshot in the test bundle
-            if snapshotPath == "default" {
-                guard let processURL = FileUtilities.processDirectory else {
-                    throw ValidationError("Unable to get path to the swift-evolution-metadata-extractor executable.")
-                }
-                
-                let testBundleName = "swift-evolution-metadata-extractor_ExtractionTests.bundle"
-                let testBundleURL = processURL.appending(component: testBundleName)
-                guard let testBundle = Bundle(url: testBundleURL) else {
-                    throw ValidationError("To use the default snapshot, the test bundle '\(testBundleName)' must be located in the same directory as the swift-evolution-metadata-extractor executable.\nUse `swift test` or the Xcode test action to generate the default snapshot for the package.")
-                }
-                
-                guard let url = testBundle.url(forResource: "AllProposals", withExtension: "evosnapshot", subdirectory: "Resources") else {
-                    throw ValidationError("Default snapshot does not exist.\nUse `swift test` or the Xcode test action to generate the default snapshot for the package.")
-                }
-                snapshotURL = url
-            } else {
-                snapshotURL = FileUtilities.expandedAndStandardizedURL(for: snapshotPath)
-            }
-            
-            guard snapshotURL.pathExtension == "evosnapshot" else {
-                throw ValidationError("Snapshot must be a directory with 'evosnapshot' extension")
-            }
-            
-            do {
-                guard let isDirectory = try snapshotURL.resourceValues(forKeys: [.isDirectoryKey]).isDirectory, isDirectory else {
-                    throw ValidationError("Snapshot must be a directory with 'evosnapshot' extension")
-                }
-            } catch CocoaError.fileReadNoSuchFile {
-                throw ValidationError("Directory does not exist at path: '\(snapshotPath)'")
-            } catch {
-                throw ValidationError("Snapshot must be a directory with 'evosnapshot' extension")
-            }
-            return .snapshot(snapshotURL)
         }
         
         // Transforms --output--path argument into an output value
