@@ -19,26 +19,31 @@ struct SummaryExtractor: ValueExtractor {
                 
         var summary = ""
         var foundIntroduction = false
-        var foundIntroductionIndex = -1
         for child in document.children {
             
             if let heading = child as? Heading {
                 if heading.plainText.contains("Introduction") {
                     foundIntroduction = true
-                    foundIntroductionIndex = heading.indexInParent
                 } else if foundIntroduction {
                     break
                 }
             } else if foundIntroduction, let textConvertible = child as? any PlainTextConvertibleMarkup {
-                //            let formatString = textConvertible.format(options: MarkupFormatter.Options(preferredLineLimit:MarkupFormatter.Options.PreferredLineLimit(maxLength: 80, breakWith: .softBreak)))
+
                 let formatString = textConvertible.format()
-                
-                // The previous implementation did not find summaries if there was a some unrecognized element in the way, such as a blockquote or a paragraph with HTML markup
-                // It probably makes sense to remove the (textConvertible.indexInParent - foundIntroductionIndex == 1) restriction after the transition
-                if textConvertible.indexInParent - foundIntroductionIndex == 1 {
-                    summary += formatString.replacingOccurrences(of: "\n\n", with: "").replacingOccurrences(of: " \n", with: "\n") + "\n"
+                 
+                // The returned string begins with two consecutive newlines
+                // A hard line break in the middle of a paragraph appears as a single newline
+                // A hard line break followed by a backtick appears as two consecutive newlines
+
+                // To adjust find matches of one or two newlines.
+                // If the match is at the start of the string, replace with empty string.
+                // Otherwise replace it with a space.
+                let processedSummary = formatString.replacing(/\n\n?/) { match in
+                    match.range.lowerBound == formatString.startIndex ? "" : " "
                 }
-                break
+                summary += processedSummary
+
+                break // Break to include only the first plain text convertable (typically a paragraph)
             }
         }
         
