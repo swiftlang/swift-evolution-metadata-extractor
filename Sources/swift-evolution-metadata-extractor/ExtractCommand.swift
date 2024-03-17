@@ -19,8 +19,8 @@ struct ExtractCommand: AsyncParsableCommand {
         discussion: Help.Extract.discussion
     )
     
-    @Option(name: [.short, .customLong("output-path")], help: Help.Extract.Argument.outputPath, transform: ArgumentValidation.Extract.outputURL)
-    var outputURL: URL = URL(filePath: ArgumentValidation.Extract.defaultFilename)
+    @Option(name: [.short, .customLong("output-path")], help: Help.Extract.Argument.outputPath, transform: ArgumentValidation.Extract.output)
+    var output: ExtractionJob.Output = ArgumentValidation.Extract.defaultOutput
     
     @Flag(name: .shortAndLong, help: Help.Extract.Argument.verbose)
     var verbose: Bool = false
@@ -42,7 +42,7 @@ struct ExtractCommand: AsyncParsableCommand {
 
     
     func run() async throws {
-        let extractionJob = try await ExtractionJob.makeExtractionJob(from: extractionSource, output: .metadataJSON(outputURL), ignorePreviousResults: forceAll, forcedExtractionIDs: forcedExtractionIDs, toolVersion: RootCommand.toolVersion)
+        let extractionJob = try await ExtractionJob.makeExtractionJob(from: extractionSource, output: output, ignorePreviousResults: forceAll, forcedExtractionIDs: forcedExtractionIDs, toolVersion: RootCommand.toolVersion)
         try await extractionJob.run()
     }
 }

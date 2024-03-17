@@ -18,12 +18,12 @@ import EvolutionMetadataModel
  An `ExtractionJob` captures all of the required inputs and potential output locations.
  */
 public struct ExtractionJob: Sendable {
-    public enum Source: Sendable {
+    public enum Source: Sendable, Codable {
         case network
         case snapshot(URL)
     }
     
-    public enum Output: Sendable {
+    public enum Output: Sendable, Codable {
         case metadataJSON(URL)
         case snapshot(URL)
         case validationReport

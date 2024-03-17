@@ -19,8 +19,8 @@ struct SnapshotCommand: AsyncParsableCommand {
         discussion: Help.Snapshot.discussion
     )
     
-    @Option(name: [.short, .customLong("output-path")], help: Help.Snapshot.Argument.outputPath, transform: ArgumentValidation.Snapshot.outputURL)
-    var outputURL: URL = URL(filePath: ArgumentValidation.Snapshot.defaultFilename)
+    @Option(name: [.short, .customLong("output-path")], help: Help.Snapshot.Argument.outputPath, transform: ArgumentValidation.Snapshot.output)
+    var output: ExtractionJob.Output = ArgumentValidation.Snapshot.defaultOutput
     
     @Flag(name: .shortAndLong, help: Help.Snapshot.Argument.verbose)
     var verbose: Bool = false
@@ -34,7 +34,7 @@ struct SnapshotCommand: AsyncParsableCommand {
 
     func run() async throws {
         // Snapshots always pull values from the network and always ignore previous results
-        let extractionJob = try await ExtractionJob.makeExtractionJob(from: .network, output: .snapshot(outputURL), ignorePreviousResults: true, toolVersion: RootCommand.toolVersion)
+        let extractionJob = try await ExtractionJob.makeExtractionJob(from: .network, output: output, ignorePreviousResults: true, toolVersion: RootCommand.toolVersion)
         try await extractionJob.run()
     }
 }

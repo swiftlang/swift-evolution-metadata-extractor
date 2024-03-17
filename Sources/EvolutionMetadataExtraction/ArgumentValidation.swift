@@ -34,6 +34,7 @@ public enum ArgumentValidation {
     public enum Extract {
         
         public static let defaultFilename = "proposals.json"
+        public static let defaultOutput: ExtractionJob.Output = .metadataJSON(URL(filePath: defaultFilename))
         
         static public func validate(forceExtract: [String]) throws -> (forceAll: Bool, forcedExtractionIDs: [String]) {
             
@@ -103,19 +104,22 @@ public enum ArgumentValidation {
             return .snapshot(snapshotURL)
         }
         
-        //     Transforms --output--path argument into an output URL
-        @Sendable public static func outputURL(_ outputPath: String) throws -> URL {
-            return FileUtilities.outputURLForPath(outputPath, defaultFileName: defaultFilename)
+        // Transforms --output--path argument into an output value
+        @Sendable public static func output(_ outputPath: String) throws -> ExtractionJob.Output {
+            if outputPath == "none" { .none }
+            else { .metadataJSON(FileUtilities.outputURLForPath(outputPath, defaultFileName: defaultFilename)) }
         }
     }
     
     public enum Snapshot {
         
         public static let defaultFilename = "Snapshot.evosnapshot"
-        
-        //     Transforms --output--path argument into an output URL
-        @Sendable public static func outputURL(_ outputPath: String) throws -> URL {
-            return FileUtilities.outputURLForPath(outputPath, defaultFileName: defaultFilename)
+        public static let defaultOutput: ExtractionJob.Output = .snapshot(URL(filePath: defaultFilename))
+
+        // Transforms --output--path argument into an output value
+        @Sendable public static func output(_ outputPath: String) throws -> ExtractionJob.Output {
+            if outputPath == "none" { .none }
+            else { .snapshot(FileUtilities.outputURLForPath(outputPath, defaultFileName: defaultFilename)) }
         }
     }
 }
