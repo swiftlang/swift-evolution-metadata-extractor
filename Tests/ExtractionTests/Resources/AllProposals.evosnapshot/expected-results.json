@@ -13412,7 +13412,14 @@
       "state" : ".activeReview"
     },
     "summary" : "",
-    "title" : "128-bit Integer Types"
+    "title" : "128-bit Integer Types",
+    "warnings" : [
+      {
+        "kind" : "warning",
+        "message" : "Review ended on 2024-03-19 00:00:00 +0000.",
+        "stage" : "validate"
+      }
+    ]
   },
   {
     "authors" : [
