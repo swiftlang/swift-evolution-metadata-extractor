@@ -64,3 +64,117 @@ enum FileUtilities {
     }
 
 }
+
+// A mechanism for adjusting the JSON produced by Codable
+// Currently used to:
+//   - Pretty print the array of implementation versions
+//   - Transform status field to proposed new structure
+
+enum JSONRewriter {
+    
+    static func applyRewritersToJSONData(rewriters: [(String) -> String], data: Data) -> Data {
+        let sourceString = String(decoding: data, as: UTF8.self)
+        var rewrittenString = sourceString
+        for rewriter in rewriters {
+            rewrittenString = rewriter(rewrittenString)
+        }
+        return Data(rewrittenString.utf8)
+    }
+    
+    // Temporary shim
+    static func futureStatusRewriter(_ sourceString: String) -> String {
+        var rewrittenString: String = ""
+        var processingStatusField = false
+        var foundStateField = false
+        var savedLines: [Substring] = []
+        
+        for line in sourceString.split(separator: "\n") {
+        
+            if line.starts(with:/\s*"status"\s*:\s{/) {
+                rewrittenString += line + "\n"
+                processingStatusField = true
+                continue
+            }
+
+            if processingStatusField {
+                if line.starts(with:/\s*},/) {
+                    processingStatusField = false
+                    foundStateField = false
+                    savedLines = []
+                    rewrittenString += "        }\n"
+                    rewrittenString += line + "\n"
+                    continue
+                }
+                
+                if let match = line.firstMatch(of: /(\s*)"state" : "\.(.*)"/) {
+                    rewrittenString += "\(match.1)\"\(match.2)\" : {\n"
+                    let lastIndex = savedLines.count - 1
+                    for (index, savedLine) in savedLines.enumerated() {
+                        var processedLine = savedLine
+                        if index == lastIndex {
+                            processedLine = processedLine.replacing(",", with: "")
+                        }
+                        rewrittenString += "  " + processedLine + "\n"
+                    }
+                    foundStateField = true
+                } else {
+                    if foundStateField {
+                        rewrittenString += "  " + line + "\n"
+                    } else {
+                        savedLines.append(line)
+                    }
+                }
+            }
+            else {
+                rewrittenString += line + "\n"
+            }
+        }
+        return rewrittenString
+    }
+    
+    static func prettyPrintVersions(_ sourceString: String) -> String {
+                
+        var processedString = ""
+        var processingVersionsField = false
+        
+        var itemCount = 0
+        let maxPerLine = 10
+        for line in sourceString.split(separator: "\n") {
+            
+            if line.contains(/"implementationVersions" :/) {
+                processedString += line + "\n"
+                processingVersionsField = true
+                continue
+            }
+
+            if processingVersionsField {
+                if line.contains(/],/) {
+                    processedString += "\n" + line + "\n"
+                    processingVersionsField = false
+                    itemCount = 0
+                    continue
+                } else {
+                    // Use first array item as-is
+                    if itemCount == 0 {
+                        processedString += line
+                    }
+                    // When we are at the max per line, put this array element on a new line
+                    else if itemCount == maxPerLine {
+                        itemCount = 0
+                        processedString += "\n" + line
+                    }
+                    // Other array items on same line separated by a space
+                    // The original line already contains the separating comma
+                    else {
+                        processedString += " " + line.trimmingCharacters(in: .whitespacesAndNewlines)
+                    }
+                    itemCount += 1
+                }
+            } else {
+                processedString += line + "\n"
+            }
+        }
+        
+        return processedString
+    }
+}

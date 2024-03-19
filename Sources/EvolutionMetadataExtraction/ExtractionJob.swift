@@ -198,7 +198,7 @@ public struct ExtractionJob: Sendable {
     }
     
     private static func writeEvolutionResultsAsJSON(results: EvolutionMetadata, outputURL: URL) throws {
-        print("Writing file '\(outputURL.lastPathComponent)' to '\(outputURL.absoluteURL.path())'\n")
+        print("Writing file '\(outputURL.lastPathComponent)' to\n'\(outputURL.absoluteURL.path())'\n")
         
         let encoder = JSONEncoder()
         encoder.outputFormatting = [.prettyPrinted, .sortedKeys]
@@ -210,10 +210,15 @@ public struct ExtractionJob: Sendable {
         
         // Temporarily write proposed new evolution-metadata.json file alongside legacy format file
         let newFormatFileURL = outputURL.deletingLastPathComponent().appending(component: "evolution-metadata.json")
-        print("Writing file '\(newFormatFileURL.lastPathComponent)' to '\(newFormatFileURL.absoluteURL.path())'\n")
+        print("Writing file '\(newFormatFileURL.lastPathComponent)' to\n'\(newFormatFileURL.absoluteURL.path())'\n")
         
         let newFormatData = try encoder.encode(results)
         try newFormatData.write(to: newFormatFileURL)
+
+        let adjustedFormatURL = outputURL.deletingLastPathComponent().appending(component: "evolution.json")
+        print("Writing file '\(adjustedFormatURL.lastPathComponent)' to\n'\(adjustedFormatURL.absoluteURL.path())'\n")
+        let adjustedData = JSONRewriter.applyRewritersToJSONData(rewriters: [JSONRewriter.futureStatusRewriter, JSONRewriter.prettyPrintVersions], data: newFormatData)
+        try adjustedData.write(to: adjustedFormatURL)
     }
     
     private func writeSnapshot(results: EvolutionMetadata, outputURL: URL) throws {
