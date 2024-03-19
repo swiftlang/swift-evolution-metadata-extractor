@@ -208,17 +208,15 @@ public struct ExtractionJob: Sendable {
         try FileManager.default.createDirectory(at: directoryURL, withIntermediateDirectories: true)
         try data.write(to: outputURL)
         
-        // Temporarily write proposed new evolution-metadata.json file alongside legacy format file
-        let newFormatFileURL = outputURL.deletingLastPathComponent().appending(component: "evolution-metadata.json")
+        // Temporarily write proposed new evolution.json file alongside legacy format file
+        let newFormatFileURL = outputURL.deletingLastPathComponent().appending(component: "evolution.json")
         print("Writing file '\(newFormatFileURL.lastPathComponent)' to\n'\(newFormatFileURL.absoluteURL.path())'\n")
-        
+
         let newFormatData = try encoder.encode(results)
         try newFormatData.write(to: newFormatFileURL)
 
-        let adjustedFormatURL = outputURL.deletingLastPathComponent().appending(component: "evolution.json")
-        print("Writing file '\(adjustedFormatURL.lastPathComponent)' to\n'\(adjustedFormatURL.absoluteURL.path())'\n")
-        let adjustedData = JSONRewriter.applyRewritersToJSONData(rewriters: [JSONRewriter.futureStatusRewriter, JSONRewriter.prettyPrintVersions], data: newFormatData)
-        try adjustedData.write(to: adjustedFormatURL)
+        let adjustedNewFormatData = JSONRewriter.applyRewritersToJSONData(rewriters: [JSONRewriter.futureStatusRewriter, JSONRewriter.prettyPrintVersions], data: newFormatData)
+        try adjustedNewFormatData.write(to: newFormatFileURL)
     }
     
     private func writeSnapshot(results: EvolutionMetadata, outputURL: URL) throws {
