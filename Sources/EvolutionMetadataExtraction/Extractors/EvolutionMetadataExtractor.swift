@@ -58,7 +58,7 @@ struct EvolutionMetadataExtractor {
         let formattedExtractionDate = extractionJob.extractionDate.formatted(.iso8601)
 
         return EvolutionMetadata(
-            extractionDate: formattedExtractionDate,
+            creationDate: formattedExtractionDate,
             implementationVersions: implementationVersions,
             proposals: combinedProposals,
             commit: extractionJob.branchInfo?.commit.sha ?? "",
