@@ -61,7 +61,7 @@ struct EvolutionMetadataExtractor {
             extractionDate: formattedExtractionDate,
             implementationVersions: implementationVersions,
             proposals: combinedProposals,
-            sha: extractionJob.branchInfo?.commit.sha ?? "",
+            commit: extractionJob.branchInfo?.commit.sha ?? "",
             toolVersion: extractionJob.toolVersion
         )
     }
