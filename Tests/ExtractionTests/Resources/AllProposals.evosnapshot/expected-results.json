@@ -13453,7 +13453,14 @@
       "state" : ".activeReview"
     },
     "summary" : "We propose a new marker protocol `BitwiseCopyable` that can be conformed to by types that can be moved or copied with direct calls to `memcpy` and which require no special destroy operation[^1]. When compiling generic code with such constraints, the compiler can emit these efficient operations directly, only requiring minimal overhead to look up the size of the value at runtime. Alternatively, developers can use this constraint to selectively provide high-performance variations of specific operations, such as bulk copying of a container.",
-    "title" : "BitwiseCopyable"
+    "title" : "BitwiseCopyable",
+    "warnings" : [
+      {
+        "kind" : "warning",
+        "message" : "Review ended on 2024-03-20 00:00:00 +0000.",
+        "stage" : "validate"
+      }
+    ]
   },
   {
     "authors" : [
