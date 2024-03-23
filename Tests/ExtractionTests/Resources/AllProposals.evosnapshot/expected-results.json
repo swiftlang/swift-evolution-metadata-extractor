@@ -13490,6 +13490,13 @@
       "state" : ".activeReview"
     },
     "summary" : "The noncopyable types introduced in [SE-0390: Noncopyable structs and enums](0390-noncopyable-structs-and-enums.md) cannot be used with generics, protocols, or existentials, leaving an expressivity gap in the language. This proposal extends Swift's type system to fill this gap.",
-    "title" : "Noncopyable Generics"
+    "title" : "Noncopyable Generics",
+    "warnings" : [
+      {
+        "kind" : "warning",
+        "message" : "Review ended on 2024-03-22 00:00:00 +0000.",
+        "stage" : "validate"
+      }
+    ]
   }
 ]
