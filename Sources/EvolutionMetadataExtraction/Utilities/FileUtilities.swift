@@ -68,7 +68,7 @@ enum FileUtilities {
 // A mechanism for adjusting the JSON produced by Codable
 // Currently used to:
 //   - Pretty print the array of implementation versions
-//   - Transform status field to proposed new structure
+//   - Remove the leading dot in status state values
 
 enum JSONRewriter {
     
@@ -81,51 +81,14 @@ enum JSONRewriter {
         return Data(rewrittenString.utf8)
     }
     
-    // Temporary shim
+    // Temporary shim during transition period
+    // Remove the leading dot in status state values
     static func futureStatusRewriter(_ sourceString: String) -> String {
         var rewrittenString: String = ""
-        var processingStatusField = false
-        var foundStateField = false
-        var savedLines: [Substring] = []
-        
         for line in sourceString.split(separator: "\n") {
-        
-            if line.starts(with:/\s*"status"\s*:\s{/) {
-                rewrittenString += line + "\n"
-                processingStatusField = true
-                continue
-            }
-
-            if processingStatusField {
-                if line.starts(with:/\s*},/) {
-                    processingStatusField = false
-                    foundStateField = false
-                    savedLines = []
-                    rewrittenString += "        }\n"
-                    rewrittenString += line + "\n"
-                    continue
-                }
-                
-                if let match = line.firstMatch(of: /(\s*)"state" : "\.(.*)"/) {
-                    rewrittenString += "\(match.1)\"\(match.2)\" : {\n"
-                    let lastIndex = savedLines.count - 1
-                    for (index, savedLine) in savedLines.enumerated() {
-                        var processedLine = savedLine
-                        if index == lastIndex {
-                            processedLine = processedLine.replacing(",", with: "")
-                        }
-                        rewrittenString += "  " + processedLine + "\n"
-                    }
-                    foundStateField = true
-                } else {
-                    if foundStateField {
-                        rewrittenString += "  " + line + "\n"
-                    } else {
-                        savedLines.append(line)
-                    }
-                }
-            }
-            else {
+            if let match = line.firstMatch(of:/(\s*"state" : ")\.(.*)(",?)/) {
+                rewrittenString += match.1 + match.2 + match.3 + "\n"
+            } else {
                 rewrittenString += line + "\n"
             }
         }
