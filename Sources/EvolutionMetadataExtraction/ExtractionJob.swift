@@ -18,18 +18,19 @@ import EvolutionMetadataModel
  An `ExtractionJob` captures all of the required inputs and potential output locations.
  */
 public struct ExtractionJob: Sendable {
-    public enum Source: Sendable, Codable {
+    public enum Source: Sendable, Codable, Equatable {
         case network
         case snapshot(URL)
     }
     
-    public enum Output: Sendable, Codable {
+    public enum Output: Sendable, Codable, Equatable {
         case metadataJSON(URL)
         case snapshot(URL)
         case validationReport
         case none
     }
     
+    let source: Source
     let branchInfo: GitHubBranch?
     let proposalListing: [GitHubContentItem]? // Ad-hoc snapshots may not have these
     let proposalSpecs: [ProposalSpec]
@@ -41,7 +42,8 @@ public struct ExtractionJob: Sendable {
     let output: Output
     let temporaryProposalsDirectory: URL?
     
-    private init(output: Output, branchInfo: GitHubBranch? = nil, proposalListing: [GitHubContentItem]?, proposalSpecs: [ProposalSpec], previousResults: [Proposal], expectedResults: [Proposal]?, forcedExtractionIDs: [String], toolVersion: String, extractionDate: Date = Date()) {
+    private init(source: Source, output: Output, branchInfo: GitHubBranch? = nil, proposalListing: [GitHubContentItem]?, proposalSpecs: [ProposalSpec], previousResults: [Proposal], expectedResults: [Proposal]?, forcedExtractionIDs: [String], toolVersion: String, extractionDate: Date = Date()) {
+        self.source = source
         self.branchInfo = branchInfo
         self.proposalListing = proposalListing
         self.proposalSpecs = proposalSpecs
@@ -74,13 +76,17 @@ public struct ExtractionJob: Sendable {
     public static func makeExtractionJob(from source: Source, output: Output, ignorePreviousResults: Bool = false, forcedExtractionIDs: [String] = [], toolVersion: String = "", extractionDate: Date = Date()) async throws -> ExtractionJob {
         switch source {
             case .network:
-                try await networkExtractionJob(output: output, ignorePreviousResults: ignorePreviousResults, forcedExtractionIDs: forcedExtractionIDs, toolVersion: toolVersion, extractionDate: extractionDate)
-            case .snapshot(let snapshotURL):
-                try snapshotExtractionJob(from: snapshotURL, output: output, ignorePreviousResults: ignorePreviousResults, forcedExtractionIDs: forcedExtractionIDs, toolVersion: toolVersion, extractionDate: extractionDate)
+                try await networkExtractionJob(source: source, output: output, ignorePreviousResults: ignorePreviousResults, forcedExtractionIDs: forcedExtractionIDs, toolVersion: toolVersion, extractionDate: extractionDate)
+            case .snapshot:
+                try snapshotExtractionJob(source: source, output: output, ignorePreviousResults: ignorePreviousResults, forcedExtractionIDs: forcedExtractionIDs, toolVersion: toolVersion, extractionDate: extractionDate)
         }
     }
         
-    private static func snapshotExtractionJob(from snapshotURL: URL, output: Output, ignorePreviousResults: Bool, forcedExtractionIDs: [String], toolVersion: String, extractionDate: Date) throws -> ExtractionJob {
+    private static func snapshotExtractionJob(source: Source, output: Output, ignorePreviousResults: Bool, forcedExtractionIDs: [String], toolVersion: String, extractionDate: Date) throws -> ExtractionJob {
+        
+        guard case let .snapshot(snapshotURL) = source else {
+            fatalError("snapshotExtractionJob() requires snapshot source")
+        }
         
         // Argument validation should ensure correct values. Assert to catch problems in usage in tests.
         assert(snapshotURL.pathExtension == "evosnapshot", "Snapshot URL must be a directory with 'evosnapshot' extension.")
@@ -146,10 +152,13 @@ public struct ExtractionJob: Sendable {
         // previous-results.json            : Previous results. If present, will reuse found proposal entries.
         // proposal-listing.json            : Results of GitHub query of proposals directory. Contains proposal SHA values.
         
-        return ExtractionJob(output: output, branchInfo: branchInfo, proposalListing: proposalListing, proposalSpecs: proposalSpecs, previousResults: previousResults, expectedResults: expectedResults, forcedExtractionIDs: forcedExtractionIDs, toolVersion: toolVersion, extractionDate: extractionDate)
+        return ExtractionJob(source: source, output: output, branchInfo: branchInfo, proposalListing: proposalListing, proposalSpecs: proposalSpecs, previousResults: previousResults, expectedResults: expectedResults, forcedExtractionIDs: forcedExtractionIDs, toolVersion: toolVersion, extractionDate: extractionDate)
     }
     
-    private static func networkExtractionJob(output: Output, ignorePreviousResults: Bool, forcedExtractionIDs: [String] = [], toolVersion: String = "", extractionDate: Date = Date()) async throws -> ExtractionJob {
+    private static func networkExtractionJob(source: Source, output: Output, ignorePreviousResults: Bool, forcedExtractionIDs: [String] = [], toolVersion: String = "", extractionDate: Date = Date()) async throws -> ExtractionJob {
+        
+        assert(source == .network, "networkExtractionJob() requires network source")
+        
         async let previousResults = ignorePreviousResults ? [] : PreviousResultsFetcher.fetchPreviousResults()
         
         let mainBranchInfo = try await GitHubFetcher.fetchMainBranch()
@@ -157,7 +166,7 @@ public struct ExtractionJob: Sendable {
         
         let proposalSpecs = try await proposalContentItems.enumerated().map { $1.proposalSpec(sortIndex: $0) }
         
-        return await ExtractionJob(output: output, branchInfo: mainBranchInfo, proposalListing: try proposalContentItems, proposalSpecs: proposalSpecs, previousResults: try await previousResults, expectedResults: nil, forcedExtractionIDs: forcedExtractionIDs, toolVersion: toolVersion, extractionDate: extractionDate)
+        return await ExtractionJob(source: source, output: output, branchInfo: mainBranchInfo, proposalListing: try proposalContentItems, proposalSpecs: proposalSpecs, previousResults: try await previousResults, expectedResults: nil, forcedExtractionIDs: forcedExtractionIDs, toolVersion: toolVersion, extractionDate: extractionDate)
     }
 
     
