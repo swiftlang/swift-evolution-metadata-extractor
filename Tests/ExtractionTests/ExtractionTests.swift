@@ -28,6 +28,8 @@ final class ExtractionTests: XCTestCase {
         
         let extractedEvolutionMetadata = try await EvolutionMetadataExtractor.extractEvolutionMetadata(for: extractionJob)
         
+        XCTAssertEqual(extractedEvolutionMetadata.implementationVersions, expectedResults.implementationVersions)
+        
         for newProposal in extractedEvolutionMetadata.proposals {
             let id = newProposal.id
             guard !id.isEmpty  else {
