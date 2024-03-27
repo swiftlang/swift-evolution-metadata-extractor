@@ -66,6 +66,7 @@ final class ExtractionTests: XCTestCase {
         }
     }
     
+    // The lines of text in review-dates-good.txt are status headers from swift-evolution repository history
     func testGoodDates() throws {
         guard let reviewDatesURL = Bundle.module.url(forResource: "review-dates-good", withExtension: "txt", subdirectory: "Resources") else {
             print("Could not find review-dates.txt")
@@ -96,6 +97,7 @@ final class ExtractionTests: XCTestCase {
         }
     }
     
+    // The lines of text in review-dates-bad.txt are status headers from swift-evolution repository history
     func testBadDates() throws {
         guard let reviewDatesURL = Bundle.module.url(forResource: "review-dates-bad", withExtension: "txt", subdirectory: "Resources") else {
             print("Could not find review-dates-bad.txt")
