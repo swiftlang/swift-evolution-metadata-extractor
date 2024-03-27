@@ -24,7 +24,7 @@ final class ExtractionTests: XCTestCase {
         let snapshotURL = try urlForSnapshot(named: "AllProposals")
         let extractionJob = try await ExtractionJob.makeExtractionJob(from: .snapshot(snapshotURL), output: .none, ignorePreviousResults: true)
         let expectedResults = try XCTUnwrap(extractionJob.expectedResults, "Snapshot at '\(snapshotURL.absoluteString)' does not contain expected results.")
-        let expectedResultsByProposalID = expectedResults.reduce(into: [:]) { $0[$1.id] = $1 }
+        let expectedResultsByProposalID = expectedResults.proposals.reduce(into: [:]) { $0[$1.id] = $1 }
         
         let extractedEvolutionMetadata = try await EvolutionMetadataExtractor.extractEvolutionMetadata(for: extractionJob)
         
@@ -57,9 +57,9 @@ final class ExtractionTests: XCTestCase {
         
         // This test zips the extraction results with the expected results
         // If the two arrays don't have the same count, the test data itself has an error
-        XCTAssertEqual(extractionMetadata.proposals.count, expectedResults.count)
+        XCTAssertEqual(extractionMetadata.proposals.count, expectedResults.proposals.count)
         
-        for (actualResult, expectedResult) in zip(extractionMetadata.proposals, expectedResults) {
+        for (actualResult, expectedResult) in zip(extractionMetadata.proposals, expectedResults.proposals) {
             XCTAssertEqual(actualResult, expectedResult)
         }
     }

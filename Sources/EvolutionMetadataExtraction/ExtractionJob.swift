@@ -35,14 +35,14 @@ public struct ExtractionJob: Sendable {
     let proposalListing: [GitHubContentItem]? // Ad-hoc snapshots may not have these
     let proposalSpecs: [ProposalSpec]
     let previousResults: [Proposal]
-    let expectedResults: [Proposal]?
+    let expectedResults: EvolutionMetadata?
     let forcedExtractionIDs: [String]
     let toolVersion: String
     let extractionDate: Date
     let output: Output
     let temporaryProposalsDirectory: URL?
     
-    private init(source: Source, output: Output, branchInfo: GitHubBranch? = nil, proposalListing: [GitHubContentItem]?, proposalSpecs: [ProposalSpec], previousResults: [Proposal], expectedResults: [Proposal]?, forcedExtractionIDs: [String], toolVersion: String, extractionDate: Date = Date()) {
+    private init(source: Source, output: Output, branchInfo: GitHubBranch? = nil, proposalListing: [GitHubContentItem]?, proposalSpecs: [ProposalSpec], previousResults: [Proposal], expectedResults: EvolutionMetadata?, forcedExtractionIDs: [String], toolVersion: String, extractionDate: Date = Date()) {
         self.source = source
         self.branchInfo = branchInfo
         self.proposalListing = proposalListing
@@ -132,7 +132,7 @@ public struct ExtractionJob: Sendable {
             }
         }
         
-        let expectedResults = try FileUtilities.decode([Proposal].self, from: expectedResultsURL)
+        let expectedResults = try FileUtilities.decode(EvolutionMetadata.self, from: expectedResultsURL)
                     
         print(  """
                     proposal-listing.json found? \(proposalListingFound)
@@ -176,13 +176,13 @@ public struct ExtractionJob: Sendable {
             return
         }
         
-        if results.proposals.count != expectedResults.count {
-            verbosePrint("Extracted proposal count \(results.proposals.count) does not match expected proposal count of \(expectedResults.count)")
+        if results.proposals.count != expectedResults.proposals.count {
+            verbosePrint("Extracted proposal count \(results.proposals.count) does not match expected proposal count of \(expectedResults.proposals.count)")
         }
         
         var passingProposals = 0
         var failingProposals = 0
-        for (actualResult, expectedResult) in zip(results.proposals, expectedResults) {
+        for (actualResult, expectedResult) in zip(results.proposals, expectedResults.proposals) {
             if actualResult == expectedResult {
                 passingProposals += 1
             } else {
@@ -255,9 +255,10 @@ public struct ExtractionJob: Sendable {
             try proposalListingData.write(to: proposalListingURL)
         }
 
-        let extractionResultsData = try encoder.encode(results.proposals)
+        let extractionResultsData = try encoder.encode(results)
+        let adjustedResultstData = JSONRewriter.applyRewritersToJSONData(rewriters: [JSONRewriter.prettyPrintVersions], data: extractionResultsData)
         let expectedResultsURL = outputURL.appending(component: "expected-results.json")
-        try extractionResultsData.write(to: expectedResultsURL)
+        try adjustedResultstData.write(to: expectedResultsURL)
 
     }
 }
