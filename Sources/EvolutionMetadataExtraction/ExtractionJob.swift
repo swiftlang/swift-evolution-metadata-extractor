@@ -133,6 +133,15 @@ public struct ExtractionJob: Sendable {
         }
         
         let expectedResults = try FileUtilities.decode(EvolutionMetadata.self, from: expectedResultsURL)
+
+        // If expected results has a non-empty creation date string, use that as the extraction date
+        // Note that ad-hoc snapshots will potentially have an empty creation date string
+        let snapshotDate: Date
+        if let dateString = expectedResults?.creationDate, !dateString.isEmpty {
+            snapshotDate = try Date(dateString, strategy: .iso8601)
+        } else {
+            snapshotDate = extractionDate
+        }
                     
         print(  """
                     proposal-listing.json found? \(proposalListingFound)
@@ -152,7 +161,7 @@ public struct ExtractionJob: Sendable {
         // previous-results.json            : Previous results. If present, will reuse found proposal entries.
         // proposal-listing.json            : Results of GitHub query of proposals directory. Contains proposal SHA values.
         
-        return ExtractionJob(source: source, output: output, branchInfo: branchInfo, proposalListing: proposalListing, proposalSpecs: proposalSpecs, previousResults: previousResults, expectedResults: expectedResults, forcedExtractionIDs: forcedExtractionIDs, toolVersion: toolVersion, extractionDate: extractionDate)
+        return ExtractionJob(source: source, output: output, branchInfo: branchInfo, proposalListing: proposalListing, proposalSpecs: proposalSpecs, previousResults: previousResults, expectedResults: expectedResults, forcedExtractionIDs: forcedExtractionIDs, toolVersion: toolVersion, extractionDate: snapshotDate)
     }
     
     private static func networkExtractionJob(source: Source, output: Output, ignorePreviousResults: Bool, forcedExtractionIDs: [String] = [], toolVersion: String = "", extractionDate: Date = Date()) async throws -> ExtractionJob {
