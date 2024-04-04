@@ -40,8 +40,9 @@ public struct ExtractionJob: Sendable {
     let toolVersion: String
     let extractionDate: Date
     let output: Output
-    let temporaryProposalsDirectory: URL?
-    
+    let temporarySnapshotDirectory: URL?
+    var temporaryProposalsDirectory: URL? { temporarySnapshotDirectory?.appending(component: "proposals") }
+
     private init(source: Source, output: Output, branchInfo: GitHubBranch? = nil, proposalListing: [GitHubContentItem]?, proposalSpecs: [ProposalSpec], previousResults: [Proposal], expectedResults: EvolutionMetadata?, forcedExtractionIDs: [String], toolVersion: String, extractionDate: Date = Date()) {
         self.source = source
         self.branchInfo = branchInfo
@@ -53,9 +54,9 @@ public struct ExtractionJob: Sendable {
         self.toolVersion = toolVersion
         self.extractionDate = extractionDate
         self.output = output
-        self.temporaryProposalsDirectory = switch output {
+        self.temporarySnapshotDirectory = switch output {
             case .snapshot:
-                FileManager.default.temporaryDirectory.appending(component: "proposals")
+                FileManager.default.temporaryDirectory.appending(component: UUID().uuidString)
             default:
                 nil
         }
@@ -239,35 +240,39 @@ public struct ExtractionJob: Sendable {
     
     private func writeSnapshot(results: EvolutionMetadata, outputURL: URL) throws {
 
-        guard let temporaryProposalsDirectory else {
-            fatalError("When snapshot command is being run temporaryProposalsDirectory should never be nil")
+        guard let temporarySnapshotDirectory, let temporaryProposalsDirectory else {
+            fatalError("When snapshot command is being run temporarySnapshotDirectory should never be nil")
+        }
+
+        guard FileManager.default.fileExists(atPath: temporaryProposalsDirectory.path(percentEncoded: false)) else {
+            fatalError("Temporary proposals directory should already be created during metadata extraction")
         }
         
         print("Writing snapshot '\(outputURL.lastPathComponent)' to '\(outputURL.absoluteURL.path())'\n")
         let encoder = JSONEncoder()
         encoder.outputFormatting = [.prettyPrinted, .sortedKeys]
         
-        try FileManager.default.createDirectory(at: outputURL, withIntermediateDirectories: true)
-        
-        let proposalsDirectory = outputURL.appending(component: "proposals")
-        _ = try FileManager.default.replaceItemAt(proposalsDirectory, withItemAt: temporaryProposalsDirectory, options: [.usingNewMetadataOnly])
-    
+        try FileManager.default.createDirectory(at: temporarySnapshotDirectory, withIntermediateDirectories: true)
+
         if let branchInfo {
             let branchInfoData = try encoder.encode(branchInfo)
-            let branchInfoURL = outputURL.appending(component: "source-info.json")
+            let branchInfoURL = temporarySnapshotDirectory.appending(component: "source-info.json")
             try branchInfoData.write(to: branchInfoURL)
         }
         
         if let proposalListing, !proposalListing.isEmpty {
             let proposalListingData = try encoder.encode(proposalListing)
-            let proposalListingURL = outputURL.appending(component: "proposal-listing.json")
+            let proposalListingURL = temporarySnapshotDirectory.appending(component: "proposal-listing.json")
             try proposalListingData.write(to: proposalListingURL)
         }
 
         let extractionResultsData = try encoder.encode(results)
         let adjustedResultstData = JSONRewriter.applyRewritersToJSONData(rewriters: [JSONRewriter.prettyPrintVersions], data: extractionResultsData)
-        let expectedResultsURL = outputURL.appending(component: "expected-results.json")
+        let expectedResultsURL = temporarySnapshotDirectory.appending(component: "expected-results.json")
         try adjustedResultstData.write(to: expectedResultsURL)
+
+        try FileManager.default.createDirectory(at: outputURL, withIntermediateDirectories: true)
+        _ = try FileManager.default.replaceItemAt(outputURL, withItemAt: temporarySnapshotDirectory, options: [.usingNewMetadataOnly])
 
     }
 }
