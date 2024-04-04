@@ -39,31 +39,31 @@ extension Proposal.Status: Codable {
         let status = try container.decode(String.self, forKey: .state)
 
         switch status {
-            case ".awaitingReview": self = .awaitingReview
-            case ".scheduledForReview":
+            case "awaitingReview": self = .awaitingReview
+            case "scheduledForReview":
                 // VALIDATION ENHANCEMENT: On date parsing failure, legacy tool omits start and end keys
                 // VALIDATION ENHANCEMENT: After move to new tool, revert to this being 'try' with failure
                 // VALIDATION ENHANCEMENT: For this status, there should *always* be start and end values, even if empty strings
                 let start = try? container.decode(String.self, forKey: .start)
                 let end = try? container.decode(String.self, forKey: .end)
                 self = .scheduledForReview(start: start ?? "", end: end ?? "")
-            case ".activeReview":
+            case "activeReview":
                 // VALIDATION ENHANCEMENT: On date parsing failure, legacy tool omits start and end keys
                 // VALIDATION ENHANCEMENT: After move to new tool, revert to this being 'try' with failure
                 // VALIDATION ENHANCEMENT: For this status, there should *always* be start and end values, even if empty strings
                 let start = try? container.decode(String.self, forKey: .start)
                 let end = try? container.decode(String.self, forKey: .end)
                 self = .activeReview(start: start ?? "", end: end ?? "")
-            case ".accepted": self = .accepted
-            case ".acceptedWithRevisions": self = .acceptedWithRevisions
-            case ".previewing": self = .previewing
-            case ".implemented":
+            case "accepted": self = .accepted
+            case "acceptedWithRevisions": self = .acceptedWithRevisions
+            case "previewing": self = .previewing
+            case "implemented":
                 let version = try container.decode(String.self, forKey: .version)
                 self = .implemented(version: version)
-            case ".returnedForRevision": self = .returnedForRevision
-            case ".rejected": self = .rejected
-            case ".withdrawn": self = .withdrawn
-            case ".error": self = .error
+            case "returnedForRevision": self = .returnedForRevision
+            case "rejected": self = .rejected
+            case "withdrawn": self = .withdrawn
+            case "error": self = .error
             default: throw DecodingError.dataCorruptedError(forKey: .state, in: container,
                                                             debugDescription: "Unknown status value \(status)"
             )
@@ -91,17 +91,17 @@ extension Proposal.Status: Codable {
     
     var codingValue: String {
         switch self {
-            case .awaitingReview: ".awaitingReview"
-            case .scheduledForReview: ".scheduledForReview"
-            case .activeReview: ".activeReview"
-            case .accepted: ".accepted"
-            case .acceptedWithRevisions: ".acceptedWithRevisions"
-            case .previewing: ".previewing"
-            case .implemented: ".implemented"
-            case .returnedForRevision: ".returnedForRevision"
-            case .rejected: ".rejected"
-            case .withdrawn: ".withdrawn"
-            case .error: ".error"
+            case .awaitingReview: "awaitingReview"
+            case .scheduledForReview: "scheduledForReview"
+            case .activeReview: "activeReview"
+            case .accepted: "accepted"
+            case .acceptedWithRevisions: "acceptedWithRevisions"
+            case .previewing: "previewing"
+            case .implemented: "implemented"
+            case .returnedForRevision: "returnedForRevision"
+            case .rejected: "rejected"
+            case .withdrawn: "withdrawn"
+            case .error: "error"
         }
     }
 }

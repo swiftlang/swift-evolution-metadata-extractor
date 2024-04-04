@@ -82,12 +82,12 @@ enum JSONRewriter {
     }
     
     // Temporary shim during transition period
-    // Remove the leading dot in status state values
-    static func futureStatusRewriter(_ sourceString: String) -> String {
+    // Add the leading dot in status state values for legacy format
+    static func legacyStatusRewriter(_ sourceString: String) -> String {
         var rewrittenString: String = ""
         for line in sourceString.split(separator: "\n") {
-            if let match = line.firstMatch(of:/(\s*"state" : ")\.(.*)(",?)/) {
-                rewrittenString += match.1 + match.2 + match.3 + "\n"
+            if let match = line.firstMatch(of:/(\s*"state" : ")(.*)(",?)/) {
+                rewrittenString += match.1 + "." + match.2 + match.3 + "\n"
             } else {
                 rewrittenString += line + "\n"
             }

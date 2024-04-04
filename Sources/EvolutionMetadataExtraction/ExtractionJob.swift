@@ -222,10 +222,11 @@ public struct ExtractionJob: Sendable {
         let encoder = JSONEncoder()
         encoder.outputFormatting = [.prettyPrinted, .sortedKeys]
         let data = try encoder.encode(results.proposals)
+        let adjustedLegacyData = JSONRewriter.applyRewritersToJSONData(rewriters: [JSONRewriter.legacyStatusRewriter], data: data)
         let directoryURL = outputURL.deletingLastPathComponent()
 
         try FileManager.default.createDirectory(at: directoryURL, withIntermediateDirectories: true)
-        try data.write(to: outputURL)
+        try adjustedLegacyData.write(to: outputURL)
         
         // Temporarily write proposed new evolution.json file alongside legacy format file
         let newFormatFileURL = outputURL.deletingLastPathComponent().appending(component: "evolution.json")
@@ -234,7 +235,7 @@ public struct ExtractionJob: Sendable {
         let newFormatData = try encoder.encode(results)
         try newFormatData.write(to: newFormatFileURL)
 
-        let adjustedNewFormatData = JSONRewriter.applyRewritersToJSONData(rewriters: [JSONRewriter.futureStatusRewriter, JSONRewriter.prettyPrintVersions], data: newFormatData)
+        let adjustedNewFormatData = JSONRewriter.applyRewritersToJSONData(rewriters: [JSONRewriter.prettyPrintVersions], data: newFormatData)
         try adjustedNewFormatData.write(to: newFormatFileURL)
     }
     
