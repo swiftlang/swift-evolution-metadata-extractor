@@ -247,6 +247,7 @@ public struct ExtractionJob: Sendable {
         guard FileManager.default.fileExists(atPath: temporaryProposalsDirectory.path(percentEncoded: false)) else {
             fatalError("Temporary proposals directory should already be created during metadata extraction")
         }
+        var addedFilenames: Set<String> = ["proposals"] // Guard statement checks that 'proposals' is present
         
         print("Writing snapshot '\(outputURL.lastPathComponent)' to '\(outputURL.absoluteURL.path())'\n")
         let encoder = JSONEncoder()
@@ -258,18 +259,34 @@ public struct ExtractionJob: Sendable {
             let branchInfoData = try encoder.encode(branchInfo)
             let branchInfoURL = temporarySnapshotDirectory.appending(component: "source-info.json")
             try branchInfoData.write(to: branchInfoURL)
+            addedFilenames.insert("source-info.json")
         }
         
         if let proposalListing, !proposalListing.isEmpty {
             let proposalListingData = try encoder.encode(proposalListing)
             let proposalListingURL = temporarySnapshotDirectory.appending(component: "proposal-listing.json")
             try proposalListingData.write(to: proposalListingURL)
+            addedFilenames.insert("proposal-listing.json")
         }
 
         let extractionResultsData = try encoder.encode(results)
         let adjustedResultstData = JSONRewriter.applyRewritersToJSONData(rewriters: [JSONRewriter.prettyPrintVersions], data: extractionResultsData)
         let expectedResultsURL = temporarySnapshotDirectory.appending(component: "expected-results.json")
         try adjustedResultstData.write(to: expectedResultsURL)
+        addedFilenames.insert("expected-results.json")
+
+        // If the source is a snapshot, make sure any additional ad-hoc files, such as READMEs are copied to the new snapshot
+        if case let .snapshot(sourceURL) = source {
+            for srcURL in try FileManager.default.contentsOfDirectory(at: sourceURL, includingPropertiesForKeys: nil, options: .skipsSubdirectoryDescendants) {
+                if !addedFilenames.contains(srcURL.lastPathComponent) {
+                    let dstURL = temporarySnapshotDirectory.appending(component: srcURL.lastPathComponent)
+                    try FileManager.default.copyItem(at: srcURL, to: dstURL)
+                } else {
+                    addedFilenames.remove(srcURL.lastPathComponent)
+                }
+            }
+            guard addedFilenames.isEmpty else { fatalError("Not all files copied: \(addedFilenames)") }
+        }
 
         try FileManager.default.createDirectory(at: outputURL, withIntermediateDirectories: true)
         _ = try FileManager.default.replaceItemAt(outputURL, withItemAt: temporarySnapshotDirectory, options: [.usingNewMetadataOnly])
