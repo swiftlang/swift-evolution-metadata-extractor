@@ -221,22 +221,20 @@ public struct ExtractionJob: Sendable {
         
         let encoder = JSONEncoder()
         encoder.outputFormatting = [.prettyPrinted, .sortedKeys]
-        let data = try encoder.encode(results.proposals)
-        let adjustedLegacyData = JSONRewriter.applyRewritersToJSONData(rewriters: [JSONRewriter.legacyStatusRewriter], data: data)
-        let directoryURL = outputURL.deletingLastPathComponent()
-
-        try FileManager.default.createDirectory(at: directoryURL, withIntermediateDirectories: true)
-        try adjustedLegacyData.write(to: outputURL)
+        let data = try encoder.encode(results)
+        let adjustedData = JSONRewriter.applyRewritersToJSONData(rewriters: [JSONRewriter.prettyPrintVersions], data: data)
         
-        // Temporarily write proposed new evolution.json file alongside legacy format file
-        let newFormatFileURL = outputURL.deletingLastPathComponent().appending(component: "evolution.json")
-        print("Writing file '\(newFormatFileURL.lastPathComponent)' to\n'\(newFormatFileURL.absoluteURL.path())'\n")
+        let directoryURL = outputURL.deletingLastPathComponent()
+        try FileManager.default.createDirectory(at: directoryURL, withIntermediateDirectories: true)
+        try adjustedData.write(to: outputURL)
+        
+        // Temporarily write legacy proposals.json file alongside evolution.json format file
+        let legacyFormatURL = directoryURL.appending(component: "proposals.json")
+        print("Writing file '\(legacyFormatURL.lastPathComponent)' to\n'\(legacyFormatURL.absoluteURL.path())'\n")
 
-        let newFormatData = try encoder.encode(results)
-        try newFormatData.write(to: newFormatFileURL)
-
-        let adjustedNewFormatData = JSONRewriter.applyRewritersToJSONData(rewriters: [JSONRewriter.prettyPrintVersions], data: newFormatData)
-        try adjustedNewFormatData.write(to: newFormatFileURL)
+        let legacyFormatData = try encoder.encode(results.proposals)
+        let adjustedLegacyFormatData = JSONRewriter.applyRewritersToJSONData(rewriters: [JSONRewriter.legacyStatusRewriter], data: legacyFormatData)
+        try adjustedLegacyFormatData.write(to: legacyFormatURL)
     }
     
     private func writeSnapshot(results: EvolutionMetadata, outputURL: URL) throws {

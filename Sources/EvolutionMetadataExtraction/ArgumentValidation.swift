@@ -74,7 +74,7 @@ public enum ArgumentValidation {
     
     public enum Extract {
         
-        public static let defaultFilename = "proposals.json"
+        public static let defaultFilename = "evolution.json"
         public static let defaultOutput: ExtractionJob.Output = .metadataJSON(URL(filePath: defaultFilename))
         
         static public func validate(forceExtract: [String]) throws -> (forceAll: Bool, forcedExtractionIDs: [String]) {
