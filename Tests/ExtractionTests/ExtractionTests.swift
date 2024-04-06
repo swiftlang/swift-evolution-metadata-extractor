@@ -19,6 +19,18 @@ final class ExtractionTests: XCTestCase {
         try XCTUnwrap(Bundle.module.url(forResource: snapshotName, withExtension: "evosnapshot", subdirectory: "Resources"), "Unable to find snapshot \(snapshotName).evosnapshot in test bundle resources.")
     }
     
+    func data(forResource name: String, withExtension ext: String) throws -> Data {
+        let url = try XCTUnwrap(Bundle.module.url(forResource: name, withExtension: ext, subdirectory: "Resources"), "Unable to find resource \(name).\(ext) in test bundle resources.")
+        let data = try XCTUnwrap(Data(contentsOf: url), "Unable to read data from \(name).\(ext)")
+        return data
+    }
+    
+    func string(forResource name: String, withExtension ext: String) throws -> String {
+        let data = try data(forResource: name, withExtension: ext)
+        let string = try XCTUnwrap(String(data: data, encoding: .utf8), "Unable to make string from contents of \(name).\(ext)")
+        return string
+    }
+
     func testAllProposals() async throws {
         
         let snapshotURL = try urlForSnapshot(named: "AllProposals")
@@ -68,24 +80,10 @@ final class ExtractionTests: XCTestCase {
     
     // The lines of text in review-dates-good.txt are status headers from swift-evolution repository history
     func testGoodDates() throws {
-        guard let reviewDatesURL = Bundle.module.url(forResource: "review-dates-good", withExtension: "txt", subdirectory: "Resources") else {
-            print("Could not find review-dates.txt")
-            return
-        }
         
-        guard let reviewDatesData = try? Data(contentsOf: reviewDatesURL) else {
-            print("Could not read review-dates.txt")
-            return
-        }
-        
-        guard let reviewDatesContents = String(data: reviewDatesData, encoding: .utf8) else {
-            print("Could not make string from contents of review-dates.txt")
-            return
-        }
+        let reviewDatesContents = try string(forResource: "review-dates-good", withExtension: "txt")
         
         let statusStrings = reviewDatesContents.split(separator: "\n")
-        
-        //        var errorsFound = 0
         for statusString in statusStrings {
             // NOTE: This is something that should be validated!
             // It seems a common mistake to leave out closing parenthesis or put strong marker inside closing paren
@@ -99,24 +97,10 @@ final class ExtractionTests: XCTestCase {
     
     // The lines of text in review-dates-bad.txt are status headers from swift-evolution repository history
     func testBadDates() throws {
-        guard let reviewDatesURL = Bundle.module.url(forResource: "review-dates-bad", withExtension: "txt", subdirectory: "Resources") else {
-            print("Could not find review-dates-bad.txt")
-            return
-        }
         
-        guard let reviewDatesData = try? Data(contentsOf: reviewDatesURL) else {
-            print("Could not read review-dates-bad.txt")
-            return
-        }
-        
-        guard let reviewDatesContents = String(data: reviewDatesData, encoding: .utf8) else {
-            print("Could not make string from contents of review-dates.txt")
-            return
-        }
-        
+        let reviewDatesContents = try string(forResource: "review-dates-bad", withExtension: "txt")
+
         let statusStrings = reviewDatesContents.split(separator: "\n")
-        
-        //        var errorsFound = 0
         for statusString in statusStrings {
             // NOTE: This is something that should be validated!
             // It seems a common mistake to leave out closing parenthesis or put strong marker inside closing paren
@@ -152,19 +136,9 @@ final class ExtractionTests: XCTestCase {
         The 'unknown-status.json' file contains the metadata of a single proposal with the fictional unknown status of 'appealed'.
      */
     func testUnknownStatus() throws {
-        guard let unknownStatusURL = Bundle.module.url(forResource: "unknown-status", withExtension: "json", subdirectory: "Resources") else {
-            print("Could not find unknown-status.json")
-            return
-        }
-
-        guard let unknownStatusData = try? Data(contentsOf: unknownStatusURL) else {
-            print("Could not read unknown-status.json")
-            return
-        }
-
+        let unknownStatusData = try data(forResource: "unknown-status", withExtension: "json")
         let proposal = try JSONDecoder().decode(Proposal.self, from: unknownStatusData)
         XCTAssertEqual(proposal.status, .unknownStatus("appealed"))
-
     }
 }
 
