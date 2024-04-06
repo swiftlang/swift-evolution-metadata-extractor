@@ -127,5 +127,25 @@ final class ExtractionTests: XCTestCase {
             XCTAssertNil(StatusExtractor.datesForString(statusDetail, processingDate: Date.now), "Unexpectedly able to parse '\(statusDetail)'")
         }
     }
+    
+    /* Tests for breaking schema changes by serializing using the current model and then attempting to decode using a baseline version of the model from the last major schema release. The baseline model is located in the BaselineModel directory.
+     
+        Note that this test assumes that the referenced snapshots are updated to be correct for the current model.
+     */
+    func testForBreakingChanges() async throws {
+
+        let allProposalsURL = try urlForSnapshot(named: "AllProposals")
+        let malformedProposalsURL = try urlForSnapshot(named: "Malformed")
+        
+        let encoder = JSONEncoder()
+        let decoder = JSONDecoder()
+        
+        for snapshotURL in [allProposalsURL, malformedProposalsURL] {
+            let extractionJob = try await ExtractionJob.makeExtractionJob(from: .snapshot(snapshotURL), output: .none, ignorePreviousResults: true)
+            let extractedMetadata = try await EvolutionMetadataExtractor.extractEvolutionMetadata(for: extractionJob)
+            let data = try encoder.encode(extractedMetadata)
+            _ = try decoder.decode(EvolutionMetadata_v1.self, from: data)
+        }
+    }
 }
 
