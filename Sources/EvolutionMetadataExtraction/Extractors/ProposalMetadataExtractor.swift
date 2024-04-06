@@ -20,8 +20,8 @@ struct ProposalMetadataExtractor {
     /// - Returns: The extracted proposal metadata
     static func extractProposalMetadata(from markdown: String, proposalSpec: ProposalSpec, extractionDate: Date) -> Proposal {
                 
-        var proposalMetadata = Proposal()
-        proposalMetadata.sha = proposalSpec.sha
+        var proposal = Proposal()
+        proposal.sha = proposalSpec.sha
         
         var warnings: [Proposal.Issue] = []
         var errors: [Proposal.Issue] = []
@@ -37,63 +37,63 @@ struct ProposalMetadataExtractor {
         let document = Document(parsing: markdown, options: [.disableSmartOpts])
         
         guard !document.isEmpty else {
-            proposalMetadata.errors = [ValidationIssue.emptyMarkdownFile]
-            return proposalMetadata
+            proposal.errors = [ValidationIssue.emptyMarkdownFile]
+            return proposal
         }
         
         // VALIDATION ENHANCEMENT: Currently no error or warning reported if missing title or summary.
         // Change to if lets to detect missing values and report.
-        proposalMetadata.title = extractValue(from: document, with: TitleExtractor.self) ?? ""
-        proposalMetadata.summary = extractValue(from: document, with: SummaryExtractor.self) ?? ""
+        proposal.title = extractValue(from: document, with: TitleExtractor.self) ?? ""
+        proposal.summary = extractValue(from: document, with: SummaryExtractor.self) ?? ""
         
         if let headerFieldsByLabel = extractValue(from: document, with: HeaderFieldExtractor.self) {
             
             let proposalLink = extractValue(from: headerFieldsByLabel, with: ProposalLinkExtractor.self)
-            proposalMetadata.id = proposalLink?.text ?? ""
-            proposalMetadata.link = proposalLink?.destination ?? ""
+            proposal.id = proposalLink?.text ?? ""
+            proposal.link = proposalLink?.destination ?? ""
             /* VALIDATION ENHANCEMENT: Probably also want to validate that the destination link matches the passed-in filename and the id matches the proposalID field */
             
             if let authors = extractValue(from: headerFieldsByLabel, with: AuthorExtractor.self), authors.count > 0 {
-                proposalMetadata.authors = authors
+                proposal.authors = authors
             } else {
                 errors.append(ValidationIssue.missingAuthors)
             }
             
             if let reviewManagers = extractValue(from: headerFieldsByLabel, with: ReviewManagerExtractor.self), let reviewManager =  reviewManagers.first {
-                proposalMetadata.reviewManager = reviewManager // reviewManager.first ?? Proposal.Person()
+                proposal.reviewManager = reviewManager // reviewManager.first ?? Proposal.Person()
             } else {
                 warnings.append(ValidationIssue.missingReviewManager)
             }
             
-            proposalMetadata.trackingBugs = extractValue(from: headerFieldsByLabel, with: TrackingBugExtractor.self)
-            proposalMetadata.implementation = extractValue(from: headerFieldsByLabel, with: ImplementationExtractor.self)
+            proposal.trackingBugs = extractValue(from: headerFieldsByLabel, with: TrackingBugExtractor.self)
+            proposal.implementation = extractValue(from: headerFieldsByLabel, with: ImplementationExtractor.self)
             
             if let status = extractValue(from: (headerFieldsByLabel, extractionDate), with: StatusExtractor.self) {
                 if case .implemented(let version) = status, version == "none" {
                     // VALIDATION ENHANCEMENT: Figure out a better way to special case the missing version strings for these proposals
                     // VALIDATION ENHANCEMENT: Possibly just add version strings to the actual proposals
                     if proposalSpec.id == "SE-0264" || proposalSpec.id == "SE-0110" {
-                        proposalMetadata.status = .implemented(version: "")
+                        proposal.status = .implemented(version: "")
                     } else {
                         // VALIDATION ENHANCEMENT: This *should* be a validation error
-                        proposalMetadata.status = .implemented(version: "")
+                        proposal.status = .implemented(version: "")
                     }
                 } else {
-                    proposalMetadata.status = status
+                    proposal.status = status
                 }
             } else {
                 // VALIDATION ENHANCEMENT: Report an error
-                proposalMetadata.status = .statusExtractionFailed
+                proposal.status = .statusExtractionFailed
             }
         } else {
             errors.append(ValidationIssue.missingMetadataFields)
         }
         
         // Add warnings and errors if present
-        if !warnings.isEmpty { proposalMetadata.warnings = warnings }
-        if !errors.isEmpty { proposalMetadata.errors = errors }
+        if !warnings.isEmpty { proposal.warnings = warnings }
+        if !errors.isEmpty { proposal.errors = errors }
 
-        return proposalMetadata
+        return proposal
     }
 }
 
