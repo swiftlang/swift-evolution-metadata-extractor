@@ -83,7 +83,7 @@ struct ProposalMetadataExtractor {
                 }
             } else {
                 // VALIDATION ENHANCEMENT: Report an error
-                proposalMetadata.status = .error
+                proposalMetadata.status = .statusExtractionFailed
             }
         } else {
             errors.append(ValidationIssue.missingMetadataFields)

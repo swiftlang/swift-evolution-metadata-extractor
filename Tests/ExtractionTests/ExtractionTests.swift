@@ -147,5 +147,24 @@ final class ExtractionTests: XCTestCase {
             _ = try decoder.decode(EvolutionMetadata_v1.self, from: data)
         }
     }
+
+    /* Test that if an unknown proposal status is encountered, decoding does not fail and decodes to an .error status with the unknown status value as part of the associated reason string.
+        The 'unknown-status.json' file contains the metadata of a single proposal with the fictional unknown status of 'appealed'.
+     */
+    func testUnknownStatus() throws {
+        guard let unknownStatusURL = Bundle.module.url(forResource: "unknown-status", withExtension: "json", subdirectory: "Resources") else {
+            print("Could not find unknown-status.json")
+            return
+        }
+
+        guard let unknownStatusData = try? Data(contentsOf: unknownStatusURL) else {
+            print("Could not read unknown-status.json")
+            return
+        }
+
+        let proposal = try JSONDecoder().decode(Proposal.self, from: unknownStatusData)
+        XCTAssertEqual(proposal.status, .unknownStatus("appealed"))
+
+    }
 }
 

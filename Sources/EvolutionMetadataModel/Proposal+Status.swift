@@ -21,7 +21,14 @@ extension Proposal {
         case returnedForRevision
         case rejected
         case withdrawn
-        case error
+        case error(reason: String)
+        
+        // Error status reason values
+        public static let statusExtractionNotAttempted: Status = .error(reason: "Status extraction not attempted")
+        public static let statusExtractionFailed: Status = .error(reason: "Status extraction failed")
+        public static func unknownStatus(_ status: String) -> Status {
+            .error(reason: "Unknown status value '\(status)'")
+        }
     }
 }
 
@@ -32,6 +39,7 @@ extension Proposal.Status: Codable {
         case version
         case start
         case end
+        case reason
     }
     
     public init(from decoder: any Decoder) throws {
@@ -63,10 +71,11 @@ extension Proposal.Status: Codable {
             case "returnedForRevision": self = .returnedForRevision
             case "rejected": self = .rejected
             case "withdrawn": self = .withdrawn
-            case "error": self = .error
-            default: throw DecodingError.dataCorruptedError(forKey: .state, in: container,
-                                                            debugDescription: "Unknown status value \(status)"
-            )
+            case "error":
+                let reason = try container.decode(String.self, forKey: .reason)
+                self = .error(reason: reason)
+            default:
+                self = .unknownStatus(status)
         }
     }
     
@@ -86,6 +95,10 @@ extension Proposal.Status: Codable {
         
         if case let .implemented(version) = self {
             try container.encode(version, forKey: .version)
+        }
+        
+        if case let .error(reason) = self {
+            try container.encode(reason, forKey: .reason)
         }
     }
     
@@ -108,7 +121,7 @@ extension Proposal.Status: Codable {
 
 extension Proposal.Status {
     // VALIDATION ENHANCEMENT: Consider normalizing capitalization of statuses and validating correct capitalization
-    public init?(name: String, version: String = "", start: String = "", end: String = "") {
+    public init?(name: String, version: String = "", start: String = "", end: String = "", reason: String = "") {
         switch name.lowercased() {
             case "Awaiting Review".lowercased(): self = .awaitingReview
             case "Scheduled For Review".lowercased(): self = .scheduledForReview(start: start, end: end)
@@ -120,7 +133,7 @@ extension Proposal.Status {
             case "Returned For Revision".lowercased(): self = .returnedForRevision
             case "Rejected".lowercased(): self = .rejected
             case "Withdrawn".lowercased(): self = .withdrawn
-            case "Error".lowercased(): self = .error
+            case "Error".lowercased(): self = .error(reason: reason)
             // VALIDATION ENHANCEMENT: The following are non-standard statuses that are in current proposals
             // VALIDATION ENHANCEMENT: The mapped values match the legacy tool implemenation
             // VALIDATION ENHANCEMENT: In the future may want to formalize or normalize

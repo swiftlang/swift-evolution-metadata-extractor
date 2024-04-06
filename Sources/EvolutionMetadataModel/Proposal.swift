@@ -85,7 +85,7 @@ public struct Proposal: Equatable, Sendable, Codable, Identifiable {
     public var warnings: [Issue]?
     public var errors: [Issue]?
     
-    public init(id: String = "", title: String = "", summary: String = "", link: String = "", sha: String = "", authors: [Person] = [], reviewManager: Person = Person(), status: Status = .error, trackingBugs: [TrackingBug]? = nil, implementation: [Implementation]? = nil, warnings: [Issue]? = nil, errors: [Issue]? = nil)
+    public init(id: String = "", title: String = "", summary: String = "", link: String = "", sha: String = "", authors: [Person] = [], reviewManager: Person = Person(), status: Status = .statusExtractionNotAttempted, trackingBugs: [TrackingBug]? = nil, implementation: [Implementation]? = nil, warnings: [Issue]? = nil, errors: [Issue]? = nil)
     {
         self.id = id
         self.title = title

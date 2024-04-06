@@ -69,8 +69,8 @@ struct StatusExtractor: MarkupWalker, ValueExtractor {
             status = rawStatus
         } else {
             errors.append(ValidationIssue.missingOrInvalidStatus)
-            status = .error
-        }        
+            status = .statusExtractionFailed
+        }
     }
     
     static func versionForString(_ fullVersionString: String) -> String {

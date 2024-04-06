@@ -117,6 +117,7 @@
       },
       "sha" : "",
       "status" : {
+        "reason" : "Status extraction not attempted",
         "state" : "error"
       },
       "summary" : "Curried function declaration syntax `func foo(x: Int)(y: Int)` is of limited usefulness and creates a lot of language and implementation complexity. We should remove it.",
@@ -145,6 +146,7 @@
       },
       "sha" : "",
       "status" : {
+        "reason" : "Status extraction failed",
         "state" : "error"
       },
       "summary" : "There has been some confusion of semantics when a function parameter is marked as `inout` compared to `var`. Both give a mutable local copy of a value but parameters marked `inout` are automatically written back.",
@@ -187,6 +189,7 @@
       },
       "sha" : "",
       "status" : {
+        "reason" : "Status extraction failed",
         "state" : "error"
       },
       "summary" : "The increment\/decrement operators in Swift were added very early in the development of Swift, as a carry-over from C.  These were added without much consideration, and haven't been thought about much since then.  This document provides a fresh look at them, and ultimately recommends we just remove them entirely, since they are confusing and not carrying their weight.",
@@ -218,6 +221,7 @@
       },
       "sha" : "",
       "status" : {
+        "reason" : "Status extraction failed",
         "state" : "error"
       },
       "summary" : "This proposal describes how we can improve Swift's \"Clang Importer\", which is responsible for mapping C and Objective-C APIs into Swift, to translate the names of Objective-C functions, types, methods, properties, etc. into names that more closely align with the [Swift API Design Guidelines](https:\/\/swift.org\/documentation\/api-design-guidelines) being developed as part of Swift 3. Our approach focuses on the differences between the Objective-C [Coding Guidelines for Cocoa](https:\/\/developer.apple.com\/library\/mac\/documentation\/Cocoa\/Conceptual\/CodingGuidelines\/CodingGuidelines.html) and the Swift API Design Guidelines, using some simple linguistic analysis to aid the automatic translation from Objective-C names to more \"Swifty\" names.",
@@ -277,6 +281,7 @@
       },
       "sha" : "",
       "status" : {
+        "reason" : "Status extraction not attempted",
         "state" : "error"
       },
       "summary" : "",
@@ -300,6 +305,7 @@
       },
       "sha" : "",
       "status" : {
+        "reason" : "Status extraction not attempted",
         "state" : "error"
       },
       "summary" : "",

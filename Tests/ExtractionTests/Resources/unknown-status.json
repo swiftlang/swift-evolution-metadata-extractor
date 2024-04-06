@@ -1,0 +1,44 @@
+    {
+      "authors" : [
+        {
+          "link" : "https:\/\/github.com\/lorentey",
+          "name" : "Karoy Lorentey"
+        },
+        {
+          "link" : "https:\/\/github.com\/Azoy",
+          "name" : "Alejandro Alonso"
+        }
+      ],
+      "id" : "SE-0410",
+      "implementation" : [
+        {
+          "account" : "apple",
+          "id" : "68857",
+          "repository" : "swift",
+          "type" : "pull"
+        }
+      ],
+      "link" : "0410-atomics.md",
+      "reviewManager" : {
+        "link" : "https:\/\/github.com\/jckarter",
+        "name" : "Joe Groff"
+      },
+      "sha" : "38b8c99ce8c4a2fda498199bf75e38d1e16088c6",
+      "status" : {
+        "state" : "appealed"
+      },
+      "summary" : "This proposal adds a limited set of low-level atomic operations to the Standard Library, including native spellings for C++-style memory orderings. Our goal is to enable intrepid library authors and developers writing system level code to start building synchronization constructs directly in Swift.",
+      "title" : "Low-Level Atomic Operations ⚛︎",
+      "trackingBugs" : [
+        {
+          "assignee" : "",
+          "id" : "SR-9144",
+          "link" : "https:\/\/github.com\/apple\/swift\/issues\/51640",
+          "radar" : "",
+          "resolution" : "",
+          "status" : "",
+          "title" : "",
+          "updated" : ""
+        }
+      ]
+    }
