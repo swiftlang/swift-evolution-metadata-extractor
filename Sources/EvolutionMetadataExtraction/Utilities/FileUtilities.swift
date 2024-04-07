@@ -68,7 +68,7 @@ enum FileUtilities {
 // A mechanism for adjusting the JSON produced by Codable
 // Currently used to:
 //   - Pretty print the array of implementation versions
-//   - Remove the leading dot in status state values
+//   - Add the leading dot in status state values for legacy file
 
 enum JSONRewriter {
     

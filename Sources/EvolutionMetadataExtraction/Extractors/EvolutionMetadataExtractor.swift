@@ -22,19 +22,7 @@ struct EvolutionMetadataExtractor {
             try FileManager.default.createDirectory(at: temporaryProposalsDirectory, withIntermediateDirectories: true)
         }
 
-        let proposals = await withTaskGroup(of: SortableProposalWrapper.self, returning: [SortableProposalWrapper].self) { taskGroup in
-            
-            for spec in filteredProposalSpecs {
-                taskGroup.addTask { await readAndExtractProposalMetadata(from: spec, proposalDirectoryURL: extractionJob.temporaryProposalsDirectory, extractionDate: extractionJob.extractionDate) }
-            }
-            
-            var proposals: [SortableProposalWrapper] = []
-            for await result in taskGroup {
-                proposals.append(result)
-            }
-            
-            return proposals
-        }
+        let proposals = await extractAllProposalMetadata(from: filteredProposalSpecs, extractionJob: extractionJob)
         
         verbosePrint("Reused Proposal Count:", reusableProposals.count, terminator: "\n")
         verbosePrint("Processed Proposal Count:", proposals.count)
@@ -66,6 +54,24 @@ struct EvolutionMetadataExtractor {
         )
     }
     
+    private static func extractAllProposalMetadata(from proposalSpecs: [ProposalSpec], extractionJob: ExtractionJob) async -> [SortableProposalWrapper] {
+        
+        await withTaskGroup(of: SortableProposalWrapper.self, returning: [SortableProposalWrapper].self) { taskGroup in
+            
+            for spec in proposalSpecs {
+                taskGroup.addTask { await readAndExtractProposalMetadata(from: spec, proposalDirectoryURL: extractionJob.temporaryProposalsDirectory, extractionDate: extractionJob.extractionDate) }
+            }
+            
+            var proposals: [SortableProposalWrapper] = []
+            for await result in taskGroup {
+                proposals.append(result)
+            }
+            
+            return proposals
+        }
+
+    }
+    
     private static func readAndExtractProposalMetadata(from proposalSpec: ProposalSpec, proposalDirectoryURL: URL?, extractionDate: Date) async -> SortableProposalWrapper {
         do {
             let markdownString: String
@@ -81,7 +87,7 @@ struct EvolutionMetadataExtractor {
                 try data.write(to: proposalFileURL)
             }
 
-            let parsedProposal = ProposalMetadataExtractor.extractProposalMetadata(from: markdownString, proposalSpec: proposalSpec, extractionDate: extractionDate)
+            let proposal = ProposalMetadataExtractor.extractProposalMetadata(from: markdownString, proposalSpec: proposalSpec, extractionDate: extractionDate)
             
             // For proposals that fail proposal link / id extraction, provides a way to identify the problem file in validation reports
             // When activated, be sure to set the link back to empty string post-validation report
@@ -90,7 +96,7 @@ struct EvolutionMetadataExtractor {
             // VALIDATION ENHANCEMENT: Validate that the 'link' value matches the filename
             // VALIDATION ENHANCEMENT: Note that items in Malformed test would need to be updated, since their filename matches the problem exhibited
             
-            return SortableProposalWrapper(proposal: parsedProposal, sortIndex: proposalSpec.sortIndex)
+            return SortableProposalWrapper(proposal: proposal, sortIndex: proposalSpec.sortIndex)
 
         } catch {
             print(error)
@@ -151,6 +157,7 @@ struct EvolutionMetadataExtractor {
 /// It also includes convenience properties for the filename and proposal ID.
 ///
 /// The listing of proposals to be processed may come from a GitHub proposal listing or scanning the contents of a directory.
+///
 struct ProposalSpec: Sendable {
     let url: URL
     let sha: String
@@ -165,7 +172,12 @@ struct ProposalSpec: Sendable {
     }
 }
 
-struct SortableProposalWrapper {
+/// Wrapper to ensure malformed proposals can be sorted correctly
+///
+/// Proposals are sorted by proposal ID. Malformed markdown may make it impossible to extract the ID.
+/// The wrapper ensures sort order is maintained.
+///
+private struct SortableProposalWrapper {
     let proposal: Proposal
     let sortIndex: Int
     var id: String { proposal.id }

@@ -77,16 +77,35 @@ public struct ExtractionJob: Sendable {
     public static func makeExtractionJob(from source: Source, output: Output, ignorePreviousResults: Bool = false, forcedExtractionIDs: [String] = [], toolVersion: String = "", extractionDate: Date = Date()) async throws -> ExtractionJob {
         switch source {
             case .network:
-                try await networkExtractionJob(source: source, output: output, ignorePreviousResults: ignorePreviousResults, forcedExtractionIDs: forcedExtractionIDs, toolVersion: toolVersion, extractionDate: extractionDate)
+                try await makeNetworkExtractionJob(source: source, output: output, ignorePreviousResults: ignorePreviousResults, forcedExtractionIDs: forcedExtractionIDs, toolVersion: toolVersion, extractionDate: extractionDate)
             case .snapshot:
-                try snapshotExtractionJob(source: source, output: output, ignorePreviousResults: ignorePreviousResults, forcedExtractionIDs: forcedExtractionIDs, toolVersion: toolVersion, extractionDate: extractionDate)
+                try makeSnapshotExtractionJob(source: source, output: output, ignorePreviousResults: ignorePreviousResults, forcedExtractionIDs: forcedExtractionIDs, toolVersion: toolVersion, extractionDate: extractionDate)
         }
     }
+}
+
+// MARK: - Gather Job Requirements & Create
+
+extension ExtractionJob {
+    
+    private static func makeNetworkExtractionJob(source: Source, output: Output, ignorePreviousResults: Bool, forcedExtractionIDs: [String] = [], toolVersion: String = "", extractionDate: Date = Date()) async throws -> ExtractionJob {
         
-    private static func snapshotExtractionJob(source: Source, output: Output, ignorePreviousResults: Bool, forcedExtractionIDs: [String], toolVersion: String, extractionDate: Date) throws -> ExtractionJob {
+        assert(source == .network, "makeNetworkExtractionJob() requires network source")
+        
+        async let previousResults = ignorePreviousResults ? [] : PreviousResultsFetcher.fetchPreviousResults()
+        
+        let mainBranchInfo = try await GitHubFetcher.fetchMainBranch()
+        async let proposalContentItems = GitHubFetcher.fetchProposalContentItems(for: mainBranchInfo.commit.sha)
+        
+        let proposalSpecs = try await proposalContentItems.enumerated().map { $1.proposalSpec(sortIndex: $0) }
+        
+        return await ExtractionJob(source: source, output: output, branchInfo: mainBranchInfo, proposalListing: try proposalContentItems, proposalSpecs: proposalSpecs, previousResults: try await previousResults, expectedResults: nil, forcedExtractionIDs: forcedExtractionIDs, toolVersion: toolVersion, extractionDate: extractionDate)
+    }
+    
+    private static func makeSnapshotExtractionJob(source: Source, output: Output, ignorePreviousResults: Bool, forcedExtractionIDs: [String], toolVersion: String, extractionDate: Date) throws -> ExtractionJob {
         
         guard case let .snapshot(snapshotURL) = source else {
-            fatalError("snapshotExtractionJob() requires snapshot source")
+            fatalError("makeSnapshotExtractionJob() requires snapshot source")
         }
         
         // Argument validation should ensure correct values. Assert to catch problems in usage in tests.
@@ -164,21 +183,11 @@ public struct ExtractionJob: Sendable {
         
         return ExtractionJob(source: source, output: output, branchInfo: branchInfo, proposalListing: proposalListing, proposalSpecs: proposalSpecs, previousResults: previousResults, expectedResults: expectedResults, forcedExtractionIDs: forcedExtractionIDs, toolVersion: toolVersion, extractionDate: snapshotDate)
     }
-    
-    private static func networkExtractionJob(source: Source, output: Output, ignorePreviousResults: Bool, forcedExtractionIDs: [String] = [], toolVersion: String = "", extractionDate: Date = Date()) async throws -> ExtractionJob {
-        
-        assert(source == .network, "networkExtractionJob() requires network source")
-        
-        async let previousResults = ignorePreviousResults ? [] : PreviousResultsFetcher.fetchPreviousResults()
-        
-        let mainBranchInfo = try await GitHubFetcher.fetchMainBranch()
-        async let proposalContentItems = GitHubFetcher.fetchProposalContentItems(for: mainBranchInfo.commit.sha)
-        
-        let proposalSpecs = try await proposalContentItems.enumerated().map { $1.proposalSpec(sortIndex: $0) }
-        
-        return await ExtractionJob(source: source, output: output, branchInfo: mainBranchInfo, proposalListing: try proposalContentItems, proposalSpecs: proposalSpecs, previousResults: try await previousResults, expectedResults: nil, forcedExtractionIDs: forcedExtractionIDs, toolVersion: toolVersion, extractionDate: extractionDate)
-    }
+}
 
+// MARK: - Comparison
+
+extension ExtractionJob {
     
     private func compareResultsToExpectedValuesIfPresent(_ results: EvolutionMetadata) {
 
@@ -204,6 +213,11 @@ public struct ExtractionJob: Sendable {
         verbosePrint("Passing Proposals:", passingProposals, terminator: "\n")
         verbosePrint("Failing Proposals:", failingProposals)
     }
+}
+
+// MARK: - Output
+
+extension ExtractionJob {
     
     private func outputResults(_ results: EvolutionMetadata) throws {
         switch output {

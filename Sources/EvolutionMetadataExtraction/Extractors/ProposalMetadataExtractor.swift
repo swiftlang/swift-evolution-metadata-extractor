@@ -16,7 +16,8 @@ struct ProposalMetadataExtractor {
     /// Extracts the metadata from a Swift Evolution proposal
     /// - Parameters:
     ///   - markdown: The markdown string of a Swift Evolution proposal
-    ///   - proposalID: A string identifier typically of the form _SE-XXXX_ such as _SE-0234_
+    ///   - proposalSpec: Proposal specification including the proposal ID
+    ///   - extractionDate: Extraction date used to determine expired review periods
     /// - Returns: The extracted proposal metadata
     static func extractProposalMetadata(from markdown: String, proposalSpec: ProposalSpec, extractionDate: Date) -> Proposal {
                 
