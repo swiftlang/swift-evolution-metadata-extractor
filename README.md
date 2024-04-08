@@ -62,6 +62,9 @@ Use the `--snapshot-path` option to specify a local `evosnapshot` directory as a
 
 - Use the value 'default' to specify a default snapshot of all evolution proposals:  
   `swift-evolution-metadata-extractor --snapshot-path default`
+  
+- Use the value 'malformed' to specify a test snapshot of malformed evolution proposals:  
+  `swift-evolution-metadata-extractor --snapshot-path malformed`
 
 See [Snapshots for Development and Testing](#snapshots-for-development-and-testing) for more information about snapshots.
 

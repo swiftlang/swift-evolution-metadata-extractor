@@ -36,8 +36,8 @@ public enum ArgumentValidation {
         
         let snapshotURL: URL
         
-        // Check for value 'default' to use the AllProposals snapshot in the test bundle
-        if snapshotPath == "default" {
+        // Check for value 'default' or 'malformed' to use the AllProposals or Malformed snapshot in the test bundle
+        if snapshotPath == "default" || snapshotPath == "malformed" {
             guard let processURL = FileUtilities.processDirectory else {
                 throw ValidationError("Unable to get path to the swift-evolution-metadata-extractor executable.")
             }
@@ -45,11 +45,14 @@ public enum ArgumentValidation {
             let testBundleName = "swift-evolution-metadata-extractor_ExtractionTests.bundle"
             let testBundleURL = processURL.appending(component: testBundleName)
             guard let testBundle = Bundle(url: testBundleURL) else {
-                throw ValidationError("To use the default snapshot, the test bundle '\(testBundleName)' must be located in the same directory as the swift-evolution-metadata-extractor executable.\nUse `swift test` or the Xcode test action to generate the default snapshot for the package.")
+                let snapshotDescription = (snapshotPath == "default") ? "default snapshot" : "snapshot of malformed proposals"
+                throw ValidationError("The test bundle '\(testBundleName)' must be located in the same directory as the swift-evolution-metadata-extractor executable.\n\nTo use the \(snapshotDescription), execute `swift test` or the Xcode test action to generate the test snapshots for the package.\n")
             }
             
-            guard let url = testBundle.url(forResource: "AllProposals", withExtension: "evosnapshot", subdirectory: "Resources") else {
-                throw ValidationError("Default snapshot does not exist.\nUse `swift test` or the Xcode test action to generate the default snapshot for the package.")
+            let snapshotName = (snapshotPath == "default") ? "AllProposals" : "Malformed"
+            guard let url = testBundle.url(forResource: snapshotName, withExtension: "evosnapshot", subdirectory: "Resources") else {
+                let snapshotDescription = (snapshotPath == "default") ? "default snapshot" : "snapshot of malformed proposals"
+                throw ValidationError("\(snapshotPath).evosnapshot does not exist.\n\nTo use the \(snapshotDescription), execute `swift test` or the Xcode test action to generate the test snapshots for the package.\n")
             }
             snapshotURL = url
         } else {
