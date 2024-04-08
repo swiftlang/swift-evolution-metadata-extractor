@@ -14,7 +14,7 @@ struct RootCommand: AsyncParsableCommand {
     
     static let toolVersion = "0.1.0"
     
-    static var configuration = CommandConfiguration(
+    static let configuration = CommandConfiguration(
         commandName: Help.Root.commandName,
         abstract: Help.Root.abstract,
         usage: Help.Root.usage,
