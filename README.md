@@ -2,7 +2,7 @@
 JSON metadata generator for Swift Evolution dashboard.
 
 ## Overview
-The `swift-evolution-metadata-extractor` tool reads the main branch of the `swift-evolution` repository, extracts proposal metadata and generates a JSON file used as the data source for the [Swift Evolution Dashboard](https://swift-org/swift-evolution).
+The `swift-evolution-metadata-extractor` tool reads the main branch of the `swift-evolution` repository, extracts proposal metadata and generates a JSON file used as the data source for the [Swift Evolution Dashboard](https://swift.org/swift-evolution).
 
 In addition to the extraction tool, this package vends the `EvolutionMetadataModel` library which provides types for encoding and decoding evolution metadata JSON files. This library is intended for use by clients of the metadata file that drives the evolution dashboard. 
 
