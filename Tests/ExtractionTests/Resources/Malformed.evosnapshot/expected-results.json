@@ -14,8 +14,10 @@
       ],
       "errors" : [
         {
+          "code" : 0,
           "kind" : "error",
           "message" : "Missing valid proposal ID; SE-0000 is reserved.",
+          "suggestion" : "",
           "stage" : "validate"
         }
       ],
@@ -46,8 +48,10 @@
       ],
       "warnings" : [
         {
+          "code" : 0,
           "kind" : "warning",
           "message" : "Missing review manager.",
+          "suggestion" : "",
           "stage" : "parse"
         }
       ]
@@ -61,8 +65,10 @@
       ],
       "errors" : [
         {
+          "code" : 0,
           "kind" : "error",
           "message" : "Missing proposal ID link (SE-NNNN)[NNNN-filename.md].",
+          "suggestion" : "",
           "stage" : "parse"
         }
       ],
@@ -93,8 +99,10 @@
       ],
       "warnings" : [
         {
+          "code" : 0,
           "kind" : "warning",
           "message" : "Missing review manager.",
+          "suggestion" : "",
           "stage" : "parse"
         }
       ]
@@ -104,8 +112,10 @@
       ],
       "errors" : [
         {
+          "code" : 0,
           "kind" : "error",
           "message" : "Missing list of metadata fields.",
+          "suggestion" : "",
           "stage" : "parse"
         }
       ],
@@ -153,8 +163,10 @@
       "title" : "Removing `var` from Function Parameters",
       "warnings" : [
         {
+          "code" : 0,
           "kind" : "warning",
           "message" : "Status not found in the proposal's details list.",
+          "suggestion" : "",
           "stage" : "parse"
         }
       ]
@@ -168,8 +180,10 @@
       ],
       "errors" : [
         {
+          "code" : 0,
           "kind" : "error",
           "message" : "Missing or invalid proposal status.",
+          "suggestion" : "",
           "stage" : "parse"
         }
       ],
@@ -196,8 +210,10 @@
       "title" : "Remove the `++` and `--` operators",
       "warnings" : [
         {
+          "code" : 0,
           "kind" : "warning",
           "message" : "Missing review manager.",
+          "suggestion" : "",
           "stage" : "parse"
         }
       ]
@@ -228,8 +244,10 @@
       "title" : "Better Translation of Objective-C APIs Into Swift",
       "warnings" : [
         {
+          "code" : 0,
           "kind" : "warning",
           "message" : "Status not found in the proposal's details list.",
+          "suggestion" : "",
           "stage" : "parse"
         }
       ]
@@ -268,8 +286,10 @@
       ],
       "errors" : [
         {
+          "code" : 0,
           "kind" : "error",
           "message" : "Proposal Markdown file is empty.",
+          "suggestion" : "",
           "stage" : "parse"
         }
       ],
@@ -292,8 +312,10 @@
       ],
       "errors" : [
         {
+          "code" : 0,
           "kind" : "error",
           "message" : "Proposal Markdown file is empty.",
+          "suggestion" : "",
           "stage" : "parse"
         }
       ],
@@ -320,8 +342,10 @@
       ],
       "errors" : [
         {
+          "code" : 0,
           "kind" : "error",
           "message" : "Proposal contains no content.",
+          "suggestion" : "",
           "stage" : "parse"
         }
       ],
@@ -347,8 +371,10 @@
       ],
       "errors" : [
         {
+          "code" : 0,
           "kind" : "error",
           "message" : "Proposal ID must include four decimal digits.",
+          "suggestion" : "",
           "stage" : "parse"
         }
       ],
@@ -370,8 +396,10 @@
       ],
       "errors" : [
         {
+          "code" : 0,
           "kind" : "error",
           "message" : "Missing author(s).",
+          "suggestion" : "",
           "stage" : "parse"
         }
       ],
@@ -424,8 +452,10 @@
       "title" : "Remove Partial Application of Non-Final Super Methods (Swift 2.2)",
       "warnings" : [
         {
+          "code" : 0,
           "kind" : "warning",
           "message" : "Missing or invalid dates for a review period.",
+          "suggestion" : "",
           "stage" : "parse"
         }
       ]
@@ -465,8 +495,10 @@
       ],
       "warnings" : [
         {
+          "code" : 0,
           "kind" : "warning",
           "message" : "Missing or invalid dates for a review period.",
+          "suggestion" : "",
           "stage" : "parse"
         }
       ]
@@ -542,8 +574,10 @@
       ],
       "errors" : [
         {
+          "code" : 0,
           "kind" : "error",
           "message" : "Author name contains extra markup; expected a link with plaintext contents.",
+          "suggestion" : "",
           "stage" : "parse"
         }
       ],
@@ -615,8 +649,10 @@
       ],
       "warnings" : [
         {
+          "code" : 0,
           "kind" : "warning",
           "message" : "Proposal ID contains extra markup; expected a link with plaintext contents.",
+          "suggestion" : "",
           "stage" : "parse"
         }
       ]
@@ -657,8 +693,10 @@
       "title" : "Swift Language Version Build Configuration",
       "warnings" : [
         {
+          "code" : 0,
           "kind" : "warning",
           "message" : "Implementation links to a non-Swift repository.",
+          "suggestion" : "",
           "stage" : "validate"
         }
       ]
@@ -685,8 +723,10 @@
       "title" : "Naming Functions with Argument Labels",
       "warnings" : [
         {
+          "code" : 0,
           "kind" : "warning",
           "message" : "Implementation links to a non-Swift repository.",
+          "suggestion" : "",
           "stage" : "validate"
         }
       ]
@@ -721,8 +761,10 @@
       "title" : "Referencing the Objective-C selector of a method",
       "warnings" : [
         {
+          "code" : 0,
           "kind" : "warning",
           "message" : "Review manager's link doesn't refer to a GitHub profile. Link removed.",
+          "suggestion" : "",
           "stage" : "validate"
         }
       ]
@@ -781,8 +823,10 @@
       "title" : "API Design Guidelines",
       "warnings" : [
         {
+          "code" : 0,
           "kind" : "warning",
           "message" : "Author's link doesn't refer to a GitHub profile. Link removed.",
+          "suggestion" : "",
           "stage" : "validate"
         }
       ]
@@ -810,8 +854,10 @@
       "title" : "Optional Value Setter `??=`",
       "warnings" : [
         {
+          "code" : 0,
           "kind" : "warning",
           "message" : "Review ended on 2024-01-05 00:00:00 +0000.",
+          "suggestion" : "",
           "stage" : "validate"
         }
       ]
@@ -851,8 +897,10 @@
       ],
       "warnings" : [
         {
+          "code" : 0,
           "kind" : "warning",
           "message" : "Review ended on 2024-01-31 00:00:00 +0000.",
+          "suggestion" : "",
           "stage" : "validate"
         }
       ]

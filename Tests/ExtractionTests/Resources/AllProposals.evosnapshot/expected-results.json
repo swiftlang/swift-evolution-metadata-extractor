@@ -41,8 +41,10 @@
       ],
       "warnings" : [
         {
+          "code" : 0,
           "kind" : "warning",
           "message" : "Missing review manager.",
+          "suggestion" : "",
           "stage" : "parse"
         }
       ]
@@ -77,8 +79,10 @@
       "title" : "Removing currying `func` declaration syntax",
       "warnings" : [
         {
+          "code" : 0,
           "kind" : "warning",
           "message" : "Missing review manager.",
+          "suggestion" : "",
           "stage" : "parse"
         }
       ]
@@ -142,8 +146,10 @@
       "title" : "Remove the `++` and `--` operators",
       "warnings" : [
         {
+          "code" : 0,
           "kind" : "warning",
           "message" : "Missing review manager.",
+          "suggestion" : "",
           "stage" : "parse"
         }
       ]
@@ -13367,8 +13373,10 @@
       "title" : "Dynamic actor isolation enforcement from non-strict-concurrency contexts",
       "warnings" : [
         {
+          "code" : 0,
           "kind" : "warning",
           "message" : "Review ended on 2024-03-01 00:00:00 +0000.",
+          "suggestion" : "",
           "stage" : "validate"
         }
       ]
@@ -13486,8 +13494,10 @@
       "title" : "Noncopyable Generics",
       "warnings" : [
         {
+          "code" : 0,
           "kind" : "warning",
           "message" : "Review ended on 2024-03-22 00:00:00 +0000.",
+          "suggestion" : "",
           "stage" : "validate"
         }
       ]
@@ -13527,8 +13537,10 @@
       "title" : "Resolve DistributedActor protocols",
       "warnings" : [
         {
+          "code" : 0,
           "kind" : "warning",
           "message" : "Review ended on 2024-03-26 00:00:00 +0000.",
+          "suggestion" : "",
           "stage" : "validate"
         }
       ]
@@ -13560,8 +13572,10 @@
       "title" : "Partial consumption of noncopyable values",
       "warnings" : [
         {
+          "code" : 0,
           "kind" : "warning",
           "message" : "Review ended on 2024-03-26 00:00:00 +0000.",
+          "suggestion" : "",
           "stage" : "validate"
         }
       ]

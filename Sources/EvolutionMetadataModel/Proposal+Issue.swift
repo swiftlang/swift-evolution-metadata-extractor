@@ -18,12 +18,18 @@ extension Proposal {
         /// Kind of issue, warning or error
         public let kind: Kind
         
+        /// Numeric code to identify the issue
+        public let code: Int
+
         /// Processing stage where the issue was detected.
         public let stage: Stage
         
         /// Message describing the issue
         public let message: String
-            
+
+        /// Suggestion for addressing the issue
+        public let suggestion: String
+
         public enum Kind: String, Equatable, Sendable, Codable {
             case warning
             case error
@@ -34,10 +40,12 @@ extension Proposal {
             case validate
         }
         
-        public init(kind: Kind, stage: Stage, message: String) {
+        public init(kind: Kind, code: Int = 0, stage: Stage, message: String, suggestion: String = "") {
             self.kind = kind
+            self.code = code
             self.message = message
             self.stage = stage
+            self.suggestion = suggestion
         }
     }
 }
