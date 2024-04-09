@@ -17,8 +17,8 @@
           "code" : 0,
           "kind" : "error",
           "message" : "Missing valid proposal ID; SE-0000 is reserved.",
-          "suggestion" : "",
-          "stage" : "validate"
+          "stage" : "validate",
+          "suggestion" : ""
         }
       ],
       "id" : "SE-0000",
@@ -27,6 +27,8 @@
         "link" : "",
         "name" : ""
       },
+      "reviewManagers" : [
+      ],
       "sha" : "",
       "status" : {
         "state" : "implemented",
@@ -50,9 +52,9 @@
         {
           "code" : 0,
           "kind" : "warning",
-          "message" : "Missing review manager.",
-          "suggestion" : "",
-          "stage" : "parse"
+          "message" : "Missing review manager(s).",
+          "stage" : "parse",
+          "suggestion" : ""
         }
       ]
     },
@@ -68,8 +70,8 @@
           "code" : 0,
           "kind" : "error",
           "message" : "Missing proposal ID link (SE-NNNN)[NNNN-filename.md].",
-          "suggestion" : "",
-          "stage" : "parse"
+          "stage" : "parse",
+          "suggestion" : ""
         }
       ],
       "id" : "",
@@ -78,6 +80,8 @@
         "link" : "",
         "name" : ""
       },
+      "reviewManagers" : [
+      ],
       "sha" : "",
       "status" : {
         "state" : "implemented",
@@ -101,9 +105,9 @@
         {
           "code" : 0,
           "kind" : "warning",
-          "message" : "Missing review manager.",
-          "suggestion" : "",
-          "stage" : "parse"
+          "message" : "Missing review manager(s).",
+          "stage" : "parse",
+          "suggestion" : ""
         }
       ]
     },
@@ -115,8 +119,8 @@
           "code" : 0,
           "kind" : "error",
           "message" : "Missing list of metadata fields.",
-          "suggestion" : "",
-          "stage" : "parse"
+          "stage" : "parse",
+          "suggestion" : ""
         }
       ],
       "id" : "",
@@ -125,6 +129,8 @@
         "link" : "",
         "name" : ""
       },
+      "reviewManagers" : [
+      ],
       "sha" : "",
       "status" : {
         "reason" : "Status extraction not attempted",
@@ -154,6 +160,12 @@
         "link" : "https:\/\/github.com\/jopamer",
         "name" : "Joe Pamer"
       },
+      "reviewManagers" : [
+        {
+          "link" : "https:\/\/github.com\/jopamer",
+          "name" : "Joe Pamer"
+        }
+      ],
       "sha" : "",
       "status" : {
         "reason" : "Status extraction failed",
@@ -166,8 +178,8 @@
           "code" : 0,
           "kind" : "warning",
           "message" : "Status not found in the proposal's details list.",
-          "suggestion" : "",
-          "stage" : "parse"
+          "stage" : "parse",
+          "suggestion" : ""
         }
       ]
     },
@@ -183,8 +195,8 @@
           "code" : 0,
           "kind" : "error",
           "message" : "Missing or invalid proposal status.",
-          "suggestion" : "",
-          "stage" : "parse"
+          "stage" : "parse",
+          "suggestion" : ""
         }
       ],
       "id" : "SE-0004",
@@ -201,6 +213,8 @@
         "link" : "",
         "name" : ""
       },
+      "reviewManagers" : [
+      ],
       "sha" : "",
       "status" : {
         "reason" : "Status extraction failed",
@@ -212,9 +226,9 @@
         {
           "code" : 0,
           "kind" : "warning",
-          "message" : "Missing review manager.",
-          "suggestion" : "",
-          "stage" : "parse"
+          "message" : "Missing review manager(s).",
+          "stage" : "parse",
+          "suggestion" : ""
         }
       ]
     },
@@ -235,6 +249,12 @@
         "link" : "https:\/\/github.com\/DougGregor",
         "name" : "Doug Gregor"
       },
+      "reviewManagers" : [
+        {
+          "link" : "https:\/\/github.com\/DougGregor",
+          "name" : "Doug Gregor"
+        }
+      ],
       "sha" : "",
       "status" : {
         "reason" : "Status extraction failed",
@@ -247,8 +267,8 @@
           "code" : 0,
           "kind" : "warning",
           "message" : "Status not found in the proposal's details list.",
-          "suggestion" : "",
-          "stage" : "parse"
+          "stage" : "parse",
+          "suggestion" : ""
         }
       ]
     },
@@ -273,6 +293,12 @@
         "link" : "https:\/\/github.com\/DougGregor",
         "name" : "Doug Gregor"
       },
+      "reviewManagers" : [
+        {
+          "link" : "https:\/\/github.com\/DougGregor",
+          "name" : "Doug Gregor"
+        }
+      ],
       "sha" : "",
       "status" : {
         "state" : "implemented",
@@ -289,8 +315,8 @@
           "code" : 0,
           "kind" : "error",
           "message" : "Proposal Markdown file is empty.",
-          "suggestion" : "",
-          "stage" : "parse"
+          "stage" : "parse",
+          "suggestion" : ""
         }
       ],
       "id" : "",
@@ -299,6 +325,8 @@
         "link" : "",
         "name" : ""
       },
+      "reviewManagers" : [
+      ],
       "sha" : "",
       "status" : {
         "reason" : "Status extraction not attempted",
@@ -315,8 +343,8 @@
           "code" : 0,
           "kind" : "error",
           "message" : "Proposal Markdown file is empty.",
-          "suggestion" : "",
-          "stage" : "parse"
+          "stage" : "parse",
+          "suggestion" : ""
         }
       ],
       "id" : "",
@@ -325,6 +353,8 @@
         "link" : "",
         "name" : ""
       },
+      "reviewManagers" : [
+      ],
       "sha" : "",
       "status" : {
         "reason" : "Status extraction not attempted",
@@ -345,8 +375,8 @@
           "code" : 0,
           "kind" : "error",
           "message" : "Proposal contains no content.",
-          "suggestion" : "",
-          "stage" : "parse"
+          "stage" : "parse",
+          "suggestion" : ""
         }
       ],
       "id" : "SE-0009",
@@ -355,6 +385,12 @@
         "link" : "https:\/\/github.com\/DougGregor",
         "name" : "Doug Gregor"
       },
+      "reviewManagers" : [
+        {
+          "link" : "https:\/\/github.com\/DougGregor",
+          "name" : "Doug Gregor"
+        }
+      ],
       "sha" : "",
       "status" : {
         "state" : "rejected"
@@ -374,8 +410,8 @@
           "code" : 0,
           "kind" : "error",
           "message" : "Proposal ID must include four decimal digits.",
-          "suggestion" : "",
-          "stage" : "parse"
+          "stage" : "parse",
+          "suggestion" : ""
         }
       ],
       "id" : "SE-010",
@@ -384,6 +420,12 @@
         "link" : "https:\/\/github.com\/DougGregor",
         "name" : "Doug Gregor"
       },
+      "reviewManagers" : [
+        {
+          "link" : "https:\/\/github.com\/DougGregor",
+          "name" : "Doug Gregor"
+        }
+      ],
       "sha" : "",
       "status" : {
         "state" : "rejected"
@@ -399,8 +441,8 @@
           "code" : 0,
           "kind" : "error",
           "message" : "Missing author(s).",
-          "suggestion" : "",
-          "stage" : "parse"
+          "stage" : "parse",
+          "suggestion" : ""
         }
       ],
       "id" : "SE-0011",
@@ -409,6 +451,12 @@
         "link" : "https:\/\/github.com\/DougGregor",
         "name" : "Doug Gregor"
       },
+      "reviewManagers" : [
+        {
+          "link" : "https:\/\/github.com\/DougGregor",
+          "name" : "Doug Gregor"
+        }
+      ],
       "sha" : "",
       "status" : {
         "state" : "implemented",
@@ -442,6 +490,12 @@
         "link" : "https:\/\/github.com\/DougGregor",
         "name" : "Doug Gregor"
       },
+      "reviewManagers" : [
+        {
+          "link" : "https:\/\/github.com\/DougGregor",
+          "name" : "Doug Gregor"
+        }
+      ],
       "sha" : "",
       "status" : {
         "end" : "",
@@ -455,8 +509,8 @@
           "code" : 0,
           "kind" : "warning",
           "message" : "Missing or invalid dates for a review period.",
-          "suggestion" : "",
-          "stage" : "parse"
+          "stage" : "parse",
+          "suggestion" : ""
         }
       ]
     },
@@ -473,6 +527,12 @@
         "link" : "https:\/\/github.com\/DougGregor",
         "name" : "Doug Gregor"
       },
+      "reviewManagers" : [
+        {
+          "link" : "https:\/\/github.com\/DougGregor",
+          "name" : "Doug Gregor"
+        }
+      ],
       "sha" : "",
       "status" : {
         "end" : "",
@@ -498,8 +558,8 @@
           "code" : 0,
           "kind" : "warning",
           "message" : "Missing or invalid dates for a review period.",
-          "suggestion" : "",
-          "stage" : "parse"
+          "stage" : "parse",
+          "suggestion" : ""
         }
       ]
     },
@@ -524,6 +584,12 @@
         "link" : "https:\/\/github.com\/dabrahams",
         "name" : "Dave Abrahams"
       },
+      "reviewManagers" : [
+        {
+          "link" : "https:\/\/github.com\/dabrahams",
+          "name" : "Dave Abrahams"
+        }
+      ],
       "sha" : "",
       "status" : {
         "state" : "implemented",
@@ -545,6 +611,12 @@
         "link" : "https:\/\/github.com\/lattner",
         "name" : "Chris Lattner"
       },
+      "reviewManagers" : [
+        {
+          "link" : "https:\/\/github.com\/lattner",
+          "name" : "Chris Lattner"
+        }
+      ],
       "sha" : "",
       "status" : {
         "state" : "implemented",
@@ -577,8 +649,8 @@
           "code" : 0,
           "kind" : "error",
           "message" : "Author name contains extra markup; expected a link with plaintext contents.",
-          "suggestion" : "",
-          "stage" : "parse"
+          "stage" : "parse",
+          "suggestion" : ""
         }
       ],
       "id" : "SE-0017",
@@ -587,6 +659,12 @@
         "link" : "https:\/\/github.com\/lattner",
         "name" : "Chris Lattner"
       },
+      "reviewManagers" : [
+        {
+          "link" : "https:\/\/github.com\/lattner",
+          "name" : "Chris Lattner"
+        }
+      ],
       "sha" : "",
       "status" : {
         "state" : "implemented",
@@ -628,6 +706,12 @@
         "link" : "https:\/\/github.com\/rballard",
         "name" : "Rick Ballard"
       },
+      "reviewManagers" : [
+        {
+          "link" : "https:\/\/github.com\/rballard",
+          "name" : "Rick Ballard"
+        }
+      ],
       "sha" : "",
       "status" : {
         "state" : "implemented",
@@ -652,8 +736,8 @@
           "code" : 0,
           "kind" : "warning",
           "message" : "Proposal ID contains extra markup; expected a link with plaintext contents.",
-          "suggestion" : "",
-          "stage" : "parse"
+          "stage" : "parse",
+          "suggestion" : ""
         }
       ]
     },
@@ -684,6 +768,12 @@
         "link" : "https:\/\/github.com\/DougGregor",
         "name" : "Doug Gregor"
       },
+      "reviewManagers" : [
+        {
+          "link" : "https:\/\/github.com\/DougGregor",
+          "name" : "Doug Gregor"
+        }
+      ],
       "sha" : "",
       "status" : {
         "state" : "implemented",
@@ -696,8 +786,8 @@
           "code" : 0,
           "kind" : "warning",
           "message" : "Implementation links to a non-Swift repository.",
-          "suggestion" : "",
-          "stage" : "validate"
+          "stage" : "validate",
+          "suggestion" : ""
         }
       ]
     },
@@ -714,6 +804,12 @@
         "link" : "https:\/\/github.com\/jckarter",
         "name" : "Joe Groff"
       },
+      "reviewManagers" : [
+        {
+          "link" : "https:\/\/github.com\/jckarter",
+          "name" : "Joe Groff"
+        }
+      ],
       "sha" : "",
       "status" : {
         "state" : "implemented",
@@ -726,8 +822,8 @@
           "code" : 0,
           "kind" : "warning",
           "message" : "Implementation links to a non-Swift repository.",
-          "suggestion" : "",
-          "stage" : "validate"
+          "stage" : "validate",
+          "suggestion" : ""
         }
       ]
     },
@@ -752,6 +848,12 @@
         "link" : "",
         "name" : "Joe Groff"
       },
+      "reviewManagers" : [
+        {
+          "link" : "",
+          "name" : "Joe Groff"
+        }
+      ],
       "sha" : "",
       "status" : {
         "state" : "implemented",
@@ -764,8 +866,8 @@
           "code" : 0,
           "kind" : "warning",
           "message" : "Review manager's link doesn't refer to a GitHub profile. Link removed.",
-          "suggestion" : "",
-          "stage" : "validate"
+          "stage" : "validate",
+          "suggestion" : ""
         }
       ]
     },
@@ -814,6 +916,12 @@
         "link" : "https:\/\/github.com\/DougGregor",
         "name" : "Doug Gregor"
       },
+      "reviewManagers" : [
+        {
+          "link" : "https:\/\/github.com\/DougGregor",
+          "name" : "Doug Gregor"
+        }
+      ],
       "sha" : "",
       "status" : {
         "state" : "implemented",
@@ -826,8 +934,8 @@
           "code" : 0,
           "kind" : "warning",
           "message" : "Author's link doesn't refer to a GitHub profile. Link removed.",
-          "suggestion" : "",
-          "stage" : "validate"
+          "stage" : "validate",
+          "suggestion" : ""
         }
       ]
     },
@@ -844,6 +952,12 @@
         "link" : "https:\/\/github.com\/DougGregor",
         "name" : "Doug Gregor"
       },
+      "reviewManagers" : [
+        {
+          "link" : "https:\/\/github.com\/DougGregor",
+          "name" : "Doug Gregor"
+        }
+      ],
       "sha" : "",
       "status" : {
         "end" : "2024-01-05T00:00:00Z",
@@ -857,8 +971,8 @@
           "code" : 0,
           "kind" : "warning",
           "message" : "Review ended on 2024-01-05 00:00:00 +0000.",
-          "suggestion" : "",
-          "stage" : "validate"
+          "stage" : "validate",
+          "suggestion" : ""
         }
       ]
     },
@@ -875,6 +989,12 @@
         "link" : "http:\/\/github.com\/DougGregor",
         "name" : "Doug Gregor"
       },
+      "reviewManagers" : [
+        {
+          "link" : "http:\/\/github.com\/DougGregor",
+          "name" : "Doug Gregor"
+        }
+      ],
       "sha" : "",
       "status" : {
         "end" : "2024-01-31T00:00:00Z",
@@ -900,8 +1020,8 @@
           "code" : 0,
           "kind" : "warning",
           "message" : "Review ended on 2024-01-31 00:00:00 +0000.",
-          "suggestion" : "",
-          "stage" : "validate"
+          "stage" : "validate",
+          "suggestion" : ""
         }
       ]
     }

@@ -23,6 +23,12 @@
         "link" : "https:\/\/github.com\/jckarter",
         "name" : "Joe Groff"
       },
+      "reviewManagers" : [
+        {
+          "link" : "https:\/\/github.com\/jckarter",
+          "name" : "Joe Groff"
+        }
+      ],
       "sha" : "38b8c99ce8c4a2fda498199bf75e38d1e16088c6",
       "status" : {
         "state" : "appealed"

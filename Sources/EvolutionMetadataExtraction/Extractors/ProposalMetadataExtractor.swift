@@ -54,16 +54,17 @@ struct ProposalMetadataExtractor {
             proposal.link = proposalLink?.destination ?? ""
             /* VALIDATION ENHANCEMENT: Probably also want to validate that the destination link matches the passed-in filename and the id matches the proposalID field */
             
-            if let authors = extractValue(from: headerFieldsByLabel, with: AuthorExtractor.self), authors.count > 0 {
+            if let authors = extractValue(from: headerFieldsByLabel, with: AuthorExtractor.self), !authors.isEmpty {
                 proposal.authors = authors
             } else {
                 errors.append(ValidationIssue.missingAuthors)
             }
             
-            if let reviewManagers = extractValue(from: headerFieldsByLabel, with: ReviewManagerExtractor.self), let reviewManager =  reviewManagers.first {
-                proposal.reviewManager = reviewManager // reviewManager.first ?? Proposal.Person()
+            if let reviewManagers = extractValue(from: headerFieldsByLabel, with: ReviewManagerExtractor.self), !reviewManagers.isEmpty {
+                proposal.reviewManager = reviewManagers.first!
+                proposal.reviewManagers = reviewManagers
             } else {
-                warnings.append(ValidationIssue.missingReviewManager)
+                warnings.append(ValidationIssue.missingReviewManagers)
             }
             
             proposal.trackingBugs = extractValue(from: headerFieldsByLabel, with: TrackingBugExtractor.self)

@@ -92,8 +92,13 @@ public struct Proposal: Equatable, Sendable, Codable, Identifiable {
     public var authors: [Person]
     
     /// Proposal review manager
+    ///
+    /// - Warning: This property will be removed. Use `reviewManagers` instead.
     public var reviewManager: Person
-    
+
+    /// Array of proposal review managers
+    public var reviewManagers: [Person]
+
     /// Proposal status
     public var status: Status
     
@@ -113,7 +118,7 @@ public struct Proposal: Equatable, Sendable, Codable, Identifiable {
     /// Present only if validation errors were found when extracting metadata from this proposal.
     public var errors: [Issue]?
     
-    public init(id: String = "", title: String = "", summary: String = "", link: String = "", sha: String = "", authors: [Person] = [], reviewManager: Person = Person(), status: Status = .statusExtractionNotAttempted, trackingBugs: [TrackingBug]? = nil, implementation: [Implementation]? = nil, warnings: [Issue]? = nil, errors: [Issue]? = nil)
+    public init(id: String = "", title: String = "", summary: String = "", link: String = "", sha: String = "", authors: [Person] = [], reviewManagers: [Person] = [], status: Status = .statusExtractionNotAttempted, trackingBugs: [TrackingBug]? = nil, implementation: [Implementation]? = nil, warnings: [Issue]? = nil, errors: [Issue]? = nil)
     {
         self.id = id
         self.title = title
@@ -121,7 +126,8 @@ public struct Proposal: Equatable, Sendable, Codable, Identifiable {
         self.link = link
         self.sha = sha
         self.authors = authors
-        self.reviewManager = reviewManager
+        self.reviewManagers = reviewManagers
+        self.reviewManager = reviewManagers.first ?? Person()
         self.status = status
         self.trackingBugs = trackingBugs
         self.implementation = implementation

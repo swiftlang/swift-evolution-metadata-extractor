@@ -20,6 +20,8 @@
         "link" : "",
         "name" : ""
       },
+      "reviewManagers" : [
+      ],
       "sha" : "cd0c7279af644b38860afaa6e0dba74a1d82107a",
       "status" : {
         "state" : "implemented",
@@ -43,9 +45,9 @@
         {
           "code" : 0,
           "kind" : "warning",
-          "message" : "Missing review manager.",
-          "suggestion" : "",
-          "stage" : "parse"
+          "message" : "Missing review manager(s).",
+          "stage" : "parse",
+          "suggestion" : ""
         }
       ]
     },
@@ -70,6 +72,8 @@
         "link" : "",
         "name" : ""
       },
+      "reviewManagers" : [
+      ],
       "sha" : "9761465a5ca6df727be91357c695152ed8e3361f",
       "status" : {
         "state" : "implemented",
@@ -81,9 +85,9 @@
         {
           "code" : 0,
           "kind" : "warning",
-          "message" : "Missing review manager.",
-          "suggestion" : "",
-          "stage" : "parse"
+          "message" : "Missing review manager(s).",
+          "stage" : "parse",
+          "suggestion" : ""
         }
       ]
     },
@@ -108,6 +112,12 @@
         "link" : "https:\/\/github.com\/jopamer",
         "name" : "Joe Pamer"
       },
+      "reviewManagers" : [
+        {
+          "link" : "https:\/\/github.com\/jopamer",
+          "name" : "Joe Pamer"
+        }
+      ],
       "sha" : "efcc935d078968d8be95fa0a4e041fad85f18461",
       "status" : {
         "state" : "implemented",
@@ -137,6 +147,8 @@
         "link" : "",
         "name" : ""
       },
+      "reviewManagers" : [
+      ],
       "sha" : "c33507a66497d10d002c2b26fb33285da368e530",
       "status" : {
         "state" : "implemented",
@@ -148,9 +160,9 @@
         {
           "code" : 0,
           "kind" : "warning",
-          "message" : "Missing review manager.",
-          "suggestion" : "",
-          "stage" : "parse"
+          "message" : "Missing review manager(s).",
+          "stage" : "parse",
+          "suggestion" : ""
         }
       ]
     },
@@ -171,6 +183,12 @@
         "link" : "https:\/\/github.com\/DougGregor",
         "name" : "Doug Gregor"
       },
+      "reviewManagers" : [
+        {
+          "link" : "https:\/\/github.com\/DougGregor",
+          "name" : "Doug Gregor"
+        }
+      ],
       "sha" : "9a494db4c343219dc589f79832d5dd95fa504d2c",
       "status" : {
         "state" : "implemented",
@@ -200,6 +218,12 @@
         "link" : "https:\/\/github.com\/DougGregor",
         "name" : "Doug Gregor"
       },
+      "reviewManagers" : [
+        {
+          "link" : "https:\/\/github.com\/DougGregor",
+          "name" : "Doug Gregor"
+        }
+      ],
       "sha" : "2b78b786bd506387c4ff56cb8b7ccb31981efba1",
       "status" : {
         "state" : "implemented",
@@ -221,6 +245,12 @@
         "link" : "https:\/\/github.com\/DougGregor",
         "name" : "Doug Gregor"
       },
+      "reviewManagers" : [
+        {
+          "link" : "https:\/\/github.com\/DougGregor",
+          "name" : "Doug Gregor"
+        }
+      ],
       "sha" : "1bef3ab55a34b4a46ab5fabe7f2fa8b0a789e099",
       "status" : {
         "state" : "implemented",
@@ -264,6 +294,12 @@
         "link" : "https:\/\/github.com\/DougGregor",
         "name" : "Doug Gregor"
       },
+      "reviewManagers" : [
+        {
+          "link" : "https:\/\/github.com\/DougGregor",
+          "name" : "Doug Gregor"
+        }
+      ],
       "sha" : "2abda3ceee0b3b46ead1246e27ada1dce702d342",
       "status" : {
         "state" : "implemented",
@@ -297,6 +333,12 @@
         "link" : "https:\/\/github.com\/DougGregor",
         "name" : "Doug Gregor"
       },
+      "reviewManagers" : [
+        {
+          "link" : "https:\/\/github.com\/DougGregor",
+          "name" : "Doug Gregor"
+        }
+      ],
       "sha" : "626f78665eb3c01fdae0ad243f585cab5f6a801b",
       "status" : {
         "state" : "rejected"
@@ -317,6 +359,12 @@
         "link" : "https:\/\/github.com\/DougGregor",
         "name" : "Doug Gregor"
       },
+      "reviewManagers" : [
+        {
+          "link" : "https:\/\/github.com\/DougGregor",
+          "name" : "Doug Gregor"
+        }
+      ],
       "sha" : "ac3a7924449d81f0c5a1635500f0d477cd3e85ec",
       "status" : {
         "state" : "rejected"
@@ -337,6 +385,12 @@
         "link" : "https:\/\/github.com\/DougGregor",
         "name" : "Doug Gregor"
       },
+      "reviewManagers" : [
+        {
+          "link" : "https:\/\/github.com\/DougGregor",
+          "name" : "Doug Gregor"
+        }
+      ],
       "sha" : "89d7a3d25e5fcae120a78995e2e09b0cb65d9e38",
       "status" : {
         "state" : "implemented",
@@ -370,6 +424,12 @@
         "link" : "https:\/\/github.com\/phausler",
         "name" : "Philippe Hausler"
       },
+      "reviewManagers" : [
+        {
+          "link" : "https:\/\/github.com\/phausler",
+          "name" : "Philippe Hausler"
+        }
+      ],
       "sha" : "9e9c0d95e6389478183b3863caef1581817d4ff3",
       "status" : {
         "state" : "rejected"
@@ -390,6 +450,12 @@
         "link" : "https:\/\/github.com\/DougGregor",
         "name" : "Doug Gregor"
       },
+      "reviewManagers" : [
+        {
+          "link" : "https:\/\/github.com\/DougGregor",
+          "name" : "Doug Gregor"
+        }
+      ],
       "sha" : "40cfaa459cab35007939643048585a53fed53baf",
       "status" : {
         "state" : "rejected"
@@ -410,6 +476,12 @@
         "link" : "https:\/\/github.com\/DougGregor",
         "name" : "Doug Gregor"
       },
+      "reviewManagers" : [
+        {
+          "link" : "https:\/\/github.com\/DougGregor",
+          "name" : "Doug Gregor"
+        }
+      ],
       "sha" : "48ddfbc8ed55e15a7e6f783ef2b7a2c43e3c8ac0",
       "status" : {
         "state" : "implemented",
@@ -451,6 +523,12 @@
         "link" : "https:\/\/github.com\/dabrahams",
         "name" : "Dave Abrahams"
       },
+      "reviewManagers" : [
+        {
+          "link" : "https:\/\/github.com\/dabrahams",
+          "name" : "Dave Abrahams"
+        }
+      ],
       "sha" : "9722ed2b76f1d9a16fee757a79bd29b9de84de6c",
       "status" : {
         "state" : "implemented",
@@ -472,6 +550,12 @@
         "link" : "https:\/\/github.com\/lattner",
         "name" : "Chris Lattner"
       },
+      "reviewManagers" : [
+        {
+          "link" : "https:\/\/github.com\/lattner",
+          "name" : "Chris Lattner"
+        }
+      ],
       "sha" : "6d8ed7ef1c10e9e9b6ef1051b4533b31d541c58f",
       "status" : {
         "state" : "implemented",
@@ -505,6 +589,12 @@
         "link" : "https:\/\/github.com\/lattner",
         "name" : "Chris Lattner"
       },
+      "reviewManagers" : [
+        {
+          "link" : "https:\/\/github.com\/lattner",
+          "name" : "Chris Lattner"
+        }
+      ],
       "sha" : "cc2bb6886019af6d680adc31f72cc9a7053bf868",
       "status" : {
         "state" : "implemented",
@@ -538,6 +628,12 @@
         "link" : "https:\/\/github.com\/lattner",
         "name" : "Chris Lattner"
       },
+      "reviewManagers" : [
+        {
+          "link" : "https:\/\/github.com\/lattner",
+          "name" : "Chris Lattner"
+        }
+      ],
       "sha" : "9b1646ff2f633aafe582bc25df27b5dfd2dbc95a",
       "status" : {
         "state" : "returnedForRevision"
@@ -566,6 +662,12 @@
         "link" : "https:\/\/github.com\/rballard",
         "name" : "Rick Ballard"
       },
+      "reviewManagers" : [
+        {
+          "link" : "https:\/\/github.com\/rballard",
+          "name" : "Rick Ballard"
+        }
+      ],
       "sha" : "252c9bdaa05b36ab8f9aa4c6592d9f5a3bce37bd",
       "status" : {
         "state" : "implemented",
@@ -607,6 +709,12 @@
         "link" : "https:\/\/github.com\/DougGregor",
         "name" : "Doug Gregor"
       },
+      "reviewManagers" : [
+        {
+          "link" : "https:\/\/github.com\/DougGregor",
+          "name" : "Doug Gregor"
+        }
+      ],
       "sha" : "a59e6ad4dcd24b9cfec286161e61daa3d3fd6116",
       "status" : {
         "state" : "implemented",
@@ -636,6 +744,12 @@
         "link" : "https:\/\/github.com\/jckarter",
         "name" : "Joe Groff"
       },
+      "reviewManagers" : [
+        {
+          "link" : "https:\/\/github.com\/jckarter",
+          "name" : "Joe Groff"
+        }
+      ],
       "sha" : "20256b9ba5c0fac9c2f77c98043328ed7b996c9a",
       "status" : {
         "state" : "implemented",
@@ -665,6 +779,12 @@
         "link" : "https:\/\/github.com\/jckarter",
         "name" : "Joe Groff"
       },
+      "reviewManagers" : [
+        {
+          "link" : "https:\/\/github.com\/jckarter",
+          "name" : "Joe Groff"
+        }
+      ],
       "sha" : "05f5d73410112b690524e190a23cd17fa42c061f",
       "status" : {
         "state" : "implemented",
@@ -718,6 +838,12 @@
         "link" : "https:\/\/github.com\/DougGregor",
         "name" : "Doug Gregor"
       },
+      "reviewManagers" : [
+        {
+          "link" : "https:\/\/github.com\/DougGregor",
+          "name" : "Doug Gregor"
+        }
+      ],
       "sha" : "cb6b5abb0d74129cf26301d603fa4802329925c6",
       "status" : {
         "state" : "implemented",
@@ -739,6 +865,12 @@
         "link" : "https:\/\/github.com\/DougGregor",
         "name" : "Doug Gregor"
       },
+      "reviewManagers" : [
+        {
+          "link" : "https:\/\/github.com\/DougGregor",
+          "name" : "Doug Gregor"
+        }
+      ],
       "sha" : "98f45801cc782d83cf2aea0a91f70cf893aaa96f",
       "status" : {
         "state" : "rejected"
@@ -759,6 +891,12 @@
         "link" : "http:\/\/github.com\/DougGregor",
         "name" : "Doug Gregor"
       },
+      "reviewManagers" : [
+        {
+          "link" : "http:\/\/github.com\/DougGregor",
+          "name" : "Doug Gregor"
+        }
+      ],
       "sha" : "ef2900ef7e22271f4de6110dcf4e9b7b89096acb",
       "status" : {
         "state" : "implemented",
@@ -792,6 +930,12 @@
         "link" : "https:\/\/github.com\/jckarter\/",
         "name" : "Joe Groff"
       },
+      "reviewManagers" : [
+        {
+          "link" : "https:\/\/github.com\/jckarter\/",
+          "name" : "Joe Groff"
+        }
+      ],
       "sha" : "c86badb14a7357474c78b8df1f4339db4fa038ea",
       "status" : {
         "state" : "rejected"
@@ -812,6 +956,12 @@
         "link" : "https:\/\/github.com\/DougGregor",
         "name" : "Doug Gregor"
       },
+      "reviewManagers" : [
+        {
+          "link" : "https:\/\/github.com\/DougGregor",
+          "name" : "Doug Gregor"
+        }
+      ],
       "sha" : "ddae996dba321ec860939f710e7b5e468e5950db",
       "status" : {
         "state" : "rejected"
@@ -832,6 +982,12 @@
         "link" : "https:\/\/github.com\/lattner",
         "name" : "Chris Lattner"
       },
+      "reviewManagers" : [
+        {
+          "link" : "https:\/\/github.com\/lattner",
+          "name" : "Chris Lattner"
+        }
+      ],
       "sha" : "6787f7208fdf36c1fc1468c53e6908ae08f27085",
       "status" : {
         "state" : "implemented",
@@ -873,6 +1029,12 @@
         "link" : "http:\/\/github.com\/jckarter",
         "name" : "Joe Groff"
       },
+      "reviewManagers" : [
+        {
+          "link" : "http:\/\/github.com\/jckarter",
+          "name" : "Joe Groff"
+        }
+      ],
       "sha" : "605a7cec37fb83f0257d895a283fbde06e49b7af",
       "status" : {
         "state" : "implemented",
@@ -894,6 +1056,12 @@
         "link" : "https:\/\/github.com\/DougGregor",
         "name" : "Doug Gregor"
       },
+      "reviewManagers" : [
+        {
+          "link" : "https:\/\/github.com\/DougGregor",
+          "name" : "Doug Gregor"
+        }
+      ],
       "sha" : "2a48404d780e92d2b52708fca6a1f4a846fd984b",
       "status" : {
         "state" : "withdrawn"
@@ -926,6 +1094,12 @@
         "link" : "https:\/\/github.com\/lattner",
         "name" : "Chris Lattner"
       },
+      "reviewManagers" : [
+        {
+          "link" : "https:\/\/github.com\/lattner",
+          "name" : "Chris Lattner"
+        }
+      ],
       "sha" : "8dc23b285dc520aa7a400c750c1d67002a5a8a9a",
       "status" : {
         "state" : "implemented",
@@ -947,6 +1121,12 @@
         "link" : "https:\/\/github.com\/lattner",
         "name" : "Chris Lattner"
       },
+      "reviewManagers" : [
+        {
+          "link" : "https:\/\/github.com\/lattner",
+          "name" : "Chris Lattner"
+        }
+      ],
       "sha" : "b00f3b1bb123e5c5d40fa4b6cfeda454c70b0304",
       "status" : {
         "state" : "implemented",
@@ -980,6 +1160,12 @@
         "link" : "https:\/\/github.com\/rjmccall",
         "name" : "John McCall"
       },
+      "reviewManagers" : [
+        {
+          "link" : "https:\/\/github.com\/rjmccall",
+          "name" : "John McCall"
+        }
+      ],
       "sha" : "06e12fcb715a548bd8ca95db66032779af941c6b",
       "status" : {
         "state" : "implemented",
@@ -1001,6 +1187,12 @@
         "link" : "https:\/\/github.com\/lattner",
         "name" : "Chris Lattner"
       },
+      "reviewManagers" : [
+        {
+          "link" : "https:\/\/github.com\/lattner",
+          "name" : "Chris Lattner"
+        }
+      ],
       "sha" : "dbb3d1d128e093a1ae6adb1c10214bedd3b70808",
       "status" : {
         "state" : "implemented",
@@ -1034,6 +1226,12 @@
         "link" : "https:\/\/github.com\/lattner",
         "name" : "Chris Lattner"
       },
+      "reviewManagers" : [
+        {
+          "link" : "https:\/\/github.com\/lattner",
+          "name" : "Chris Lattner"
+        }
+      ],
       "sha" : "4a44fd09ff5eabec6f6ccd942abc73162e03508b",
       "status" : {
         "state" : "implemented",
@@ -1071,6 +1269,12 @@
         "link" : "https:\/\/github.com\/DougGregor",
         "name" : "Doug Gregor"
       },
+      "reviewManagers" : [
+        {
+          "link" : "https:\/\/github.com\/DougGregor",
+          "name" : "Doug Gregor"
+        }
+      ],
       "sha" : "a8e5293c9855aed2c0d71d933cd619c12c66125f",
       "status" : {
         "state" : "implemented",
@@ -1104,6 +1308,12 @@
         "link" : "http:\/\/github.com\/lattner",
         "name" : "Chris Lattner"
       },
+      "reviewManagers" : [
+        {
+          "link" : "http:\/\/github.com\/lattner",
+          "name" : "Chris Lattner"
+        }
+      ],
       "sha" : "42061f70beb0291d16671a7624db24e704793e4e",
       "status" : {
         "state" : "implemented",
@@ -1137,6 +1347,12 @@
         "link" : "https:\/\/github.com\/rballard",
         "name" : "Rick Ballard"
       },
+      "reviewManagers" : [
+        {
+          "link" : "https:\/\/github.com\/rballard",
+          "name" : "Rick Ballard"
+        }
+      ],
       "sha" : "d86482524e3380e4bb21758bb3cfa2a9aa019aac",
       "status" : {
         "state" : "implemented",
@@ -1170,6 +1386,12 @@
         "link" : "https:\/\/github.com\/lattner",
         "name" : "Chris Lattner"
       },
+      "reviewManagers" : [
+        {
+          "link" : "https:\/\/github.com\/lattner",
+          "name" : "Chris Lattner"
+        }
+      ],
       "sha" : "31cd21031aaa207f0b8f2aaa902ef301feef1988",
       "status" : {
         "state" : "implemented",
@@ -1211,6 +1433,12 @@
         "link" : "https:\/\/github.com\/lattner",
         "name" : "Chris Lattner"
       },
+      "reviewManagers" : [
+        {
+          "link" : "https:\/\/github.com\/lattner",
+          "name" : "Chris Lattner"
+        }
+      ],
       "sha" : "dc36461d86d76c92c1264395ecc3807c1bd33f3f",
       "status" : {
         "state" : "implemented",
@@ -1236,6 +1464,12 @@
         "link" : "http:\/\/github.com\/lattner",
         "name" : "Chris Lattner"
       },
+      "reviewManagers" : [
+        {
+          "link" : "http:\/\/github.com\/lattner",
+          "name" : "Chris Lattner"
+        }
+      ],
       "sha" : "e3af4e753fee71466b36e749d2ef77511857994c",
       "status" : {
         "state" : "rejected"
@@ -1256,6 +1490,12 @@
         "link" : "https:\/\/github.com\/lattner",
         "name" : "Chris Lattner"
       },
+      "reviewManagers" : [
+        {
+          "link" : "https:\/\/github.com\/lattner",
+          "name" : "Chris Lattner"
+        }
+      ],
       "sha" : "3cd641166434b77711ff8279216c3b76168d6aba",
       "status" : {
         "state" : "rejected"
@@ -1296,6 +1536,12 @@
         "link" : "https:\/\/github.com\/lattner",
         "name" : "Chris Lattner"
       },
+      "reviewManagers" : [
+        {
+          "link" : "https:\/\/github.com\/lattner",
+          "name" : "Chris Lattner"
+        }
+      ],
       "sha" : "abc9390c74f8400399fc4d609bba2a8d9246bb16",
       "status" : {
         "state" : "implemented",
@@ -1317,6 +1563,12 @@
         "link" : "https:\/\/github.com\/DougGregor",
         "name" : "Doug Gregor"
       },
+      "reviewManagers" : [
+        {
+          "link" : "https:\/\/github.com\/DougGregor",
+          "name" : "Doug Gregor"
+        }
+      ],
       "sha" : "a978919016aa99327a1b7b9bbf4deb50f3125009",
       "status" : {
         "state" : "implemented",
@@ -1350,6 +1602,12 @@
         "link" : "http:\/\/github.com\/lattner",
         "name" : "Chris Lattner"
       },
+      "reviewManagers" : [
+        {
+          "link" : "http:\/\/github.com\/lattner",
+          "name" : "Chris Lattner"
+        }
+      ],
       "sha" : "143395fbdf7ba0b7f619c572ca41ad9f30369c6e",
       "status" : {
         "state" : "implemented",
@@ -1387,6 +1645,12 @@
         "link" : "https:\/\/github.com\/lattner",
         "name" : "Chris Lattner"
       },
+      "reviewManagers" : [
+        {
+          "link" : "https:\/\/github.com\/lattner",
+          "name" : "Chris Lattner"
+        }
+      ],
       "sha" : "0e1940d728d0c29253614032e0247e2903cd8a5e",
       "status" : {
         "state" : "implemented",
@@ -1424,6 +1688,12 @@
         "link" : "https:\/\/github.com\/lattner",
         "name" : "Chris Lattner"
       },
+      "reviewManagers" : [
+        {
+          "link" : "https:\/\/github.com\/lattner",
+          "name" : "Chris Lattner"
+        }
+      ],
       "sha" : "6487d18d2da62b13ed504b2169c89e9855be1d76",
       "status" : {
         "state" : "implemented",
@@ -1457,6 +1727,12 @@
         "link" : "https:\/\/github.com\/DougGregor",
         "name" : "Doug Gregor"
       },
+      "reviewManagers" : [
+        {
+          "link" : "https:\/\/github.com\/DougGregor",
+          "name" : "Doug Gregor"
+        }
+      ],
       "sha" : "4f6efecb5ad078f9740a5be2e26b70ca6bf1274c",
       "status" : {
         "state" : "implemented",
@@ -1478,6 +1754,12 @@
         "link" : "https:\/\/github.com\/DougGregor",
         "name" : "Doug Gregor"
       },
+      "reviewManagers" : [
+        {
+          "link" : "https:\/\/github.com\/DougGregor",
+          "name" : "Doug Gregor"
+        }
+      ],
       "sha" : "a6572f2c8293a7f0ab403d07bf89e0f8d29c971a",
       "status" : {
         "state" : "implemented",
@@ -1515,6 +1797,12 @@
         "link" : "http:\/\/github.com\/lattner",
         "name" : "Chris Lattner"
       },
+      "reviewManagers" : [
+        {
+          "link" : "http:\/\/github.com\/lattner",
+          "name" : "Chris Lattner"
+        }
+      ],
       "sha" : "d808a9163475086e1919253981d5ef98f2c3c85f",
       "status" : {
         "state" : "withdrawn"
@@ -1535,6 +1823,12 @@
         "link" : "",
         "name" : "N\/A"
       },
+      "reviewManagers" : [
+        {
+          "link" : "",
+          "name" : "N\/A"
+        }
+      ],
       "sha" : "bb96a091506155e160f1b317ec60f5400cbd58f7",
       "status" : {
         "state" : "withdrawn"
@@ -1563,6 +1857,12 @@
         "link" : "https:\/\/github.com\/lattner",
         "name" : "Chris Lattner"
       },
+      "reviewManagers" : [
+        {
+          "link" : "https:\/\/github.com\/lattner",
+          "name" : "Chris Lattner"
+        }
+      ],
       "sha" : "7b9c287fe7cf4fc7168d4ed6f13ff23c0fe09c09",
       "status" : {
         "state" : "implemented",
@@ -1592,6 +1892,12 @@
         "link" : "https:\/\/github.com\/lattner",
         "name" : "Chris Lattner"
       },
+      "reviewManagers" : [
+        {
+          "link" : "https:\/\/github.com\/lattner",
+          "name" : "Chris Lattner"
+        }
+      ],
       "sha" : "c3b22b490771fea66a28f7ae8e894ca093b6b108",
       "status" : {
         "state" : "implemented",
@@ -1621,6 +1927,12 @@
         "link" : "https:\/\/github.com\/lattner",
         "name" : "Chris Lattner"
       },
+      "reviewManagers" : [
+        {
+          "link" : "https:\/\/github.com\/lattner",
+          "name" : "Chris Lattner"
+        }
+      ],
       "sha" : "60a562f10efe2d0d486feeee80c1d9e332e148f8",
       "status" : {
         "state" : "implemented",
@@ -1650,6 +1962,12 @@
         "link" : "https:\/\/github.com\/lattner",
         "name" : "Chris Lattner"
       },
+      "reviewManagers" : [
+        {
+          "link" : "https:\/\/github.com\/lattner",
+          "name" : "Chris Lattner"
+        }
+      ],
       "sha" : "6c69e20408b1742140c32f93e3c38399805ca722",
       "status" : {
         "state" : "implemented",
@@ -1671,6 +1989,12 @@
         "link" : "https:\/\/github.com\/DougGregor",
         "name" : "Doug Gregor"
       },
+      "reviewManagers" : [
+        {
+          "link" : "https:\/\/github.com\/DougGregor",
+          "name" : "Doug Gregor"
+        }
+      ],
       "sha" : "ee77c952feab0ecfc70abcbc690f451e14182286",
       "status" : {
         "state" : "rejected"
@@ -1691,6 +2015,12 @@
         "link" : "https:\/\/github.com\/lattner",
         "name" : "Chris Lattner"
       },
+      "reviewManagers" : [
+        {
+          "link" : "https:\/\/github.com\/lattner",
+          "name" : "Chris Lattner"
+        }
+      ],
       "sha" : "5b3b7892a02a364e7494299eaff9b84a458042ca",
       "status" : {
         "state" : "implemented",
@@ -1716,6 +2046,12 @@
         "link" : "https:\/\/github.com\/jckarter",
         "name" : "Joe Groff"
       },
+      "reviewManagers" : [
+        {
+          "link" : "https:\/\/github.com\/jckarter",
+          "name" : "Joe Groff"
+        }
+      ],
       "sha" : "6461ecec58729405b0ca0f0519895b184e050afd",
       "status" : {
         "state" : "rejected"
@@ -1736,6 +2072,12 @@
         "link" : "https:\/\/github.com\/DougGregor",
         "name" : "Doug Gregor"
       },
+      "reviewManagers" : [
+        {
+          "link" : "https:\/\/github.com\/DougGregor",
+          "name" : "Doug Gregor"
+        }
+      ],
       "sha" : "1d69edb0c48e31433bc7151ad84e53d9374d0d51",
       "status" : {
         "state" : "implemented",
@@ -1757,6 +2099,12 @@
         "link" : "http:\/\/github.com\/lattner",
         "name" : "Chris Lattner"
       },
+      "reviewManagers" : [
+        {
+          "link" : "http:\/\/github.com\/lattner",
+          "name" : "Chris Lattner"
+        }
+      ],
       "sha" : "ad7bfd59c9f920abeb3efcc6e4205801432d8cc7",
       "status" : {
         "state" : "implemented",
@@ -1790,6 +2138,12 @@
         "link" : "http:\/\/github.com\/dabrahams",
         "name" : "Dave Abrahams"
       },
+      "reviewManagers" : [
+        {
+          "link" : "http:\/\/github.com\/dabrahams",
+          "name" : "Dave Abrahams"
+        }
+      ],
       "sha" : "5d81771c92aecedd864a44f515b126664ac6527a",
       "status" : {
         "state" : "implemented",
@@ -1833,6 +2187,12 @@
         "link" : "https:\/\/github.com\/DougGregor",
         "name" : "Doug Gregor"
       },
+      "reviewManagers" : [
+        {
+          "link" : "https:\/\/github.com\/DougGregor",
+          "name" : "Doug Gregor"
+        }
+      ],
       "sha" : "54fa946647ae22bc2fac780debf41a6a214b4fa2",
       "status" : {
         "state" : "implemented",
@@ -1874,6 +2234,12 @@
         "link" : "https:\/\/github.com\/abertelrud",
         "name" : "Anders Bertelrud"
       },
+      "reviewManagers" : [
+        {
+          "link" : "https:\/\/github.com\/abertelrud",
+          "name" : "Anders Bertelrud"
+        }
+      ],
       "sha" : "cb11562abf3e763cea948e456c5c6bde3b1d760d",
       "status" : {
         "state" : "implemented",
@@ -1895,6 +2261,12 @@
         "link" : "https:\/\/github.com\/DougGregor",
         "name" : "Doug Gregor"
       },
+      "reviewManagers" : [
+        {
+          "link" : "https:\/\/github.com\/DougGregor",
+          "name" : "Doug Gregor"
+        }
+      ],
       "sha" : "e3e7b61e350a0fcbf16ae21ba233b78f4d1e51f0",
       "status" : {
         "state" : "implemented",
@@ -1944,6 +2316,12 @@
         "link" : "https:\/\/github.com\/lattner",
         "name" : "Chris Lattner"
       },
+      "reviewManagers" : [
+        {
+          "link" : "https:\/\/github.com\/lattner",
+          "name" : "Chris Lattner"
+        }
+      ],
       "sha" : "ed31fb20e78ca3f16b11e9709b8b83117d0465d2",
       "status" : {
         "state" : "implemented",
@@ -1973,6 +2351,12 @@
         "link" : "https:\/\/github.com\/DougGregor",
         "name" : "Doug Gregor"
       },
+      "reviewManagers" : [
+        {
+          "link" : "https:\/\/github.com\/DougGregor",
+          "name" : "Doug Gregor"
+        }
+      ],
       "sha" : "e5cd1c72a7456959c43bfb5e76400f4600b9988c",
       "status" : {
         "state" : "implemented",
@@ -2002,6 +2386,12 @@
         "link" : "https:\/\/github.com\/lattner",
         "name" : "Chris Lattner"
       },
+      "reviewManagers" : [
+        {
+          "link" : "https:\/\/github.com\/lattner",
+          "name" : "Chris Lattner"
+        }
+      ],
       "sha" : "0097be9c5bf62d5c32af9d0d18149a7aa596ab3b",
       "status" : {
         "state" : "implemented",
@@ -2031,6 +2421,12 @@
         "link" : "https:\/\/github.com\/lattner",
         "name" : "Chris Lattner"
       },
+      "reviewManagers" : [
+        {
+          "link" : "https:\/\/github.com\/lattner",
+          "name" : "Chris Lattner"
+        }
+      ],
       "sha" : "e6dda07d6bd206f0705ba11a16d52efcb541809d",
       "status" : {
         "state" : "implemented",
@@ -2064,6 +2460,12 @@
         "link" : "https:\/\/github.com\/lattner",
         "name" : "Chris Lattner"
       },
+      "reviewManagers" : [
+        {
+          "link" : "https:\/\/github.com\/lattner",
+          "name" : "Chris Lattner"
+        }
+      ],
       "sha" : "e16169cf97a2cfcf9a1da7ade8e9fbb1f688bb8e",
       "status" : {
         "state" : "implemented",
@@ -2085,6 +2487,12 @@
         "link" : "http:\/\/github.com\/lattner",
         "name" : "Chris Lattner"
       },
+      "reviewManagers" : [
+        {
+          "link" : "http:\/\/github.com\/lattner",
+          "name" : "Chris Lattner"
+        }
+      ],
       "sha" : "ee2d148c2bd50f6e77e6fdf3e86d074c5f9d6ae9",
       "status" : {
         "state" : "implemented",
@@ -2118,6 +2526,12 @@
         "link" : "https:\/\/github.com\/lattner",
         "name" : "Chris Lattner"
       },
+      "reviewManagers" : [
+        {
+          "link" : "https:\/\/github.com\/lattner",
+          "name" : "Chris Lattner"
+        }
+      ],
       "sha" : "3ac330d7b07c534ebee3e3bd4b5504c617d3a4b4",
       "status" : {
         "state" : "implemented",
@@ -2147,6 +2561,12 @@
         "link" : "https:\/\/github.com\/lattner",
         "name" : "Chris Lattner"
       },
+      "reviewManagers" : [
+        {
+          "link" : "https:\/\/github.com\/lattner",
+          "name" : "Chris Lattner"
+        }
+      ],
       "sha" : "47910a312acd4a2d46c68b276e6e596e84bf8701",
       "status" : {
         "state" : "implemented",
@@ -2172,6 +2592,12 @@
         "link" : "http:\/\/github.com\/lattner",
         "name" : "Chris Lattner"
       },
+      "reviewManagers" : [
+        {
+          "link" : "http:\/\/github.com\/lattner",
+          "name" : "Chris Lattner"
+        }
+      ],
       "sha" : "9d1e03ea69c225d8fb1289e2e7648e29f37d3c29",
       "status" : {
         "state" : "rejected"
@@ -2200,6 +2626,12 @@
         "link" : "http:\/\/github.com\/lattner",
         "name" : "Chris Lattner"
       },
+      "reviewManagers" : [
+        {
+          "link" : "http:\/\/github.com\/lattner",
+          "name" : "Chris Lattner"
+        }
+      ],
       "sha" : "e8d135e456d994624da51ca97a610488d0adf222",
       "status" : {
         "state" : "rejected"
@@ -2220,6 +2652,12 @@
         "link" : "http:\/\/github.com\/lattner",
         "name" : "Chris Lattner"
       },
+      "reviewManagers" : [
+        {
+          "link" : "http:\/\/github.com\/lattner",
+          "name" : "Chris Lattner"
+        }
+      ],
       "sha" : "2ea41c3a8c4858c66162fb04cc0a827a5d3201d2",
       "status" : {
         "state" : "implemented",
@@ -2253,6 +2691,12 @@
         "link" : "http:\/\/github.com\/lattner",
         "name" : "Chris Lattner"
       },
+      "reviewManagers" : [
+        {
+          "link" : "http:\/\/github.com\/lattner",
+          "name" : "Chris Lattner"
+        }
+      ],
       "sha" : "2de79eb0c0a831280269a410bc84796207f852fe",
       "status" : {
         "state" : "implemented",
@@ -2286,6 +2730,12 @@
         "link" : "http:\/\/github.com\/jckarter",
         "name" : "Joe Groff"
       },
+      "reviewManagers" : [
+        {
+          "link" : "http:\/\/github.com\/jckarter",
+          "name" : "Joe Groff"
+        }
+      ],
       "sha" : "e5fde9f13457636aebc65f47cf8f978a4ea6a5e5",
       "status" : {
         "state" : "implemented",
@@ -2311,6 +2761,12 @@
         "link" : "http:\/\/github.com\/lattner",
         "name" : "Chris Lattner"
       },
+      "reviewManagers" : [
+        {
+          "link" : "http:\/\/github.com\/lattner",
+          "name" : "Chris Lattner"
+        }
+      ],
       "sha" : "233cab708f5f708a630ef6c36ff79d40b3bfb4d0",
       "status" : {
         "state" : "returnedForRevision"
@@ -2339,6 +2795,12 @@
         "link" : "",
         "name" : "TBD"
       },
+      "reviewManagers" : [
+        {
+          "link" : "",
+          "name" : "TBD"
+        }
+      ],
       "sha" : "f5fb30488ace556b25b5ee34dde9eb216181fcca",
       "status" : {
         "state" : "implemented",
@@ -2360,6 +2822,12 @@
         "link" : "http:\/\/github.com\/lattner",
         "name" : "Chris Lattner"
       },
+      "reviewManagers" : [
+        {
+          "link" : "http:\/\/github.com\/lattner",
+          "name" : "Chris Lattner"
+        }
+      ],
       "sha" : "fcc402eb2f215f1a21bd7a51350e3cfbdb58922b",
       "status" : {
         "state" : "implemented",
@@ -2401,6 +2869,12 @@
         "link" : "http:\/\/github.com\/lattner",
         "name" : "Chris Lattner"
       },
+      "reviewManagers" : [
+        {
+          "link" : "http:\/\/github.com\/lattner",
+          "name" : "Chris Lattner"
+        }
+      ],
       "sha" : "c0db347b00d67df831a75644ebb104e909b99be0",
       "status" : {
         "state" : "implemented",
@@ -2434,6 +2908,12 @@
         "link" : "https:\/\/github.com\/abertelrud",
         "name" : "Anders Bertelrud"
       },
+      "reviewManagers" : [
+        {
+          "link" : "https:\/\/github.com\/abertelrud",
+          "name" : "Anders Bertelrud"
+        }
+      ],
       "sha" : "ff458171b2e2cca3dc85413885d94351e5791bf0",
       "status" : {
         "state" : "implemented",
@@ -2455,6 +2935,12 @@
         "link" : "http:\/\/github.com\/lattner",
         "name" : "Chris Lattner"
       },
+      "reviewManagers" : [
+        {
+          "link" : "http:\/\/github.com\/lattner",
+          "name" : "Chris Lattner"
+        }
+      ],
       "sha" : "4f224f911cda8d0a72db5b5b5e7c922d57159b54",
       "status" : {
         "state" : "rejected"
@@ -2479,6 +2965,12 @@
         "link" : "http:\/\/github.com\/lattner",
         "name" : "Chris Lattner"
       },
+      "reviewManagers" : [
+        {
+          "link" : "http:\/\/github.com\/lattner",
+          "name" : "Chris Lattner"
+        }
+      ],
       "sha" : "d930b4a84dbee4b4e0935c5268ae84916ea77531",
       "status" : {
         "state" : "rejected"
@@ -2511,6 +3003,12 @@
         "link" : "http:\/\/github.com\/ddunbar",
         "name" : "Daniel Dunbar"
       },
+      "reviewManagers" : [
+        {
+          "link" : "http:\/\/github.com\/ddunbar",
+          "name" : "Daniel Dunbar"
+        }
+      ],
       "sha" : "b2c77357fc33900f9261e62b77ab7a2f1913d0c4",
       "status" : {
         "state" : "implemented",
@@ -2536,6 +3034,12 @@
         "link" : "https:\/\/github.com\/DougGregor",
         "name" : "Doug Gregor"
       },
+      "reviewManagers" : [
+        {
+          "link" : "https:\/\/github.com\/DougGregor",
+          "name" : "Doug Gregor"
+        }
+      ],
       "sha" : "1fb18ea38a67557d0b8920a146ab1edc17093f80",
       "status" : {
         "state" : "implemented",
@@ -2557,6 +3061,12 @@
         "link" : "http:\/\/github.com\/lattner",
         "name" : "Chris Lattner"
       },
+      "reviewManagers" : [
+        {
+          "link" : "http:\/\/github.com\/lattner",
+          "name" : "Chris Lattner"
+        }
+      ],
       "sha" : "d6de4a104273c0657bf2e2c4a87655ac19283101",
       "status" : {
         "state" : "rejected"
@@ -2577,6 +3087,12 @@
         "link" : "http:\/\/github.com\/lattner",
         "name" : "Chris Lattner"
       },
+      "reviewManagers" : [
+        {
+          "link" : "http:\/\/github.com\/lattner",
+          "name" : "Chris Lattner"
+        }
+      ],
       "sha" : "d87567e22aa47e9cd2fc8ed9ed4f3311795c878a",
       "status" : {
         "state" : "implemented",
@@ -2602,6 +3118,12 @@
         "link" : "http:\/\/github.com\/lattner",
         "name" : "Chris Lattner"
       },
+      "reviewManagers" : [
+        {
+          "link" : "http:\/\/github.com\/lattner",
+          "name" : "Chris Lattner"
+        }
+      ],
       "sha" : "c9230135c05fdb82b7a1b28a83077ca1419ddd79",
       "status" : {
         "state" : "implemented",
@@ -2639,6 +3161,12 @@
         "link" : "http:\/\/github.com\/lattner",
         "name" : "Chris Lattner"
       },
+      "reviewManagers" : [
+        {
+          "link" : "http:\/\/github.com\/lattner",
+          "name" : "Chris Lattner"
+        }
+      ],
       "sha" : "ccbcc17a46920a059da9642fde913a26b1de5f0e",
       "status" : {
         "state" : "returnedForRevision"
@@ -2663,6 +3191,12 @@
         "link" : "http:\/\/github.com\/lattner",
         "name" : "Chris Lattner"
       },
+      "reviewManagers" : [
+        {
+          "link" : "http:\/\/github.com\/lattner",
+          "name" : "Chris Lattner"
+        }
+      ],
       "sha" : "afa8462219e8367a635b4a64d6058457365984c0",
       "status" : {
         "state" : "implemented",
@@ -2700,6 +3234,12 @@
         "link" : "http:\/\/github.com\/lattner",
         "name" : "Chris Lattner"
       },
+      "reviewManagers" : [
+        {
+          "link" : "http:\/\/github.com\/lattner",
+          "name" : "Chris Lattner"
+        }
+      ],
       "sha" : "ec16339c47d12aa5248e331778e9cd2ed01514b3",
       "status" : {
         "state" : "implemented",
@@ -2741,6 +3281,12 @@
         "link" : "https:\/\/github.com\/dabrahams",
         "name" : "Dave Abrahams"
       },
+      "reviewManagers" : [
+        {
+          "link" : "https:\/\/github.com\/dabrahams",
+          "name" : "Dave Abrahams"
+        }
+      ],
       "sha" : "361c42c159c65f9820d7d2413964605b3995ca32",
       "status" : {
         "state" : "implemented",
@@ -2766,6 +3312,12 @@
         "link" : "http:\/\/github.com\/lattner",
         "name" : "Chris Lattner"
       },
+      "reviewManagers" : [
+        {
+          "link" : "http:\/\/github.com\/lattner",
+          "name" : "Chris Lattner"
+        }
+      ],
       "sha" : "8ad63f4c59222b54cea2d82804b9831e9f244745",
       "status" : {
         "state" : "implemented",
@@ -2803,6 +3355,12 @@
         "link" : "http:\/\/github.com\/lattner",
         "name" : "Chris Lattner"
       },
+      "reviewManagers" : [
+        {
+          "link" : "http:\/\/github.com\/lattner",
+          "name" : "Chris Lattner"
+        }
+      ],
       "sha" : "94aa3fc309b87ce982653a45a6e23b4dedda74aa",
       "status" : {
         "state" : "implemented",
@@ -2836,6 +3394,12 @@
         "link" : "http:\/\/github.com\/lattner",
         "name" : "Chris Lattner"
       },
+      "reviewManagers" : [
+        {
+          "link" : "http:\/\/github.com\/lattner",
+          "name" : "Chris Lattner"
+        }
+      ],
       "sha" : "4222d619c8ee53df111844885a45f9b9f01b350d",
       "status" : {
         "state" : "implemented",
@@ -2869,6 +3433,12 @@
         "link" : "http:\/\/github.com\/lattner",
         "name" : "Chris Lattner"
       },
+      "reviewManagers" : [
+        {
+          "link" : "http:\/\/github.com\/lattner",
+          "name" : "Chris Lattner"
+        }
+      ],
       "sha" : "6a4d3c19cd973ff0622ac4fea2de64616949db84",
       "status" : {
         "state" : "rejected"
@@ -2889,6 +3459,12 @@
         "link" : "http:\/\/github.com\/lattner",
         "name" : "Chris Lattner"
       },
+      "reviewManagers" : [
+        {
+          "link" : "http:\/\/github.com\/lattner",
+          "name" : "Chris Lattner"
+        }
+      ],
       "sha" : "d1a3cfff8e83b393e1d8be10b4fe441d26276201",
       "status" : {
         "state" : "rejected"
@@ -2913,6 +3489,12 @@
         "link" : "https:\/\/github.com\/jckarter",
         "name" : "Joe Groff"
       },
+      "reviewManagers" : [
+        {
+          "link" : "https:\/\/github.com\/jckarter",
+          "name" : "Joe Groff"
+        }
+      ],
       "sha" : "db41664fc6f9682e936268e070bc3baed186be68",
       "status" : {
         "state" : "implemented",
@@ -2934,6 +3516,12 @@
         "link" : "",
         "name" : "TBD"
       },
+      "reviewManagers" : [
+        {
+          "link" : "",
+          "name" : "TBD"
+        }
+      ],
       "sha" : "441c7ca5330b679e719e4469a993b0a85f16b5e1",
       "status" : {
         "state" : "withdrawn"
@@ -2958,6 +3546,12 @@
         "link" : "http:\/\/github.com\/lattner",
         "name" : "Chris Lattner"
       },
+      "reviewManagers" : [
+        {
+          "link" : "http:\/\/github.com\/lattner",
+          "name" : "Chris Lattner"
+        }
+      ],
       "sha" : "445a5447b8fccbba681ca4f7222cad0634d6e3d4",
       "status" : {
         "state" : "implemented",
@@ -2979,6 +3573,12 @@
         "link" : "http:\/\/github.com\/lattner",
         "name" : "Chris Lattner"
       },
+      "reviewManagers" : [
+        {
+          "link" : "http:\/\/github.com\/lattner",
+          "name" : "Chris Lattner"
+        }
+      ],
       "sha" : "a500061f8ebfc5faba23ef7472b68a826408077d",
       "status" : {
         "state" : "implemented",
@@ -3012,6 +3612,12 @@
         "link" : "http:\/\/github.com\/lattner",
         "name" : "Chris Lattner"
       },
+      "reviewManagers" : [
+        {
+          "link" : "http:\/\/github.com\/lattner",
+          "name" : "Chris Lattner"
+        }
+      ],
       "sha" : "c1982da464866d7be03768baf41bb196637745d0",
       "status" : {
         "state" : "implemented",
@@ -3049,6 +3655,12 @@
         "link" : "https:\/\/github.com\/airspeedswift",
         "name" : "Ben Cohen"
       },
+      "reviewManagers" : [
+        {
+          "link" : "https:\/\/github.com\/airspeedswift",
+          "name" : "Ben Cohen"
+        }
+      ],
       "sha" : "42a7b3cf899f22fa2852a7d712b4ccbceb7ad544",
       "status" : {
         "state" : "implemented",
@@ -3082,6 +3694,12 @@
         "link" : "http:\/\/github.com\/lattner",
         "name" : "Chris Lattner"
       },
+      "reviewManagers" : [
+        {
+          "link" : "http:\/\/github.com\/lattner",
+          "name" : "Chris Lattner"
+        }
+      ],
       "sha" : "a3f29187a64c133dcb8337927a62564b1f333ea4",
       "status" : {
         "state" : "rejected"
@@ -3102,6 +3720,12 @@
         "link" : "http:\/\/github.com\/lattner",
         "name" : "Chris Lattner"
       },
+      "reviewManagers" : [
+        {
+          "link" : "http:\/\/github.com\/lattner",
+          "name" : "Chris Lattner"
+        }
+      ],
       "sha" : "749830720d9aa7282ac5046a7581475bcd5295aa",
       "status" : {
         "state" : "implemented",
@@ -3145,6 +3769,12 @@
         "link" : "http:\/\/github.com\/lattner",
         "name" : "Chris Lattner"
       },
+      "reviewManagers" : [
+        {
+          "link" : "http:\/\/github.com\/lattner",
+          "name" : "Chris Lattner"
+        }
+      ],
       "sha" : "22614707d9f5764c66789d5c418c6a1b72316e0b",
       "status" : {
         "state" : "implemented",
@@ -3170,6 +3800,12 @@
         "link" : "http:\/\/github.com\/lattner",
         "name" : "Chris Lattner"
       },
+      "reviewManagers" : [
+        {
+          "link" : "http:\/\/github.com\/lattner",
+          "name" : "Chris Lattner"
+        }
+      ],
       "sha" : "082ab850736b1a2f363ee192cb6dfaab2da86134",
       "status" : {
         "state" : "rejected"
@@ -3208,6 +3844,12 @@
         "link" : "http:\/\/github.com\/DougGregor",
         "name" : "Doug Gregor"
       },
+      "reviewManagers" : [
+        {
+          "link" : "http:\/\/github.com\/DougGregor",
+          "name" : "Doug Gregor"
+        }
+      ],
       "sha" : "3b1bde8fada5c4332743b8c064bec12b56bd8e09",
       "status" : {
         "state" : "implemented",
@@ -3233,6 +3875,12 @@
         "link" : "https:\/\/github.com\/lattner",
         "name" : "Chris Lattner"
       },
+      "reviewManagers" : [
+        {
+          "link" : "https:\/\/github.com\/lattner",
+          "name" : "Chris Lattner"
+        }
+      ],
       "sha" : "afe39655adc136a91acbebc297e0ad06b687e172",
       "status" : {
         "state" : "implemented",
@@ -3266,6 +3914,12 @@
         "link" : "http:\/\/github.com\/lattner",
         "name" : "Chris Lattner"
       },
+      "reviewManagers" : [
+        {
+          "link" : "http:\/\/github.com\/lattner",
+          "name" : "Chris Lattner"
+        }
+      ],
       "sha" : "99a23db8ac9b573d2624a79d7a9c688ba9d689e7",
       "status" : {
         "state" : "implemented",
@@ -3303,6 +3957,12 @@
         "link" : "http:\/\/github.com\/lattner",
         "name" : "Chris Lattner"
       },
+      "reviewManagers" : [
+        {
+          "link" : "http:\/\/github.com\/lattner",
+          "name" : "Chris Lattner"
+        }
+      ],
       "sha" : "22a428d830bbba1cec6ce1aadbd2b7d979d3206f",
       "status" : {
         "state" : "implemented",
@@ -3324,6 +3984,12 @@
         "link" : "http:\/\/github.com\/lattner",
         "name" : "Chris Lattner"
       },
+      "reviewManagers" : [
+        {
+          "link" : "http:\/\/github.com\/lattner",
+          "name" : "Chris Lattner"
+        }
+      ],
       "sha" : "ba3daf9d22291ade430286d6ef6682a1834fe9ef",
       "status" : {
         "state" : "implemented",
@@ -3365,6 +4031,12 @@
         "link" : "http:\/\/github.com\/lattner",
         "name" : "Chris Lattner"
       },
+      "reviewManagers" : [
+        {
+          "link" : "http:\/\/github.com\/lattner",
+          "name" : "Chris Lattner"
+        }
+      ],
       "sha" : "5db2fb369f7b03aee689c42f3c5a4a99a80354df",
       "status" : {
         "state" : "implemented",
@@ -3386,6 +4058,12 @@
         "link" : "http:\/\/github.com\/lattner",
         "name" : "Chris Lattner"
       },
+      "reviewManagers" : [
+        {
+          "link" : "http:\/\/github.com\/lattner",
+          "name" : "Chris Lattner"
+        }
+      ],
       "sha" : "9cb4ac44d638ef642d0275018ca0ec3a4762b3ee",
       "status" : {
         "state" : "implemented",
@@ -3419,6 +4097,12 @@
         "link" : "http:\/\/github.com\/lattner",
         "name" : "Chris Lattner"
       },
+      "reviewManagers" : [
+        {
+          "link" : "http:\/\/github.com\/lattner",
+          "name" : "Chris Lattner"
+        }
+      ],
       "sha" : "36d72cd39974a3ec937c231c33c882727e049f80",
       "status" : {
         "state" : "implemented",
@@ -3452,6 +4136,12 @@
         "link" : "http:\/\/github.com\/lattner",
         "name" : "Chris Lattner"
       },
+      "reviewManagers" : [
+        {
+          "link" : "http:\/\/github.com\/lattner",
+          "name" : "Chris Lattner"
+        }
+      ],
       "sha" : "54f7bf61d8d142ed4d2f7ee717a098337ed8bd2c",
       "status" : {
         "state" : "implemented",
@@ -3481,6 +4171,12 @@
         "link" : "http:\/\/github.com\/lattner",
         "name" : "Chris Lattner"
       },
+      "reviewManagers" : [
+        {
+          "link" : "http:\/\/github.com\/lattner",
+          "name" : "Chris Lattner"
+        }
+      ],
       "sha" : "0cd69955d18621c84709786b16631a04d9fff1da",
       "status" : {
         "state" : "implemented",
@@ -3514,6 +4210,12 @@
         "link" : "http:\/\/github.com\/lattner",
         "name" : "Chris Lattner"
       },
+      "reviewManagers" : [
+        {
+          "link" : "http:\/\/github.com\/lattner",
+          "name" : "Chris Lattner"
+        }
+      ],
       "sha" : "1fe24fa3a6b108b1c21fa3c93708cf2feb55fb86",
       "status" : {
         "state" : "rejected"
@@ -3542,6 +4244,12 @@
         "link" : "http:\/\/github.com\/lattner",
         "name" : "Chris Lattner"
       },
+      "reviewManagers" : [
+        {
+          "link" : "http:\/\/github.com\/lattner",
+          "name" : "Chris Lattner"
+        }
+      ],
       "sha" : "49e38a78ed06106fe5ecde2864242878835411e7",
       "status" : {
         "state" : "implemented",
@@ -3583,6 +4291,12 @@
         "link" : "http:\/\/github.com\/lattner",
         "name" : "Chris Lattner"
       },
+      "reviewManagers" : [
+        {
+          "link" : "http:\/\/github.com\/lattner",
+          "name" : "Chris Lattner"
+        }
+      ],
       "sha" : "44cd28bb4fed19037e7ff68f5667c534fad00c51",
       "status" : {
         "state" : "implemented",
@@ -3604,6 +4318,12 @@
         "link" : "http:\/\/github.com\/lattner",
         "name" : "Chris Lattner"
       },
+      "reviewManagers" : [
+        {
+          "link" : "http:\/\/github.com\/lattner",
+          "name" : "Chris Lattner"
+        }
+      ],
       "sha" : "d21669c174626ce7d29f31622cf9da0ca6d4b501",
       "status" : {
         "state" : "rejected"
@@ -3632,6 +4352,12 @@
         "link" : "http:\/\/github.com\/lattner",
         "name" : "Chris Lattner"
       },
+      "reviewManagers" : [
+        {
+          "link" : "http:\/\/github.com\/lattner",
+          "name" : "Chris Lattner"
+        }
+      ],
       "sha" : "39dcf33d7739678fc0e583752cdae0debb9e29c9",
       "status" : {
         "state" : "rejected"
@@ -3652,6 +4378,12 @@
         "link" : "http:\/\/github.com\/lattner",
         "name" : "Chris Lattner"
       },
+      "reviewManagers" : [
+        {
+          "link" : "http:\/\/github.com\/lattner",
+          "name" : "Chris Lattner"
+        }
+      ],
       "sha" : "936ab9682675b8562826428de22a7f7ae08445a6",
       "status" : {
         "state" : "implemented",
@@ -3685,6 +4417,12 @@
         "link" : "http:\/\/github.com\/lattner",
         "name" : "Chris Lattner"
       },
+      "reviewManagers" : [
+        {
+          "link" : "http:\/\/github.com\/lattner",
+          "name" : "Chris Lattner"
+        }
+      ],
       "sha" : "03e8844dc91d4bcd1492a724d36be9519ad856aa",
       "status" : {
         "state" : "implemented",
@@ -3722,6 +4460,12 @@
         "link" : "http:\/\/github.com\/lattner",
         "name" : "Chris Lattner"
       },
+      "reviewManagers" : [
+        {
+          "link" : "http:\/\/github.com\/lattner",
+          "name" : "Chris Lattner"
+        }
+      ],
       "sha" : "3fc1d08d208d2bfb52511ed8a476a6572a5fa2d9",
       "status" : {
         "state" : "withdrawn"
@@ -3742,6 +4486,12 @@
         "link" : "http:\/\/github.com\/lattner",
         "name" : "Chris Lattner"
       },
+      "reviewManagers" : [
+        {
+          "link" : "http:\/\/github.com\/lattner",
+          "name" : "Chris Lattner"
+        }
+      ],
       "sha" : "bc7461188a777f0df68ff92e0082306648f4eabc",
       "status" : {
         "state" : "implemented",
@@ -3803,6 +4553,12 @@
         "link" : "http:\/\/github.com\/lattner",
         "name" : "Chris Lattner"
       },
+      "reviewManagers" : [
+        {
+          "link" : "http:\/\/github.com\/lattner",
+          "name" : "Chris Lattner"
+        }
+      ],
       "sha" : "88cb74f1482319d80e8dd786c5f11ac06964bdae",
       "status" : {
         "state" : "implemented",
@@ -3824,6 +4580,12 @@
         "link" : "https:\/\/github.com\/ddunbar",
         "name" : "Daniel Dunbar"
       },
+      "reviewManagers" : [
+        {
+          "link" : "https:\/\/github.com\/ddunbar",
+          "name" : "Daniel Dunbar"
+        }
+      ],
       "sha" : "f3e218b70c63b0bda98063e72c059a96a3e50798",
       "status" : {
         "state" : "implemented",
@@ -3845,6 +4607,12 @@
         "link" : "http:\/\/github.com\/lattner",
         "name" : "Chris Lattner"
       },
+      "reviewManagers" : [
+        {
+          "link" : "http:\/\/github.com\/lattner",
+          "name" : "Chris Lattner"
+        }
+      ],
       "sha" : "3f70b278840a2a811ab2d032ab3b2888c7a1067f",
       "status" : {
         "state" : "implemented",
@@ -3866,6 +4634,12 @@
         "link" : "http:\/\/github.com\/lattner",
         "name" : "Chris Lattner"
       },
+      "reviewManagers" : [
+        {
+          "link" : "http:\/\/github.com\/lattner",
+          "name" : "Chris Lattner"
+        }
+      ],
       "sha" : "9c9045989571e2d8fa6658a1a95bcb19fec3c777",
       "status" : {
         "state" : "implemented",
@@ -3891,6 +4665,12 @@
         "link" : "http:\/\/github.com\/lattner",
         "name" : "Chris Lattner"
       },
+      "reviewManagers" : [
+        {
+          "link" : "http:\/\/github.com\/lattner",
+          "name" : "Chris Lattner"
+        }
+      ],
       "sha" : "f61db449e4fd1ca15296dfe89edc430c185c3f25",
       "status" : {
         "state" : "rejected"
@@ -3931,6 +4711,12 @@
         "link" : "http:\/\/github.com\/lattner",
         "name" : "Chris Lattner"
       },
+      "reviewManagers" : [
+        {
+          "link" : "http:\/\/github.com\/lattner",
+          "name" : "Chris Lattner"
+        }
+      ],
       "sha" : "8386e527b8d8a27976dd02679af91b65b04c3088",
       "status" : {
         "state" : "implemented",
@@ -3964,6 +4750,12 @@
         "link" : "http:\/\/github.com\/lattner",
         "name" : "Chris Lattner"
       },
+      "reviewManagers" : [
+        {
+          "link" : "http:\/\/github.com\/lattner",
+          "name" : "Chris Lattner"
+        }
+      ],
       "sha" : "5e41274c4ab30f7d8e7e49d58ea51f050cf78a04",
       "status" : {
         "state" : "implemented",
@@ -3985,6 +4777,12 @@
         "link" : "https:\/\/github.com\/ddunbar",
         "name" : "Daniel Dunbar"
       },
+      "reviewManagers" : [
+        {
+          "link" : "https:\/\/github.com\/ddunbar",
+          "name" : "Daniel Dunbar"
+        }
+      ],
       "sha" : "ef8c7fbad46868dfb1f6e21b60a30e130fda068a",
       "status" : {
         "state" : "implemented",
@@ -4014,6 +4812,12 @@
         "link" : "https:\/\/github.com\/dabrahams",
         "name" : "Dave Abrahams"
       },
+      "reviewManagers" : [
+        {
+          "link" : "https:\/\/github.com\/dabrahams",
+          "name" : "Dave Abrahams"
+        }
+      ],
       "sha" : "9705baaa850bf1b3cfebb2012578b0ded2f58a13",
       "status" : {
         "state" : "implemented",
@@ -4039,6 +4843,12 @@
         "link" : "https:\/\/github.com\/rjmccall",
         "name" : "John McCall"
       },
+      "reviewManagers" : [
+        {
+          "link" : "https:\/\/github.com\/rjmccall",
+          "name" : "John McCall"
+        }
+      ],
       "sha" : "43136b648add45eef0b50c5ce76db86dcbfff519",
       "status" : {
         "state" : "implemented",
@@ -4060,6 +4870,12 @@
         "link" : "https:\/\/github.com\/dabrahams",
         "name" : "Dave Abrahams"
       },
+      "reviewManagers" : [
+        {
+          "link" : "https:\/\/github.com\/dabrahams",
+          "name" : "Dave Abrahams"
+        }
+      ],
       "sha" : "74f3c7b0a5ef4976c9d2a07050f6d93993cfd9cb",
       "status" : {
         "state" : "implemented",
@@ -4081,6 +4897,12 @@
         "link" : "https:\/\/github.com\/DougGregor",
         "name" : "Doug Gregor"
       },
+      "reviewManagers" : [
+        {
+          "link" : "https:\/\/github.com\/DougGregor",
+          "name" : "Doug Gregor"
+        }
+      ],
       "sha" : "c6d3a65d1b0fa724c9574cb4d7b8c5ab73c85826",
       "status" : {
         "state" : "implemented",
@@ -4102,6 +4924,12 @@
         "link" : "https:\/\/github.com\/DougGregor",
         "name" : "Doug Gregor"
       },
+      "reviewManagers" : [
+        {
+          "link" : "https:\/\/github.com\/DougGregor",
+          "name" : "Doug Gregor"
+        }
+      ],
       "sha" : "e5eca4d8a57caac20f073e11548a49803a24cd3b",
       "status" : {
         "state" : "implemented",
@@ -4123,6 +4951,12 @@
         "link" : "https:\/\/github.com\/DougGregor",
         "name" : "Doug Gregor"
       },
+      "reviewManagers" : [
+        {
+          "link" : "https:\/\/github.com\/DougGregor",
+          "name" : "Doug Gregor"
+        }
+      ],
       "sha" : "b3bc4fda3e937aa46f37e0c435ea779627356e74",
       "status" : {
         "state" : "implemented",
@@ -4164,6 +4998,12 @@
         "link" : "https:\/\/github.com\/DougGregor",
         "name" : "Doug Gregor"
       },
+      "reviewManagers" : [
+        {
+          "link" : "https:\/\/github.com\/DougGregor",
+          "name" : "Doug Gregor"
+        }
+      ],
       "sha" : "86792f029541cf1921c0457765766645a1779db1",
       "status" : {
         "state" : "implemented",
@@ -4197,6 +5037,12 @@
         "link" : "https:\/\/github.com\/jckarter",
         "name" : "Joe Groff"
       },
+      "reviewManagers" : [
+        {
+          "link" : "https:\/\/github.com\/jckarter",
+          "name" : "Joe Groff"
+        }
+      ],
       "sha" : "732b27e72f5484718e97a314c6d0fe8757baca81",
       "status" : {
         "state" : "implemented",
@@ -4218,6 +5064,12 @@
         "link" : "http:\/\/github.com\/lattner",
         "name" : "Chris Lattner"
       },
+      "reviewManagers" : [
+        {
+          "link" : "http:\/\/github.com\/lattner",
+          "name" : "Chris Lattner"
+        }
+      ],
       "sha" : "b12e2dc645ff469b8137d2c4255dd2a0b71afdad",
       "status" : {
         "state" : "rejected"
@@ -4246,6 +5098,12 @@
         "link" : "https:\/\/github.com\/abertelrud",
         "name" : "Anders Bertelrud"
       },
+      "reviewManagers" : [
+        {
+          "link" : "https:\/\/github.com\/abertelrud",
+          "name" : "Anders Bertelrud"
+        }
+      ],
       "sha" : "f29d0c195f0e316420210180d1158f36b1b28c18",
       "status" : {
         "state" : "implemented",
@@ -4267,6 +5125,12 @@
         "link" : "",
         "name" : "Daniel Dunbar"
       },
+      "reviewManagers" : [
+        {
+          "link" : "",
+          "name" : "Daniel Dunbar"
+        }
+      ],
       "sha" : "ce87eeb8feda08210c4844218de25d7816917739",
       "status" : {
         "state" : "implemented",
@@ -4308,6 +5172,12 @@
         "link" : "https:\/\/github.com\/DougGregor",
         "name" : "Doug Gregor"
       },
+      "reviewManagers" : [
+        {
+          "link" : "https:\/\/github.com\/DougGregor",
+          "name" : "Doug Gregor"
+        }
+      ],
       "sha" : "b40479613ea922e8a3957d3ee92409a960b47a7e",
       "status" : {
         "state" : "implemented",
@@ -4329,6 +5199,12 @@
         "link" : "https:\/\/github.com\/DougGregor",
         "name" : "Doug Gregor"
       },
+      "reviewManagers" : [
+        {
+          "link" : "https:\/\/github.com\/DougGregor",
+          "name" : "Doug Gregor"
+        }
+      ],
       "sha" : "6cda991f13d14af81c018846a20a1e43e630f47a",
       "status" : {
         "state" : "implemented",
@@ -4362,6 +5238,12 @@
         "link" : "https:\/\/github.com\/ddunbar",
         "name" : "Daniel Dunbar"
       },
+      "reviewManagers" : [
+        {
+          "link" : "https:\/\/github.com\/ddunbar",
+          "name" : "Daniel Dunbar"
+        }
+      ],
       "sha" : "8b30f65cde10fed7e52c2093bb144f205af1635b",
       "status" : {
         "state" : "implemented",
@@ -4395,6 +5277,12 @@
         "link" : "https:\/\/github.com\/ddunbar",
         "name" : "Daniel Dunbar"
       },
+      "reviewManagers" : [
+        {
+          "link" : "https:\/\/github.com\/ddunbar",
+          "name" : "Daniel Dunbar"
+        }
+      ],
       "sha" : "6fa969c889096cd9e5ad382b20172d69066b10d8",
       "status" : {
         "state" : "implemented",
@@ -4432,6 +5320,12 @@
         "link" : "https:\/\/github.com\/abertelrud",
         "name" : "Anders Bertelrud"
       },
+      "reviewManagers" : [
+        {
+          "link" : "https:\/\/github.com\/abertelrud",
+          "name" : "Anders Bertelrud"
+        }
+      ],
       "sha" : "e94c203f6ab4f01fb9f55649a34bcd85ae11b345",
       "status" : {
         "state" : "implemented",
@@ -4465,6 +5359,12 @@
         "link" : "https:\/\/github.com\/abertelrud",
         "name" : "Anders Bertelrud"
       },
+      "reviewManagers" : [
+        {
+          "link" : "https:\/\/github.com\/abertelrud",
+          "name" : "Anders Bertelrud"
+        }
+      ],
       "sha" : "92394f41569c9cb010e119858bf99aa66720bd2d",
       "status" : {
         "state" : "implemented",
@@ -4498,6 +5398,12 @@
         "link" : "https:\/\/github.com\/DougGregor",
         "name" : "Doug Gregor"
       },
+      "reviewManagers" : [
+        {
+          "link" : "https:\/\/github.com\/DougGregor",
+          "name" : "Doug Gregor"
+        }
+      ],
       "sha" : "f5005565bd6ca35db59a497a4e0ead863e447f64",
       "status" : {
         "state" : "rejected"
@@ -4530,6 +5436,12 @@
         "link" : "https:\/\/github.com\/DougGregor",
         "name" : "Doug Gregor"
       },
+      "reviewManagers" : [
+        {
+          "link" : "https:\/\/github.com\/DougGregor",
+          "name" : "Doug Gregor"
+        }
+      ],
       "sha" : "f5ad8d6d71c93b3900d1e9ceafeaf925e8c4bf8d",
       "status" : {
         "state" : "implemented",
@@ -4555,6 +5467,12 @@
         "link" : "https:\/\/github.com\/rjmccall",
         "name" : "John McCall"
       },
+      "reviewManagers" : [
+        {
+          "link" : "https:\/\/github.com\/rjmccall",
+          "name" : "John McCall"
+        }
+      ],
       "sha" : "d004bed25ac9114c5f4a91153c5e8c9efa9f221b",
       "status" : {
         "state" : "implemented",
@@ -4612,6 +5530,12 @@
         "link" : "https:\/\/github.com\/DougGregor",
         "name" : "Doug Gregor"
       },
+      "reviewManagers" : [
+        {
+          "link" : "https:\/\/github.com\/DougGregor",
+          "name" : "Doug Gregor"
+        }
+      ],
       "sha" : "24a705bdc70454cb72ffffb5d6557dfefefa113a",
       "status" : {
         "state" : "implemented",
@@ -4653,6 +5577,12 @@
         "link" : "https:\/\/github.com\/rjmccall",
         "name" : "John McCall"
       },
+      "reviewManagers" : [
+        {
+          "link" : "https:\/\/github.com\/rjmccall",
+          "name" : "John McCall"
+        }
+      ],
       "sha" : "cfb14c042ab1cb1f03ab7dfc9df7cdf4f9caf326",
       "status" : {
         "state" : "implemented",
@@ -4686,6 +5616,12 @@
         "link" : "https:\/\/github.com\/rballard",
         "name" : "Rick Ballard"
       },
+      "reviewManagers" : [
+        {
+          "link" : "https:\/\/github.com\/rballard",
+          "name" : "Rick Ballard"
+        }
+      ],
       "sha" : "dfd15e53475659d19c6f607dc4edaa1d20ba12fe",
       "status" : {
         "state" : "implemented",
@@ -4719,6 +5655,12 @@
         "link" : "https:\/\/github.com\/DougGregor",
         "name" : "Doug Gregor"
       },
+      "reviewManagers" : [
+        {
+          "link" : "https:\/\/github.com\/DougGregor",
+          "name" : "Doug Gregor"
+        }
+      ],
       "sha" : "75aaecac6d53f6fb85ce90ba911809f7e65557f5",
       "status" : {
         "state" : "rejected"
@@ -4747,6 +5689,12 @@
         "link" : "https:\/\/github.com\/lattner",
         "name" : "Chris Lattner"
       },
+      "reviewManagers" : [
+        {
+          "link" : "https:\/\/github.com\/lattner",
+          "name" : "Chris Lattner"
+        }
+      ],
       "sha" : "54683f879f08816f315c08867751a3092aa60949",
       "status" : {
         "state" : "implemented",
@@ -4788,6 +5736,12 @@
         "link" : "https:\/\/github.com\/DougGregor",
         "name" : "Doug Gregor"
       },
+      "reviewManagers" : [
+        {
+          "link" : "https:\/\/github.com\/DougGregor",
+          "name" : "Doug Gregor"
+        }
+      ],
       "sha" : "4df7fee45ccb71011a9e62ae88bc6a7ba966c88f",
       "status" : {
         "state" : "implemented",
@@ -4809,6 +5763,12 @@
         "link" : "https:\/\/github.com\/rballard",
         "name" : "Rick Ballard"
       },
+      "reviewManagers" : [
+        {
+          "link" : "https:\/\/github.com\/rballard",
+          "name" : "Rick Ballard"
+        }
+      ],
       "sha" : "9cce18f915ddf7060f828f424107476b6d21917e",
       "status" : {
         "state" : "implemented",
@@ -4846,6 +5806,12 @@
         "link" : "https:\/\/github.com\/rjmccall",
         "name" : "John McCall"
       },
+      "reviewManagers" : [
+        {
+          "link" : "https:\/\/github.com\/rjmccall",
+          "name" : "John McCall"
+        }
+      ],
       "sha" : "885e6407687b8c92f474c0b1a04756bb39f0a4e1",
       "status" : {
         "state" : "implemented",
@@ -4867,6 +5833,12 @@
         "link" : "https:\/\/github.com\/DougGregor",
         "name" : "Doug Gregor"
       },
+      "reviewManagers" : [
+        {
+          "link" : "https:\/\/github.com\/DougGregor",
+          "name" : "Doug Gregor"
+        }
+      ],
       "sha" : "5e807e4bd3fdcccfc768fd6e491510cd349fe8dc",
       "status" : {
         "state" : "implemented",
@@ -4900,6 +5872,12 @@
         "link" : "https:\/\/github.com\/airspeedswift",
         "name" : "Ben Cohen"
       },
+      "reviewManagers" : [
+        {
+          "link" : "https:\/\/github.com\/airspeedswift",
+          "name" : "Ben Cohen"
+        }
+      ],
       "sha" : "1b4cc21cec0f02e0cd3479801d88f0fe3b0de0a1",
       "status" : {
         "state" : "implemented",
@@ -4937,6 +5915,12 @@
         "link" : "https:\/\/github.com\/DougGregor",
         "name" : "Doug Gregor"
       },
+      "reviewManagers" : [
+        {
+          "link" : "https:\/\/github.com\/DougGregor",
+          "name" : "Doug Gregor"
+        }
+      ],
       "sha" : "53a9a69229d5f987d32ee5350865565ff2f99f28",
       "status" : {
         "state" : "implemented",
@@ -4974,6 +5958,12 @@
         "link" : "https:\/\/github.com\/DougGregor",
         "name" : "Doug Gregor"
       },
+      "reviewManagers" : [
+        {
+          "link" : "https:\/\/github.com\/DougGregor",
+          "name" : "Doug Gregor"
+        }
+      ],
       "sha" : "223aa7f3909303bb43cf18c17f6238cbd484cf45",
       "status" : {
         "state" : "implemented",
@@ -5011,6 +6001,12 @@
         "link" : "https:\/\/github.com\/jckarter",
         "name" : "Joe Groff"
       },
+      "reviewManagers" : [
+        {
+          "link" : "https:\/\/github.com\/jckarter",
+          "name" : "Joe Groff"
+        }
+      ],
       "sha" : "bf8baa4a2a1dc47aae12d7d4284c0eccc7e71235",
       "status" : {
         "state" : "implemented",
@@ -5078,6 +6074,12 @@
         "link" : "https:\/\/github.com\/DougGregor",
         "name" : "Doug Gregor"
       },
+      "reviewManagers" : [
+        {
+          "link" : "https:\/\/github.com\/DougGregor",
+          "name" : "Doug Gregor"
+        }
+      ],
       "sha" : "88a73860c3c077d6e323f89338483ed47e2ba84a",
       "status" : {
         "state" : "implemented",
@@ -5111,6 +6113,12 @@
         "link" : "https:\/\/github.com\/airspeedswift",
         "name" : "Ben Cohen"
       },
+      "reviewManagers" : [
+        {
+          "link" : "https:\/\/github.com\/airspeedswift",
+          "name" : "Ben Cohen"
+        }
+      ],
       "sha" : "3dff41e9b77d93ffd8a3330e817fbe630ae3bc9b",
       "status" : {
         "state" : "implemented",
@@ -5132,6 +6140,12 @@
         "link" : "https:\/\/github.com\/airspeedswift",
         "name" : "Ben Cohen"
       },
+      "reviewManagers" : [
+        {
+          "link" : "https:\/\/github.com\/airspeedswift",
+          "name" : "Ben Cohen"
+        }
+      ],
       "sha" : "d1ab3d448c42864e55c60a7755952d085daf87ec",
       "status" : {
         "state" : "implemented",
@@ -5161,6 +6175,12 @@
         "link" : "https:\/\/github.com\/DougGregor",
         "name" : "Doug Gregor"
       },
+      "reviewManagers" : [
+        {
+          "link" : "https:\/\/github.com\/DougGregor",
+          "name" : "Doug Gregor"
+        }
+      ],
       "sha" : "83286f50cd8d9260c8ddd824f8d5f246a2ae04ec",
       "status" : {
         "state" : "implemented",
@@ -5190,6 +6210,12 @@
         "link" : "https:\/\/github.com\/tkremenek",
         "name" : "Ted Kremenek"
       },
+      "reviewManagers" : [
+        {
+          "link" : "https:\/\/github.com\/tkremenek",
+          "name" : "Ted Kremenek"
+        }
+      ],
       "sha" : "edf2cd57ed2905436138d31d67418878f43725ac",
       "status" : {
         "state" : "implemented",
@@ -5211,6 +6237,12 @@
         "link" : "https:\/\/github.com\/DougGregor",
         "name" : "Doug Gregor"
       },
+      "reviewManagers" : [
+        {
+          "link" : "https:\/\/github.com\/DougGregor",
+          "name" : "Doug Gregor"
+        }
+      ],
       "sha" : "1edd946141d0c18c1b05c0716ec71dce2574ff7e",
       "status" : {
         "state" : "implemented",
@@ -5244,6 +6276,12 @@
         "link" : "https:\/\/github.com\/aciidb0mb3r",
         "name" : "Ankit Aggarwal"
       },
+      "reviewManagers" : [
+        {
+          "link" : "https:\/\/github.com\/aciidb0mb3r",
+          "name" : "Ankit Aggarwal"
+        }
+      ],
       "sha" : "9f1b53264fd85ffd04859d4a5a827c272bebd400",
       "status" : {
         "state" : "implemented",
@@ -5265,6 +6303,12 @@
         "link" : "https:\/\/github.com\/airspeedswift",
         "name" : "Ben Cohen"
       },
+      "reviewManagers" : [
+        {
+          "link" : "https:\/\/github.com\/airspeedswift",
+          "name" : "Ben Cohen"
+        }
+      ],
       "sha" : "3a23331c3d8a9815c69b42133946a36b9997032d",
       "status" : {
         "state" : "implemented",
@@ -5286,6 +6330,12 @@
         "link" : "",
         "name" : "TBD"
       },
+      "reviewManagers" : [
+        {
+          "link" : "",
+          "name" : "TBD"
+        }
+      ],
       "sha" : "37d3dfafc35b6dbf8d93878e982f9669af7f4cb5",
       "status" : {
         "state" : "returnedForRevision"
@@ -5314,6 +6364,12 @@
         "link" : "https:\/\/github.com\/tkremenek",
         "name" : "Ted Kremenek"
       },
+      "reviewManagers" : [
+        {
+          "link" : "https:\/\/github.com\/tkremenek",
+          "name" : "Ted Kremenek"
+        }
+      ],
       "sha" : "64264a6e97f8c466e28228a80e1ba6b62b580126",
       "status" : {
         "state" : "implemented",
@@ -5343,6 +6399,12 @@
         "link" : "https:\/\/github.com\/ddunbar",
         "name" : "Daniel Dunbar"
       },
+      "reviewManagers" : [
+        {
+          "link" : "https:\/\/github.com\/ddunbar",
+          "name" : "Daniel Dunbar"
+        }
+      ],
       "sha" : "c06189e391be7e1b5e638a9b825f8fb9b73653fd",
       "status" : {
         "state" : "implemented",
@@ -5372,6 +6434,12 @@
         "link" : "https:\/\/github.com\/tkremenek",
         "name" : "Ted Kremenek"
       },
+      "reviewManagers" : [
+        {
+          "link" : "https:\/\/github.com\/tkremenek",
+          "name" : "Ted Kremenek"
+        }
+      ],
       "sha" : "26325c9ed8061476d76306631e88999b54f1818a",
       "status" : {
         "state" : "implemented",
@@ -5401,6 +6469,12 @@
         "link" : "https:\/\/github.com\/ddunbar",
         "name" : "Daniel Dunbar"
       },
+      "reviewManagers" : [
+        {
+          "link" : "https:\/\/github.com\/ddunbar",
+          "name" : "Daniel Dunbar"
+        }
+      ],
       "sha" : "5fd52c8f02a4af59b04af43df51f7282327abfcd",
       "status" : {
         "state" : "implemented",
@@ -5438,6 +6512,12 @@
         "link" : "https:\/\/github.com\/lattner",
         "name" : "Chris Lattner"
       },
+      "reviewManagers" : [
+        {
+          "link" : "https:\/\/github.com\/lattner",
+          "name" : "Chris Lattner"
+        }
+      ],
       "sha" : "6f3cfb9fc952c1bdf7188cdb4b656840dacf13cc",
       "status" : {
         "state" : "implemented",
@@ -5459,6 +6539,12 @@
         "link" : "https:\/\/github.com\/lattner",
         "name" : "Chris Lattner"
       },
+      "reviewManagers" : [
+        {
+          "link" : "https:\/\/github.com\/lattner",
+          "name" : "Chris Lattner"
+        }
+      ],
       "sha" : "854ec865ef5f40048e7719f4e7e586098f6f5f71",
       "status" : {
         "state" : "implemented",
@@ -5500,6 +6586,12 @@
         "link" : "https:\/\/github.com\/DougGregor",
         "name" : "Doug Gregor"
       },
+      "reviewManagers" : [
+        {
+          "link" : "https:\/\/github.com\/DougGregor",
+          "name" : "Doug Gregor"
+        }
+      ],
       "sha" : "772376bbdbaf9f7f8dc83173bbd3a1aabaae9af3",
       "status" : {
         "state" : "implemented",
@@ -5529,6 +6621,12 @@
         "link" : "https:\/\/github.com\/lattner",
         "name" : "Chris Lattner"
       },
+      "reviewManagers" : [
+        {
+          "link" : "https:\/\/github.com\/lattner",
+          "name" : "Chris Lattner"
+        }
+      ],
       "sha" : "40a20d97d88e984c0f9a7c822e2ff8ce21c97fd4",
       "status" : {
         "state" : "implemented",
@@ -5558,6 +6656,12 @@
         "link" : "https:\/\/github.com\/tkremenek",
         "name" : "Ted Kremenek"
       },
+      "reviewManagers" : [
+        {
+          "link" : "https:\/\/github.com\/tkremenek",
+          "name" : "Ted Kremenek"
+        }
+      ],
       "sha" : "7ec3fa019402f92615d453b80c983e6840538f9f",
       "status" : {
         "state" : "implemented",
@@ -5599,6 +6703,12 @@
         "link" : "https:\/\/github.com\/rjmccall",
         "name" : "John McCall"
       },
+      "reviewManagers" : [
+        {
+          "link" : "https:\/\/github.com\/rjmccall",
+          "name" : "John McCall"
+        }
+      ],
       "sha" : "58fc221b71ebd07a2c8159f5f20d5e254da597ac",
       "status" : {
         "state" : "implemented",
@@ -5628,6 +6738,12 @@
         "link" : "https:\/\/github.com\/airspeedswift",
         "name" : "Ben Cohen"
       },
+      "reviewManagers" : [
+        {
+          "link" : "https:\/\/github.com\/airspeedswift",
+          "name" : "Ben Cohen"
+        }
+      ],
       "sha" : "a1e2c5a83c3ad689fda554e64fe10a4df4670a48",
       "status" : {
         "state" : "implemented",
@@ -5657,6 +6773,12 @@
         "link" : "https:\/\/github.com\/tkremenek",
         "name" : "Ted Kremenek"
       },
+      "reviewManagers" : [
+        {
+          "link" : "https:\/\/github.com\/tkremenek",
+          "name" : "Ted Kremenek"
+        }
+      ],
       "sha" : "a587ec18c401d81c93eb70b5f30afe429e1fc2ff",
       "status" : {
         "state" : "implemented",
@@ -5690,6 +6812,12 @@
         "link" : "https:\/\/github.com\/tkremenek",
         "name" : "Ted Kremenek"
       },
+      "reviewManagers" : [
+        {
+          "link" : "https:\/\/github.com\/tkremenek",
+          "name" : "Ted Kremenek"
+        }
+      ],
       "sha" : "8de170fe27b3ae36d8799544b54e4eb7b372d349",
       "status" : {
         "state" : "implemented",
@@ -5719,6 +6847,12 @@
         "link" : "https:\/\/github.com\/DougGregor",
         "name" : "Doug Gregor"
       },
+      "reviewManagers" : [
+        {
+          "link" : "https:\/\/github.com\/DougGregor",
+          "name" : "Doug Gregor"
+        }
+      ],
       "sha" : "917cbf034014a87161ad8aa597eb207bab11f855",
       "status" : {
         "state" : "implemented",
@@ -5748,6 +6882,12 @@
         "link" : "https:\/\/github.com\/tkremenek",
         "name" : "Ted Kremenek"
       },
+      "reviewManagers" : [
+        {
+          "link" : "https:\/\/github.com\/tkremenek",
+          "name" : "Ted Kremenek"
+        }
+      ],
       "sha" : "e14acb3eb47bca3d432967e7cd4a3ec6d73160ba",
       "status" : {
         "state" : "implemented",
@@ -5777,6 +6917,12 @@
         "link" : "https:\/\/github.com\/tkremenek",
         "name" : "Ted Kremenek"
       },
+      "reviewManagers" : [
+        {
+          "link" : "https:\/\/github.com\/tkremenek",
+          "name" : "Ted Kremenek"
+        }
+      ],
       "sha" : "7daee5b463e0fa70953a2447ce3a38baae2840f9",
       "status" : {
         "state" : "implemented",
@@ -5814,6 +6960,12 @@
         "link" : "https:\/\/github.com\/DougGregor",
         "name" : "Doug Gregor"
       },
+      "reviewManagers" : [
+        {
+          "link" : "https:\/\/github.com\/DougGregor",
+          "name" : "Doug Gregor"
+        }
+      ],
       "sha" : "ee60a8d2fb5af1d9e28d1085ac554f6fe19bd0dc",
       "status" : {
         "state" : "implemented",
@@ -5865,6 +7017,12 @@
         "link" : "https:\/\/github.com\/tkremenek",
         "name" : "Ted Kremenek"
       },
+      "reviewManagers" : [
+        {
+          "link" : "https:\/\/github.com\/tkremenek",
+          "name" : "Ted Kremenek"
+        }
+      ],
       "sha" : "55b18c7acb3d73cb15c7d4b15713ba4cc870eae5",
       "status" : {
         "state" : "implemented",
@@ -5894,6 +7052,12 @@
         "link" : "https:\/\/github.com\/tkremenek",
         "name" : "Ted Kremenek"
       },
+      "reviewManagers" : [
+        {
+          "link" : "https:\/\/github.com\/tkremenek",
+          "name" : "Ted Kremenek"
+        }
+      ],
       "sha" : "9d6a940864e839f7bbf893f3d40f7001a348f245",
       "status" : {
         "state" : "implemented",
@@ -5923,6 +7087,12 @@
         "link" : "https:\/\/github.com\/rjmccall",
         "name" : "John McCall"
       },
+      "reviewManagers" : [
+        {
+          "link" : "https:\/\/github.com\/rjmccall",
+          "name" : "John McCall"
+        }
+      ],
       "sha" : "e74c332e92b7865f2e0c50b5e08a4b8b32f9e303",
       "status" : {
         "state" : "implemented",
@@ -5976,6 +7146,12 @@
         "link" : "https:\/\/github.com\/airspeedswift\/",
         "name" : "Ben Cohen"
       },
+      "reviewManagers" : [
+        {
+          "link" : "https:\/\/github.com\/airspeedswift\/",
+          "name" : "Ben Cohen"
+        }
+      ],
       "sha" : "59b4d0722fddb276479416299affc59c6edf61c0",
       "status" : {
         "state" : "implemented",
@@ -6005,6 +7181,12 @@
         "link" : "https:\/\/github.com\/airspeedswift\/",
         "name" : "Ben Cohen"
       },
+      "reviewManagers" : [
+        {
+          "link" : "https:\/\/github.com\/airspeedswift\/",
+          "name" : "Ben Cohen"
+        }
+      ],
       "sha" : "b9a4c223846fc8092ef8aeaf46cb1a5e6f356880",
       "status" : {
         "state" : "implemented",
@@ -6042,6 +7224,12 @@
         "link" : "https:\/\/github.com\/DougGregor",
         "name" : "Doug Gregor"
       },
+      "reviewManagers" : [
+        {
+          "link" : "https:\/\/github.com\/DougGregor",
+          "name" : "Doug Gregor"
+        }
+      ],
       "sha" : "1c4d4b574571b43cde72caa91cbf3af2f5fb02f2",
       "status" : {
         "state" : "implemented",
@@ -6083,6 +7271,12 @@
         "link" : "https:\/\/github.com\/neonichu",
         "name" : "Boris Bügling"
       },
+      "reviewManagers" : [
+        {
+          "link" : "https:\/\/github.com\/neonichu",
+          "name" : "Boris Bügling"
+        }
+      ],
       "sha" : "de681db9e558dfabb833ecd3920cca7ffcf5bb45",
       "status" : {
         "state" : "implemented",
@@ -6124,6 +7318,12 @@
         "link" : "http:\/\/github.com\/AirspeedSwift\/",
         "name" : "Ben Cohen"
       },
+      "reviewManagers" : [
+        {
+          "link" : "http:\/\/github.com\/AirspeedSwift\/",
+          "name" : "Ben Cohen"
+        }
+      ],
       "sha" : "81744c6ea425df5532bec557d3ed8150f6390892",
       "status" : {
         "state" : "implemented",
@@ -6153,6 +7353,12 @@
         "link" : "https:\/\/github.com\/tkremenek",
         "name" : "Ted Kremenek"
       },
+      "reviewManagers" : [
+        {
+          "link" : "https:\/\/github.com\/tkremenek",
+          "name" : "Ted Kremenek"
+        }
+      ],
       "sha" : "4d5391bee184d4bfd9f86792e45d5c612614ef63",
       "status" : {
         "state" : "rejected"
@@ -6193,6 +7399,12 @@
         "link" : "https:\/\/github.com\/rjmccall",
         "name" : "John McCall"
       },
+      "reviewManagers" : [
+        {
+          "link" : "https:\/\/github.com\/rjmccall",
+          "name" : "John McCall"
+        }
+      ],
       "sha" : "559e60c55a46da0665d4e232d3a906cd442a4220",
       "status" : {
         "state" : "implemented",
@@ -6234,6 +7446,12 @@
         "link" : "https:\/\/github.com\/airspeedswift",
         "name" : "Ben Cohen"
       },
+      "reviewManagers" : [
+        {
+          "link" : "https:\/\/github.com\/airspeedswift",
+          "name" : "Ben Cohen"
+        }
+      ],
       "sha" : "f85cd48bcd738a135d6a82beb42354fb0f99c3d7",
       "status" : {
         "state" : "implemented",
@@ -6279,6 +7497,12 @@
         "link" : "https:\/\/github.com\/jckarter",
         "name" : "Joe Groff"
       },
+      "reviewManagers" : [
+        {
+          "link" : "https:\/\/github.com\/jckarter",
+          "name" : "Joe Groff"
+        }
+      ],
       "sha" : "ce6a0d5106469ea5a118f5495b60587680ae58fd",
       "status" : {
         "state" : "implemented",
@@ -6308,6 +7532,12 @@
         "link" : "https:\/\/github.com\/dabrahams",
         "name" : "Dave Abrahams"
       },
+      "reviewManagers" : [
+        {
+          "link" : "https:\/\/github.com\/dabrahams",
+          "name" : "Dave Abrahams"
+        }
+      ],
       "sha" : "df5aa065c7ed7614d8ed94d4145ffacee61b3a35",
       "status" : {
         "state" : "implemented",
@@ -6341,6 +7571,12 @@
         "link" : "https:\/\/github.com\/neonichu",
         "name" : "Boris Bügling"
       },
+      "reviewManagers" : [
+        {
+          "link" : "https:\/\/github.com\/neonichu",
+          "name" : "Boris Bügling"
+        }
+      ],
       "sha" : "7c7d3226255846148054e2e4f9f077923426d874",
       "status" : {
         "state" : "implemented",
@@ -6382,6 +7618,12 @@
         "link" : "https:\/\/github.com\/neonichu",
         "name" : "Boris Bügling"
       },
+      "reviewManagers" : [
+        {
+          "link" : "https:\/\/github.com\/neonichu",
+          "name" : "Boris Bügling"
+        }
+      ],
       "sha" : "def6f95c7d0bcfadd191816c658e4c42b0ed1701",
       "status" : {
         "state" : "implemented",
@@ -6423,6 +7665,12 @@
         "link" : "https:\/\/github.com\/DougGregor",
         "name" : "Doug Gregor"
       },
+      "reviewManagers" : [
+        {
+          "link" : "https:\/\/github.com\/DougGregor",
+          "name" : "Doug Gregor"
+        }
+      ],
       "sha" : "1d7f606b679c8df7d9737d266942e64b0dcde550",
       "status" : {
         "state" : "implemented",
@@ -6452,6 +7700,12 @@
         "link" : "https:\/\/github.com\/airspeedswift",
         "name" : "Ben Cohen"
       },
+      "reviewManagers" : [
+        {
+          "link" : "https:\/\/github.com\/airspeedswift",
+          "name" : "Ben Cohen"
+        }
+      ],
       "sha" : "7ecd637a2831d6f8c3d0c028fd79ff6b4538bf60",
       "status" : {
         "state" : "implemented",
@@ -6481,6 +7735,12 @@
         "link" : "https:\/\/github.com\/tkremenek",
         "name" : "Ted Kremenek"
       },
+      "reviewManagers" : [
+        {
+          "link" : "https:\/\/github.com\/tkremenek",
+          "name" : "Ted Kremenek"
+        }
+      ],
       "sha" : "a05a4e06a0a2ce015f578bc461727cc1214bacb2",
       "status" : {
         "state" : "implemented",
@@ -6510,6 +7770,12 @@
         "link" : "https:\/\/github.com\/rjmccall",
         "name" : "John McCall"
       },
+      "reviewManagers" : [
+        {
+          "link" : "https:\/\/github.com\/rjmccall",
+          "name" : "John McCall"
+        }
+      ],
       "sha" : "9fe4ecbd980387bca929acf63ca00bef5305b17d",
       "status" : {
         "state" : "implemented",
@@ -6543,6 +7809,12 @@
         "link" : "https:\/\/github.com\/lattner",
         "name" : "Chris Lattner"
       },
+      "reviewManagers" : [
+        {
+          "link" : "https:\/\/github.com\/lattner",
+          "name" : "Chris Lattner"
+        }
+      ],
       "sha" : "763158624275e36e34bb5b727bddfd0bf7cd05ea",
       "status" : {
         "state" : "implemented",
@@ -6572,6 +7844,12 @@
         "link" : "https:\/\/github.com\/tkremenek",
         "name" : "Ted Kremenek"
       },
+      "reviewManagers" : [
+        {
+          "link" : "https:\/\/github.com\/tkremenek",
+          "name" : "Ted Kremenek"
+        }
+      ],
       "sha" : "43828f15ba40eb2b7df60ee1e4308e92b3dd0214",
       "status" : {
         "state" : "implemented",
@@ -6605,6 +7883,12 @@
         "link" : "https:\/\/github.com\/rjmccall",
         "name" : "John McCall"
       },
+      "reviewManagers" : [
+        {
+          "link" : "https:\/\/github.com\/rjmccall",
+          "name" : "John McCall"
+        }
+      ],
       "sha" : "4c94f6ee45b26ffcf676776848e0167c56221de1",
       "status" : {
         "state" : "implemented",
@@ -6642,6 +7926,12 @@
         "link" : "https:\/\/github.com\/jckarter",
         "name" : "Joe Groff"
       },
+      "reviewManagers" : [
+        {
+          "link" : "https:\/\/github.com\/jckarter",
+          "name" : "Joe Groff"
+        }
+      ],
       "sha" : "d74ce4477c52bb1985fe60dd1cd4a904778c5aab",
       "status" : {
         "state" : "rejected"
@@ -6670,6 +7960,12 @@
         "link" : "https:\/\/github.com\/airspeedswift",
         "name" : "Ben Cohen"
       },
+      "reviewManagers" : [
+        {
+          "link" : "https:\/\/github.com\/airspeedswift",
+          "name" : "Ben Cohen"
+        }
+      ],
       "sha" : "f47cf887a148c39f247dfd028d9dafb03d560ce6",
       "status" : {
         "state" : "implemented",
@@ -6699,6 +7995,12 @@
         "link" : "https:\/\/github.com\/neonichu",
         "name" : "Boris Bügling"
       },
+      "reviewManagers" : [
+        {
+          "link" : "https:\/\/github.com\/neonichu",
+          "name" : "Boris Bügling"
+        }
+      ],
       "sha" : "ecf960870f6bc7c6558bf302bacb33dbfaedbefa",
       "status" : {
         "state" : "implemented",
@@ -6746,6 +8048,12 @@
         "link" : "https:\/\/github.com\/airspeedswift",
         "name" : "Ben Cohen"
       },
+      "reviewManagers" : [
+        {
+          "link" : "https:\/\/github.com\/airspeedswift",
+          "name" : "Ben Cohen"
+        }
+      ],
       "sha" : "17196a047e61750f1c57a1dcdaae5a42d87d0040",
       "status" : {
         "state" : "accepted"
@@ -6778,6 +8086,12 @@
         "link" : "https:\/\/github.com\/airspeedswift",
         "name" : "Ben Cohen"
       },
+      "reviewManagers" : [
+        {
+          "link" : "https:\/\/github.com\/airspeedswift",
+          "name" : "Ben Cohen"
+        }
+      ],
       "sha" : "507f7fd9d52050102b85a25e06dbcfe5484b325f",
       "status" : {
         "state" : "implemented",
@@ -6811,6 +8125,12 @@
         "link" : "https:\/\/github.com\/rjmccall",
         "name" : "John McCall"
       },
+      "reviewManagers" : [
+        {
+          "link" : "https:\/\/github.com\/rjmccall",
+          "name" : "John McCall"
+        }
+      ],
       "sha" : "c5cbcdb402101cd846cdafad99ccec17c480fbe1",
       "status" : {
         "state" : "rejected"
@@ -6839,6 +8159,12 @@
         "link" : "https:\/\/github.com\/jckarter",
         "name" : "Joe Groff"
       },
+      "reviewManagers" : [
+        {
+          "link" : "https:\/\/github.com\/jckarter",
+          "name" : "Joe Groff"
+        }
+      ],
       "sha" : "024899b1580c82fba798d27ece13779cc489c30b",
       "status" : {
         "state" : "withdrawn"
@@ -6885,6 +8211,12 @@
         "link" : "https:\/\/github.com\/tkremenek",
         "name" : "Ted Kremenek"
       },
+      "reviewManagers" : [
+        {
+          "link" : "https:\/\/github.com\/tkremenek",
+          "name" : "Ted Kremenek"
+        }
+      ],
       "sha" : "3c997ee9c4aa95706d01b6a2845070815f2491e8",
       "status" : {
         "state" : "implemented",
@@ -6930,6 +8262,12 @@
         "link" : "https:\/\/github.com\/rjmccall",
         "name" : "John McCall"
       },
+      "reviewManagers" : [
+        {
+          "link" : "https:\/\/github.com\/rjmccall",
+          "name" : "John McCall"
+        }
+      ],
       "sha" : "cdcb90b7e1bda68488fce36ef86b9161a67c93de",
       "status" : {
         "state" : "implemented",
@@ -6951,6 +8289,12 @@
         "link" : "https:\/\/github.com\/neonichu",
         "name" : "Boris Bügling"
       },
+      "reviewManagers" : [
+        {
+          "link" : "https:\/\/github.com\/neonichu",
+          "name" : "Boris Bügling"
+        }
+      ],
       "sha" : "533e5885b44624363110b64afaaa0455b1b3e8ab",
       "status" : {
         "state" : "implemented",
@@ -6998,6 +8342,12 @@
         "link" : "https:\/\/github.com\/airspeedswift",
         "name" : "Ben Cohen"
       },
+      "reviewManagers" : [
+        {
+          "link" : "https:\/\/github.com\/airspeedswift",
+          "name" : "Ben Cohen"
+        }
+      ],
       "sha" : "1151ae35ab558b9d068de621409e3a4d4e5b88c7",
       "status" : {
         "state" : "implemented",
@@ -7031,6 +8381,12 @@
         "link" : "https:\/\/github.com\/DougGregor",
         "name" : "Doug Gregor"
       },
+      "reviewManagers" : [
+        {
+          "link" : "https:\/\/github.com\/DougGregor",
+          "name" : "Doug Gregor"
+        }
+      ],
       "sha" : "2acc16717bd0e07fe5dba528294414f31db2f4a8",
       "status" : {
         "state" : "implemented",
@@ -7060,6 +8416,12 @@
         "link" : "https:\/\/github.com\/airspeedswift",
         "name" : "Ben Cohen"
       },
+      "reviewManagers" : [
+        {
+          "link" : "https:\/\/github.com\/airspeedswift",
+          "name" : "Ben Cohen"
+        }
+      ],
       "sha" : "b6e05bfe0ccc45c795b07dea24e19f981c1c6269",
       "status" : {
         "state" : "implemented",
@@ -7089,6 +8451,12 @@
         "link" : "https:\/\/github.com\/rjmccall",
         "name" : "John McCall"
       },
+      "reviewManagers" : [
+        {
+          "link" : "https:\/\/github.com\/rjmccall",
+          "name" : "John McCall"
+        }
+      ],
       "sha" : "62d9faef581bfe9b73094211e0e4dbb401a6cb47",
       "status" : {
         "state" : "implemented",
@@ -7118,6 +8486,12 @@
         "link" : "https:\/\/github.com\/jckarter",
         "name" : "Joe Groff"
       },
+      "reviewManagers" : [
+        {
+          "link" : "https:\/\/github.com\/jckarter",
+          "name" : "Joe Groff"
+        }
+      ],
       "sha" : "cb8ac69f6db493ea47d185817bc4137b14f10ce4",
       "status" : {
         "state" : "rejected"
@@ -7146,6 +8520,12 @@
         "link" : "https:\/\/github.com\/tkremenek",
         "name" : "Ted Kremenek"
       },
+      "reviewManagers" : [
+        {
+          "link" : "https:\/\/github.com\/tkremenek",
+          "name" : "Ted Kremenek"
+        }
+      ],
       "sha" : "a9fc872825c7a375d48cedd7ac2a039c19beec74",
       "status" : {
         "state" : "implemented",
@@ -7175,6 +8555,12 @@
         "link" : "https:\/\/github.com\/lattner",
         "name" : "Chris Lattner"
       },
+      "reviewManagers" : [
+        {
+          "link" : "https:\/\/github.com\/lattner",
+          "name" : "Chris Lattner"
+        }
+      ],
       "sha" : "dca603f18c254f146ce1b7adc7dff1ac70ba2f03",
       "status" : {
         "state" : "implemented",
@@ -7204,6 +8590,12 @@
         "link" : "https:\/\/github.com\/rjmccall",
         "name" : "John McCall"
       },
+      "reviewManagers" : [
+        {
+          "link" : "https:\/\/github.com\/rjmccall",
+          "name" : "John McCall"
+        }
+      ],
       "sha" : "e9d85a165868c10d43f0a1eece623eb52affab5b",
       "status" : {
         "state" : "implemented",
@@ -7245,6 +8637,12 @@
         "link" : "https:\/\/github.com\/lattner",
         "name" : "Chris Lattner"
       },
+      "reviewManagers" : [
+        {
+          "link" : "https:\/\/github.com\/lattner",
+          "name" : "Chris Lattner"
+        }
+      ],
       "sha" : "d7e7f7d7331a9ab825684a8b78b01fd6cb36af94",
       "status" : {
         "state" : "implemented",
@@ -7266,6 +8664,12 @@
         "link" : "https:\/\/github.com\/neonichu",
         "name" : "Boris Bügling"
       },
+      "reviewManagers" : [
+        {
+          "link" : "https:\/\/github.com\/neonichu",
+          "name" : "Boris Bügling"
+        }
+      ],
       "sha" : "1975c500f0f83aeccde52d2d487945b634ffaf13",
       "status" : {
         "state" : "implemented",
@@ -7295,6 +8699,12 @@
         "link" : "https:\/\/github.com\/DougGregor",
         "name" : "Doug Gregor"
       },
+      "reviewManagers" : [
+        {
+          "link" : "https:\/\/github.com\/DougGregor",
+          "name" : "Doug Gregor"
+        }
+      ],
       "sha" : "f8877796f8753084d8e1b2a11b0a280e936441e1",
       "status" : {
         "state" : "implemented",
@@ -7316,6 +8726,12 @@
         "link" : "https:\/\/github.com\/neonichu",
         "name" : "Boris Bügling"
       },
+      "reviewManagers" : [
+        {
+          "link" : "https:\/\/github.com\/neonichu",
+          "name" : "Boris Bügling"
+        }
+      ],
       "sha" : "ec98c23e1edfd61c9f8defd2195d31f1911f43fa",
       "status" : {
         "state" : "implemented",
@@ -7359,6 +8775,12 @@
         "link" : "https:\/\/github.com\/tkremenek",
         "name" : "Ted Kremenek"
       },
+      "reviewManagers" : [
+        {
+          "link" : "https:\/\/github.com\/tkremenek",
+          "name" : "Ted Kremenek"
+        }
+      ],
       "sha" : "2acdb63d64f9d9b727a1c0971a72fb895ea151cb",
       "status" : {
         "state" : "implemented",
@@ -7392,6 +8814,16 @@
         "link" : "https:\/\/github.com\/DougGregor",
         "name" : "Doug Gregor"
       },
+      "reviewManagers" : [
+        {
+          "link" : "https:\/\/github.com\/DougGregor",
+          "name" : "Doug Gregor"
+        },
+        {
+          "link" : "https:\/\/github.com\/AirspeedSwift",
+          "name" : "Ben Cohen"
+        }
+      ],
       "sha" : "9e64b5a25fe164c1b1dd076f91bb7b089db3da3e",
       "status" : {
         "state" : "implemented",
@@ -7421,6 +8853,12 @@
         "link" : "https:\/\/github.com\/rjmccall",
         "name" : "John McCall"
       },
+      "reviewManagers" : [
+        {
+          "link" : "https:\/\/github.com\/rjmccall",
+          "name" : "John McCall"
+        }
+      ],
       "sha" : "aaa5e3486b0564c17dd5a1fe84d3ef1bdcf308c2",
       "status" : {
         "state" : "implemented",
@@ -7450,6 +8888,12 @@
         "link" : "https:\/\/github.com\/tkremenek",
         "name" : "Ted Kremenek"
       },
+      "reviewManagers" : [
+        {
+          "link" : "https:\/\/github.com\/tkremenek",
+          "name" : "Ted Kremenek"
+        }
+      ],
       "sha" : "4b6522f683640ca9e3d22541096a496724e8b055",
       "status" : {
         "state" : "implemented",
@@ -7487,6 +8931,12 @@
         "link" : "https:\/\/github.com\/airspeedswift",
         "name" : "Ben Cohen"
       },
+      "reviewManagers" : [
+        {
+          "link" : "https:\/\/github.com\/airspeedswift",
+          "name" : "Ben Cohen"
+        }
+      ],
       "sha" : "15a237095b03ebbd116ec2a6c5a91a06d8a67d46",
       "status" : {
         "state" : "rejected"
@@ -7519,6 +8969,12 @@
         "link" : "https:\/\/github.com\/airspeedswift",
         "name" : "Ben Cohen"
       },
+      "reviewManagers" : [
+        {
+          "link" : "https:\/\/github.com\/airspeedswift",
+          "name" : "Ben Cohen"
+        }
+      ],
       "sha" : "19e921660d2a1ba7ed11c8e58f3643cb82d19103",
       "status" : {
         "state" : "implemented",
@@ -7548,6 +9004,12 @@
         "link" : "https:\/\/github.com\/tkremenek",
         "name" : "Ted Kremenek"
       },
+      "reviewManagers" : [
+        {
+          "link" : "https:\/\/github.com\/tkremenek",
+          "name" : "Ted Kremenek"
+        }
+      ],
       "sha" : "2e19b1556078d52472e9e68951f92901712b332a",
       "status" : {
         "state" : "implemented",
@@ -7589,6 +9051,12 @@
         "link" : "https:\/\/github.com\/rjmccall",
         "name" : "John McCall"
       },
+      "reviewManagers" : [
+        {
+          "link" : "https:\/\/github.com\/rjmccall",
+          "name" : "John McCall"
+        }
+      ],
       "sha" : "78b6e7a3c8a3576f6900209c783e9d93868dc647",
       "status" : {
         "state" : "accepted"
@@ -7617,6 +9085,12 @@
         "link" : "https:\/\/github.com\/DougGregor",
         "name" : "Doug Gregor"
       },
+      "reviewManagers" : [
+        {
+          "link" : "https:\/\/github.com\/DougGregor",
+          "name" : "Doug Gregor"
+        }
+      ],
       "sha" : "69527d9163714f5f8dab45f29180a552a08b575b",
       "status" : {
         "state" : "implemented",
@@ -7658,6 +9132,12 @@
         "link" : "https:\/\/github.com\/tkremenek",
         "name" : "Ted Kremenek"
       },
+      "reviewManagers" : [
+        {
+          "link" : "https:\/\/github.com\/tkremenek",
+          "name" : "Ted Kremenek"
+        }
+      ],
       "sha" : "75b250aa83e0b725b58688f7b3445c252ea6e805",
       "status" : {
         "state" : "implemented",
@@ -7703,6 +9183,12 @@
         "link" : "https:\/\/github.com\/airspeedswift",
         "name" : "Ben Cohen"
       },
+      "reviewManagers" : [
+        {
+          "link" : "https:\/\/github.com\/airspeedswift",
+          "name" : "Ben Cohen"
+        }
+      ],
       "sha" : "2986b4b77290bcf1dc4157ad983f327dfa4e7360",
       "status" : {
         "state" : "implemented",
@@ -7728,6 +9214,12 @@
         "link" : "https:\/\/github.com\/tkremenek",
         "name" : "Ted Kremenek"
       },
+      "reviewManagers" : [
+        {
+          "link" : "https:\/\/github.com\/tkremenek",
+          "name" : "Ted Kremenek"
+        }
+      ],
       "sha" : "d73191a9fbd95ade6aba605657e9c2eec9286b98",
       "status" : {
         "state" : "returnedForRevision"
@@ -7762,6 +9254,12 @@
         "link" : "https:\/\/github.com\/rjmccall",
         "name" : "John McCall"
       },
+      "reviewManagers" : [
+        {
+          "link" : "https:\/\/github.com\/rjmccall",
+          "name" : "John McCall"
+        }
+      ],
       "sha" : "9b5e896eff783c80e6f07d0ee00ad6142396d11a",
       "status" : {
         "state" : "implemented",
@@ -7795,6 +9293,12 @@
         "link" : "https:\/\/github.com\/tkremenek",
         "name" : "Ted Kremenek"
       },
+      "reviewManagers" : [
+        {
+          "link" : "https:\/\/github.com\/tkremenek",
+          "name" : "Ted Kremenek"
+        }
+      ],
       "sha" : "b0ef216db582ff15084b4550e9bf7694df66556b",
       "status" : {
         "state" : "implemented",
@@ -7828,6 +9332,12 @@
         "link" : "https:\/\/github.com\/lattner",
         "name" : "Chris Lattner"
       },
+      "reviewManagers" : [
+        {
+          "link" : "https:\/\/github.com\/lattner",
+          "name" : "Chris Lattner"
+        }
+      ],
       "sha" : "c84e66ab01334a25dd4f677e0d28a6556e6978c1",
       "status" : {
         "state" : "implemented",
@@ -7857,6 +9367,12 @@
         "link" : "https:\/\/github.com\/DougGregor",
         "name" : "Doug Gregor"
       },
+      "reviewManagers" : [
+        {
+          "link" : "https:\/\/github.com\/DougGregor",
+          "name" : "Doug Gregor"
+        }
+      ],
       "sha" : "ca63840d4f6fdfc5abc8542268f2152bf757cc98",
       "status" : {
         "state" : "implemented",
@@ -7886,6 +9402,12 @@
         "link" : "https:\/\/github.com\/airspeedswift",
         "name" : "Ben Cohen"
       },
+      "reviewManagers" : [
+        {
+          "link" : "https:\/\/github.com\/airspeedswift",
+          "name" : "Ben Cohen"
+        }
+      ],
       "sha" : "7e3cf214a8d4f57a441db491cdce18d8d04603d7",
       "status" : {
         "state" : "implemented",
@@ -7915,6 +9437,12 @@
         "link" : "https:\/\/github.com\/tkremenek",
         "name" : "Ted Kremenek"
       },
+      "reviewManagers" : [
+        {
+          "link" : "https:\/\/github.com\/tkremenek",
+          "name" : "Ted Kremenek"
+        }
+      ],
       "sha" : "190d91e6e88f231763cb0c9e71dbc27c4d6c7361",
       "status" : {
         "state" : "rejected"
@@ -7947,6 +9475,12 @@
         "link" : "https:\/\/github.com\/tkremenek",
         "name" : "Ted Kremenek"
       },
+      "reviewManagers" : [
+        {
+          "link" : "https:\/\/github.com\/tkremenek",
+          "name" : "Ted Kremenek"
+        }
+      ],
       "sha" : "e0717264003c3bfa20276a1c7698af9e3e10f3cb",
       "status" : {
         "state" : "returnedForRevision"
@@ -7971,6 +9505,12 @@
         "link" : "https:\/\/github.com\/rjmccall",
         "name" : "John McCall"
       },
+      "reviewManagers" : [
+        {
+          "link" : "https:\/\/github.com\/rjmccall",
+          "name" : "John McCall"
+        }
+      ],
       "sha" : "9f42f0867c96e2d2b8f156fcb72986e91cc26bfa",
       "status" : {
         "state" : "implemented",
@@ -8000,6 +9540,12 @@
         "link" : "https:\/\/github.com\/airspeedswift",
         "name" : "Ben Cohen"
       },
+      "reviewManagers" : [
+        {
+          "link" : "https:\/\/github.com\/airspeedswift",
+          "name" : "Ben Cohen"
+        }
+      ],
       "sha" : "ff167fbb1b592c6fa176f9f2a63cd4665d56a807",
       "status" : {
         "state" : "returnedForRevision"
@@ -8032,6 +9578,12 @@
         "link" : "https:\/\/github.com\/rjmccall",
         "name" : "John McCall"
       },
+      "reviewManagers" : [
+        {
+          "link" : "https:\/\/github.com\/rjmccall",
+          "name" : "John McCall"
+        }
+      ],
       "sha" : "fbd6bc472465ad2ed0e5662aa9bc0a7041f98081",
       "status" : {
         "state" : "implemented",
@@ -8065,6 +9617,12 @@
         "link" : "https:\/\/github.com\/airspeedswift",
         "name" : "Ben Cohen"
       },
+      "reviewManagers" : [
+        {
+          "link" : "https:\/\/github.com\/airspeedswift",
+          "name" : "Ben Cohen"
+        }
+      ],
       "sha" : "48fcc60f47c9aaddaaeedd2dbd8fac9858c562a9",
       "status" : {
         "state" : "implemented",
@@ -8094,6 +9652,12 @@
         "link" : "https:\/\/github.com\/jckarter",
         "name" : "Joe Groff"
       },
+      "reviewManagers" : [
+        {
+          "link" : "https:\/\/github.com\/jckarter",
+          "name" : "Joe Groff"
+        }
+      ],
       "sha" : "447a02c7f975f24467a3db52088e8348d661c19a",
       "status" : {
         "state" : "returnedForRevision"
@@ -8128,6 +9692,12 @@
         "link" : "https:\/\/github.com\/tkremenek",
         "name" : "Ted Kremenek"
       },
+      "reviewManagers" : [
+        {
+          "link" : "https:\/\/github.com\/tkremenek",
+          "name" : "Ted Kremenek"
+        }
+      ],
       "sha" : "826f27abe96b2ec03a990a7f5743d760f224f896",
       "status" : {
         "state" : "implemented",
@@ -8189,6 +9759,12 @@
         "link" : "https:\/\/github.com\/tkremenek",
         "name" : "Ted Kremenek"
       },
+      "reviewManagers" : [
+        {
+          "link" : "https:\/\/github.com\/tkremenek",
+          "name" : "Ted Kremenek"
+        }
+      ],
       "sha" : "a95e3eec1c947744219e3cb11f4d80ab2fd226ac",
       "status" : {
         "state" : "implemented",
@@ -8218,6 +9794,12 @@
         "link" : "https:\/\/github.com\/rjmccall",
         "name" : "John McCall"
       },
+      "reviewManagers" : [
+        {
+          "link" : "https:\/\/github.com\/rjmccall",
+          "name" : "John McCall"
+        }
+      ],
       "sha" : "fcb605aee2164c031ca52d92165ada0828f8927f",
       "status" : {
         "state" : "returnedForRevision"
@@ -8246,6 +9828,12 @@
         "link" : "https:\/\/github.com\/airspeedswift",
         "name" : "Ben Cohen"
       },
+      "reviewManagers" : [
+        {
+          "link" : "https:\/\/github.com\/airspeedswift",
+          "name" : "Ben Cohen"
+        }
+      ],
       "sha" : "b4de6b3cdd6af2ccfd980d200731fae8fb292ac6",
       "status" : {
         "state" : "implemented",
@@ -8275,6 +9863,12 @@
         "link" : "https:\/\/github.com\/jckarter",
         "name" : "Joe Groff"
       },
+      "reviewManagers" : [
+        {
+          "link" : "https:\/\/github.com\/jckarter",
+          "name" : "Joe Groff"
+        }
+      ],
       "sha" : "ab3e411b6f39ddaedd99566a450814b974ad2e6a",
       "status" : {
         "state" : "implemented",
@@ -8304,6 +9898,12 @@
         "link" : "https:\/\/github.com\/airspeedswift",
         "name" : "Ben Cohen"
       },
+      "reviewManagers" : [
+        {
+          "link" : "https:\/\/github.com\/airspeedswift",
+          "name" : "Ben Cohen"
+        }
+      ],
       "sha" : "782c01c1d9985cab5f2a48976eb02ae70ba5ce0e",
       "status" : {
         "state" : "implemented",
@@ -8345,6 +9945,12 @@
         "link" : "https:\/\/github.com\/tkremenek",
         "name" : "Ted Kremenek"
       },
+      "reviewManagers" : [
+        {
+          "link" : "https:\/\/github.com\/tkremenek",
+          "name" : "Ted Kremenek"
+        }
+      ],
       "sha" : "272a4386ab14d7d1ebfb42c8df3f87938e19908d",
       "status" : {
         "state" : "implemented",
@@ -8390,6 +9996,12 @@
         "link" : "https:\/\/github.com\/rjmccall",
         "name" : "John McCall"
       },
+      "reviewManagers" : [
+        {
+          "link" : "https:\/\/github.com\/rjmccall",
+          "name" : "John McCall"
+        }
+      ],
       "sha" : "f188ba482a9e7050dc955f2adf167f28fa6f679b",
       "status" : {
         "state" : "implemented",
@@ -8441,6 +10053,12 @@
         "link" : "https:\/\/github.com\/neonichu",
         "name" : "Boris Buegling"
       },
+      "reviewManagers" : [
+        {
+          "link" : "https:\/\/github.com\/neonichu",
+          "name" : "Boris Buegling"
+        }
+      ],
       "sha" : "f83bbad6efcfdba7030dff660a4b283751a6fbb2",
       "status" : {
         "state" : "implemented",
@@ -8496,6 +10114,12 @@
         "link" : "https:\/\/github.com\/neonichu",
         "name" : "Boris Bügling"
       },
+      "reviewManagers" : [
+        {
+          "link" : "https:\/\/github.com\/neonichu",
+          "name" : "Boris Bügling"
+        }
+      ],
       "sha" : "993b70a5e694fef8abc211678c3cf2ca665cbcda",
       "status" : {
         "state" : "implemented",
@@ -8531,6 +10155,12 @@
         "link" : "https:\/\/github.com\/neonichu",
         "name" : "Boris Buegling"
       },
+      "reviewManagers" : [
+        {
+          "link" : "https:\/\/github.com\/neonichu",
+          "name" : "Boris Buegling"
+        }
+      ],
       "sha" : "720d6bc9f6e36201709d46cefdabd4c007e82425",
       "status" : {
         "state" : "implemented",
@@ -8556,6 +10186,12 @@
         "link" : "https:\/\/github.com\/airspeedswift\/",
         "name" : "Ben Cohen"
       },
+      "reviewManagers" : [
+        {
+          "link" : "https:\/\/github.com\/airspeedswift\/",
+          "name" : "Ben Cohen"
+        }
+      ],
       "sha" : "68a70169514d73063bc175e4ac37d1fe6927b4c4",
       "status" : {
         "state" : "implemented",
@@ -8585,6 +10221,12 @@
         "link" : "https:\/\/github.com\/jckarter",
         "name" : "Joe Groff"
       },
+      "reviewManagers" : [
+        {
+          "link" : "https:\/\/github.com\/jckarter",
+          "name" : "Joe Groff"
+        }
+      ],
       "sha" : "0129be339a2fbd3dd64865494bd35839601e6213",
       "status" : {
         "state" : "rejected"
@@ -8613,6 +10255,12 @@
         "link" : "https:\/\/github.com\/DougGregor",
         "name" : "Doug Gregor"
       },
+      "reviewManagers" : [
+        {
+          "link" : "https:\/\/github.com\/DougGregor",
+          "name" : "Doug Gregor"
+        }
+      ],
       "sha" : "48bb92369692e9d4f5634e943a6f023fd887f7a1",
       "status" : {
         "state" : "implemented",
@@ -8642,6 +10290,12 @@
         "link" : "https:\/\/github.com\/airspeedswift",
         "name" : "Ben Cohen"
       },
+      "reviewManagers" : [
+        {
+          "link" : "https:\/\/github.com\/airspeedswift",
+          "name" : "Ben Cohen"
+        }
+      ],
       "sha" : "83e40bf265804296abd9b9fe1d7c5f5b8c293d7e",
       "status" : {
         "state" : "implemented",
@@ -8677,6 +10331,12 @@
         "link" : "https:\/\/github.com\/neonichu",
         "name" : "Boris Buegling"
       },
+      "reviewManagers" : [
+        {
+          "link" : "https:\/\/github.com\/neonichu",
+          "name" : "Boris Buegling"
+        }
+      ],
       "sha" : "5f253cdbf3b488bc3cd3fdc0a72cfdb0af757229",
       "status" : {
         "state" : "implemented",
@@ -8718,6 +10378,12 @@
         "link" : "https:\/\/github.com\/airspeedswift",
         "name" : "Ben Cohen"
       },
+      "reviewManagers" : [
+        {
+          "link" : "https:\/\/github.com\/airspeedswift",
+          "name" : "Ben Cohen"
+        }
+      ],
       "sha" : "6bb53f18ebacdf15b42304082491b8f5131983fe",
       "status" : {
         "state" : "implemented",
@@ -8747,6 +10413,12 @@
         "link" : "https:\/\/github.com\/rjmccall",
         "name" : "John McCall"
       },
+      "reviewManagers" : [
+        {
+          "link" : "https:\/\/github.com\/rjmccall",
+          "name" : "John McCall"
+        }
+      ],
       "sha" : "b837d99485ae365cb58b73cde43e2dd76744f8ff",
       "status" : {
         "state" : "implemented",
@@ -8796,6 +10468,12 @@
         "link" : "https:\/\/github.com\/tomerd",
         "name" : "Tom Doron"
       },
+      "reviewManagers" : [
+        {
+          "link" : "https:\/\/github.com\/tomerd",
+          "name" : "Tom Doron"
+        }
+      ],
       "sha" : "204ff7e2ba213a6bb590afaaa4c33d0f926fdeaf",
       "status" : {
         "state" : "implemented",
@@ -8817,6 +10495,12 @@
         "link" : "https:\/\/github.com\/jckarter",
         "name" : "Joe Groff"
       },
+      "reviewManagers" : [
+        {
+          "link" : "https:\/\/github.com\/jckarter",
+          "name" : "Joe Groff"
+        }
+      ],
       "sha" : "77a5489906b6dca72dbaf9677b90d9b355ef7852",
       "status" : {
         "state" : "implemented",
@@ -8858,6 +10542,12 @@
         "link" : "https:\/\/github.com\/compnerd",
         "name" : "Saleem Abdulrasool"
       },
+      "reviewManagers" : [
+        {
+          "link" : "https:\/\/github.com\/compnerd",
+          "name" : "Saleem Abdulrasool"
+        }
+      ],
       "sha" : "21526400bbc58377ccb28380572ba8bcdbf2a38a",
       "status" : {
         "state" : "accepted"
@@ -8886,6 +10576,12 @@
         "link" : "https:\/\/github.com\/compnerd",
         "name" : "Saleem Abdulrasool"
       },
+      "reviewManagers" : [
+        {
+          "link" : "https:\/\/github.com\/compnerd",
+          "name" : "Saleem Abdulrasool"
+        }
+      ],
       "sha" : "3ec42bab994c0139e0356a165ead5836af1a1d78",
       "status" : {
         "state" : "implemented",
@@ -8915,6 +10611,12 @@
         "link" : "https:\/\/github.com\/tomerd",
         "name" : "Tom Doron"
       },
+      "reviewManagers" : [
+        {
+          "link" : "https:\/\/github.com\/tomerd",
+          "name" : "Tom Doron"
+        }
+      ],
       "sha" : "0bcfa20a2cbb75368ef331fc1ef004312578921b",
       "status" : {
         "state" : "implemented",
@@ -8944,6 +10646,12 @@
         "link" : "https:\/\/github.com\/rjmccall",
         "name" : "John McCall"
       },
+      "reviewManagers" : [
+        {
+          "link" : "https:\/\/github.com\/rjmccall",
+          "name" : "John McCall"
+        }
+      ],
       "sha" : "4399a100cfc0a3f7e4f3b09f579513020c586041",
       "status" : {
         "state" : "implemented",
@@ -8973,6 +10681,12 @@
         "link" : "https:\/\/github.com\/DougGregor",
         "name" : "Doug Gregor"
       },
+      "reviewManagers" : [
+        {
+          "link" : "https:\/\/github.com\/DougGregor",
+          "name" : "Doug Gregor"
+        }
+      ],
       "sha" : "27fd9da22c71185dfe649d0139ca632c231e1576",
       "status" : {
         "state" : "implemented",
@@ -9002,6 +10716,12 @@
         "link" : "https:\/\/github.com\/jckarter",
         "name" : "Joe Groff"
       },
+      "reviewManagers" : [
+        {
+          "link" : "https:\/\/github.com\/jckarter",
+          "name" : "Joe Groff"
+        }
+      ],
       "sha" : "2dbcbd23884c50930eca3c1cbb0993761230c9af",
       "status" : {
         "state" : "previewing"
@@ -9026,6 +10746,12 @@
         "link" : "https:\/\/github.com\/compnerd",
         "name" : "Saleem Abdulrasool"
       },
+      "reviewManagers" : [
+        {
+          "link" : "https:\/\/github.com\/compnerd",
+          "name" : "Saleem Abdulrasool"
+        }
+      ],
       "sha" : "a0313d6e0087fbddf18bdc8f2ee90fb1b210ad9d",
       "status" : {
         "state" : "implemented",
@@ -9055,6 +10781,12 @@
         "link" : "https:\/\/github.com\/tkremenek",
         "name" : "Ted Kremenek"
       },
+      "reviewManagers" : [
+        {
+          "link" : "https:\/\/github.com\/tkremenek",
+          "name" : "Ted Kremenek"
+        }
+      ],
       "sha" : "965167c85755a1cc2e7325a3f9085c096f2bf275",
       "status" : {
         "state" : "implemented",
@@ -9092,6 +10824,12 @@
         "link" : "https:\/\/github.com\/tomerd",
         "name" : "Tom Doron"
       },
+      "reviewManagers" : [
+        {
+          "link" : "https:\/\/github.com\/tomerd",
+          "name" : "Tom Doron"
+        }
+      ],
       "sha" : "6bcce67935453080fb7f266a17b6c5243b969109",
       "status" : {
         "state" : "implemented",
@@ -9129,6 +10867,12 @@
         "link" : "https:\/\/github.com\/tomerd",
         "name" : "Tom Doron"
       },
+      "reviewManagers" : [
+        {
+          "link" : "https:\/\/github.com\/tomerd",
+          "name" : "Tom Doron"
+        }
+      ],
       "sha" : "9cfafb083233d26024562eec621e905b92d871d4",
       "status" : {
         "state" : "implemented",
@@ -9168,6 +10912,12 @@
         "link" : "https:\/\/github.com\/lattner",
         "name" : "Chris Lattner"
       },
+      "reviewManagers" : [
+        {
+          "link" : "https:\/\/github.com\/lattner",
+          "name" : "Chris Lattner"
+        }
+      ],
       "sha" : "2aec32f6cd2f5b17edd3fbf6859f063655b03dc1",
       "status" : {
         "state" : "implemented",
@@ -9197,6 +10947,12 @@
         "link" : "https:\/\/github.com\/tomerd",
         "name" : "Tom Doron"
       },
+      "reviewManagers" : [
+        {
+          "link" : "https:\/\/github.com\/tomerd",
+          "name" : "Tom Doron"
+        }
+      ],
       "sha" : "31aa5593b712e6d31901d5540bb84d7aed6b6378",
       "status" : {
         "state" : "implemented",
@@ -9238,6 +10994,12 @@
         "link" : "https:\/\/github.com\/compnerd",
         "name" : "Saleem Abdulrasool"
       },
+      "reviewManagers" : [
+        {
+          "link" : "https:\/\/github.com\/compnerd",
+          "name" : "Saleem Abdulrasool"
+        }
+      ],
       "sha" : "6bbe546b9db8c1573de332140872b77da89a39d5",
       "status" : {
         "state" : "implemented",
@@ -9263,6 +11025,12 @@
         "link" : "https:\/\/github.com\/airspeedswift",
         "name" : "Ben Cohen"
       },
+      "reviewManagers" : [
+        {
+          "link" : "https:\/\/github.com\/airspeedswift",
+          "name" : "Ben Cohen"
+        }
+      ],
       "sha" : "81ed1153c629423373a5425d96024bff9bad1989",
       "status" : {
         "state" : "implemented",
@@ -9284,6 +11052,12 @@
         "link" : "https:\/\/github.com\/lattner",
         "name" : "Chris Lattner"
       },
+      "reviewManagers" : [
+        {
+          "link" : "https:\/\/github.com\/lattner",
+          "name" : "Chris Lattner"
+        }
+      ],
       "sha" : "a0caa5de14189ec064f2c0bb6404af675374cb31",
       "status" : {
         "state" : "implemented",
@@ -9317,6 +11091,12 @@
         "link" : "https:\/\/github.com\/DougGregor",
         "name" : "Doug Gregor"
       },
+      "reviewManagers" : [
+        {
+          "link" : "https:\/\/github.com\/DougGregor",
+          "name" : "Doug Gregor"
+        }
+      ],
       "sha" : "3f491cafb410c75f64f3284554120071fea10f48",
       "status" : {
         "state" : "implemented",
@@ -9354,6 +11134,12 @@
         "link" : "https:\/\/github.com\/jckarter",
         "name" : "Joe Groff"
       },
+      "reviewManagers" : [
+        {
+          "link" : "https:\/\/github.com\/jckarter",
+          "name" : "Joe Groff"
+        }
+      ],
       "sha" : "a5896abceedf447157e21e7982541ce864b9a19f",
       "status" : {
         "state" : "implemented",
@@ -9387,6 +11173,12 @@
         "link" : "https:\/\/github.com\/airspeedswift",
         "name" : "Ben Cohen"
       },
+      "reviewManagers" : [
+        {
+          "link" : "https:\/\/github.com\/airspeedswift",
+          "name" : "Ben Cohen"
+        }
+      ],
       "sha" : "39abd0ecb12770c47e8e567b42b4a0d7194879e6",
       "status" : {
         "state" : "implemented",
@@ -9416,6 +11208,12 @@
         "link" : "https:\/\/github.com\/tomerd",
         "name" : "Tom Doron"
       },
+      "reviewManagers" : [
+        {
+          "link" : "https:\/\/github.com\/tomerd",
+          "name" : "Tom Doron"
+        }
+      ],
       "sha" : "a2f1ac6b6c4b987b762eabfc19a9439a5cf82557",
       "status" : {
         "state" : "accepted"
@@ -9448,6 +11246,12 @@
         "link" : "https:\/\/github.com\/rjmccall",
         "name" : "John McCall"
       },
+      "reviewManagers" : [
+        {
+          "link" : "https:\/\/github.com\/rjmccall",
+          "name" : "John McCall"
+        }
+      ],
       "sha" : "a0bb795637cbd02d023b531e2c017b970b20004b",
       "status" : {
         "state" : "implemented",
@@ -9477,6 +11281,12 @@
         "link" : "https:\/\/github.com\/tomerd",
         "name" : "Tom Doron"
       },
+      "reviewManagers" : [
+        {
+          "link" : "https:\/\/github.com\/tomerd",
+          "name" : "Tom Doron"
+        }
+      ],
       "sha" : "c8b4af215a3e4f8db8dfca4f666af0bb4d8dc963",
       "status" : {
         "state" : "implemented",
@@ -9510,6 +11320,12 @@
         "link" : "https:\/\/github.com\/airspeedswift",
         "name" : "Ben Cohen"
       },
+      "reviewManagers" : [
+        {
+          "link" : "https:\/\/github.com\/airspeedswift",
+          "name" : "Ben Cohen"
+        }
+      ],
       "sha" : "7ead7e314056154bda242879f36fd5de7ca8b8a8",
       "status" : {
         "state" : "implemented",
@@ -9535,6 +11351,12 @@
         "link" : "https:\/\/github.com\/tomerd",
         "name" : "Tom Doron"
       },
+      "reviewManagers" : [
+        {
+          "link" : "https:\/\/github.com\/tomerd",
+          "name" : "Tom Doron"
+        }
+      ],
       "sha" : "eefe754cc963441e395c5570bb35f6e1c4e76827",
       "status" : {
         "state" : "implemented",
@@ -9568,6 +11390,12 @@
         "link" : "https:\/\/github.com\/jckarter",
         "name" : "Joe Groff"
       },
+      "reviewManagers" : [
+        {
+          "link" : "https:\/\/github.com\/jckarter",
+          "name" : "Joe Groff"
+        }
+      ],
       "sha" : "9fcfec964476c99d6f8b208c2b5a000400f47565",
       "status" : {
         "state" : "implemented",
@@ -9597,6 +11425,12 @@
         "link" : "https:\/\/github.com\/tkremenek",
         "name" : "Ted Kremenek"
       },
+      "reviewManagers" : [
+        {
+          "link" : "https:\/\/github.com\/tkremenek",
+          "name" : "Ted Kremenek"
+        }
+      ],
       "sha" : "1d58e9c5cb09893a4fb5626bd4a23bcc36e256b1",
       "status" : {
         "state" : "implemented",
@@ -9626,6 +11460,12 @@
         "link" : "https:\/\/github.com\/compnerd",
         "name" : "Saleem Abdulrasool"
       },
+      "reviewManagers" : [
+        {
+          "link" : "https:\/\/github.com\/compnerd",
+          "name" : "Saleem Abdulrasool"
+        }
+      ],
       "sha" : "c086807efba2785c27d74282ae5ded73cb7eff9a",
       "status" : {
         "state" : "implemented",
@@ -9675,6 +11515,12 @@
         "link" : "https:\/\/github.com\/jckarter",
         "name" : "Joe Groff"
       },
+      "reviewManagers" : [
+        {
+          "link" : "https:\/\/github.com\/jckarter",
+          "name" : "Joe Groff"
+        }
+      ],
       "sha" : "39d7025c20e1912b2eaef968e0a4fa93b7ceec39",
       "status" : {
         "state" : "implemented",
@@ -9716,6 +11562,12 @@
         "link" : "https:\/\/github.com\/DougGregor",
         "name" : "Doug Gregor"
       },
+      "reviewManagers" : [
+        {
+          "link" : "https:\/\/github.com\/DougGregor",
+          "name" : "Doug Gregor"
+        }
+      ],
       "sha" : "c8a87f070b923b649825c5d279c015fa86787036",
       "status" : {
         "state" : "implemented",
@@ -9737,6 +11589,12 @@
         "link" : "https:\/\/github.com\/rjmccall",
         "name" : "John McCall"
       },
+      "reviewManagers" : [
+        {
+          "link" : "https:\/\/github.com\/rjmccall",
+          "name" : "John McCall"
+        }
+      ],
       "sha" : "f75964704121e2c58cd9058c84bb6661c0b7e673",
       "status" : {
         "state" : "implemented",
@@ -9766,6 +11624,12 @@
         "link" : "https:\/\/github.com\/airspeedswift",
         "name" : "Ben Cohen"
       },
+      "reviewManagers" : [
+        {
+          "link" : "https:\/\/github.com\/airspeedswift",
+          "name" : "Ben Cohen"
+        }
+      ],
       "sha" : "7a0261c0c2dc54d65232fabab7f170a8cfa7c159",
       "status" : {
         "state" : "returnedForRevision"
@@ -9790,6 +11654,12 @@
         "link" : "https:\/\/github.com\/tkremenek",
         "name" : "Ted Kremenek"
       },
+      "reviewManagers" : [
+        {
+          "link" : "https:\/\/github.com\/tkremenek",
+          "name" : "Ted Kremenek"
+        }
+      ],
       "sha" : "e26608bc28f2f3234a8509a8d22a75a48f228277",
       "status" : {
         "state" : "implemented",
@@ -9831,6 +11701,12 @@
         "link" : "https:\/\/github.com\/DougGregor",
         "name" : "Doug Gregor"
       },
+      "reviewManagers" : [
+        {
+          "link" : "https:\/\/github.com\/DougGregor",
+          "name" : "Doug Gregor"
+        }
+      ],
       "sha" : "36e861aa4bb3b6f91323fafbf830a25504e29eaf",
       "status" : {
         "state" : "implemented",
@@ -9860,6 +11736,12 @@
         "link" : "https:\/\/github.com\/jckarter",
         "name" : "Joe Groff"
       },
+      "reviewManagers" : [
+        {
+          "link" : "https:\/\/github.com\/jckarter",
+          "name" : "Joe Groff"
+        }
+      ],
       "sha" : "a52173e1f424de9abbf74c390a937920341e2dd3",
       "status" : {
         "state" : "implemented",
@@ -9885,6 +11767,12 @@
         "link" : "https:\/\/github.com\/jckarter",
         "name" : "Joe Groff"
       },
+      "reviewManagers" : [
+        {
+          "link" : "https:\/\/github.com\/jckarter",
+          "name" : "Joe Groff"
+        }
+      ],
       "sha" : "3e9c0f0df090b5008d218174198bc1e67790329c",
       "status" : {
         "state" : "implemented",
@@ -9918,6 +11806,12 @@
         "link" : "https:\/\/github.com\/airspeedswift",
         "name" : "Ben Cohen"
       },
+      "reviewManagers" : [
+        {
+          "link" : "https:\/\/github.com\/airspeedswift",
+          "name" : "Ben Cohen"
+        }
+      ],
       "sha" : "1416501ce1520497fdeaa2fc2e726a2e2d90aa9e",
       "status" : {
         "state" : "implemented",
@@ -9947,6 +11841,12 @@
         "link" : "https:\/\/github.com\/tomerd",
         "name" : "Tom Doron"
       },
+      "reviewManagers" : [
+        {
+          "link" : "https:\/\/github.com\/tomerd",
+          "name" : "Tom Doron"
+        }
+      ],
       "sha" : "1ad4a894a549a40e273a9cbc0956037c896fe8d2",
       "status" : {
         "state" : "returnedForRevision"
@@ -9975,6 +11875,12 @@
         "link" : "https:\/\/github.com\/tomerd",
         "name" : "Tom Doron"
       },
+      "reviewManagers" : [
+        {
+          "link" : "https:\/\/github.com\/tomerd",
+          "name" : "Tom Doron"
+        }
+      ],
       "sha" : "18ff5962d1c1290a11358c0fa4c8764f0f2c3f99",
       "status" : {
         "state" : "implemented",
@@ -10004,6 +11910,12 @@
         "link" : "https:\/\/github.com\/tomerd",
         "name" : "Tom Doron"
       },
+      "reviewManagers" : [
+        {
+          "link" : "https:\/\/github.com\/tomerd",
+          "name" : "Tom Doron"
+        }
+      ],
       "sha" : "cc8d6f1191e4d46a31b698f9d88b8a1823140411",
       "status" : {
         "state" : "implemented",
@@ -10037,6 +11949,12 @@
         "link" : "https:\/\/github.com\/tomerd",
         "name" : "Tom Doron"
       },
+      "reviewManagers" : [
+        {
+          "link" : "https:\/\/github.com\/tomerd",
+          "name" : "Tom Doron"
+        }
+      ],
       "sha" : "68d324463a3b781d183eeb07ed583549f47a0809",
       "status" : {
         "state" : "accepted"
@@ -10065,6 +11983,12 @@
         "link" : "https:\/\/github.com\/jckarter",
         "name" : "Joe Groff"
       },
+      "reviewManagers" : [
+        {
+          "link" : "https:\/\/github.com\/jckarter",
+          "name" : "Joe Groff"
+        }
+      ],
       "sha" : "05be569820c8aa06867a90e25b7ce150c9cfd21e",
       "status" : {
         "state" : "implemented",
@@ -10094,6 +12018,12 @@
         "link" : "https:\/\/github.com\/DougGregor",
         "name" : "Doug Gregor"
       },
+      "reviewManagers" : [
+        {
+          "link" : "https:\/\/github.com\/DougGregor",
+          "name" : "Doug Gregor"
+        }
+      ],
       "sha" : "c3349c342401c79b144fe3c296c4e1eb0c667b59",
       "status" : {
         "state" : "implemented",
@@ -10127,6 +12057,12 @@
         "link" : "https:\/\/github.com\/compnerd",
         "name" : "Saleem Abdulrasool"
       },
+      "reviewManagers" : [
+        {
+          "link" : "https:\/\/github.com\/compnerd",
+          "name" : "Saleem Abdulrasool"
+        }
+      ],
       "sha" : "bb1978950efb94299fc853fd0d8dd1235ec0ca5d",
       "status" : {
         "state" : "implemented",
@@ -10168,6 +12104,12 @@
         "link" : "https:\/\/github.com\/tomerd",
         "name" : "Tom Doron"
       },
+      "reviewManagers" : [
+        {
+          "link" : "https:\/\/github.com\/tomerd",
+          "name" : "Tom Doron"
+        }
+      ],
       "sha" : "2cb066de8db89b83dff7e5de03ff44de10480a43",
       "status" : {
         "state" : "implemented",
@@ -10209,6 +12151,12 @@
         "link" : "https:\/\/github.com\/airspeedswift",
         "name" : "Ben Cohen"
       },
+      "reviewManagers" : [
+        {
+          "link" : "https:\/\/github.com\/airspeedswift",
+          "name" : "Ben Cohen"
+        }
+      ],
       "sha" : "0ed3efe8f0dbeae15294a6eb6bb5f210e42a6ccd",
       "status" : {
         "state" : "implemented",
@@ -10238,6 +12186,12 @@
         "link" : "https:\/\/github.com\/DougGregor",
         "name" : "Doug Gregor"
       },
+      "reviewManagers" : [
+        {
+          "link" : "https:\/\/github.com\/DougGregor",
+          "name" : "Doug Gregor"
+        }
+      ],
       "sha" : "12c686b3840c29da84506f28675fd28b57601dfb",
       "status" : {
         "state" : "implemented",
@@ -10271,6 +12225,12 @@
         "link" : "https:\/\/github.com\/airspeedswift",
         "name" : "Ben Cohen"
       },
+      "reviewManagers" : [
+        {
+          "link" : "https:\/\/github.com\/airspeedswift",
+          "name" : "Ben Cohen"
+        }
+      ],
       "sha" : "650dfc867a9d624a2630b71986b6afe149878039",
       "status" : {
         "state" : "implemented",
@@ -10300,6 +12260,12 @@
         "link" : "https:\/\/github.com\/rjmccall",
         "name" : "John McCall"
       },
+      "reviewManagers" : [
+        {
+          "link" : "https:\/\/github.com\/rjmccall",
+          "name" : "John McCall"
+        }
+      ],
       "sha" : "743e21a61d34a7c6b240bc82418c7340ee269a9e",
       "status" : {
         "state" : "implemented",
@@ -10329,6 +12295,12 @@
         "link" : "https:\/\/github.com\/tkremenek",
         "name" : "Ted Kremenek"
       },
+      "reviewManagers" : [
+        {
+          "link" : "https:\/\/github.com\/tkremenek",
+          "name" : "Ted Kremenek"
+        }
+      ],
       "sha" : "ea6892efaff901c3e0a858860f3e21e4cf7e4ac8",
       "status" : {
         "state" : "returnedForRevision"
@@ -10369,6 +12341,12 @@
         "link" : "https:\/\/github.com\/DougGregor",
         "name" : "Doug Gregor"
       },
+      "reviewManagers" : [
+        {
+          "link" : "https:\/\/github.com\/DougGregor",
+          "name" : "Doug Gregor"
+        }
+      ],
       "sha" : "c392413e480d346e5ebca6f32684f5d75bdc26a9",
       "status" : {
         "state" : "implemented",
@@ -10398,6 +12376,12 @@
         "link" : "https:\/\/github.com\/tomerd",
         "name" : "Tom Doron"
       },
+      "reviewManagers" : [
+        {
+          "link" : "https:\/\/github.com\/tomerd",
+          "name" : "Tom Doron"
+        }
+      ],
       "sha" : "91de701c7c9679cbd03990dc2bfc72ca13894d77",
       "status" : {
         "state" : "implemented",
@@ -10431,6 +12415,12 @@
         "link" : "https:\/\/github.com\/airspeedswift",
         "name" : "Ben Cohen"
       },
+      "reviewManagers" : [
+        {
+          "link" : "https:\/\/github.com\/airspeedswift",
+          "name" : "Ben Cohen"
+        }
+      ],
       "sha" : "850529c3a5bad3261493e67ea74a347aab8eddb3",
       "status" : {
         "state" : "implemented",
@@ -10486,6 +12476,12 @@
         "link" : "https:\/\/github.com\/airspeedswift",
         "name" : "Ben Cohen"
       },
+      "reviewManagers" : [
+        {
+          "link" : "https:\/\/github.com\/airspeedswift",
+          "name" : "Ben Cohen"
+        }
+      ],
       "sha" : "ffae2587ad21b3d39b18abbf0baf5eb9f72a99f1",
       "status" : {
         "state" : "implemented",
@@ -10557,6 +12553,12 @@
         "link" : "https:\/\/github.com\/DougGregor",
         "name" : "Doug Gregor"
       },
+      "reviewManagers" : [
+        {
+          "link" : "https:\/\/github.com\/DougGregor",
+          "name" : "Doug Gregor"
+        }
+      ],
       "sha" : "67f9d90e38bc7be5a585bae849fb69d9f4ae79d8",
       "status" : {
         "state" : "implemented",
@@ -10590,6 +12592,12 @@
         "link" : "https:\/\/github.com\/jckarter",
         "name" : "Joe Groff"
       },
+      "reviewManagers" : [
+        {
+          "link" : "https:\/\/github.com\/jckarter",
+          "name" : "Joe Groff"
+        }
+      ],
       "sha" : "6b641d4b0ecccb0cf395bc3106054e3d29868fa6",
       "status" : {
         "state" : "implemented",
@@ -10623,6 +12631,12 @@
         "link" : "https:\/\/github.com\/AirspeedSwift",
         "name" : "Ben Cohen"
       },
+      "reviewManagers" : [
+        {
+          "link" : "https:\/\/github.com\/AirspeedSwift",
+          "name" : "Ben Cohen"
+        }
+      ],
       "sha" : "7eb12f0c81fb93cdcea6bc0ee1e8522726328a0e",
       "status" : {
         "state" : "implemented",
@@ -10644,6 +12658,12 @@
         "link" : "https:\/\/github.com\/DougGregor",
         "name" : "Doug Gregor"
       },
+      "reviewManagers" : [
+        {
+          "link" : "https:\/\/github.com\/DougGregor",
+          "name" : "Doug Gregor"
+        }
+      ],
       "sha" : "191f0d26e0298810b41d59c5a2a00aba9a3d10a8",
       "status" : {
         "state" : "implemented",
@@ -10679,6 +12699,12 @@
         "link" : "https:\/\/github.com\/rjmccall",
         "name" : "John McCall"
       },
+      "reviewManagers" : [
+        {
+          "link" : "https:\/\/github.com\/rjmccall",
+          "name" : "John McCall"
+        }
+      ],
       "sha" : "a8e1dfdceedba536bbaa6fcc1db14621152389ec",
       "status" : {
         "state" : "implemented",
@@ -10708,6 +12734,12 @@
         "link" : "https:\/\/github.com\/jckarter",
         "name" : "Joe Groff"
       },
+      "reviewManagers" : [
+        {
+          "link" : "https:\/\/github.com\/jckarter",
+          "name" : "Joe Groff"
+        }
+      ],
       "sha" : "3a952297524195014ec177740fc48e4662c93640",
       "status" : {
         "state" : "implemented",
@@ -10737,6 +12769,12 @@
         "link" : "https:\/\/github.com\/AirspeedSwift",
         "name" : "Ben Cohen"
       },
+      "reviewManagers" : [
+        {
+          "link" : "https:\/\/github.com\/AirspeedSwift",
+          "name" : "Ben Cohen"
+        }
+      ],
       "sha" : "7b3261d75b2bc48776c2437bfe8464e54a7e2bea",
       "status" : {
         "state" : "implemented",
@@ -10770,6 +12808,12 @@
         "link" : "https:\/\/github.com\/tkremenek",
         "name" : "Ted Kremenek"
       },
+      "reviewManagers" : [
+        {
+          "link" : "https:\/\/github.com\/tkremenek",
+          "name" : "Ted Kremenek"
+        }
+      ],
       "sha" : "c8ade71a5f0ba955a1b4eb5e727829e90d9b462b",
       "status" : {
         "state" : "accepted"
@@ -10810,6 +12854,12 @@
         "link" : "https:\/\/github.com\/compnerd",
         "name" : "Saleem Abdulrasool"
       },
+      "reviewManagers" : [
+        {
+          "link" : "https:\/\/github.com\/compnerd",
+          "name" : "Saleem Abdulrasool"
+        }
+      ],
       "sha" : "47ab917535dbbceaf08c02496764f05deb60409b",
       "status" : {
         "state" : "implemented",
@@ -10851,6 +12901,12 @@
         "link" : "https:\/\/github.com\/jckarter\/",
         "name" : "Joe Groff"
       },
+      "reviewManagers" : [
+        {
+          "link" : "https:\/\/github.com\/jckarter\/",
+          "name" : "Joe Groff"
+        }
+      ],
       "sha" : "1025b7e4b400521e6a5f155c5cfc0150f699b7ad",
       "status" : {
         "state" : "implemented",
@@ -10880,6 +12936,12 @@
         "link" : "https:\/\/github.com\/DougGregor",
         "name" : "Doug Gregor"
       },
+      "reviewManagers" : [
+        {
+          "link" : "https:\/\/github.com\/DougGregor",
+          "name" : "Doug Gregor"
+        }
+      ],
       "sha" : "1df831f37f4f126e7f59db812b108bcb8e3a393e",
       "status" : {
         "state" : "implemented",
@@ -10909,6 +12971,12 @@
         "link" : "https:\/\/github.com\/rjmccall",
         "name" : "John McCall"
       },
+      "reviewManagers" : [
+        {
+          "link" : "https:\/\/github.com\/rjmccall",
+          "name" : "John McCall"
+        }
+      ],
       "sha" : "5bbf8aabc35ebd3f85478c46622133a33314af20",
       "status" : {
         "state" : "implemented",
@@ -10938,6 +13006,12 @@
         "link" : "https:\/\/github.com\/DougGregor",
         "name" : "Doug Gregor"
       },
+      "reviewManagers" : [
+        {
+          "link" : "https:\/\/github.com\/DougGregor",
+          "name" : "Doug Gregor"
+        }
+      ],
       "sha" : "1f1b90eda362373a4d53ffd28803034aef2010ab",
       "status" : {
         "state" : "implemented",
@@ -10967,6 +13041,12 @@
         "link" : "https:\/\/github.com\/airspeedswift",
         "name" : "Ben Cohen"
       },
+      "reviewManagers" : [
+        {
+          "link" : "https:\/\/github.com\/airspeedswift",
+          "name" : "Ben Cohen"
+        }
+      ],
       "sha" : "62f6bf220ffc5f0edf827eb007931a9b6504c0c2",
       "status" : {
         "state" : "implemented",
@@ -11000,6 +13080,12 @@
         "link" : "https:\/\/github.com\/rjmccall",
         "name" : "John McCall"
       },
+      "reviewManagers" : [
+        {
+          "link" : "https:\/\/github.com\/rjmccall",
+          "name" : "John McCall"
+        }
+      ],
       "sha" : "26c9b30d14feceb6599a266429e9985ae44c423e",
       "status" : {
         "state" : "implemented",
@@ -11021,6 +13107,12 @@
         "link" : "https:\/\/github.com\/airspeedswift",
         "name" : "Ben Cohen"
       },
+      "reviewManagers" : [
+        {
+          "link" : "https:\/\/github.com\/airspeedswift",
+          "name" : "Ben Cohen"
+        }
+      ],
       "sha" : "2eef59ffb0af617dd0e0620736dc3ab1d0dedd99",
       "status" : {
         "state" : "implemented",
@@ -11054,6 +13146,12 @@
         "link" : "https:\/\/github.com\/airspeedswift",
         "name" : "Ben Cohen"
       },
+      "reviewManagers" : [
+        {
+          "link" : "https:\/\/github.com\/airspeedswift",
+          "name" : "Ben Cohen"
+        }
+      ],
       "sha" : "079da96df0b17fbe8dad272fdf1f79c9b8d2445c",
       "status" : {
         "state" : "implemented",
@@ -11083,6 +13181,12 @@
         "link" : "https:\/\/github.com\/jckarter",
         "name" : "Joe Groff"
       },
+      "reviewManagers" : [
+        {
+          "link" : "https:\/\/github.com\/jckarter",
+          "name" : "Joe Groff"
+        }
+      ],
       "sha" : "3528f0790913f09ec6d1590394715d34cab46d92",
       "status" : {
         "state" : "implemented",
@@ -11104,6 +13208,12 @@
         "link" : "https:\/\/github.com\/jckarter",
         "name" : "Joe Groff"
       },
+      "reviewManagers" : [
+        {
+          "link" : "https:\/\/github.com\/jckarter",
+          "name" : "Joe Groff"
+        }
+      ],
       "sha" : "bb89a02536fb9be564d89483df23f3167b44ffe7",
       "status" : {
         "state" : "implemented",
@@ -11147,6 +13257,12 @@
         "link" : "https:\/\/github.com\/airspeedswift",
         "name" : "Ben Cohen"
       },
+      "reviewManagers" : [
+        {
+          "link" : "https:\/\/github.com\/airspeedswift",
+          "name" : "Ben Cohen"
+        }
+      ],
       "sha" : "c3668431a0669c6133ba9d896daf87e4fcb2fee7",
       "status" : {
         "state" : "implemented",
@@ -11172,6 +13288,12 @@
         "link" : "https:\/\/github.com\/airspeedswift",
         "name" : "Ben Cohen"
       },
+      "reviewManagers" : [
+        {
+          "link" : "https:\/\/github.com\/airspeedswift",
+          "name" : "Ben Cohen"
+        }
+      ],
       "sha" : "4efc27242aa4ca783413abf2d6f91bb2f50ddd14",
       "status" : {
         "state" : "implemented",
@@ -11231,6 +13353,12 @@
         "link" : "https:\/\/github.com\/tomerd",
         "name" : "Tom Doron"
       },
+      "reviewManagers" : [
+        {
+          "link" : "https:\/\/github.com\/tomerd",
+          "name" : "Tom Doron"
+        }
+      ],
       "sha" : "c0090e3bdee8edf312408332f66f6832302234a7",
       "status" : {
         "state" : "implemented",
@@ -11264,6 +13392,12 @@
         "link" : "https:\/\/github.com\/airspeedswift",
         "name" : "Ben Cohen"
       },
+      "reviewManagers" : [
+        {
+          "link" : "https:\/\/github.com\/airspeedswift",
+          "name" : "Ben Cohen"
+        }
+      ],
       "sha" : "44629f4b7f0b793b48d9afa8eb3205a3dda757d4",
       "status" : {
         "state" : "implemented",
@@ -11293,6 +13427,12 @@
         "link" : "https:\/\/github.com\/rjmccall",
         "name" : "John McCall"
       },
+      "reviewManagers" : [
+        {
+          "link" : "https:\/\/github.com\/rjmccall",
+          "name" : "John McCall"
+        }
+      ],
       "sha" : "1a67f2bf324ad250ac8f535e57eb30b94d20129a",
       "status" : {
         "state" : "implemented",
@@ -11322,6 +13462,12 @@
         "link" : "https:\/\/github.com\/DougGregor",
         "name" : "Doug Gregor"
       },
+      "reviewManagers" : [
+        {
+          "link" : "https:\/\/github.com\/DougGregor",
+          "name" : "Doug Gregor"
+        }
+      ],
       "sha" : "2742a8e9a8aeb23e951a9bd1a75871f5c3399461",
       "status" : {
         "state" : "returnedForRevision"
@@ -11368,6 +13514,12 @@
         "link" : "https:\/\/github.com\/jckarter",
         "name" : "Joe Groff"
       },
+      "reviewManagers" : [
+        {
+          "link" : "https:\/\/github.com\/jckarter",
+          "name" : "Joe Groff"
+        }
+      ],
       "sha" : "423f045aa3fe9450822328a398f8b4095197f871",
       "status" : {
         "state" : "implemented",
@@ -11397,6 +13549,12 @@
         "link" : "https:\/\/github.com\/rjmccall",
         "name" : "John McCall"
       },
+      "reviewManagers" : [
+        {
+          "link" : "https:\/\/github.com\/rjmccall",
+          "name" : "John McCall"
+        }
+      ],
       "sha" : "a33895fa041bf8982ebd6a4a75a8c34382ea817e",
       "status" : {
         "state" : "implemented",
@@ -11432,6 +13590,12 @@
         "link" : "https:\/\/github.com\/hborla",
         "name" : "Holly Borla"
       },
+      "reviewManagers" : [
+        {
+          "link" : "https:\/\/github.com\/hborla",
+          "name" : "Holly Borla"
+        }
+      ],
       "sha" : "4fc84085062779bd0c8af12c71f4629a6b04bbfd",
       "status" : {
         "state" : "implemented",
@@ -11457,6 +13621,12 @@
         "link" : "https:\/\/github.com\/airspeedswift",
         "name" : "Ben Cohen"
       },
+      "reviewManagers" : [
+        {
+          "link" : "https:\/\/github.com\/airspeedswift",
+          "name" : "Ben Cohen"
+        }
+      ],
       "sha" : "43bbe84b05d57654876e103d4c468e8a34c7ec20",
       "status" : {
         "state" : "implemented",
@@ -11486,6 +13656,12 @@
         "link" : "https:\/\/github.com\/stephentyrone",
         "name" : "Steve Canon"
       },
+      "reviewManagers" : [
+        {
+          "link" : "https:\/\/github.com\/stephentyrone",
+          "name" : "Steve Canon"
+        }
+      ],
       "sha" : "2c203b62882f28310407cb27d37c528edcdc8eee",
       "status" : {
         "state" : "implemented",
@@ -11521,6 +13697,12 @@
         "link" : "https:\/\/github.com\/compnerd",
         "name" : "Saleem Abdulrasool"
       },
+      "reviewManagers" : [
+        {
+          "link" : "https:\/\/github.com\/compnerd",
+          "name" : "Saleem Abdulrasool"
+        }
+      ],
       "sha" : "a71d51d2c709e10ddf2f3a55058599ba9691ce55",
       "status" : {
         "state" : "implemented",
@@ -11550,6 +13732,12 @@
         "link" : "https:\/\/github.com\/hborla",
         "name" : "Holly Borla"
       },
+      "reviewManagers" : [
+        {
+          "link" : "https:\/\/github.com\/hborla",
+          "name" : "Holly Borla"
+        }
+      ],
       "sha" : "29f66dd9dda9683633c75c8e4888536bbf402bd1",
       "status" : {
         "state" : "implemented",
@@ -11579,6 +13767,12 @@
         "link" : "https:\/\/github.com\/jckarter",
         "name" : "Joe Groff"
       },
+      "reviewManagers" : [
+        {
+          "link" : "https:\/\/github.com\/jckarter",
+          "name" : "Joe Groff"
+        }
+      ],
       "sha" : "b6ca2bb8ec393146d8b4ba7c453476ae1f9698ca",
       "status" : {
         "state" : "implemented",
@@ -11614,6 +13808,16 @@
         "link" : "https:\/\/github.com\/DougGregor",
         "name" : "Doug Gregor"
       },
+      "reviewManagers" : [
+        {
+          "link" : "https:\/\/github.com\/DougGregor",
+          "name" : "Doug Gregor"
+        },
+        {
+          "link" : "https:\/\/github.com\/hborla",
+          "name" : "Holly Borla"
+        }
+      ],
       "sha" : "4c86fb5ff01a590f7d45d7db24a0d89b9c0f80b1",
       "status" : {
         "state" : "implemented",
@@ -11643,6 +13847,12 @@
         "link" : "https:\/\/github.com\/xwu",
         "name" : "Xiaodi Wu"
       },
+      "reviewManagers" : [
+        {
+          "link" : "https:\/\/github.com\/xwu",
+          "name" : "Xiaodi Wu"
+        }
+      ],
       "sha" : "6f58d7aff82458481497e2d1721863a293644d75",
       "status" : {
         "state" : "implemented",
@@ -11672,6 +13882,12 @@
         "link" : "https:\/\/github.com\/rjmccall",
         "name" : "John McCall"
       },
+      "reviewManagers" : [
+        {
+          "link" : "https:\/\/github.com\/rjmccall",
+          "name" : "John McCall"
+        }
+      ],
       "sha" : "4c107ed4edb979972ac46721acd016042ed388ba",
       "status" : {
         "state" : "implemented",
@@ -11701,6 +13917,12 @@
         "link" : "https:\/\/github.com\/jumhyn",
         "name" : "Frederick Kellison-Linn"
       },
+      "reviewManagers" : [
+        {
+          "link" : "https:\/\/github.com\/jumhyn",
+          "name" : "Frederick Kellison-Linn"
+        }
+      ],
       "sha" : "7c5bc9d02de09a4325f217f64d6d2e64f3c535b4",
       "status" : {
         "state" : "returnedForRevision"
@@ -11729,6 +13951,12 @@
         "link" : "https:\/\/github.com\/allevato",
         "name" : "Tony Allevato"
       },
+      "reviewManagers" : [
+        {
+          "link" : "https:\/\/github.com\/allevato",
+          "name" : "Tony Allevato"
+        }
+      ],
       "sha" : "2449d0ae3c037b6183d2aaf0a044bb792ef619a4",
       "status" : {
         "state" : "implemented",
@@ -11758,6 +13986,12 @@
         "link" : "https:\/\/github.com\/rjmccall",
         "name" : "John McCall"
       },
+      "reviewManagers" : [
+        {
+          "link" : "https:\/\/github.com\/rjmccall",
+          "name" : "John McCall"
+        }
+      ],
       "sha" : "ec428914b27ede9d711d0e400b3109ab0408d3b9",
       "status" : {
         "state" : "implemented",
@@ -11791,6 +14025,12 @@
         "link" : "https:\/\/github.com\/stephentyrone",
         "name" : "Steve Canon"
       },
+      "reviewManagers" : [
+        {
+          "link" : "https:\/\/github.com\/stephentyrone",
+          "name" : "Steve Canon"
+        }
+      ],
       "sha" : "f9653cc4e085f240cbb0918fb510a33ec0d9e746",
       "status" : {
         "state" : "implemented",
@@ -11820,6 +14060,12 @@
         "link" : "https:\/\/github.com\/xwu",
         "name" : "Xiaodi Wu"
       },
+      "reviewManagers" : [
+        {
+          "link" : "https:\/\/github.com\/xwu",
+          "name" : "Xiaodi Wu"
+        }
+      ],
       "sha" : "f49ac874164142642589d9c6724794193d07e6ce",
       "status" : {
         "state" : "implemented",
@@ -11867,6 +14113,12 @@
         "link" : "https:\/\/github.com\/jumhyn",
         "name" : "Frederick Kellison-Linn"
       },
+      "reviewManagers" : [
+        {
+          "link" : "https:\/\/github.com\/jumhyn",
+          "name" : "Frederick Kellison-Linn"
+        }
+      ],
       "sha" : "c5b2465127535e54254bf518c0b7e3c040fba44b",
       "status" : {
         "state" : "implemented",
@@ -11892,6 +14144,12 @@
         "link" : "https:\/\/github.com\/rjmccall",
         "name" : "John McCall"
       },
+      "reviewManagers" : [
+        {
+          "link" : "https:\/\/github.com\/rjmccall",
+          "name" : "John McCall"
+        }
+      ],
       "sha" : "f7947acd3acaa80d5bc8d86c477a8a571a4bff23",
       "status" : {
         "state" : "implemented",
@@ -11921,6 +14179,12 @@
         "link" : "https:\/\/github.com\/tomerd",
         "name" : "Tom Doron"
       },
+      "reviewManagers" : [
+        {
+          "link" : "https:\/\/github.com\/tomerd",
+          "name" : "Tom Doron"
+        }
+      ],
       "sha" : "5b20615c83d10dc11a8199713d6e507257b06089",
       "status" : {
         "state" : "implemented",
@@ -11950,6 +14214,12 @@
         "link" : "https:\/\/github.com\/jckarter",
         "name" : "Joe Groff"
       },
+      "reviewManagers" : [
+        {
+          "link" : "https:\/\/github.com\/jckarter",
+          "name" : "Joe Groff"
+        }
+      ],
       "sha" : "ddbcb87a6caac053b4ebb0d86d18ddecedaf8a45",
       "status" : {
         "state" : "returnedForRevision"
@@ -11982,6 +14252,12 @@
         "link" : "https:\/\/github.com\/hborla",
         "name" : "Holly Borla"
       },
+      "reviewManagers" : [
+        {
+          "link" : "https:\/\/github.com\/hborla",
+          "name" : "Holly Borla"
+        }
+      ],
       "sha" : "b2958c3d2f6e1708eb67bfb86586e6bc810c2893",
       "status" : {
         "state" : "implemented",
@@ -12015,6 +14291,12 @@
         "link" : "https:\/\/github.com\/DougGregor",
         "name" : "Doug Gregor"
       },
+      "reviewManagers" : [
+        {
+          "link" : "https:\/\/github.com\/DougGregor",
+          "name" : "Doug Gregor"
+        }
+      ],
       "sha" : "726f6b303bd2f01a9111027e2aa0eb3119f69472",
       "status" : {
         "state" : "implemented",
@@ -12036,6 +14318,12 @@
         "link" : "https:\/\/github.com\/xwu",
         "name" : "Xiaodi Wu"
       },
+      "reviewManagers" : [
+        {
+          "link" : "https:\/\/github.com\/xwu",
+          "name" : "Xiaodi Wu"
+        }
+      ],
       "sha" : "ed50456376a50e8a5fc52e173e7e18d9f37c0bc4",
       "status" : {
         "state" : "implemented",
@@ -12065,6 +14353,12 @@
         "link" : "https:\/\/github.com\/rjmccall",
         "name" : "John McCall"
       },
+      "reviewManagers" : [
+        {
+          "link" : "https:\/\/github.com\/rjmccall",
+          "name" : "John McCall"
+        }
+      ],
       "sha" : "5461750ea04ab290dbf5277a50cd7d58fd4ba849",
       "status" : {
         "state" : "implemented",
@@ -12094,6 +14388,12 @@
         "link" : "https:\/\/github.com\/allevato",
         "name" : "Tony Allevato"
       },
+      "reviewManagers" : [
+        {
+          "link" : "https:\/\/github.com\/allevato",
+          "name" : "Tony Allevato"
+        }
+      ],
       "sha" : "6718630157e51125ed0b2f1dde73ba00d93ad1c7",
       "status" : {
         "state" : "implemented",
@@ -12165,6 +14465,12 @@
         "link" : "https:\/\/github.com\/DougGregor",
         "name" : "Doug Gregor"
       },
+      "reviewManagers" : [
+        {
+          "link" : "https:\/\/github.com\/DougGregor",
+          "name" : "Doug Gregor"
+        }
+      ],
       "sha" : "8c7d571cf9d1259488d2df47033973041cbd1016",
       "status" : {
         "state" : "returnedForRevision"
@@ -12215,6 +14521,12 @@
         "link" : "https:\/\/github.com\/rjmccall",
         "name" : "John McCall"
       },
+      "reviewManagers" : [
+        {
+          "link" : "https:\/\/github.com\/rjmccall",
+          "name" : "John McCall"
+        }
+      ],
       "sha" : "3376ac883dddf36c8abf89df6f65f3a980259571",
       "status" : {
         "state" : "implemented",
@@ -12270,6 +14582,12 @@
         "link" : "https:\/\/github.com\/shahmishal",
         "name" : "Mishal Shah"
       },
+      "reviewManagers" : [
+        {
+          "link" : "https:\/\/github.com\/shahmishal",
+          "name" : "Mishal Shah"
+        }
+      ],
       "sha" : "c93ca111de77585d027900529bd2f107ad66223a",
       "status" : {
         "state" : "accepted"
@@ -12298,6 +14616,12 @@
         "link" : "https:\/\/github.com\/beccadax",
         "name" : "Becca Royal-Gordon"
       },
+      "reviewManagers" : [
+        {
+          "link" : "https:\/\/github.com\/beccadax",
+          "name" : "Becca Royal-Gordon"
+        }
+      ],
       "sha" : "d249793ad40442ea6eff9e323ff949b2cc67d51b",
       "status" : {
         "state" : "implemented",
@@ -12327,6 +14651,12 @@
         "link" : "https:\/\/github.com\/allevato",
         "name" : "Tony Allevato"
       },
+      "reviewManagers" : [
+        {
+          "link" : "https:\/\/github.com\/allevato",
+          "name" : "Tony Allevato"
+        }
+      ],
       "sha" : "4a619a43b68d1febe798f12b7c9eb4f822c06d41",
       "status" : {
         "state" : "implemented",
@@ -12360,6 +14690,12 @@
         "link" : "https:\/\/github.com\/stephentyrone",
         "name" : "Stephen Canon"
       },
+      "reviewManagers" : [
+        {
+          "link" : "https:\/\/github.com\/stephentyrone",
+          "name" : "Stephen Canon"
+        }
+      ],
       "sha" : "50490bb94cdc1c5d63750f0924174ad364a89b20",
       "status" : {
         "state" : "implemented",
@@ -12381,6 +14717,12 @@
         "link" : "https:\/\/github.com\/tomerd",
         "name" : "Tom Doron"
       },
+      "reviewManagers" : [
+        {
+          "link" : "https:\/\/github.com\/tomerd",
+          "name" : "Tom Doron"
+        }
+      ],
       "sha" : "af6ba211991124d9dc81145c84ab1cb52dc122c5",
       "status" : {
         "state" : "implemented",
@@ -12410,6 +14752,12 @@
         "link" : "https:\/\/github.com\/jckarter",
         "name" : "Joe Groff"
       },
+      "reviewManagers" : [
+        {
+          "link" : "https:\/\/github.com\/jckarter",
+          "name" : "Joe Groff"
+        }
+      ],
       "sha" : "af8925e9c45f251b95ec533fcdb2fe2ffa97e3a4",
       "status" : {
         "state" : "implemented",
@@ -12439,6 +14787,12 @@
         "link" : "https:\/\/github.com\/xwu",
         "name" : "Xiaodi Wu"
       },
+      "reviewManagers" : [
+        {
+          "link" : "https:\/\/github.com\/xwu",
+          "name" : "Xiaodi Wu"
+        }
+      ],
       "sha" : "97cb16133f2bcabd6f2f87f7dfaffe4bea968e4d",
       "status" : {
         "state" : "implemented",
@@ -12478,6 +14832,12 @@
         "link" : "https:\/\/github.com\/beccadax",
         "name" : "Becca Royal-Gordon"
       },
+      "reviewManagers" : [
+        {
+          "link" : "https:\/\/github.com\/beccadax",
+          "name" : "Becca Royal-Gordon"
+        }
+      ],
       "sha" : "f018470cf8309c4d02774894aee5fc998dfa208c",
       "status" : {
         "state" : "implemented",
@@ -12503,6 +14863,12 @@
         "link" : "https:\/\/github.com\/airspeedswift",
         "name" : "Ben Cohen"
       },
+      "reviewManagers" : [
+        {
+          "link" : "https:\/\/github.com\/airspeedswift",
+          "name" : "Ben Cohen"
+        }
+      ],
       "sha" : "9a03397eeeea6c5e26cf968d231ff31976d8f1b2",
       "status" : {
         "state" : "implemented",
@@ -12532,6 +14898,12 @@
         "link" : "https:\/\/github.com\/allevato",
         "name" : "Tony Allevato"
       },
+      "reviewManagers" : [
+        {
+          "link" : "https:\/\/github.com\/allevato",
+          "name" : "Tony Allevato"
+        }
+      ],
       "sha" : "be3ecd86ea4f07b694c07c7aa47f40ce4fc5f3be",
       "status" : {
         "state" : "implemented",
@@ -12561,6 +14933,12 @@
         "link" : "https:\/\/github.com\/rjmccall",
         "name" : "John McCall"
       },
+      "reviewManagers" : [
+        {
+          "link" : "https:\/\/github.com\/rjmccall",
+          "name" : "John McCall"
+        }
+      ],
       "sha" : "c0d3352011907650d4cb796a5e3952aef2dc1eb3",
       "status" : {
         "state" : "implemented",
@@ -12586,6 +14964,12 @@
         "link" : "https:\/\/github.com\/Jumhyn",
         "name" : "Frederick Kellison-Linn"
       },
+      "reviewManagers" : [
+        {
+          "link" : "https:\/\/github.com\/Jumhyn",
+          "name" : "Frederick Kellison-Linn"
+        }
+      ],
       "sha" : "d0cb8e1c3a713f3f6b63deb75ba15519cf4fa9bb",
       "status" : {
         "state" : "implemented",
@@ -12611,6 +14995,12 @@
         "link" : "https:\/\/github.com\/xwu",
         "name" : "Xiaodi Wu"
       },
+      "reviewManagers" : [
+        {
+          "link" : "https:\/\/github.com\/xwu",
+          "name" : "Xiaodi Wu"
+        }
+      ],
       "sha" : "89182688258ef04e54c8c88d918fb151aba2c0ac",
       "status" : {
         "state" : "implemented",
@@ -12636,6 +15026,12 @@
         "link" : "https:\/\/github.com\/Jumhyn",
         "name" : "Frederick Kellison-Linn"
       },
+      "reviewManagers" : [
+        {
+          "link" : "https:\/\/github.com\/Jumhyn",
+          "name" : "Frederick Kellison-Linn"
+        }
+      ],
       "sha" : "3736f14eb5c5faa26bc27499a9fb186ccb4034db",
       "status" : {
         "state" : "implemented",
@@ -12665,6 +15061,12 @@
         "link" : "https:\/\/github.com\/hborla",
         "name" : "Holly Borla"
       },
+      "reviewManagers" : [
+        {
+          "link" : "https:\/\/github.com\/hborla",
+          "name" : "Holly Borla"
+        }
+      ],
       "sha" : "b5c0e1dbbfcc49cab4a9aaafa900cfe59260f40d",
       "status" : {
         "state" : "implemented",
@@ -12700,6 +15102,12 @@
         "link" : "https:\/\/github.com\/rjmccall",
         "name" : "John McCall"
       },
+      "reviewManagers" : [
+        {
+          "link" : "https:\/\/github.com\/rjmccall",
+          "name" : "John McCall"
+        }
+      ],
       "sha" : "b47ef4ee4a051fe5a27914d2348df7dd7cbe0061",
       "status" : {
         "state" : "implemented",
@@ -12729,6 +15137,12 @@
         "link" : "https:\/\/github.com\/compnerd",
         "name" : "Saleem Abdulrasool"
       },
+      "reviewManagers" : [
+        {
+          "link" : "https:\/\/github.com\/compnerd",
+          "name" : "Saleem Abdulrasool"
+        }
+      ],
       "sha" : "16e7b95f95ea4dfc92793daaa033883e1543e13b",
       "status" : {
         "state" : "returnedForRevision"
@@ -12757,6 +15171,12 @@
         "link" : "https:\/\/github.com\/hborla",
         "name" : "Holly Borla"
       },
+      "reviewManagers" : [
+        {
+          "link" : "https:\/\/github.com\/hborla",
+          "name" : "Holly Borla"
+        }
+      ],
       "sha" : "9722c8b2809e6f05c650eb946242eaa9113ae9e6",
       "status" : {
         "state" : "implemented",
@@ -12792,6 +15212,12 @@
         "link" : "https:\/\/github.com\/allevato",
         "name" : "Tony Allevato"
       },
+      "reviewManagers" : [
+        {
+          "link" : "https:\/\/github.com\/allevato",
+          "name" : "Tony Allevato"
+        }
+      ],
       "sha" : "cab4200b94d074155a15fe5a8f2f841e6ea8a4dd",
       "status" : {
         "state" : "implemented",
@@ -12821,6 +15247,12 @@
         "link" : "https:\/\/github.com\/xwu",
         "name" : "Xiaodi Wu"
       },
+      "reviewManagers" : [
+        {
+          "link" : "https:\/\/github.com\/xwu",
+          "name" : "Xiaodi Wu"
+        }
+      ],
       "sha" : "a07c84c1df14f3d7c5126eeee16c1b5768693f52",
       "status" : {
         "state" : "returnedForRevision"
@@ -12849,6 +15281,12 @@
         "link" : "https:\/\/github.com\/rjmccall",
         "name" : "John McCall"
       },
+      "reviewManagers" : [
+        {
+          "link" : "https:\/\/github.com\/rjmccall",
+          "name" : "John McCall"
+        }
+      ],
       "sha" : "18da0265e719b307962e51811cbb9f8b6f40261c",
       "status" : {
         "state" : "implemented",
@@ -12882,6 +15320,12 @@
         "link" : "https:\/\/github.com\/DougGregor\/",
         "name" : "Doug Gregor"
       },
+      "reviewManagers" : [
+        {
+          "link" : "https:\/\/github.com\/DougGregor\/",
+          "name" : "Doug Gregor"
+        }
+      ],
       "sha" : "b625affbc96ed2ec78fe31b4d789228973f11c85",
       "status" : {
         "state" : "implemented",
@@ -12903,6 +15347,12 @@
         "link" : "https:\/\/github.com\/Jumhyn",
         "name" : "Frederick Kellison-Linn"
       },
+      "reviewManagers" : [
+        {
+          "link" : "https:\/\/github.com\/Jumhyn",
+          "name" : "Frederick Kellison-Linn"
+        }
+      ],
       "sha" : "2a92cca6a3b4f95b3faacade8c30dc9beef8aa5c",
       "status" : {
         "state" : "accepted"
@@ -12935,6 +15385,12 @@
         "link" : "https:\/\/github.com\/jckarter",
         "name" : "Joe Groff"
       },
+      "reviewManagers" : [
+        {
+          "link" : "https:\/\/github.com\/jckarter",
+          "name" : "Joe Groff"
+        }
+      ],
       "sha" : "38b8c99ce8c4a2fda498199bf75e38d1e16088c6",
       "status" : {
         "state" : "implemented",
@@ -12976,6 +15432,12 @@
         "link" : "https:\/\/github.com\/DougGregor",
         "name" : "Doug Gregor"
       },
+      "reviewManagers" : [
+        {
+          "link" : "https:\/\/github.com\/DougGregor",
+          "name" : "Doug Gregor"
+        }
+      ],
       "sha" : "32cdb7fdea5ca985297f4da0c93fc7da6f77944a",
       "status" : {
         "state" : "implemented",
@@ -13013,6 +15475,12 @@
         "link" : "https:\/\/github.com\/hborla",
         "name" : "Holly Borla"
       },
+      "reviewManagers" : [
+        {
+          "link" : "https:\/\/github.com\/hborla",
+          "name" : "Holly Borla"
+        }
+      ],
       "sha" : "43ab2546efb8ed422cb85d74e4ed2ab4d3d094df",
       "status" : {
         "state" : "implemented",
@@ -13042,6 +15510,12 @@
         "link" : "https:\/\/github.com\/stephentyrone",
         "name" : "Steve Canon"
       },
+      "reviewManagers" : [
+        {
+          "link" : "https:\/\/github.com\/stephentyrone",
+          "name" : "Steve Canon"
+        }
+      ],
       "sha" : "4c09a03947c61ada97fbd2f5e39646e363c099da",
       "status" : {
         "state" : "accepted"
@@ -13066,6 +15540,12 @@
         "link" : "https:\/\/github.com\/hborla",
         "name" : "Holly Borla"
       },
+      "reviewManagers" : [
+        {
+          "link" : "https:\/\/github.com\/hborla",
+          "name" : "Holly Borla"
+        }
+      ],
       "sha" : "2b078d129dd3942df8a63315f1d2d82bbac2c614",
       "status" : {
         "state" : "accepted"
@@ -13094,6 +15574,12 @@
         "link" : "https:\/\/github.com\/allevato",
         "name" : "Tony Allevato"
       },
+      "reviewManagers" : [
+        {
+          "link" : "https:\/\/github.com\/allevato",
+          "name" : "Tony Allevato"
+        }
+      ],
       "sha" : "14f1e3783ce14ae2472afa4b6c6e9e2e0cae11c0",
       "status" : {
         "state" : "returnedForRevision"
@@ -13122,6 +15608,12 @@
         "link" : "https:\/\/github.com\/rjmccall",
         "name" : "John McCall"
       },
+      "reviewManagers" : [
+        {
+          "link" : "https:\/\/github.com\/rjmccall",
+          "name" : "John McCall"
+        }
+      ],
       "sha" : "0d975319beed71b07e155d0cabf81d6d7caca37d",
       "status" : {
         "state" : "implemented",
@@ -13159,6 +15651,12 @@
         "link" : "https:\/\/github.com\/DougGregor",
         "name" : "Doug Gregor"
       },
+      "reviewManagers" : [
+        {
+          "link" : "https:\/\/github.com\/DougGregor",
+          "name" : "Doug Gregor"
+        }
+      ],
       "sha" : "9064a6e840a512cbb0b86f92b7e219698ab1669b",
       "status" : {
         "state" : "accepted"
@@ -13201,6 +15699,12 @@
         "link" : "https:\/\/github.com\/beccadax",
         "name" : "Becca Royal-Gordon"
       },
+      "reviewManagers" : [
+        {
+          "link" : "https:\/\/github.com\/beccadax",
+          "name" : "Becca Royal-Gordon"
+        }
+      ],
       "sha" : "9bc4e1bc045f6e52f0f74dfa48e9cf1902bcd46d",
       "status" : {
         "state" : "implemented",
@@ -13222,6 +15726,12 @@
         "link" : "https:\/\/github.com\/stephentyrone",
         "name" : "Steve Canon"
       },
+      "reviewManagers" : [
+        {
+          "link" : "https:\/\/github.com\/stephentyrone",
+          "name" : "Steve Canon"
+        }
+      ],
       "sha" : "a458d6f3537f4514a545ca6f484dae30902537e6",
       "status" : {
         "state" : "accepted"
@@ -13264,6 +15774,12 @@
         "link" : "https:\/\/github.com\/xwu",
         "name" : "Xiaodi Wu"
       },
+      "reviewManagers" : [
+        {
+          "link" : "https:\/\/github.com\/xwu",
+          "name" : "Xiaodi Wu"
+        }
+      ],
       "sha" : "a34c0f1cd2e878d544c16c7322873718b141db7f",
       "status" : {
         "state" : "implemented",
@@ -13289,6 +15805,12 @@
         "link" : "https:\/\/github.com\/Jumhyn",
         "name" : "Freddy Kellison-Linn"
       },
+      "reviewManagers" : [
+        {
+          "link" : "https:\/\/github.com\/Jumhyn",
+          "name" : "Freddy Kellison-Linn"
+        }
+      ],
       "sha" : "94717d569e8d304ac2cda137ddbf7ea584665fc6",
       "status" : {
         "state" : "implemented",
@@ -13318,6 +15840,12 @@
         "link" : "https:\/\/github.com\/DougGregor",
         "name" : "Doug Gregor"
       },
+      "reviewManagers" : [
+        {
+          "link" : "https:\/\/github.com\/DougGregor",
+          "name" : "Doug Gregor"
+        }
+      ],
       "sha" : "675eba015c04b108e5bf1bf888e718af9cef7142",
       "status" : {
         "state" : "implemented",
@@ -13363,6 +15891,12 @@
         "link" : "https:\/\/github.com\/airspeedswift",
         "name" : "Ben Cohen"
       },
+      "reviewManagers" : [
+        {
+          "link" : "https:\/\/github.com\/airspeedswift",
+          "name" : "Ben Cohen"
+        }
+      ],
       "sha" : "f6cbf7729df7b0c5ce090801e9e60fd05f9df5ac",
       "status" : {
         "end" : "2024-03-01T00:00:00Z",
@@ -13376,8 +15910,8 @@
           "code" : 0,
           "kind" : "warning",
           "message" : "Review ended on 2024-03-01 00:00:00 +0000.",
-          "suggestion" : "",
-          "stage" : "validate"
+          "stage" : "validate",
+          "suggestion" : ""
         }
       ]
     },
@@ -13402,6 +15936,12 @@
         "link" : "https:\/\/github.com\/rjmccall",
         "name" : "John McCall"
       },
+      "reviewManagers" : [
+        {
+          "link" : "https:\/\/github.com\/rjmccall",
+          "name" : "John McCall"
+        }
+      ],
       "sha" : "4219f651c454727b553437e716cb04429f784841",
       "status" : {
         "state" : "accepted"
@@ -13422,6 +15962,12 @@
         "link" : "https:\/\/github.com\/DougGregor",
         "name" : "Doug Gregor"
       },
+      "reviewManagers" : [
+        {
+          "link" : "https:\/\/github.com\/DougGregor",
+          "name" : "Doug Gregor"
+        }
+      ],
       "sha" : "8cf9212086cfb1688c660f37b725f0059e2fafbb",
       "status" : {
         "end" : "2024-03-29T00:00:00Z",
@@ -13456,6 +16002,12 @@
         "link" : "https:\/\/github.com\/allevato",
         "name" : "Tony Allevato"
       },
+      "reviewManagers" : [
+        {
+          "link" : "https:\/\/github.com\/allevato",
+          "name" : "Tony Allevato"
+        }
+      ],
       "sha" : "f98e52d17dcd1a481608f51c0785d19c9ad1542b",
       "status" : {
         "state" : "returnedForRevision"
@@ -13484,6 +16036,12 @@
         "link" : "https:\/\/github.com\/hborla",
         "name" : "Holly Borla"
       },
+      "reviewManagers" : [
+        {
+          "link" : "https:\/\/github.com\/hborla",
+          "name" : "Holly Borla"
+        }
+      ],
       "sha" : "d1a4c7f61f297420314944b2a9a94f170bd8c7c1",
       "status" : {
         "end" : "2024-03-22T00:00:00Z",
@@ -13497,8 +16055,8 @@
           "code" : 0,
           "kind" : "warning",
           "message" : "Review ended on 2024-03-22 00:00:00 +0000.",
-          "suggestion" : "",
-          "stage" : "validate"
+          "stage" : "validate",
+          "suggestion" : ""
         }
       ]
     },
@@ -13527,6 +16085,12 @@
         "link" : "https:\/\/github.com\/Jumhyn",
         "name" : "Freddy Kellison-Linn"
       },
+      "reviewManagers" : [
+        {
+          "link" : "https:\/\/github.com\/Jumhyn",
+          "name" : "Freddy Kellison-Linn"
+        }
+      ],
       "sha" : "8272486c5e689f5a58da58fb1c00ed36537ec9c2",
       "status" : {
         "end" : "2024-03-26T00:00:00Z",
@@ -13540,8 +16104,8 @@
           "code" : 0,
           "kind" : "warning",
           "message" : "Review ended on 2024-03-26 00:00:00 +0000.",
-          "suggestion" : "",
-          "stage" : "validate"
+          "stage" : "validate",
+          "suggestion" : ""
         }
       ]
     },
@@ -13562,6 +16126,12 @@
         "link" : "https:\/\/github.com\/xwu",
         "name" : "Xiaodi Wu"
       },
+      "reviewManagers" : [
+        {
+          "link" : "https:\/\/github.com\/xwu",
+          "name" : "Xiaodi Wu"
+        }
+      ],
       "sha" : "eb900639f058ca5badd0e5200b262902b3bf2b0d",
       "status" : {
         "end" : "2024-03-26T00:00:00Z",
@@ -13575,8 +16145,8 @@
           "code" : 0,
           "kind" : "warning",
           "message" : "Review ended on 2024-03-26 00:00:00 +0000.",
-          "suggestion" : "",
-          "stage" : "validate"
+          "stage" : "validate",
+          "suggestion" : ""
         }
       ]
     },
@@ -13601,6 +16171,12 @@
         "link" : "https:\/\/github.com\/beccadax",
         "name" : "Becca Royal-Gordon"
       },
+      "reviewManagers" : [
+        {
+          "link" : "https:\/\/github.com\/beccadax",
+          "name" : "Becca Royal-Gordon"
+        }
+      ],
       "sha" : "ec4f7c19aa72e8d4b993b382af288678f320704f",
       "status" : {
         "end" : "2024-04-01T00:00:00Z",

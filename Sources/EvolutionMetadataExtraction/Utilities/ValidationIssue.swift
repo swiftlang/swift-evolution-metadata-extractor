@@ -91,10 +91,10 @@ enum ValidationIssue {
         message: "Proposal ID contains extra markup; expected a link with plaintext contents."
     )
 
-    static let missingReviewManager = Proposal.Issue(
+    static let missingReviewManagers = Proposal.Issue(
         kind: .warning,
         stage: .parse,
-        message: "Missing review manager."
+        message: "Missing review manager(s)."
     )
 
     static let multipleReviewManagers = Proposal.Issue(
