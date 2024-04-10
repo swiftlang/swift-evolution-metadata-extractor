@@ -7,8 +7,6 @@
 // See https://swift.org/LICENSE.txt for license information
 // See https://swift.org/CONTRIBUTORS.txt for the list of Swift project authors
 
-import Foundation
-
 extension Proposal {
     public enum Status: Equatable, Sendable, Comparable {
         case awaitingReview
