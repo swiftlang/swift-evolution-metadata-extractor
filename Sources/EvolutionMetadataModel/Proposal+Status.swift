@@ -49,19 +49,13 @@ extension Proposal.Status: Codable {
         switch state {
             case "awaitingReview": self = .awaitingReview
             case "scheduledForReview":
-                // VALIDATION ENHANCEMENT: On date parsing failure, legacy tool omits start and end keys
-                // VALIDATION ENHANCEMENT: After move to new tool, revert to this being 'try' with failure
-                // VALIDATION ENHANCEMENT: For this status, there should *always* be start and end values, even if empty strings
-                let start = try? container.decode(String.self, forKey: .start)
-                let end = try? container.decode(String.self, forKey: .end)
-                self = .scheduledForReview(start: start ?? "", end: end ?? "")
+                let start = try container.decode(String.self, forKey: .start)
+                let end = try container.decode(String.self, forKey: .end)
+                self = .scheduledForReview(start: start, end: end)
             case "activeReview":
-                // VALIDATION ENHANCEMENT: On date parsing failure, legacy tool omits start and end keys
-                // VALIDATION ENHANCEMENT: After move to new tool, revert to this being 'try' with failure
-                // VALIDATION ENHANCEMENT: For this status, there should *always* be start and end values, even if empty strings
-                let start = try? container.decode(String.self, forKey: .start)
-                let end = try? container.decode(String.self, forKey: .end)
-                self = .activeReview(start: start ?? "", end: end ?? "")
+                let start = try container.decode(String.self, forKey: .start)
+                let end = try container.decode(String.self, forKey: .end)
+                self = .activeReview(start: start, end: end)
             case "accepted": self = .accepted
             case "acceptedWithRevisions": self = .acceptedWithRevisions
             case "previewing": self = .previewing
