@@ -25,25 +25,11 @@ extension Proposal {
         public enum Kind: String, Equatable, Sendable, Codable {
             case warning
             case error
-            public init?(rawValue: RawValue) {
-                switch rawValue {
-                    case "warning": self = .warning
-                    case "error": self = .error
-                    default: return nil
-                }
-            }
         }
         
         public enum Stage: String, Equatable, Sendable, Codable {
             case parse
             case validate
-            public init?(rawValue: RawValue) {
-                switch rawValue {
-                    case "parse": self = .parse
-                    case "validate": self = .validate
-                    default: return nil
-                }
-            }
         }
     }
 }
