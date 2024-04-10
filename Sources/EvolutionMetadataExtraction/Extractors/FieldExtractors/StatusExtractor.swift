@@ -192,3 +192,29 @@ struct StatusExtractor: MarkupWalker, ValueExtractor {
         return (startDate.formatted(dateFormatStyle), wrappedEndDate.formatted(dateFormatStyle), reviewEndedWarning)
     }
 }
+
+extension Proposal.Status {
+    // VALIDATION ENHANCEMENT: Consider normalizing capitalization of statuses and validating correct capitalization
+    public init?(name: String, version: String = "", start: String = "", end: String = "", reason: String = "") {
+        switch name.lowercased() {
+            case "Awaiting Review".lowercased(): self = .awaitingReview
+            case "Scheduled For Review".lowercased(): self = .scheduledForReview(start: start, end: end)
+            case "Active Review".lowercased(): self = .activeReview(start: start, end: end)
+            case "Accepted".lowercased(): self = .accepted
+            case "Accepted With Revisions".lowercased(): self = .acceptedWithRevisions
+            case "Previewing".lowercased(): self = .previewing
+            case "Implemented".lowercased(): self = .implemented(version: version)
+            case "Returned For Revision".lowercased(): self = .returnedForRevision
+            case "Rejected".lowercased(): self = .rejected
+            case "Withdrawn".lowercased(): self = .withdrawn
+            case "Error".lowercased(): self = .error(reason: reason)
+            // VALIDATION ENHANCEMENT: The following are non-standard statuses that are in current proposals
+            // VALIDATION ENHANCEMENT: The mapped values match the legacy tool implemenation
+            // VALIDATION ENHANCEMENT: In the future may want to formalize or normalize
+            case "Accepted with modifications".lowercased(): self = .accepted
+            case "Partially implemented".lowercased(): self = .implemented(version: version)
+            case "Implemented with Modifications".lowercased(): self = .implemented(version: version)
+            default: return nil
+        }
+    }
+}

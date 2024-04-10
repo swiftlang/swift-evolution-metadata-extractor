@@ -44,9 +44,9 @@ extension Proposal.Status: Codable {
     
     public init(from decoder: any Decoder) throws {
         let container = try decoder.container(keyedBy: CodingKeys.self)
-        let status = try container.decode(String.self, forKey: .state)
+        let state = try container.decode(String.self, forKey: .state)
 
-        switch status {
+        switch state {
             case "awaitingReview": self = .awaitingReview
             case "scheduledForReview":
                 // VALIDATION ENHANCEMENT: On date parsing failure, legacy tool omits start and end keys
@@ -75,13 +75,27 @@ extension Proposal.Status: Codable {
                 let reason = try container.decode(String.self, forKey: .reason)
                 self = .error(reason: reason)
             default:
-                self = .unknownStatus(status)
+                self = .unknownStatus(state)
         }
     }
     
     public func encode(to encoder: any Encoder) throws {
+        let state = switch self {
+            case .awaitingReview: "awaitingReview"
+            case .scheduledForReview: "scheduledForReview"
+            case .activeReview: "activeReview"
+            case .accepted: "accepted"
+            case .acceptedWithRevisions: "acceptedWithRevisions"
+            case .previewing: "previewing"
+            case .implemented: "implemented"
+            case .returnedForRevision: "returnedForRevision"
+            case .rejected: "rejected"
+            case .withdrawn: "withdrawn"
+            case .error: "error"
+        }
+        
         var container = encoder.container(keyedBy: CodingKeys.self)
-        try container.encode(self.codingValue, forKey: .state)
+        try container.encode(state, forKey: .state)
         
         if case let .scheduledForReview(startDate, endDate) = self {
             try container.encode(startDate, forKey: .start)
@@ -101,63 +115,4 @@ extension Proposal.Status: Codable {
             try container.encode(reason, forKey: .reason)
         }
     }
-    
-    var codingValue: String {
-        switch self {
-            case .awaitingReview: "awaitingReview"
-            case .scheduledForReview: "scheduledForReview"
-            case .activeReview: "activeReview"
-            case .accepted: "accepted"
-            case .acceptedWithRevisions: "acceptedWithRevisions"
-            case .previewing: "previewing"
-            case .implemented: "implemented"
-            case .returnedForRevision: "returnedForRevision"
-            case .rejected: "rejected"
-            case .withdrawn: "withdrawn"
-            case .error: "error"
-        }
-    }
 }
-
-extension Proposal.Status {
-    // VALIDATION ENHANCEMENT: Consider normalizing capitalization of statuses and validating correct capitalization
-    public init?(name: String, version: String = "", start: String = "", end: String = "", reason: String = "") {
-        switch name.lowercased() {
-            case "Awaiting Review".lowercased(): self = .awaitingReview
-            case "Scheduled For Review".lowercased(): self = .scheduledForReview(start: start, end: end)
-            case "Active Review".lowercased(): self = .activeReview(start: start, end: end)
-            case "Accepted".lowercased(): self = .accepted
-            case "Accepted With Revisions".lowercased(): self = .acceptedWithRevisions
-            case "Previewing".lowercased(): self = .previewing
-            case "Implemented".lowercased(): self = .implemented(version: version)
-            case "Returned For Revision".lowercased(): self = .returnedForRevision
-            case "Rejected".lowercased(): self = .rejected
-            case "Withdrawn".lowercased(): self = .withdrawn
-            case "Error".lowercased(): self = .error(reason: reason)
-            // VALIDATION ENHANCEMENT: The following are non-standard statuses that are in current proposals
-            // VALIDATION ENHANCEMENT: The mapped values match the legacy tool implemenation
-            // VALIDATION ENHANCEMENT: In the future may want to formalize or normalize
-            case "Accepted with modifications".lowercased(): self = .accepted
-            case "Partially implemented".lowercased(): self = .implemented(version: version)
-            case "Implemented with Modifications".lowercased(): self = .implemented(version: version)
-            default: return nil
-        }
-    }
-
-    public var name: String {
-        switch self {
-            case .awaitingReview: "Awaiting Review"
-            case .scheduledForReview: "Scheduled For Review"
-            case .activeReview: "Active Review"
-            case .accepted: "Accepted"
-            case .acceptedWithRevisions: "Accepted With Revisions"
-            case .previewing: "Previewing"
-            case .implemented: "Implemented"
-            case .returnedForRevision: "Returned For Revision"
-            case .rejected: "Rejected"
-            case .withdrawn: "Withdrawn"
-            case .error: "Error"
-        }
-    }
-}
-
