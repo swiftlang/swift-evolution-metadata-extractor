@@ -8,12 +8,26 @@
 // See https://swift.org/CONTRIBUTORS.txt for the list of Swift project authors
 
 public struct EvolutionMetadata: Equatable, Sendable, Codable {
+    
+    /// Schema version of this struct and its related types
     public static let schemaVersion = "0.1.0"
+
+    /// Creation date as a ISO 8601 formatted string
     public var creationDate: String
+    
+    /// Sorted array of Swift versions of proposals with 'implemented' status
     public var implementationVersions: [String]
+    
+    /// Array of proposal metadata instances
     public var proposals: [Proposal]
+    
+    /// The swift-evolution repository commit used as the metadata source
     public var commit: String
+
+    /// Schema version of the decoded metadata
     public var schemaVersion: String
+
+    /// Version of the tool that performed the metadata extraction
     public var toolVersion: String
 
     public init(creationDate: String, implementationVersions: [String], proposals: [Proposal], commit: String, toolVersion: String) {
