@@ -70,17 +70,47 @@ Attributes are `var` variables and not `let` constants to make it easier to buil
 */
 
 public struct Proposal: Equatable, Sendable, Codable, Identifiable {
+
+    /// Proposal ID in the format _SE-NNNN_. For example: "SE-0147"
     public var id: String
+    
+    /// Proposal title as a Markdown string
+    ///
+    /// The contents depend on the proposal itself, but typically only backtick characters appear in titles to indicate code voice.
     public var title: String
+    
+    /// Proposal summary as a Markdown string
     public var summary: String
+    
+    /// Filename and relative link to the proposal in the repository
     public var link: String
+    
+    /// SHA1 hash of the proposal version used as the metadata source
     public var sha: String
+    
+    /// Array of proposal authors
     public var authors: [Person]
+    
+    /// Proposal review manager
     public var reviewManager: Person
+    
+    /// Proposal status
     public var status: Status
+    
+    /// Optional array of tracking bugs
     public var trackingBugs: [TrackingBug]?
+    
+    /// Optional array of implementation links
     public var implementation: [Implementation]?
+    
+    /// Optional array of warnings
+    ///
+    /// Present only if validation warnings were found when extracting metadata from this proposal.
     public var warnings: [Issue]?
+    
+    /// Optional array of errors
+    ///
+    /// Present only if validation errors were found when extracting metadata from this proposal.
     public var errors: [Issue]?
     
     public init(id: String = "", title: String = "", summary: String = "", link: String = "", sha: String = "", authors: [Person] = [], reviewManager: Person = Person(), status: Status = .statusExtractionNotAttempted, trackingBugs: [TrackingBug]? = nil, implementation: [Implementation]? = nil, warnings: [Issue]? = nil, errors: [Issue]? = nil)
