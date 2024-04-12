@@ -79,7 +79,7 @@ struct ImplementationExtractor: MarkupWalker, ValueExtractor {
             return
         }
         
-        let newValue = Proposal.Implementation(account: account, id: implID, repository: repository, type: type)
+        let newValue = Proposal.Implementation(account: account, repository: repository, type: type, id: implID)
         _implementaton.append(newValue)
     }
 }

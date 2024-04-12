@@ -8,17 +8,19 @@
 // See https://swift.org/CONTRIBUTORS.txt for the list of Swift project authors
 
 extension Proposal {
+    
+    /// Type of implementation code details  .
     public struct Implementation: Sendable, Equatable, Codable {
         public let account: String
-        public let id: String
         public let repository: String
         public let type: String
+        public let id: String
         
-        public init(account: String, id: String, repository: String, type: String) {
+        public init(account: String, repository: String, type: String, id: String) {
             self.account = account
-            self.id = id
             self.repository = repository
             self.type = type
+            self.id = id
         }
     }
 }
