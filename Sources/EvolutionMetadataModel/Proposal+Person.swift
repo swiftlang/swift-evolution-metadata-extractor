@@ -8,8 +8,17 @@
 // See https://swift.org/CONTRIBUTORS.txt for the list of Swift project authors
 
 extension Proposal {
+    
+    /// Type that represents a person associated with a proposal.
+    ///
+    /// The `authors` and `reviewManagers` properties contain instances of `Person`
+    ///
     public struct Person: Sendable, Codable, Equatable {
+
+        /// Name of the person
         public let name: String
+
+        /// URL string of the GitHub profile of the person. May be an empty string.
         public let link: String
         
         public init(name: String = "", link: String = "") {

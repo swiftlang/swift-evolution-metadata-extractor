@@ -8,14 +8,32 @@
 // See https://swift.org/CONTRIBUTORS.txt for the list of Swift project authors
 
 extension Proposal {
+    
+    /// Type that represents a tracking bug associated with a proposal.
     public struct TrackingBug: Sendable, Equatable, Codable {
-        public let assignee: String
+        
+        /// Issue ID
         public let id: String
+        
+        /// Link to issue in issue tracker
         public let link: String
+        
+        /// Unused property. Always an empty string
+        public let assignee: String
+        
+        /// Unused property. Always an empty string
         public let radar: String
+        
+        /// Unused property. Always an empty string
         public let resolution: String
+        
+        /// Unused property. Always an empty string
         public let status: String
+        
+        /// Unused property. Always an empty string
         public let title: String
+        
+        /// Unused property. Always an empty string
         public let updated: String
         
         public init(id: String, link: String) {

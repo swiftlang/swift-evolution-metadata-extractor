@@ -8,6 +8,16 @@
 // See https://swift.org/CONTRIBUTORS.txt for the list of Swift project authors
 
 extension Proposal {
+    
+    /// Enum representing the status of the proposal
+    ///
+    /// The `scheduledForReview` and `activeReview` cases have associated `start` and `end` values indicating the review period.
+    /// These values are ISO 8601 formatted strings.
+    ///
+    /// The `implemented` case has an associated`version` value with the Swift version that implements the proposal.
+    ///
+    /// The `error` case has an associated `reason` version with a diagnostic string.
+    /// 
     public enum Status: Equatable, Sendable, Comparable {
         case awaitingReview
         case scheduledForReview(start: String, end: String)
@@ -19,6 +29,17 @@ extension Proposal {
         case returnedForRevision
         case rejected
         case withdrawn
+        
+        /// Error
+        ///
+        /// The error status is not part of the Swift Evolution process. It represents an error in extracting or decoding the metadata.
+        ///
+        /// The error status is used:
+        ///  - During encoding when a status value cannot be extracted from the proposal.
+        ///    In these cases there should be an error in the `errors` array detailing the issue.
+        ///
+        ///  - During decoding if an unexpected status value is found. The associated `reason` string will include the unexpected status value.
+        ///
         case error(reason: String)
         
         // Error status reason values

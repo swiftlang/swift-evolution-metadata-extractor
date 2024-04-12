@@ -8,11 +8,22 @@
 // See https://swift.org/CONTRIBUTORS.txt for the list of Swift project authors
 
 extension Proposal {
+    
+    /// Type containing metadata extraction and validation warnings and errors
+    ///
+    /// The `warnings` and `errors` properties contain instances of `Issue`
+    ///
     public struct Issue: Sendable, Equatable, Codable {
+        
+        /// Kind of issue, warning or error
         public let kind: Kind
+        
+        /// Processing stage where the issue was detected.
         public let stage: Stage
+        
+        /// Message describing the issue
         public let message: String
-                
+            
         public enum Kind: String, Equatable, Sendable, Codable {
             case warning
             case error

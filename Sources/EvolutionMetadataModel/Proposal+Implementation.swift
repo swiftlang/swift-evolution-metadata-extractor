@@ -9,11 +9,19 @@
 
 extension Proposal {
     
-    /// Type of implementation code details  .
+    /// Type representing a repository code change of a proposal implementation
     public struct Implementation: Sendable, Equatable, Codable {
+        
+        /// The GitHub account containing the implementation
         public let account: String
+        
+        /// The repository containing the implementation
         public let repository: String
+        
+        /// The type of implementation code change, value is either 'push' or 'commit'
         public let type: String
+        
+        /// The id of the implementation code change
         public let id: String
         
         public init(account: String, repository: String, type: String, id: String) {
