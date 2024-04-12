@@ -22,6 +22,8 @@ extension Proposal {
         public let code: Int
 
         /// Processing stage where the issue was detected.
+        ///         
+        /// - Warning: This property will be removed. Do not use.
         public let stage: Stage
         
         /// Message describing the issue
@@ -35,6 +37,7 @@ extension Proposal {
             case error
         }
         
+        /// - Warning: This type will be removed. Do not use.
         public enum Stage: String, Equatable, Sendable, Codable {
             case parse
             case validate
