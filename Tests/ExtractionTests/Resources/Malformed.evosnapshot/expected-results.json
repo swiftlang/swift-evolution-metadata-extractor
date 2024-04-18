@@ -1024,6 +1024,76 @@
           "suggestion" : ""
         }
       ]
+    },
+    {
+      "authors" : [
+        {
+          "link" : "",
+          "name" : "David Scrève"
+        }
+      ],
+      "errors" : [
+        {
+          "code" : 0,
+          "kind" : "error",
+          "message" : "Failed to extract upcoming feature flag.",
+          "stage" : "parse",
+          "suggestion" : ""
+        }
+      ],
+      "id" : "SE-0026",
+      "link" : "0026-missing-upcoming-feature-flag.md",
+      "reviewManager" : {
+        "link" : "https:\/\/github.com\/jckarter\/",
+        "name" : "Joe Groff"
+      },
+      "reviewManagers" : [
+        {
+          "link" : "https:\/\/github.com\/jckarter\/",
+          "name" : "Joe Groff"
+        }
+      ],
+      "sha" : "",
+      "status" : {
+        "state" : "rejected"
+      },
+      "summary" : "When developing framework and reusable code, we need to develop classes that are partially abstract with partial implementation. Protocol and protocol extensions provide this, but they cannot have attributes as classes have. A partial class combines the behavior of a class with the requirement of implementing methods in inherited class like protocols.",
+      "title" : "Abstract classes and methods"
+    },
+    {
+      "authors" : [
+        {
+          "link" : "https:\/\/github.com\/zwaldowski",
+          "name" : "Zachary Waldowski"
+        }
+      ],
+      "errors" : [
+        {
+          "code" : 0,
+          "kind" : "error",
+          "message" : "Upcoming feature flag should not contain whitespace.",
+          "stage" : "validate",
+          "suggestion" : ""
+        }
+      ],
+      "id" : "SE-0027",
+      "link" : "0027-malformed-upcoming-feature-flag.md",
+      "reviewManager" : {
+        "link" : "https:\/\/github.com\/DougGregor",
+        "name" : "Doug Gregor"
+      },
+      "reviewManagers" : [
+        {
+          "link" : "https:\/\/github.com\/DougGregor",
+          "name" : "Doug Gregor"
+        }
+      ],
+      "sha" : "",
+      "status" : {
+        "state" : "rejected"
+      },
+      "summary" : "Going back and forth from Strings to their byte representations is an important part of solving many problems, including object serialization, binary and text file formats, wire\/network interfaces, and cryptography. Swift has such utilities, but currently only exposed through `String.Type.fromCString(_:)` and `String.Type.fromCStringRepairingIllFormedUTF8(_:)`.",
+      "title" : "Expose code unit initializers on String"
     }
   ],
   "schemaVersion" : "0.1.0",

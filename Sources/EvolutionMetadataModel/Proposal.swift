@@ -102,6 +102,9 @@ public struct Proposal: Equatable, Sendable, Codable, Identifiable {
     /// Proposal status
     public var status: Status
     
+    /// Optional upcoming feature flag
+    public var upcomingFeatureFlag: UpcomingFeatureFlag?
+    
     /// Optional array of tracking bugs
     public var trackingBugs: [TrackingBug]?
     

@@ -64,6 +64,12 @@ enum ValidationIssue {
         message: "Author name contains extra markup; expected a link with plaintext contents."
     )
     
+    static let upcomingFeatureFlagExtractionFailure = Proposal.Issue(
+        kind: .error,
+        stage: .parse,
+        message: "Failed to extract upcoming feature flag."
+    )
+
     // MARK: - Parse Warnings
     
     // VALIDATION ENHANCEMENT: Why is this only a warning?
@@ -128,7 +134,13 @@ enum ValidationIssue {
         stage: .validate,
         message: "Missing valid proposal ID; SE-0000 is reserved."
     )
-    
+
+    static let malformedUpcomingFeatureFlag = Proposal.Issue(
+        kind: .error,
+        stage: .validate,
+        message: "Upcoming feature flag should not contain whitespace."
+    )
+
     // MARK: - Validation Warnings
     
     static let invalidAuthorLink = Proposal.Issue(

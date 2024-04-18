@@ -67,6 +67,8 @@ struct ProposalMetadataExtractor {
                 warnings.append(ValidationIssue.missingReviewManagers)
             }
             
+            proposal.upcomingFeatureFlag = extractValue(from: headerFieldsByLabel, with: UpcomingFeatureFlagExtractor.self)
+            
             proposal.trackingBugs = extractValue(from: headerFieldsByLabel, with: TrackingBugExtractor.self)
             proposal.implementation = extractValue(from: headerFieldsByLabel, with: ImplementationExtractor.self)
             

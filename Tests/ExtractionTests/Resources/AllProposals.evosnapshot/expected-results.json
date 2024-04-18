@@ -10198,7 +10198,10 @@
         "version" : "5.8"
       },
       "summary" : "Today, `#file` evaluates to a string literal containing the full path to the current source file. We propose to instead have it evaluate to a human-readable string containing the filename and module name, while preserving the existing behavior in a new `#filePath` expression.",
-      "title" : "Concise magic file names"
+      "title" : "Concise magic file names",
+      "upcomingFeatureFlag" : {
+        "flag" : "ConciseMagicFile"
+      }
     },
     {
       "authors" : [
@@ -10658,7 +10661,11 @@
         "version" : "5.3"
       },
       "summary" : "[SE-0279 \"Multiple Trailing Closures\"](https:\/\/github.com\/apple\/swift-evolution\/blob\/master\/proposals\/0279-multiple-trailing-closures.md) threaded the needle between getting the syntax we wanted for multiple trailing closures without breaking source compatibility. One aspect of that compromise was to extend (rather than replace) the existing rule for matching a trailing closure to a parameter by scanning *backward* from the end of the parameter list.",
-      "title" : "Forward-scan matching for trailing closures"
+      "title" : "Forward-scan matching for trailing closures",
+      "upcomingFeatureFlag" : {
+        "available" : "5.8",
+        "flag" : "ForwardTrailingClosures"
+      }
     },
     {
       "authors" : [
@@ -12565,7 +12572,11 @@
         "version" : "5.6"
       },
       "summary" : "Existential types in Swift have an extremely lightweight spelling: a plain protocol name in type context means an existential type. Over the years, this has risen to the level of **active harm** by causing confusion, leading programmers down the wrong path that often requires them to re-write code once they hit a fundamental [limitation of value-level abstraction](https:\/\/forums.swift.org\/t\/improving-the-ui-of-generics\/22814#heading--limits-of-existentials). This proposal makes the impact of existential types explicit in the language by annotating such types with `any`.",
-      "title" : "Introduce existential `any`"
+      "title" : "Introduce existential `any`",
+      "upcomingFeatureFlag" : {
+        "available" : "5.8",
+        "flag" : "ExistentialAny"
+      }
     },
     {
       "authors" : [
@@ -13269,7 +13280,11 @@
         "version" : "5.7"
       },
       "summary" : "We propose the introduction of regex literals to Swift source code, providing compile-time checks and typed-capture inference. Regex literals help complete the story told in *[Regex Type and Overview](https:\/\/github.com\/apple\/swift-evolution\/blob\/main\/proposals\/0350-regex-type-overview.md)*.",
-      "title" : "Regex Literals"
+      "title" : "Regex Literals",
+      "upcomingFeatureFlag" : {
+        "available" : "5.8",
+        "flag" : "BareSlashRegexLiterals"
+      }
     },
     {
       "authors" : [
@@ -14365,7 +14380,10 @@
         "version" : "5.10"
       },
       "summary" : "`@UIApplicationMain` and `@NSApplicationMain` used to be the standard way for iOS and macOS apps respectively to declare a synthesized platform-specific entrypoint for an app. These functions have since been obsoleted by [SE-0281](https:\/\/github.com\/apple\/swift-evolution\/blob\/main\/proposals\/0281-main-attribute.md)'s introduction of the `@main` attribute, and they now represent a confusing bit of duplication in the language. This proposal seeks to deprecate these alternative entrypoint attributes in favor of `@main` in pre-Swift 6, and it makes their use in Swift 6 a hard error.",
-      "title" : "Deprecate @UIApplicationMain and @NSApplicationMain"
+      "title" : "Deprecate @UIApplicationMain and @NSApplicationMain",
+      "upcomingFeatureFlag" : {
+        "flag" : "DeprecateApplicationMain"
+      }
     },
     {
       "authors" : [
@@ -14400,7 +14418,10 @@
         "version" : "5.9"
       },
       "summary" : "This proposal seeks to improve the usability of existing Objective-C libraries from Swift by reducing the negative impact forward declarations have on API visibility from Swift. We wish to start synthesizing placeholder types to represent forward declared Objective-C interfaces and protocols in Swift.",
-      "title" : "Importing Forward Declared Objective-C Interfaces and Protocols"
+      "title" : "Importing Forward Declared Objective-C Interfaces and Protocols",
+      "upcomingFeatureFlag" : {
+        "flag" : "ImportObjcForwardDeclarations"
+      }
     },
     {
       "authors" : [
@@ -15073,7 +15094,10 @@
         "version" : "5.9"
       },
       "summary" : "[SE-0316: Global Actors](https:\/\/github.com\/apple\/swift-evolution\/blob\/main\/proposals\/0316-global-actors.md) introduced annotations like `@MainActor` to isolate a type, function, or property to a particular global actor. It also introduced various rules for how that global actor isolation could be inferred. One of those rules was:",
-      "title" : "Remove Actor Isolation Inference caused by Property Wrappers"
+      "title" : "Remove Actor Isolation Inference caused by Property Wrappers",
+      "upcomingFeatureFlag" : {
+        "flag" : "DisableOutwardActorInference"
+      }
     },
     {
       "authors" : [
@@ -15358,7 +15382,10 @@
         "state" : "accepted"
       },
       "summary" : "Declaring the visibility of a dependency with an access-level modifier on import declarations enables enforcing which declarations can reference the imported module. A dependency can be marked as being visible only to the source file, module, package, or to all clients. This brings the familiar behavior of the access level of declarations to dependencies and imported declarations. This feature can hide implementation details from clients and helps to manage dependency creep.",
-      "title" : "Access-level modifiers on import declarations"
+      "title" : "Access-level modifiers on import declarations",
+      "upcomingFeatureFlag" : {
+        "flag" : "InternalImportsByDefault"
+      }
     },
     {
       "authors" : [
@@ -15456,7 +15483,10 @@
           "title" : "",
           "updated" : ""
         }
-      ]
+      ],
+      "upcomingFeatureFlag" : {
+        "flag" : "IsolatedDefaultValues"
+      }
     },
     {
       "authors" : [
@@ -15521,7 +15551,10 @@
         "state" : "accepted"
       },
       "summary" : "Swift's error handling model allows functions and closures marked `throws` to note that they can exit by throwing an error. The error values themselves are always type-erased to `any Error`. This approach encourages errors to be handled generically, and remains a good default for most code. However, there are some places where the type erasure is unfortunate, because it doesn't allow for more precise error typing in narrow places where it is possible and desirable to handle all errors, or where the costs of type erasure are prohibitive.",
-      "title" : "Typed throws"
+      "title" : "Typed throws",
+      "upcomingFeatureFlag" : {
+        "flag" : "FullTypedThrows"
+      }
     },
     {
       "authors" : [
@@ -15711,7 +15744,10 @@
         "version" : "6.0"
       },
       "summary" : "This proposal is focused on a few corner cases in the language surrounding functions as values and key path literals when using concurrency. We propose Sendability should be inferred for partial and unapplied methods. We also propose to lift a Sendability restriction placed on key path literals in [SE-0302](https:\/\/github.com\/apple\/swift-evolution\/blob\/main\/proposals\/0302-concurrent-value-and-concurrent-closures.md#key-path-literals) by allowing the developers to control whether key path literal is Sendable or not. The goal is to improve flexibility, simplicity, and ergonomics without significant changes to Swift.",
-      "title" : "Inferring `Sendable` for methods and key path literals"
+      "title" : "Inferring `Sendable` for methods and key path literals",
+      "upcomingFeatureFlag" : {
+        "flag" : "InferSendableFromCaptures"
+      }
     },
     {
       "authors" : [
@@ -15905,6 +15941,9 @@
       },
       "summary" : "Many Swift programs need to interoperate with frameworks written in C\/C++\/Objective-C whose implementations cannot participate in static data race safety. Similarly, many Swift programs have dependencies that have not yet adopted strict concurrency checking. A `@preconcurrency import` statement downgrades concurrency-related error messages that the programmer cannot resolve because the fundamental issue is in one of the dependencies. To strengthen Swift's data-race safety guarantees while working with preconcurrency dependencies, this proposals adds actor isolation checking at runtime for synchronous isolated functions.",
       "title" : "Dynamic actor isolation enforcement from non-strict-concurrency contexts",
+      "upcomingFeatureFlag" : {
+        "flag" : "DynamicActorIsolation"
+      },
       "warnings" : [
         {
           "code" : 0,
