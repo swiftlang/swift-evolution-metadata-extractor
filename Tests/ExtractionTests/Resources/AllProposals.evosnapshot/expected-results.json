@@ -3308,6 +3308,9 @@
       ],
       "id" : "SE-0094",
       "link" : "0094-sequence-function.md",
+      "previousProposalIDs" : [
+        "SE-0045"
+      ],
       "reviewManager" : {
         "link" : "http:\/\/github.com\/lattner",
         "name" : "Chris Lattner"
@@ -6508,6 +6511,9 @@
         }
       ],
       "link" : "0182-newline-escape-in-strings.md",
+      "previousProposalIDs" : [
+        "SE-0168"
+      ],
       "reviewManager" : {
         "link" : "https:\/\/github.com\/lattner",
         "name" : "Chris Lattner"
@@ -9000,6 +9006,9 @@
         }
       ],
       "link" : "0245-array-uninitialized-initializer.md",
+      "previousProposalIDs" : [
+        "SE-0223"
+      ],
       "reviewManager" : {
         "link" : "https:\/\/github.com\/tkremenek",
         "name" : "Ted Kremenek"
@@ -9433,6 +9442,9 @@
         }
       ],
       "link" : "0256-contiguous-collection.md",
+      "previousProposalIDs" : [
+        "SE-0237"
+      ],
       "reviewManager" : {
         "link" : "https:\/\/github.com\/tkremenek",
         "name" : "Ted Kremenek"
@@ -14981,6 +14993,9 @@
       ],
       "id" : "SE-0398",
       "link" : "0398-variadic-types.md",
+      "previousProposalIDs" : [
+        "SE-0393"
+      ],
       "reviewManager" : {
         "link" : "https:\/\/github.com\/Jumhyn",
         "name" : "Frederick Kellison-Linn"
@@ -15012,6 +15027,10 @@
       ],
       "id" : "SE-0399",
       "link" : "0399-tuple-of-value-pack-expansion.md",
+      "previousProposalIDs" : [
+        "SE-0393",
+        "SE-0398"
+      ],
       "reviewManager" : {
         "link" : "https:\/\/github.com\/xwu",
         "name" : "Xiaodi Wu"
@@ -15501,6 +15520,13 @@
       ],
       "id" : "SE-0412",
       "link" : "0412-strict-concurrency-for-global-variables.md",
+      "previousProposalIDs" : [
+        "SE-0302",
+        "SE-0306",
+        "SE-0316",
+        "SE-0337",
+        "SE-0343"
+      ],
       "reviewManager" : {
         "link" : "https:\/\/github.com\/hborla",
         "name" : "Holly Borla"
@@ -16071,6 +16097,9 @@
       ],
       "id" : "SE-0427",
       "link" : "0427-noncopyable-generics.md",
+      "previousProposalIDs" : [
+        "SE-0390"
+      ],
       "reviewManager" : {
         "link" : "https:\/\/github.com\/hborla",
         "name" : "Holly Borla"
@@ -16206,6 +16235,9 @@
       ],
       "id" : "SE-0430",
       "link" : "0430-transferring-parameters-and-results.md",
+      "previousProposalIDs" : [
+        "SE-0414"
+      ],
       "reviewManager" : {
         "link" : "https:\/\/github.com\/beccadax",
         "name" : "Becca Royal-Gordon"

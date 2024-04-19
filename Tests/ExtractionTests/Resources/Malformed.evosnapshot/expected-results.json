@@ -1094,6 +1094,54 @@
       },
       "summary" : "Going back and forth from Strings to their byte representations is an important part of solving many problems, including object serialization, binary and text file formats, wire\/network interfaces, and cryptography. Swift has such utilities, but currently only exposed through `String.Type.fromCString(_:)` and `String.Type.fromCStringRepairingIllFormedUTF8(_:)`.",
       "title" : "Expose code unit initializers on String"
+    },
+    {
+      "authors" : [
+        {
+          "link" : "http:\/\/github.com\/erica",
+          "name" : "Erica Sadun"
+        }
+      ],
+      "errors" : [
+        {
+          "code" : 0,
+          "kind" : "error",
+          "message" : "Failed to extract previous proposal IDs.",
+          "stage" : "parse",
+          "suggestion" : ""
+        }
+      ],
+      "id" : "SE-0028",
+      "link" : "0028-missing-previous-proposal-id.md",
+      "reviewManager" : {
+        "link" : "https:\/\/github.com\/lattner",
+        "name" : "Chris Lattner"
+      },
+      "reviewManagers" : [
+        {
+          "link" : "https:\/\/github.com\/lattner",
+          "name" : "Chris Lattner"
+        }
+      ],
+      "sha" : "",
+      "status" : {
+        "state" : "implemented",
+        "version" : "2.2"
+      },
+      "summary" : "This proposal aims to eliminate Swift's use of \"[screaming snake case](https:\/\/en.wikipedia.org\/wiki\/Snake_case)\" like `__FILE__` and `__FUNCTION__` and replacing identifier instances with common [octothorpe-prefixed](https:\/\/en.wiktionary.org\/wiki\/octothorpe) lowercase `#identifier` representations.",
+      "title" : "Modernizing Swift's Debugging Identifiers",
+      "trackingBugs" : [
+        {
+          "assignee" : "",
+          "id" : "SR-669",
+          "link" : "https:\/\/bugs.swift.org\/browse\/SR-669",
+          "radar" : "",
+          "resolution" : "",
+          "status" : "",
+          "title" : "",
+          "updated" : ""
+        }
+      ]
     }
   ],
   "schemaVersion" : "0.1.0",

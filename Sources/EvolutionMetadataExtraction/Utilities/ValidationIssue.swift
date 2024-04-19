@@ -69,6 +69,12 @@ enum ValidationIssue {
         stage: .parse,
         message: "Failed to extract upcoming feature flag."
     )
+    
+    static let previousProposalIDsExtractionFailure = Proposal.Issue(
+        kind: .error,
+        stage: .parse,
+        message: "Failed to extract previous proposal IDs."
+    )
 
     // MARK: - Parse Warnings
     

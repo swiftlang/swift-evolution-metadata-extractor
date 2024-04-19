@@ -69,6 +69,10 @@ struct ProposalMetadataExtractor {
             
             proposal.upcomingFeatureFlag = extractValue(from: headerFieldsByLabel, with: UpcomingFeatureFlagExtractor.self)
             
+            // Known issue with SE-0255, should be resolved by https://github.com/apple/swift-evolution/pull/2411
+            if proposalSpec.id != "SE-0255" {
+                proposal.previousProposalIDs = extractValue(from: headerFieldsByLabel, with: PreviousProposalExtractor.self)
+            }
             proposal.trackingBugs = extractValue(from: headerFieldsByLabel, with: TrackingBugExtractor.self)
             proposal.implementation = extractValue(from: headerFieldsByLabel, with: ImplementationExtractor.self)
             

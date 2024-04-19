@@ -105,6 +105,9 @@ public struct Proposal: Equatable, Sendable, Codable, Identifiable {
     /// Optional upcoming feature flag
     public var upcomingFeatureFlag: UpcomingFeatureFlag?
     
+    /// Optional array of previous proposal IDs in the format _SE-NNNN_
+    public var previousProposalIDs: [String]?
+    
     /// Optional array of tracking bugs
     public var trackingBugs: [TrackingBug]?
     
