@@ -114,6 +114,9 @@ public struct Proposal: Equatable, Sendable, Codable, Identifiable {
     /// Optional array of implementation links
     public var implementation: [Implementation]?
     
+    /// Array of discussions about the proposal. May be an empty array.
+    public var discussions: [Discussion]
+    
     /// Optional array of warnings
     ///
     /// Present only if validation warnings were found when extracting metadata from this proposal.
@@ -124,7 +127,7 @@ public struct Proposal: Equatable, Sendable, Codable, Identifiable {
     /// Present only if validation errors were found when extracting metadata from this proposal.
     public var errors: [Issue]?
     
-    public init(id: String = "", title: String = "", summary: String = "", link: String = "", sha: String = "", authors: [Person] = [], reviewManagers: [Person] = [], status: Status = .statusExtractionNotAttempted, trackingBugs: [TrackingBug]? = nil, implementation: [Implementation]? = nil, warnings: [Issue]? = nil, errors: [Issue]? = nil)
+    public init(id: String = "", title: String = "", summary: String = "", link: String = "", sha: String = "", authors: [Person] = [], reviewManagers: [Person] = [], status: Status = .statusExtractionNotAttempted, trackingBugs: [TrackingBug]? = nil, implementation: [Implementation]? = nil, discussions: [Discussion] = [], warnings: [Issue]? = nil, errors: [Issue]? = nil)
     {
         self.id = id
         self.title = title
@@ -137,6 +140,7 @@ public struct Proposal: Equatable, Sendable, Codable, Identifiable {
         self.status = status
         self.trackingBugs = trackingBugs
         self.implementation = implementation
+        self.discussions = discussions
         self.warnings = warnings
         self.errors = errors
     }

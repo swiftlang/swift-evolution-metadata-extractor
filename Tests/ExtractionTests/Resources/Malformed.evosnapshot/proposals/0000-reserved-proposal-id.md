@@ -4,6 +4,7 @@
 * Author: [Doug Gregor](https://github.com/DougGregor)
 * Status: **Implemented (Swift 2.2)**
 * Bug: [SR-344](https://bugs.swift.org/browse/SR-344)
+* Review: ([review](https://forums.swift.org/t/review-se-0071-allow-most-keywords-in-member-references/2346/1)), ([acceptance](https://forums.swift.org/t/accepted-se-0071-allow-most-keywords-in-member-references/2421))
 
 ## Introduction
 

@@ -76,6 +76,12 @@ struct ProposalMetadataExtractor {
             proposal.trackingBugs = extractValue(from: headerFieldsByLabel, with: TrackingBugExtractor.self)
             proposal.implementation = extractValue(from: headerFieldsByLabel, with: ImplementationExtractor.self)
             
+            if let discussions = extractValue(from: (headerFieldsByLabel, proposalSpec.id), with: DiscussionExtractor.self) {
+                proposal.discussions = discussions
+            } else {
+                errors.append(ValidationIssue.missingReviewField)
+            }
+            
             if let status = extractValue(from: (headerFieldsByLabel, extractionDate), with: StatusExtractor.self) {
                 if case .implemented(let version) = status, version == "none" {
                     // VALIDATION ENHANCEMENT: Figure out a better way to special case the missing version strings for these proposals
@@ -162,6 +168,14 @@ struct LinkInfo {
         if destination.starts(with: /https?:\/\/github.com/) ||
             destination.hasPrefix("//github.com") // protocol-relative URI
         {
+            return destination
+        } else {
+            return nil
+        }
+    }
+    
+    var swiftForumsDestination: String? {
+        if destination.starts(with: "https://forums.swift.org") {
             return destination
         } else {
             return nil

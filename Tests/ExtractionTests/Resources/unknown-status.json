@@ -9,6 +9,28 @@
           "name" : "Alejandro Alonso"
         }
       ],
+      "discussions" : [
+        {
+          "link" : "https:\/\/forums.swift.org\/t\/atomics\/67350",
+          "name" : "pitch"
+        },
+        {
+          "link" : "https:\/\/forums.swift.org\/t\/se-0410-atomics\/68007",
+          "name" : "first review"
+        },
+        {
+          "link" : "https:\/\/forums.swift.org\/t\/returned-for-revision-se-0410-atomics\/68522",
+          "name" : "first return for revision"
+        },
+        {
+          "link" : "https:\/\/forums.swift.org\/t\/second-review-se-0410-atomics\/68810",
+          "name" : "second review"
+        },
+        {
+          "link" : "https:\/\/forums.swift.org\/t\/accepted-with-modifications-se-0410-atomics\/69244",
+          "name" : "acceptance"
+        }
+      ],
       "id" : "SE-0410",
       "implementation" : [
         {

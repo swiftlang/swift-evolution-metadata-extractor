@@ -2,7 +2,7 @@
   "commit" : "",
   "creationDate" : "2024-03-27T15:41:19Z",
   "implementationVersions" : [
-    "2.2", "3"
+    "2.2", "3", "3.0"
   ],
   "proposals" : [
     {
@@ -10,6 +10,16 @@
         {
           "link" : "https:\/\/github.com\/DougGregor",
           "name" : "Doug Gregor"
+        }
+      ],
+      "discussions" : [
+        {
+          "link" : "https:\/\/forums.swift.org\/t\/review-se-0071-allow-most-keywords-in-member-references\/2346\/1",
+          "name" : "review"
+        },
+        {
+          "link" : "https:\/\/forums.swift.org\/t\/accepted-se-0071-allow-most-keywords-in-member-references\/2421",
+          "name" : "acceptance"
         }
       ],
       "errors" : [
@@ -65,6 +75,8 @@
           "name" : "Doug Gregor"
         }
       ],
+      "discussions" : [
+      ],
       "errors" : [
         {
           "code" : 0,
@@ -114,6 +126,8 @@
     {
       "authors" : [
       ],
+      "discussions" : [
+      ],
       "errors" : [
         {
           "code" : 0,
@@ -144,6 +158,12 @@
         {
           "link" : "https:\/\/github.com\/bitjammer",
           "name" : "Ashley Garland"
+        }
+      ],
+      "discussions" : [
+        {
+          "link" : "https:\/\/forums.swift.org\/t\/se-0003-removing-var-from-function-parameters-and-pattern-matching\/1230",
+          "name" : "Rationale"
         }
       ],
       "id" : "SE-0003",
@@ -189,6 +209,8 @@
           "link" : "https:\/\/github.com\/lattner",
           "name" : "Chris Lattner"
         }
+      ],
+      "discussions" : [
       ],
       "errors" : [
         {
@@ -243,6 +265,12 @@
           "name" : "Dave Abrahams"
         }
       ],
+      "discussions" : [
+        {
+          "link" : "https:\/\/forums.swift.org\/t\/accepted-with-modification-se-0005-better-translation-of-objective-c-apis-into-swift\/1668",
+          "name" : "Rationale"
+        }
+      ],
       "id" : "SE-0005",
       "link" : "0005-status-field-not-strong.md",
       "reviewManager" : {
@@ -287,6 +315,12 @@
           "name" : "Maxim Moiseev"
         }
       ],
+      "discussions" : [
+        {
+          "link" : "https:\/\/forums.swift.org\/t\/accepted-with-modifications-se-0006-apply-api-guidelines-to-the-standard-library\/1667",
+          "name" : "Rationale"
+        }
+      ],
       "id" : "SE-0006",
       "link" : "0006-malformed-proposal-link.md",
       "reviewManager" : {
@@ -309,6 +343,8 @@
     },
     {
       "authors" : [
+      ],
+      "discussions" : [
       ],
       "errors" : [
         {
@@ -337,6 +373,8 @@
     },
     {
       "authors" : [
+      ],
+      "discussions" : [
       ],
       "errors" : [
         {
@@ -368,6 +406,12 @@
         {
           "link" : "https:\/\/github.com\/hartbit",
           "name" : "David Hart"
+        }
+      ],
+      "discussions" : [
+        {
+          "link" : "https:\/\/forums.swift.org\/t\/rejected-se-0009-require-self-for-accessing-instance-members\/930",
+          "name" : "Rationale"
         }
       ],
       "errors" : [
@@ -405,6 +449,12 @@
           "name" : "Lily Ballard"
         }
       ],
+      "discussions" : [
+        {
+          "link" : "https:\/\/forums.swift.org\/t\/rejected-se-0010-add-staticstring-unicodescalarview\/1530",
+          "name" : "Rationale"
+        }
+      ],
       "errors" : [
         {
           "code" : 0,
@@ -435,6 +485,12 @@
     },
     {
       "authors" : [
+      ],
+      "discussions" : [
+        {
+          "link" : "https:\/\/forums.swift.org\/t\/accepted-se-0011-replace-typealias-keyword-with-associatedtype-for-associated-type-declarations\/990",
+          "name" : "Rationale"
+        }
       ],
       "errors" : [
         {
@@ -484,6 +540,12 @@
           "name" : "Ashley Garland"
         }
       ],
+      "discussions" : [
+        {
+          "link" : "https:\/\/forums.swift.org\/t\/rejected-se-0013-remove-partial-application-of-non-final-super-methods\/1157",
+          "name" : "Rationale"
+        }
+      ],
       "id" : "SE-0013",
       "link" : "0013-scheduled-for-review-malformed-date-range.md",
       "reviewManager" : {
@@ -519,6 +581,12 @@
         {
           "link" : "https:\/\/github.com\/moiseev",
           "name" : "Max Moiseev"
+        }
+      ],
+      "discussions" : [
+        {
+          "link" : "https:\/\/forums.swift.org\/t\/accepted-se-0014-constraining-anysequence-init\/924",
+          "name" : "Rationale"
         }
       ],
       "id" : "SE-0014",
@@ -570,6 +638,12 @@
           "name" : "Lily Ballard"
         }
       ],
+      "discussions" : [
+        {
+          "link" : "https:\/\/forums.swift.org\/t\/review-add-a-lazy-flatmap-for-sequences-of-optionals\/695\/4",
+          "name" : "Rationale"
+        }
+      ],
       "id" : "SE-0015",
       "implementation" : [
         {
@@ -603,6 +677,12 @@
         {
           "link" : "https:\/\/github.com\/MichaelBuckley",
           "name" : "Michael Buckley"
+        }
+      ],
+      "discussions" : [
+        {
+          "link" : "https:\/\/forums.swift.org\/t\/accepted-se-0016-adding-initializers-to-int-and-uint-to-convert-from-unsafepointer-and-unsafemutablepointer\/2005",
+          "name" : "Rationale"
         }
       ],
       "id" : "SE-0016",
@@ -642,6 +722,12 @@
         {
           "link" : "https:\/\/github.com\/jtbandes",
           "name" : ""
+        }
+      ],
+      "discussions" : [
+        {
+          "link" : "https:\/\/forums.swift.org\/t\/accepted-se-0017-change-unmanaged-to-use-unsafepointer\/2461",
+          "name" : "Rationale"
         }
       ],
       "errors" : [
@@ -700,6 +786,12 @@
           "name" : "Mattt Thompson"
         }
       ],
+      "discussions" : [
+        {
+          "link" : "https:\/\/forums.swift.org\/t\/accepted-se-0019-swift-testing-package-manager\/1155",
+          "name" : "Rationale"
+        }
+      ],
       "id" : "",
       "link" : "0019-proposal-id-extra-markup.md",
       "reviewManager" : {
@@ -747,6 +839,8 @@
           "link" : "https:\/\/github.com\/bitjammer",
           "name" : "Ashley Garland"
         }
+      ],
+      "discussions" : [
       ],
       "id" : "SE-0020",
       "implementation" : [
@@ -798,6 +892,12 @@
           "name" : "Doug Gregor"
         }
       ],
+      "discussions" : [
+        {
+          "link" : "https:\/\/forums.swift.org\/t\/review-naming-functions-with-argument-labels\/1046\/11",
+          "name" : "Rationale"
+        }
+      ],
       "id" : "SE-0021",
       "link" : "0021-invalid-implementation-link.md",
       "reviewManager" : {
@@ -832,6 +932,12 @@
         {
           "link" : "https:\/\/github.com\/DougGregor",
           "name" : "Doug Gregor"
+        }
+      ],
+      "discussions" : [
+        {
+          "link" : "https:\/\/forums.swift.org\/t\/accepted-se-0022-referencing-the-objective-c-selector-of-a-method\/1194",
+          "name" : "Rationale"
         }
       ],
       "id" : "SE-0022",
@@ -910,6 +1016,12 @@
           "name" : "Tony Parker"
         }
       ],
+      "discussions" : [
+        {
+          "link" : "https:\/\/forums.swift.org\/t\/accepted-with-modifications-se-0023-api-design-guidelines\/1666",
+          "name" : "Rationale"
+        }
+      ],
       "id" : "SE-0023",
       "link" : "0023-author-link-variants.md",
       "reviewManager" : {
@@ -944,6 +1056,12 @@
         {
           "link" : "https:\/\/github.com\/jcampbell05",
           "name" : "James Campbell"
+        }
+      ],
+      "discussions" : [
+        {
+          "link" : "https:\/\/forums.swift.org\/t\/rejected-se-0024-optional-value-setter\/1528",
+          "name" : "Rationale"
         }
       ],
       "id" : "SE-0024",
@@ -981,6 +1099,12 @@
         {
           "link" : "",
           "name" : "Ilya Belenkiy"
+        }
+      ],
+      "discussions" : [
+        {
+          "link" : "https:\/\/forums.swift.org\/t\/se-0025-scoped-access-level-next-steps\/1797\/131",
+          "name" : "Rationale"
         }
       ],
       "id" : "SE-0025",
@@ -1032,6 +1156,24 @@
           "name" : "David Scrève"
         }
       ],
+      "discussions" : [
+        {
+          "link" : "https:\/\/forums.swift.org\/t\/proposal-draff-abstract-classes-and-methods\/965",
+          "name" : "pitch"
+        },
+        {
+          "link" : "https:\/\/forums.swift.org\/t\/review-se-0026-abstract-classes-and-methods\/1580",
+          "name" : "review"
+        },
+        {
+          "link" : "https:\/\/forums.swift.org\/t\/deferred-se-0026-abstract-classes-and-methods\/1705",
+          "name" : "deferral"
+        },
+        {
+          "link" : "https:\/\/forums.swift.org\/t\/returning-or-rejecting-all-the-deferred-evolution-proposals\/60724",
+          "name" : "rejection"
+        }
+      ],
       "errors" : [
         {
           "code" : 0,
@@ -1067,6 +1209,12 @@
           "name" : "Zachary Waldowski"
         }
       ],
+      "discussions" : [
+        {
+          "link" : "https:\/\/forums.swift.org\/t\/rejected-se-0027-expose-code-unit-initializers-on-string\/1529",
+          "name" : "Rationale"
+        }
+      ],
       "errors" : [
         {
           "code" : 0,
@@ -1100,6 +1248,12 @@
         {
           "link" : "http:\/\/github.com\/erica",
           "name" : "Erica Sadun"
+        }
+      ],
+      "discussions" : [
+        {
+          "link" : "https:\/\/forums.swift.org\/t\/accepted-se-0028-modernizing-swifts-debugging-identifiers-line-etc\/1303",
+          "name" : "Rationale"
         }
       ],
       "errors" : [
@@ -1142,6 +1296,89 @@
           "updated" : ""
         }
       ]
+    },
+    {
+      "authors" : [
+        {
+          "link" : "http:\/\/github.com\/lattner",
+          "name" : "Chris Lattner"
+        }
+      ],
+      "discussions" : [
+      ],
+      "errors" : [
+        {
+          "code" : 0,
+          "kind" : "error",
+          "message" : "Missing Review field.",
+          "stage" : "parse",
+          "suggestion" : ""
+        }
+      ],
+      "id" : "SE-0029",
+      "implementation" : [
+        {
+          "account" : "apple",
+          "id" : "8e12008d2b34a605f8766310f53d5668f3d50955",
+          "repository" : "swift",
+          "type" : "commit"
+        }
+      ],
+      "link" : "0029-missing-review-field.md",
+      "reviewManager" : {
+        "link" : "http:\/\/github.com\/jckarter",
+        "name" : "Joe Groff"
+      },
+      "reviewManagers" : [
+        {
+          "link" : "http:\/\/github.com\/jckarter",
+          "name" : "Joe Groff"
+        }
+      ],
+      "sha" : "",
+      "status" : {
+        "state" : "implemented",
+        "version" : "3.0"
+      },
+      "summary" : "Function call expressions (which include several syntactic forms that apply an argument list to something of function type) currently have a dual nature in Swift.  Given something like:",
+      "title" : "Remove implicit tuple splat behavior from function applications"
+    },
+    {
+      "authors" : [
+        {
+          "link" : "https:\/\/github.com\/jckarter",
+          "name" : "Joe Groff"
+        }
+      ],
+      "discussions" : [
+      ],
+      "errors" : [
+        {
+          "code" : 0,
+          "kind" : "error",
+          "message" : "Failed to extract discussions from Review field.",
+          "stage" : "parse",
+          "suggestion" : ""
+        }
+      ],
+      "id" : "SE-0030",
+      "link" : "0030-malformed-review-links.md",
+      "reviewManager" : {
+        "link" : "https:\/\/github.com\/DougGregor",
+        "name" : "Doug Gregor"
+      },
+      "reviewManagers" : [
+        {
+          "link" : "https:\/\/github.com\/DougGregor",
+          "name" : "Doug Gregor"
+        }
+      ],
+      "sha" : "",
+      "status" : {
+        "state" : "withdrawn"
+      },
+      "summary" : "There are property implementation patterns that come up repeatedly. Rather than hardcode a fixed set of patterns into the compiler, we should provide a general \"property behavior\" mechanism to allow these patterns to be defined as libraries.",
+      "title" : "Property Behaviors"
     }
   ],
   "schemaVersion" : "0.1.0",

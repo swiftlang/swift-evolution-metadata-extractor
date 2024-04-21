@@ -76,6 +76,18 @@ enum ValidationIssue {
         message: "Failed to extract previous proposal IDs."
     )
 
+    static let missingReviewField = Proposal.Issue(
+        kind: .error,
+        stage: .parse,
+        message: "Missing Review field."
+    )
+
+    static let discussionExtractionFailure = Proposal.Issue(
+        kind: .error,
+        stage: .parse,
+        message: "Failed to extract discussions from Review field."
+    )
+
     // MARK: - Parse Warnings
     
     // VALIDATION ENHANCEMENT: Why is this only a warning?
@@ -165,6 +177,12 @@ enum ValidationIssue {
         kind: .warning,
         stage: .validate,
         message: "Implementation links to a non-Swift repository."
+    )
+    
+    static let invalidDiscussionLink = Proposal.Issue(
+        kind: .warning,
+        stage: .validate,
+        message: "Discussion link doesn't refer to a Swift forum thread. Discussion removed."
     )
 
     // VALIDATION ENHANCEMENTS: Consider not including the date in the review message, or not including time components.
