@@ -12,7 +12,7 @@ import EvolutionMetadataModel
 
 // VALIDATION ENHANCEMENTS: After validation enhancements, consider moving the full list of known issues to EvolutionMetadataModel as an extension to Proposal.Issue. Possibly then add ValidationIssue as a typealias.
 
-enum ValidationIssue {
+extension Proposal.Issue {
     
     // MARK: - Parse Errors
     // VALIDATION ENHANCEMENTS: Consider making a stronger 'unable to fetch or read proposal' statement

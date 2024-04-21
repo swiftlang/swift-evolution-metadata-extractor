@@ -20,12 +20,12 @@ struct ProposalLinkExtractor: MarkupWalker, ValueExtractor {
         if let headerField = headerFieldsByLabel["Proposal"] {
             visit(headerField)
         } else {
-            errors.append(ValidationIssue.missingProposalIDLink)
+            errors.append(.missingProposalIDLink)
         }
         if let proposalLink {
             
             if !proposalLink.containsTextElement {
-                warnings.append(ValidationIssue.proposalIDHasExtraMarkup)
+                warnings.append(.proposalIDHasExtraMarkup)
             }
             
             // VALIDATION ENHANCEMENT: To match legacy behavior, if ID has extra markup, the
@@ -33,11 +33,11 @@ struct ProposalLinkExtractor: MarkupWalker, ValueExtractor {
             if !proposalLink.text.isEmpty {
                 
                 if proposalLink.text == "SE-0000" {
-                    errors.append(ValidationIssue.reservedProposalID)
+                    errors.append(.reservedProposalID)
                 }
                 
                 if !proposalLink.text.contains(/^SE-\d\d\d\d$/) {
-                    errors.append(ValidationIssue.proposalIDWrongDigitCount)
+                    errors.append(.proposalIDWrongDigitCount)
                 }
                 
                 // VALIDATION ENHANCEMENT: Once we move from the legacy tool. Remove this.
@@ -58,14 +58,14 @@ struct ProposalLinkExtractor: MarkupWalker, ValueExtractor {
             }
             
         } else {
-            errors.append(ValidationIssue.missingProposalIDLink)
+            errors.append(.missingProposalIDLink)
         }
         return ExtractionResult(value: proposalLink ?? LinkInfo(text: "", destination: ""), warnings: warnings, errors: errors)
     }
     
     mutating func visitLink(_ link: Link) -> () {
         guard let value = LinkInfo(link: link) else {
-            errors.append(ValidationIssue.missingProposalIDLink)
+            errors.append(.missingProposalIDLink)
             return
         }
         proposalLink = value

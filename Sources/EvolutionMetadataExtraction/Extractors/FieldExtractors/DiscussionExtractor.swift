@@ -28,7 +28,7 @@ struct DiscussionExtractor: MarkupWalker, ValueExtractor {
             // format discussions correctly. Those issues should be corrected in the proposals themselves.
             // Once all of those issues are resolved, the legacy check can be removed.
             if discussions.isEmpty && !Legacy.discussionExtractionFailures.contains(sourceValues.proposalID) {
-                errors.append(ValidationIssue.discussionExtractionFailure)
+                errors.append(.discussionExtractionFailure)
             }
         } else {
             // VALIDATION ENHANCEMENT: Add field to proposals with missing field and remove special case logic.
@@ -37,7 +37,7 @@ struct DiscussionExtractor: MarkupWalker, ValueExtractor {
             // Once all of those issues are resolved, the legacy check can be removed.
             // Note that some very early proposals may not have valid discussions be extracted.
             if !Legacy.missingReviewFields.contains(sourceValues.proposalID) {
-                errors.append(ValidationIssue.missingReviewField)
+                errors.append(.missingReviewField)
             }
         }
         
@@ -60,7 +60,7 @@ struct DiscussionExtractor: MarkupWalker, ValueExtractor {
         if let discussionURL = linkInfo.swiftForumsDestination {
             discussions.append(Proposal.Discussion(name: linkInfo.text, link: discussionURL))
         } else {
-            warnings.append(ValidationIssue.invalidDiscussionLink)
+            warnings.append(.invalidDiscussionLink)
         }
     }
 }

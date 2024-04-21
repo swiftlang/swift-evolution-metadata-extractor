@@ -36,10 +36,10 @@ struct UpcomingFeatureFlagExtractor: MarkupWalker, ValueExtractor {
             if let flag {
                 if flag.contains(/\s/) {
                     self.flag = nil
-                    errors.append(ValidationIssue.malformedUpcomingFeatureFlag)
+                    errors.append(.malformedUpcomingFeatureFlag)
                 }
             } else {
-                errors.append(ValidationIssue.upcomingFeatureFlagExtractionFailure)
+                errors.append(.upcomingFeatureFlagExtractionFailure)
             }
             
         }

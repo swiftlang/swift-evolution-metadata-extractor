@@ -100,7 +100,7 @@ struct EvolutionMetadataExtractor {
 
         } catch {
             print(error)
-            return SortableProposalWrapper(proposal: Proposal(errors:[ValidationIssue.proposalContainsNoContent]), sortIndex: proposalSpec.sortIndex)
+            return SortableProposalWrapper(proposal: Proposal(errors:[.proposalContainsNoContent]), sortIndex: proposalSpec.sortIndex)
         }
     }
     

@@ -27,7 +27,7 @@ struct PreviousProposalExtractor: MarkupWalker, ValueExtractor {
             
             // validate that if the header field is here at least one proposal ID was found
             if _previousProposalIDs.isEmpty {
-                errors.append(ValidationIssue.previousProposalIDsExtractionFailure)
+                errors.append(.previousProposalIDsExtractionFailure)
             }
         }
         

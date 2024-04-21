@@ -30,7 +30,7 @@ struct StatusExtractor: MarkupWalker, ValueExtractor {
         
         // This checks both that the field is found and is successfully extracted
         if status == nil {
-            warnings.append(ValidationIssue.missingStatus)
+            warnings.append(.missingStatus)
         }
         return ExtractionResult(value: status, warnings: warnings, errors: errors)
     }
@@ -61,14 +61,14 @@ struct StatusExtractor: MarkupWalker, ValueExtractor {
                     warnings.append(warning)
                 }
             } else {
-                warnings.append(ValidationIssue.missingOrInvalidReviewDates)
+                warnings.append(.missingOrInvalidReviewDates)
             }
         }
         
         if let rawStatus = Proposal.Status(name: statusString, version: version, start: start, end: end) {
             status = rawStatus
         } else {
-            errors.append(ValidationIssue.missingOrInvalidStatus)
+            errors.append(.missingOrInvalidStatus)
             status = .statusExtractionFailed
         }
     }
@@ -184,7 +184,7 @@ struct StatusExtractor: MarkupWalker, ValueExtractor {
         // VALIDATION ENHANCEMENT: Add (x) days before showing this.
         var reviewEndedWarning: Proposal.Issue?
         if processingDate > wrappedEndDate {
-            reviewEndedWarning = ValidationIssue.reviewEnded(on: wrappedEndDate)
+            reviewEndedWarning = .reviewEnded(on: wrappedEndDate)
         }
         
         // Specify explicit GMT time zone and 'en_US_POSIX' locale

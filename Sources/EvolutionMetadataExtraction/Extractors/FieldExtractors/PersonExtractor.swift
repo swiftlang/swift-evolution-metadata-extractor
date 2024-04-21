@@ -61,7 +61,7 @@ struct PersonExtractor: MarkupWalker {
         }
         // VALIDATION ENHANCEMENT: Add 'extra markup error' for review managers
         if !linkInfo.containsTextElement && role == .author {
-            errors.append(ValidationIssue.authorsHaveExtraMarkup)
+            errors.append(.authorsHaveExtraMarkup)
         }
         
         let destination: String
@@ -69,8 +69,8 @@ struct PersonExtractor: MarkupWalker {
             destination = validatedDestination
         } else {
             switch role {
-                case .author: warnings.append(ValidationIssue.invalidAuthorLink)
-                case .reviewManager: warnings.append(ValidationIssue.invalidReviewManagerLink)
+                case .author: warnings.append(.invalidAuthorLink)
+                case .reviewManager: warnings.append(.invalidReviewManagerLink)
             }
             destination = ""
         }

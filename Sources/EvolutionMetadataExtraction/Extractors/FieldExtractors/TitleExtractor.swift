@@ -28,7 +28,7 @@ struct TitleExtractor: ValueExtractor {
             title = titleElement.plainText
             
         } else {
-            errors.append(ValidationIssue.proposalContainsNoContent)
+            errors.append(.proposalContainsNoContent)
         }
         return ExtractionResult(value: title, warnings: warnings, errors: errors)
         

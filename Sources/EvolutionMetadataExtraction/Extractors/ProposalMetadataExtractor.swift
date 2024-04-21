@@ -38,7 +38,7 @@ struct ProposalMetadataExtractor {
         let document = Document(parsing: markdown, options: [.disableSmartOpts])
         
         guard !document.isEmpty else {
-            proposal.errors = [ValidationIssue.emptyMarkdownFile]
+            proposal.errors = [.emptyMarkdownFile]
             return proposal
         }
         
@@ -57,14 +57,14 @@ struct ProposalMetadataExtractor {
             if let authors = extractValue(from: headerFieldsByLabel, with: AuthorExtractor.self), !authors.isEmpty {
                 proposal.authors = authors
             } else {
-                errors.append(ValidationIssue.missingAuthors)
+                errors.append(.missingAuthors)
             }
             
             if let reviewManagers = extractValue(from: headerFieldsByLabel, with: ReviewManagerExtractor.self), !reviewManagers.isEmpty {
                 proposal.reviewManager = reviewManagers.first!
                 proposal.reviewManagers = reviewManagers
             } else {
-                warnings.append(ValidationIssue.missingReviewManagers)
+                warnings.append(.missingReviewManagers)
             }
             
             proposal.upcomingFeatureFlag = extractValue(from: headerFieldsByLabel, with: UpcomingFeatureFlagExtractor.self)
@@ -79,7 +79,7 @@ struct ProposalMetadataExtractor {
             if let discussions = extractValue(from: (headerFieldsByLabel, proposalSpec.id), with: DiscussionExtractor.self) {
                 proposal.discussions = discussions
             } else {
-                errors.append(ValidationIssue.missingReviewField)
+                errors.append(.missingReviewField)
             }
             
             if let status = extractValue(from: (headerFieldsByLabel, extractionDate), with: StatusExtractor.self) {
@@ -100,7 +100,7 @@ struct ProposalMetadataExtractor {
                 proposal.status = .statusExtractionFailed
             }
         } else {
-            errors.append(ValidationIssue.missingMetadataFields)
+            errors.append(.missingMetadataFields)
         }
         
         // Add warnings and errors if present
