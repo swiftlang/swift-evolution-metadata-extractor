@@ -1,6 +1,6 @@
 {
-  "commit" : "1adc39fd5c07d40348665aede5c4142c0c0bddc9",
-  "creationDate" : "2024-03-27T15:41:19Z",
+  "commit" : "3af3026bfe274d7252204415c44fc6a5fbbe6a79",
+  "creationDate" : "2024-04-22T21:43:44Z",
   "implementationVersions" : [
     "2.2", "3.0", "3.0.1", "3.1", "4.0", "4.1", "4.2", "5.0", "5.1", "5.2",
     "5.3", "5.4", "5.5", "5.5.2", "5.6", "5.7", "5.8", "5.9", "5.9.2", "5.10",
@@ -13448,16 +13448,16 @@
       ],
       "discussions" : [
         {
-          "link" : "https:\/\/forums.swift.org\/t\/accepted-with-modification-se-0306-actors\/47662",
-          "name" : "Acceptance"
-        },
-        {
           "link" : "https:\/\/forums.swift.org\/t\/se-0306-actors\/45734",
-          "name" : "First Review"
+          "name" : "first review"
         },
         {
           "link" : "https:\/\/forums.swift.org\/t\/se-0306-second-review-actors\/47291",
-          "name" : "Second Review"
+          "name" : "second review"
+        },
+        {
+          "link" : "https:\/\/forums.swift.org\/t\/accepted-with-modification-se-0306-actors\/47662",
+          "name" : "acceptance"
         }
       ],
       "id" : "SE-0306",
@@ -13472,7 +13472,7 @@
           "name" : "Joe Groff"
         }
       ],
-      "sha" : "9fcfec964476c99d6f8b208c2b5a000400f47565",
+      "sha" : "3abeb08fc14c89fd5d89304c71ce7507a658c9e2",
       "status" : {
         "state" : "implemented",
         "version" : "5.5"
@@ -13974,7 +13974,7 @@
           "name" : "Ben Cohen"
         }
       ],
-      "sha" : "1416501ce1520497fdeaa2fc2e726a2e2d90aa9e",
+      "sha" : "41fdc8439cd3cb6bec2d61660d872c5749bce93e",
       "status" : {
         "state" : "implemented",
         "version" : "5.5"
@@ -15599,13 +15599,18 @@
           "name" : "Joe Groff"
         }
       ],
-      "sha" : "3528f0790913f09ec6d1590394715d34cab46d92",
+      "sha" : "0bdbcd1617717229740cef36cf9f708cbc89d541",
       "status" : {
         "state" : "implemented",
         "version" : "5.7"
       },
       "summary" : "Existential types in Swift allow one to store a value whose specific type is unknown and may change at runtime. The dynamic type of that stored value, which we refer to as the existential's *underlying type*, is known only by the set of protocols it conforms to and, potentially, its superclass. While existential types are useful for expressing values of dynamic type, they are necessarily restricted because of their dynamic nature. Recent proposals have made [existential types more explicit](https:\/\/github.com\/apple\/swift-evolution\/blob\/main\/proposals\/0335-existential-any.md) to help developers understand this dynamic nature, as well as [making existential types more expressive](https:\/\/github.com\/apple\/swift-evolution\/blob\/main\/proposals\/0309-unlock-existential-types-for-all-protocols.md) by removing a number of limitations. However, a fundamental issue with existential types remains, that once you have a value of existential type it is *very* hard to use generics with it. Developers usually encounter this via the error message \"protocol 'P' as a type cannot conform to itself\":",
-      "title" : "Implicitly Opened Existentials"
+      "title" : "Implicitly Opened Existentials",
+      "upcomingFeatureFlag" : {
+        "available" : "6.0",
+        "enabledInLanguageMode" : "6",
+        "flag" : "ImplicitOpenExistentials"
+      }
     },
     {
       "authors" : [
@@ -17882,19 +17887,19 @@
       "discussions" : [
         {
           "link" : "https:\/\/forums.swift.org\/t\/pitch-observation-revised\/63757",
-          "name" : "(pitch)"
+          "name" : "pitch"
         },
         {
           "link" : "https:\/\/forums.swift.org\/t\/se-0395-observability\/64342\/",
-          "name" : "(first review)"
+          "name" : "first review"
         },
         {
           "link" : "https:\/\/forums.swift.org\/t\/second-review-se-0395-observability\/65261\/",
-          "name" : "(second review)"
+          "name" : "second review"
         },
         {
           "link" : "https:\/\/forums.swift.org\/t\/accepted-with-revision-se-0395-observability\/66760",
-          "name" : "(acceptance)"
+          "name" : "acceptance"
         }
       ],
       "id" : "SE-0395",
@@ -17909,7 +17914,7 @@
           "name" : "Ben Cohen"
         }
       ],
-      "sha" : "9a03397eeeea6c5e26cf968d231ff31976d8f1b2",
+      "sha" : "0090187c4fa000d7b6970424173ae50a2ebb66b0",
       "status" : {
         "state" : "implemented",
         "version" : "5.9"
@@ -18691,16 +18696,16 @@
       ],
       "discussions" : [
         {
-          "link" : "https:\/\/forums.swift.org\/t\/accepted-se-0411-isolated-default-value-expressions\/68806",
-          "name" : "acceptance"
+          "link" : "https:\/\/forums.swift.org\/t\/pitch-isolated-default-value-expressions\/67714",
+          "name" : "pitch"
         },
         {
           "link" : "https:\/\/forums.swift.org\/t\/se-0411\/68065",
           "name" : "review"
         },
         {
-          "link" : "https:\/\/forums.swift.org\/t\/pitch-isolated-default-value-expressions\/67714",
-          "name" : "pitch"
+          "link" : "https:\/\/forums.swift.org\/t\/accepted-se-0411-isolated-default-value-expressions\/68806",
+          "name" : "acceptance"
         }
       ],
       "id" : "SE-0411",
@@ -18723,7 +18728,7 @@
           "name" : "Doug Gregor"
         }
       ],
-      "sha" : "32cdb7fdea5ca985297f4da0c93fc7da6f77944a",
+      "sha" : "02280a41bed55c8f571e19ded7fee845d3a0de00",
       "status" : {
         "state" : "implemented",
         "version" : "5.10"
@@ -18790,13 +18795,17 @@
           "name" : "Holly Borla"
         }
       ],
-      "sha" : "43ab2546efb8ed422cb85d74e4ed2ab4d3d094df",
+      "sha" : "d045827598766aacb408346c7916e9367d89acc5",
       "status" : {
         "state" : "implemented",
         "version" : "5.10"
       },
       "summary" : "This proposal defines options for the usage of global variables free of data races. Within this proposal, global variables encompass any storage of static duration: `let`s and stored `var`s that are either declared at global scope or as static member variables.",
-      "title" : "Strict concurrency for global variables"
+      "title" : "Strict concurrency for global variables",
+      "upcomingFeatureFlag" : {
+        "enabledInLanguageMode" : "6",
+        "flag" : "GlobalConcurrency"
+      }
     },
     {
       "authors" : [
@@ -18862,28 +18871,28 @@
       ],
       "discussions" : [
         {
-          "link" : "https:\/\/forums.swift.org\/t\/accepted-with-modifications-se-0414-region-based-isolation\/70051",
-          "name" : "acceptance"
+          "link" : "https:\/\/forums.swift.org\/t\/pitch-safely-sending-non-sendable-values-across-isolation-domains\/66566",
+          "name" : "first pitch"
+        },
+        {
+          "link" : "https:\/\/forums.swift.org\/t\/pitch-region-based-isolation\/67888",
+          "name" : "second pitch"
+        },
+        {
+          "link" : "https:\/\/forums.swift.org\/t\/se-0414-region-based-isolation\/68805",
+          "name" : "first review"
+        },
+        {
+          "link" : "https:\/\/forums.swift.org\/t\/returned-for-revision-se-0414-region-based-isolation\/69123",
+          "name" : "revision"
         },
         {
           "link" : "https:\/\/forums.swift.org\/t\/se-0414-second-review-region-based-isolation\/69740",
           "name" : "second review"
         },
         {
-          "link" : "https:\/\/forums.swift.org\/t\/returned-for-revision-se-0414-region-based-isolation\/69123",
-          "name" : "decision notes"
-        },
-        {
-          "link" : "https:\/\/forums.swift.org\/t\/se-0414-region-based-isolation\/68805",
-          "name" : "review"
-        },
-        {
-          "link" : "https:\/\/forums.swift.org\/t\/pitch-region-based-isolation\/67888",
-          "name" : "pitch 2"
-        },
-        {
-          "link" : "https:\/\/forums.swift.org\/t\/pitch-safely-sending-non-sendable-values-across-isolation-domains\/66566",
-          "name" : "pitch 1"
+          "link" : "https:\/\/forums.swift.org\/t\/accepted-with-modifications-se-0414-region-based-isolation\/70051",
+          "name" : "acceptance"
         }
       ],
       "id" : "SE-0414",
@@ -18898,7 +18907,7 @@
           "name" : "Holly Borla"
         }
       ],
-      "sha" : "2b078d129dd3942df8a63315f1d2d82bbac2c614",
+      "sha" : "3b45dcba92765fbab073c4e4ac68a6213b1d1762",
       "status" : {
         "state" : "accepted"
       },
@@ -19019,16 +19028,16 @@
       ],
       "discussions" : [
         {
-          "link" : "https:\/\/forums.swift.org\/t\/accepted-se-0417-task-executor-preference\/69705",
-          "name" : "Acceptance"
+          "link" : "https:\/\/forums.swift.org\/t\/pitch-task-executor-preference\/68191",
+          "name" : "pitch"
         },
         {
           "link" : "https:\/\/forums.swift.org\/t\/se-0417-task-executor-preference\/68958",
-          "name" : "Review"
+          "name" : "review"
         },
         {
-          "link" : "https:\/\/forums.swift.org\/t\/pitch-task-executor-preference\/68191",
-          "name" : "Pitch"
+          "link" : "https:\/\/forums.swift.org\/t\/accepted-se-0417-task-executor-preference\/69705",
+          "name" : "acceptance"
         }
       ],
       "id" : "SE-0417",
@@ -19051,7 +19060,7 @@
           "name" : "Doug Gregor"
         }
       ],
-      "sha" : "9064a6e840a512cbb0b86f92b7e219698ab1669b",
+      "sha" : "482ff63b65fc2398114c37632cab158da7643945",
       "status" : {
         "state" : "accepted"
       },
@@ -19113,7 +19122,7 @@
           "name" : "Becca Royal-Gordon"
         }
       ],
-      "sha" : "9bc4e1bc045f6e52f0f74dfa48e9cf1902bcd46d",
+      "sha" : "101595dc0dbe7afb9798911603acb7b16f699637",
       "status" : {
         "state" : "implemented",
         "version" : "6.0"
@@ -19277,16 +19286,16 @@
       ],
       "discussions" : [
         {
-          "link" : "https:\/\/forums.swift.org\/t\/se-0422-expression-macro-as-caller-side-default-argument\/69730",
-          "name" : "Review"
+          "link" : "https:\/\/forums.swift.org\/t\/pitch-expression-macro-as-caller-side-default-argument\/69019",
+          "name" : "pitch"
         },
         {
-          "link" : "https:\/\/forums.swift.org\/t\/pitch-expression-macro-as-caller-side-default-argument\/69019",
-          "name" : "Pitch"
+          "link" : "https:\/\/forums.swift.org\/t\/se-0422-expression-macro-as-caller-side-default-argument\/69730",
+          "name" : "review"
         },
         {
           "link" : "https:\/\/forums.swift.org\/t\/accepted-se-0422-expression-macro-as-caller-side-default-argument\/70050",
-          "name" : "Acceptance"
+          "name" : "acceptance"
         }
       ],
       "id" : "SE-0422",
@@ -19309,7 +19318,7 @@
           "name" : "Doug Gregor"
         }
       ],
-      "sha" : "675eba015c04b108e5bf1bf888e718af9cef7142",
+      "sha" : "f214098b447d5be5411e9a39f75fbc6f14190eb3",
       "status" : {
         "state" : "implemented",
         "version" : "6.0"
@@ -19335,7 +19344,11 @@
         },
         {
           "link" : "https:\/\/forums.swift.org\/t\/se-0423-dynamic-actor-isolation-enforcement-from-non-strict-concurrency-contexts\/70155",
-          "name" : "review"
+          "name" : "first review"
+        },
+        {
+          "link" : "https:\/\/forums.swift.org\/t\/se-0423-second-review-dynamic-actor-isolation-enforcement-from-non-strict-concurrency-contexts\/71159",
+          "name" : "second review"
         }
       ],
       "id" : "SE-0423",
@@ -19370,10 +19383,10 @@
           "name" : "Ben Cohen"
         }
       ],
-      "sha" : "f6cbf7729df7b0c5ce090801e9e60fd05f9df5ac",
+      "sha" : "58a5f46b420721cab973f00fe9890c26bb06bedb",
       "status" : {
-        "end" : "2024-03-01T00:00:00Z",
-        "start" : "2024-02-20T00:00:00Z",
+        "end" : "2024-04-18T00:00:00Z",
+        "start" : "2024-04-09T00:00:00Z",
         "state" : "activeReview"
       },
       "summary" : "Many Swift programs need to interoperate with frameworks written in C\/C++\/Objective-C whose implementations cannot participate in static data race safety. Similarly, many Swift programs have dependencies that have not yet adopted strict concurrency checking. A `@preconcurrency import` statement downgrades concurrency-related error messages that the programmer cannot resolve because the fundamental issue is in one of the dependencies. To strengthen Swift's data-race safety guarantees while working with preconcurrency dependencies, this proposals adds actor isolation checking at runtime for synchronous isolated functions.",
@@ -19385,7 +19398,7 @@
         {
           "code" : 0,
           "kind" : "warning",
-          "message" : "Review ended on 2024-03-01 00:00:00 +0000.",
+          "message" : "Review ended on 2024-04-18 00:00:00 +0000.",
           "stage" : "validate",
           "suggestion" : ""
         }
@@ -19454,6 +19467,10 @@
         {
           "link" : "https:\/\/forums.swift.org\/t\/se-0425-128-bit-integer-types\/70456",
           "name" : "Review"
+        },
+        {
+          "link" : "https:\/\/forums.swift.org\/t\/accepted\/71063",
+          "name" : "Acceptance"
         }
       ],
       "id" : "SE-0425",
@@ -19468,11 +19485,9 @@
           "name" : "Doug Gregor"
         }
       ],
-      "sha" : "8cf9212086cfb1688c660f37b725f0059e2fafbb",
+      "sha" : "7b3154b580a5d78b45565fd78ee666d5bdae19ac",
       "status" : {
-        "end" : "2024-03-29T00:00:00Z",
-        "start" : "2024-03-05T00:00:00Z",
-        "state" : "activeReview"
+        "state" : "accepted"
       },
       "summary" : "",
       "title" : "128-bit Integer Types"
@@ -19503,11 +19518,15 @@
         },
         {
           "link" : "https:\/\/forums.swift.org\/t\/se-0426-bitwisecopyable\/70479",
-          "name" : "Review"
+          "name" : "First review"
         },
         {
           "link" : "https:\/\/forums.swift.org\/t\/returned-for-revision-se-0426-bitwisecopyable\/70892",
           "name" : "Returned for revision"
+        },
+        {
+          "link" : "https:\/\/forums.swift.org\/t\/se-0426-second-review-bitwisecopyable\/71316",
+          "name" : "Second review"
         }
       ],
       "id" : "SE-0426",
@@ -19522,11 +19541,13 @@
           "name" : "Tony Allevato"
         }
       ],
-      "sha" : "f98e52d17dcd1a481608f51c0785d19c9ad1542b",
+      "sha" : "95f6cd66439670730985a226a667aa45080b0790",
       "status" : {
-        "state" : "returnedForRevision"
+        "end" : "2024-05-02T00:00:00Z",
+        "start" : "2024-04-17T00:00:00Z",
+        "state" : "activeReview"
       },
-      "summary" : "We propose a new marker protocol `BitwiseCopyable` that can be conformed to by types that can be moved or copied with direct calls to `memcpy` and which require no special destroy operation[^1]. When compiling generic code with such constraints, the compiler can emit these efficient operations directly, only requiring minimal overhead to look up the size of the value at runtime. Alternatively, developers can use this constraint to selectively provide high-performance variations of specific operations, such as bulk copying of a container.",
+      "summary" : "We propose a new, [limited](#limitations) protocol `BitwiseCopyable` that *can* be conformed to by types that are \"bitwise-copyable\"[^1]--that is, that can be moved or copied with direct calls to `memcpy` and which require no special destroy operation. When compiling generic code with such constraints, the compiler can emit these efficient operations directly, only requiring minimal overhead to look up the size of the value at runtime. Alternatively, developers can use this constraint to selectively provide high-performance variations of specific operations, such as bulk copying of a container.",
       "title" : "BitwiseCopyable"
     },
     {
@@ -19602,6 +19623,10 @@
         {
           "link" : "https:\/\/forums.swift.org\/t\/se-0428-resolve-distributedactor-protocols\/70669",
           "name" : "review"
+        },
+        {
+          "link" : "https:\/\/forums.swift.org\/t\/accepted-with-modifications-se-0428-resolve-distributedactor-protocols\/71366",
+          "name" : "acceptance with modifications"
         }
       ],
       "id" : "SE-0428",
@@ -19624,7 +19649,7 @@
           "name" : "Freddy Kellison-Linn"
         }
       ],
-      "sha" : "8272486c5e689f5a58da58fb1c00ed36537ec9c2",
+      "sha" : "f68708beedfb06e104caadbb4a4e2c5b536a3998",
       "status" : {
         "end" : "2024-03-26T00:00:00Z",
         "start" : "2024-03-13T00:00:00Z",
@@ -19665,6 +19690,10 @@
         {
           "link" : "https:\/\/forums.swift.org\/t\/se-0429-partial-consumption-of-noncopyable-values\/70675",
           "name" : "review"
+        },
+        {
+          "link" : "https:\/\/forums.swift.org\/t\/accepted-se-0429-partial-consumption-of-noncopyable-values\/70972",
+          "name" : "acceptance"
         }
       ],
       "id" : "SE-0429",
@@ -19679,23 +19708,15 @@
           "name" : "Xiaodi Wu"
         }
       ],
-      "sha" : "eb900639f058ca5badd0e5200b262902b3bf2b0d",
+      "sha" : "4dfa633db8fb0e7c55dc150d2047f3f9ecd3a29c",
       "status" : {
-        "end" : "2024-03-26T00:00:00Z",
-        "start" : "2024-03-13T00:00:00Z",
-        "state" : "activeReview"
+        "state" : "accepted"
       },
       "summary" : "We propose allowing noncopyable fields in deinit-less aggregates to be consumed individually, so long as they are defined in the current module or frozen. Additionally, we propose allowing fields of such an aggregate with a deinit to be consumed individually *within that deinit*. This permits common patterns to be used with many noncopyable values.",
       "title" : "Partial consumption of noncopyable values",
-      "warnings" : [
-        {
-          "code" : 0,
-          "kind" : "warning",
-          "message" : "Review ended on 2024-03-26 00:00:00 +0000.",
-          "stage" : "validate",
-          "suggestion" : ""
-        }
-      ]
+      "upcomingFeatureFlag" : {
+        "flag" : "MoveOnlyPartialConsumption"
+      }
     },
     {
       "authors" : [
@@ -19719,7 +19740,11 @@
         },
         {
           "link" : "https:\/\/forums.swift.org\/t\/se-0430-transferring-isolation-regions-of-parameter-and-result-values\/70830",
-          "name" : "review"
+          "name" : "first review"
+        },
+        {
+          "link" : "https:\/\/forums.swift.org\/t\/returned-for-revision-se-0430-transferring-isolation-regions-of-parameter-and-result-values\/71297",
+          "name" : "revision"
         }
       ],
       "id" : "SE-0430",
@@ -19737,14 +19762,212 @@
           "name" : "Becca Royal-Gordon"
         }
       ],
-      "sha" : "ec4f7c19aa72e8d4b993b382af288678f320704f",
+      "sha" : "f238457f1b7dbdf641f6c21046d85ea455b8e985",
       "status" : {
-        "end" : "2024-04-01T00:00:00Z",
-        "start" : "2024-03-21T00:00:00Z",
-        "state" : "activeReview"
+        "state" : "returnedForRevision"
       },
       "summary" : "This proposal extends region isolation to enable an explicit `transferring` annotation to denote when a parameter or result value is required to be in a disconnected region at the function boundary. This allows the callee or the caller, respectively, to transfer a non-`Sendable` parameter or result value over an isolation boundary or merge the value into an actor-isolated region.",
       "title" : "`transferring` isolation regions of parameter and result values"
+    },
+    {
+      "authors" : [
+        {
+          "link" : "https:\/\/github.com\/rjmccall",
+          "name" : "John McCall"
+        }
+      ],
+      "discussions" : [
+        {
+          "link" : "https:\/\/forums.swift.org\/t\/isolated-any-function-types\/70562",
+          "name" : "pitch"
+        },
+        {
+          "link" : "https:\/\/forums.swift.org\/t\/se-0431-isolated-any-function-types\/70939",
+          "name" : "review"
+        }
+      ],
+      "id" : "SE-0431",
+      "implementation" : [
+        {
+          "account" : "apple",
+          "id" : "71433",
+          "repository" : "swift",
+          "type" : "pull"
+        },
+        {
+          "account" : "apple",
+          "id" : "71574",
+          "repository" : "swift",
+          "type" : "pull"
+        }
+      ],
+      "link" : "0431-isolated-any-functions.md",
+      "reviewManager" : {
+        "link" : "https:\/\/github.com\/DougGregor",
+        "name" : "Doug Gregor"
+      },
+      "reviewManagers" : [
+        {
+          "link" : "https:\/\/github.com\/DougGregor",
+          "name" : "Doug Gregor"
+        }
+      ],
+      "sha" : "bed741703978310103365945a967327ab769c010",
+      "status" : {
+        "end" : "2024-04-09T00:00:00Z",
+        "start" : "2024-03-27T00:00:00Z",
+        "state" : "activeReview"
+      },
+      "summary" : "The actor isolation of a function is an important part of how it's used.  Swift can reason precisely about the isolation of a specific function *declaration*, but when functions are passed around as *values*, Swift's function types are not expressive enough to keep up. This proposal adds a new kind of function type that carries its function's actor isolation dynamically.  This solves a variety of expressivity problems in the language.  It also allows features such as the standard library's task-creation APIs to be implemented more efficiently and with stronger semantic guarantees.",
+      "title" : "`@isolated(any)` Function Types",
+      "warnings" : [
+        {
+          "code" : 0,
+          "kind" : "warning",
+          "message" : "Review ended on 2024-04-09 00:00:00 +0000.",
+          "stage" : "validate",
+          "suggestion" : ""
+        }
+      ]
+    },
+    {
+      "authors" : [
+        {
+          "link" : "https:\/\/github.com\/jckarter",
+          "name" : "Joe Groff"
+        }
+      ],
+      "discussions" : [
+        {
+          "link" : "https:\/\/forums.swift.org\/t\/se-0432-borrowing-and-consuming-pattern-matching-for-noncopyable-types\/71158",
+          "name" : "review"
+        }
+      ],
+      "id" : "SE-0432",
+      "link" : "0432-noncopyable-switch.md",
+      "reviewManager" : {
+        "link" : "https:\/\/github.com\/airspeedswift",
+        "name" : "Ben Cohen"
+      },
+      "reviewManagers" : [
+        {
+          "link" : "https:\/\/github.com\/airspeedswift",
+          "name" : "Ben Cohen"
+        }
+      ],
+      "sha" : "6ccb1bb274c546e4b30019ed5ddd32343c154d74",
+      "status" : {
+        "end" : "2024-04-22T00:00:00Z",
+        "start" : "2024-04-09T00:00:00Z",
+        "state" : "activeReview"
+      },
+      "summary" : "Pattern matching over noncopyable types, particularly noncopyable enums, can be generalized to allow for pattern matches that borrow their subject, in addition to the existing support for consuming pattern matches.",
+      "title" : "Borrowing and consuming pattern matching for noncopyable types",
+      "upcomingFeatureFlag" : {
+        "flag" : "BorrowingSwitch"
+      },
+      "warnings" : [
+        {
+          "code" : 0,
+          "kind" : "warning",
+          "message" : "Review ended on 2024-04-22 00:00:00 +0000.",
+          "stage" : "validate",
+          "suggestion" : ""
+        }
+      ]
+    },
+    {
+      "authors" : [
+        {
+          "link" : "https:\/\/github.com\/Azoy",
+          "name" : "Alejandro Alonso"
+        }
+      ],
+      "discussions" : [
+      ],
+      "id" : "SE-0433",
+      "implementation" : [
+        {
+          "account" : "apple",
+          "id" : "71383",
+          "repository" : "swift",
+          "type" : "pull"
+        }
+      ],
+      "link" : "0433-mutex.md",
+      "reviewManager" : {
+        "link" : "https:\/\/github.com\/stephentyrone",
+        "name" : "Stephen Canon"
+      },
+      "reviewManagers" : [
+        {
+          "link" : "https:\/\/github.com\/stephentyrone",
+          "name" : "Stephen Canon"
+        }
+      ],
+      "sha" : "7fcedf9816360828487e8122867a1e037018c9dc",
+      "status" : {
+        "end" : "2024-04-24T00:00:00Z",
+        "start" : "2024-04-10T00:00:00Z",
+        "state" : "activeReview"
+      },
+      "summary" : "This proposal introduces a mutual exclusion lock, or a mutex, to the standard library. `Mutex` will be a new synchronization primitive in the synchronization module.",
+      "title" : "Synchronous Mutual Exclusion Lock 🔒"
+    },
+    {
+      "authors" : [
+        {
+          "link" : "https:\/\/github.com\/simanerush",
+          "name" : "Sima Nerush"
+        },
+        {
+          "link" : "https:\/\/github.com\/mattmassicotte",
+          "name" : "Matt Massicotte"
+        },
+        {
+          "link" : "https:\/\/github.com\/hborla",
+          "name" : "Holly Borla"
+        }
+      ],
+      "discussions" : [
+        {
+          "link" : "https:\/\/forums.swift.org\/t\/pitch-usability-of-global-actor-isolated-types\/70799",
+          "name" : "pitch"
+        },
+        {
+          "link" : "https:\/\/forums.swift.org\/t\/se-0434-usability-of-global-actor-isolated-types\/71187",
+          "name" : "review"
+        }
+      ],
+      "id" : "SE-0434",
+      "link" : "0434-global-actor-isolated-types-usability.md",
+      "reviewManager" : {
+        "link" : "https:\/\/github.com\/rjmccall",
+        "name" : "John McCall"
+      },
+      "reviewManagers" : [
+        {
+          "link" : "https:\/\/github.com\/rjmccall",
+          "name" : "John McCall"
+        }
+      ],
+      "sha" : "fbd2e246eb8468a54b05f17d85394d58e2b50bea",
+      "status" : {
+        "end" : "2024-04-22T00:00:00Z",
+        "start" : "2024-04-10T00:00:00Z",
+        "state" : "activeReview"
+      },
+      "summary" : "This proposal encompasses a collection of changes to concurrency rules concerning global-actor-isolated types to improve their usability.",
+      "title" : "Usability of global-actor-isolated types",
+      "warnings" : [
+        {
+          "code" : 0,
+          "kind" : "warning",
+          "message" : "Review ended on 2024-04-22 00:00:00 +0000.",
+          "stage" : "validate",
+          "suggestion" : ""
+        }
+      ]
     }
   ],
   "schemaVersion" : "0.1.0",
