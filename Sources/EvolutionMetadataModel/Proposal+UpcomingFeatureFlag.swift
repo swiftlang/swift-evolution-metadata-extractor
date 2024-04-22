@@ -23,12 +23,12 @@ extension Proposal {
         /// Swift language version (language mode) where the flag is always enabled and therefore no longer necessary.
         ///
         /// Only present for publicly announced language versions.
-        public let enabledInLanguageVersion: String?
+        public let enabledInLanguageMode: String?
         
-        public init(flag: String, available: String?, enabledInLanguageVersion: String?) {
+        public init(flag: String, available: String?, enabledInLanguageMode: String?) {
             self.flag = flag
             self.available = available
-            self.enabledInLanguageVersion = enabledInLanguageVersion
+            self.enabledInLanguageMode = enabledInLanguageMode
         }
     }
 }

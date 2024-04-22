@@ -21,7 +21,7 @@ struct UpcomingFeatureFlagExtractor: MarkupWalker, ValueExtractor {
     
     private var uff: Proposal.UpcomingFeatureFlag? {
         if let flag {
-            return Proposal.UpcomingFeatureFlag(flag: flag, available: available, enabledInLanguageVersion: enabled)
+            return Proposal.UpcomingFeatureFlag(flag: flag, available: available, enabledInLanguageMode: enabled)
         } else {
             return nil
         }
