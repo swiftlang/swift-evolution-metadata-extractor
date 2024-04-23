@@ -1,8 +1,8 @@
 # Remove implicit tuple splat behavior from function applications
 
 * Proposal: [SE-0029](0029-missing-review-field.md)
-* Author: [Chris Lattner](http://github.com/lattner)
-* Review Manager: [Joe Groff](http://github.com/jckarter)
+* Author: [Chris Lattner](https://github.com/lattner)
+* Review Manager: [Joe Groff](https://github.com/jckarter)
 * Status: **Implemented (Swift 3.0)**
 * Implementation: [apple/swift@8e12008](https://github.com/apple/swift/commit/8e12008d2b34a605f8766310f53d5668f3d50955)
 

@@ -1,6 +1,6 @@
 {
-  "commit" : "3af3026bfe274d7252204415c44fc6a5fbbe6a79",
-  "creationDate" : "2024-04-22T21:43:44Z",
+  "commit" : "3a0ba96f7d09df771e82e0bce95bda6a8f1dc8cd",
+  "creationDate" : "2024-04-23T00:21:36Z",
   "implementationVersions" : [
     "2.2", "3.0", "3.0.1", "3.1", "4.0", "4.1", "4.2", "5.0", "5.1", "5.2",
     "5.3", "5.4", "5.5", "5.5.2", "5.6", "5.7", "5.8", "5.9", "5.9.2", "5.10",
@@ -940,7 +940,7 @@
           "name" : "Ted Kremenek"
         },
         {
-          "link" : "http:\/\/github.com\/lattner",
+          "link" : "https:\/\/github.com\/lattner",
           "name" : "Chris Lattner"
         },
         {
@@ -978,7 +978,7 @@
           "name" : "Doug Gregor"
         }
       ],
-      "sha" : "cb6b5abb0d74129cf26301d603fa4802329925c6",
+      "sha" : "e8e5c3fe02f7ed4d25d988231a2352fcb5981eb4",
       "status" : {
         "state" : "implemented",
         "version" : "3.0"
@@ -1034,16 +1034,16 @@
       "id" : "SE-0025",
       "link" : "0025-scoped-access-level.md",
       "reviewManager" : {
-        "link" : "http:\/\/github.com\/DougGregor",
+        "link" : "https:\/\/github.com\/DougGregor",
         "name" : "Doug Gregor"
       },
       "reviewManagers" : [
         {
-          "link" : "http:\/\/github.com\/DougGregor",
+          "link" : "https:\/\/github.com\/DougGregor",
           "name" : "Doug Gregor"
         }
       ],
-      "sha" : "ef2900ef7e22271f4de6110dcf4e9b7b89096acb",
+      "sha" : "67d8a5560e12d7938357178da419d3f1fdf92f9c",
       "status" : {
         "state" : "implemented",
         "version" : "3.0"
@@ -1142,7 +1142,7 @@
     {
       "authors" : [
         {
-          "link" : "http:\/\/github.com\/erica",
+          "link" : "https:\/\/github.com\/erica",
           "name" : "Erica Sadun"
         }
       ],
@@ -1164,7 +1164,7 @@
           "name" : "Chris Lattner"
         }
       ],
-      "sha" : "6787f7208fdf36c1fc1468c53e6908ae08f27085",
+      "sha" : "9e51fb46f9572483aa40ee37a8969137e814de1e",
       "status" : {
         "state" : "implemented",
         "version" : "2.2"
@@ -1187,7 +1187,7 @@
     {
       "authors" : [
         {
-          "link" : "http:\/\/github.com\/lattner",
+          "link" : "https:\/\/github.com\/lattner",
           "name" : "Chris Lattner"
         }
       ],
@@ -1208,16 +1208,16 @@
       ],
       "link" : "0029-remove-implicit-tuple-splat.md",
       "reviewManager" : {
-        "link" : "http:\/\/github.com\/jckarter",
+        "link" : "https:\/\/github.com\/jckarter",
         "name" : "Joe Groff"
       },
       "reviewManagers" : [
         {
-          "link" : "http:\/\/github.com\/jckarter",
+          "link" : "https:\/\/github.com\/jckarter",
           "name" : "Joe Groff"
         }
       ],
-      "sha" : "605a7cec37fb83f0257d895a283fbde06e49b7af",
+      "sha" : "e16653aef44bed7ed657a443de68da141892420c",
       "status" : {
         "state" : "implemented",
         "version" : "3.0"
@@ -1264,7 +1264,7 @@
           "name" : "Joe Groff"
         },
         {
-          "link" : "http:\/\/github.com\/erica",
+          "link" : "https:\/\/github.com\/erica",
           "name" : "Erica Sadun"
         }
       ],
@@ -1294,7 +1294,7 @@
           "name" : "Chris Lattner"
         }
       ],
-      "sha" : "8dc23b285dc520aa7a400c750c1d67002a5a8a9a",
+      "sha" : "a49eadb4eb5923bedc5c94d6d25dd519479d6b33",
       "status" : {
         "state" : "implemented",
         "version" : "3.0"
@@ -1383,7 +1383,7 @@
     {
       "authors" : [
         {
-          "link" : "http:\/\/github.com\/erica",
+          "link" : "https:\/\/github.com\/erica",
           "name" : "Erica Sadun"
         }
       ],
@@ -1405,7 +1405,7 @@
           "name" : "Chris Lattner"
         }
       ],
-      "sha" : "dbb3d1d128e093a1ae6adb1c10214bedd3b70808",
+      "sha" : "61b51ffe4723467bed6a9d5063c3482eb5676034",
       "status" : {
         "state" : "implemented",
         "version" : "3.0"
@@ -1473,7 +1473,7 @@
     {
       "authors" : [
         {
-          "link" : "http:\/\/github.com\/erica",
+          "link" : "https:\/\/github.com\/erica",
           "name" : "Erica Sadun"
         },
         {
@@ -1499,7 +1499,7 @@
           "name" : "Doug Gregor"
         }
       ],
-      "sha" : "a8e5293c9855aed2c0d71d933cd619c12c66125f",
+      "sha" : "c9cd52fbcd113fa51c043f6707be7d9cdb67ac8a",
       "status" : {
         "state" : "implemented",
         "version" : "3.0"
@@ -1535,16 +1535,16 @@
       "id" : "SE-0037",
       "link" : "0037-clarify-comments-and-operators.md",
       "reviewManager" : {
-        "link" : "http:\/\/github.com\/lattner",
+        "link" : "https:\/\/github.com\/lattner",
         "name" : "Chris Lattner"
       },
       "reviewManagers" : [
         {
-          "link" : "http:\/\/github.com\/lattner",
+          "link" : "https:\/\/github.com\/lattner",
           "name" : "Chris Lattner"
         }
       ],
-      "sha" : "42061f70beb0291d16671a7624db24e704793e4e",
+      "sha" : "9866d04c29c70c647575c100df5c4ccc51401a2d",
       "status" : {
         "state" : "implemented",
         "version" : "3.0"
@@ -1612,7 +1612,7 @@
     {
       "authors" : [
         {
-          "link" : "http:\/\/github.com\/erica",
+          "link" : "https:\/\/github.com\/erica",
           "name" : "Erica Sadun"
         }
       ],
@@ -1634,7 +1634,7 @@
           "name" : "Chris Lattner"
         }
       ],
-      "sha" : "31cd21031aaa207f0b8f2aaa902ef301feef1988",
+      "sha" : "c03981cf644e544d33335c0923b13b5b8432cedf",
       "status" : {
         "state" : "implemented",
         "version" : "3.0"
@@ -1657,7 +1657,7 @@
     {
       "authors" : [
         {
-          "link" : "http:\/\/github.com\/erica",
+          "link" : "https:\/\/github.com\/erica",
           "name" : "Erica Sadun"
         }
       ],
@@ -1687,7 +1687,7 @@
           "name" : "Chris Lattner"
         }
       ],
-      "sha" : "dc36461d86d76c92c1264395ecc3807c1bd33f3f",
+      "sha" : "17c49bbd262fbba502194cdbfbf6a01e093e8abe",
       "status" : {
         "state" : "implemented",
         "version" : "3.0"
@@ -1702,7 +1702,7 @@
           "name" : "Matthew Johnson"
         },
         {
-          "link" : "http:\/\/github.com\/erica",
+          "link" : "https:\/\/github.com\/erica",
           "name" : "Erica Sadun"
         }
       ],
@@ -1715,16 +1715,16 @@
       "id" : "SE-0041",
       "link" : "0041-conversion-protocol-conventions.md",
       "reviewManager" : {
-        "link" : "http:\/\/github.com\/lattner",
+        "link" : "https:\/\/github.com\/lattner",
         "name" : "Chris Lattner"
       },
       "reviewManagers" : [
         {
-          "link" : "http:\/\/github.com\/lattner",
+          "link" : "https:\/\/github.com\/lattner",
           "name" : "Chris Lattner"
         }
       ],
-      "sha" : "e3af4e753fee71466b36e749d2ef77511857994c",
+      "sha" : "9b61c3cc3b33f9299d0e5f6553db9beb457dc3b4",
       "status" : {
         "state" : "rejected"
       },
@@ -1877,16 +1877,16 @@
       "id" : "SE-0045",
       "link" : "0045-scan-takewhile-dropwhile.md",
       "reviewManager" : {
-        "link" : "http:\/\/github.com\/lattner",
+        "link" : "https:\/\/github.com\/lattner",
         "name" : "Chris Lattner"
       },
       "reviewManagers" : [
         {
-          "link" : "http:\/\/github.com\/lattner",
+          "link" : "https:\/\/github.com\/lattner",
           "name" : "Chris Lattner"
         }
       ],
-      "sha" : "143395fbdf7ba0b7f619c572ca41ad9f30369c6e",
+      "sha" : "5884c6d99e709f12c110fa694f7021d640c0b978",
       "status" : {
         "state" : "implemented",
         "version" : "3.1"
@@ -1913,7 +1913,7 @@
           "name" : "Jake Carter"
         },
         {
-          "link" : "http:\/\/github.com\/erica",
+          "link" : "https:\/\/github.com\/erica",
           "name" : "Erica Sadun"
         }
       ],
@@ -1935,7 +1935,7 @@
           "name" : "Chris Lattner"
         }
       ],
-      "sha" : "0e1940d728d0c29253614032e0247e2903cd8a5e",
+      "sha" : "6b401da8aa203e5e849cfa7e514961b986f32e54",
       "status" : {
         "state" : "implemented",
         "version" : "3.0"
@@ -1958,7 +1958,7 @@
     {
       "authors" : [
         {
-          "link" : "http:\/\/github.com\/erica",
+          "link" : "https:\/\/github.com\/erica",
           "name" : "Erica Sadun"
         },
         {
@@ -1984,7 +1984,7 @@
           "name" : "Chris Lattner"
         }
       ],
-      "sha" : "6487d18d2da62b13ed504b2169c89e9855be1d76",
+      "sha" : "ab940ba45684cc5c50c8e88d7c2f28a286ae34de",
       "status" : {
         "state" : "implemented",
         "version" : "3.0"
@@ -2085,11 +2085,11 @@
     {
       "authors" : [
         {
-          "link" : "http:\/\/github.com\/erica",
+          "link" : "https:\/\/github.com\/erica",
           "name" : "Erica Sadun"
         },
         {
-          "link" : "http:\/\/github.com\/xwu",
+          "link" : "https:\/\/github.com\/xwu",
           "name" : "Xiaodi Wu"
         }
       ],
@@ -2102,16 +2102,16 @@
       "id" : "SE-0050",
       "link" : "0050-floating-point-stride.md",
       "reviewManager" : {
-        "link" : "http:\/\/github.com\/lattner",
+        "link" : "https:\/\/github.com\/lattner",
         "name" : "Chris Lattner"
       },
       "reviewManagers" : [
         {
-          "link" : "http:\/\/github.com\/lattner",
+          "link" : "https:\/\/github.com\/lattner",
           "name" : "Chris Lattner"
         }
       ],
-      "sha" : "d808a9163475086e1919253981d5ef98f2c3c85f",
+      "sha" : "63031b0f67820dd65bb07854a2801cdffa267022",
       "status" : {
         "state" : "withdrawn"
       },
@@ -2121,7 +2121,7 @@
     {
       "authors" : [
         {
-          "link" : "http:\/\/github.com\/erica",
+          "link" : "https:\/\/github.com\/erica",
           "name" : "Erica Sadun"
         }
       ],
@@ -2139,7 +2139,7 @@
           "name" : "N\/A"
         }
       ],
-      "sha" : "bb96a091506155e160f1b317ec60f5400cbd58f7",
+      "sha" : "aabe1b2cadfb0152a703015da29de94e6ceaaad0",
       "status" : {
         "state" : "withdrawn"
       },
@@ -2231,7 +2231,7 @@
     {
       "authors" : [
         {
-          "link" : "http:\/\/github.com\/cwillmor",
+          "link" : "https:\/\/github.com\/cwillmor",
           "name" : "Chris Willmore"
         }
       ],
@@ -2261,7 +2261,7 @@
           "name" : "Chris Lattner"
         }
       ],
-      "sha" : "60a562f10efe2d0d486feeee80c1d9e332e148f8",
+      "sha" : "f8f12c9fe228885d10b1ae3eaa328124dfc8fbe6",
       "status" : {
         "state" : "implemented",
         "version" : "4.2"
@@ -2472,16 +2472,16 @@
       "id" : "SE-0060",
       "link" : "0060-defaulted-parameter-order.md",
       "reviewManager" : {
-        "link" : "http:\/\/github.com\/lattner",
+        "link" : "https:\/\/github.com\/lattner",
         "name" : "Chris Lattner"
       },
       "reviewManagers" : [
         {
-          "link" : "http:\/\/github.com\/lattner",
+          "link" : "https:\/\/github.com\/lattner",
           "name" : "Chris Lattner"
         }
       ],
-      "sha" : "ad7bfd59c9f920abeb3efcc6e4205801432d8cc7",
+      "sha" : "f6cd8d01f87a30d985e514d87187cc3d95a29bc4",
       "status" : {
         "state" : "implemented",
         "version" : "3.0"
@@ -2517,16 +2517,16 @@
       "id" : "SE-0061",
       "link" : "0061-autoreleasepool-signature.md",
       "reviewManager" : {
-        "link" : "http:\/\/github.com\/dabrahams",
+        "link" : "https:\/\/github.com\/dabrahams",
         "name" : "Dave Abrahams"
       },
       "reviewManagers" : [
         {
-          "link" : "http:\/\/github.com\/dabrahams",
+          "link" : "https:\/\/github.com\/dabrahams",
           "name" : "Dave Abrahams"
         }
       ],
-      "sha" : "5d81771c92aecedd864a44f515b126664ac6527a",
+      "sha" : "e9dc5a961c02e3f267e5852893572167d0cc96b4",
       "status" : {
         "state" : "implemented",
         "version" : "3.0"
@@ -2924,16 +2924,16 @@
       "id" : "SE-0070",
       "link" : "0070-optional-requirements.md",
       "reviewManager" : {
-        "link" : "http:\/\/github.com\/lattner",
+        "link" : "https:\/\/github.com\/lattner",
         "name" : "Chris Lattner"
       },
       "reviewManagers" : [
         {
-          "link" : "http:\/\/github.com\/lattner",
+          "link" : "https:\/\/github.com\/lattner",
           "name" : "Chris Lattner"
         }
       ],
-      "sha" : "ee2d148c2bd50f6e77e6fdf3e86d074c5f9d6ae9",
+      "sha" : "0fa44d5c1438e676b1b04581cfbc8fe3619915bc",
       "status" : {
         "state" : "implemented",
         "version" : "3.0"
@@ -3047,16 +3047,16 @@
       "id" : "SE-0073",
       "link" : "0073-noescape-once.md",
       "reviewManager" : {
-        "link" : "http:\/\/github.com\/lattner",
+        "link" : "https:\/\/github.com\/lattner",
         "name" : "Chris Lattner"
       },
       "reviewManagers" : [
         {
-          "link" : "http:\/\/github.com\/lattner",
+          "link" : "https:\/\/github.com\/lattner",
           "name" : "Chris Lattner"
         }
       ],
-      "sha" : "9d1e03ea69c225d8fb1289e2e7648e29f37d3c29",
+      "sha" : "c541f9afd12da0dea145a9dc5ad78194de306d3c",
       "status" : {
         "state" : "rejected"
       },
@@ -3087,16 +3087,16 @@
       "id" : "SE-0074",
       "link" : "0074-binary-search.md",
       "reviewManager" : {
-        "link" : "http:\/\/github.com\/lattner",
+        "link" : "https:\/\/github.com\/lattner",
         "name" : "Chris Lattner"
       },
       "reviewManagers" : [
         {
-          "link" : "http:\/\/github.com\/lattner",
+          "link" : "https:\/\/github.com\/lattner",
           "name" : "Chris Lattner"
         }
       ],
-      "sha" : "e8d135e456d994624da51ca97a610488d0adf222",
+      "sha" : "356615ad03ca58390715386ac6a4a86c13e0a6db",
       "status" : {
         "state" : "rejected"
       },
@@ -3106,7 +3106,7 @@
     {
       "authors" : [
         {
-          "link" : "http:\/\/github.com\/erica",
+          "link" : "https:\/\/github.com\/erica",
           "name" : "Erica Sadun"
         }
       ],
@@ -3119,16 +3119,16 @@
       "id" : "SE-0075",
       "link" : "0075-import-test.md",
       "reviewManager" : {
-        "link" : "http:\/\/github.com\/lattner",
+        "link" : "https:\/\/github.com\/lattner",
         "name" : "Chris Lattner"
       },
       "reviewManagers" : [
         {
-          "link" : "http:\/\/github.com\/lattner",
+          "link" : "https:\/\/github.com\/lattner",
           "name" : "Chris Lattner"
         }
       ],
-      "sha" : "2ea41c3a8c4858c66162fb04cc0a827a5d3201d2",
+      "sha" : "298e4dcde98c3c4d673d94cbe9259f426ee9e279",
       "status" : {
         "state" : "implemented",
         "version" : "4.1"
@@ -3164,16 +3164,16 @@
       "id" : "SE-0076",
       "link" : "0076-copying-to-unsafe-mutable-pointer-with-unsafe-pointer-source.md",
       "reviewManager" : {
-        "link" : "http:\/\/github.com\/lattner",
+        "link" : "https:\/\/github.com\/lattner",
         "name" : "Chris Lattner"
       },
       "reviewManagers" : [
         {
-          "link" : "http:\/\/github.com\/lattner",
+          "link" : "https:\/\/github.com\/lattner",
           "name" : "Chris Lattner"
         }
       ],
-      "sha" : "2de79eb0c0a831280269a410bc84796207f852fe",
+      "sha" : "a84194e2f9d45aedee048443f6cdd3ef4b88dcf4",
       "status" : {
         "state" : "implemented",
         "version" : "3.0"
@@ -3209,16 +3209,16 @@
       "id" : "SE-0077",
       "link" : "0077-operator-precedence.md",
       "reviewManager" : {
-        "link" : "http:\/\/github.com\/jckarter",
+        "link" : "https:\/\/github.com\/jckarter",
         "name" : "Joe Groff"
       },
       "reviewManagers" : [
         {
-          "link" : "http:\/\/github.com\/jckarter",
+          "link" : "https:\/\/github.com\/jckarter",
           "name" : "Joe Groff"
         }
       ],
-      "sha" : "e5fde9f13457636aebc65f47cf8f978a4ea6a5e5",
+      "sha" : "d4b19325fbce73ec95f4b66909fd296d8f334dfa",
       "status" : {
         "state" : "implemented",
         "version" : "3.0"
@@ -3262,16 +3262,16 @@
       "id" : "SE-0078",
       "link" : "0078-rotate-algorithm.md",
       "reviewManager" : {
-        "link" : "http:\/\/github.com\/lattner",
+        "link" : "https:\/\/github.com\/lattner",
         "name" : "Chris Lattner"
       },
       "reviewManagers" : [
         {
-          "link" : "http:\/\/github.com\/lattner",
+          "link" : "https:\/\/github.com\/lattner",
           "name" : "Chris Lattner"
         }
       ],
-      "sha" : "233cab708f5f708a630ef6c36ff79d40b3bfb4d0",
+      "sha" : "3bf931cca15d470f0517f22b74585eba2f4e2099",
       "status" : {
         "state" : "returnedForRevision"
       },
@@ -3331,16 +3331,16 @@
       "id" : "SE-0080",
       "link" : "0080-failable-numeric-initializers.md",
       "reviewManager" : {
-        "link" : "http:\/\/github.com\/lattner",
+        "link" : "https:\/\/github.com\/lattner",
         "name" : "Chris Lattner"
       },
       "reviewManagers" : [
         {
-          "link" : "http:\/\/github.com\/lattner",
+          "link" : "https:\/\/github.com\/lattner",
           "name" : "Chris Lattner"
         }
       ],
-      "sha" : "fcc402eb2f215f1a21bd7a51350e3cfbdb58922b",
+      "sha" : "f03aeec4418e4b5a6fe845b4ac34a0dd2b262751",
       "status" : {
         "state" : "implemented",
         "version" : "3.1"
@@ -3384,16 +3384,16 @@
       "id" : "SE-0081",
       "link" : "0081-move-where-expression.md",
       "reviewManager" : {
-        "link" : "http:\/\/github.com\/lattner",
+        "link" : "https:\/\/github.com\/lattner",
         "name" : "Chris Lattner"
       },
       "reviewManagers" : [
         {
-          "link" : "http:\/\/github.com\/lattner",
+          "link" : "https:\/\/github.com\/lattner",
           "name" : "Chris Lattner"
         }
       ],
-      "sha" : "c0db347b00d67df831a75644ebb104e909b99be0",
+      "sha" : "700590d4cb5cf693b915d3c4836340e07e9f3da5",
       "status" : {
         "state" : "implemented",
         "version" : "3.0"
@@ -3474,16 +3474,16 @@
       "id" : "SE-0083",
       "link" : "0083-remove-bridging-from-dynamic-casts.md",
       "reviewManager" : {
-        "link" : "http:\/\/github.com\/lattner",
+        "link" : "https:\/\/github.com\/lattner",
         "name" : "Chris Lattner"
       },
       "reviewManagers" : [
         {
-          "link" : "http:\/\/github.com\/lattner",
+          "link" : "https:\/\/github.com\/lattner",
           "name" : "Chris Lattner"
         }
       ],
-      "sha" : "4f224f911cda8d0a72db5b5b5e7c922d57159b54",
+      "sha" : "eb64f9e2b171eae9e56db4cd224ed8044a32b8ef",
       "status" : {
         "state" : "rejected"
       },
@@ -3497,7 +3497,7 @@
           "name" : "Grant Paul"
         },
         {
-          "link" : "http:\/\/github.com\/erica",
+          "link" : "https:\/\/github.com\/erica",
           "name" : "Erica Sadun"
         }
       ],
@@ -3510,16 +3510,16 @@
       "id" : "SE-0084",
       "link" : "0084-trailing-commas.md",
       "reviewManager" : {
-        "link" : "http:\/\/github.com\/lattner",
+        "link" : "https:\/\/github.com\/lattner",
         "name" : "Chris Lattner"
       },
       "reviewManagers" : [
         {
-          "link" : "http:\/\/github.com\/lattner",
+          "link" : "https:\/\/github.com\/lattner",
           "name" : "Chris Lattner"
         }
       ],
-      "sha" : "d930b4a84dbee4b4e0935c5268ae84916ea77531",
+      "sha" : "44b0d5d01b65b662e1a931fd89b883cf7002554e",
       "status" : {
         "state" : "rejected"
       },
@@ -3533,7 +3533,7 @@
           "name" : "Rick Ballard"
         },
         {
-          "link" : "http:\/\/github.com\/ddunbar",
+          "link" : "https:\/\/github.com\/ddunbar",
           "name" : "Daniel Dunbar"
         }
       ],
@@ -3554,16 +3554,16 @@
       ],
       "link" : "0085-package-manager-command-name.md",
       "reviewManager" : {
-        "link" : "http:\/\/github.com\/ddunbar",
+        "link" : "https:\/\/github.com\/ddunbar",
         "name" : "Daniel Dunbar"
       },
       "reviewManagers" : [
         {
-          "link" : "http:\/\/github.com\/ddunbar",
+          "link" : "https:\/\/github.com\/ddunbar",
           "name" : "Daniel Dunbar"
         }
       ],
-      "sha" : "b2c77357fc33900f9261e62b77ab7a2f1913d0c4",
+      "sha" : "44c299dbe5e988af515bc33626c9e703ca87b3cb",
       "status" : {
         "state" : "implemented",
         "version" : "3.0"
@@ -3624,16 +3624,16 @@
       "id" : "SE-0087",
       "link" : "0087-lazy-attribute.md",
       "reviewManager" : {
-        "link" : "http:\/\/github.com\/lattner",
+        "link" : "https:\/\/github.com\/lattner",
         "name" : "Chris Lattner"
       },
       "reviewManagers" : [
         {
-          "link" : "http:\/\/github.com\/lattner",
+          "link" : "https:\/\/github.com\/lattner",
           "name" : "Chris Lattner"
         }
       ],
-      "sha" : "d6de4a104273c0657bf2e2c4a87655ac19283101",
+      "sha" : "161687367e91f0f0474e47a3804bf926dc32826f",
       "status" : {
         "state" : "rejected"
       },
@@ -3656,16 +3656,16 @@
       "id" : "SE-0088",
       "link" : "0088-libdispatch-for-swift3.md",
       "reviewManager" : {
-        "link" : "http:\/\/github.com\/lattner",
+        "link" : "https:\/\/github.com\/lattner",
         "name" : "Chris Lattner"
       },
       "reviewManagers" : [
         {
-          "link" : "http:\/\/github.com\/lattner",
+          "link" : "https:\/\/github.com\/lattner",
           "name" : "Chris Lattner"
         }
       ],
-      "sha" : "d87567e22aa47e9cd2fc8ed9ed4f3311795c878a",
+      "sha" : "c6844d322a9369b8e8915e1a4a97f47c211d67f5",
       "status" : {
         "state" : "implemented",
         "version" : "3.0"
@@ -3693,16 +3693,16 @@
       "id" : "SE-0089",
       "link" : "0089-rename-string-reflection-init.md",
       "reviewManager" : {
-        "link" : "http:\/\/github.com\/lattner",
+        "link" : "https:\/\/github.com\/lattner",
         "name" : "Chris Lattner"
       },
       "reviewManagers" : [
         {
-          "link" : "http:\/\/github.com\/lattner",
+          "link" : "https:\/\/github.com\/lattner",
           "name" : "Chris Lattner"
         }
       ],
-      "sha" : "c9230135c05fdb82b7a1b28a83077ca1419ddd79",
+      "sha" : "7f02029dcc8afe8809af69ecd95d19e0efa64333",
       "status" : {
         "state" : "implemented",
         "version" : "3.0"
@@ -3754,16 +3754,16 @@
       "id" : "SE-0090",
       "link" : "0090-remove-dot-self.md",
       "reviewManager" : {
-        "link" : "http:\/\/github.com\/lattner",
+        "link" : "https:\/\/github.com\/lattner",
         "name" : "Chris Lattner"
       },
       "reviewManagers" : [
         {
-          "link" : "http:\/\/github.com\/lattner",
+          "link" : "https:\/\/github.com\/lattner",
           "name" : "Chris Lattner"
         }
       ],
-      "sha" : "ccbcc17a46920a059da9642fde913a26b1de5f0e",
+      "sha" : "c736c5069cafc93a6e62ec49b0ea053af95e291c",
       "status" : {
         "state" : "returnedForRevision"
       },
@@ -3790,16 +3790,16 @@
       "id" : "SE-0091",
       "link" : "0091-improving-operators-in-protocols.md",
       "reviewManager" : {
-        "link" : "http:\/\/github.com\/lattner",
+        "link" : "https:\/\/github.com\/lattner",
         "name" : "Chris Lattner"
       },
       "reviewManagers" : [
         {
-          "link" : "http:\/\/github.com\/lattner",
+          "link" : "https:\/\/github.com\/lattner",
           "name" : "Chris Lattner"
         }
       ],
-      "sha" : "afa8462219e8367a635b4a64d6058457365984c0",
+      "sha" : "de5b8f77727e1eddbca5327e15e9c7bf61712d91",
       "status" : {
         "state" : "implemented",
         "version" : "3.0"
@@ -3839,16 +3839,16 @@
       "id" : "SE-0092",
       "link" : "0092-typealiases-in-protocols.md",
       "reviewManager" : {
-        "link" : "http:\/\/github.com\/lattner",
+        "link" : "https:\/\/github.com\/lattner",
         "name" : "Chris Lattner"
       },
       "reviewManagers" : [
         {
-          "link" : "http:\/\/github.com\/lattner",
+          "link" : "https:\/\/github.com\/lattner",
           "name" : "Chris Lattner"
         }
       ],
-      "sha" : "ec16339c47d12aa5248e331778e9cd2ed01514b3",
+      "sha" : "d6d3912fc7991212a8417072566e7feb0593296a",
       "status" : {
         "state" : "implemented",
         "version" : "3.0"
@@ -3916,7 +3916,7 @@
           "name" : "Lily Ballard"
         },
         {
-          "link" : "http:\/\/github.com\/erica",
+          "link" : "https:\/\/github.com\/erica",
           "name" : "Erica Sadun"
         }
       ],
@@ -3932,16 +3932,16 @@
         "SE-0045"
       ],
       "reviewManager" : {
-        "link" : "http:\/\/github.com\/lattner",
+        "link" : "https:\/\/github.com\/lattner",
         "name" : "Chris Lattner"
       },
       "reviewManagers" : [
         {
-          "link" : "http:\/\/github.com\/lattner",
+          "link" : "https:\/\/github.com\/lattner",
           "name" : "Chris Lattner"
         }
       ],
-      "sha" : "8ad63f4c59222b54cea2d82804b9831e9f244745",
+      "sha" : "985c51e975f8887804e7d7c12dd9cd5644976192",
       "status" : {
         "state" : "implemented",
         "version" : "3.0"
@@ -3981,16 +3981,16 @@
       "id" : "SE-0095",
       "link" : "0095-any-as-existential.md",
       "reviewManager" : {
-        "link" : "http:\/\/github.com\/lattner",
+        "link" : "https:\/\/github.com\/lattner",
         "name" : "Chris Lattner"
       },
       "reviewManagers" : [
         {
-          "link" : "http:\/\/github.com\/lattner",
+          "link" : "https:\/\/github.com\/lattner",
           "name" : "Chris Lattner"
         }
       ],
-      "sha" : "94aa3fc309b87ce982653a45a6e23b4dedda74aa",
+      "sha" : "b63a74991f2db0c0315428ad9b088f15e175fb63",
       "status" : {
         "state" : "implemented",
         "version" : "3.0"
@@ -4026,16 +4026,16 @@
       "id" : "SE-0096",
       "link" : "0096-dynamictype.md",
       "reviewManager" : {
-        "link" : "http:\/\/github.com\/lattner",
+        "link" : "https:\/\/github.com\/lattner",
         "name" : "Chris Lattner"
       },
       "reviewManagers" : [
         {
-          "link" : "http:\/\/github.com\/lattner",
+          "link" : "https:\/\/github.com\/lattner",
           "name" : "Chris Lattner"
         }
       ],
-      "sha" : "4222d619c8ee53df111844885a45f9b9f01b350d",
+      "sha" : "bc7a45ba8d09d7e8480cdc910170b9de8e8fa5b3",
       "status" : {
         "state" : "implemented",
         "version" : "3.0"
@@ -4071,16 +4071,16 @@
       "id" : "SE-0097",
       "link" : "0097-negative-attributes.md",
       "reviewManager" : {
-        "link" : "http:\/\/github.com\/lattner",
+        "link" : "https:\/\/github.com\/lattner",
         "name" : "Chris Lattner"
       },
       "reviewManagers" : [
         {
-          "link" : "http:\/\/github.com\/lattner",
+          "link" : "https:\/\/github.com\/lattner",
           "name" : "Chris Lattner"
         }
       ],
-      "sha" : "6a4d3c19cd973ff0622ac4fea2de64616949db84",
+      "sha" : "6a902d535a76b8bfaaf4a9736f1e9d2056637a5c",
       "status" : {
         "state" : "rejected"
       },
@@ -4103,16 +4103,16 @@
       "id" : "SE-0098",
       "link" : "0098-didset-capitalization.md",
       "reviewManager" : {
-        "link" : "http:\/\/github.com\/lattner",
+        "link" : "https:\/\/github.com\/lattner",
         "name" : "Chris Lattner"
       },
       "reviewManagers" : [
         {
-          "link" : "http:\/\/github.com\/lattner",
+          "link" : "https:\/\/github.com\/lattner",
           "name" : "Chris Lattner"
         }
       ],
-      "sha" : "d1a3cfff8e83b393e1d8be10b4fe441d26276201",
+      "sha" : "52e9279924a463bf88ec8469b7e3135dd25d5b6a",
       "status" : {
         "state" : "rejected"
       },
@@ -4192,7 +4192,7 @@
     {
       "authors" : [
         {
-          "link" : "http:\/\/github.com\/erica",
+          "link" : "https:\/\/github.com\/erica",
           "name" : "Erica Sadun"
         },
         {
@@ -4209,16 +4209,16 @@
       "id" : "SE-0101",
       "link" : "0101-standardizing-sizeof-naming.md",
       "reviewManager" : {
-        "link" : "http:\/\/github.com\/lattner",
+        "link" : "https:\/\/github.com\/lattner",
         "name" : "Chris Lattner"
       },
       "reviewManagers" : [
         {
-          "link" : "http:\/\/github.com\/lattner",
+          "link" : "https:\/\/github.com\/lattner",
           "name" : "Chris Lattner"
         }
       ],
-      "sha" : "445a5447b8fccbba681ca4f7222cad0634d6e3d4",
+      "sha" : "095a25ebd48ea045aecd54ac6573fc8c9e488624",
       "status" : {
         "state" : "implemented",
         "version" : "3.0"
@@ -4242,16 +4242,16 @@
       "id" : "SE-0102",
       "link" : "0102-noreturn-bottom-type.md",
       "reviewManager" : {
-        "link" : "http:\/\/github.com\/lattner",
+        "link" : "https:\/\/github.com\/lattner",
         "name" : "Chris Lattner"
       },
       "reviewManagers" : [
         {
-          "link" : "http:\/\/github.com\/lattner",
+          "link" : "https:\/\/github.com\/lattner",
           "name" : "Chris Lattner"
         }
       ],
-      "sha" : "a500061f8ebfc5faba23ef7472b68a826408077d",
+      "sha" : "4a913444838ecde8abd6ce708f5d26848e7952da",
       "status" : {
         "state" : "implemented",
         "version" : "3.0"
@@ -4287,16 +4287,16 @@
       "id" : "SE-0103",
       "link" : "0103-make-noescape-default.md",
       "reviewManager" : {
-        "link" : "http:\/\/github.com\/lattner",
+        "link" : "https:\/\/github.com\/lattner",
         "name" : "Chris Lattner"
       },
       "reviewManagers" : [
         {
-          "link" : "http:\/\/github.com\/lattner",
+          "link" : "https:\/\/github.com\/lattner",
           "name" : "Chris Lattner"
         }
       ],
-      "sha" : "c1982da464866d7be03768baf41bb196637745d0",
+      "sha" : "1f44d462b95e5a72bdc3018ce0623524a33745b8",
       "status" : {
         "state" : "implemented",
         "version" : "3.0"
@@ -4368,7 +4368,7 @@
     {
       "authors" : [
         {
-          "link" : "http:\/\/github.com\/erica",
+          "link" : "https:\/\/github.com\/erica",
           "name" : "Erica Sadun"
         }
       ],
@@ -4381,16 +4381,16 @@
       "id" : "SE-0105",
       "link" : "0105-remove-where-from-forin-loops.md",
       "reviewManager" : {
-        "link" : "http:\/\/github.com\/lattner",
+        "link" : "https:\/\/github.com\/lattner",
         "name" : "Chris Lattner"
       },
       "reviewManagers" : [
         {
-          "link" : "http:\/\/github.com\/lattner",
+          "link" : "https:\/\/github.com\/lattner",
           "name" : "Chris Lattner"
         }
       ],
-      "sha" : "a3f29187a64c133dcb8337927a62564b1f333ea4",
+      "sha" : "3df0c2d63e5a6623e9ec6a4b60d97bb3c6f08f3e",
       "status" : {
         "state" : "rejected"
       },
@@ -4400,7 +4400,7 @@
     {
       "authors" : [
         {
-          "link" : "http:\/\/github.com\/erica",
+          "link" : "https:\/\/github.com\/erica",
           "name" : "Erica Sadun"
         }
       ],
@@ -4413,16 +4413,16 @@
       "id" : "SE-0106",
       "link" : "0106-rename-osx-to-macos.md",
       "reviewManager" : {
-        "link" : "http:\/\/github.com\/lattner",
+        "link" : "https:\/\/github.com\/lattner",
         "name" : "Chris Lattner"
       },
       "reviewManagers" : [
         {
-          "link" : "http:\/\/github.com\/lattner",
+          "link" : "https:\/\/github.com\/lattner",
           "name" : "Chris Lattner"
         }
       ],
-      "sha" : "749830720d9aa7282ac5046a7581475bcd5295aa",
+      "sha" : "b43afd0446faaa27b8988d28bcdda1bb52e1d39f",
       "status" : {
         "state" : "implemented",
         "version" : "3.0"
@@ -4468,16 +4468,16 @@
       "id" : "SE-0107",
       "link" : "0107-unsaferawpointer.md",
       "reviewManager" : {
-        "link" : "http:\/\/github.com\/lattner",
+        "link" : "https:\/\/github.com\/lattner",
         "name" : "Chris Lattner"
       },
       "reviewManagers" : [
         {
-          "link" : "http:\/\/github.com\/lattner",
+          "link" : "https:\/\/github.com\/lattner",
           "name" : "Chris Lattner"
         }
       ],
-      "sha" : "22614707d9f5764c66789d5c418c6a1b72316e0b",
+      "sha" : "cab2021cf871ed387f954cb31c748f819444d0a4",
       "status" : {
         "state" : "implemented",
         "version" : "3.0"
@@ -4505,16 +4505,16 @@
       "id" : "SE-0108",
       "link" : "0108-remove-assoctype-inference.md",
       "reviewManager" : {
-        "link" : "http:\/\/github.com\/lattner",
+        "link" : "https:\/\/github.com\/lattner",
         "name" : "Chris Lattner"
       },
       "reviewManagers" : [
         {
-          "link" : "http:\/\/github.com\/lattner",
+          "link" : "https:\/\/github.com\/lattner",
           "name" : "Chris Lattner"
         }
       ],
-      "sha" : "082ab850736b1a2f363ee192cb6dfaab2da86134",
+      "sha" : "62f94b08e417de27767cf98c272f674f75d889f5",
       "status" : {
         "state" : "rejected"
       },
@@ -4555,16 +4555,16 @@
       ],
       "link" : "0109-remove-boolean.md",
       "reviewManager" : {
-        "link" : "http:\/\/github.com\/DougGregor",
+        "link" : "https:\/\/github.com\/DougGregor",
         "name" : "Doug Gregor"
       },
       "reviewManagers" : [
         {
-          "link" : "http:\/\/github.com\/DougGregor",
+          "link" : "https:\/\/github.com\/DougGregor",
           "name" : "Doug Gregor"
         }
       ],
-      "sha" : "3b1bde8fada5c4332743b8c064bec12b56bd8e09",
+      "sha" : "89a62aabd3baeac1bb1993f85442cd2c6e202bde",
       "status" : {
         "state" : "implemented",
         "version" : "3.0"
@@ -4645,16 +4645,16 @@
       "id" : "SE-0111",
       "link" : "0111-remove-arg-label-type-significance.md",
       "reviewManager" : {
-        "link" : "http:\/\/github.com\/lattner",
+        "link" : "https:\/\/github.com\/lattner",
         "name" : "Chris Lattner"
       },
       "reviewManagers" : [
         {
-          "link" : "http:\/\/github.com\/lattner",
+          "link" : "https:\/\/github.com\/lattner",
           "name" : "Chris Lattner"
         }
       ],
-      "sha" : "99a23db8ac9b573d2624a79d7a9c688ba9d689e7",
+      "sha" : "0c6db853bd238fd0316de463613c8302e59bc65c",
       "status" : {
         "state" : "implemented",
         "version" : "3.0"
@@ -4694,16 +4694,16 @@
       "id" : "SE-0112",
       "link" : "0112-nserror-bridging.md",
       "reviewManager" : {
-        "link" : "http:\/\/github.com\/lattner",
+        "link" : "https:\/\/github.com\/lattner",
         "name" : "Chris Lattner"
       },
       "reviewManagers" : [
         {
-          "link" : "http:\/\/github.com\/lattner",
+          "link" : "https:\/\/github.com\/lattner",
           "name" : "Chris Lattner"
         }
       ],
-      "sha" : "22a428d830bbba1cec6ce1aadbd2b7d979d3206f",
+      "sha" : "6a436f3eb0266b78ce881d39b7a494fe79b99af4",
       "status" : {
         "state" : "implemented",
         "version" : "3.0"
@@ -4727,16 +4727,16 @@
       "id" : "SE-0113",
       "link" : "0113-rounding-functions-on-floatingpoint.md",
       "reviewManager" : {
-        "link" : "http:\/\/github.com\/lattner",
+        "link" : "https:\/\/github.com\/lattner",
         "name" : "Chris Lattner"
       },
       "reviewManagers" : [
         {
-          "link" : "http:\/\/github.com\/lattner",
+          "link" : "https:\/\/github.com\/lattner",
           "name" : "Chris Lattner"
         }
       ],
-      "sha" : "ba3daf9d22291ade430286d6ef6682a1834fe9ef",
+      "sha" : "d3d78f50363f1d4ead6ba0d0791c52c36a9e6439",
       "status" : {
         "state" : "implemented",
         "version" : "3.0"
@@ -4759,7 +4759,7 @@
     {
       "authors" : [
         {
-          "link" : "http:\/\/github.com\/erica",
+          "link" : "https:\/\/github.com\/erica",
           "name" : "Erica Sadun"
         }
       ],
@@ -4780,16 +4780,16 @@
       ],
       "link" : "0114-buffer-naming.md",
       "reviewManager" : {
-        "link" : "http:\/\/github.com\/lattner",
+        "link" : "https:\/\/github.com\/lattner",
         "name" : "Chris Lattner"
       },
       "reviewManagers" : [
         {
-          "link" : "http:\/\/github.com\/lattner",
+          "link" : "https:\/\/github.com\/lattner",
           "name" : "Chris Lattner"
         }
       ],
-      "sha" : "5db2fb369f7b03aee689c42f3c5a4a99a80354df",
+      "sha" : "1be984c287faf5ec316aa9ae8126d1db73e87d3f",
       "status" : {
         "state" : "implemented",
         "version" : "3.0"
@@ -4813,16 +4813,16 @@
       "id" : "SE-0115",
       "link" : "0115-literal-syntax-protocols.md",
       "reviewManager" : {
-        "link" : "http:\/\/github.com\/lattner",
+        "link" : "https:\/\/github.com\/lattner",
         "name" : "Chris Lattner"
       },
       "reviewManagers" : [
         {
-          "link" : "http:\/\/github.com\/lattner",
+          "link" : "https:\/\/github.com\/lattner",
           "name" : "Chris Lattner"
         }
       ],
-      "sha" : "9cb4ac44d638ef642d0275018ca0ec3a4762b3ee",
+      "sha" : "578588445a85805db84e6decff9e98846b7f0879",
       "status" : {
         "state" : "implemented",
         "version" : "3.0"
@@ -4858,16 +4858,16 @@
       "id" : "SE-0116",
       "link" : "0116-id-as-any.md",
       "reviewManager" : {
-        "link" : "http:\/\/github.com\/lattner",
+        "link" : "https:\/\/github.com\/lattner",
         "name" : "Chris Lattner"
       },
       "reviewManagers" : [
         {
-          "link" : "http:\/\/github.com\/lattner",
+          "link" : "https:\/\/github.com\/lattner",
           "name" : "Chris Lattner"
         }
       ],
-      "sha" : "36d72cd39974a3ec937c231c33c882727e049f80",
+      "sha" : "0bf8fad84c57f204f3d65311ae687625b47f6086",
       "status" : {
         "state" : "implemented",
         "version" : "3.0"
@@ -4903,16 +4903,16 @@
       ],
       "link" : "0117-non-public-subclassable-by-default.md",
       "reviewManager" : {
-        "link" : "http:\/\/github.com\/lattner",
+        "link" : "https:\/\/github.com\/lattner",
         "name" : "Chris Lattner"
       },
       "reviewManagers" : [
         {
-          "link" : "http:\/\/github.com\/lattner",
+          "link" : "https:\/\/github.com\/lattner",
           "name" : "Chris Lattner"
         }
       ],
-      "sha" : "54f7bf61d8d142ed4d2f7ee717a098337ed8bd2c",
+      "sha" : "38cb6b87ca80dd0f5ca59c246df21427eba72084",
       "status" : {
         "state" : "implemented",
         "version" : "3.0"
@@ -4944,16 +4944,16 @@
       "id" : "SE-0118",
       "link" : "0118-closure-parameter-names-and-labels.md",
       "reviewManager" : {
-        "link" : "http:\/\/github.com\/lattner",
+        "link" : "https:\/\/github.com\/lattner",
         "name" : "Chris Lattner"
       },
       "reviewManagers" : [
         {
-          "link" : "http:\/\/github.com\/lattner",
+          "link" : "https:\/\/github.com\/lattner",
           "name" : "Chris Lattner"
         }
       ],
-      "sha" : "0cd69955d18621c84709786b16631a04d9fff1da",
+      "sha" : "4231c09b739940f7ced45a252605b5270e676f66",
       "status" : {
         "state" : "implemented",
         "version" : "3.0"
@@ -4989,16 +4989,16 @@
       "id" : "SE-0119",
       "link" : "0119-extensions-access-modifiers.md",
       "reviewManager" : {
-        "link" : "http:\/\/github.com\/lattner",
+        "link" : "https:\/\/github.com\/lattner",
         "name" : "Chris Lattner"
       },
       "reviewManagers" : [
         {
-          "link" : "http:\/\/github.com\/lattner",
+          "link" : "https:\/\/github.com\/lattner",
           "name" : "Chris Lattner"
         }
       ],
-      "sha" : "1fe24fa3a6b108b1c21fa3c93708cf2feb55fb86",
+      "sha" : "7a9728399d869c827225c22656575b6e68a7a2de",
       "status" : {
         "state" : "rejected"
       },
@@ -5029,16 +5029,16 @@
       "id" : "SE-0120",
       "link" : "0120-revise-partition-method.md",
       "reviewManager" : {
-        "link" : "http:\/\/github.com\/lattner",
+        "link" : "https:\/\/github.com\/lattner",
         "name" : "Chris Lattner"
       },
       "reviewManagers" : [
         {
-          "link" : "http:\/\/github.com\/lattner",
+          "link" : "https:\/\/github.com\/lattner",
           "name" : "Chris Lattner"
         }
       ],
-      "sha" : "49e38a78ed06106fe5ecde2864242878835411e7",
+      "sha" : "26bc6d0aa3fb6a6f7297de8c4ee2bd123473064e",
       "status" : {
         "state" : "implemented",
         "version" : "3.0"
@@ -5082,16 +5082,16 @@
       ],
       "link" : "0121-remove-optional-comparison-operators.md",
       "reviewManager" : {
-        "link" : "http:\/\/github.com\/lattner",
+        "link" : "https:\/\/github.com\/lattner",
         "name" : "Chris Lattner"
       },
       "reviewManagers" : [
         {
-          "link" : "http:\/\/github.com\/lattner",
+          "link" : "https:\/\/github.com\/lattner",
           "name" : "Chris Lattner"
         }
       ],
-      "sha" : "44cd28bb4fed19037e7ff68f5667c534fad00c51",
+      "sha" : "45073740df0a93f4560f69f78aeaba317a94a9ad",
       "status" : {
         "state" : "implemented",
         "version" : "3.0"
@@ -5115,16 +5115,16 @@
       "id" : "SE-0122",
       "link" : "0122-use-colons-for-subscript-type-declarations.md",
       "reviewManager" : {
-        "link" : "http:\/\/github.com\/lattner",
+        "link" : "https:\/\/github.com\/lattner",
         "name" : "Chris Lattner"
       },
       "reviewManagers" : [
         {
-          "link" : "http:\/\/github.com\/lattner",
+          "link" : "https:\/\/github.com\/lattner",
           "name" : "Chris Lattner"
         }
       ],
-      "sha" : "d21669c174626ce7d29f31622cf9da0ca6d4b501",
+      "sha" : "cfabbd5dbde57d1e45f44306b5dc4de640a99685",
       "status" : {
         "state" : "rejected"
       },
@@ -5155,16 +5155,16 @@
       "id" : "SE-0123",
       "link" : "0123-disallow-value-to-optional-coercion-in-operator-arguments.md",
       "reviewManager" : {
-        "link" : "http:\/\/github.com\/lattner",
+        "link" : "https:\/\/github.com\/lattner",
         "name" : "Chris Lattner"
       },
       "reviewManagers" : [
         {
-          "link" : "http:\/\/github.com\/lattner",
+          "link" : "https:\/\/github.com\/lattner",
           "name" : "Chris Lattner"
         }
       ],
-      "sha" : "39dcf33d7739678fc0e583752cdae0debb9e29c9",
+      "sha" : "29ecfb322599c54a22a762d6b531f9a0e7240388",
       "status" : {
         "state" : "rejected"
       },
@@ -5187,16 +5187,16 @@
       "id" : "SE-0124",
       "link" : "0124-bitpattern-label-for-int-initializer-objectidentfier.md",
       "reviewManager" : {
-        "link" : "http:\/\/github.com\/lattner",
+        "link" : "https:\/\/github.com\/lattner",
         "name" : "Chris Lattner"
       },
       "reviewManagers" : [
         {
-          "link" : "http:\/\/github.com\/lattner",
+          "link" : "https:\/\/github.com\/lattner",
           "name" : "Chris Lattner"
         }
       ],
-      "sha" : "936ab9682675b8562826428de22a7f7ae08445a6",
+      "sha" : "892a806a96386a72ff0fa919bb4a23f0a36eeed6",
       "status" : {
         "state" : "implemented",
         "version" : "3.0"
@@ -5232,16 +5232,16 @@
       "id" : "SE-0125",
       "link" : "0125-remove-nonobjectivecbase.md",
       "reviewManager" : {
-        "link" : "http:\/\/github.com\/lattner",
+        "link" : "https:\/\/github.com\/lattner",
         "name" : "Chris Lattner"
       },
       "reviewManagers" : [
         {
-          "link" : "http:\/\/github.com\/lattner",
+          "link" : "https:\/\/github.com\/lattner",
           "name" : "Chris Lattner"
         }
       ],
-      "sha" : "03e8844dc91d4bcd1492a724d36be9519ad856aa",
+      "sha" : "d9b887fed1defe03ed4ec6a14326655b6a58ebd7",
       "status" : {
         "state" : "implemented",
         "version" : "3.0"
@@ -5281,16 +5281,16 @@
       "id" : "SE-0126",
       "link" : "0126-refactor-metatypes-repurpose-t-dot-self-and-mirror.md",
       "reviewManager" : {
-        "link" : "http:\/\/github.com\/lattner",
+        "link" : "https:\/\/github.com\/lattner",
         "name" : "Chris Lattner"
       },
       "reviewManagers" : [
         {
-          "link" : "http:\/\/github.com\/lattner",
+          "link" : "https:\/\/github.com\/lattner",
           "name" : "Chris Lattner"
         }
       ],
-      "sha" : "3fc1d08d208d2bfb52511ed8a476a6572a5fa2d9",
+      "sha" : "6901aa0b6e6bd3829d89eb26e7d53f1ca46e9ab3",
       "status" : {
         "state" : "withdrawn"
       },
@@ -5313,16 +5313,16 @@
       "id" : "SE-0127",
       "link" : "0127-cleaning-up-stdlib-ptr-buffer.md",
       "reviewManager" : {
-        "link" : "http:\/\/github.com\/lattner",
+        "link" : "https:\/\/github.com\/lattner",
         "name" : "Chris Lattner"
       },
       "reviewManagers" : [
         {
-          "link" : "http:\/\/github.com\/lattner",
+          "link" : "https:\/\/github.com\/lattner",
           "name" : "Chris Lattner"
         }
       ],
-      "sha" : "bc7461188a777f0df68ff92e0082306648f4eabc",
+      "sha" : "f00bb6631a7ecf2635daeb774ce823804fed7fa3",
       "status" : {
         "state" : "implemented",
         "version" : "3.0"
@@ -5386,16 +5386,16 @@
       ],
       "link" : "0128-unicodescalar-failable-initializer.md",
       "reviewManager" : {
-        "link" : "http:\/\/github.com\/lattner",
+        "link" : "https:\/\/github.com\/lattner",
         "name" : "Chris Lattner"
       },
       "reviewManagers" : [
         {
-          "link" : "http:\/\/github.com\/lattner",
+          "link" : "https:\/\/github.com\/lattner",
           "name" : "Chris Lattner"
         }
       ],
-      "sha" : "88cb74f1482319d80e8dd786c5f11ac06964bdae",
+      "sha" : "29e75877b8c400c4c7d91e8bf954c63ecf2eb71e",
       "status" : {
         "state" : "implemented",
         "version" : "3.0"
@@ -5452,16 +5452,16 @@
       "id" : "SE-0130",
       "link" : "0130-string-initializers-cleanup.md",
       "reviewManager" : {
-        "link" : "http:\/\/github.com\/lattner",
+        "link" : "https:\/\/github.com\/lattner",
         "name" : "Chris Lattner"
       },
       "reviewManagers" : [
         {
-          "link" : "http:\/\/github.com\/lattner",
+          "link" : "https:\/\/github.com\/lattner",
           "name" : "Chris Lattner"
         }
       ],
-      "sha" : "3f70b278840a2a811ab2d032ab3b2888c7a1067f",
+      "sha" : "05a3e7f8217563615a138a22e78ffab612c68740",
       "status" : {
         "state" : "implemented",
         "version" : "3.0"
@@ -5485,16 +5485,16 @@
       "id" : "SE-0131",
       "link" : "0131-anyhashable.md",
       "reviewManager" : {
-        "link" : "http:\/\/github.com\/lattner",
+        "link" : "https:\/\/github.com\/lattner",
         "name" : "Chris Lattner"
       },
       "reviewManagers" : [
         {
-          "link" : "http:\/\/github.com\/lattner",
+          "link" : "https:\/\/github.com\/lattner",
           "name" : "Chris Lattner"
         }
       ],
-      "sha" : "9c9045989571e2d8fa6658a1a95bcb19fec3c777",
+      "sha" : "aa7547d36770ff19e2619403e8da19d173f8f1e7",
       "status" : {
         "state" : "implemented",
         "version" : "3.0"
@@ -5522,16 +5522,16 @@
       "id" : "SE-0132",
       "link" : "0132-sequence-end-ops.md",
       "reviewManager" : {
-        "link" : "http:\/\/github.com\/lattner",
+        "link" : "https:\/\/github.com\/lattner",
         "name" : "Chris Lattner"
       },
       "reviewManagers" : [
         {
-          "link" : "http:\/\/github.com\/lattner",
+          "link" : "https:\/\/github.com\/lattner",
           "name" : "Chris Lattner"
         }
       ],
-      "sha" : "f61db449e4fd1ca15296dfe89edc430c185c3f25",
+      "sha" : "f27abd85c69d066b3fbf8c9f0b2c54a21f803e31",
       "status" : {
         "state" : "rejected"
       },
@@ -5574,16 +5574,16 @@
       ],
       "link" : "0133-rename-flatten-to-joined.md",
       "reviewManager" : {
-        "link" : "http:\/\/github.com\/lattner",
+        "link" : "https:\/\/github.com\/lattner",
         "name" : "Chris Lattner"
       },
       "reviewManagers" : [
         {
-          "link" : "http:\/\/github.com\/lattner",
+          "link" : "https:\/\/github.com\/lattner",
           "name" : "Chris Lattner"
         }
       ],
-      "sha" : "8386e527b8d8a27976dd02679af91b65b04c3088",
+      "sha" : "4408b1a775818dce9b62c7edead8adaf06e26d4c",
       "status" : {
         "state" : "implemented",
         "version" : "3.0"
@@ -5619,16 +5619,16 @@
       ],
       "link" : "0134-rename-string-properties.md",
       "reviewManager" : {
-        "link" : "http:\/\/github.com\/lattner",
+        "link" : "https:\/\/github.com\/lattner",
         "name" : "Chris Lattner"
       },
       "reviewManagers" : [
         {
-          "link" : "http:\/\/github.com\/lattner",
+          "link" : "https:\/\/github.com\/lattner",
           "name" : "Chris Lattner"
         }
       ],
-      "sha" : "5e41274c4ab30f7d8e7e49d58ea51f050cf78a04",
+      "sha" : "b5afb172a406c9a0af0e96287bf10c4f31cda6fb",
       "status" : {
         "state" : "implemented",
         "version" : "3.0"
@@ -5997,16 +5997,16 @@
       "id" : "SE-0144",
       "link" : "0144-allow-single-dollar-sign-as-valid-identifier.md",
       "reviewManager" : {
-        "link" : "http:\/\/github.com\/lattner",
+        "link" : "https:\/\/github.com\/lattner",
         "name" : "Chris Lattner"
       },
       "reviewManagers" : [
         {
-          "link" : "http:\/\/github.com\/lattner",
+          "link" : "https:\/\/github.com\/lattner",
           "name" : "Chris Lattner"
         }
       ],
-      "sha" : "b12e2dc645ff469b8137d2c4255dd2a0b71afdad",
+      "sha" : "3b5d3a9ea16ef97417040cfd082edfbc109063fa",
       "status" : {
         "state" : "rejected"
       },
@@ -6282,7 +6282,7 @@
           "name" : "Daniel Dunbar"
         },
         {
-          "link" : "http:\/\/github.com\/rballard",
+          "link" : "https:\/\/github.com\/rballard",
           "name" : "Rick Ballard"
         }
       ],
@@ -6304,7 +6304,7 @@
           "name" : "Anders Bertelrud"
         }
       ],
-      "sha" : "e94c203f6ab4f01fb9f55649a34bcd85ae11b345",
+      "sha" : "e9421cf04b1a3225f4053ab08dac5ed79c63ba36",
       "status" : {
         "state" : "implemented",
         "version" : "3.1"
@@ -6522,11 +6522,11 @@
     {
       "authors" : [
         {
-          "link" : "http:\/\/github.com\/hartbit",
+          "link" : "https:\/\/github.com\/hartbit",
           "name" : "David Hart"
         },
         {
-          "link" : "http:\/\/github.com\/austinzheng",
+          "link" : "https:\/\/github.com\/austinzheng",
           "name" : "Austin Zheng"
         }
       ],
@@ -6548,7 +6548,7 @@
           "name" : "Doug Gregor"
         }
       ],
-      "sha" : "24a705bdc70454cb72ffffb5d6557dfefefa113a",
+      "sha" : "50836fd0f1638a72d2c4253cb26b7c31b1325143",
       "status" : {
         "state" : "implemented",
         "version" : "4.0"
@@ -6669,7 +6669,7 @@
     {
       "authors" : [
         {
-          "link" : "http:\/\/github.com\/hartbit",
+          "link" : "https:\/\/github.com\/hartbit",
           "name" : "David Hart"
         }
       ],
@@ -6691,7 +6691,7 @@
           "name" : "Doug Gregor"
         }
       ],
-      "sha" : "75aaecac6d53f6fb85ce90ba911809f7e65557f5",
+      "sha" : "3dedccdb440a851baffb4e1a2bb3c4f4f64b637f",
       "status" : {
         "state" : "rejected"
       },
@@ -6844,7 +6844,7 @@
           "name" : "Ben Cohen"
         },
         {
-          "link" : "http:\/\/github.com\/dabrahams\/",
+          "link" : "https:\/\/github.com\/dabrahams\/",
           "name" : "Dave Abrahams"
         }
       ],
@@ -6870,7 +6870,7 @@
           "name" : "John McCall"
         }
       ],
-      "sha" : "885e6407687b8c92f474c0b1a04756bb39f0a4e1",
+      "sha" : "c43e0e2ead130e59967b900de39127614194bcdc",
       "status" : {
         "state" : "implemented",
         "version" : "4.0"
@@ -7148,7 +7148,7 @@
     {
       "authors" : [
         {
-          "link" : "http:\/\/github.com\/hartbit",
+          "link" : "https:\/\/github.com\/hartbit",
           "name" : "David Hart"
         },
         {
@@ -7174,7 +7174,7 @@
           "name" : "Doug Gregor"
         }
       ],
-      "sha" : "88a73860c3c077d6e323f89338483ed47e2ba84a",
+      "sha" : "f6a7f8a937cd125768763a8401f9ca59a8f2e605",
       "status" : {
         "state" : "implemented",
         "version" : "4.0"
@@ -7521,7 +7521,7 @@
     {
       "authors" : [
         {
-          "link" : "http:\/\/github.com\/hartbit\/",
+          "link" : "https:\/\/github.com\/hartbit\/",
           "name" : "David Hart"
         }
       ],
@@ -7551,7 +7551,7 @@
           "name" : "Daniel Dunbar"
         }
       ],
-      "sha" : "c06189e391be7e1b5e638a9b825f8fb9b73653fd",
+      "sha" : "f43b30b4734d74f47bff0db79e2c199486476f7a",
       "status" : {
         "state" : "implemented",
         "version" : "4.0"
@@ -8598,16 +8598,16 @@
       ],
       "link" : "0202-random-unification.md",
       "reviewManager" : {
-        "link" : "http:\/\/github.com\/AirspeedSwift\/",
+        "link" : "https:\/\/github.com\/AirspeedSwift\/",
         "name" : "Ben Cohen"
       },
       "reviewManagers" : [
         {
-          "link" : "http:\/\/github.com\/AirspeedSwift\/",
+          "link" : "https:\/\/github.com\/AirspeedSwift\/",
           "name" : "Ben Cohen"
         }
       ],
-      "sha" : "81744c6ea425df5532bec557d3ed8150f6390892",
+      "sha" : "48eeb31a90719e7e1e8a4bb9703514ed6ab4e2c0",
       "status" : {
         "state" : "implemented",
         "version" : "4.2"
@@ -9415,13 +9415,7 @@
       "implementation" : [
         {
           "account" : "apple",
-          "id" : "16099",
-          "repository" : "swift",
-          "type" : "pull"
-        },
-        {
-          "account" : "apple",
-          "id" : "22289",
+          "id" : "72705",
           "repository" : "swift",
           "type" : "pull"
         }
@@ -9437,9 +9431,10 @@
           "name" : "Ben Cohen"
         }
       ],
-      "sha" : "17196a047e61750f1c57a1dcdaae5a42d87d0040",
+      "sha" : "a723213269911b766fd7465b6af8d94759df92bd",
       "status" : {
-        "state" : "accepted"
+        "state" : "implemented",
+        "version" : "6.0"
       },
       "summary" : "While Swift's `Sequence` models brings a lot of niceties that we didn't have access to in Objective-C, like `map` and `filter`, there are other useful operations on sequences that the standard library doesn't support yet. One current missing operation is  `count(where:)`, which counts the number of elements in a `Sequence` that pass some test.",
       "title" : "`count(where:)`"
@@ -11020,8 +11015,16 @@
       ],
       "discussions" : [
         {
-          "link" : "https:\/\/forums.swift.org\/t\/se-0255-implicit-returns-from-single-expression-functions\/22544\/113",
-          "name" : "Rationale"
+          "link" : "https:\/\/forums.swift.org\/t\/pitch-implicit-returns-from-single-expression-functions\/21898",
+          "name" : "pitch"
+        },
+        {
+          "link" : "https:\/\/forums.swift.org\/t\/se-0255-implicit-returns-from-single-expression-functions\/22544",
+          "name" : "review"
+        },
+        {
+          "link" : "https:\/\/forums.swift.org\/t\/accepted-se-0255-implicit-returns-from-single-expression-functions\/23581\/1",
+          "name" : "acceptance"
         }
       ],
       "id" : "SE-0255",
@@ -11044,7 +11047,7 @@
           "name" : "Ben Cohen"
         }
       ],
-      "sha" : "7e3cf214a8d4f57a441db491cdce18d8d04603d7",
+      "sha" : "1392f5f4113beb45fa3a72f67f505b1289fd038a",
       "status" : {
         "state" : "implemented",
         "version" : "5.1"
@@ -15776,7 +15779,7 @@
     {
       "authors" : [
         {
-          "link" : "http:\/\/github.com\/bitjammer",
+          "link" : "https:\/\/github.com\/bitjammer",
           "name" : "Ashley Garland"
         }
       ],
@@ -15832,7 +15835,7 @@
           "name" : "Tom Doron"
         }
       ],
-      "sha" : "c0090e3bdee8edf312408332f66f6832302234a7",
+      "sha" : "2f6ca89a75accbdd2b06b6e6de01ded3a2f0a18f",
       "status" : {
         "state" : "implemented",
         "version" : "5.7"
@@ -19611,7 +19614,7 @@
           "name" : "Konrad 'ktoso' Malawski"
         },
         {
-          "link" : "http:\/\/github.com\/xedin",
+          "link" : "https:\/\/github.com\/xedin",
           "name" : "Pavel Yaskevich"
         }
       ],
@@ -19649,7 +19652,7 @@
           "name" : "Freddy Kellison-Linn"
         }
       ],
-      "sha" : "f68708beedfb06e104caadbb4a4e2c5b536a3998",
+      "sha" : "45bddc6f77c690f1308d1448f5ceb12a65a0f79a",
       "status" : {
         "end" : "2024-03-26T00:00:00Z",
         "start" : "2024-03-13T00:00:00Z",
@@ -19884,6 +19887,14 @@
         }
       ],
       "discussions" : [
+        {
+          "link" : "https:\/\/forums.swift.org\/t\/pitch-synchronous-mutual-exclusion-lock\/69889",
+          "name" : "pitch"
+        },
+        {
+          "link" : "https:\/\/forums.swift.org\/t\/se-0433-synchronous-mutual-exclusion-lock\/71174",
+          "name" : "review"
+        }
       ],
       "id" : "SE-0433",
       "implementation" : [
@@ -19905,7 +19916,7 @@
           "name" : "Stephen Canon"
         }
       ],
-      "sha" : "7fcedf9816360828487e8122867a1e037018c9dc",
+      "sha" : "abddd3be21b22ea6a7cc110823a1b75a27f3183b",
       "status" : {
         "end" : "2024-04-24T00:00:00Z",
         "start" : "2024-04-10T00:00:00Z",

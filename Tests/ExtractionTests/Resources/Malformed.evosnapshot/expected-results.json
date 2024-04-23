@@ -984,11 +984,11 @@
           "name" : "Dave Abrahams"
         },
         {
-          "link" : "http:\/\/github.com\/DougGregor",
+          "link" : "https:\/\/github.com\/DougGregor",
           "name" : "Doug Gregor"
         },
         {
-          "link" : "\/\/github.com\/gribozavr",
+          "link" : "https:\/\/github.com\/gribozavr",
           "name" : "Dmitri Gribenko"
         },
         {
@@ -996,7 +996,7 @@
           "name" : "Ted Kremenek"
         },
         {
-          "link" : "http:\/\/github.com\/lattner",
+          "link" : "https:\/\/github.com\/lattner",
           "name" : "Chris Lattner"
         },
         {
@@ -1110,12 +1110,12 @@
       "id" : "SE-0025",
       "link" : "0025-scheduled-review-ended.md",
       "reviewManager" : {
-        "link" : "http:\/\/github.com\/DougGregor",
+        "link" : "https:\/\/github.com\/DougGregor",
         "name" : "Doug Gregor"
       },
       "reviewManagers" : [
         {
-          "link" : "http:\/\/github.com\/DougGregor",
+          "link" : "https:\/\/github.com\/DougGregor",
           "name" : "Doug Gregor"
         }
       ],
@@ -1246,7 +1246,7 @@
     {
       "authors" : [
         {
-          "link" : "http:\/\/github.com\/erica",
+          "link" : "https:\/\/github.com\/erica",
           "name" : "Erica Sadun"
         }
       ],
@@ -1300,7 +1300,7 @@
     {
       "authors" : [
         {
-          "link" : "http:\/\/github.com\/lattner",
+          "link" : "https:\/\/github.com\/lattner",
           "name" : "Chris Lattner"
         }
       ],
@@ -1326,12 +1326,12 @@
       ],
       "link" : "0029-missing-review-field.md",
       "reviewManager" : {
-        "link" : "http:\/\/github.com\/jckarter",
+        "link" : "https:\/\/github.com\/jckarter",
         "name" : "Joe Groff"
       },
       "reviewManagers" : [
         {
-          "link" : "http:\/\/github.com\/jckarter",
+          "link" : "https:\/\/github.com\/jckarter",
           "name" : "Joe Groff"
         }
       ],

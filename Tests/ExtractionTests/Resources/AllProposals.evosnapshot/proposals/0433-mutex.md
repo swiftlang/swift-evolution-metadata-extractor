@@ -5,7 +5,7 @@
 * Review Manager: [Stephen Canon](https://github.com/stephentyrone)
 * Implementation: [apple/swift#71383](https://github.com/apple/swift/pull/71383)
 * Status: **Active Review (April 10-24, 2024)**
-* Discussion: [pitch](https://forums.swift.org/t/pitch-synchronous-mutual-exclusion-lock/69889) [review](https://forums.swift.org/t/se-0433-synchronous-mutual-exclusion-lock/71174)
+* Review: ([pitch](https://forums.swift.org/t/pitch-synchronous-mutual-exclusion-lock/69889)), ([review](https://forums.swift.org/t/se-0433-synchronous-mutual-exclusion-lock/71174))
 
 ## Introduction
 
@@ -27,7 +27,7 @@ We propose a new type in the Standard Library Synchronization module: `Mutex`. T
 class FancyManagerOfSorts {
   let cache = Mutex<[String: Resource]>([:])
   
-  func save(_ resource: Resouce, as key: String) {
+  func save(_ resource: Resource, as key: String) {
     cache.withLock {
       $0[key] = resource
     }

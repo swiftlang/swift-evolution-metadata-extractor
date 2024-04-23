@@ -68,11 +68,7 @@ struct ProposalMetadataExtractor {
             }
             
             proposal.upcomingFeatureFlag = extractValue(from: headerFieldsByLabel, with: UpcomingFeatureFlagExtractor.self)
-            
-            // Known issue with SE-0255, should be resolved by https://github.com/apple/swift-evolution/pull/2411
-            if proposalSpec.id != "SE-0255" {
-                proposal.previousProposalIDs = extractValue(from: headerFieldsByLabel, with: PreviousProposalExtractor.self)
-            }
+            proposal.previousProposalIDs = extractValue(from: headerFieldsByLabel, with: PreviousProposalExtractor.self)
             proposal.trackingBugs = extractValue(from: headerFieldsByLabel, with: TrackingBugExtractor.self)
             proposal.implementation = extractValue(from: headerFieldsByLabel, with: ImplementationExtractor.self)
             
@@ -163,11 +159,8 @@ struct LinkInfo {
         self.destination = destination
     }
     
-    // VALIDATION ENHANCEMENT: Consider requiring https//github.com style links for consistency
     var gitHubDestination: String? {
-        if destination.starts(with: /https?:\/\/github.com/) ||
-            destination.hasPrefix("//github.com") // protocol-relative URI
-        {
+        if destination.starts(with: "https://github.com") {
             return destination
         } else {
             return nil

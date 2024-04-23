@@ -30,7 +30,7 @@ struct PersonExtractor: MarkupWalker {
         case reviewManager
     }
     
-    private var role: Role = .author
+    private var role: Role
     
     private var warnings: [Proposal.Issue] = []
     private var errors: [Proposal.Issue] = []
