@@ -1,6 +1,6 @@
 {
-  "commit" : "3a0ba96f7d09df771e82e0bce95bda6a8f1dc8cd",
-  "creationDate" : "2024-04-23T00:21:36Z",
+  "commit" : "d456463a0921794d4c8cfc9ad893202bce01d677",
+  "creationDate" : "2024-05-01T16:18:29Z",
   "implementationVersions" : [
     "2.2", "3.0", "3.0.1", "3.1", "4.0", "4.1", "4.2", "5.0", "5.1", "5.2",
     "5.3", "5.4", "5.5", "5.5.2", "5.6", "5.7", "5.8", "5.9", "5.9.2", "5.10",
@@ -4131,6 +4131,18 @@
         }
       ],
       "discussions" : [
+        {
+          "link" : "https:\/\/forums.swift.org\/t\/pitch-making-where-and-interchangeable-in-guard-conditions\/2702",
+          "name" : "pitch"
+        },
+        {
+          "link" : "https:\/\/forums.swift.org\/t\/review-se-0099-restructuring-condition-clauses\/2808",
+          "name" : "review"
+        },
+        {
+          "link" : "https:\/\/forums.swift.org\/t\/accepted-with-revision-se-0099-restructuring-condition-clauses\/2921",
+          "name" : "acceptance"
+        }
       ],
       "id" : "SE-0099",
       "link" : "0099-conditionclauses.md",
@@ -4144,22 +4156,13 @@
           "name" : "Joe Groff"
         }
       ],
-      "sha" : "db41664fc6f9682e936268e070bc3baed186be68",
+      "sha" : "32410c59d5cab024327c17137d6d21b378a5a0f5",
       "status" : {
         "state" : "implemented",
         "version" : "3.0"
       },
       "summary" : "Swift condition clauses appear in `guard`, `if`, and `while` statements. This proposal re-architects the condition grammar to enable an arbitrary mix of Boolean expressions, `let` conditions (which test and unwrap optionals), general `case` clauses for arbitrary pattern matching, and availability tests.  It removes `where` clauses from optional binding conditions and case conditions, and eliminates gramatical ambiguity by using commas for separation between clauses instead of using them both to separate clauses and terms within each clause.  These modifications streamline Swift's syntax and alleviate the situation where many Swift developers don't know they can use arbitrary Boolean conditions after a value binding.",
-      "title" : "Restructuring Condition Clauses",
-      "warnings" : [
-        {
-          "code" : 0,
-          "kind" : "warning",
-          "message" : "Discussion link doesn't refer to a Swift forum thread. Discussion removed.",
-          "stage" : "validate",
-          "suggestion" : ""
-        }
-      ]
+      "title" : "Restructuring Condition Clauses"
     },
     {
       "authors" : [
@@ -16168,6 +16171,18 @@
         }
       ],
       "discussions" : [
+        {
+          "link" : "https:\/\/forums.swift.org\/t\/pitch-unicode-for-string-processing\/56907",
+          "name" : "pitch"
+        },
+        {
+          "link" : "https:\/\/forums.swift.org\/t\/se-0363-unicode-for-string-processing\/58520",
+          "name" : "review"
+        },
+        {
+          "link" : "https:\/\/forums.swift.org\/t\/accepted-se-0363-unicode-for-string-processing\/59998",
+          "name" : "acceptance"
+        }
       ],
       "id" : "SE-0363",
       "link" : "0363-unicode-for-string-processing.md",
@@ -16181,7 +16196,7 @@
           "name" : "Ben Cohen"
         }
       ],
-      "sha" : "43bbe84b05d57654876e103d4c468e8a34c7ec20",
+      "sha" : "6c41352258a6d94e94f005392889bb2719d495d4",
       "status" : {
         "state" : "implemented",
         "version" : "5.7"
@@ -16964,6 +16979,18 @@
         }
       ],
       "discussions" : [
+        {
+          "link" : "https:\/\/forums.swift.org\/t\/pitch-package-registry-authentication\/61047",
+          "name" : "pitch"
+        },
+        {
+          "link" : "https:\/\/forums.swift.org\/t\/se-0378-swift-package-registry-authentication\/61436",
+          "name" : "review"
+        },
+        {
+          "link" : "https:\/\/forums.swift.org\/t\/accepted-with-modifications-se-0378-swift-package-registry-authentication\/62556",
+          "name" : "acceptance"
+        }
       ],
       "id" : "SE-0378",
       "implementation" : [
@@ -16985,7 +17012,7 @@
           "name" : "Tom Doron"
         }
       ],
-      "sha" : "5b20615c83d10dc11a8199713d6e507257b06089",
+      "sha" : "7a9f9f825f33cc5f84e53fab94659af84d1245a7",
       "status" : {
         "state" : "implemented",
         "version" : "5.8"
@@ -17702,8 +17729,88 @@
         }
       ],
       "discussions" : [
+        {
+          "link" : "https:\/\/forums.swift.org\/t\/pitch-package-registry-publish\/62828",
+          "name" : "pitch"
+        },
+        {
+          "link" : "https:\/\/forums.swift.org\/t\/se-0391-package-registry-publish\/63405",
+          "name" : "review"
+        },
+        {
+          "link" : "https:\/\/forums.swift.org\/t\/accepted-se-0391-swift-package-registry-authentication\/64088",
+          "name" : "acceptance"
+        }
       ],
       "id" : "SE-0391",
+      "implementation" : [
+        {
+          "account" : "apple",
+          "id" : "6101",
+          "repository" : "swift-package-manager",
+          "type" : "pull"
+        },
+        {
+          "account" : "apple",
+          "id" : "6146",
+          "repository" : "swift-package-manager",
+          "type" : "pull"
+        },
+        {
+          "account" : "apple",
+          "id" : "6159",
+          "repository" : "swift-package-manager",
+          "type" : "pull"
+        },
+        {
+          "account" : "apple",
+          "id" : "6169",
+          "repository" : "swift-package-manager",
+          "type" : "pull"
+        },
+        {
+          "account" : "apple",
+          "id" : "6188",
+          "repository" : "swift-package-manager",
+          "type" : "pull"
+        },
+        {
+          "account" : "apple",
+          "id" : "6189",
+          "repository" : "swift-package-manager",
+          "type" : "pull"
+        },
+        {
+          "account" : "apple",
+          "id" : "6215",
+          "repository" : "swift-package-manager",
+          "type" : "pull"
+        },
+        {
+          "account" : "apple",
+          "id" : "6217",
+          "repository" : "swift-package-manager",
+          "type" : "pull"
+        },
+        {
+          "account" : "apple",
+          "id" : "6220",
+          "repository" : "swift-package-manager",
+          "type" : "pull"
+        },
+        {
+          "account" : "apple",
+          "id" : "6229",
+          "repository" : "swift-package-manager",
+          "type" : "pull"
+        },
+        {
+          "account" : "apple",
+          "id" : "6237",
+          "repository" : "swift-package-manager",
+          "type" : "pull"
+        }
+      ],
       "link" : "0391-package-registry-publish.md",
       "reviewManager" : {
         "link" : "https:\/\/github.com\/tomerd",
@@ -17715,7 +17822,7 @@
           "name" : "Tom Doron"
         }
       ],
-      "sha" : "af6ba211991124d9dc81145c84ab1cb52dc122c5",
+      "sha" : "689f188e292fbb79a619183659454bdeec638a73",
       "status" : {
         "state" : "implemented",
         "version" : "5.9"
@@ -19629,7 +19736,7 @@
         },
         {
           "link" : "https:\/\/forums.swift.org\/t\/accepted-with-modifications-se-0428-resolve-distributedactor-protocols\/71366",
-          "name" : "acceptance with modifications"
+          "name" : "acceptance"
         }
       ],
       "id" : "SE-0428",
@@ -19652,23 +19759,12 @@
           "name" : "Freddy Kellison-Linn"
         }
       ],
-      "sha" : "45bddc6f77c690f1308d1448f5ceb12a65a0f79a",
+      "sha" : "0039976fec9d6963eca04402b360050a6832da59",
       "status" : {
-        "end" : "2024-03-26T00:00:00Z",
-        "start" : "2024-03-13T00:00:00Z",
-        "state" : "activeReview"
+        "state" : "acceptedWithRevisions"
       },
       "summary" : "Swift's distributed actors offer developers a flexible bring-your-own-runtime approach to building distributed systems using the actor paradigm. The initial design of the feature aimed for systems where all nodes of a distributed actor system (such as nodes in a [cluster](https:\/\/github.com\/apple\/swift-distributed-actors)) share the same binary, and therefore all have access to the concrete `distributed actor` declarations which may be resolved and made remote calls on.",
-      "title" : "Resolve DistributedActor protocols",
-      "warnings" : [
-        {
-          "code" : 0,
-          "kind" : "warning",
-          "message" : "Review ended on 2024-03-26 00:00:00 +0000.",
-          "stage" : "validate",
-          "suggestion" : ""
-        }
-      ]
+      "title" : "Resolve DistributedActor protocols"
     },
     {
       "authors" : [
@@ -19711,15 +19807,12 @@
           "name" : "Xiaodi Wu"
         }
       ],
-      "sha" : "4dfa633db8fb0e7c55dc150d2047f3f9ecd3a29c",
+      "sha" : "fd54b90d48f27a4bb3321ac9f3df3daca7a54a0e",
       "status" : {
         "state" : "accepted"
       },
       "summary" : "We propose allowing noncopyable fields in deinit-less aggregates to be consumed individually, so long as they are defined in the current module or frozen. Additionally, we propose allowing fields of such an aggregate with a deinit to be consumed individually *within that deinit*. This permits common patterns to be used with many noncopyable values.",
-      "title" : "Partial consumption of noncopyable values",
-      "upcomingFeatureFlag" : {
-        "flag" : "MoveOnlyPartialConsumption"
-      }
+      "title" : "Partial consumption of noncopyable values"
     },
     {
       "authors" : [
@@ -19858,7 +19951,7 @@
           "name" : "Ben Cohen"
         }
       ],
-      "sha" : "6ccb1bb274c546e4b30019ed5ddd32343c154d74",
+      "sha" : "677c03b5ddbd7d473c0535580d1526f3bda4f4a8",
       "status" : {
         "end" : "2024-04-22T00:00:00Z",
         "start" : "2024-04-09T00:00:00Z",
@@ -19866,9 +19959,6 @@
       },
       "summary" : "Pattern matching over noncopyable types, particularly noncopyable enums, can be generalized to allow for pattern matches that borrow their subject, in addition to the existing support for consuming pattern matches.",
       "title" : "Borrowing and consuming pattern matching for noncopyable types",
-      "upcomingFeatureFlag" : {
-        "flag" : "BorrowingSwitch"
-      },
       "warnings" : [
         {
           "code" : 0,
@@ -19894,6 +19984,10 @@
         {
           "link" : "https:\/\/forums.swift.org\/t\/se-0433-synchronous-mutual-exclusion-lock\/71174",
           "name" : "review"
+        },
+        {
+          "link" : "https:\/\/forums.swift.org\/t\/accepted-se-0433-synchronous-mutual-exclusion-lock\/71463",
+          "name" : "acceptance"
         }
       ],
       "id" : "SE-0433",
@@ -19916,11 +20010,9 @@
           "name" : "Stephen Canon"
         }
       ],
-      "sha" : "abddd3be21b22ea6a7cc110823a1b75a27f3183b",
+      "sha" : "e40e058f61a2b09eab27d0d0e616b363a306b54f",
       "status" : {
-        "end" : "2024-04-24T00:00:00Z",
-        "start" : "2024-04-10T00:00:00Z",
-        "state" : "activeReview"
+        "state" : "accepted"
       },
       "summary" : "This proposal introduces a mutual exclusion lock, or a mutex, to the standard library. `Mutex` will be a new synchronization primitive in the synchronization module.",
       "title" : "Synchronous Mutual Exclusion Lock 🔒"
@@ -19979,6 +20071,52 @@
           "suggestion" : ""
         }
       ]
+    },
+    {
+      "authors" : [
+        {
+          "link" : "https:\/\/github.com\/xedin",
+          "name" : "Pavel Yaskevich"
+        }
+      ],
+      "discussions" : [
+        {
+          "link" : "https:\/\/forums.swift.org\/t\/pitch-swiftpm-swift-language-version-per-target\/71067",
+          "name" : "pitch"
+        },
+        {
+          "link" : "https:\/\/forums.swift.org\/t\/se-0435-swift-language-version-per-target\/71546",
+          "name" : "review"
+        }
+      ],
+      "id" : "SE-0435",
+      "implementation" : [
+        {
+          "account" : "apple",
+          "id" : "7439",
+          "repository" : "swift-package-manager",
+          "type" : "pull"
+        }
+      ],
+      "link" : "0435-swiftpm-per-target-swift-language-version-setting.md",
+      "reviewManager" : {
+        "link" : "https:\/\/github.com\/beccadax",
+        "name" : "Becca Royal-Gordon"
+      },
+      "reviewManagers" : [
+        {
+          "link" : "https:\/\/github.com\/beccadax",
+          "name" : "Becca Royal-Gordon"
+        }
+      ],
+      "sha" : "c4c99b537dfe7a5f98960a0d9dfdc595dbadfb22",
+      "status" : {
+        "end" : "2024-05-13T00:00:00Z",
+        "start" : "2024-04-30T00:00:00Z",
+        "state" : "activeReview"
+      },
+      "summary" : "The current Swift Package Manager manifest API for specifying Swift language version(s) applies to an entire package which is limiting when adopting new language versions that have implications for source compatibility.",
+      "title" : "Swift Language Version Per Target"
     }
   ],
   "schemaVersion" : "0.1.0",
