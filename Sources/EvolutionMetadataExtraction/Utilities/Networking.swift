@@ -90,11 +90,12 @@ struct GitHubPullFileItem: Codable {
 struct GitHubFetcher {
     
     struct Endpoint {
-        static let githubMainBranchEndpoint = URL(string: "https://api.github.com/repos/apple/swift-evolution/branches/main")!
-        static let githubIssuesEndpoint = URL(string: "https://api.github.com/repos/apple/swift/issues?since=2023-08-01T01:00:00Z&state=all")!
-        static let githubProposalsEndpoint = URL(string: "https://api.github.com/repos/apple/swift-evolution/contents/proposals")!
+        private static let endpointBaseURL = URL(string: "https://api.github.com/repos/swiftlang/swift-evolution")!
+        static let githubMainBranchEndpoint = endpointBaseURL.appending(path:"branches/main")
+        static let githubIssuesEndpoint = endpointBaseURL.appending(path: "issues?since=2023-08-01T01:00:00Z&state=all")
+        static let githubProposalsEndpoint = endpointBaseURL.appending(path: "contents/proposals" )
         static func githubPullEndpoint(for request: String) -> URL {
-            URL(string: "https://api.github.com/repos/apple/swift-evolution/pulls/\(request)/files")!
+            endpointBaseURL.appending(path: "pulls/\(request)/files")
         }
     }
     
