@@ -23,7 +23,7 @@ enum Help {
         """
         
         static let discussion =  """
-        Running with no arguments will read from the swift-evolution repository, extract metadata and write a "proposals.json" file to the current directory.
+        Running with no arguments will read from the swift-evolution repository, extract metadata and write an "evolution.json" file to the current directory.
         """
     }
     
@@ -42,13 +42,13 @@ enum Help {
         static let usage = """
         \(commandName) --force-extraction all
         \(commandName) --force-extraction SE-0344 --force-extraction SE-0134
-        \(commandName) --output-path asdf/proposals.json
+        \(commandName) --output-path asdf/evolution.json
         """
         
         static let abstract = "Extracts metadata from Swift evolution proposals and generates a summary JSON file."
         
         static let discussion =  """
-        Running with no arguments will read from the swift-evolution repository, extract metadata and write a "proposals.json" file to the current directory.
+        Running with no arguments will read from the swift-evolution repository, extract metadata and write an "evolution.json" file to the current directory.
         """
         
         enum Argument {
