@@ -321,8 +321,17 @@
           "name" : "Rationale"
         }
       ],
+      "errors" : [
+        {
+          "code" : 0,
+          "kind" : "error",
+          "message" : "Proposal ID link must be a relative link (SE-NNNN)[NNNN-filename.md].",
+          "stage" : "validate",
+          "suggestion" : ""
+        }
+      ],
       "id" : "SE-0006",
-      "link" : "0006-malformed-proposal-link.md",
+      "link" : "",
       "reviewManager" : {
         "link" : "https:\/\/github.com\/DougGregor",
         "name" : "Doug Gregor"
@@ -462,10 +471,17 @@
           "message" : "Proposal ID must include four decimal digits.",
           "stage" : "parse",
           "suggestion" : ""
+        },
+        {
+          "code" : 0,
+          "kind" : "error",
+          "message" : "Proposal ID link must be a relative link (SE-NNNN)[NNNN-filename.md].",
+          "stage" : "validate",
+          "suggestion" : ""
         }
       ],
       "id" : "SE-010",
-      "link" : "010-wrong-number-proposal-id-digits.md",
+      "link" : "",
       "reviewManager" : {
         "link" : "https:\/\/github.com\/DougGregor",
         "name" : "Doug Gregor"

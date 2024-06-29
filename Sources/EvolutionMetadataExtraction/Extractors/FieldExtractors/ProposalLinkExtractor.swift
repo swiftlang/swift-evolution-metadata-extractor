@@ -37,24 +37,15 @@ struct ProposalLinkExtractor: MarkupWalker, ValueExtractor {
                 }
                 
                 if !proposalLink.text.contains(/^SE-\d\d\d\d$/) {
+                    self.proposalLink?.destination = "" // Do not include an incorrect destination
                     errors.append(.proposalIDWrongDigitCount)
                 }
-                
-                // VALIDATION ENHANCEMENT: Once we move from the legacy tool. Remove this.
-                // Legacy tool behavior is to fix the error in the json, but leave it as an
-                // unreported error in the original proposal.
-                //
-                // It would be more correct to report the error so it is fixed in the original proposal.
-                let baseURI = "https://github.com/apple/swift-evolution/blob/main/proposals/"
-                if proposalLink.destination.hasPrefix(baseURI) {
-                    self.proposalLink?.destination = proposalLink.destination.replacingOccurrences(of: baseURI, with: "")
+
+                // The link should be relative and contain the correct number of digits.
+                if !proposalLink.destination.contains(/^\d\d\d\d-.*\.md$/) {
+                    self.proposalLink?.destination = "" // Do not include an incorrect destination
+                    errors.append(Proposal.Issue.invalidProposalIDLink)
                 }
-                
-                // The self-referential link should be relative.
-                // VALIDATION ENHANCEMENT: Once we move from the legacy tool. Uncomment this.
-                //            if !proposalLink.destination.contains(/^\d\d\d\d-.*\.md$/) {
-                //                errors.append(ContentIssue.invalidProposalIDLink)
-                //            }
             }
             
         } else {
