@@ -12565,7 +12565,6 @@
       "summary" : "[SE-0279 \"Multiple Trailing Closures\"](https:\/\/github.com\/swiftlang\/swift-evolution\/blob\/master\/proposals\/0279-multiple-trailing-closures.md) threaded the needle between getting the syntax we wanted for multiple trailing closures without breaking source compatibility. One aspect of that compromise was to extend (rather than replace) the existing rule for matching a trailing closure to a parameter by scanning *backward* from the end of the parameter list.",
       "title" : "Forward-scan matching for trailing closures",
       "upcomingFeatureFlag" : {
-        "available" : "5.8",
         "flag" : "ForwardTrailingClosures"
       }
     },
@@ -14867,7 +14866,6 @@
       "summary" : "Existential types in Swift have an extremely lightweight spelling: a plain protocol name in type context means an existential type. Over the years, this has risen to the level of **active harm** by causing confusion, leading programmers down the wrong path that often requires them to re-write code once they hit a fundamental [limitation of value-level abstraction](https:\/\/forums.swift.org\/t\/improving-the-ui-of-generics\/22814#heading--limits-of-existentials). This proposal makes the impact of existential types explicit in the language by annotating such types with `any`.",
       "title" : "Introduce existential `any`",
       "upcomingFeatureFlag" : {
-        "available" : "5.8",
         "flag" : "ExistentialAny"
       }
     },
@@ -15617,8 +15615,6 @@
       "summary" : "Existential types in Swift allow one to store a value whose specific type is unknown and may change at runtime. The dynamic type of that stored value, which we refer to as the existential's *underlying type*, is known only by the set of protocols it conforms to and, potentially, its superclass. While existential types are useful for expressing values of dynamic type, they are necessarily restricted because of their dynamic nature. Recent proposals have made [existential types more explicit](https:\/\/github.com\/swiftlang\/swift-evolution\/blob\/main\/proposals\/0335-existential-any.md) to help developers understand this dynamic nature, as well as [making existential types more expressive](https:\/\/github.com\/swiftlang\/swift-evolution\/blob\/main\/proposals\/0309-unlock-existential-types-for-all-protocols.md) by removing a number of limitations. However, a fundamental issue with existential types remains, that once you have a value of existential type it is *very* hard to use generics with it. Developers usually encounter this via the error message \"protocol 'P' as a type cannot conform to itself\":",
       "title" : "Implicitly Opened Existentials",
       "upcomingFeatureFlag" : {
-        "available" : "6.0",
-        "enabledInLanguageMode" : "6",
         "flag" : "ImplicitOpenExistentials"
       }
     },
@@ -15730,7 +15726,6 @@
       "summary" : "We propose the introduction of regex literals to Swift source code, providing compile-time checks and typed-capture inference. Regex literals help complete the story told in *[Regex Type and Overview](https:\/\/github.com\/swiftlang\/swift-evolution\/blob\/main\/proposals\/0350-regex-type-overview.md)*.",
       "title" : "Regex Literals",
       "upcomingFeatureFlag" : {
-        "available" : "5.8",
         "flag" : "BareSlashRegexLiterals"
       }
     },
@@ -18932,7 +18927,6 @@
       "summary" : "This proposal defines options for the usage of global variables free of data races. Within this proposal, global variables encompass any storage of static duration: `let`s and stored `var`s that are either declared at global scope or as static member variables.",
       "title" : "Strict concurrency for global variables",
       "upcomingFeatureFlag" : {
-        "enabledInLanguageMode" : "6",
         "flag" : "GlobalConcurrency"
       }
     },

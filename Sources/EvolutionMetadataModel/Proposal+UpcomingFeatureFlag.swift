@@ -15,20 +15,8 @@ extension Proposal {
         /// The upcoming feature flag
         public let flag: String
         
-        /// The Swift version when this flag became available.
-        ///
-        /// Only present if the Swift version is different than the implemenation version of the proposal.
-        public let available: String?
-        
-        /// Swift language version (language mode) where the flag is always enabled and therefore no longer necessary.
-        ///
-        /// Only present for publicly announced language versions.
-        public let enabledInLanguageMode: String?
-        
-        public init(flag: String, available: String?, enabledInLanguageMode: String?) {
+        public init(flag: String) {
             self.flag = flag
-            self.available = available
-            self.enabledInLanguageMode = enabledInLanguageMode
         }
     }
 }

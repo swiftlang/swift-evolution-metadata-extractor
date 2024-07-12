@@ -16,12 +16,10 @@ struct UpcomingFeatureFlagExtractor: MarkupWalker, ValueExtractor {
     private var errors: [Proposal.Issue] = []
     
     private var flag: String?
-    private var available: String?
-    private var enabled: String?
     
     private var uff: Proposal.UpcomingFeatureFlag? {
         if let flag {
-            return Proposal.UpcomingFeatureFlag(flag: flag, available: available, enabledInLanguageMode: enabled)
+            return Proposal.UpcomingFeatureFlag(flag: flag)
         } else {
             return nil
         }
@@ -49,15 +47,5 @@ struct UpcomingFeatureFlagExtractor: MarkupWalker, ValueExtractor {
     
     mutating func visitInlineCode(_ inlineCode: InlineCode) -> () {
         flag = inlineCode.code
-    }
-    
-    mutating func visitText(_ text: Text) -> () {
-        if let match = text.string.firstMatch(of: /\([Ii]mplemented in Swift (\d(\.\d)*)\)/) {
-            available = String(match.1)
-        }
-        
-        if let match = text.string.firstMatch(of: /\(Enabled in Swift (\d(\.\d)*) language mode\)/) {
-            enabled = String(match.1)
-        }
     }
 }
