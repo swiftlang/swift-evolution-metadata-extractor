@@ -19,6 +19,12 @@ let verboseEnabled: Bool = { VERBOSE_ENABLED }()
 
 // MARK: -
 
+public enum ToolVersion {
+    static public let version = "0.1.0"
+}
+
+// MARK: -
+
 public enum ArgumentValidation {
     
     // Call first in the `validate()` method of each command
