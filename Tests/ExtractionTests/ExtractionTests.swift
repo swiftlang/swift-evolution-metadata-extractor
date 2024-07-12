@@ -30,6 +30,14 @@ final class ExtractionTests: XCTestCase {
         let string = try XCTUnwrap(String(data: data, encoding: .utf8), "Unable to make string from contents of \(name).\(ext)")
         return string
     }
+    
+    // Convenience to write expected and actual metadata files to disk for comparison in a diff tool
+    func writeJSONFilesToPath(expected: Data, actual: Data, path: String, prefix: String? = nil) throws {
+        let filePrefix: String
+        if let prefix { filePrefix = "\(prefix)-" } else { filePrefix = "" }
+        try expected.write(to: FileUtilities.expandedAndStandardizedURL(for: path).appending(path: "\(filePrefix)expected.json"))
+        try actual.write(to: FileUtilities.expandedAndStandardizedURL(for: path).appending(path: "\(filePrefix)actual.json"))
+    }
 
     func testAllProposals() async throws {
         
@@ -39,9 +47,15 @@ final class ExtractionTests: XCTestCase {
         let expectedResultsByProposalID = expectedResults.proposals.reduce(into: [:]) { $0[$1.id] = $1 }
         
         let extractedEvolutionMetadata = try await EvolutionMetadataExtractor.extractEvolutionMetadata(for: extractionJob)
-        
+
+        // Check top-level properties
+        XCTAssertEqual(extractedEvolutionMetadata.commit, expectedResults.commit)
+        XCTAssertEqual(extractedEvolutionMetadata.creationDate, expectedResults.creationDate)
         XCTAssertEqual(extractedEvolutionMetadata.implementationVersions, expectedResults.implementationVersions)
+        XCTAssertEqual(extractedEvolutionMetadata.schemaVersion, expectedResults.schemaVersion)
+        XCTAssertEqual(extractedEvolutionMetadata.toolVersion, expectedResults.toolVersion)
         
+        // Check proposals
         for newProposal in extractedEvolutionMetadata.proposals {
             let id = newProposal.id
             guard !id.isEmpty  else {
@@ -55,6 +69,16 @@ final class ExtractionTests: XCTestCase {
             
             XCTAssertEqual(newProposal, sourceProposal)
         }
+        
+        // Check the generated JSON to catch issues such as removing optional properties from the schema
+        let expectedResultsURL = snapshotURL.appending(path: "expected-results.json")
+        let expectedJSONData = try Data(contentsOf: expectedResultsURL)
+        let actualJSONData = try extractedEvolutionMetadata.jsonRepresentation
+        XCTAssertEqual(expectedJSONData, actualJSONData)
+        
+        // Uncomment to write full JSON files out to compare in a diff tool
+        // try writeJSONFilesToPath(expected: expectedJSONData, actual: actualJSONData, path: "~/Desktop")
+
     }
     
     func testWarningsAndErrors() async throws {
