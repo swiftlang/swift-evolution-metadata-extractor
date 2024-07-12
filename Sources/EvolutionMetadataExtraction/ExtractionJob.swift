@@ -233,19 +233,18 @@ extension ExtractionJob {
     private static func writeEvolutionResultsAsJSON(results: EvolutionMetadata, outputURL: URL) throws {
         print("Writing file '\(outputURL.lastPathComponent)' to\n'\(outputURL.absoluteURL.path())'\n")
         
-        let encoder = JSONEncoder()
-        encoder.outputFormatting = [.prettyPrinted, .sortedKeys]
-        let data = try encoder.encode(results)
-        let adjustedData = JSONRewriter.applyRewritersToJSONData(rewriters: [JSONRewriter.prettyPrintVersions], data: data)
+        let jsonData = try results.jsonRepresentation
         
         let directoryURL = outputURL.deletingLastPathComponent()
         try FileManager.default.createDirectory(at: directoryURL, withIntermediateDirectories: true)
-        try adjustedData.write(to: outputURL)
+        try jsonData.write(to: outputURL)
         
         // Temporarily write legacy proposals.json file alongside evolution.json format file
         let legacyFormatURL = directoryURL.appending(component: "proposals.json")
         print("Writing file '\(legacyFormatURL.lastPathComponent)' to\n'\(legacyFormatURL.absoluteURL.path())'\n")
 
+        let encoder = JSONEncoder()
+        encoder.outputFormatting = [.prettyPrinted, .sortedKeys]
         let legacyFormatData = try encoder.encode(results.proposals)
         let adjustedLegacyFormatData = JSONRewriter.applyRewritersToJSONData(rewriters: [JSONRewriter.legacyStatusRewriter], data: legacyFormatData)
         try adjustedLegacyFormatData.write(to: legacyFormatURL)
@@ -282,10 +281,9 @@ extension ExtractionJob {
             addedFilenames.insert("proposal-listing.json")
         }
 
-        let extractionResultsData = try encoder.encode(results)
-        let adjustedResultstData = JSONRewriter.applyRewritersToJSONData(rewriters: [JSONRewriter.prettyPrintVersions], data: extractionResultsData)
+        let expectedResultsData = try results.jsonRepresentation
         let expectedResultsURL = temporarySnapshotDirectory.appending(component: "expected-results.json")
-        try adjustedResultstData.write(to: expectedResultsURL)
+        try expectedResultsData.write(to: expectedResultsURL)
         addedFilenames.insert("expected-results.json")
 
         // If the source is a snapshot, make sure any additional ad-hoc files, such as READMEs are copied to the new snapshot
@@ -303,6 +301,17 @@ extension ExtractionJob {
 
         try FileManager.default.createDirectory(at: outputURL, withIntermediateDirectories: true)
         _ = try FileManager.default.replaceItemAt(outputURL, withItemAt: temporarySnapshotDirectory, options: [.usingNewMetadataOnly])
+    }
+}
 
+extension EvolutionMetadata {
+    var jsonRepresentation: Data {
+        get throws {
+            let encoder = JSONEncoder()
+            encoder.outputFormatting = [.prettyPrinted, .sortedKeys]
+            let data = try encoder.encode(self)
+            let adjustedData = JSONRewriter.applyRewritersToJSONData(rewriters: [JSONRewriter.prettyPrintVersions], data: data)
+            return adjustedData
+        }
     }
 }
