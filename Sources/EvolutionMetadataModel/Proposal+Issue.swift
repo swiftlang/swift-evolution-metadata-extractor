@@ -20,11 +20,6 @@ extension Proposal {
         
         /// Numeric code to identify the issue
         public let code: Int
-
-        /// Processing stage where the issue was detected.
-        ///         
-        /// - Warning: This property will be removed. Do not use.
-        public let stage: Stage
         
         /// Message describing the issue
         public let message: String
@@ -37,17 +32,10 @@ extension Proposal {
             case error
         }
         
-        /// - Warning: This type will be removed. Do not use.
-        public enum Stage: String, Equatable, Sendable, Codable {
-            case parse
-            case validate
-        }
-        
-        public init(kind: Kind, code: Int = 0, stage: Stage, message: String, suggestion: String = "") {
+        public init(kind: Kind, code: Int = 0, message: String, suggestion: String = "") {
             self.kind = kind
             self.code = code
             self.message = message
-            self.stage = stage
             self.suggestion = suggestion
         }
     }

@@ -57,13 +57,15 @@
 
         "warnings": [{ // [Proposal.Issue]?, key missing if array is empty
             "kind": "warning", // differentiates this from an error
+            "code": Int, // unique identifier across warning and errors
             "message": String, // human-readable description of what's wrong
-            "stage": String // e.g. "parse"
+            "suggestion": String // suggestion of how to correct the issue
         }],
         "errors": [{ // [Proposal.Issue]?, key missing if array is empty
             "kind": "error", // differentiates this from a warning
+            "code": Int, // unique identifier across warning and errors
             "message": String, // human-readable description of what's wrong
-            "stage": String // e.g. "parse"
+            "suggestion": String // suggestion of how to correct the issue
         }]
     }
 ```
