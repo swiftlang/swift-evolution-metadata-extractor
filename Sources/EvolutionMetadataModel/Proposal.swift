@@ -22,10 +22,12 @@
                  "link": String // warns on absence
              }
          ],
-        "reviewManager": { // Proposal.Person // warns
-            "name": String,
-            "link": String,
-        },
+         "reviewManagers":  [ // [Proposal.Person]
+              {
+                  "name": String,
+                  "link": String // warns on absence
+              }
+         ],
         "status": {
             "state": String, // Proposal.Status case name, e.g. ".implemented"
             "start": String?, // ISO 8601 date string, key only present for status states with dates
@@ -90,11 +92,6 @@ public struct Proposal: Equatable, Sendable, Codable, Identifiable {
     
     /// Array of proposal authors
     public var authors: [Person]
-    
-    /// Proposal review manager
-    ///
-    /// - Warning: This property will be removed. Use `reviewManagers` instead.
-    public var reviewManager: Person
 
     /// Array of proposal review managers
     public var reviewManagers: [Person]
@@ -136,7 +133,6 @@ public struct Proposal: Equatable, Sendable, Codable, Identifiable {
         self.sha = sha
         self.authors = authors
         self.reviewManagers = reviewManagers
-        self.reviewManager = reviewManagers.first ?? Person()
         self.status = status
         self.trackingBugs = trackingBugs
         self.implementation = implementation
