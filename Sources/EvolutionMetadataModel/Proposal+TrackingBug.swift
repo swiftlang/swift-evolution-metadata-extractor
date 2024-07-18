@@ -17,46 +17,10 @@ extension Proposal {
         
         /// Link to issue in issue tracker
         public let link: String
-        
-        /// Unused property. Always an empty string
-        ///
-        /// - Warning: This property will be removed. Do not use.
-        public let assignee: String
-        
-        /// Unused property. Always an empty string
-        ///
-        /// - Warning: This property will be removed. Do not use.
-        public let radar: String
-        
-        /// Unused property. Always an empty string
-        ///
-        /// - Warning: This property will be removed. Do not use.
-        public let resolution: String
-        
-        /// Unused property. Always an empty string
-        ///
-        /// - Warning: This property will be removed. Do not use.
-        public let status: String
-        
-        /// Unused property. Always an empty string
-        ///
-        /// - Warning: This property will be removed. Do not use.
-        public let title: String
-        
-        /// Unused property. Always an empty string
-        ///
-        /// - Warning: This property will be removed. Do not use.
-        public let updated: String
-        
+
         public init(id: String, link: String) {
             self.id = id
             self.link = link
-            self.assignee = ""
-            self.radar = ""
-            self.resolution = ""
-            self.status = ""
-            self.title = ""
-            self.updated = ""
         }
     }
 }

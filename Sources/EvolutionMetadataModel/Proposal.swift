@@ -36,14 +36,8 @@
         },
         "trackingBugs": [ // [Proposal.TrackingBug]?
             {
-                "assignee": String,
                 "id": String,
                 "link": String,
-                "radar": String,
-                "resolution": String,
-                "status": String,
-                "title": String,
-                "updated": String,
             }
         ],
         "implementation": [ // [Proposal.Implementation]?
@@ -54,7 +48,6 @@
                 "id": String
             }
         ],
-
         "warnings": [{ // [Proposal.Issue]?, key missing if array is empty
             "kind": "warning", // differentiates this from an error
             "code": Int, // unique identifier across warning and errors
