@@ -18,10 +18,6 @@
       ],
       "id" : "SE-0001",
       "link" : "0001-keywords-as-argument-labels.md",
-      "reviewManager" : {
-        "link" : "",
-        "name" : ""
-      },
       "reviewManagers" : [
       ],
       "sha" : "cd0c7279af644b38860afaa6e0dba74a1d82107a",
@@ -33,14 +29,8 @@
       "title" : "Allow (most) keywords as argument labels",
       "trackingBugs" : [
         {
-          "assignee" : "",
           "id" : "SR-344",
-          "link" : "https:\/\/bugs.swift.org\/browse\/SR-344",
-          "radar" : "",
-          "resolution" : "",
-          "status" : "",
-          "title" : "",
-          "updated" : ""
+          "link" : "https:\/\/bugs.swift.org\/browse\/SR-344"
         }
       ],
       "warnings" : [
@@ -48,7 +38,6 @@
           "code" : 0,
           "kind" : "warning",
           "message" : "Missing review manager(s).",
-          "stage" : "parse",
           "suggestion" : ""
         }
       ]
@@ -72,10 +61,6 @@
         }
       ],
       "link" : "0002-remove-currying.md",
-      "reviewManager" : {
-        "link" : "",
-        "name" : ""
-      },
       "reviewManagers" : [
       ],
       "sha" : "9761465a5ca6df727be91357c695152ed8e3361f",
@@ -90,7 +75,6 @@
           "code" : 0,
           "kind" : "warning",
           "message" : "Missing review manager(s).",
-          "stage" : "parse",
           "suggestion" : ""
         }
       ]
@@ -118,10 +102,6 @@
         }
       ],
       "link" : "0003-remove-var-parameters.md",
-      "reviewManager" : {
-        "link" : "https:\/\/github.com\/jopamer",
-        "name" : "Joe Pamer"
-      },
       "reviewManagers" : [
         {
           "link" : "https:\/\/github.com\/jopamer",
@@ -155,10 +135,6 @@
         }
       ],
       "link" : "0004-remove-pre-post-inc-decrement.md",
-      "reviewManager" : {
-        "link" : "",
-        "name" : ""
-      },
       "reviewManagers" : [
       ],
       "sha" : "c33507a66497d10d002c2b26fb33285da368e530",
@@ -173,7 +149,6 @@
           "code" : 0,
           "kind" : "warning",
           "message" : "Missing review manager(s).",
-          "stage" : "parse",
           "suggestion" : ""
         }
       ]
@@ -197,10 +172,6 @@
       ],
       "id" : "SE-0005",
       "link" : "0005-objective-c-name-translation.md",
-      "reviewManager" : {
-        "link" : "https:\/\/github.com\/DougGregor",
-        "name" : "Doug Gregor"
-      },
       "reviewManagers" : [
         {
           "link" : "https:\/\/github.com\/DougGregor",
@@ -238,10 +209,6 @@
       ],
       "id" : "SE-0006",
       "link" : "0006-apply-api-guidelines-to-the-standard-library.md",
-      "reviewManager" : {
-        "link" : "https:\/\/github.com\/DougGregor",
-        "name" : "Doug Gregor"
-      },
       "reviewManagers" : [
         {
           "link" : "https:\/\/github.com\/DougGregor",
@@ -271,10 +238,6 @@
       ],
       "id" : "SE-0007",
       "link" : "0007-remove-c-style-for-loops.md",
-      "reviewManager" : {
-        "link" : "https:\/\/github.com\/DougGregor",
-        "name" : "Doug Gregor"
-      },
       "reviewManagers" : [
         {
           "link" : "https:\/\/github.com\/DougGregor",
@@ -290,24 +253,12 @@
       "title" : "Remove C-style for-loops with conditions and incrementers",
       "trackingBugs" : [
         {
-          "assignee" : "",
           "id" : "SR-226",
-          "link" : "https:\/\/bugs.swift.org\/browse\/SR-226",
-          "radar" : "",
-          "resolution" : "",
-          "status" : "",
-          "title" : "",
-          "updated" : ""
+          "link" : "https:\/\/bugs.swift.org\/browse\/SR-226"
         },
         {
-          "assignee" : "",
           "id" : "SR-227",
-          "link" : "https:\/\/bugs.swift.org\/browse\/SR-227",
-          "radar" : "",
-          "resolution" : "",
-          "status" : "",
-          "title" : "",
-          "updated" : ""
+          "link" : "https:\/\/bugs.swift.org\/browse\/SR-227"
         }
       ]
     },
@@ -326,10 +277,6 @@
       ],
       "id" : "SE-0008",
       "link" : "0008-lazy-flatmap-for-optionals.md",
-      "reviewManager" : {
-        "link" : "https:\/\/github.com\/DougGregor",
-        "name" : "Doug Gregor"
-      },
       "reviewManagers" : [
         {
           "link" : "https:\/\/github.com\/DougGregor",
@@ -345,14 +292,8 @@
       "title" : "Add a Lazy flatMap for Sequences of Optionals",
       "trackingBugs" : [
         {
-          "assignee" : "",
           "id" : "SR-361",
-          "link" : "https:\/\/bugs.swift.org\/browse\/SR-361",
-          "radar" : "",
-          "resolution" : "",
-          "status" : "",
-          "title" : "",
-          "updated" : ""
+          "link" : "https:\/\/bugs.swift.org\/browse\/SR-361"
         }
       ]
     },
@@ -371,10 +312,6 @@
       ],
       "id" : "SE-0009",
       "link" : "0009-require-self-for-accessing-instance-members.md",
-      "reviewManager" : {
-        "link" : "https:\/\/github.com\/DougGregor",
-        "name" : "Doug Gregor"
-      },
       "reviewManagers" : [
         {
           "link" : "https:\/\/github.com\/DougGregor",
@@ -403,10 +340,6 @@
       ],
       "id" : "SE-0010",
       "link" : "0010-add-staticstring-unicodescalarview.md",
-      "reviewManager" : {
-        "link" : "https:\/\/github.com\/DougGregor",
-        "name" : "Doug Gregor"
-      },
       "reviewManagers" : [
         {
           "link" : "https:\/\/github.com\/DougGregor",
@@ -435,10 +368,6 @@
       ],
       "id" : "SE-0011",
       "link" : "0011-replace-typealias-associated.md",
-      "reviewManager" : {
-        "link" : "https:\/\/github.com\/DougGregor",
-        "name" : "Doug Gregor"
-      },
       "reviewManagers" : [
         {
           "link" : "https:\/\/github.com\/DougGregor",
@@ -454,14 +383,8 @@
       "title" : "Replace `typealias` keyword with `associatedtype` for associated type declarations",
       "trackingBugs" : [
         {
-          "assignee" : "",
           "id" : "SR-511",
-          "link" : "https:\/\/bugs.swift.org\/browse\/SR-511",
-          "radar" : "",
-          "resolution" : "",
-          "status" : "",
-          "title" : "",
-          "updated" : ""
+          "link" : "https:\/\/bugs.swift.org\/browse\/SR-511"
         }
       ]
     },
@@ -480,10 +403,6 @@
       ],
       "id" : "SE-0012",
       "link" : "0012-add-noescape-to-public-library-api.md",
-      "reviewManager" : {
-        "link" : "https:\/\/github.com\/phausler",
-        "name" : "Philippe Hausler"
-      },
       "reviewManagers" : [
         {
           "link" : "https:\/\/github.com\/phausler",
@@ -512,10 +431,6 @@
       ],
       "id" : "SE-0013",
       "link" : "0013-remove-partial-application-super.md",
-      "reviewManager" : {
-        "link" : "https:\/\/github.com\/DougGregor",
-        "name" : "Doug Gregor"
-      },
       "reviewManagers" : [
         {
           "link" : "https:\/\/github.com\/DougGregor",
@@ -544,10 +459,6 @@
       ],
       "id" : "SE-0014",
       "link" : "0014-constrained-AnySequence.md",
-      "reviewManager" : {
-        "link" : "https:\/\/github.com\/DougGregor",
-        "name" : "Doug Gregor"
-      },
       "reviewManagers" : [
         {
           "link" : "https:\/\/github.com\/DougGregor",
@@ -563,14 +474,8 @@
       "title" : "Constraining `AnySequence.init`",
       "trackingBugs" : [
         {
-          "assignee" : "",
           "id" : "SR-474",
-          "link" : "https:\/\/bugs.swift.org\/browse\/SR-474",
-          "radar" : "",
-          "resolution" : "",
-          "status" : "",
-          "title" : "",
-          "updated" : ""
+          "link" : "https:\/\/bugs.swift.org\/browse\/SR-474"
         }
       ]
     },
@@ -597,10 +502,6 @@
         }
       ],
       "link" : "0015-tuple-comparison-operators.md",
-      "reviewManager" : {
-        "link" : "https:\/\/github.com\/dabrahams",
-        "name" : "Dave Abrahams"
-      },
       "reviewManagers" : [
         {
           "link" : "https:\/\/github.com\/dabrahams",
@@ -630,10 +531,6 @@
       ],
       "id" : "SE-0016",
       "link" : "0016-initializers-for-converting-unsafe-pointers-to-ints.md",
-      "reviewManager" : {
-        "link" : "https:\/\/github.com\/lattner",
-        "name" : "Chris Lattner"
-      },
       "reviewManagers" : [
         {
           "link" : "https:\/\/github.com\/lattner",
@@ -649,14 +546,8 @@
       "title" : "Add initializers to Int and UInt to convert from UnsafePointer and UnsafeMutablePointer",
       "trackingBugs" : [
         {
-          "assignee" : "",
           "id" : "SR-1115",
-          "link" : "https:\/\/bugs.swift.org\/browse\/SR-1115",
-          "radar" : "",
-          "resolution" : "",
-          "status" : "",
-          "title" : "",
-          "updated" : ""
+          "link" : "https:\/\/bugs.swift.org\/browse\/SR-1115"
         }
       ]
     },
@@ -675,10 +566,6 @@
       ],
       "id" : "SE-0017",
       "link" : "0017-convert-unmanaged-to-use-unsafepointer.md",
-      "reviewManager" : {
-        "link" : "https:\/\/github.com\/lattner",
-        "name" : "Chris Lattner"
-      },
       "reviewManagers" : [
         {
           "link" : "https:\/\/github.com\/lattner",
@@ -694,14 +581,8 @@
       "title" : "Change `Unmanaged` to use `UnsafePointer`",
       "trackingBugs" : [
         {
-          "assignee" : "",
           "id" : "SR-1485",
-          "link" : "https:\/\/bugs.swift.org\/browse\/SR-1485",
-          "radar" : "",
-          "resolution" : "",
-          "status" : "",
-          "title" : "",
-          "updated" : ""
+          "link" : "https:\/\/bugs.swift.org\/browse\/SR-1485"
         }
       ]
     },
@@ -732,10 +613,6 @@
       ],
       "id" : "SE-0018",
       "link" : "0018-flexible-memberwise-initialization.md",
-      "reviewManager" : {
-        "link" : "https:\/\/github.com\/lattner",
-        "name" : "Chris Lattner"
-      },
       "reviewManagers" : [
         {
           "link" : "https:\/\/github.com\/lattner",
@@ -772,10 +649,6 @@
       ],
       "id" : "SE-0019",
       "link" : "0019-package-manager-testing.md",
-      "reviewManager" : {
-        "link" : "https:\/\/github.com\/rballard",
-        "name" : "Rick Ballard"
-      },
       "reviewManagers" : [
         {
           "link" : "https:\/\/github.com\/rballard",
@@ -791,14 +664,8 @@
       "title" : "Swift Testing",
       "trackingBugs" : [
         {
-          "assignee" : "",
           "id" : "SR-592",
-          "link" : "https:\/\/bugs.swift.org\/browse\/SR-592",
-          "radar" : "",
-          "resolution" : "",
-          "status" : "",
-          "title" : "",
-          "updated" : ""
+          "link" : "https:\/\/bugs.swift.org\/browse\/SR-592"
         }
       ]
     },
@@ -821,10 +688,6 @@
         }
       ],
       "link" : "0020-if-swift-version.md",
-      "reviewManager" : {
-        "link" : "https:\/\/github.com\/DougGregor",
-        "name" : "Doug Gregor"
-      },
       "reviewManagers" : [
         {
           "link" : "https:\/\/github.com\/DougGregor",
@@ -862,10 +725,6 @@
         }
       ],
       "link" : "0021-generalized-naming.md",
-      "reviewManager" : {
-        "link" : "https:\/\/github.com\/jckarter",
-        "name" : "Joe Groff"
-      },
       "reviewManagers" : [
         {
           "link" : "https:\/\/github.com\/jckarter",
@@ -903,10 +762,6 @@
         }
       ],
       "link" : "0022-objc-selectors.md",
-      "reviewManager" : {
-        "link" : "https:\/\/github.com\/jckarter",
-        "name" : "Joe Groff"
-      },
       "reviewManagers" : [
         {
           "link" : "https:\/\/github.com\/jckarter",
@@ -968,10 +823,6 @@
       ],
       "id" : "SE-0023",
       "link" : "0023-api-guidelines.md",
-      "reviewManager" : {
-        "link" : "https:\/\/github.com\/DougGregor",
-        "name" : "Doug Gregor"
-      },
       "reviewManagers" : [
         {
           "link" : "https:\/\/github.com\/DougGregor",
@@ -1001,10 +852,6 @@
       ],
       "id" : "SE-0024",
       "link" : "0024-optional-value-setter.md",
-      "reviewManager" : {
-        "link" : "https:\/\/github.com\/DougGregor",
-        "name" : "Doug Gregor"
-      },
       "reviewManagers" : [
         {
           "link" : "https:\/\/github.com\/DougGregor",
@@ -1033,10 +880,6 @@
       ],
       "id" : "SE-0025",
       "link" : "0025-scoped-access-level.md",
-      "reviewManager" : {
-        "link" : "https:\/\/github.com\/DougGregor",
-        "name" : "Doug Gregor"
-      },
       "reviewManagers" : [
         {
           "link" : "https:\/\/github.com\/DougGregor",
@@ -1052,14 +895,8 @@
       "title" : "Scoped Access Level",
       "trackingBugs" : [
         {
-          "assignee" : "",
           "id" : "SR-1275",
-          "link" : "https:\/\/bugs.swift.org\/browse\/SR-1275",
-          "radar" : "",
-          "resolution" : "",
-          "status" : "",
-          "title" : "",
-          "updated" : ""
+          "link" : "https:\/\/bugs.swift.org\/browse\/SR-1275"
         }
       ]
     },
@@ -1090,10 +927,6 @@
       ],
       "id" : "SE-0026",
       "link" : "0026-abstract-classes-and-methods.md",
-      "reviewManager" : {
-        "link" : "https:\/\/github.com\/jckarter\/",
-        "name" : "Joe Groff"
-      },
       "reviewManagers" : [
         {
           "link" : "https:\/\/github.com\/jckarter\/",
@@ -1122,10 +955,6 @@
       ],
       "id" : "SE-0027",
       "link" : "0027-string-from-code-units.md",
-      "reviewManager" : {
-        "link" : "https:\/\/github.com\/DougGregor",
-        "name" : "Doug Gregor"
-      },
       "reviewManagers" : [
         {
           "link" : "https:\/\/github.com\/DougGregor",
@@ -1154,10 +983,6 @@
       ],
       "id" : "SE-0028",
       "link" : "0028-modernizing-debug-identifiers.md",
-      "reviewManager" : {
-        "link" : "https:\/\/github.com\/lattner",
-        "name" : "Chris Lattner"
-      },
       "reviewManagers" : [
         {
           "link" : "https:\/\/github.com\/lattner",
@@ -1173,14 +998,8 @@
       "title" : "Modernizing Swift's Debugging Identifiers",
       "trackingBugs" : [
         {
-          "assignee" : "",
           "id" : "SR-669",
-          "link" : "https:\/\/bugs.swift.org\/browse\/SR-669",
-          "radar" : "",
-          "resolution" : "",
-          "status" : "",
-          "title" : "",
-          "updated" : ""
+          "link" : "https:\/\/bugs.swift.org\/browse\/SR-669"
         }
       ]
     },
@@ -1207,10 +1026,6 @@
         }
       ],
       "link" : "0029-remove-implicit-tuple-splat.md",
-      "reviewManager" : {
-        "link" : "https:\/\/github.com\/jckarter",
-        "name" : "Joe Groff"
-      },
       "reviewManagers" : [
         {
           "link" : "https:\/\/github.com\/jckarter",
@@ -1240,10 +1055,6 @@
       ],
       "id" : "SE-0030",
       "link" : "0030-property-behavior-decls.md",
-      "reviewManager" : {
-        "link" : "https:\/\/github.com\/DougGregor",
-        "name" : "Doug Gregor"
-      },
       "reviewManagers" : [
         {
           "link" : "https:\/\/github.com\/DougGregor",
@@ -1284,10 +1095,6 @@
         }
       ],
       "link" : "0031-adjusting-inout-declarations.md",
-      "reviewManager" : {
-        "link" : "https:\/\/github.com\/lattner",
-        "name" : "Chris Lattner"
-      },
       "reviewManagers" : [
         {
           "link" : "https:\/\/github.com\/lattner",
@@ -1317,10 +1124,6 @@
       ],
       "id" : "SE-0032",
       "link" : "0032-sequencetype-find.md",
-      "reviewManager" : {
-        "link" : "https:\/\/github.com\/lattner",
-        "name" : "Chris Lattner"
-      },
       "reviewManagers" : [
         {
           "link" : "https:\/\/github.com\/lattner",
@@ -1336,14 +1139,8 @@
       "title" : "Add `first(where:)` method to `Sequence`",
       "trackingBugs" : [
         {
-          "assignee" : "",
           "id" : "SR-1519",
-          "link" : "https:\/\/bugs.swift.org\/browse\/SR-1519",
-          "radar" : "",
-          "resolution" : "",
-          "status" : "",
-          "title" : "",
-          "updated" : ""
+          "link" : "https:\/\/bugs.swift.org\/browse\/SR-1519"
         }
       ]
     },
@@ -1362,10 +1159,6 @@
       ],
       "id" : "SE-0033",
       "link" : "0033-import-objc-constants.md",
-      "reviewManager" : {
-        "link" : "https:\/\/github.com\/rjmccall",
-        "name" : "John McCall"
-      },
       "reviewManagers" : [
         {
           "link" : "https:\/\/github.com\/rjmccall",
@@ -1395,10 +1188,6 @@
       ],
       "id" : "SE-0034",
       "link" : "0034-disambiguating-line.md",
-      "reviewManager" : {
-        "link" : "https:\/\/github.com\/lattner",
-        "name" : "Chris Lattner"
-      },
       "reviewManagers" : [
         {
           "link" : "https:\/\/github.com\/lattner",
@@ -1414,14 +1203,8 @@
       "title" : "Disambiguating Line Control Statements from Debugging Identifiers",
       "trackingBugs" : [
         {
-          "assignee" : "",
           "id" : "SR-840",
-          "link" : "https:\/\/bugs.swift.org\/browse\/SR-840",
-          "radar" : "",
-          "resolution" : "",
-          "status" : "",
-          "title" : "",
-          "updated" : ""
+          "link" : "https:\/\/bugs.swift.org\/browse\/SR-840"
         }
       ]
     },
@@ -1440,10 +1223,6 @@
       ],
       "id" : "SE-0035",
       "link" : "0035-limit-inout-capture.md",
-      "reviewManager" : {
-        "link" : "https:\/\/github.com\/lattner",
-        "name" : "Chris Lattner"
-      },
       "reviewManagers" : [
         {
           "link" : "https:\/\/github.com\/lattner",
@@ -1459,14 +1238,8 @@
       "title" : "Limiting `inout` capture to `@noescape` contexts",
       "trackingBugs" : [
         {
-          "assignee" : "",
           "id" : "SR-807",
-          "link" : "https:\/\/bugs.swift.org\/browse\/SR-807",
-          "radar" : "",
-          "resolution" : "",
-          "status" : "",
-          "title" : "",
-          "updated" : ""
+          "link" : "https:\/\/bugs.swift.org\/browse\/SR-807"
         }
       ]
     },
@@ -1489,10 +1262,6 @@
       ],
       "id" : "SE-0036",
       "link" : "0036-enum-dot.md",
-      "reviewManager" : {
-        "link" : "https:\/\/github.com\/DougGregor",
-        "name" : "Doug Gregor"
-      },
       "reviewManagers" : [
         {
           "link" : "https:\/\/github.com\/DougGregor",
@@ -1508,14 +1277,8 @@
       "title" : "Requiring Leading Dot Prefixes for Enum Instance Member Implementations",
       "trackingBugs" : [
         {
-          "assignee" : "",
           "id" : "SR-1236",
-          "link" : "https:\/\/bugs.swift.org\/browse\/SR-1236",
-          "radar" : "",
-          "resolution" : "",
-          "status" : "",
-          "title" : "",
-          "updated" : ""
+          "link" : "https:\/\/bugs.swift.org\/browse\/SR-1236"
         }
       ]
     },
@@ -1534,10 +1297,6 @@
       ],
       "id" : "SE-0037",
       "link" : "0037-clarify-comments-and-operators.md",
-      "reviewManager" : {
-        "link" : "https:\/\/github.com\/lattner",
-        "name" : "Chris Lattner"
-      },
       "reviewManagers" : [
         {
           "link" : "https:\/\/github.com\/lattner",
@@ -1553,14 +1312,8 @@
       "title" : "Clarify interaction between comments & operators",
       "trackingBugs" : [
         {
-          "assignee" : "",
           "id" : "SR-960",
-          "link" : "https:\/\/bugs.swift.org\/browse\/SR-960",
-          "radar" : "",
-          "resolution" : "",
-          "status" : "",
-          "title" : "",
-          "updated" : ""
+          "link" : "https:\/\/bugs.swift.org\/browse\/SR-960"
         }
       ]
     },
@@ -1579,10 +1332,6 @@
       ],
       "id" : "SE-0038",
       "link" : "0038-swiftpm-c-language-targets.md",
-      "reviewManager" : {
-        "link" : "https:\/\/github.com\/rballard",
-        "name" : "Rick Ballard"
-      },
       "reviewManagers" : [
         {
           "link" : "https:\/\/github.com\/rballard",
@@ -1598,14 +1347,8 @@
       "title" : "Package Manager C Language Target Support",
       "trackingBugs" : [
         {
-          "assignee" : "",
           "id" : "SR-821",
-          "link" : "https:\/\/bugs.swift.org\/browse\/SR-821",
-          "radar" : "",
-          "resolution" : "",
-          "status" : "",
-          "title" : "",
-          "updated" : ""
+          "link" : "https:\/\/bugs.swift.org\/browse\/SR-821"
         }
       ]
     },
@@ -1624,10 +1367,6 @@
       ],
       "id" : "SE-0039",
       "link" : "0039-playgroundliterals.md",
-      "reviewManager" : {
-        "link" : "https:\/\/github.com\/lattner",
-        "name" : "Chris Lattner"
-      },
       "reviewManagers" : [
         {
           "link" : "https:\/\/github.com\/lattner",
@@ -1643,14 +1382,8 @@
       "title" : "Modernizing Playground Literals",
       "trackingBugs" : [
         {
-          "assignee" : "",
           "id" : "SR-917",
-          "link" : "https:\/\/bugs.swift.org\/browse\/SR-917",
-          "radar" : "",
-          "resolution" : "",
-          "status" : "",
-          "title" : "",
-          "updated" : ""
+          "link" : "https:\/\/bugs.swift.org\/browse\/SR-917"
         }
       ]
     },
@@ -1677,10 +1410,6 @@
         }
       ],
       "link" : "0040-attributecolons.md",
-      "reviewManager" : {
-        "link" : "https:\/\/github.com\/lattner",
-        "name" : "Chris Lattner"
-      },
       "reviewManagers" : [
         {
           "link" : "https:\/\/github.com\/lattner",
@@ -1714,10 +1443,6 @@
       ],
       "id" : "SE-0041",
       "link" : "0041-conversion-protocol-conventions.md",
-      "reviewManager" : {
-        "link" : "https:\/\/github.com\/lattner",
-        "name" : "Chris Lattner"
-      },
       "reviewManagers" : [
         {
           "link" : "https:\/\/github.com\/lattner",
@@ -1746,10 +1471,6 @@
       ],
       "id" : "SE-0042",
       "link" : "0042-flatten-method-types.md",
-      "reviewManager" : {
-        "link" : "https:\/\/github.com\/lattner",
-        "name" : "Chris Lattner"
-      },
       "reviewManagers" : [
         {
           "link" : "https:\/\/github.com\/lattner",
@@ -1764,14 +1485,8 @@
       "title" : "Flattening the function type of unapplied method references",
       "trackingBugs" : [
         {
-          "assignee" : "",
           "id" : "SR-1051",
-          "link" : "https:\/\/bugs.swift.org\/browse\/SR-1051",
-          "radar" : "",
-          "resolution" : "",
-          "status" : "",
-          "title" : "",
-          "updated" : ""
+          "link" : "https:\/\/bugs.swift.org\/browse\/SR-1051"
         }
       ]
     },
@@ -1798,10 +1513,6 @@
         }
       ],
       "link" : "0043-declare-variables-in-case-labels-with-multiple-patterns.md",
-      "reviewManager" : {
-        "link" : "https:\/\/github.com\/lattner",
-        "name" : "Chris Lattner"
-      },
       "reviewManagers" : [
         {
           "link" : "https:\/\/github.com\/lattner",
@@ -1831,10 +1542,6 @@
       ],
       "id" : "SE-0044",
       "link" : "0044-import-as-member.md",
-      "reviewManager" : {
-        "link" : "https:\/\/github.com\/DougGregor",
-        "name" : "Doug Gregor"
-      },
       "reviewManagers" : [
         {
           "link" : "https:\/\/github.com\/DougGregor",
@@ -1850,14 +1557,8 @@
       "title" : "Import as member",
       "trackingBugs" : [
         {
-          "assignee" : "",
           "id" : "SR-1053",
-          "link" : "https:\/\/bugs.swift.org\/browse\/SR-1053",
-          "radar" : "",
-          "resolution" : "",
-          "status" : "",
-          "title" : "",
-          "updated" : ""
+          "link" : "https:\/\/bugs.swift.org\/browse\/SR-1053"
         }
       ]
     },
@@ -1876,10 +1577,6 @@
       ],
       "id" : "SE-0045",
       "link" : "0045-scan-takewhile-dropwhile.md",
-      "reviewManager" : {
-        "link" : "https:\/\/github.com\/lattner",
-        "name" : "Chris Lattner"
-      },
       "reviewManagers" : [
         {
           "link" : "https:\/\/github.com\/lattner",
@@ -1895,14 +1592,8 @@
       "title" : "Add prefix(while:) and drop(while:) to the stdlib",
       "trackingBugs" : [
         {
-          "assignee" : "",
           "id" : "SR-1516",
-          "link" : "https:\/\/bugs.swift.org\/browse\/SR-1516",
-          "radar" : "",
-          "resolution" : "",
-          "status" : "",
-          "title" : "",
-          "updated" : ""
+          "link" : "https:\/\/bugs.swift.org\/browse\/SR-1516"
         }
       ]
     },
@@ -1925,10 +1616,6 @@
       ],
       "id" : "SE-0046",
       "link" : "0046-first-label.md",
-      "reviewManager" : {
-        "link" : "https:\/\/github.com\/lattner",
-        "name" : "Chris Lattner"
-      },
       "reviewManagers" : [
         {
           "link" : "https:\/\/github.com\/lattner",
@@ -1944,14 +1631,8 @@
       "title" : "Establish consistent label behavior across all parameters including first labels",
       "trackingBugs" : [
         {
-          "assignee" : "",
           "id" : "SR-961",
-          "link" : "https:\/\/bugs.swift.org\/browse\/SR-961",
-          "radar" : "",
-          "resolution" : "",
-          "status" : "",
-          "title" : "",
-          "updated" : ""
+          "link" : "https:\/\/bugs.swift.org\/browse\/SR-961"
         }
       ]
     },
@@ -1974,10 +1655,6 @@
       ],
       "id" : "SE-0047",
       "link" : "0047-nonvoid-warn.md",
-      "reviewManager" : {
-        "link" : "https:\/\/github.com\/lattner",
-        "name" : "Chris Lattner"
-      },
       "reviewManagers" : [
         {
           "link" : "https:\/\/github.com\/lattner",
@@ -1993,14 +1670,8 @@
       "title" : "Defaulting non-Void functions so they warn on unused results",
       "trackingBugs" : [
         {
-          "assignee" : "",
           "id" : "SR-1052",
-          "link" : "https:\/\/bugs.swift.org\/browse\/SR-1052",
-          "radar" : "",
-          "resolution" : "",
-          "status" : "",
-          "title" : "",
-          "updated" : ""
+          "link" : "https:\/\/bugs.swift.org\/browse\/SR-1052"
         }
       ]
     },
@@ -2019,10 +1690,6 @@
       ],
       "id" : "SE-0048",
       "link" : "0048-generic-typealias.md",
-      "reviewManager" : {
-        "link" : "https:\/\/github.com\/DougGregor",
-        "name" : "Doug Gregor"
-      },
       "reviewManagers" : [
         {
           "link" : "https:\/\/github.com\/DougGregor",
@@ -2052,10 +1719,6 @@
       ],
       "id" : "SE-0049",
       "link" : "0049-noescape-autoclosure-type-attrs.md",
-      "reviewManager" : {
-        "link" : "https:\/\/github.com\/DougGregor",
-        "name" : "Doug Gregor"
-      },
       "reviewManagers" : [
         {
           "link" : "https:\/\/github.com\/DougGregor",
@@ -2071,14 +1734,8 @@
       "title" : "Move @noescape and @autoclosure to be type attributes",
       "trackingBugs" : [
         {
-          "assignee" : "",
           "id" : "SR-1235",
-          "link" : "https:\/\/bugs.swift.org\/browse\/SR-1235",
-          "radar" : "",
-          "resolution" : "",
-          "status" : "",
-          "title" : "",
-          "updated" : ""
+          "link" : "https:\/\/bugs.swift.org\/browse\/SR-1235"
         }
       ]
     },
@@ -2101,10 +1758,6 @@
       ],
       "id" : "SE-0050",
       "link" : "0050-floating-point-stride.md",
-      "reviewManager" : {
-        "link" : "https:\/\/github.com\/lattner",
-        "name" : "Chris Lattner"
-      },
       "reviewManagers" : [
         {
           "link" : "https:\/\/github.com\/lattner",
@@ -2129,10 +1782,6 @@
       ],
       "id" : "SE-0051",
       "link" : "0051-stride-semantics.md",
-      "reviewManager" : {
-        "link" : "",
-        "name" : "N\/A"
-      },
       "reviewManagers" : [
         {
           "link" : "",
@@ -2169,10 +1818,6 @@
         }
       ],
       "link" : "0052-iterator-post-nil-guarantee.md",
-      "reviewManager" : {
-        "link" : "https:\/\/github.com\/lattner",
-        "name" : "Chris Lattner"
-      },
       "reviewManagers" : [
         {
           "link" : "https:\/\/github.com\/lattner",
@@ -2210,10 +1855,6 @@
         }
       ],
       "link" : "0053-remove-let-from-function-parameters.md",
-      "reviewManager" : {
-        "link" : "https:\/\/github.com\/lattner",
-        "name" : "Chris Lattner"
-      },
       "reviewManagers" : [
         {
           "link" : "https:\/\/github.com\/lattner",
@@ -2251,10 +1892,6 @@
         }
       ],
       "link" : "0054-abolish-iuo.md",
-      "reviewManager" : {
-        "link" : "https:\/\/github.com\/lattner",
-        "name" : "Chris Lattner"
-      },
       "reviewManagers" : [
         {
           "link" : "https:\/\/github.com\/lattner",
@@ -2292,10 +1929,6 @@
         }
       ],
       "link" : "0055-optional-unsafe-pointers.md",
-      "reviewManager" : {
-        "link" : "https:\/\/github.com\/lattner",
-        "name" : "Chris Lattner"
-      },
       "reviewManagers" : [
         {
           "link" : "https:\/\/github.com\/lattner",
@@ -2325,10 +1958,6 @@
       ],
       "id" : "SE-0056",
       "link" : "0056-trailing-closures-in-guard.md",
-      "reviewManager" : {
-        "link" : "https:\/\/github.com\/DougGregor",
-        "name" : "Doug Gregor"
-      },
       "reviewManagers" : [
         {
           "link" : "https:\/\/github.com\/DougGregor",
@@ -2357,10 +1986,6 @@
       ],
       "id" : "SE-0057",
       "link" : "0057-importing-objc-generics.md",
-      "reviewManager" : {
-        "link" : "https:\/\/github.com\/lattner",
-        "name" : "Chris Lattner"
-      },
       "reviewManagers" : [
         {
           "link" : "https:\/\/github.com\/lattner",
@@ -2406,10 +2031,6 @@
       ],
       "id" : "SE-0058",
       "link" : "0058-objectivecbridgeable.md",
-      "reviewManager" : {
-        "link" : "https:\/\/github.com\/jckarter",
-        "name" : "Joe Groff"
-      },
       "reviewManagers" : [
         {
           "link" : "https:\/\/github.com\/jckarter",
@@ -2438,10 +2059,6 @@
       ],
       "id" : "SE-0059",
       "link" : "0059-updated-set-apis.md",
-      "reviewManager" : {
-        "link" : "https:\/\/github.com\/DougGregor",
-        "name" : "Doug Gregor"
-      },
       "reviewManagers" : [
         {
           "link" : "https:\/\/github.com\/DougGregor",
@@ -2471,10 +2088,6 @@
       ],
       "id" : "SE-0060",
       "link" : "0060-defaulted-parameter-order.md",
-      "reviewManager" : {
-        "link" : "https:\/\/github.com\/lattner",
-        "name" : "Chris Lattner"
-      },
       "reviewManagers" : [
         {
           "link" : "https:\/\/github.com\/lattner",
@@ -2490,14 +2103,8 @@
       "title" : "Enforcing order of defaulted parameters",
       "trackingBugs" : [
         {
-          "assignee" : "",
           "id" : "SR-1489",
-          "link" : "https:\/\/bugs.swift.org\/browse\/SR-1489",
-          "radar" : "",
-          "resolution" : "",
-          "status" : "",
-          "title" : "",
-          "updated" : ""
+          "link" : "https:\/\/bugs.swift.org\/browse\/SR-1489"
         }
       ]
     },
@@ -2516,10 +2123,6 @@
       ],
       "id" : "SE-0061",
       "link" : "0061-autoreleasepool-signature.md",
-      "reviewManager" : {
-        "link" : "https:\/\/github.com\/dabrahams",
-        "name" : "Dave Abrahams"
-      },
       "reviewManagers" : [
         {
           "link" : "https:\/\/github.com\/dabrahams",
@@ -2535,24 +2138,12 @@
       "title" : "Add Generic Result and Error Handling to autoreleasepool()",
       "trackingBugs" : [
         {
-          "assignee" : "",
           "id" : "SR-842",
-          "link" : "https:\/\/bugs.swift.org\/browse\/SR-842",
-          "radar" : "",
-          "resolution" : "",
-          "status" : "",
-          "title" : "",
-          "updated" : ""
+          "link" : "https:\/\/bugs.swift.org\/browse\/SR-842"
         },
         {
-          "assignee" : "",
           "id" : "SR-1394",
-          "link" : "https:\/\/bugs.swift.org\/browse\/SR-1394",
-          "radar" : "",
-          "resolution" : "",
-          "status" : "",
-          "title" : "",
-          "updated" : ""
+          "link" : "https:\/\/bugs.swift.org\/browse\/SR-1394"
         }
       ]
     },
@@ -2571,10 +2162,6 @@
       ],
       "id" : "SE-0062",
       "link" : "0062-objc-keypaths.md",
-      "reviewManager" : {
-        "link" : "https:\/\/github.com\/DougGregor",
-        "name" : "Doug Gregor"
-      },
       "reviewManagers" : [
         {
           "link" : "https:\/\/github.com\/DougGregor",
@@ -2590,14 +2177,8 @@
       "title" : "Referencing Objective-C key-paths",
       "trackingBugs" : [
         {
-          "assignee" : "",
           "id" : "SR-1237",
-          "link" : "https:\/\/bugs.swift.org\/browse\/SR-1237",
-          "radar" : "",
-          "resolution" : "",
-          "status" : "",
-          "title" : "",
-          "updated" : ""
+          "link" : "https:\/\/bugs.swift.org\/browse\/SR-1237"
         }
       ]
     },
@@ -2624,10 +2205,6 @@
         }
       ],
       "link" : "0063-swiftpm-system-module-search-paths.md",
-      "reviewManager" : {
-        "link" : "https:\/\/github.com\/abertelrud",
-        "name" : "Anders Bertelrud"
-      },
       "reviewManagers" : [
         {
           "link" : "https:\/\/github.com\/abertelrud",
@@ -2657,10 +2234,6 @@
       ],
       "id" : "SE-0064",
       "link" : "0064-property-selectors.md",
-      "reviewManager" : {
-        "link" : "https:\/\/github.com\/DougGregor",
-        "name" : "Doug Gregor"
-      },
       "reviewManagers" : [
         {
           "link" : "https:\/\/github.com\/DougGregor",
@@ -2676,14 +2249,8 @@
       "title" : "Referencing the Objective-C selector of property getters and setters",
       "trackingBugs" : [
         {
-          "assignee" : "",
           "id" : "SR-1239",
-          "link" : "https:\/\/bugs.swift.org\/browse\/SR-1239",
-          "radar" : "",
-          "resolution" : "",
-          "status" : "",
-          "title" : "",
-          "updated" : ""
+          "link" : "https:\/\/bugs.swift.org\/browse\/SR-1239"
         }
       ]
     },
@@ -2722,10 +2289,6 @@
         }
       ],
       "link" : "0065-collections-move-indices.md",
-      "reviewManager" : {
-        "link" : "https:\/\/github.com\/lattner",
-        "name" : "Chris Lattner"
-      },
       "reviewManagers" : [
         {
           "link" : "https:\/\/github.com\/lattner",
@@ -2763,10 +2326,6 @@
         }
       ],
       "link" : "0066-standardize-function-type-syntax.md",
-      "reviewManager" : {
-        "link" : "https:\/\/github.com\/DougGregor",
-        "name" : "Doug Gregor"
-      },
       "reviewManagers" : [
         {
           "link" : "https:\/\/github.com\/DougGregor",
@@ -2804,10 +2363,6 @@
         }
       ],
       "link" : "0067-floating-point-protocols.md",
-      "reviewManager" : {
-        "link" : "https:\/\/github.com\/lattner",
-        "name" : "Chris Lattner"
-      },
       "reviewManagers" : [
         {
           "link" : "https:\/\/github.com\/lattner",
@@ -2845,10 +2400,6 @@
         }
       ],
       "link" : "0068-universal-self.md",
-      "reviewManager" : {
-        "link" : "https:\/\/github.com\/lattner",
-        "name" : "Chris Lattner"
-      },
       "reviewManagers" : [
         {
           "link" : "https:\/\/github.com\/lattner",
@@ -2864,14 +2415,8 @@
       "title" : "Expanding Swift `Self` to class members and value types",
       "trackingBugs" : [
         {
-          "assignee" : "",
           "id" : "SR-1340",
-          "link" : "https:\/\/bugs.swift.org\/browse\/SR-1340",
-          "radar" : "",
-          "resolution" : "",
-          "status" : "",
-          "title" : "",
-          "updated" : ""
+          "link" : "https:\/\/bugs.swift.org\/browse\/SR-1340"
         }
       ]
     },
@@ -2890,10 +2435,6 @@
       ],
       "id" : "SE-0069",
       "link" : "0069-swift-mutability-for-foundation.md",
-      "reviewManager" : {
-        "link" : "https:\/\/github.com\/lattner",
-        "name" : "Chris Lattner"
-      },
       "reviewManagers" : [
         {
           "link" : "https:\/\/github.com\/lattner",
@@ -2923,10 +2464,6 @@
       ],
       "id" : "SE-0070",
       "link" : "0070-optional-requirements.md",
-      "reviewManager" : {
-        "link" : "https:\/\/github.com\/lattner",
-        "name" : "Chris Lattner"
-      },
       "reviewManagers" : [
         {
           "link" : "https:\/\/github.com\/lattner",
@@ -2942,14 +2479,8 @@
       "title" : "Make Optional Requirements Objective-C-only",
       "trackingBugs" : [
         {
-          "assignee" : "",
           "id" : "SR-1395",
-          "link" : "https:\/\/bugs.swift.org\/browse\/SR-1395",
-          "radar" : "",
-          "resolution" : "",
-          "status" : "",
-          "title" : "",
-          "updated" : ""
+          "link" : "https:\/\/bugs.swift.org\/browse\/SR-1395"
         }
       ]
     },
@@ -2968,10 +2499,6 @@
       ],
       "id" : "SE-0071",
       "link" : "0071-member-keywords.md",
-      "reviewManager" : {
-        "link" : "https:\/\/github.com\/lattner",
-        "name" : "Chris Lattner"
-      },
       "reviewManagers" : [
         {
           "link" : "https:\/\/github.com\/lattner",
@@ -3009,10 +2536,6 @@
         }
       ],
       "link" : "0072-eliminate-implicit-bridging-conversions.md",
-      "reviewManager" : {
-        "link" : "https:\/\/github.com\/lattner",
-        "name" : "Chris Lattner"
-      },
       "reviewManagers" : [
         {
           "link" : "https:\/\/github.com\/lattner",
@@ -3046,10 +2569,6 @@
       ],
       "id" : "SE-0073",
       "link" : "0073-noescape-once.md",
-      "reviewManager" : {
-        "link" : "https:\/\/github.com\/lattner",
-        "name" : "Chris Lattner"
-      },
       "reviewManagers" : [
         {
           "link" : "https:\/\/github.com\/lattner",
@@ -3086,10 +2605,6 @@
       ],
       "id" : "SE-0074",
       "link" : "0074-binary-search.md",
-      "reviewManager" : {
-        "link" : "https:\/\/github.com\/lattner",
-        "name" : "Chris Lattner"
-      },
       "reviewManagers" : [
         {
           "link" : "https:\/\/github.com\/lattner",
@@ -3118,10 +2633,6 @@
       ],
       "id" : "SE-0075",
       "link" : "0075-import-test.md",
-      "reviewManager" : {
-        "link" : "https:\/\/github.com\/lattner",
-        "name" : "Chris Lattner"
-      },
       "reviewManagers" : [
         {
           "link" : "https:\/\/github.com\/lattner",
@@ -3137,14 +2648,8 @@
       "title" : "Adding a Build Configuration Import Test",
       "trackingBugs" : [
         {
-          "assignee" : "",
           "id" : "SR-1560",
-          "link" : "https:\/\/bugs.swift.org\/browse\/SR-1560",
-          "radar" : "",
-          "resolution" : "",
-          "status" : "",
-          "title" : "",
-          "updated" : ""
+          "link" : "https:\/\/bugs.swift.org\/browse\/SR-1560"
         }
       ]
     },
@@ -3163,10 +2668,6 @@
       ],
       "id" : "SE-0076",
       "link" : "0076-copying-to-unsafe-mutable-pointer-with-unsafe-pointer-source.md",
-      "reviewManager" : {
-        "link" : "https:\/\/github.com\/lattner",
-        "name" : "Chris Lattner"
-      },
       "reviewManagers" : [
         {
           "link" : "https:\/\/github.com\/lattner",
@@ -3182,14 +2683,8 @@
       "title" : "Add overrides taking an UnsafePointer source to non-destructive copying methods on UnsafeMutablePointer",
       "trackingBugs" : [
         {
-          "assignee" : "",
           "id" : "SR-1490",
-          "link" : "https:\/\/bugs.swift.org\/browse\/SR-1490",
-          "radar" : "",
-          "resolution" : "",
-          "status" : "",
-          "title" : "",
-          "updated" : ""
+          "link" : "https:\/\/bugs.swift.org\/browse\/SR-1490"
         }
       ]
     },
@@ -3208,10 +2703,6 @@
       ],
       "id" : "SE-0077",
       "link" : "0077-operator-precedence.md",
-      "reviewManager" : {
-        "link" : "https:\/\/github.com\/jckarter",
-        "name" : "Joe Groff"
-      },
       "reviewManagers" : [
         {
           "link" : "https:\/\/github.com\/jckarter",
@@ -3261,10 +2752,6 @@
       ],
       "id" : "SE-0078",
       "link" : "0078-rotate-algorithm.md",
-      "reviewManager" : {
-        "link" : "https:\/\/github.com\/lattner",
-        "name" : "Chris Lattner"
-      },
       "reviewManagers" : [
         {
           "link" : "https:\/\/github.com\/lattner",
@@ -3297,10 +2784,6 @@
         }
       ],
       "link" : "0079-upgrade-self-from-weak-to-strong.md",
-      "reviewManager" : {
-        "link" : "",
-        "name" : "TBD"
-      },
       "reviewManagers" : [
         {
           "link" : "",
@@ -3330,10 +2813,6 @@
       ],
       "id" : "SE-0080",
       "link" : "0080-failable-numeric-initializers.md",
-      "reviewManager" : {
-        "link" : "https:\/\/github.com\/lattner",
-        "name" : "Chris Lattner"
-      },
       "reviewManagers" : [
         {
           "link" : "https:\/\/github.com\/lattner",
@@ -3349,14 +2828,8 @@
       "title" : "Failable Numeric Conversion Initializers",
       "trackingBugs" : [
         {
-          "assignee" : "",
           "id" : "SR-1491",
-          "link" : "https:\/\/bugs.swift.org\/browse\/SR-1491",
-          "radar" : "",
-          "resolution" : "",
-          "status" : "",
-          "title" : "",
-          "updated" : ""
+          "link" : "https:\/\/bugs.swift.org\/browse\/SR-1491"
         }
       ]
     },
@@ -3383,10 +2856,6 @@
       ],
       "id" : "SE-0081",
       "link" : "0081-move-where-expression.md",
-      "reviewManager" : {
-        "link" : "https:\/\/github.com\/lattner",
-        "name" : "Chris Lattner"
-      },
       "reviewManagers" : [
         {
           "link" : "https:\/\/github.com\/lattner",
@@ -3402,14 +2871,8 @@
       "title" : "Move `where` clause to end of declaration",
       "trackingBugs" : [
         {
-          "assignee" : "",
           "id" : "SR-1561",
-          "link" : "https:\/\/bugs.swift.org\/browse\/SR-1561",
-          "radar" : "",
-          "resolution" : "",
-          "status" : "",
-          "title" : "",
-          "updated" : ""
+          "link" : "https:\/\/bugs.swift.org\/browse\/SR-1561"
         }
       ]
     },
@@ -3428,10 +2891,6 @@
       ],
       "id" : "SE-0082",
       "link" : "0082-swiftpm-package-edit.md",
-      "reviewManager" : {
-        "link" : "https:\/\/github.com\/abertelrud",
-        "name" : "Anders Bertelrud"
-      },
       "reviewManagers" : [
         {
           "link" : "https:\/\/github.com\/abertelrud",
@@ -3473,10 +2932,6 @@
       ],
       "id" : "SE-0083",
       "link" : "0083-remove-bridging-from-dynamic-casts.md",
-      "reviewManager" : {
-        "link" : "https:\/\/github.com\/lattner",
-        "name" : "Chris Lattner"
-      },
       "reviewManagers" : [
         {
           "link" : "https:\/\/github.com\/lattner",
@@ -3509,10 +2964,6 @@
       ],
       "id" : "SE-0084",
       "link" : "0084-trailing-commas.md",
-      "reviewManager" : {
-        "link" : "https:\/\/github.com\/lattner",
-        "name" : "Chris Lattner"
-      },
       "reviewManagers" : [
         {
           "link" : "https:\/\/github.com\/lattner",
@@ -3553,10 +3004,6 @@
         }
       ],
       "link" : "0085-package-manager-command-name.md",
-      "reviewManager" : {
-        "link" : "https:\/\/github.com\/ddunbar",
-        "name" : "Daniel Dunbar"
-      },
       "reviewManagers" : [
         {
           "link" : "https:\/\/github.com\/ddunbar",
@@ -3590,10 +3037,6 @@
       ],
       "id" : "SE-0086",
       "link" : "0086-drop-foundation-ns.md",
-      "reviewManager" : {
-        "link" : "https:\/\/github.com\/DougGregor",
-        "name" : "Doug Gregor"
-      },
       "reviewManagers" : [
         {
           "link" : "https:\/\/github.com\/DougGregor",
@@ -3623,10 +3066,6 @@
       ],
       "id" : "SE-0087",
       "link" : "0087-lazy-attribute.md",
-      "reviewManager" : {
-        "link" : "https:\/\/github.com\/lattner",
-        "name" : "Chris Lattner"
-      },
       "reviewManagers" : [
         {
           "link" : "https:\/\/github.com\/lattner",
@@ -3655,10 +3094,6 @@
       ],
       "id" : "SE-0088",
       "link" : "0088-libdispatch-for-swift3.md",
-      "reviewManager" : {
-        "link" : "https:\/\/github.com\/lattner",
-        "name" : "Chris Lattner"
-      },
       "reviewManagers" : [
         {
           "link" : "https:\/\/github.com\/lattner",
@@ -3692,10 +3127,6 @@
       ],
       "id" : "SE-0089",
       "link" : "0089-rename-string-reflection-init.md",
-      "reviewManager" : {
-        "link" : "https:\/\/github.com\/lattner",
-        "name" : "Chris Lattner"
-      },
       "reviewManagers" : [
         {
           "link" : "https:\/\/github.com\/lattner",
@@ -3711,14 +3142,8 @@
       "title" : "Renaming `String.init<T>(_: T)`",
       "trackingBugs" : [
         {
-          "assignee" : "",
           "id" : "SR-1881",
-          "link" : "https:\/\/bugs.swift.org\/browse\/SR-1881",
-          "radar" : "",
-          "resolution" : "",
-          "status" : "",
-          "title" : "",
-          "updated" : ""
+          "link" : "https:\/\/bugs.swift.org\/browse\/SR-1881"
         }
       ]
     },
@@ -3753,10 +3178,6 @@
       ],
       "id" : "SE-0090",
       "link" : "0090-remove-dot-self.md",
-      "reviewManager" : {
-        "link" : "https:\/\/github.com\/lattner",
-        "name" : "Chris Lattner"
-      },
       "reviewManagers" : [
         {
           "link" : "https:\/\/github.com\/lattner",
@@ -3789,10 +3210,6 @@
       ],
       "id" : "SE-0091",
       "link" : "0091-improving-operators-in-protocols.md",
-      "reviewManager" : {
-        "link" : "https:\/\/github.com\/lattner",
-        "name" : "Chris Lattner"
-      },
       "reviewManagers" : [
         {
           "link" : "https:\/\/github.com\/lattner",
@@ -3808,14 +3225,8 @@
       "title" : "Improving operator requirements in protocols",
       "trackingBugs" : [
         {
-          "assignee" : "",
           "id" : "SR-2073",
-          "link" : "https:\/\/bugs.swift.org\/browse\/SR-2073",
-          "radar" : "",
-          "resolution" : "",
-          "status" : "",
-          "title" : "",
-          "updated" : ""
+          "link" : "https:\/\/bugs.swift.org\/browse\/SR-2073"
         }
       ]
     },
@@ -3838,10 +3249,6 @@
       ],
       "id" : "SE-0092",
       "link" : "0092-typealiases-in-protocols.md",
-      "reviewManager" : {
-        "link" : "https:\/\/github.com\/lattner",
-        "name" : "Chris Lattner"
-      },
       "reviewManagers" : [
         {
           "link" : "https:\/\/github.com\/lattner",
@@ -3857,14 +3264,8 @@
       "title" : "Typealiases in protocols and protocol extensions",
       "trackingBugs" : [
         {
-          "assignee" : "",
           "id" : "SR-1539",
-          "link" : "https:\/\/bugs.swift.org\/browse\/SR-1539",
-          "radar" : "",
-          "resolution" : "",
-          "status" : "",
-          "title" : "",
-          "updated" : ""
+          "link" : "https:\/\/bugs.swift.org\/browse\/SR-1539"
         }
       ]
     },
@@ -3891,10 +3292,6 @@
         }
       ],
       "link" : "0093-slice-base.md",
-      "reviewManager" : {
-        "link" : "https:\/\/github.com\/dabrahams",
-        "name" : "Dave Abrahams"
-      },
       "reviewManagers" : [
         {
           "link" : "https:\/\/github.com\/dabrahams",
@@ -3931,10 +3328,6 @@
       "previousProposalIDs" : [
         "SE-0045"
       ],
-      "reviewManager" : {
-        "link" : "https:\/\/github.com\/lattner",
-        "name" : "Chris Lattner"
-      },
       "reviewManagers" : [
         {
           "link" : "https:\/\/github.com\/lattner",
@@ -3950,14 +3343,8 @@
       "title" : "Add sequence(first:next:) and sequence(state:next:) to the stdlib",
       "trackingBugs" : [
         {
-          "assignee" : "",
           "id" : "SR-1622",
-          "link" : "https:\/\/bugs.swift.org\/browse\/SR-1622",
-          "radar" : "",
-          "resolution" : "",
-          "status" : "",
-          "title" : "",
-          "updated" : ""
+          "link" : "https:\/\/bugs.swift.org\/browse\/SR-1622"
         }
       ]
     },
@@ -3980,10 +3367,6 @@
       ],
       "id" : "SE-0095",
       "link" : "0095-any-as-existential.md",
-      "reviewManager" : {
-        "link" : "https:\/\/github.com\/lattner",
-        "name" : "Chris Lattner"
-      },
       "reviewManagers" : [
         {
           "link" : "https:\/\/github.com\/lattner",
@@ -3999,14 +3382,8 @@
       "title" : "Replace `protocol<P1,P2>` syntax with `P1 & P2` syntax",
       "trackingBugs" : [
         {
-          "assignee" : "",
           "id" : "SR-1938",
-          "link" : "https:\/\/bugs.swift.org\/browse\/SR-1938",
-          "radar" : "",
-          "resolution" : "",
-          "status" : "",
-          "title" : "",
-          "updated" : ""
+          "link" : "https:\/\/bugs.swift.org\/browse\/SR-1938"
         }
       ]
     },
@@ -4025,10 +3402,6 @@
       ],
       "id" : "SE-0096",
       "link" : "0096-dynamictype.md",
-      "reviewManager" : {
-        "link" : "https:\/\/github.com\/lattner",
-        "name" : "Chris Lattner"
-      },
       "reviewManagers" : [
         {
           "link" : "https:\/\/github.com\/lattner",
@@ -4044,14 +3417,8 @@
       "title" : "Converting `dynamicType` from a property to an operator",
       "trackingBugs" : [
         {
-          "assignee" : "",
           "id" : "SR-2218",
-          "link" : "https:\/\/bugs.swift.org\/browse\/SR-2218",
-          "radar" : "",
-          "resolution" : "",
-          "status" : "",
-          "title" : "",
-          "updated" : ""
+          "link" : "https:\/\/bugs.swift.org\/browse\/SR-2218"
         }
       ]
     },
@@ -4070,10 +3437,6 @@
       ],
       "id" : "SE-0097",
       "link" : "0097-negative-attributes.md",
-      "reviewManager" : {
-        "link" : "https:\/\/github.com\/lattner",
-        "name" : "Chris Lattner"
-      },
       "reviewManagers" : [
         {
           "link" : "https:\/\/github.com\/lattner",
@@ -4102,10 +3465,6 @@
       ],
       "id" : "SE-0098",
       "link" : "0098-didset-capitalization.md",
-      "reviewManager" : {
-        "link" : "https:\/\/github.com\/lattner",
-        "name" : "Chris Lattner"
-      },
       "reviewManagers" : [
         {
           "link" : "https:\/\/github.com\/lattner",
@@ -4146,10 +3505,6 @@
       ],
       "id" : "SE-0099",
       "link" : "0099-conditionclauses.md",
-      "reviewManager" : {
-        "link" : "https:\/\/github.com\/jckarter",
-        "name" : "Joe Groff"
-      },
       "reviewManagers" : [
         {
           "link" : "https:\/\/github.com\/jckarter",
@@ -4175,10 +3530,6 @@
       ],
       "id" : "SE-0100",
       "link" : "0100-add-sequence-based-init-and-merge-to-dictionary.md",
-      "reviewManager" : {
-        "link" : "",
-        "name" : "TBD"
-      },
       "reviewManagers" : [
         {
           "link" : "",
@@ -4211,10 +3562,6 @@
       ],
       "id" : "SE-0101",
       "link" : "0101-standardizing-sizeof-naming.md",
-      "reviewManager" : {
-        "link" : "https:\/\/github.com\/lattner",
-        "name" : "Chris Lattner"
-      },
       "reviewManagers" : [
         {
           "link" : "https:\/\/github.com\/lattner",
@@ -4244,10 +3591,6 @@
       ],
       "id" : "SE-0102",
       "link" : "0102-noreturn-bottom-type.md",
-      "reviewManager" : {
-        "link" : "https:\/\/github.com\/lattner",
-        "name" : "Chris Lattner"
-      },
       "reviewManagers" : [
         {
           "link" : "https:\/\/github.com\/lattner",
@@ -4263,14 +3606,8 @@
       "title" : "Remove `@noreturn` attribute and introduce an empty `Never` type",
       "trackingBugs" : [
         {
-          "assignee" : "",
           "id" : "SR-1953",
-          "link" : "https:\/\/bugs.swift.org\/browse\/SR-1953",
-          "radar" : "",
-          "resolution" : "",
-          "status" : "",
-          "title" : "",
-          "updated" : ""
+          "link" : "https:\/\/bugs.swift.org\/browse\/SR-1953"
         }
       ]
     },
@@ -4289,10 +3626,6 @@
       ],
       "id" : "SE-0103",
       "link" : "0103-make-noescape-default.md",
-      "reviewManager" : {
-        "link" : "https:\/\/github.com\/lattner",
-        "name" : "Chris Lattner"
-      },
       "reviewManagers" : [
         {
           "link" : "https:\/\/github.com\/lattner",
@@ -4308,14 +3641,8 @@
       "title" : "Make non-escaping closures the default",
       "trackingBugs" : [
         {
-          "assignee" : "",
           "id" : "SR-1952",
-          "link" : "https:\/\/bugs.swift.org\/browse\/SR-1952",
-          "radar" : "",
-          "resolution" : "",
-          "status" : "",
-          "title" : "",
-          "updated" : ""
+          "link" : "https:\/\/bugs.swift.org\/browse\/SR-1952"
         }
       ]
     },
@@ -4338,10 +3665,6 @@
       ],
       "id" : "SE-0104",
       "link" : "0104-improved-integers.md",
-      "reviewManager" : {
-        "link" : "https:\/\/github.com\/airspeedswift",
-        "name" : "Ben Cohen"
-      },
       "reviewManagers" : [
         {
           "link" : "https:\/\/github.com\/airspeedswift",
@@ -4357,14 +3680,8 @@
       "title" : "Protocol-oriented integers",
       "trackingBugs" : [
         {
-          "assignee" : "",
           "id" : "SR-3196",
-          "link" : "https:\/\/bugs.swift.org\/browse\/SR-3196",
-          "radar" : "",
-          "resolution" : "",
-          "status" : "",
-          "title" : "",
-          "updated" : ""
+          "link" : "https:\/\/bugs.swift.org\/browse\/SR-3196"
         }
       ]
     },
@@ -4383,10 +3700,6 @@
       ],
       "id" : "SE-0105",
       "link" : "0105-remove-where-from-forin-loops.md",
-      "reviewManager" : {
-        "link" : "https:\/\/github.com\/lattner",
-        "name" : "Chris Lattner"
-      },
       "reviewManagers" : [
         {
           "link" : "https:\/\/github.com\/lattner",
@@ -4415,10 +3728,6 @@
       ],
       "id" : "SE-0106",
       "link" : "0106-rename-osx-to-macos.md",
-      "reviewManager" : {
-        "link" : "https:\/\/github.com\/lattner",
-        "name" : "Chris Lattner"
-      },
       "reviewManagers" : [
         {
           "link" : "https:\/\/github.com\/lattner",
@@ -4434,24 +3743,12 @@
       "title" : "Add a `macOS` Alias for the `OSX` Platform Configuration Test",
       "trackingBugs" : [
         {
-          "assignee" : "",
           "id" : "SR-1823",
-          "link" : "https:\/\/bugs.swift.org\/browse\/SR-1823",
-          "radar" : "",
-          "resolution" : "",
-          "status" : "",
-          "title" : "",
-          "updated" : ""
+          "link" : "https:\/\/bugs.swift.org\/browse\/SR-1823"
         },
         {
-          "assignee" : "",
           "id" : "SR-1887",
-          "link" : "https:\/\/bugs.swift.org\/browse\/SR-1887",
-          "radar" : "",
-          "resolution" : "",
-          "status" : "",
-          "title" : "",
-          "updated" : ""
+          "link" : "https:\/\/bugs.swift.org\/browse\/SR-1887"
         }
       ]
     },
@@ -4470,10 +3767,6 @@
       ],
       "id" : "SE-0107",
       "link" : "0107-unsaferawpointer.md",
-      "reviewManager" : {
-        "link" : "https:\/\/github.com\/lattner",
-        "name" : "Chris Lattner"
-      },
       "reviewManagers" : [
         {
           "link" : "https:\/\/github.com\/lattner",
@@ -4507,10 +3800,6 @@
       ],
       "id" : "SE-0108",
       "link" : "0108-remove-assoctype-inference.md",
-      "reviewManager" : {
-        "link" : "https:\/\/github.com\/lattner",
-        "name" : "Chris Lattner"
-      },
       "reviewManagers" : [
         {
           "link" : "https:\/\/github.com\/lattner",
@@ -4557,10 +3846,6 @@
         }
       ],
       "link" : "0109-remove-boolean.md",
-      "reviewManager" : {
-        "link" : "https:\/\/github.com\/DougGregor",
-        "name" : "Doug Gregor"
-      },
       "reviewManagers" : [
         {
           "link" : "https:\/\/github.com\/DougGregor",
@@ -4598,10 +3883,6 @@
       ],
       "id" : "SE-0110",
       "link" : "0110-distinguish-single-tuple-arg.md",
-      "reviewManager" : {
-        "link" : "https:\/\/github.com\/lattner",
-        "name" : "Chris Lattner"
-      },
       "reviewManagers" : [
         {
           "link" : "https:\/\/github.com\/lattner",
@@ -4617,14 +3898,8 @@
       "title" : "Distinguish between single-tuple and multiple-argument function types",
       "trackingBugs" : [
         {
-          "assignee" : "",
           "id" : "SR-2008",
-          "link" : "https:\/\/bugs.swift.org\/browse\/SR-2008",
-          "radar" : "",
-          "resolution" : "",
-          "status" : "",
-          "title" : "",
-          "updated" : ""
+          "link" : "https:\/\/bugs.swift.org\/browse\/SR-2008"
         }
       ]
     },
@@ -4647,10 +3922,6 @@
       ],
       "id" : "SE-0111",
       "link" : "0111-remove-arg-label-type-significance.md",
-      "reviewManager" : {
-        "link" : "https:\/\/github.com\/lattner",
-        "name" : "Chris Lattner"
-      },
       "reviewManagers" : [
         {
           "link" : "https:\/\/github.com\/lattner",
@@ -4666,14 +3937,8 @@
       "title" : "Remove type system significance of function argument labels",
       "trackingBugs" : [
         {
-          "assignee" : "",
           "id" : "SR-2009",
-          "link" : "https:\/\/bugs.swift.org\/browse\/SR-2009",
-          "radar" : "",
-          "resolution" : "",
-          "status" : "",
-          "title" : "",
-          "updated" : ""
+          "link" : "https:\/\/bugs.swift.org\/browse\/SR-2009"
         }
       ]
     },
@@ -4696,10 +3961,6 @@
       ],
       "id" : "SE-0112",
       "link" : "0112-nserror-bridging.md",
-      "reviewManager" : {
-        "link" : "https:\/\/github.com\/lattner",
-        "name" : "Chris Lattner"
-      },
       "reviewManagers" : [
         {
           "link" : "https:\/\/github.com\/lattner",
@@ -4729,10 +3990,6 @@
       ],
       "id" : "SE-0113",
       "link" : "0113-rounding-functions-on-floatingpoint.md",
-      "reviewManager" : {
-        "link" : "https:\/\/github.com\/lattner",
-        "name" : "Chris Lattner"
-      },
       "reviewManagers" : [
         {
           "link" : "https:\/\/github.com\/lattner",
@@ -4748,14 +4005,8 @@
       "title" : "Add integral rounding functions to FloatingPoint",
       "trackingBugs" : [
         {
-          "assignee" : "",
           "id" : "SR-2010",
-          "link" : "https:\/\/bugs.swift.org\/browse\/SR-2010",
-          "radar" : "",
-          "resolution" : "",
-          "status" : "",
-          "title" : "",
-          "updated" : ""
+          "link" : "https:\/\/bugs.swift.org\/browse\/SR-2010"
         }
       ]
     },
@@ -4782,10 +4033,6 @@
         }
       ],
       "link" : "0114-buffer-naming.md",
-      "reviewManager" : {
-        "link" : "https:\/\/github.com\/lattner",
-        "name" : "Chris Lattner"
-      },
       "reviewManagers" : [
         {
           "link" : "https:\/\/github.com\/lattner",
@@ -4815,10 +4062,6 @@
       ],
       "id" : "SE-0115",
       "link" : "0115-literal-syntax-protocols.md",
-      "reviewManager" : {
-        "link" : "https:\/\/github.com\/lattner",
-        "name" : "Chris Lattner"
-      },
       "reviewManagers" : [
         {
           "link" : "https:\/\/github.com\/lattner",
@@ -4834,14 +4077,8 @@
       "title" : "Rename Literal Syntax Protocols",
       "trackingBugs" : [
         {
-          "assignee" : "",
           "id" : "SR-2054",
-          "link" : "https:\/\/bugs.swift.org\/browse\/SR-2054",
-          "radar" : "",
-          "resolution" : "",
-          "status" : "",
-          "title" : "",
-          "updated" : ""
+          "link" : "https:\/\/bugs.swift.org\/browse\/SR-2054"
         }
       ]
     },
@@ -4860,10 +4097,6 @@
       ],
       "id" : "SE-0116",
       "link" : "0116-id-as-any.md",
-      "reviewManager" : {
-        "link" : "https:\/\/github.com\/lattner",
-        "name" : "Chris Lattner"
-      },
       "reviewManagers" : [
         {
           "link" : "https:\/\/github.com\/lattner",
@@ -4905,10 +4138,6 @@
         }
       ],
       "link" : "0117-non-public-subclassable-by-default.md",
-      "reviewManager" : {
-        "link" : "https:\/\/github.com\/lattner",
-        "name" : "Chris Lattner"
-      },
       "reviewManagers" : [
         {
           "link" : "https:\/\/github.com\/lattner",
@@ -4946,10 +4175,6 @@
       ],
       "id" : "SE-0118",
       "link" : "0118-closure-parameter-names-and-labels.md",
-      "reviewManager" : {
-        "link" : "https:\/\/github.com\/lattner",
-        "name" : "Chris Lattner"
-      },
       "reviewManagers" : [
         {
           "link" : "https:\/\/github.com\/lattner",
@@ -4965,14 +4190,8 @@
       "title" : "Closure Parameter Names and Labels",
       "trackingBugs" : [
         {
-          "assignee" : "",
           "id" : "SR-2072",
-          "link" : "https:\/\/bugs.swift.org\/browse\/SR-2072",
-          "radar" : "",
-          "resolution" : "",
-          "status" : "",
-          "title" : "",
-          "updated" : ""
+          "link" : "https:\/\/bugs.swift.org\/browse\/SR-2072"
         }
       ]
     },
@@ -4991,10 +4210,6 @@
       ],
       "id" : "SE-0119",
       "link" : "0119-extensions-access-modifiers.md",
-      "reviewManager" : {
-        "link" : "https:\/\/github.com\/lattner",
-        "name" : "Chris Lattner"
-      },
       "reviewManagers" : [
         {
           "link" : "https:\/\/github.com\/lattner",
@@ -5031,10 +4246,6 @@
       ],
       "id" : "SE-0120",
       "link" : "0120-revise-partition-method.md",
-      "reviewManager" : {
-        "link" : "https:\/\/github.com\/lattner",
-        "name" : "Chris Lattner"
-      },
       "reviewManagers" : [
         {
           "link" : "https:\/\/github.com\/lattner",
@@ -5050,14 +4261,8 @@
       "title" : "Revise `partition` Method Signature",
       "trackingBugs" : [
         {
-          "assignee" : "",
           "id" : "SR-1965",
-          "link" : "https:\/\/bugs.swift.org\/browse\/SR-1965",
-          "radar" : "",
-          "resolution" : "",
-          "status" : "",
-          "title" : "",
-          "updated" : ""
+          "link" : "https:\/\/bugs.swift.org\/browse\/SR-1965"
         }
       ]
     },
@@ -5084,10 +4289,6 @@
         }
       ],
       "link" : "0121-remove-optional-comparison-operators.md",
-      "reviewManager" : {
-        "link" : "https:\/\/github.com\/lattner",
-        "name" : "Chris Lattner"
-      },
       "reviewManagers" : [
         {
           "link" : "https:\/\/github.com\/lattner",
@@ -5117,10 +4318,6 @@
       ],
       "id" : "SE-0122",
       "link" : "0122-use-colons-for-subscript-type-declarations.md",
-      "reviewManager" : {
-        "link" : "https:\/\/github.com\/lattner",
-        "name" : "Chris Lattner"
-      },
       "reviewManagers" : [
         {
           "link" : "https:\/\/github.com\/lattner",
@@ -5157,10 +4354,6 @@
       ],
       "id" : "SE-0123",
       "link" : "0123-disallow-value-to-optional-coercion-in-operator-arguments.md",
-      "reviewManager" : {
-        "link" : "https:\/\/github.com\/lattner",
-        "name" : "Chris Lattner"
-      },
       "reviewManagers" : [
         {
           "link" : "https:\/\/github.com\/lattner",
@@ -5189,10 +4382,6 @@
       ],
       "id" : "SE-0124",
       "link" : "0124-bitpattern-label-for-int-initializer-objectidentfier.md",
-      "reviewManager" : {
-        "link" : "https:\/\/github.com\/lattner",
-        "name" : "Chris Lattner"
-      },
       "reviewManagers" : [
         {
           "link" : "https:\/\/github.com\/lattner",
@@ -5208,14 +4397,8 @@
       "title" : "`Int.init(ObjectIdentifier)` and `UInt.init(ObjectIdentifier)` should have a `bitPattern:` label",
       "trackingBugs" : [
         {
-          "assignee" : "",
           "id" : "SR-2064",
-          "link" : "https:\/\/bugs.swift.org\/browse\/SR-2064",
-          "radar" : "",
-          "resolution" : "",
-          "status" : "",
-          "title" : "",
-          "updated" : ""
+          "link" : "https:\/\/bugs.swift.org\/browse\/SR-2064"
         }
       ]
     },
@@ -5234,10 +4417,6 @@
       ],
       "id" : "SE-0125",
       "link" : "0125-remove-nonobjectivecbase.md",
-      "reviewManager" : {
-        "link" : "https:\/\/github.com\/lattner",
-        "name" : "Chris Lattner"
-      },
       "reviewManagers" : [
         {
           "link" : "https:\/\/github.com\/lattner",
@@ -5253,14 +4432,8 @@
       "title" : "Remove `NonObjectiveCBase` and `isUniquelyReferenced`",
       "trackingBugs" : [
         {
-          "assignee" : "",
           "id" : "SR-1962",
-          "link" : "http:\/\/bugs.swift.org\/browse\/SR-1962",
-          "radar" : "",
-          "resolution" : "",
-          "status" : "",
-          "title" : "",
-          "updated" : ""
+          "link" : "http:\/\/bugs.swift.org\/browse\/SR-1962"
         }
       ]
     },
@@ -5283,10 +4456,6 @@
       ],
       "id" : "SE-0126",
       "link" : "0126-refactor-metatypes-repurpose-t-dot-self-and-mirror.md",
-      "reviewManager" : {
-        "link" : "https:\/\/github.com\/lattner",
-        "name" : "Chris Lattner"
-      },
       "reviewManagers" : [
         {
           "link" : "https:\/\/github.com\/lattner",
@@ -5315,10 +4484,6 @@
       ],
       "id" : "SE-0127",
       "link" : "0127-cleaning-up-stdlib-ptr-buffer.md",
-      "reviewManager" : {
-        "link" : "https:\/\/github.com\/lattner",
-        "name" : "Chris Lattner"
-      },
       "reviewManagers" : [
         {
           "link" : "https:\/\/github.com\/lattner",
@@ -5334,34 +4499,16 @@
       "title" : "Cleaning up stdlib Pointer and Buffer Routines",
       "trackingBugs" : [
         {
-          "assignee" : "",
           "id" : "SR-1937",
-          "link" : "https:\/\/bugs.swift.org\/browse\/SR-1937",
-          "radar" : "",
-          "resolution" : "",
-          "status" : "",
-          "title" : "",
-          "updated" : ""
+          "link" : "https:\/\/bugs.swift.org\/browse\/SR-1937"
         },
         {
-          "assignee" : "",
           "id" : "SR-1955",
-          "link" : "https:\/\/bugs.swift.org\/browse\/SR-1955",
-          "radar" : "",
-          "resolution" : "",
-          "status" : "",
-          "title" : "",
-          "updated" : ""
+          "link" : "https:\/\/bugs.swift.org\/browse\/SR-1955"
         },
         {
-          "assignee" : "",
           "id" : "SR-1957",
-          "link" : "https:\/\/bugs.swift.org\/browse\/SR-1957",
-          "radar" : "",
-          "resolution" : "",
-          "status" : "",
-          "title" : "",
-          "updated" : ""
+          "link" : "https:\/\/bugs.swift.org\/browse\/SR-1957"
         }
       ]
     },
@@ -5388,10 +4535,6 @@
         }
       ],
       "link" : "0128-unicodescalar-failable-initializer.md",
-      "reviewManager" : {
-        "link" : "https:\/\/github.com\/lattner",
-        "name" : "Chris Lattner"
-      },
       "reviewManagers" : [
         {
           "link" : "https:\/\/github.com\/lattner",
@@ -5421,10 +4564,6 @@
       ],
       "id" : "SE-0129",
       "link" : "0129-package-manager-test-naming-conventions.md",
-      "reviewManager" : {
-        "link" : "https:\/\/github.com\/ddunbar",
-        "name" : "Daniel Dunbar"
-      },
       "reviewManagers" : [
         {
           "link" : "https:\/\/github.com\/ddunbar",
@@ -5454,10 +4593,6 @@
       ],
       "id" : "SE-0130",
       "link" : "0130-string-initializers-cleanup.md",
-      "reviewManager" : {
-        "link" : "https:\/\/github.com\/lattner",
-        "name" : "Chris Lattner"
-      },
       "reviewManagers" : [
         {
           "link" : "https:\/\/github.com\/lattner",
@@ -5487,10 +4622,6 @@
       ],
       "id" : "SE-0131",
       "link" : "0131-anyhashable.md",
-      "reviewManager" : {
-        "link" : "https:\/\/github.com\/lattner",
-        "name" : "Chris Lattner"
-      },
       "reviewManagers" : [
         {
           "link" : "https:\/\/github.com\/lattner",
@@ -5524,10 +4655,6 @@
       ],
       "id" : "SE-0132",
       "link" : "0132-sequence-end-ops.md",
-      "reviewManager" : {
-        "link" : "https:\/\/github.com\/lattner",
-        "name" : "Chris Lattner"
-      },
       "reviewManagers" : [
         {
           "link" : "https:\/\/github.com\/lattner",
@@ -5576,10 +4703,6 @@
         }
       ],
       "link" : "0133-rename-flatten-to-joined.md",
-      "reviewManager" : {
-        "link" : "https:\/\/github.com\/lattner",
-        "name" : "Chris Lattner"
-      },
       "reviewManagers" : [
         {
           "link" : "https:\/\/github.com\/lattner",
@@ -5621,10 +4744,6 @@
         }
       ],
       "link" : "0134-rename-string-properties.md",
-      "reviewManager" : {
-        "link" : "https:\/\/github.com\/lattner",
-        "name" : "Chris Lattner"
-      },
       "reviewManagers" : [
         {
           "link" : "https:\/\/github.com\/lattner",
@@ -5654,10 +4773,6 @@
       ],
       "id" : "SE-0135",
       "link" : "0135-package-manager-support-for-differentiating-packages-by-swift-version.md",
-      "reviewManager" : {
-        "link" : "https:\/\/github.com\/ddunbar",
-        "name" : "Daniel Dunbar"
-      },
       "reviewManagers" : [
         {
           "link" : "https:\/\/github.com\/ddunbar",
@@ -5695,10 +4810,6 @@
         }
       ],
       "link" : "0136-memory-layout-of-values.md",
-      "reviewManager" : {
-        "link" : "https:\/\/github.com\/dabrahams",
-        "name" : "Dave Abrahams"
-      },
       "reviewManagers" : [
         {
           "link" : "https:\/\/github.com\/dabrahams",
@@ -5732,10 +4843,6 @@
       ],
       "id" : "SE-0137",
       "link" : "0137-avoiding-lock-in.md",
-      "reviewManager" : {
-        "link" : "https:\/\/github.com\/rjmccall",
-        "name" : "John McCall"
-      },
       "reviewManagers" : [
         {
           "link" : "https:\/\/github.com\/rjmccall",
@@ -5765,10 +4872,6 @@
       ],
       "id" : "SE-0138",
       "link" : "0138-unsaferawbufferpointer.md",
-      "reviewManager" : {
-        "link" : "https:\/\/github.com\/dabrahams",
-        "name" : "Dave Abrahams"
-      },
       "reviewManagers" : [
         {
           "link" : "https:\/\/github.com\/dabrahams",
@@ -5798,10 +4901,6 @@
       ],
       "id" : "SE-0139",
       "link" : "0139-bridge-nsnumber-and-nsvalue.md",
-      "reviewManager" : {
-        "link" : "https:\/\/github.com\/DougGregor",
-        "name" : "Doug Gregor"
-      },
       "reviewManagers" : [
         {
           "link" : "https:\/\/github.com\/DougGregor",
@@ -5831,10 +4930,6 @@
       ],
       "id" : "SE-0140",
       "link" : "0140-bridge-optional-to-nsnull.md",
-      "reviewManager" : {
-        "link" : "https:\/\/github.com\/DougGregor",
-        "name" : "Doug Gregor"
-      },
       "reviewManagers" : [
         {
           "link" : "https:\/\/github.com\/DougGregor",
@@ -5864,10 +4959,6 @@
       ],
       "id" : "SE-0141",
       "link" : "0141-available-by-swift-version.md",
-      "reviewManager" : {
-        "link" : "https:\/\/github.com\/DougGregor",
-        "name" : "Doug Gregor"
-      },
       "reviewManagers" : [
         {
           "link" : "https:\/\/github.com\/DougGregor",
@@ -5883,14 +4974,8 @@
       "title" : "Availability by Swift version",
       "trackingBugs" : [
         {
-          "assignee" : "",
           "id" : "SR-2709",
-          "link" : "https:\/\/bugs.swift.org\/browse\/SR-2709",
-          "radar" : "",
-          "resolution" : "",
-          "status" : "",
-          "title" : "",
-          "updated" : ""
+          "link" : "https:\/\/bugs.swift.org\/browse\/SR-2709"
         }
       ]
     },
@@ -5917,10 +5002,6 @@
       ],
       "id" : "SE-0142",
       "link" : "0142-associated-types-constraints.md",
-      "reviewManager" : {
-        "link" : "https:\/\/github.com\/DougGregor",
-        "name" : "Doug Gregor"
-      },
       "reviewManagers" : [
         {
           "link" : "https:\/\/github.com\/DougGregor",
@@ -5936,14 +5017,8 @@
       "title" : "Permit where clauses to constrain associated types",
       "trackingBugs" : [
         {
-          "assignee" : "",
           "id" : "SR-4506",
-          "link" : "https:\/\/bugs.swift.org\/browse\/SR-4506",
-          "radar" : "",
-          "resolution" : "",
-          "status" : "",
-          "title" : "",
-          "updated" : ""
+          "link" : "https:\/\/bugs.swift.org\/browse\/SR-4506"
         }
       ]
     },
@@ -5966,10 +5041,6 @@
       ],
       "id" : "SE-0143",
       "link" : "0143-conditional-conformances.md",
-      "reviewManager" : {
-        "link" : "https:\/\/github.com\/jckarter",
-        "name" : "Joe Groff"
-      },
       "reviewManagers" : [
         {
           "link" : "https:\/\/github.com\/jckarter",
@@ -5999,10 +5070,6 @@
       ],
       "id" : "SE-0144",
       "link" : "0144-allow-single-dollar-sign-as-valid-identifier.md",
-      "reviewManager" : {
-        "link" : "https:\/\/github.com\/lattner",
-        "name" : "Chris Lattner"
-      },
       "reviewManagers" : [
         {
           "link" : "https:\/\/github.com\/lattner",
@@ -6039,10 +5106,6 @@
       ],
       "id" : "SE-0145",
       "link" : "0145-package-manager-version-pinning.md",
-      "reviewManager" : {
-        "link" : "https:\/\/github.com\/abertelrud",
-        "name" : "Anders Bertelrud"
-      },
       "reviewManagers" : [
         {
           "link" : "https:\/\/github.com\/abertelrud",
@@ -6072,10 +5135,6 @@
       ],
       "id" : "SE-0146",
       "link" : "0146-package-manager-product-definitions.md",
-      "reviewManager" : {
-        "link" : "",
-        "name" : "Daniel Dunbar"
-      },
       "reviewManagers" : [
         {
           "link" : "",
@@ -6091,14 +5150,8 @@
       "title" : "Package Manager Product Definitions",
       "trackingBugs" : [
         {
-          "assignee" : "",
           "id" : "SR-3606",
-          "link" : "https:\/\/bugs.swift.org\/browse\/SR-3606",
-          "radar" : "",
-          "resolution" : "",
-          "status" : "",
-          "title" : "",
-          "updated" : ""
+          "link" : "https:\/\/bugs.swift.org\/browse\/SR-3606"
         }
       ]
     },
@@ -6125,10 +5178,6 @@
         }
       ],
       "link" : "0147-move-unsafe-initialize-from.md",
-      "reviewManager" : {
-        "link" : "https:\/\/github.com\/DougGregor",
-        "name" : "Doug Gregor"
-      },
       "reviewManagers" : [
         {
           "link" : "https:\/\/github.com\/DougGregor",
@@ -6158,10 +5207,6 @@
       ],
       "id" : "SE-0148",
       "link" : "0148-generic-subscripts.md",
-      "reviewManager" : {
-        "link" : "https:\/\/github.com\/DougGregor",
-        "name" : "Doug Gregor"
-      },
       "reviewManagers" : [
         {
           "link" : "https:\/\/github.com\/DougGregor",
@@ -6177,14 +5222,8 @@
       "title" : "Generic Subscripts",
       "trackingBugs" : [
         {
-          "assignee" : "",
           "id" : "SR-115",
-          "link" : "https:\/\/bugs.swift.org\/browse\/SR-115",
-          "radar" : "",
-          "resolution" : "",
-          "status" : "",
-          "title" : "",
-          "updated" : ""
+          "link" : "https:\/\/bugs.swift.org\/browse\/SR-115"
         }
       ]
     },
@@ -6203,10 +5242,6 @@
       ],
       "id" : "SE-0149",
       "link" : "0149-package-manager-top-of-tree.md",
-      "reviewManager" : {
-        "link" : "https:\/\/github.com\/ddunbar",
-        "name" : "Daniel Dunbar"
-      },
       "reviewManagers" : [
         {
           "link" : "https:\/\/github.com\/ddunbar",
@@ -6222,14 +5257,8 @@
       "title" : "Package Manager Support for Top of Tree development",
       "trackingBugs" : [
         {
-          "assignee" : "",
           "id" : "SR-3709",
-          "link" : "https:\/\/bugs.swift.org\/browse\/SR-3709",
-          "radar" : "",
-          "resolution" : "",
-          "status" : "",
-          "title" : "",
-          "updated" : ""
+          "link" : "https:\/\/bugs.swift.org\/browse\/SR-3709"
         }
       ]
     },
@@ -6248,10 +5277,6 @@
       ],
       "id" : "SE-0150",
       "link" : "0150-package-manager-branch-support.md",
-      "reviewManager" : {
-        "link" : "https:\/\/github.com\/ddunbar",
-        "name" : "Daniel Dunbar"
-      },
       "reviewManagers" : [
         {
           "link" : "https:\/\/github.com\/ddunbar",
@@ -6267,14 +5292,8 @@
       "title" : "Package Manager Support for branches",
       "trackingBugs" : [
         {
-          "assignee" : "",
           "id" : "SR-666",
-          "link" : "https:\/\/bugs.swift.org\/browse\/SR-666",
-          "radar" : "",
-          "resolution" : "",
-          "status" : "",
-          "title" : "",
-          "updated" : ""
+          "link" : "https:\/\/bugs.swift.org\/browse\/SR-666"
         }
       ]
     },
@@ -6297,10 +5316,6 @@
       ],
       "id" : "SE-0151",
       "link" : "0151-package-manager-swift-language-compatibility-version.md",
-      "reviewManager" : {
-        "link" : "https:\/\/github.com\/abertelrud",
-        "name" : "Anders Bertelrud"
-      },
       "reviewManagers" : [
         {
           "link" : "https:\/\/github.com\/abertelrud",
@@ -6316,14 +5331,8 @@
       "title" : "Package Manager Swift Language Compatibility Version",
       "trackingBugs" : [
         {
-          "assignee" : "",
           "id" : "SR-3964",
-          "link" : "https:\/\/bugs.swift.org\/browse\/SR-3964",
-          "radar" : "",
-          "resolution" : "",
-          "status" : "",
-          "title" : "",
-          "updated" : ""
+          "link" : "https:\/\/bugs.swift.org\/browse\/SR-3964"
         }
       ]
     },
@@ -6342,10 +5351,6 @@
       ],
       "id" : "SE-0152",
       "link" : "0152-package-manager-tools-version.md",
-      "reviewManager" : {
-        "link" : "https:\/\/github.com\/abertelrud",
-        "name" : "Anders Bertelrud"
-      },
       "reviewManagers" : [
         {
           "link" : "https:\/\/github.com\/abertelrud",
@@ -6361,14 +5366,8 @@
       "title" : "Package Manager Tools Version",
       "trackingBugs" : [
         {
-          "assignee" : "",
           "id" : "SR-3965",
-          "link" : "https:\/\/bugs.swift.org\/browse\/SR-3965",
-          "radar" : "",
-          "resolution" : "",
-          "status" : "",
-          "title" : "",
-          "updated" : ""
+          "link" : "https:\/\/bugs.swift.org\/browse\/SR-3965"
         }
       ]
     },
@@ -6391,10 +5390,6 @@
       ],
       "id" : "SE-0153",
       "link" : "0153-compensate-for-the-inconsistency-of-nscopyings-behaviour.md",
-      "reviewManager" : {
-        "link" : "https:\/\/github.com\/DougGregor",
-        "name" : "Doug Gregor"
-      },
       "reviewManagers" : [
         {
           "link" : "https:\/\/github.com\/DougGregor",
@@ -6409,14 +5404,8 @@
       "title" : "Compensate for the inconsistency of `@NSCopying`'s behaviour",
       "trackingBugs" : [
         {
-          "assignee" : "",
           "id" : "SR-4538",
-          "link" : "https:\/\/bugs.swift.org\/browse\/SR-4538",
-          "radar" : "",
-          "resolution" : "",
-          "status" : "",
-          "title" : "",
-          "updated" : ""
+          "link" : "https:\/\/bugs.swift.org\/browse\/SR-4538"
         }
       ]
     },
@@ -6435,10 +5424,6 @@
       ],
       "id" : "SE-0154",
       "link" : "0154-dictionary-key-and-value-collections.md",
-      "reviewManager" : {
-        "link" : "https:\/\/github.com\/DougGregor",
-        "name" : "Doug Gregor"
-      },
       "reviewManagers" : [
         {
           "link" : "https:\/\/github.com\/DougGregor",
@@ -6472,10 +5457,6 @@
       ],
       "id" : "SE-0155",
       "link" : "0155-normalize-enum-case-representation.md",
-      "reviewManager" : {
-        "link" : "https:\/\/github.com\/rjmccall",
-        "name" : "John McCall"
-      },
       "reviewManagers" : [
         {
           "link" : "https:\/\/github.com\/rjmccall",
@@ -6491,34 +5472,16 @@
       "title" : "Normalize Enum Case Representation",
       "trackingBugs" : [
         {
-          "assignee" : "",
           "id" : "SR-4691",
-          "link" : "https:\/\/bugs.swift.org\/browse\/SR-4691",
-          "radar" : "",
-          "resolution" : "",
-          "status" : "",
-          "title" : "",
-          "updated" : ""
+          "link" : "https:\/\/bugs.swift.org\/browse\/SR-4691"
         },
         {
-          "assignee" : "",
           "id" : "SR-12206",
-          "link" : "https:\/\/bugs.swift.org\/browse\/SR-12206",
-          "radar" : "",
-          "resolution" : "",
-          "status" : "",
-          "title" : "",
-          "updated" : ""
+          "link" : "https:\/\/bugs.swift.org\/browse\/SR-12206"
         },
         {
-          "assignee" : "",
           "id" : "SR-12229",
-          "link" : "https:\/\/bugs.swift.org\/browse\/SR-12229",
-          "radar" : "",
-          "resolution" : "",
-          "status" : "",
-          "title" : "",
-          "updated" : ""
+          "link" : "https:\/\/bugs.swift.org\/browse\/SR-12229"
         }
       ]
     },
@@ -6541,10 +5504,6 @@
       ],
       "id" : "SE-0156",
       "link" : "0156-subclass-existentials.md",
-      "reviewManager" : {
-        "link" : "https:\/\/github.com\/DougGregor",
-        "name" : "Doug Gregor"
-      },
       "reviewManagers" : [
         {
           "link" : "https:\/\/github.com\/DougGregor",
@@ -6560,14 +5519,8 @@
       "title" : "Class and Subtype existentials",
       "trackingBugs" : [
         {
-          "assignee" : "",
           "id" : "SR-4296",
-          "link" : "https:\/\/bugs.swift.org\/browse\/SR-4296",
-          "radar" : "",
-          "resolution" : "",
-          "status" : "",
-          "title" : "",
-          "updated" : ""
+          "link" : "https:\/\/bugs.swift.org\/browse\/SR-4296"
         }
       ]
     },
@@ -6594,10 +5547,6 @@
       ],
       "id" : "SE-0157",
       "link" : "0157-recursive-protocol-constraints.md",
-      "reviewManager" : {
-        "link" : "https:\/\/github.com\/rjmccall",
-        "name" : "John McCall"
-      },
       "reviewManagers" : [
         {
           "link" : "https:\/\/github.com\/rjmccall",
@@ -6613,14 +5562,8 @@
       "title" : "Support recursive constraints on associated types",
       "trackingBugs" : [
         {
-          "assignee" : "",
           "id" : "SR-1445",
-          "link" : "https:\/\/bugs.swift.org\/browse\/SR-1445",
-          "radar" : "",
-          "resolution" : "",
-          "status" : "",
-          "title" : "",
-          "updated" : ""
+          "link" : "https:\/\/bugs.swift.org\/browse\/SR-1445"
         }
       ]
     },
@@ -6639,10 +5582,6 @@
       ],
       "id" : "SE-0158",
       "link" : "0158-package-manager-manifest-api-redesign.md",
-      "reviewManager" : {
-        "link" : "https:\/\/github.com\/rballard",
-        "name" : "Rick Ballard"
-      },
       "reviewManagers" : [
         {
           "link" : "https:\/\/github.com\/rballard",
@@ -6658,14 +5597,8 @@
       "title" : "Package Manager Manifest API Redesign",
       "trackingBugs" : [
         {
-          "assignee" : "",
           "id" : "SR-3949",
-          "link" : "https:\/\/bugs.swift.org\/browse\/SR-3949",
-          "radar" : "",
-          "resolution" : "",
-          "status" : "",
-          "title" : "",
-          "updated" : ""
+          "link" : "https:\/\/bugs.swift.org\/browse\/SR-3949"
         }
       ]
     },
@@ -6684,10 +5617,6 @@
       ],
       "id" : "SE-0159",
       "link" : "0159-fix-private-access-levels.md",
-      "reviewManager" : {
-        "link" : "https:\/\/github.com\/DougGregor",
-        "name" : "Doug Gregor"
-      },
       "reviewManagers" : [
         {
           "link" : "https:\/\/github.com\/DougGregor",
@@ -6724,10 +5653,6 @@
         }
       ],
       "link" : "0160-objc-inference.md",
-      "reviewManager" : {
-        "link" : "https:\/\/github.com\/lattner",
-        "name" : "Chris Lattner"
-      },
       "reviewManagers" : [
         {
           "link" : "https:\/\/github.com\/lattner",
@@ -6743,14 +5668,8 @@
       "title" : "Limiting `@objc` inference",
       "trackingBugs" : [
         {
-          "assignee" : "",
           "id" : "SR-4481",
-          "link" : "https:\/\/bugs.swift.org\/browse\/SR-4481",
-          "radar" : "",
-          "resolution" : "",
-          "status" : "",
-          "title" : "",
-          "updated" : ""
+          "link" : "https:\/\/bugs.swift.org\/browse\/SR-4481"
         }
       ]
     },
@@ -6777,10 +5696,6 @@
       ],
       "id" : "SE-0161",
       "link" : "0161-key-paths.md",
-      "reviewManager" : {
-        "link" : "https:\/\/github.com\/DougGregor",
-        "name" : "Doug Gregor"
-      },
       "reviewManagers" : [
         {
           "link" : "https:\/\/github.com\/DougGregor",
@@ -6810,10 +5725,6 @@
       ],
       "id" : "SE-0162",
       "link" : "0162-package-manager-custom-target-layouts.md",
-      "reviewManager" : {
-        "link" : "https:\/\/github.com\/rballard",
-        "name" : "Rick Ballard"
-      },
       "reviewManagers" : [
         {
           "link" : "https:\/\/github.com\/rballard",
@@ -6829,14 +5740,8 @@
       "title" : "Package Manager Custom Target Layouts",
       "trackingBugs" : [
         {
-          "assignee" : "",
           "id" : "SR-29",
-          "link" : "https:\/\/bugs.swift.org\/browse\/SR-29",
-          "radar" : "",
-          "resolution" : "",
-          "status" : "",
-          "title" : "",
-          "updated" : ""
+          "link" : "https:\/\/bugs.swift.org\/browse\/SR-29"
         }
       ]
     },
@@ -6863,10 +5768,6 @@
       ],
       "id" : "SE-0163",
       "link" : "0163-string-revision-1.md",
-      "reviewManager" : {
-        "link" : "https:\/\/github.com\/rjmccall",
-        "name" : "John McCall"
-      },
       "reviewManagers" : [
         {
           "link" : "https:\/\/github.com\/rjmccall",
@@ -6896,10 +5797,6 @@
       ],
       "id" : "SE-0164",
       "link" : "0164-remove-final-support-in-protocol-extensions.md",
-      "reviewManager" : {
-        "link" : "https:\/\/github.com\/DougGregor",
-        "name" : "Doug Gregor"
-      },
       "reviewManagers" : [
         {
           "link" : "https:\/\/github.com\/DougGregor",
@@ -6915,14 +5812,8 @@
       "title" : "Remove final support in protocol extensions",
       "trackingBugs" : [
         {
-          "assignee" : "",
           "id" : "SR-1762",
-          "link" : "https:\/\/bugs.swift.org\/browse\/SR-1762",
-          "radar" : "",
-          "resolution" : "",
-          "status" : "",
-          "title" : "",
-          "updated" : ""
+          "link" : "https:\/\/bugs.swift.org\/browse\/SR-1762"
         }
       ]
     },
@@ -6941,10 +5832,6 @@
       ],
       "id" : "SE-0165",
       "link" : "0165-dict.md",
-      "reviewManager" : {
-        "link" : "https:\/\/github.com\/airspeedswift",
-        "name" : "Ben Cohen"
-      },
       "reviewManagers" : [
         {
           "link" : "https:\/\/github.com\/airspeedswift",
@@ -6990,10 +5877,6 @@
         }
       ],
       "link" : "0166-swift-archival-serialization.md",
-      "reviewManager" : {
-        "link" : "https:\/\/github.com\/DougGregor",
-        "name" : "Doug Gregor"
-      },
       "reviewManagers" : [
         {
           "link" : "https:\/\/github.com\/DougGregor",
@@ -7039,10 +5922,6 @@
         }
       ],
       "link" : "0167-swift-encoders.md",
-      "reviewManager" : {
-        "link" : "https:\/\/github.com\/DougGregor",
-        "name" : "Doug Gregor"
-      },
       "reviewManagers" : [
         {
           "link" : "https:\/\/github.com\/DougGregor",
@@ -7088,10 +5967,6 @@
         }
       ],
       "link" : "0168-multi-line-string-literals.md",
-      "reviewManager" : {
-        "link" : "https:\/\/github.com\/jckarter",
-        "name" : "Joe Groff"
-      },
       "reviewManagers" : [
         {
           "link" : "https:\/\/github.com\/jckarter",
@@ -7107,44 +5982,20 @@
       "title" : "Multi-Line String Literals",
       "trackingBugs" : [
         {
-          "assignee" : "",
           "id" : "SR-170",
-          "link" : "https:\/\/bugs.swift.org\/browse\/SR-170",
-          "radar" : "",
-          "resolution" : "",
-          "status" : "",
-          "title" : "",
-          "updated" : ""
+          "link" : "https:\/\/bugs.swift.org\/browse\/SR-170"
         },
         {
-          "assignee" : "",
           "id" : "SR-4701",
-          "link" : "https:\/\/bugs.swift.org\/browse\/SR-4701",
-          "radar" : "",
-          "resolution" : "",
-          "status" : "",
-          "title" : "",
-          "updated" : ""
+          "link" : "https:\/\/bugs.swift.org\/browse\/SR-4701"
         },
         {
-          "assignee" : "",
           "id" : "SR-4708",
-          "link" : "https:\/\/bugs.swift.org\/browse\/SR-4708",
-          "radar" : "",
-          "resolution" : "",
-          "status" : "",
-          "title" : "",
-          "updated" : ""
+          "link" : "https:\/\/bugs.swift.org\/browse\/SR-4708"
         },
         {
-          "assignee" : "",
           "id" : "SR-4874",
-          "link" : "https:\/\/bugs.swift.org\/browse\/SR-4874",
-          "radar" : "",
-          "resolution" : "",
-          "status" : "",
-          "title" : "",
-          "updated" : ""
+          "link" : "https:\/\/bugs.swift.org\/browse\/SR-4874"
         }
       ]
     },
@@ -7167,10 +6018,6 @@
       ],
       "id" : "SE-0169",
       "link" : "0169-improve-interaction-between-private-declarations-and-extensions.md",
-      "reviewManager" : {
-        "link" : "https:\/\/github.com\/DougGregor",
-        "name" : "Doug Gregor"
-      },
       "reviewManagers" : [
         {
           "link" : "https:\/\/github.com\/DougGregor",
@@ -7186,14 +6033,8 @@
       "title" : "Improve Interaction Between `private` Declarations and Extensions",
       "trackingBugs" : [
         {
-          "assignee" : "",
           "id" : "SR-4616",
-          "link" : "https:\/\/bugs.swift.org\/browse\/SR-4616",
-          "radar" : "",
-          "resolution" : "",
-          "status" : "",
-          "title" : "",
-          "updated" : ""
+          "link" : "https:\/\/bugs.swift.org\/browse\/SR-4616"
         }
       ]
     },
@@ -7212,10 +6053,6 @@
       ],
       "id" : "SE-0170",
       "link" : "0170-nsnumber_bridge.md",
-      "reviewManager" : {
-        "link" : "https:\/\/github.com\/airspeedswift",
-        "name" : "Ben Cohen"
-      },
       "reviewManagers" : [
         {
           "link" : "https:\/\/github.com\/airspeedswift",
@@ -7245,10 +6082,6 @@
       ],
       "id" : "SE-0171",
       "link" : "0171-reduce-with-inout.md",
-      "reviewManager" : {
-        "link" : "https:\/\/github.com\/airspeedswift",
-        "name" : "Ben Cohen"
-      },
       "reviewManagers" : [
         {
           "link" : "https:\/\/github.com\/airspeedswift",
@@ -7286,10 +6119,6 @@
       ],
       "id" : "SE-0172",
       "link" : "0172-one-sided-ranges.md",
-      "reviewManager" : {
-        "link" : "https:\/\/github.com\/DougGregor",
-        "name" : "Doug Gregor"
-      },
       "reviewManagers" : [
         {
           "link" : "https:\/\/github.com\/DougGregor",
@@ -7327,10 +6156,6 @@
         }
       ],
       "link" : "0173-swap-indices.md",
-      "reviewManager" : {
-        "link" : "https:\/\/github.com\/tkremenek",
-        "name" : "Ted Kremenek"
-      },
       "reviewManagers" : [
         {
           "link" : "https:\/\/github.com\/tkremenek",
@@ -7360,10 +6185,6 @@
       ],
       "id" : "SE-0174",
       "link" : "0174-filter-range-replaceable.md",
-      "reviewManager" : {
-        "link" : "https:\/\/github.com\/DougGregor",
-        "name" : "Doug Gregor"
-      },
       "reviewManagers" : [
         {
           "link" : "https:\/\/github.com\/DougGregor",
@@ -7379,14 +6200,8 @@
       "title" : "Change `RangeReplaceableCollection.filter` to return `Self`",
       "trackingBugs" : [
         {
-          "assignee" : "",
           "id" : "SR-3444",
-          "link" : "https:\/\/bugs.swift.org\/browse\/SR-3444",
-          "radar" : "",
-          "resolution" : "",
-          "status" : "",
-          "title" : "",
-          "updated" : ""
+          "link" : "https:\/\/bugs.swift.org\/browse\/SR-3444"
         }
       ]
     },
@@ -7405,10 +6220,6 @@
       ],
       "id" : "SE-0175",
       "link" : "0175-package-manager-revised-dependency-resolution.md",
-      "reviewManager" : {
-        "link" : "https:\/\/github.com\/aciidb0mb3r",
-        "name" : "Ankit Aggarwal"
-      },
       "reviewManagers" : [
         {
           "link" : "https:\/\/github.com\/aciidb0mb3r",
@@ -7434,10 +6245,6 @@
       ],
       "id" : "SE-0176",
       "link" : "0176-enforce-exclusive-access-to-memory.md",
-      "reviewManager" : {
-        "link" : "https:\/\/github.com\/airspeedswift",
-        "name" : "Ben Cohen"
-      },
       "reviewManagers" : [
         {
           "link" : "https:\/\/github.com\/airspeedswift",
@@ -7463,10 +6270,6 @@
       ],
       "id" : "SE-0177",
       "link" : "0177-add-clamped-to-method.md",
-      "reviewManager" : {
-        "link" : "",
-        "name" : "TBD"
-      },
       "reviewManagers" : [
         {
           "link" : "",
@@ -7503,10 +6306,6 @@
         }
       ],
       "link" : "0178-character-unicode-view.md",
-      "reviewManager" : {
-        "link" : "https:\/\/github.com\/tkremenek",
-        "name" : "Ted Kremenek"
-      },
       "reviewManagers" : [
         {
           "link" : "https:\/\/github.com\/tkremenek",
@@ -7544,10 +6343,6 @@
         }
       ],
       "link" : "0179-swift-run-command.md",
-      "reviewManager" : {
-        "link" : "https:\/\/github.com\/ddunbar",
-        "name" : "Daniel Dunbar"
-      },
       "reviewManagers" : [
         {
           "link" : "https:\/\/github.com\/ddunbar",
@@ -7585,10 +6380,6 @@
         }
       ],
       "link" : "0180-string-index-overhaul.md",
-      "reviewManager" : {
-        "link" : "https:\/\/github.com\/tkremenek",
-        "name" : "Ted Kremenek"
-      },
       "reviewManagers" : [
         {
           "link" : "https:\/\/github.com\/tkremenek",
@@ -7626,10 +6417,6 @@
         }
       ],
       "link" : "0181-package-manager-cpp-language-version.md",
-      "reviewManager" : {
-        "link" : "https:\/\/github.com\/ddunbar",
-        "name" : "Daniel Dunbar"
-      },
       "reviewManagers" : [
         {
           "link" : "https:\/\/github.com\/ddunbar",
@@ -7678,10 +6465,6 @@
       "previousProposalIDs" : [
         "SE-0168"
       ],
-      "reviewManager" : {
-        "link" : "https:\/\/github.com\/lattner",
-        "name" : "Chris Lattner"
-      },
       "reviewManagers" : [
         {
           "link" : "https:\/\/github.com\/lattner",
@@ -7711,10 +6494,6 @@
       ],
       "id" : "SE-0183",
       "link" : "0183-substring-affordances.md",
-      "reviewManager" : {
-        "link" : "https:\/\/github.com\/lattner",
-        "name" : "Chris Lattner"
-      },
       "reviewManagers" : [
         {
           "link" : "https:\/\/github.com\/lattner",
@@ -7730,14 +6509,8 @@
       "title" : "Substring performance affordances",
       "trackingBugs" : [
         {
-          "assignee" : "",
           "id" : "SR-4933",
-          "link" : "https:\/\/bugs.swift.org\/browse\/SR-4933",
-          "radar" : "",
-          "resolution" : "",
-          "status" : "",
-          "title" : "",
-          "updated" : ""
+          "link" : "https:\/\/bugs.swift.org\/browse\/SR-4933"
         }
       ]
     },
@@ -7764,10 +6537,6 @@
         }
       ],
       "link" : "0184-unsafe-pointers-add-missing.md",
-      "reviewManager" : {
-        "link" : "https:\/\/github.com\/DougGregor",
-        "name" : "Doug Gregor"
-      },
       "reviewManagers" : [
         {
           "link" : "https:\/\/github.com\/DougGregor",
@@ -7805,10 +6574,6 @@
         }
       ],
       "link" : "0185-synthesize-equatable-hashable.md",
-      "reviewManager" : {
-        "link" : "https:\/\/github.com\/lattner",
-        "name" : "Chris Lattner"
-      },
       "reviewManagers" : [
         {
           "link" : "https:\/\/github.com\/lattner",
@@ -7846,10 +6611,6 @@
         }
       ],
       "link" : "0186-remove-ownership-keyword-support-in-protocols.md",
-      "reviewManager" : {
-        "link" : "https:\/\/github.com\/tkremenek",
-        "name" : "Ted Kremenek"
-      },
       "reviewManagers" : [
         {
           "link" : "https:\/\/github.com\/tkremenek",
@@ -7865,14 +6626,8 @@
       "title" : "Remove ownership keyword support in protocols",
       "trackingBugs" : [
         {
-          "assignee" : "",
           "id" : "SR-479",
-          "link" : "https:\/\/bugs.swift.org\/browse\/SR-479",
-          "radar" : "",
-          "resolution" : "",
-          "status" : "",
-          "title" : "",
-          "updated" : ""
+          "link" : "https:\/\/bugs.swift.org\/browse\/SR-479"
         }
       ]
     },
@@ -7911,10 +6666,6 @@
         }
       ],
       "link" : "0187-introduce-filtermap.md",
-      "reviewManager" : {
-        "link" : "https:\/\/github.com\/rjmccall",
-        "name" : "John McCall"
-      },
       "reviewManagers" : [
         {
           "link" : "https:\/\/github.com\/rjmccall",
@@ -7948,10 +6699,6 @@
         }
       ],
       "link" : "0188-stdlib-index-types-hashable.md",
-      "reviewManager" : {
-        "link" : "https:\/\/github.com\/airspeedswift",
-        "name" : "Ben Cohen"
-      },
       "reviewManagers" : [
         {
           "link" : "https:\/\/github.com\/airspeedswift",
@@ -7989,10 +6736,6 @@
         }
       ],
       "link" : "0189-restrict-cross-module-struct-initializers.md",
-      "reviewManager" : {
-        "link" : "https:\/\/github.com\/tkremenek",
-        "name" : "Ted Kremenek"
-      },
       "reviewManagers" : [
         {
           "link" : "https:\/\/github.com\/tkremenek",
@@ -8034,10 +6777,6 @@
         }
       ],
       "link" : "0190-target-environment-platform-condition.md",
-      "reviewManager" : {
-        "link" : "https:\/\/github.com\/tkremenek",
-        "name" : "Ted Kremenek"
-      },
       "reviewManagers" : [
         {
           "link" : "https:\/\/github.com\/tkremenek",
@@ -8075,10 +6814,6 @@
         }
       ],
       "link" : "0191-eliminate-indexdistance.md",
-      "reviewManager" : {
-        "link" : "https:\/\/github.com\/DougGregor",
-        "name" : "Doug Gregor"
-      },
       "reviewManagers" : [
         {
           "link" : "https:\/\/github.com\/DougGregor",
@@ -8116,10 +6851,6 @@
         }
       ],
       "link" : "0192-non-exhaustive-enums.md",
-      "reviewManager" : {
-        "link" : "https:\/\/github.com\/tkremenek",
-        "name" : "Ted Kremenek"
-      },
       "reviewManagers" : [
         {
           "link" : "https:\/\/github.com\/tkremenek",
@@ -8153,10 +6884,6 @@
         }
       ],
       "link" : "0193-cross-module-inlining-and-specialization.md",
-      "reviewManager" : {
-        "link" : "https:\/\/github.com\/tkremenek",
-        "name" : "Ted Kremenek"
-      },
       "reviewManagers" : [
         {
           "link" : "https:\/\/github.com\/tkremenek",
@@ -8198,10 +6925,6 @@
         }
       ],
       "link" : "0194-derived-collection-of-enum-cases.md",
-      "reviewManager" : {
-        "link" : "https:\/\/github.com\/DougGregor",
-        "name" : "Doug Gregor"
-      },
       "reviewManagers" : [
         {
           "link" : "https:\/\/github.com\/DougGregor",
@@ -8217,24 +6940,12 @@
       "title" : "Derived Collection of Enum Cases",
       "trackingBugs" : [
         {
-          "assignee" : "",
           "id" : "SR-7151",
-          "link" : "https:\/\/bugs.swift.org\/browse\/SR-7151",
-          "radar" : "",
-          "resolution" : "",
-          "status" : "",
-          "title" : "",
-          "updated" : ""
+          "link" : "https:\/\/bugs.swift.org\/browse\/SR-7151"
         },
         {
-          "assignee" : "",
           "id" : "SR-7152",
-          "link" : "https:\/\/bugs.swift.org\/browse\/SR-7152",
-          "radar" : "",
-          "resolution" : "",
-          "status" : "",
-          "title" : "",
-          "updated" : ""
+          "link" : "https:\/\/bugs.swift.org\/browse\/SR-7152"
         }
       ]
     },
@@ -8265,10 +6976,6 @@
         }
       ],
       "link" : "0195-dynamic-member-lookup.md",
-      "reviewManager" : {
-        "link" : "https:\/\/github.com\/tkremenek",
-        "name" : "Ted Kremenek"
-      },
       "reviewManagers" : [
         {
           "link" : "https:\/\/github.com\/tkremenek",
@@ -8302,10 +7009,6 @@
         }
       ],
       "link" : "0196-diagnostic-directives.md",
-      "reviewManager" : {
-        "link" : "https:\/\/github.com\/tkremenek",
-        "name" : "Ted Kremenek"
-      },
       "reviewManagers" : [
         {
           "link" : "https:\/\/github.com\/tkremenek",
@@ -8343,10 +7046,6 @@
         }
       ],
       "link" : "0197-remove-where.md",
-      "reviewManager" : {
-        "link" : "https:\/\/github.com\/rjmccall",
-        "name" : "John McCall"
-      },
       "reviewManagers" : [
         {
           "link" : "https:\/\/github.com\/rjmccall",
@@ -8404,10 +7103,6 @@
         }
       ],
       "link" : "0198-playground-quicklook-api-revamp.md",
-      "reviewManager" : {
-        "link" : "https:\/\/github.com\/airspeedswift\/",
-        "name" : "Ben Cohen"
-      },
       "reviewManagers" : [
         {
           "link" : "https:\/\/github.com\/airspeedswift\/",
@@ -8445,10 +7140,6 @@
         }
       ],
       "link" : "0199-bool-toggle.md",
-      "reviewManager" : {
-        "link" : "https:\/\/github.com\/airspeedswift\/",
-        "name" : "Ben Cohen"
-      },
       "reviewManagers" : [
         {
           "link" : "https:\/\/github.com\/airspeedswift\/",
@@ -8498,10 +7189,6 @@
         }
       ],
       "link" : "0200-raw-string-escaping.md",
-      "reviewManager" : {
-        "link" : "https:\/\/github.com\/DougGregor",
-        "name" : "Doug Gregor"
-      },
       "reviewManagers" : [
         {
           "link" : "https:\/\/github.com\/DougGregor",
@@ -8517,14 +7204,8 @@
       "title" : "Enhancing String Literals Delimiters to Support Raw Text",
       "trackingBugs" : [
         {
-          "assignee" : "",
           "id" : "SR-6362",
-          "link" : "https:\/\/bugs.swift.org\/browse\/SR-6362",
-          "radar" : "",
-          "resolution" : "",
-          "status" : "",
-          "title" : "",
-          "updated" : ""
+          "link" : "https:\/\/bugs.swift.org\/browse\/SR-6362"
         }
       ]
     },
@@ -8547,10 +7228,6 @@
         }
       ],
       "link" : "0201-package-manager-local-dependencies.md",
-      "reviewManager" : {
-        "link" : "https:\/\/github.com\/neonichu",
-        "name" : "Boris Bügling"
-      },
       "reviewManagers" : [
         {
           "link" : "https:\/\/github.com\/neonichu",
@@ -8566,14 +7243,8 @@
       "title" : "Package Manager Local Dependencies",
       "trackingBugs" : [
         {
-          "assignee" : "",
           "id" : "SR-7433",
-          "link" : "https:\/\/bugs.swift.org\/browse\/SR-7433",
-          "radar" : "",
-          "resolution" : "",
-          "status" : "",
-          "title" : "",
-          "updated" : ""
+          "link" : "https:\/\/bugs.swift.org\/browse\/SR-7433"
         }
       ]
     },
@@ -8600,10 +7271,6 @@
         }
       ],
       "link" : "0202-random-unification.md",
-      "reviewManager" : {
-        "link" : "https:\/\/github.com\/AirspeedSwift\/",
-        "name" : "Ben Cohen"
-      },
       "reviewManagers" : [
         {
           "link" : "https:\/\/github.com\/AirspeedSwift\/",
@@ -8637,10 +7304,6 @@
         }
       ],
       "link" : "0203-rename-sequence-elements-equal.md",
-      "reviewManager" : {
-        "link" : "https:\/\/github.com\/tkremenek",
-        "name" : "Ted Kremenek"
-      },
       "reviewManagers" : [
         {
           "link" : "https:\/\/github.com\/tkremenek",
@@ -8655,14 +7318,8 @@
       "title" : "Rename Sequence.elementsEqual",
       "trackingBugs" : [
         {
-          "assignee" : "",
           "id" : "SR-6102",
-          "link" : "https:\/\/bugs.swift.org\/browse\/SR-6102",
-          "radar" : "",
-          "resolution" : "",
-          "status" : "",
-          "title" : "",
-          "updated" : ""
+          "link" : "https:\/\/bugs.swift.org\/browse\/SR-6102"
         }
       ]
     },
@@ -8689,10 +7346,6 @@
         }
       ],
       "link" : "0204-add-last-methods.md",
-      "reviewManager" : {
-        "link" : "https:\/\/github.com\/rjmccall",
-        "name" : "John McCall"
-      },
       "reviewManagers" : [
         {
           "link" : "https:\/\/github.com\/rjmccall",
@@ -8708,14 +7361,8 @@
       "title" : "Add `last(where:)` and `lastIndex(where:)` Methods",
       "trackingBugs" : [
         {
-          "assignee" : "",
           "id" : "SR-1504",
-          "link" : "https:\/\/bugs.swift.org\/browse\/SR-1504",
-          "radar" : "",
-          "resolution" : "",
-          "status" : "",
-          "title" : "",
-          "updated" : ""
+          "link" : "https:\/\/bugs.swift.org\/browse\/SR-1504"
         }
       ]
     },
@@ -8738,10 +7385,6 @@
         }
       ],
       "link" : "0205-withUnsafePointer-for-lets.md",
-      "reviewManager" : {
-        "link" : "https:\/\/github.com\/airspeedswift",
-        "name" : "Ben Cohen"
-      },
       "reviewManagers" : [
         {
           "link" : "https:\/\/github.com\/airspeedswift",
@@ -8795,10 +7438,6 @@
         }
       ],
       "link" : "0206-hashable-enhancements.md",
-      "reviewManager" : {
-        "link" : "https:\/\/github.com\/jckarter",
-        "name" : "Joe Groff"
-      },
       "reviewManagers" : [
         {
           "link" : "https:\/\/github.com\/jckarter",
@@ -8836,10 +7475,6 @@
         }
       ],
       "link" : "0207-containsOnly.md",
-      "reviewManager" : {
-        "link" : "https:\/\/github.com\/dabrahams",
-        "name" : "Dave Abrahams"
-      },
       "reviewManagers" : [
         {
           "link" : "https:\/\/github.com\/dabrahams",
@@ -8877,10 +7512,6 @@
         }
       ],
       "link" : "0208-package-manager-system-library-targets.md",
-      "reviewManager" : {
-        "link" : "https:\/\/github.com\/neonichu",
-        "name" : "Boris Bügling"
-      },
       "reviewManagers" : [
         {
           "link" : "https:\/\/github.com\/neonichu",
@@ -8896,14 +7527,8 @@
       "title" : "Package Manager System Library Targets",
       "trackingBugs" : [
         {
-          "assignee" : "",
           "id" : "SR-7434",
-          "link" : "https:\/\/bugs.swift.org\/browse\/SR-7434",
-          "radar" : "",
-          "resolution" : "",
-          "status" : "",
-          "title" : "",
-          "updated" : ""
+          "link" : "https:\/\/bugs.swift.org\/browse\/SR-7434"
         }
       ]
     },
@@ -8926,10 +7551,6 @@
         }
       ],
       "link" : "0209-package-manager-swift-lang-version-update.md",
-      "reviewManager" : {
-        "link" : "https:\/\/github.com\/neonichu",
-        "name" : "Boris Bügling"
-      },
       "reviewManagers" : [
         {
           "link" : "https:\/\/github.com\/neonichu",
@@ -8945,14 +7566,8 @@
       "title" : "Package Manager Swift Language Version API Update",
       "trackingBugs" : [
         {
-          "assignee" : "",
           "id" : "SR-7464",
-          "link" : "https:\/\/bugs.swift.org\/browse\/SR-7464",
-          "radar" : "",
-          "resolution" : "",
-          "status" : "",
-          "title" : "",
-          "updated" : ""
+          "link" : "https:\/\/bugs.swift.org\/browse\/SR-7464"
         }
       ]
     },
@@ -8975,10 +7590,6 @@
         }
       ],
       "link" : "0210-key-path-offset.md",
-      "reviewManager" : {
-        "link" : "https:\/\/github.com\/DougGregor",
-        "name" : "Doug Gregor"
-      },
       "reviewManagers" : [
         {
           "link" : "https:\/\/github.com\/DougGregor",
@@ -9020,10 +7631,6 @@
         }
       ],
       "link" : "0211-unicode-scalar-properties.md",
-      "reviewManager" : {
-        "link" : "https:\/\/github.com\/airspeedswift",
-        "name" : "Ben Cohen"
-      },
       "reviewManagers" : [
         {
           "link" : "https:\/\/github.com\/airspeedswift",
@@ -9057,10 +7664,6 @@
         }
       ],
       "link" : "0212-compiler-version-directive.md",
-      "reviewManager" : {
-        "link" : "https:\/\/github.com\/tkremenek",
-        "name" : "Ted Kremenek"
-      },
       "reviewManagers" : [
         {
           "link" : "https:\/\/github.com\/tkremenek",
@@ -9094,10 +7697,6 @@
         }
       ],
       "link" : "0213-literal-init-via-coercion.md",
-      "reviewManager" : {
-        "link" : "https:\/\/github.com\/rjmccall",
-        "name" : "John McCall"
-      },
       "reviewManagers" : [
         {
           "link" : "https:\/\/github.com\/rjmccall",
@@ -9139,10 +7738,6 @@
         }
       ],
       "link" : "0214-DictionaryLiteral.md",
-      "reviewManager" : {
-        "link" : "https:\/\/github.com\/lattner",
-        "name" : "Chris Lattner"
-      },
       "reviewManagers" : [
         {
           "link" : "https:\/\/github.com\/lattner",
@@ -9180,10 +7775,6 @@
         }
       ],
       "link" : "0215-conform-never-to-hashable-and-equatable.md",
-      "reviewManager" : {
-        "link" : "https:\/\/github.com\/tkremenek",
-        "name" : "Ted Kremenek"
-      },
       "reviewManagers" : [
         {
           "link" : "https:\/\/github.com\/tkremenek",
@@ -9225,10 +7816,6 @@
         }
       ],
       "link" : "0216-dynamic-callable.md",
-      "reviewManager" : {
-        "link" : "https:\/\/github.com\/rjmccall",
-        "name" : "John McCall"
-      },
       "reviewManagers" : [
         {
           "link" : "https:\/\/github.com\/rjmccall",
@@ -9274,10 +7861,6 @@
       ],
       "id" : "SE-0217",
       "link" : "0217-bangbang.md",
-      "reviewManager" : {
-        "link" : "https:\/\/github.com\/jckarter",
-        "name" : "Joe Groff"
-      },
       "reviewManagers" : [
         {
           "link" : "https:\/\/github.com\/jckarter",
@@ -9314,10 +7897,6 @@
         }
       ],
       "link" : "0218-introduce-compact-map-values.md",
-      "reviewManager" : {
-        "link" : "https:\/\/github.com\/airspeedswift",
-        "name" : "Ben Cohen"
-      },
       "reviewManagers" : [
         {
           "link" : "https:\/\/github.com\/airspeedswift",
@@ -9351,10 +7930,6 @@
         }
       ],
       "link" : "0219-package-manager-dependency-mirroring.md",
-      "reviewManager" : {
-        "link" : "https:\/\/github.com\/neonichu",
-        "name" : "Boris Bügling"
-      },
       "reviewManagers" : [
         {
           "link" : "https:\/\/github.com\/neonichu",
@@ -9370,14 +7945,8 @@
       "title" : "Package Manager Dependency Mirroring",
       "trackingBugs" : [
         {
-          "assignee" : "",
           "id" : "SR-8328",
-          "link" : "https:\/\/bugs.swift.org\/browse\/SR-8328",
-          "radar" : "",
-          "resolution" : "",
-          "status" : "",
-          "title" : "",
-          "updated" : ""
+          "link" : "https:\/\/bugs.swift.org\/browse\/SR-8328"
         }
       ]
     },
@@ -9424,10 +7993,6 @@
         }
       ],
       "link" : "0220-count-where.md",
-      "reviewManager" : {
-        "link" : "https:\/\/github.com\/airspeedswift",
-        "name" : "Ben Cohen"
-      },
       "reviewManagers" : [
         {
           "link" : "https:\/\/github.com\/airspeedswift",
@@ -9473,10 +8038,6 @@
         }
       ],
       "link" : "0221-character-properties.md",
-      "reviewManager" : {
-        "link" : "https:\/\/github.com\/airspeedswift",
-        "name" : "Ben Cohen"
-      },
       "reviewManagers" : [
         {
           "link" : "https:\/\/github.com\/airspeedswift",
@@ -9518,10 +8079,6 @@
         }
       ],
       "link" : "0222-lazy-compactmap-sequence.md",
-      "reviewManager" : {
-        "link" : "https:\/\/github.com\/rjmccall",
-        "name" : "John McCall"
-      },
       "reviewManagers" : [
         {
           "link" : "https:\/\/github.com\/rjmccall",
@@ -9558,10 +8115,6 @@
         }
       ],
       "link" : "0223-array-uninitialized-initializer.md",
-      "reviewManager" : {
-        "link" : "https:\/\/github.com\/jckarter",
-        "name" : "Joe Groff"
-      },
       "reviewManagers" : [
         {
           "link" : "https:\/\/github.com\/jckarter",
@@ -9576,14 +8129,8 @@
       "title" : "Accessing an Array's Uninitialized Buffer",
       "trackingBugs" : [
         {
-          "assignee" : "",
           "id" : "SR-3087",
-          "link" : "https:\/\/bugs.swift.org\/browse\/SR-3087",
-          "radar" : "",
-          "resolution" : "",
-          "status" : "",
-          "title" : "",
-          "updated" : ""
+          "link" : "https:\/\/bugs.swift.org\/browse\/SR-3087"
         }
       ]
     },
@@ -9616,10 +8163,6 @@
         }
       ],
       "link" : "0224-ifswift-lessthan-operator.md",
-      "reviewManager" : {
-        "link" : "https:\/\/github.com\/tkremenek",
-        "name" : "Ted Kremenek"
-      },
       "reviewManagers" : [
         {
           "link" : "https:\/\/github.com\/tkremenek",
@@ -9635,14 +8178,8 @@
       "title" : "Support 'less than' operator in compilation conditions",
       "trackingBugs" : [
         {
-          "assignee" : "",
           "id" : "SR-6852",
-          "link" : "https:\/\/bugs.swift.org\/browse\/SR-6852",
-          "radar" : "",
-          "resolution" : "",
-          "status" : "",
-          "title" : "",
-          "updated" : ""
+          "link" : "https:\/\/bugs.swift.org\/browse\/SR-6852"
         }
       ]
     },
@@ -9677,10 +8214,6 @@
         }
       ],
       "link" : "0225-binaryinteger-iseven-isodd-ismultiple.md",
-      "reviewManager" : {
-        "link" : "https:\/\/github.com\/rjmccall",
-        "name" : "John McCall"
-      },
       "reviewManagers" : [
         {
           "link" : "https:\/\/github.com\/rjmccall",
@@ -9722,10 +8255,6 @@
       ],
       "id" : "SE-0226",
       "link" : "0226-package-manager-target-based-dep-resolution.md",
-      "reviewManager" : {
-        "link" : "https:\/\/github.com\/neonichu",
-        "name" : "Boris Bügling"
-      },
       "reviewManagers" : [
         {
           "link" : "https:\/\/github.com\/neonichu",
@@ -9741,14 +8270,8 @@
       "title" : "Package Manager Target Based Dependency Resolution",
       "trackingBugs" : [
         {
-          "assignee" : "",
           "id" : "SR-8658",
-          "link" : "https:\/\/bugs.swift.org\/browse\/SR-8658",
-          "radar" : "",
-          "resolution" : "",
-          "status" : "",
-          "title" : "",
-          "updated" : ""
+          "link" : "https:\/\/bugs.swift.org\/browse\/SR-8658"
         }
       ]
     },
@@ -9785,10 +8308,6 @@
         }
       ],
       "link" : "0227-identity-keypath.md",
-      "reviewManager" : {
-        "link" : "https:\/\/github.com\/airspeedswift",
-        "name" : "Ben Cohen"
-      },
       "reviewManagers" : [
         {
           "link" : "https:\/\/github.com\/airspeedswift",
@@ -9834,10 +8353,6 @@
         }
       ],
       "link" : "0228-fix-expressiblebystringinterpolation.md",
-      "reviewManager" : {
-        "link" : "https:\/\/github.com\/DougGregor",
-        "name" : "Doug Gregor"
-      },
       "reviewManagers" : [
         {
           "link" : "https:\/\/github.com\/DougGregor",
@@ -9875,10 +8390,6 @@
         }
       ],
       "link" : "0229-simd.md",
-      "reviewManager" : {
-        "link" : "https:\/\/github.com\/airspeedswift",
-        "name" : "Ben Cohen"
-      },
       "reviewManagers" : [
         {
           "link" : "https:\/\/github.com\/airspeedswift",
@@ -9920,10 +8431,6 @@
         }
       ],
       "link" : "0230-flatten-optional-try.md",
-      "reviewManager" : {
-        "link" : "https:\/\/github.com\/rjmccall",
-        "name" : "John McCall"
-      },
       "reviewManagers" : [
         {
           "link" : "https:\/\/github.com\/rjmccall",
@@ -9961,10 +8468,6 @@
         }
       ],
       "link" : "0231-optional-iteration.md",
-      "reviewManager" : {
-        "link" : "https:\/\/github.com\/jckarter",
-        "name" : "Joe Groff"
-      },
       "reviewManagers" : [
         {
           "link" : "https:\/\/github.com\/jckarter",
@@ -10005,10 +8508,6 @@
         }
       ],
       "link" : "0232-remove-customization-points.md",
-      "reviewManager" : {
-        "link" : "https:\/\/github.com\/tkremenek",
-        "name" : "Ted Kremenek"
-      },
       "reviewManagers" : [
         {
           "link" : "https:\/\/github.com\/tkremenek",
@@ -10046,10 +8545,6 @@
         }
       ],
       "link" : "0233-additive-arithmetic-protocol.md",
-      "reviewManager" : {
-        "link" : "https:\/\/github.com\/lattner",
-        "name" : "Chris Lattner"
-      },
       "reviewManagers" : [
         {
           "link" : "https:\/\/github.com\/lattner",
@@ -10091,10 +8586,6 @@
         }
       ],
       "link" : "0234-remove-sequence-subsequence.md",
-      "reviewManager" : {
-        "link" : "https:\/\/github.com\/rjmccall",
-        "name" : "John McCall"
-      },
       "reviewManagers" : [
         {
           "link" : "https:\/\/github.com\/rjmccall",
@@ -10152,10 +8643,6 @@
         }
       ],
       "link" : "0235-add-result.md",
-      "reviewManager" : {
-        "link" : "https:\/\/github.com\/lattner",
-        "name" : "Chris Lattner"
-      },
       "reviewManagers" : [
         {
           "link" : "https:\/\/github.com\/lattner",
@@ -10185,10 +8672,6 @@
       ],
       "id" : "SE-0236",
       "link" : "0236-package-manager-platform-deployment-settings.md",
-      "reviewManager" : {
-        "link" : "https:\/\/github.com\/neonichu",
-        "name" : "Boris Bügling"
-      },
       "reviewManagers" : [
         {
           "link" : "https:\/\/github.com\/neonichu",
@@ -10226,10 +8709,6 @@
         }
       ],
       "link" : "0237-contiguous-collection.md",
-      "reviewManager" : {
-        "link" : "https:\/\/github.com\/DougGregor",
-        "name" : "Doug Gregor"
-      },
       "reviewManagers" : [
         {
           "link" : "https:\/\/github.com\/DougGregor",
@@ -10259,10 +8738,6 @@
       ],
       "id" : "SE-0238",
       "link" : "0238-package-manager-build-settings.md",
-      "reviewManager" : {
-        "link" : "https:\/\/github.com\/neonichu",
-        "name" : "Boris Bügling"
-      },
       "reviewManagers" : [
         {
           "link" : "https:\/\/github.com\/neonichu",
@@ -10314,10 +8789,6 @@
         }
       ],
       "link" : "0239-codable-range.md",
-      "reviewManager" : {
-        "link" : "https:\/\/github.com\/tkremenek",
-        "name" : "Ted Kremenek"
-      },
       "reviewManagers" : [
         {
           "link" : "https:\/\/github.com\/tkremenek",
@@ -10359,10 +8830,6 @@
         }
       ],
       "link" : "0240-ordered-collection-diffing.md",
-      "reviewManager" : {
-        "link" : "https:\/\/github.com\/DougGregor",
-        "name" : "Doug Gregor"
-      },
       "reviewManagers" : [
         {
           "link" : "https:\/\/github.com\/DougGregor",
@@ -10408,10 +8875,6 @@
         }
       ],
       "link" : "0241-string-index-explicit-encoding-offset.md",
-      "reviewManager" : {
-        "link" : "https:\/\/github.com\/rjmccall",
-        "name" : "John McCall"
-      },
       "reviewManagers" : [
         {
           "link" : "https:\/\/github.com\/rjmccall",
@@ -10449,10 +8912,6 @@
         }
       ],
       "link" : "0242-default-values-memberwise.md",
-      "reviewManager" : {
-        "link" : "https:\/\/github.com\/tkremenek",
-        "name" : "Ted Kremenek"
-      },
       "reviewManagers" : [
         {
           "link" : "https:\/\/github.com\/tkremenek",
@@ -10494,10 +8953,6 @@
         }
       ],
       "link" : "0243-codepoint-and-character-literals.md",
-      "reviewManager" : {
-        "link" : "https:\/\/github.com\/airspeedswift",
-        "name" : "Ben Cohen"
-      },
       "reviewManagers" : [
         {
           "link" : "https:\/\/github.com\/airspeedswift",
@@ -10538,10 +8993,6 @@
         }
       ],
       "link" : "0244-opaque-result-types.md",
-      "reviewManager" : {
-        "link" : "https:\/\/github.com\/airspeedswift",
-        "name" : "Ben Cohen"
-      },
       "reviewManagers" : [
         {
           "link" : "https:\/\/github.com\/airspeedswift",
@@ -10578,10 +9029,6 @@
       "previousProposalIDs" : [
         "SE-0223"
       ],
-      "reviewManager" : {
-        "link" : "https:\/\/github.com\/tkremenek",
-        "name" : "Ted Kremenek"
-      },
       "reviewManagers" : [
         {
           "link" : "https:\/\/github.com\/tkremenek",
@@ -10597,14 +9044,8 @@
       "title" : "Add an Array Initializer with Access to Uninitialized Storage",
       "trackingBugs" : [
         {
-          "assignee" : "",
           "id" : "SR-3087",
-          "link" : "https:\/\/bugs.swift.org\/browse\/SR-3087",
-          "radar" : "",
-          "resolution" : "",
-          "status" : "",
-          "title" : "",
-          "updated" : ""
+          "link" : "https:\/\/bugs.swift.org\/browse\/SR-3087"
         }
       ]
     },
@@ -10635,10 +9076,6 @@
         }
       ],
       "link" : "0246-mathable.md",
-      "reviewManager" : {
-        "link" : "https:\/\/github.com\/rjmccall",
-        "name" : "John McCall"
-      },
       "reviewManagers" : [
         {
           "link" : "https:\/\/github.com\/rjmccall",
@@ -10671,10 +9108,6 @@
         }
       ],
       "link" : "0247-contiguous-strings.md",
-      "reviewManager" : {
-        "link" : "https:\/\/github.com\/DougGregor",
-        "name" : "Doug Gregor"
-      },
       "reviewManagers" : [
         {
           "link" : "https:\/\/github.com\/DougGregor",
@@ -10690,14 +9123,8 @@
       "title" : "Contiguous Strings",
       "trackingBugs" : [
         {
-          "assignee" : "",
           "id" : "SR-6475",
-          "link" : "https:\/\/bugs.swift.org\/browse\/SR-6475",
-          "radar" : "",
-          "resolution" : "",
-          "status" : "",
-          "title" : "",
-          "updated" : ""
+          "link" : "https:\/\/bugs.swift.org\/browse\/SR-6475"
         }
       ]
     },
@@ -10720,10 +9147,6 @@
         }
       ],
       "link" : "0248-string-gaps-missing-apis.md",
-      "reviewManager" : {
-        "link" : "https:\/\/github.com\/tkremenek",
-        "name" : "Ted Kremenek"
-      },
       "reviewManagers" : [
         {
           "link" : "https:\/\/github.com\/tkremenek",
@@ -10739,14 +9162,8 @@
       "title" : "String Gaps and Missing APIs",
       "trackingBugs" : [
         {
-          "assignee" : "",
           "id" : "SR-9955",
-          "link" : "https:\/\/bugs.swift.org\/browse\/SR-9955",
-          "radar" : "",
-          "resolution" : "",
-          "status" : "",
-          "title" : "",
-          "updated" : ""
+          "link" : "https:\/\/bugs.swift.org\/browse\/SR-9955"
         }
       ]
     },
@@ -10773,10 +9190,6 @@
         }
       ],
       "link" : "0249-key-path-literal-function-expressions.md",
-      "reviewManager" : {
-        "link" : "https:\/\/github.com\/airspeedswift",
-        "name" : "Ben Cohen"
-      },
       "reviewManagers" : [
         {
           "link" : "https:\/\/github.com\/airspeedswift",
@@ -10806,10 +9219,6 @@
       ],
       "id" : "SE-0250",
       "link" : "0250-swift-style-guide-and-formatter.md",
-      "reviewManager" : {
-        "link" : "https:\/\/github.com\/tkremenek",
-        "name" : "Ted Kremenek"
-      },
       "reviewManagers" : [
         {
           "link" : "https:\/\/github.com\/tkremenek",
@@ -10856,10 +9265,6 @@
         }
       ],
       "link" : "0251-simd-additions.md",
-      "reviewManager" : {
-        "link" : "https:\/\/github.com\/rjmccall",
-        "name" : "John McCall"
-      },
       "reviewManagers" : [
         {
           "link" : "https:\/\/github.com\/rjmccall",
@@ -10897,10 +9302,6 @@
         }
       ],
       "link" : "0252-keypath-dynamic-member-lookup.md",
-      "reviewManager" : {
-        "link" : "https:\/\/github.com\/tkremenek",
-        "name" : "Ted Kremenek"
-      },
       "reviewManagers" : [
         {
           "link" : "https:\/\/github.com\/tkremenek",
@@ -10946,10 +9347,6 @@
         }
       ],
       "link" : "0253-callable.md",
-      "reviewManager" : {
-        "link" : "https:\/\/github.com\/lattner",
-        "name" : "Chris Lattner"
-      },
       "reviewManagers" : [
         {
           "link" : "https:\/\/github.com\/lattner",
@@ -10991,10 +9388,6 @@
         }
       ],
       "link" : "0254-static-subscripts.md",
-      "reviewManager" : {
-        "link" : "https:\/\/github.com\/DougGregor",
-        "name" : "Doug Gregor"
-      },
       "reviewManagers" : [
         {
           "link" : "https:\/\/github.com\/DougGregor",
@@ -11040,10 +9433,6 @@
         }
       ],
       "link" : "0255-omit-return.md",
-      "reviewManager" : {
-        "link" : "https:\/\/github.com\/airspeedswift",
-        "name" : "Ben Cohen"
-      },
       "reviewManagers" : [
         {
           "link" : "https:\/\/github.com\/airspeedswift",
@@ -11084,10 +9473,6 @@
       "previousProposalIDs" : [
         "SE-0237"
       ],
-      "reviewManager" : {
-        "link" : "https:\/\/github.com\/tkremenek",
-        "name" : "Ted Kremenek"
-      },
       "reviewManagers" : [
         {
           "link" : "https:\/\/github.com\/tkremenek",
@@ -11128,10 +9513,6 @@
         }
       ],
       "link" : "0257-elide-comma.md",
-      "reviewManager" : {
-        "link" : "https:\/\/github.com\/tkremenek",
-        "name" : "Ted Kremenek"
-      },
       "reviewManagers" : [
         {
           "link" : "https:\/\/github.com\/tkremenek",
@@ -11180,10 +9561,6 @@
       ],
       "id" : "SE-0258",
       "link" : "0258-property-wrappers.md",
-      "reviewManager" : {
-        "link" : "https:\/\/github.com\/rjmccall",
-        "name" : "John McCall"
-      },
       "reviewManagers" : [
         {
           "link" : "https:\/\/github.com\/rjmccall",
@@ -11217,10 +9594,6 @@
         }
       ],
       "link" : "0259-approximately-equal.md",
-      "reviewManager" : {
-        "link" : "https:\/\/github.com\/airspeedswift",
-        "name" : "Ben Cohen"
-      },
       "reviewManagers" : [
         {
           "link" : "https:\/\/github.com\/airspeedswift",
@@ -11265,10 +9638,6 @@
         }
       ],
       "link" : "0260-library-evolution.md",
-      "reviewManager" : {
-        "link" : "https:\/\/github.com\/rjmccall",
-        "name" : "John McCall"
-      },
       "reviewManagers" : [
         {
           "link" : "https:\/\/github.com\/rjmccall",
@@ -11310,10 +9679,6 @@
         }
       ],
       "link" : "0261-identifiable.md",
-      "reviewManager" : {
-        "link" : "https:\/\/github.com\/airspeedswift",
-        "name" : "Ben Cohen"
-      },
       "reviewManagers" : [
         {
           "link" : "https:\/\/github.com\/airspeedswift",
@@ -11351,10 +9716,6 @@
         }
       ],
       "link" : "0262-demangle.md",
-      "reviewManager" : {
-        "link" : "https:\/\/github.com\/jckarter",
-        "name" : "Joe Groff"
-      },
       "reviewManagers" : [
         {
           "link" : "https:\/\/github.com\/jckarter",
@@ -11393,10 +9754,6 @@
         }
       ],
       "link" : "0263-string-uninitialized-initializer.md",
-      "reviewManager" : {
-        "link" : "https:\/\/github.com\/tkremenek",
-        "name" : "Ted Kremenek"
-      },
       "reviewManagers" : [
         {
           "link" : "https:\/\/github.com\/tkremenek",
@@ -11412,14 +9769,8 @@
       "title" : "Add a String Initializer with Access to Uninitialized Storage",
       "trackingBugs" : [
         {
-          "assignee" : "",
           "id" : "SR-10288",
-          "link" : "https:\/\/bugs.swift.org\/browse\/SR-10288",
-          "radar" : "",
-          "resolution" : "",
-          "status" : "",
-          "title" : "",
-          "updated" : ""
+          "link" : "https:\/\/bugs.swift.org\/browse\/SR-10288"
         }
       ]
     },
@@ -11446,10 +9797,6 @@
       ],
       "id" : "SE-0264",
       "link" : "0264-stdlib-preview-package.md",
-      "reviewManager" : {
-        "link" : "https:\/\/github.com\/tkremenek",
-        "name" : "Ted Kremenek"
-      },
       "reviewManagers" : [
         {
           "link" : "https:\/\/github.com\/tkremenek",
@@ -11468,21 +9815,18 @@
           "code" : 0,
           "kind" : "warning",
           "message" : "Implementation links to a non-Swift repository.",
-          "stage" : "validate",
           "suggestion" : ""
         },
         {
           "code" : 0,
           "kind" : "warning",
           "message" : "Implementation links to a non-Swift repository.",
-          "stage" : "validate",
           "suggestion" : ""
         },
         {
           "code" : 0,
           "kind" : "warning",
           "message" : "Implementation links to a non-Swift repository.",
-          "stage" : "validate",
           "suggestion" : ""
         }
       ]
@@ -11514,10 +9858,6 @@
         }
       ],
       "link" : "0265-offset-indexing-and-slicing.md",
-      "reviewManager" : {
-        "link" : "https:\/\/github.com\/rjmccall",
-        "name" : "John McCall"
-      },
       "reviewManagers" : [
         {
           "link" : "https:\/\/github.com\/rjmccall",
@@ -11554,10 +9894,6 @@
         }
       ],
       "link" : "0266-synthesized-comparable-for-enumerations.md",
-      "reviewManager" : {
-        "link" : "https:\/\/github.com\/airspeedswift",
-        "name" : "Ben Cohen"
-      },
       "reviewManagers" : [
         {
           "link" : "https:\/\/github.com\/airspeedswift",
@@ -11599,10 +9935,6 @@
         }
       ],
       "link" : "0267-where-on-contextually-generic.md",
-      "reviewManager" : {
-        "link" : "https:\/\/github.com\/jckarter",
-        "name" : "Joe Groff"
-      },
       "reviewManagers" : [
         {
           "link" : "https:\/\/github.com\/jckarter",
@@ -11636,10 +9968,6 @@
         }
       ],
       "link" : "0268-didset-semantics.md",
-      "reviewManager" : {
-        "link" : "https:\/\/github.com\/airspeedswift",
-        "name" : "Ben Cohen"
-      },
       "reviewManagers" : [
         {
           "link" : "https:\/\/github.com\/airspeedswift",
@@ -11655,14 +9983,8 @@
       "title" : "Refine `didSet` Semantics",
       "trackingBugs" : [
         {
-          "assignee" : "",
           "id" : "SR-5982",
-          "link" : "https:\/\/bugs.swift.org\/browse\/SR-5982",
-          "radar" : "",
-          "resolution" : "",
-          "status" : "",
-          "title" : "",
-          "updated" : ""
+          "link" : "https:\/\/bugs.swift.org\/browse\/SR-5982"
         }
       ]
     },
@@ -11685,10 +10007,6 @@
         }
       ],
       "link" : "0269-implicit-self-explicit-capture.md",
-      "reviewManager" : {
-        "link" : "https:\/\/github.com\/tkremenek",
-        "name" : "Ted Kremenek"
-      },
       "reviewManagers" : [
         {
           "link" : "https:\/\/github.com\/tkremenek",
@@ -11704,14 +10022,8 @@
       "title" : "Increase availability of implicit `self` in `@escaping` closures when reference cycles are unlikely to occur",
       "trackingBugs" : [
         {
-          "assignee" : "",
           "id" : "SR-10218",
-          "link" : "https:\/\/bugs.swift.org\/browse\/SR-10218",
-          "radar" : "",
-          "resolution" : "",
-          "status" : "",
-          "title" : "",
-          "updated" : ""
+          "link" : "https:\/\/bugs.swift.org\/browse\/SR-10218"
         }
       ]
     },
@@ -11778,10 +10090,6 @@
         }
       ],
       "link" : "0270-rangeset-and-collection-operations.md",
-      "reviewManager" : {
-        "link" : "https:\/\/github.com\/rjmccall",
-        "name" : "John McCall"
-      },
       "reviewManagers" : [
         {
           "link" : "https:\/\/github.com\/rjmccall",
@@ -11841,10 +10149,6 @@
         }
       ],
       "link" : "0271-package-manager-resources.md",
-      "reviewManager" : {
-        "link" : "https:\/\/github.com\/neonichu",
-        "name" : "Boris Buegling"
-      },
       "reviewManagers" : [
         {
           "link" : "https:\/\/github.com\/neonichu",
@@ -11912,10 +10216,6 @@
         }
       ],
       "link" : "0272-swiftpm-binary-dependencies.md",
-      "reviewManager" : {
-        "link" : "https:\/\/github.com\/neonichu",
-        "name" : "Boris Bügling"
-      },
       "reviewManagers" : [
         {
           "link" : "https:\/\/github.com\/neonichu",
@@ -11955,10 +10255,6 @@
         }
       ],
       "link" : "0273-swiftpm-conditional-target-dependencies.md",
-      "reviewManager" : {
-        "link" : "https:\/\/github.com\/neonichu",
-        "name" : "Boris Buegling"
-      },
       "reviewManagers" : [
         {
           "link" : "https:\/\/github.com\/neonichu",
@@ -12000,10 +10296,6 @@
       ],
       "id" : "SE-0274",
       "link" : "0274-magic-file.md",
-      "reviewManager" : {
-        "link" : "https:\/\/github.com\/airspeedswift\/",
-        "name" : "Ben Cohen"
-      },
       "reviewManagers" : [
         {
           "link" : "https:\/\/github.com\/airspeedswift\/",
@@ -12044,10 +10336,6 @@
         }
       ],
       "link" : "0275-allow-more-characters-like-whitespaces-and-punctuations-for-escaped-identifiers.md",
-      "reviewManager" : {
-        "link" : "https:\/\/github.com\/jckarter",
-        "name" : "Joe Groff"
-      },
       "reviewManagers" : [
         {
           "link" : "https:\/\/github.com\/jckarter",
@@ -12084,10 +10372,6 @@
         }
       ],
       "link" : "0276-multi-pattern-catch-clauses.md",
-      "reviewManager" : {
-        "link" : "https:\/\/github.com\/DougGregor",
-        "name" : "Doug Gregor"
-      },
       "reviewManagers" : [
         {
           "link" : "https:\/\/github.com\/DougGregor",
@@ -12125,10 +10409,6 @@
         }
       ],
       "link" : "0277-float16.md",
-      "reviewManager" : {
-        "link" : "https:\/\/github.com\/airspeedswift",
-        "name" : "Ben Cohen"
-      },
       "reviewManagers" : [
         {
           "link" : "https:\/\/github.com\/airspeedswift",
@@ -12168,10 +10448,6 @@
         }
       ],
       "link" : "0278-package-manager-localized-resources.md",
-      "reviewManager" : {
-        "link" : "https:\/\/github.com\/neonichu",
-        "name" : "Boris Buegling"
-      },
       "reviewManagers" : [
         {
           "link" : "https:\/\/github.com\/neonichu",
@@ -12229,10 +10505,6 @@
         }
       ],
       "link" : "0279-multiple-trailing-closures.md",
-      "reviewManager" : {
-        "link" : "https:\/\/github.com\/airspeedswift",
-        "name" : "Ben Cohen"
-      },
       "reviewManagers" : [
         {
           "link" : "https:\/\/github.com\/airspeedswift",
@@ -12274,10 +10546,6 @@
         }
       ],
       "link" : "0280-enum-cases-as-protocol-witnesses.md",
-      "reviewManager" : {
-        "link" : "https:\/\/github.com\/rjmccall",
-        "name" : "John McCall"
-      },
       "reviewManagers" : [
         {
           "link" : "https:\/\/github.com\/rjmccall",
@@ -12293,14 +10561,8 @@
       "title" : "Enum cases as protocol witnesses",
       "trackingBugs" : [
         {
-          "assignee" : "",
           "id" : "SR-3170",
-          "link" : "https:\/\/bugs.swift.org\/browse\/SR-3170",
-          "radar" : "",
-          "resolution" : "",
-          "status" : "",
-          "title" : "",
-          "updated" : ""
+          "link" : "https:\/\/bugs.swift.org\/browse\/SR-3170"
         }
       ]
     },
@@ -12335,10 +10597,6 @@
         }
       ],
       "link" : "0281-main-attribute.md",
-      "reviewManager" : {
-        "link" : "https:\/\/github.com\/tomerd",
-        "name" : "Tom Doron"
-      },
       "reviewManagers" : [
         {
           "link" : "https:\/\/github.com\/tomerd",
@@ -12368,10 +10626,6 @@
       ],
       "id" : "SE-0282",
       "link" : "0282-atomics.md",
-      "reviewManager" : {
-        "link" : "https:\/\/github.com\/jckarter",
-        "name" : "Joe Groff"
-      },
       "reviewManagers" : [
         {
           "link" : "https:\/\/github.com\/jckarter",
@@ -12387,14 +10641,8 @@
       "title" : "Clarify the Swift memory consistency model ⚛︎",
       "trackingBugs" : [
         {
-          "assignee" : "",
           "id" : "SR-9144",
-          "link" : "https:\/\/bugs.swift.org\/browse\/SR-9144",
-          "radar" : "",
-          "resolution" : "",
-          "status" : "",
-          "title" : "",
-          "updated" : ""
+          "link" : "https:\/\/bugs.swift.org\/browse\/SR-9144"
         }
       ]
     },
@@ -12425,10 +10673,6 @@
         }
       ],
       "link" : "0283-tuples-are-equatable-comparable-hashable.md",
-      "reviewManager" : {
-        "link" : "https:\/\/github.com\/compnerd",
-        "name" : "Saleem Abdulrasool"
-      },
       "reviewManagers" : [
         {
           "link" : "https:\/\/github.com\/compnerd",
@@ -12461,10 +10705,6 @@
         }
       ],
       "link" : "0284-multiple-variadic-parameters.md",
-      "reviewManager" : {
-        "link" : "https:\/\/github.com\/compnerd",
-        "name" : "Saleem Abdulrasool"
-      },
       "reviewManagers" : [
         {
           "link" : "https:\/\/github.com\/compnerd",
@@ -12502,10 +10742,6 @@
         }
       ],
       "link" : "0285-ease-pound-file-transition.md",
-      "reviewManager" : {
-        "link" : "https:\/\/github.com\/tomerd",
-        "name" : "Tom Doron"
-      },
       "reviewManagers" : [
         {
           "link" : "https:\/\/github.com\/tomerd",
@@ -12547,10 +10783,6 @@
         }
       ],
       "link" : "0286-forward-scan-trailing-closures.md",
-      "reviewManager" : {
-        "link" : "https:\/\/github.com\/rjmccall",
-        "name" : "John McCall"
-      },
       "reviewManagers" : [
         {
           "link" : "https:\/\/github.com\/rjmccall",
@@ -12595,10 +10827,6 @@
         }
       ],
       "link" : "0287-implicit-member-chains.md",
-      "reviewManager" : {
-        "link" : "https:\/\/github.com\/DougGregor",
-        "name" : "Doug Gregor"
-      },
       "reviewManagers" : [
         {
           "link" : "https:\/\/github.com\/DougGregor",
@@ -12636,10 +10864,6 @@
         }
       ],
       "link" : "0288-binaryinteger-ispower.md",
-      "reviewManager" : {
-        "link" : "https:\/\/github.com\/jckarter",
-        "name" : "Joe Groff"
-      },
       "reviewManagers" : [
         {
           "link" : "https:\/\/github.com\/jckarter",
@@ -12668,10 +10892,6 @@
       ],
       "id" : "SE-0289",
       "link" : "0289-result-builders.md",
-      "reviewManager" : {
-        "link" : "https:\/\/github.com\/compnerd",
-        "name" : "Saleem Abdulrasool"
-      },
       "reviewManagers" : [
         {
           "link" : "https:\/\/github.com\/compnerd",
@@ -12713,10 +10933,6 @@
         }
       ],
       "link" : "0290-negative-availability.md",
-      "reviewManager" : {
-        "link" : "https:\/\/github.com\/tkremenek",
-        "name" : "Ted Kremenek"
-      },
       "reviewManagers" : [
         {
           "link" : "https:\/\/github.com\/tkremenek",
@@ -12778,10 +10994,6 @@
         }
       ],
       "link" : "0291-package-collections.md",
-      "reviewManager" : {
-        "link" : "https:\/\/github.com\/tomerd",
-        "name" : "Tom Doron"
-      },
       "reviewManagers" : [
         {
           "link" : "https:\/\/github.com\/tomerd",
@@ -12839,10 +11051,6 @@
         }
       ],
       "link" : "0292-package-registry-service.md",
-      "reviewManager" : {
-        "link" : "https:\/\/github.com\/tomerd",
-        "name" : "Tom Doron"
-      },
       "reviewManagers" : [
         {
           "link" : "https:\/\/github.com\/tomerd",
@@ -12898,10 +11106,6 @@
         }
       ],
       "link" : "0293-extend-property-wrappers-to-function-and-closure-parameters.md",
-      "reviewManager" : {
-        "link" : "https:\/\/github.com\/lattner",
-        "name" : "Chris Lattner"
-      },
       "reviewManagers" : [
         {
           "link" : "https:\/\/github.com\/lattner",
@@ -12939,10 +11143,6 @@
         }
       ],
       "link" : "0294-package-executable-targets.md",
-      "reviewManager" : {
-        "link" : "https:\/\/github.com\/tomerd",
-        "name" : "Tom Doron"
-      },
       "reviewManagers" : [
         {
           "link" : "https:\/\/github.com\/tomerd",
@@ -12958,14 +11158,8 @@
       "title" : "Declaring executable targets in Package Manifests",
       "trackingBugs" : [
         {
-          "assignee" : "",
           "id" : "SR-13924",
-          "link" : "https:\/\/bugs.swift.org\/browse\/SR-13924",
-          "radar" : "",
-          "resolution" : "",
-          "status" : "",
-          "title" : "",
-          "updated" : ""
+          "link" : "https:\/\/bugs.swift.org\/browse\/SR-13924"
         }
       ]
     },
@@ -12988,10 +11182,6 @@
         }
       ],
       "link" : "0295-codable-synthesis-for-enums-with-associated-values.md",
-      "reviewManager" : {
-        "link" : "https:\/\/github.com\/compnerd",
-        "name" : "Saleem Abdulrasool"
-      },
       "reviewManagers" : [
         {
           "link" : "https:\/\/github.com\/compnerd",
@@ -13029,10 +11219,6 @@
       ],
       "id" : "SE-0296",
       "link" : "0296-async-await.md",
-      "reviewManager" : {
-        "link" : "https:\/\/github.com\/airspeedswift",
-        "name" : "Ben Cohen"
-      },
       "reviewManagers" : [
         {
           "link" : "https:\/\/github.com\/airspeedswift",
@@ -13062,10 +11248,6 @@
       ],
       "id" : "SE-0297",
       "link" : "0297-concurrency-objc.md",
-      "reviewManager" : {
-        "link" : "https:\/\/github.com\/lattner",
-        "name" : "Chris Lattner"
-      },
       "reviewManagers" : [
         {
           "link" : "https:\/\/github.com\/lattner",
@@ -13107,10 +11289,6 @@
         }
       ],
       "link" : "0298-asyncsequence.md",
-      "reviewManager" : {
-        "link" : "https:\/\/github.com\/DougGregor",
-        "name" : "Doug Gregor"
-      },
       "reviewManagers" : [
         {
           "link" : "https:\/\/github.com\/DougGregor",
@@ -13160,10 +11338,6 @@
         }
       ],
       "link" : "0299-extend-generic-static-member-lookup.md",
-      "reviewManager" : {
-        "link" : "https:\/\/github.com\/jckarter",
-        "name" : "Joe Groff"
-      },
       "reviewManagers" : [
         {
           "link" : "https:\/\/github.com\/jckarter",
@@ -13201,10 +11375,6 @@
       ],
       "id" : "SE-0300",
       "link" : "0300-continuation.md",
-      "reviewManager" : {
-        "link" : "https:\/\/github.com\/airspeedswift",
-        "name" : "Ben Cohen"
-      },
       "reviewManagers" : [
         {
           "link" : "https:\/\/github.com\/airspeedswift",
@@ -13242,10 +11412,6 @@
         }
       ],
       "link" : "0301-package-editing-commands.md",
-      "reviewManager" : {
-        "link" : "https:\/\/github.com\/tomerd",
-        "name" : "Tom Doron"
-      },
       "reviewManagers" : [
         {
           "link" : "https:\/\/github.com\/tomerd",
@@ -13299,10 +11465,6 @@
         }
       ],
       "link" : "0302-concurrent-value-and-concurrent-closures.md",
-      "reviewManager" : {
-        "link" : "https:\/\/github.com\/rjmccall",
-        "name" : "John McCall"
-      },
       "reviewManagers" : [
         {
           "link" : "https:\/\/github.com\/rjmccall",
@@ -13336,10 +11498,6 @@
       ],
       "id" : "SE-0303",
       "link" : "0303-swiftpm-extensible-build-tools.md",
-      "reviewManager" : {
-        "link" : "https:\/\/github.com\/tomerd",
-        "name" : "Tom Doron"
-      },
       "reviewManagers" : [
         {
           "link" : "https:\/\/github.com\/tomerd",
@@ -13377,10 +11535,6 @@
       ],
       "id" : "SE-0304",
       "link" : "0304-structured-concurrency.md",
-      "reviewManager" : {
-        "link" : "https:\/\/github.com\/airspeedswift",
-        "name" : "Ben Cohen"
-      },
       "reviewManagers" : [
         {
           "link" : "https:\/\/github.com\/airspeedswift",
@@ -13418,10 +11572,6 @@
       ],
       "id" : "SE-0305",
       "link" : "0305-swiftpm-binary-target-improvements.md",
-      "reviewManager" : {
-        "link" : "https:\/\/github.com\/tomerd",
-        "name" : "Tom Doron"
-      },
       "reviewManagers" : [
         {
           "link" : "https:\/\/github.com\/tomerd",
@@ -13471,10 +11621,6 @@
       ],
       "id" : "SE-0306",
       "link" : "0306-actors.md",
-      "reviewManager" : {
-        "link" : "https:\/\/github.com\/jckarter",
-        "name" : "Joe Groff"
-      },
       "reviewManagers" : [
         {
           "link" : "https:\/\/github.com\/jckarter",
@@ -13512,10 +11658,6 @@
         }
       ],
       "link" : "0307-allow-interchangeable-use-of-double-cgfloat-types.md",
-      "reviewManager" : {
-        "link" : "https:\/\/github.com\/tkremenek",
-        "name" : "Ted Kremenek"
-      },
       "reviewManagers" : [
         {
           "link" : "https:\/\/github.com\/tkremenek",
@@ -13553,10 +11695,6 @@
         }
       ],
       "link" : "0308-postfix-if-config-expressions.md",
-      "reviewManager" : {
-        "link" : "https:\/\/github.com\/compnerd",
-        "name" : "Saleem Abdulrasool"
-      },
       "reviewManagers" : [
         {
           "link" : "https:\/\/github.com\/compnerd",
@@ -13618,10 +11756,6 @@
         }
       ],
       "link" : "0309-unlock-existential-types-for-all-protocols.md",
-      "reviewManager" : {
-        "link" : "https:\/\/github.com\/jckarter",
-        "name" : "Joe Groff"
-      },
       "reviewManagers" : [
         {
           "link" : "https:\/\/github.com\/jckarter",
@@ -13675,10 +11809,6 @@
         }
       ],
       "link" : "0310-effectful-readonly-properties.md",
-      "reviewManager" : {
-        "link" : "https:\/\/github.com\/DougGregor",
-        "name" : "Doug Gregor"
-      },
       "reviewManagers" : [
         {
           "link" : "https:\/\/github.com\/DougGregor",
@@ -13720,10 +11850,6 @@
       ],
       "id" : "SE-0311",
       "link" : "0311-task-locals.md",
-      "reviewManager" : {
-        "link" : "https:\/\/github.com\/rjmccall",
-        "name" : "John McCall"
-      },
       "reviewManagers" : [
         {
           "link" : "https:\/\/github.com\/rjmccall",
@@ -13757,10 +11883,6 @@
         }
       ],
       "link" : "0312-indexed-and-enumerated-zip-collections.md",
-      "reviewManager" : {
-        "link" : "https:\/\/github.com\/airspeedswift",
-        "name" : "Ben Cohen"
-      },
       "reviewManagers" : [
         {
           "link" : "https:\/\/github.com\/airspeedswift",
@@ -13789,10 +11911,6 @@
       ],
       "id" : "SE-0313",
       "link" : "0313-actor-isolation-control.md",
-      "reviewManager" : {
-        "link" : "https:\/\/github.com\/tkremenek",
-        "name" : "Ted Kremenek"
-      },
       "reviewManagers" : [
         {
           "link" : "https:\/\/github.com\/tkremenek",
@@ -13854,10 +11972,6 @@
         }
       ],
       "link" : "0314-async-stream.md",
-      "reviewManager" : {
-        "link" : "https:\/\/github.com\/DougGregor",
-        "name" : "Doug Gregor"
-      },
       "reviewManagers" : [
         {
           "link" : "https:\/\/github.com\/DougGregor",
@@ -13895,10 +12009,6 @@
         }
       ],
       "link" : "0315-placeholder-types.md",
-      "reviewManager" : {
-        "link" : "https:\/\/github.com\/jckarter",
-        "name" : "Joe Groff"
-      },
       "reviewManagers" : [
         {
           "link" : "https:\/\/github.com\/jckarter",
@@ -13932,10 +12042,6 @@
       ],
       "id" : "SE-0316",
       "link" : "0316-global-actors.md",
-      "reviewManager" : {
-        "link" : "https:\/\/github.com\/jckarter",
-        "name" : "Joe Groff"
-      },
       "reviewManagers" : [
         {
           "link" : "https:\/\/github.com\/jckarter",
@@ -13973,10 +12079,6 @@
       ],
       "id" : "SE-0317",
       "link" : "0317-async-let.md",
-      "reviewManager" : {
-        "link" : "https:\/\/github.com\/airspeedswift",
-        "name" : "Ben Cohen"
-      },
       "reviewManagers" : [
         {
           "link" : "https:\/\/github.com\/airspeedswift",
@@ -14010,10 +12112,6 @@
         }
       ],
       "link" : "0318-package-creation.md",
-      "reviewManager" : {
-        "link" : "https:\/\/github.com\/tomerd",
-        "name" : "Tom Doron"
-      },
       "reviewManagers" : [
         {
           "link" : "https:\/\/github.com\/tomerd",
@@ -14050,10 +12148,6 @@
         }
       ],
       "link" : "0319-never-identifiable.md",
-      "reviewManager" : {
-        "link" : "https:\/\/github.com\/tomerd",
-        "name" : "Tom Doron"
-      },
       "reviewManagers" : [
         {
           "link" : "https:\/\/github.com\/tomerd",
@@ -14099,10 +12193,6 @@
         }
       ],
       "link" : "0320-codingkeyrepresentable.md",
-      "reviewManager" : {
-        "link" : "https:\/\/github.com\/tomerd",
-        "name" : "Tom Doron"
-      },
       "reviewManagers" : [
         {
           "link" : "https:\/\/github.com\/tomerd",
@@ -14144,10 +12234,6 @@
         }
       ],
       "link" : "0321-package-registry-publish.md",
-      "reviewManager" : {
-        "link" : "https:\/\/github.com\/tomerd",
-        "name" : "Tom Doron"
-      },
       "reviewManagers" : [
         {
           "link" : "https:\/\/github.com\/tomerd",
@@ -14184,10 +12270,6 @@
         }
       ],
       "link" : "0322-temporary-buffers.md",
-      "reviewManager" : {
-        "link" : "https:\/\/github.com\/jckarter",
-        "name" : "Joe Groff"
-      },
       "reviewManagers" : [
         {
           "link" : "https:\/\/github.com\/jckarter",
@@ -14225,10 +12307,6 @@
         }
       ],
       "link" : "0323-async-main-semantics.md",
-      "reviewManager" : {
-        "link" : "https:\/\/github.com\/DougGregor",
-        "name" : "Doug Gregor"
-      },
       "reviewManagers" : [
         {
           "link" : "https:\/\/github.com\/DougGregor",
@@ -14270,10 +12348,6 @@
         }
       ],
       "link" : "0324-c-lang-pointer-arg-conversion.md",
-      "reviewManager" : {
-        "link" : "https:\/\/github.com\/compnerd",
-        "name" : "Saleem Abdulrasool"
-      },
       "reviewManagers" : [
         {
           "link" : "https:\/\/github.com\/compnerd",
@@ -14289,14 +12363,8 @@
       "title" : "Relax diagnostics for pointer arguments to C functions",
       "trackingBugs" : [
         {
-          "assignee" : "",
           "id" : "SR-10246",
-          "link" : "https:\/\/bugs.swift.org\/browse\/SR-10246",
-          "radar" : "",
-          "resolution" : "",
-          "status" : "",
-          "title" : "",
-          "updated" : ""
+          "link" : "https:\/\/bugs.swift.org\/browse\/SR-10246"
         }
       ]
     },
@@ -14323,10 +12391,6 @@
         }
       ],
       "link" : "0325-swiftpm-additional-plugin-apis.md",
-      "reviewManager" : {
-        "link" : "https:\/\/github.com\/tomerd",
-        "name" : "Tom Doron"
-      },
       "reviewManagers" : [
         {
           "link" : "https:\/\/github.com\/tomerd",
@@ -14376,10 +12440,6 @@
         }
       ],
       "link" : "0326-extending-multi-statement-closure-inference.md",
-      "reviewManager" : {
-        "link" : "https:\/\/github.com\/airspeedswift",
-        "name" : "Ben Cohen"
-      },
       "reviewManagers" : [
         {
           "link" : "https:\/\/github.com\/airspeedswift",
@@ -14417,10 +12477,6 @@
       ],
       "id" : "SE-0327",
       "link" : "0327-actor-initializers.md",
-      "reviewManager" : {
-        "link" : "https:\/\/github.com\/DougGregor",
-        "name" : "Doug Gregor"
-      },
       "reviewManagers" : [
         {
           "link" : "https:\/\/github.com\/DougGregor",
@@ -14462,10 +12518,6 @@
         }
       ],
       "link" : "0328-structural-opaque-result-types.md",
-      "reviewManager" : {
-        "link" : "https:\/\/github.com\/airspeedswift",
-        "name" : "Ben Cohen"
-      },
       "reviewManagers" : [
         {
           "link" : "https:\/\/github.com\/airspeedswift",
@@ -14519,10 +12571,6 @@
         }
       ],
       "link" : "0329-clock-instant-duration.md",
-      "reviewManager" : {
-        "link" : "https:\/\/github.com\/rjmccall",
-        "name" : "John McCall"
-      },
       "reviewManagers" : [
         {
           "link" : "https:\/\/github.com\/rjmccall",
@@ -14560,10 +12608,6 @@
         }
       ],
       "link" : "0330-collection-conditionals.md",
-      "reviewManager" : {
-        "link" : "https:\/\/github.com\/tkremenek",
-        "name" : "Ted Kremenek"
-      },
       "reviewManagers" : [
         {
           "link" : "https:\/\/github.com\/tkremenek",
@@ -14578,14 +12622,8 @@
       "title" : "Conditionals in Collections",
       "trackingBugs" : [
         {
-          "assignee" : "",
           "id" : "SR-8743",
-          "link" : "https:\/\/bugs.swift.org\/browse\/SR-8743",
-          "radar" : "",
-          "resolution" : "",
-          "status" : "",
-          "title" : "",
-          "updated" : ""
+          "link" : "https:\/\/bugs.swift.org\/browse\/SR-8743"
         }
       ]
     },
@@ -14612,10 +12650,6 @@
         }
       ],
       "link" : "0331-remove-sendable-from-unsafepointer.md",
-      "reviewManager" : {
-        "link" : "https:\/\/github.com\/DougGregor",
-        "name" : "Doug Gregor"
-      },
       "reviewManagers" : [
         {
           "link" : "https:\/\/github.com\/DougGregor",
@@ -14653,10 +12687,6 @@
         }
       ],
       "link" : "0332-swiftpm-command-plugins.md",
-      "reviewManager" : {
-        "link" : "https:\/\/github.com\/tomerd",
-        "name" : "Tom Doron"
-      },
       "reviewManagers" : [
         {
           "link" : "https:\/\/github.com\/tomerd",
@@ -14698,10 +12728,6 @@
         }
       ],
       "link" : "0333-with-memory-rebound.md",
-      "reviewManager" : {
-        "link" : "https:\/\/github.com\/airspeedswift",
-        "name" : "Ben Cohen"
-      },
       "reviewManagers" : [
         {
           "link" : "https:\/\/github.com\/airspeedswift",
@@ -14717,24 +12743,12 @@
       "title" : "Expand usability of `withMemoryRebound`",
       "trackingBugs" : [
         {
-          "assignee" : "",
           "id" : "SR-11082",
-          "link" : "https:\/\/bugs.swift.org\/browse\/SR-11082",
-          "radar" : "",
-          "resolution" : "",
-          "status" : "",
-          "title" : "",
-          "updated" : ""
+          "link" : "https:\/\/bugs.swift.org\/browse\/SR-11082"
         },
         {
-          "assignee" : "",
           "id" : "SR-11087",
-          "link" : "https:\/\/bugs.swift.org\/browse\/SR-11087",
-          "radar" : "",
-          "resolution" : "",
-          "status" : "",
-          "title" : "",
-          "updated" : ""
+          "link" : "https:\/\/bugs.swift.org\/browse\/SR-11087"
         }
       ]
     },
@@ -14765,10 +12779,6 @@
         }
       ],
       "link" : "0334-pointer-usability-improvements.md",
-      "reviewManager" : {
-        "link" : "https:\/\/github.com\/airspeedswift",
-        "name" : "Ben Cohen"
-      },
       "reviewManagers" : [
         {
           "link" : "https:\/\/github.com\/airspeedswift",
@@ -14784,44 +12794,20 @@
       "title" : "Pointer API Usability Improvements",
       "trackingBugs" : [
         {
-          "assignee" : "",
           "id" : "rdar:\/\/64342031",
-          "link" : "rdar:\/\/64342031",
-          "radar" : "",
-          "resolution" : "",
-          "status" : "",
-          "title" : "",
-          "updated" : ""
+          "link" : "rdar:\/\/64342031"
         },
         {
-          "assignee" : "",
           "id" : "SR-11156",
-          "link" : "https:\/\/bugs.swift.org\/browse\/SR-11156",
-          "radar" : "",
-          "resolution" : "",
-          "status" : "",
-          "title" : "",
-          "updated" : ""
+          "link" : "https:\/\/bugs.swift.org\/browse\/SR-11156"
         },
         {
-          "assignee" : "",
           "id" : "rdar:\/\/53272880",
-          "link" : "rdar:\/\/53272880",
-          "radar" : "",
-          "resolution" : "",
-          "status" : "",
-          "title" : "",
-          "updated" : ""
+          "link" : "rdar:\/\/53272880"
         },
         {
-          "assignee" : "",
           "id" : "rdar:\/\/22541346",
-          "link" : "rdar:\/\/22541346",
-          "radar" : "",
-          "resolution" : "",
-          "status" : "",
-          "title" : "",
-          "updated" : ""
+          "link" : "rdar:\/\/22541346"
         }
       ]
     },
@@ -14848,10 +12834,6 @@
         }
       ],
       "link" : "0335-existential-any.md",
-      "reviewManager" : {
-        "link" : "https:\/\/github.com\/DougGregor",
-        "name" : "Doug Gregor"
-      },
       "reviewManagers" : [
         {
           "link" : "https:\/\/github.com\/DougGregor",
@@ -14896,10 +12878,6 @@
       ],
       "id" : "SE-0336",
       "link" : "0336-distributed-actor-isolation.md",
-      "reviewManager" : {
-        "link" : "https:\/\/github.com\/jckarter",
-        "name" : "Joe Groff"
-      },
       "reviewManagers" : [
         {
           "link" : "https:\/\/github.com\/jckarter",
@@ -14937,10 +12915,6 @@
         }
       ],
       "link" : "0337-support-incremental-migration-to-concurrency-checking.md",
-      "reviewManager" : {
-        "link" : "https:\/\/github.com\/AirspeedSwift",
-        "name" : "Ben Cohen"
-      },
       "reviewManagers" : [
         {
           "link" : "https:\/\/github.com\/AirspeedSwift",
@@ -14966,10 +12940,6 @@
       ],
       "id" : "SE-0338",
       "link" : "0338-clarify-execution-non-actor-async.md",
-      "reviewManager" : {
-        "link" : "https:\/\/github.com\/DougGregor",
-        "name" : "Doug Gregor"
-      },
       "reviewManagers" : [
         {
           "link" : "https:\/\/github.com\/DougGregor",
@@ -15017,10 +12987,6 @@
         }
       ],
       "link" : "0339-module-aliasing-for-disambiguation.md",
-      "reviewManager" : {
-        "link" : "https:\/\/github.com\/rjmccall",
-        "name" : "John McCall"
-      },
       "reviewManagers" : [
         {
           "link" : "https:\/\/github.com\/rjmccall",
@@ -15058,10 +13024,6 @@
         }
       ],
       "link" : "0340-swift-noasync.md",
-      "reviewManager" : {
-        "link" : "https:\/\/github.com\/jckarter",
-        "name" : "Joe Groff"
-      },
       "reviewManagers" : [
         {
           "link" : "https:\/\/github.com\/jckarter",
@@ -15095,10 +13057,6 @@
         }
       ],
       "link" : "0341-opaque-parameters.md",
-      "reviewManager" : {
-        "link" : "https:\/\/github.com\/AirspeedSwift",
-        "name" : "Ben Cohen"
-      },
       "reviewManagers" : [
         {
           "link" : "https:\/\/github.com\/AirspeedSwift",
@@ -15140,10 +13098,6 @@
         }
       ],
       "link" : "0342-static-link-runtime-libraries-by-default-on-supported-platforms.md",
-      "reviewManager" : {
-        "link" : "https:\/\/github.com\/tkremenek",
-        "name" : "Ted Kremenek"
-      },
       "reviewManagers" : [
         {
           "link" : "https:\/\/github.com\/tkremenek",
@@ -15188,10 +13142,6 @@
         }
       ],
       "link" : "0343-top-level-concurrency.md",
-      "reviewManager" : {
-        "link" : "https:\/\/github.com\/compnerd",
-        "name" : "Saleem Abdulrasool"
-      },
       "reviewManagers" : [
         {
           "link" : "https:\/\/github.com\/compnerd",
@@ -15237,10 +13187,6 @@
       ],
       "id" : "SE-0344",
       "link" : "0344-distributed-actor-runtime.md",
-      "reviewManager" : {
-        "link" : "https:\/\/github.com\/jckarter\/",
-        "name" : "Joe Groff"
-      },
       "reviewManagers" : [
         {
           "link" : "https:\/\/github.com\/jckarter\/",
@@ -15278,10 +13224,6 @@
         }
       ],
       "link" : "0345-if-let-shorthand.md",
-      "reviewManager" : {
-        "link" : "https:\/\/github.com\/DougGregor",
-        "name" : "Doug Gregor"
-      },
       "reviewManagers" : [
         {
           "link" : "https:\/\/github.com\/DougGregor",
@@ -15335,10 +13277,6 @@
       ],
       "id" : "SE-0346",
       "link" : "0346-light-weight-same-type-syntax.md",
-      "reviewManager" : {
-        "link" : "https:\/\/github.com\/rjmccall",
-        "name" : "John McCall"
-      },
       "reviewManagers" : [
         {
           "link" : "https:\/\/github.com\/rjmccall",
@@ -15376,10 +13314,6 @@
         }
       ],
       "link" : "0347-type-inference-from-default-exprs.md",
-      "reviewManager" : {
-        "link" : "https:\/\/github.com\/DougGregor",
-        "name" : "Doug Gregor"
-      },
       "reviewManagers" : [
         {
           "link" : "https:\/\/github.com\/DougGregor",
@@ -15413,10 +13347,6 @@
         }
       ],
       "link" : "0348-buildpartialblock.md",
-      "reviewManager" : {
-        "link" : "https:\/\/github.com\/airspeedswift",
-        "name" : "Ben Cohen"
-      },
       "reviewManagers" : [
         {
           "link" : "https:\/\/github.com\/airspeedswift",
@@ -15466,10 +13396,6 @@
         }
       ],
       "link" : "0349-unaligned-loads-and-stores.md",
-      "reviewManager" : {
-        "link" : "https:\/\/github.com\/rjmccall",
-        "name" : "John McCall"
-      },
       "reviewManagers" : [
         {
           "link" : "https:\/\/github.com\/rjmccall",
@@ -15495,10 +13421,6 @@
       ],
       "id" : "SE-0350",
       "link" : "0350-regex-type-overview.md",
-      "reviewManager" : {
-        "link" : "https:\/\/github.com\/airspeedswift",
-        "name" : "Ben Cohen"
-      },
       "reviewManagers" : [
         {
           "link" : "https:\/\/github.com\/airspeedswift",
@@ -15556,10 +13478,6 @@
       ],
       "id" : "SE-0351",
       "link" : "0351-regex-builder.md",
-      "reviewManager" : {
-        "link" : "https:\/\/github.com\/airspeedswift",
-        "name" : "Ben Cohen"
-      },
       "reviewManagers" : [
         {
           "link" : "https:\/\/github.com\/airspeedswift",
@@ -15597,10 +13515,6 @@
         }
       ],
       "link" : "0352-implicit-open-existentials.md",
-      "reviewManager" : {
-        "link" : "https:\/\/github.com\/jckarter",
-        "name" : "Joe Groff"
-      },
       "reviewManagers" : [
         {
           "link" : "https:\/\/github.com\/jckarter",
@@ -15633,10 +13547,6 @@
       ],
       "id" : "SE-0353",
       "link" : "0353-constrained-existential-types.md",
-      "reviewManager" : {
-        "link" : "https:\/\/github.com\/jckarter",
-        "name" : "Joe Groff"
-      },
       "reviewManagers" : [
         {
           "link" : "https:\/\/github.com\/jckarter",
@@ -15708,10 +13618,6 @@
         }
       ],
       "link" : "0354-regex-literals.md",
-      "reviewManager" : {
-        "link" : "https:\/\/github.com\/airspeedswift",
-        "name" : "Ben Cohen"
-      },
       "reviewManagers" : [
         {
           "link" : "https:\/\/github.com\/airspeedswift",
@@ -15760,10 +13666,6 @@
       ],
       "id" : "SE-0355",
       "link" : "0355-regex-syntax-run-time-construction.md",
-      "reviewManager" : {
-        "link" : "https:\/\/github.com\/airspeedswift",
-        "name" : "Ben Cohen"
-      },
       "reviewManagers" : [
         {
           "link" : "https:\/\/github.com\/airspeedswift",
@@ -15827,10 +13729,6 @@
         }
       ],
       "link" : "0356-swift-snippets.md",
-      "reviewManager" : {
-        "link" : "https:\/\/github.com\/tomerd",
-        "name" : "Tom Doron"
-      },
       "reviewManagers" : [
         {
           "link" : "https:\/\/github.com\/tomerd",
@@ -15880,10 +13778,6 @@
       ],
       "id" : "SE-0357",
       "link" : "0357-regex-string-processing-algorithms.md",
-      "reviewManager" : {
-        "link" : "https:\/\/github.com\/airspeedswift",
-        "name" : "Ben Cohen"
-      },
       "reviewManagers" : [
         {
           "link" : "https:\/\/github.com\/airspeedswift",
@@ -15937,10 +13831,6 @@
         }
       ],
       "link" : "0358-primary-associated-types-in-stdlib.md",
-      "reviewManager" : {
-        "link" : "https:\/\/github.com\/rjmccall",
-        "name" : "John McCall"
-      },
       "reviewManagers" : [
         {
           "link" : "https:\/\/github.com\/rjmccall",
@@ -15978,10 +13868,6 @@
       ],
       "id" : "SE-0359",
       "link" : "0359-build-time-constant-values.md",
-      "reviewManager" : {
-        "link" : "https:\/\/github.com\/DougGregor",
-        "name" : "Doug Gregor"
-      },
       "reviewManagers" : [
         {
           "link" : "https:\/\/github.com\/DougGregor",
@@ -16036,10 +13922,6 @@
         }
       ],
       "link" : "0360-opaque-result-types-with-availability.md",
-      "reviewManager" : {
-        "link" : "https:\/\/github.com\/jckarter",
-        "name" : "Joe Groff"
-      },
       "reviewManagers" : [
         {
           "link" : "https:\/\/github.com\/jckarter",
@@ -16085,10 +13967,6 @@
         }
       ],
       "link" : "0361-bound-generic-extensions.md",
-      "reviewManager" : {
-        "link" : "https:\/\/github.com\/rjmccall",
-        "name" : "John McCall"
-      },
       "reviewManagers" : [
         {
           "link" : "https:\/\/github.com\/rjmccall",
@@ -16140,10 +14018,6 @@
         }
       ],
       "link" : "0362-piecemeal-future-features.md",
-      "reviewManager" : {
-        "link" : "https:\/\/github.com\/hborla",
-        "name" : "Holly Borla"
-      },
       "reviewManagers" : [
         {
           "link" : "https:\/\/github.com\/hborla",
@@ -16185,10 +14059,6 @@
       ],
       "id" : "SE-0363",
       "link" : "0363-unicode-for-string-processing.md",
-      "reviewManager" : {
-        "link" : "https:\/\/github.com\/airspeedswift",
-        "name" : "Ben Cohen"
-      },
       "reviewManagers" : [
         {
           "link" : "https:\/\/github.com\/airspeedswift",
@@ -16246,10 +14116,6 @@
         }
       ],
       "link" : "0364-retroactive-conformance-warning.md",
-      "reviewManager" : {
-        "link" : "https:\/\/github.com\/stephentyrone",
-        "name" : "Steve Canon"
-      },
       "reviewManagers" : [
         {
           "link" : "https:\/\/github.com\/stephentyrone",
@@ -16269,7 +14135,6 @@
           "code" : 0,
           "kind" : "warning",
           "message" : "Review ended on 2024-06-17 00:00:00 +0000.",
-          "stage" : "validate",
           "suggestion" : ""
         }
       ]
@@ -16299,10 +14164,6 @@
         }
       ],
       "link" : "0365-implicit-self-weak-capture.md",
-      "reviewManager" : {
-        "link" : "https:\/\/github.com\/compnerd",
-        "name" : "Saleem Abdulrasool"
-      },
       "reviewManagers" : [
         {
           "link" : "https:\/\/github.com\/compnerd",
@@ -16360,10 +14221,6 @@
       ],
       "id" : "SE-0366",
       "link" : "0366-move-function.md",
-      "reviewManager" : {
-        "link" : "https:\/\/github.com\/hborla",
-        "name" : "Holly Borla"
-      },
       "reviewManagers" : [
         {
           "link" : "https:\/\/github.com\/hborla",
@@ -16401,10 +14258,6 @@
         }
       ],
       "link" : "0367-conditional-attributes.md",
-      "reviewManager" : {
-        "link" : "https:\/\/github.com\/jckarter",
-        "name" : "Joe Groff"
-      },
       "reviewManagers" : [
         {
           "link" : "https:\/\/github.com\/jckarter",
@@ -16468,10 +14321,6 @@
         }
       ],
       "link" : "0368-staticbigint.md",
-      "reviewManager" : {
-        "link" : "https:\/\/github.com\/DougGregor",
-        "name" : "Doug Gregor"
-      },
       "reviewManagers" : [
         {
           "link" : "https:\/\/github.com\/DougGregor",
@@ -16521,10 +14370,6 @@
         }
       ],
       "link" : "0369-add-customdebugdescription-conformance-to-anykeypath.md",
-      "reviewManager" : {
-        "link" : "https:\/\/github.com\/xwu",
-        "name" : "Xiaodi Wu"
-      },
       "reviewManagers" : [
         {
           "link" : "https:\/\/github.com\/xwu",
@@ -16578,10 +14423,6 @@
         }
       ],
       "link" : "0370-pointer-family-initialization-improvements.md",
-      "reviewManager" : {
-        "link" : "https:\/\/github.com\/rjmccall",
-        "name" : "John McCall"
-      },
       "reviewManagers" : [
         {
           "link" : "https:\/\/github.com\/rjmccall",
@@ -16627,10 +14468,6 @@
         }
       ],
       "link" : "0371-isolated-synchronous-deinit.md",
-      "reviewManager" : {
-        "link" : "https:\/\/github.com\/jumhyn",
-        "name" : "Frederick Kellison-Linn"
-      },
       "reviewManagers" : [
         {
           "link" : "https:\/\/github.com\/jumhyn",
@@ -16675,10 +14512,6 @@
         }
       ],
       "link" : "0372-document-sorting-as-stable.md",
-      "reviewManager" : {
-        "link" : "https:\/\/github.com\/allevato",
-        "name" : "Tony Allevato"
-      },
       "reviewManagers" : [
         {
           "link" : "https:\/\/github.com\/allevato",
@@ -16724,10 +14557,6 @@
         }
       ],
       "link" : "0373-vars-without-limits-in-result-builders.md",
-      "reviewManager" : {
-        "link" : "https:\/\/github.com\/rjmccall",
-        "name" : "John McCall"
-      },
       "reviewManagers" : [
         {
           "link" : "https:\/\/github.com\/rjmccall",
@@ -16777,10 +14606,6 @@
         }
       ],
       "link" : "0374-clock-sleep-for.md",
-      "reviewManager" : {
-        "link" : "https:\/\/github.com\/stephentyrone",
-        "name" : "Steve Canon"
-      },
       "reviewManagers" : [
         {
           "link" : "https:\/\/github.com\/stephentyrone",
@@ -16826,10 +14651,6 @@
         }
       ],
       "link" : "0375-opening-existential-optional.md",
-      "reviewManager" : {
-        "link" : "https:\/\/github.com\/xwu",
-        "name" : "Xiaodi Wu"
-      },
       "reviewManagers" : [
         {
           "link" : "https:\/\/github.com\/xwu",
@@ -16905,10 +14726,6 @@
         }
       ],
       "link" : "0376-function-back-deployment.md",
-      "reviewManager" : {
-        "link" : "https:\/\/github.com\/jumhyn",
-        "name" : "Frederick Kellison-Linn"
-      },
       "reviewManagers" : [
         {
           "link" : "https:\/\/github.com\/jumhyn",
@@ -16966,10 +14783,6 @@
       ],
       "id" : "SE-0377",
       "link" : "0377-parameter-ownership-modifiers.md",
-      "reviewManager" : {
-        "link" : "https:\/\/github.com\/rjmccall",
-        "name" : "John McCall"
-      },
       "reviewManagers" : [
         {
           "link" : "https:\/\/github.com\/rjmccall",
@@ -17015,10 +14828,6 @@
         }
       ],
       "link" : "0378-package-registry-auth.md",
-      "reviewManager" : {
-        "link" : "https:\/\/github.com\/tomerd",
-        "name" : "Tom Doron"
-      },
       "reviewManagers" : [
         {
           "link" : "https:\/\/github.com\/tomerd",
@@ -17072,10 +14881,6 @@
         }
       ],
       "link" : "0379-opt-in-reflection-metadata.md",
-      "reviewManager" : {
-        "link" : "https:\/\/github.com\/jckarter",
-        "name" : "Joe Groff"
-      },
       "reviewManagers" : [
         {
           "link" : "https:\/\/github.com\/jckarter",
@@ -17124,10 +14929,6 @@
         }
       ],
       "link" : "0380-if-switch-expressions.md",
-      "reviewManager" : {
-        "link" : "https:\/\/github.com\/hborla",
-        "name" : "Holly Borla"
-      },
       "reviewManagers" : [
         {
           "link" : "https:\/\/github.com\/hborla",
@@ -17169,10 +14970,6 @@
         }
       ],
       "link" : "0381-task-group-discard-results.md",
-      "reviewManager" : {
-        "link" : "https:\/\/github.com\/DougGregor",
-        "name" : "Doug Gregor"
-      },
       "reviewManagers" : [
         {
           "link" : "https:\/\/github.com\/DougGregor",
@@ -17226,10 +15023,6 @@
       ],
       "id" : "SE-0382",
       "link" : "0382-expression-macros.md",
-      "reviewManager" : {
-        "link" : "https:\/\/github.com\/xwu",
-        "name" : "Xiaodi Wu"
-      },
       "reviewManagers" : [
         {
           "link" : "https:\/\/github.com\/xwu",
@@ -17275,10 +15068,6 @@
         }
       ],
       "link" : "0383-deprecate-uiapplicationmain-and-nsapplicationmain.md",
-      "reviewManager" : {
-        "link" : "https:\/\/github.com\/rjmccall",
-        "name" : "John McCall"
-      },
       "reviewManagers" : [
         {
           "link" : "https:\/\/github.com\/rjmccall",
@@ -17327,10 +15116,6 @@
         }
       ],
       "link" : "0384-importing-forward-declared-objc-interfaces-and-protocols.md",
-      "reviewManager" : {
-        "link" : "https:\/\/github.com\/allevato",
-        "name" : "Tony Allevato"
-      },
       "reviewManagers" : [
         {
           "link" : "https:\/\/github.com\/allevato",
@@ -17409,10 +15194,6 @@
         }
       ],
       "link" : "0385-custom-reflection-metadata.md",
-      "reviewManager" : {
-        "link" : "https:\/\/github.com\/DougGregor",
-        "name" : "Doug Gregor"
-      },
       "reviewManagers" : [
         {
           "link" : "https:\/\/github.com\/DougGregor",
@@ -17483,10 +15264,6 @@
         }
       ],
       "link" : "0386-package-access-modifier.md",
-      "reviewManager" : {
-        "link" : "https:\/\/github.com\/rjmccall",
-        "name" : "John McCall"
-      },
       "reviewManagers" : [
         {
           "link" : "https:\/\/github.com\/rjmccall",
@@ -17558,10 +15335,6 @@
         }
       ],
       "link" : "0387-cross-compilation-destinations.md",
-      "reviewManager" : {
-        "link" : "https:\/\/github.com\/shahmishal",
-        "name" : "Mishal Shah"
-      },
       "reviewManagers" : [
         {
           "link" : "https:\/\/github.com\/shahmishal",
@@ -17606,10 +15379,6 @@
         }
       ],
       "link" : "0388-async-stream-factory.md",
-      "reviewManager" : {
-        "link" : "https:\/\/github.com\/beccadax",
-        "name" : "Becca Royal-Gordon"
-      },
       "reviewManagers" : [
         {
           "link" : "https:\/\/github.com\/beccadax",
@@ -17659,10 +15428,6 @@
       ],
       "id" : "SE-0389",
       "link" : "0389-attached-macros.md",
-      "reviewManager" : {
-        "link" : "https:\/\/github.com\/allevato",
-        "name" : "Tony Allevato"
-      },
       "reviewManagers" : [
         {
           "link" : "https:\/\/github.com\/allevato",
@@ -17716,10 +15481,6 @@
       ],
       "id" : "SE-0390",
       "link" : "0390-noncopyable-structs-and-enums.md",
-      "reviewManager" : {
-        "link" : "https:\/\/github.com\/stephentyrone",
-        "name" : "Stephen Canon"
-      },
       "reviewManagers" : [
         {
           "link" : "https:\/\/github.com\/stephentyrone",
@@ -17825,10 +15586,6 @@
         }
       ],
       "link" : "0391-package-registry-publish.md",
-      "reviewManager" : {
-        "link" : "https:\/\/github.com\/tomerd",
-        "name" : "Tom Doron"
-      },
       "reviewManagers" : [
         {
           "link" : "https:\/\/github.com\/tomerd",
@@ -17862,10 +15619,6 @@
       ],
       "id" : "SE-0392",
       "link" : "0392-custom-actor-executors.md",
-      "reviewManager" : {
-        "link" : "https:\/\/github.com\/jckarter",
-        "name" : "Joe Groff"
-      },
       "reviewManagers" : [
         {
           "link" : "https:\/\/github.com\/jckarter",
@@ -17915,10 +15668,6 @@
       ],
       "id" : "SE-0393",
       "link" : "0393-parameter-packs.md",
-      "reviewManager" : {
-        "link" : "https:\/\/github.com\/xwu",
-        "name" : "Xiaodi Wu"
-      },
       "reviewManagers" : [
         {
           "link" : "https:\/\/github.com\/xwu",
@@ -17978,10 +15727,6 @@
         }
       ],
       "link" : "0394-swiftpm-expression-macros.md",
-      "reviewManager" : {
-        "link" : "https:\/\/github.com\/beccadax",
-        "name" : "Becca Royal-Gordon"
-      },
       "reviewManagers" : [
         {
           "link" : "https:\/\/github.com\/beccadax",
@@ -18027,10 +15772,6 @@
       ],
       "id" : "SE-0395",
       "link" : "0395-observability.md",
-      "reviewManager" : {
-        "link" : "https:\/\/github.com\/airspeedswift",
-        "name" : "Ben Cohen"
-      },
       "reviewManagers" : [
         {
           "link" : "https:\/\/github.com\/airspeedswift",
@@ -18076,10 +15817,6 @@
         }
       ],
       "link" : "0396-never-codable.md",
-      "reviewManager" : {
-        "link" : "https:\/\/github.com\/allevato",
-        "name" : "Tony Allevato"
-      },
       "reviewManagers" : [
         {
           "link" : "https:\/\/github.com\/allevato",
@@ -18125,10 +15862,6 @@
       ],
       "id" : "SE-0397",
       "link" : "0397-freestanding-declaration-macros.md",
-      "reviewManager" : {
-        "link" : "https:\/\/github.com\/rjmccall",
-        "name" : "John McCall"
-      },
       "reviewManagers" : [
         {
           "link" : "https:\/\/github.com\/rjmccall",
@@ -18173,10 +15906,6 @@
       "previousProposalIDs" : [
         "SE-0393"
       ],
-      "reviewManager" : {
-        "link" : "https:\/\/github.com\/Jumhyn",
-        "name" : "Frederick Kellison-Linn"
-      },
       "reviewManagers" : [
         {
           "link" : "https:\/\/github.com\/Jumhyn",
@@ -18222,10 +15951,6 @@
         "SE-0393",
         "SE-0398"
       ],
-      "reviewManager" : {
-        "link" : "https:\/\/github.com\/xwu",
-        "name" : "Xiaodi Wu"
-      },
       "reviewManagers" : [
         {
           "link" : "https:\/\/github.com\/xwu",
@@ -18267,10 +15992,6 @@
       ],
       "id" : "SE-0400",
       "link" : "0400-init-accessors.md",
-      "reviewManager" : {
-        "link" : "https:\/\/github.com\/Jumhyn",
-        "name" : "Frederick Kellison-Linn"
-      },
       "reviewManagers" : [
         {
           "link" : "https:\/\/github.com\/Jumhyn",
@@ -18316,10 +16037,6 @@
         }
       ],
       "link" : "0401-remove-property-wrapper-isolation.md",
-      "reviewManager" : {
-        "link" : "https:\/\/github.com\/hborla",
-        "name" : "Holly Borla"
-      },
       "reviewManagers" : [
         {
           "link" : "https:\/\/github.com\/hborla",
@@ -18374,10 +16091,6 @@
         }
       ],
       "link" : "0402-extension-macros.md",
-      "reviewManager" : {
-        "link" : "https:\/\/github.com\/rjmccall",
-        "name" : "John McCall"
-      },
       "reviewManagers" : [
         {
           "link" : "https:\/\/github.com\/rjmccall",
@@ -18423,10 +16136,6 @@
         }
       ],
       "link" : "0403-swiftpm-mixed-language-targets.md",
-      "reviewManager" : {
-        "link" : "https:\/\/github.com\/compnerd",
-        "name" : "Saleem Abdulrasool"
-      },
       "reviewManagers" : [
         {
           "link" : "https:\/\/github.com\/compnerd",
@@ -18471,10 +16180,6 @@
         }
       ],
       "link" : "0404-nested-protocols.md",
-      "reviewManager" : {
-        "link" : "https:\/\/github.com\/hborla",
-        "name" : "Holly Borla"
-      },
       "reviewManagers" : [
         {
           "link" : "https:\/\/github.com\/hborla",
@@ -18526,10 +16231,6 @@
         }
       ],
       "link" : "0405-string-validating-initializers.md",
-      "reviewManager" : {
-        "link" : "https:\/\/github.com\/allevato",
-        "name" : "Tony Allevato"
-      },
       "reviewManagers" : [
         {
           "link" : "https:\/\/github.com\/allevato",
@@ -18575,10 +16276,6 @@
         }
       ],
       "link" : "0406-async-stream-backpressure.md",
-      "reviewManager" : {
-        "link" : "https:\/\/github.com\/xwu",
-        "name" : "Xiaodi Wu"
-      },
       "reviewManagers" : [
         {
           "link" : "https:\/\/github.com\/xwu",
@@ -18623,10 +16320,6 @@
         }
       ],
       "link" : "0407-member-macro-conformances.md",
-      "reviewManager" : {
-        "link" : "https:\/\/github.com\/rjmccall",
-        "name" : "John McCall"
-      },
       "reviewManagers" : [
         {
           "link" : "https:\/\/github.com\/rjmccall",
@@ -18676,10 +16369,6 @@
         }
       ],
       "link" : "0408-pack-iteration.md",
-      "reviewManager" : {
-        "link" : "https:\/\/github.com\/DougGregor\/",
-        "name" : "Doug Gregor"
-      },
       "reviewManagers" : [
         {
           "link" : "https:\/\/github.com\/DougGregor\/",
@@ -18717,10 +16406,6 @@
       ],
       "id" : "SE-0409",
       "link" : "0409-access-level-on-imports.md",
-      "reviewManager" : {
-        "link" : "https:\/\/github.com\/Jumhyn",
-        "name" : "Frederick Kellison-Linn"
-      },
       "reviewManagers" : [
         {
           "link" : "https:\/\/github.com\/Jumhyn",
@@ -18781,10 +16466,6 @@
         }
       ],
       "link" : "0410-atomics.md",
-      "reviewManager" : {
-        "link" : "https:\/\/github.com\/jckarter",
-        "name" : "Joe Groff"
-      },
       "reviewManagers" : [
         {
           "link" : "https:\/\/github.com\/jckarter",
@@ -18800,14 +16481,8 @@
       "title" : "Low-Level Atomic Operations ⚛︎",
       "trackingBugs" : [
         {
-          "assignee" : "",
           "id" : "SR-9144",
-          "link" : "https:\/\/github.com\/apple\/swift\/issues\/51640",
-          "radar" : "",
-          "resolution" : "",
-          "status" : "",
-          "title" : "",
-          "updated" : ""
+          "link" : "https:\/\/github.com\/apple\/swift\/issues\/51640"
         }
       ]
     },
@@ -18842,10 +16517,6 @@
         }
       ],
       "link" : "0411-isolated-default-values.md",
-      "reviewManager" : {
-        "link" : "https:\/\/github.com\/DougGregor",
-        "name" : "Doug Gregor"
-      },
       "reviewManagers" : [
         {
           "link" : "https:\/\/github.com\/DougGregor",
@@ -18861,14 +16532,8 @@
       "title" : "Isolated default value expressions",
       "trackingBugs" : [
         {
-          "assignee" : "",
           "id" : "apple\/swift#58177",
-          "link" : "https:\/\/github.com\/apple\/swift\/issues\/58177",
-          "radar" : "",
-          "resolution" : "",
-          "status" : "",
-          "title" : "",
-          "updated" : ""
+          "link" : "https:\/\/github.com\/apple\/swift\/issues\/58177"
         }
       ],
       "upcomingFeatureFlag" : {
@@ -18909,10 +16574,6 @@
         "SE-0337",
         "SE-0343"
       ],
-      "reviewManager" : {
-        "link" : "https:\/\/github.com\/hborla",
-        "name" : "Holly Borla"
-      },
       "reviewManagers" : [
         {
           "link" : "https:\/\/github.com\/hborla",
@@ -18961,10 +16622,6 @@
       ],
       "id" : "SE-0413",
       "link" : "0413-typed-throws.md",
-      "reviewManager" : {
-        "link" : "https:\/\/github.com\/stephentyrone",
-        "name" : "Steve Canon"
-      },
       "reviewManagers" : [
         {
           "link" : "https:\/\/github.com\/stephentyrone",
@@ -19020,10 +16677,6 @@
       ],
       "id" : "SE-0414",
       "link" : "0414-region-based-isolation.md",
-      "reviewManager" : {
-        "link" : "https:\/\/github.com\/hborla",
-        "name" : "Holly Borla"
-      },
       "reviewManagers" : [
         {
           "link" : "https:\/\/github.com\/hborla",
@@ -19068,10 +16721,6 @@
       ],
       "id" : "SE-0415",
       "link" : "0415-function-body-macros.md",
-      "reviewManager" : {
-        "link" : "https:\/\/github.com\/allevato",
-        "name" : "Tony Allevato"
-      },
       "reviewManagers" : [
         {
           "link" : "https:\/\/github.com\/allevato",
@@ -19116,10 +16765,6 @@
         }
       ],
       "link" : "0416-keypath-function-subtyping.md",
-      "reviewManager" : {
-        "link" : "https:\/\/github.com\/rjmccall",
-        "name" : "John McCall"
-      },
       "reviewManagers" : [
         {
           "link" : "https:\/\/github.com\/rjmccall",
@@ -19173,10 +16818,6 @@
         }
       ],
       "link" : "0417-task-executor-preference.md",
-      "reviewManager" : {
-        "link" : "https:\/\/github.com\/DougGregor",
-        "name" : "Doug Gregor"
-      },
       "reviewManagers" : [
         {
           "link" : "https:\/\/github.com\/DougGregor",
@@ -19235,10 +16876,6 @@
         }
       ],
       "link" : "0418-inferring-sendable-for-methods.md",
-      "reviewManager" : {
-        "link" : "https:\/\/github.com\/beccadax",
-        "name" : "Becca Royal-Gordon"
-      },
       "reviewManagers" : [
         {
           "link" : "https:\/\/github.com\/beccadax",
@@ -19279,10 +16916,6 @@
       ],
       "id" : "SE-0419",
       "link" : "0419-backtrace-api.md",
-      "reviewManager" : {
-        "link" : "https:\/\/github.com\/stephentyrone",
-        "name" : "Steve Canon"
-      },
       "reviewManagers" : [
         {
           "link" : "https:\/\/github.com\/stephentyrone",
@@ -19341,10 +16974,6 @@
         }
       ],
       "link" : "0420-inheritance-of-actor-isolation.md",
-      "reviewManager" : {
-        "link" : "https:\/\/github.com\/xwu",
-        "name" : "Xiaodi Wu"
-      },
       "reviewManagers" : [
         {
           "link" : "https:\/\/github.com\/xwu",
@@ -19386,10 +17015,6 @@
       ],
       "id" : "SE-0421",
       "link" : "0421-generalize-async-sequence.md",
-      "reviewManager" : {
-        "link" : "https:\/\/github.com\/Jumhyn",
-        "name" : "Freddy Kellison-Linn"
-      },
       "reviewManagers" : [
         {
           "link" : "https:\/\/github.com\/Jumhyn",
@@ -19435,10 +17060,6 @@
         }
       ],
       "link" : "0422-caller-side-default-argument-macro-expression.md",
-      "reviewManager" : {
-        "link" : "https:\/\/github.com\/DougGregor",
-        "name" : "Doug Gregor"
-      },
       "reviewManagers" : [
         {
           "link" : "https:\/\/github.com\/DougGregor",
@@ -19504,10 +17125,6 @@
         }
       ],
       "link" : "0423-dynamic-actor-isolation.md",
-      "reviewManager" : {
-        "link" : "https:\/\/github.com\/airspeedswift",
-        "name" : "Ben Cohen"
-      },
       "reviewManagers" : [
         {
           "link" : "https:\/\/github.com\/airspeedswift",
@@ -19556,10 +17173,6 @@
         }
       ],
       "link" : "0424-custom-isolation-checking-for-serialexecutor.md",
-      "reviewManager" : {
-        "link" : "https:\/\/github.com\/rjmccall",
-        "name" : "John McCall"
-      },
       "reviewManagers" : [
         {
           "link" : "https:\/\/github.com\/rjmccall",
@@ -19596,10 +17209,6 @@
       ],
       "id" : "SE-0425",
       "link" : "0425-int128.md",
-      "reviewManager" : {
-        "link" : "https:\/\/github.com\/DougGregor",
-        "name" : "Doug Gregor"
-      },
       "reviewManagers" : [
         {
           "link" : "https:\/\/github.com\/DougGregor",
@@ -19656,10 +17265,6 @@
       ],
       "id" : "SE-0426",
       "link" : "0426-bitwise-copyable.md",
-      "reviewManager" : {
-        "link" : "https:\/\/github.com\/allevato",
-        "name" : "Tony Allevato"
-      },
       "reviewManagers" : [
         {
           "link" : "https:\/\/github.com\/allevato",
@@ -19700,10 +17305,6 @@
       "previousProposalIDs" : [
         "SE-0390"
       ],
-      "reviewManager" : {
-        "link" : "https:\/\/github.com\/hborla",
-        "name" : "Holly Borla"
-      },
       "reviewManagers" : [
         {
           "link" : "https:\/\/github.com\/hborla",
@@ -19723,7 +17324,6 @@
           "code" : 0,
           "kind" : "warning",
           "message" : "Review ended on 2024-03-22 00:00:00 +0000.",
-          "stage" : "validate",
           "suggestion" : ""
         }
       ]
@@ -19763,10 +17363,6 @@
         }
       ],
       "link" : "0428-resolve-distributed-actor-protocols.md",
-      "reviewManager" : {
-        "link" : "https:\/\/github.com\/Jumhyn",
-        "name" : "Freddy Kellison-Linn"
-      },
       "reviewManagers" : [
         {
           "link" : "https:\/\/github.com\/Jumhyn",
@@ -19811,10 +17407,6 @@
       ],
       "id" : "SE-0429",
       "link" : "0429-partial-consumption.md",
-      "reviewManager" : {
-        "link" : "https:\/\/github.com\/xwu",
-        "name" : "Xiaodi Wu"
-      },
       "reviewManagers" : [
         {
           "link" : "https:\/\/github.com\/xwu",
@@ -19870,10 +17462,6 @@
       "previousProposalIDs" : [
         "SE-0414"
       ],
-      "reviewManager" : {
-        "link" : "https:\/\/github.com\/beccadax",
-        "name" : "Becca Royal-Gordon"
-      },
       "reviewManagers" : [
         {
           "link" : "https:\/\/github.com\/beccadax",
@@ -19924,10 +17512,6 @@
         }
       ],
       "link" : "0431-isolated-any-functions.md",
-      "reviewManager" : {
-        "link" : "https:\/\/github.com\/DougGregor",
-        "name" : "Doug Gregor"
-      },
       "reviewManagers" : [
         {
           "link" : "https:\/\/github.com\/DougGregor",
@@ -19960,10 +17544,6 @@
       ],
       "id" : "SE-0432",
       "link" : "0432-noncopyable-switch.md",
-      "reviewManager" : {
-        "link" : "https:\/\/github.com\/airspeedswift",
-        "name" : "Ben Cohen"
-      },
       "reviewManagers" : [
         {
           "link" : "https:\/\/github.com\/airspeedswift",
@@ -20009,10 +17589,6 @@
         }
       ],
       "link" : "0433-mutex.md",
-      "reviewManager" : {
-        "link" : "https:\/\/github.com\/stephentyrone",
-        "name" : "Stephen Canon"
-      },
       "reviewManagers" : [
         {
           "link" : "https:\/\/github.com\/stephentyrone",
@@ -20053,10 +17629,6 @@
       ],
       "id" : "SE-0434",
       "link" : "0434-global-actor-isolated-types-usability.md",
-      "reviewManager" : {
-        "link" : "https:\/\/github.com\/rjmccall",
-        "name" : "John McCall"
-      },
       "reviewManagers" : [
         {
           "link" : "https:\/\/github.com\/rjmccall",
@@ -20076,7 +17648,6 @@
           "code" : 0,
           "kind" : "warning",
           "message" : "Review ended on 2024-04-22 00:00:00 +0000.",
-          "stage" : "validate",
           "suggestion" : ""
         }
       ]
@@ -20112,10 +17683,6 @@
         }
       ],
       "link" : "0435-swiftpm-per-target-swift-language-version-setting.md",
-      "reviewManager" : {
-        "link" : "https:\/\/github.com\/beccadax",
-        "name" : "Becca Royal-Gordon"
-      },
       "reviewManagers" : [
         {
           "link" : "https:\/\/github.com\/beccadax",
@@ -20168,10 +17735,6 @@
         }
       ],
       "link" : "0436-objc-implementation.md",
-      "reviewManager" : {
-        "link" : "https:\/\/github.com\/Jumhyn",
-        "name" : "Freddy Kellison-Linn"
-      },
       "reviewManagers" : [
         {
           "link" : "https:\/\/github.com\/Jumhyn",
@@ -20222,10 +17785,6 @@
         }
       ],
       "link" : "0437-noncopyable-stdlib-primitives.md",
-      "reviewManager" : {
-        "link" : "https:\/\/github.com\/rjmccall",
-        "name" : "John McCall"
-      },
       "reviewManagers" : [
         {
           "link" : "https:\/\/github.com\/rjmccall",
@@ -20266,10 +17825,6 @@
         }
       ],
       "link" : "0438-metatype-keypath.md",
-      "reviewManager" : {
-        "link" : "https:\/\/github.com\/jckarter",
-        "name" : "Joe Groff"
-      },
       "reviewManagers" : [
         {
           "link" : "https:\/\/github.com\/jckarter",
@@ -20289,12 +17844,11 @@
           "code" : 0,
           "kind" : "warning",
           "message" : "Review ended on 2024-06-13 00:00:00 +0000.",
-          "stage" : "validate",
           "suggestion" : ""
         }
       ]
     }
   ],
-  "schemaVersion" : "0.1.0",
+  "schemaVersion" : "1.0.0",
   "toolVersion" : "0.1.0"
 }
