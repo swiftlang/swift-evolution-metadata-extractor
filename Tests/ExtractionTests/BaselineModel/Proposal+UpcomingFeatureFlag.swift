@@ -9,18 +9,14 @@
 
 extension Proposal_v1 {
     
-    /// Type that represents a tracking bug associated with a proposal.
-    public struct TrackingBug: Sendable, Equatable, Codable {
+    /// Type representing the upcoming feature flag associated with a proposal.
+    public struct UpcomingFeatureFlag: Sendable, Equatable, Codable {
         
-        /// Issue ID
-        public let id: String
+        /// The upcoming feature flag
+        public let flag: String
         
-        /// Link to issue in issue tracker
-        public let link: String
-
-        public init(id: String, link: String) {
-            self.id = id
-            self.link = link
+        public init(flag: String) {
+            self.flag = flag
         }
     }
 }

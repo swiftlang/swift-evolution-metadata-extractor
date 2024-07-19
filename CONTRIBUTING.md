@@ -71,6 +71,8 @@ The schema version is incremented as follows:
     
 - Patch version: A significant change in the content returned could be noted with a patch version. This is unlikely to be used often.
 
+When a major or minor change is made to the schema, the baseline model types in the BaselineModel directory of the test target should also be updated for the new baseline.
+
 ### Tool Version
 The tool version is incremented as follows:
 
@@ -82,3 +84,5 @@ The tool version is incremented as follows:
 
 ### Package Version
 When the schema or tool version increments, the package version is incremented in the same way (major/minor/patch).
+
+The package version may also be incremented for bug fixes or internal improvements that do not affect the public interface of the schema or the tool.
