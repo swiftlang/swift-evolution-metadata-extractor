@@ -10,7 +10,7 @@
 public struct EvolutionMetadata: Equatable, Sendable, Codable {
     
     /// Schema version of this struct and its related types
-    public static let schemaVersion = "0.1.0"
+    public static let schemaVersion = "1.0.0"
 
     /// Creation date as a ISO 8601 formatted string
     public var creationDate: String

@@ -61,7 +61,6 @@ struct ProposalMetadataExtractor {
             }
             
             if let reviewManagers = extractValue(from: headerFieldsByLabel, with: ReviewManagerExtractor.self), !reviewManagers.isEmpty {
-                proposal.reviewManager = reviewManagers.first!
                 proposal.reviewManagers = reviewManagers
             } else {
                 warnings.append(.missingReviewManagers)

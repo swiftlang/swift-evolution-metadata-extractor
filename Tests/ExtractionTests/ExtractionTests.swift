@@ -70,7 +70,7 @@ final class ExtractionTests: XCTestCase {
             XCTAssertEqual(newProposal, sourceProposal)
         }
         
-        // Check the generated JSON to catch issues such as removing optional properties from the schema
+        // Check the generated JSON to catch issues such as removing properties from the schema
         let expectedResultsURL = snapshotURL.appending(path: "expected-results.json")
         let expectedJSONData = try Data(contentsOf: expectedResultsURL)
         let actualJSONData = try extractedEvolutionMetadata.jsonRepresentation

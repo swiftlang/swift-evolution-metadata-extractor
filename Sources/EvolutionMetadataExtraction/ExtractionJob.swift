@@ -239,15 +239,19 @@ extension ExtractionJob {
         try FileManager.default.createDirectory(at: directoryURL, withIntermediateDirectories: true)
         try jsonData.write(to: outputURL)
         
-        // Temporarily write legacy proposals.json file alongside evolution.json format file
+        // Temporarily write not found message to proposals.json file
+        let notFoundMessageJSON = """
+            {
+              "message": "Not Found",
+              "reason": "The proposals.json file has been obsoleted and replaced by https://download.swift.org/swift-evolution/v1/evolution.json. See https://forums.swift.org/t/swift-evolution-metadata-transition/71387 for full transition details.",
+              "status": "404"
+            }
+        """
+        
         let legacyFormatURL = directoryURL.appending(component: "proposals.json")
         print("Writing file '\(legacyFormatURL.lastPathComponent)' to\n'\(legacyFormatURL.absoluteURL.path())'\n")
-
-        let encoder = JSONEncoder()
-        encoder.outputFormatting = [.prettyPrinted, .sortedKeys]
-        let legacyFormatData = try encoder.encode(results.proposals)
-        let adjustedLegacyFormatData = JSONRewriter.applyRewritersToJSONData(rewriters: [JSONRewriter.legacyStatusRewriter], data: legacyFormatData)
-        try adjustedLegacyFormatData.write(to: legacyFormatURL)
+        let notFoundMessageData = Data(notFoundMessageJSON.utf8)
+        try notFoundMessageData.write(to: legacyFormatURL)
     }
     
     private func writeSnapshot(results: EvolutionMetadata, outputURL: URL) throws {

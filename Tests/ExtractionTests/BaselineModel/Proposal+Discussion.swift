@@ -9,16 +9,13 @@
 
 extension Proposal_v1 {
     
-    /// Type that represents a person associated with a proposal.
-    ///
-    /// The `authors` and `reviewManagers` properties contain instances of `Person`
-    ///
-    public struct Person: Sendable, Codable, Equatable {
+    /// Type that represents a discussion abou a proposal.
+    public struct Discussion: Sendable, Codable, Equatable {
 
-        /// Name of the person
+        /// Name of the discussion
         public let name: String
 
-        /// URL string of the GitHub profile of the person. May be an empty string.
+        /// URL string to the discussion
         public let link: String
         
         public init(name: String = "", link: String = "") {

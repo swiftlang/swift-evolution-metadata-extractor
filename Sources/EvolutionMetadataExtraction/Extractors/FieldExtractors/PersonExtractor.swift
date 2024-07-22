@@ -44,7 +44,8 @@ struct PersonExtractor: MarkupWalker {
     mutating func personArray(from headerFields: [String : ListItem]) -> ExtractionResult<[Proposal.Person]> {
         let headerLabels = switch role {
             case .author: ["Author", "Authors"]
-            case .reviewManager: ["Review manager", "Review Manager"]
+            // VALIDATION ENHANCEMENT: Normalize capitalization to 'Review Manager'
+            case .reviewManager: ["Review manager", "Review Manager", "Review managers", "Review Managers"]
         }
         if let (_, headerField) = headerFields[headerLabels] {
             visit(headerField)

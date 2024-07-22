@@ -7,43 +7,36 @@
 // See https://swift.org/LICENSE.txt for license information
 // See https://swift.org/CONTRIBUTORS.txt for the list of Swift project authors
 
-import Foundation
-
 extension Proposal_v1 {
+    
+    /// Type containing metadata extraction and validation warnings and errors
+    ///
+    /// The `warnings` and `errors` properties contain instances of `Issue`
+    ///
     public struct Issue: Sendable, Equatable, Codable {
         
+        /// Kind of issue, warning or error
         public let kind: Kind
-        public let stage: Stage
+        
+        /// Numeric code to identify the issue
+        public let code: Int
+        
+        /// Message describing the issue
         public let message: String
-        
-        public init(kind: Kind, stage: Stage, message: String) {
-            self.kind = kind
-            self.message = message
-            self.stage = stage
-        }
-        
+
+        /// Suggestion for addressing the issue
+        public let suggestion: String
+
         public enum Kind: String, Equatable, Sendable, Codable {
             case warning
             case error
-            public init?(rawValue: RawValue) {
-                switch rawValue {
-                    case "warning": self = .warning
-                    case "error": self = .error
-                    default: return nil
-                }
-            }
         }
         
-        public enum Stage: String, Equatable, Sendable, Codable {
-            case parse
-            case validate
-            public init?(rawValue: RawValue) {
-                switch rawValue {
-                    case "parse": self = .parse
-                    case "validate": self = .validate
-                    default: return nil
-                }
-            }
+        public init(kind: Kind, code: Int = 0, message: String, suggestion: String = "") {
+            self.kind = kind
+            self.code = code
+            self.message = message
+            self.suggestion = suggestion
         }
     }
 }

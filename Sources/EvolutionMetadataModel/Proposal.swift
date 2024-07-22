@@ -22,10 +22,12 @@
                  "link": String // warns on absence
              }
          ],
-        "reviewManager": { // Proposal.Person // warns
-            "name": String,
-            "link": String,
-        },
+         "reviewManagers":  [ // [Proposal.Person]
+              {
+                  "name": String,
+                  "link": String // warns on absence
+              }
+         ],
         "status": {
             "state": String, // Proposal.Status case name, e.g. ".implemented"
             "start": String?, // ISO 8601 date string, key only present for status states with dates
@@ -34,14 +36,8 @@
         },
         "trackingBugs": [ // [Proposal.TrackingBug]?
             {
-                "assignee": String,
                 "id": String,
                 "link": String,
-                "radar": String,
-                "resolution": String,
-                "status": String,
-                "title": String,
-                "updated": String,
             }
         ],
         "implementation": [ // [Proposal.Implementation]?
@@ -52,16 +48,17 @@
                 "id": String
             }
         ],
-
         "warnings": [{ // [Proposal.Issue]?, key missing if array is empty
             "kind": "warning", // differentiates this from an error
+            "code": Int, // unique identifier across warning and errors
             "message": String, // human-readable description of what's wrong
-            "stage": String // e.g. "parse"
+            "suggestion": String // suggestion of how to correct the issue
         }],
         "errors": [{ // [Proposal.Issue]?, key missing if array is empty
             "kind": "error", // differentiates this from a warning
+            "code": Int, // unique identifier across warning and errors
             "message": String, // human-readable description of what's wrong
-            "stage": String // e.g. "parse"
+            "suggestion": String // suggestion of how to correct the issue
         }]
     }
 ```
@@ -90,11 +87,6 @@ public struct Proposal: Equatable, Sendable, Codable, Identifiable {
     
     /// Array of proposal authors
     public var authors: [Person]
-    
-    /// Proposal review manager
-    ///
-    /// - Warning: This property will be removed. Use `reviewManagers` instead.
-    public var reviewManager: Person
 
     /// Array of proposal review managers
     public var reviewManagers: [Person]
@@ -136,7 +128,6 @@ public struct Proposal: Equatable, Sendable, Codable, Identifiable {
         self.sha = sha
         self.authors = authors
         self.reviewManagers = reviewManagers
-        self.reviewManager = reviewManagers.first ?? Person()
         self.status = status
         self.trackingBugs = trackingBugs
         self.implementation = implementation
