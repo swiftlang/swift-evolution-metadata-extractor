@@ -74,7 +74,7 @@ struct ImplementationExtractor: MarkupWalker, ValueExtractor {
         }
         
         // VALIDATION ENHANCEMENT: The legacy tool lowercases the tested value. This is probably not necessary.
-        guard account == "apple" else {
+        guard account == "apple" || account == "swiftlang" else {
             warnings.append(.invalidImplementationLink)
             return
         }
