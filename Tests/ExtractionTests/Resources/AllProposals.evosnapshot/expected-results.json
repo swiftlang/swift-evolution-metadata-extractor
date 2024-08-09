@@ -9796,6 +9796,26 @@
         }
       ],
       "id" : "SE-0264",
+      "implementation" : [
+        {
+          "account" : "swiftlang",
+          "id" : "1089",
+          "repository" : "swift-evolution",
+          "type" : "pull"
+        },
+        {
+          "account" : "swiftlang",
+          "id" : "1090",
+          "repository" : "swift-evolution",
+          "type" : "pull"
+        },
+        {
+          "account" : "swiftlang",
+          "id" : "1091",
+          "repository" : "swift-evolution",
+          "type" : "pull"
+        }
+      ],
       "link" : "0264-stdlib-preview-package.md",
       "reviewManagers" : [
         {
@@ -9809,27 +9829,7 @@
         "version" : ""
       },
       "summary" : "We propose changing the Swift Evolution process to publish accepted proposals as individual SwiftPM packages, as well as a `SwiftPreview` package that bundles these proposal packages together. This group of packages will form the initial landing spot for certain additions to the Swift standard library.",
-      "title" : "Standard Library Preview Package",
-      "warnings" : [
-        {
-          "code" : 0,
-          "kind" : "warning",
-          "message" : "Implementation links to a non-Swift repository.",
-          "suggestion" : ""
-        },
-        {
-          "code" : 0,
-          "kind" : "warning",
-          "message" : "Implementation links to a non-Swift repository.",
-          "suggestion" : ""
-        },
-        {
-          "code" : 0,
-          "kind" : "warning",
-          "message" : "Implementation links to a non-Swift repository.",
-          "suggestion" : ""
-        }
-      ]
+      "title" : "Standard Library Preview Package"
     },
     {
       "authors" : [
