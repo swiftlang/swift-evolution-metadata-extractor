@@ -36,7 +36,7 @@ If the specified path does not exist, the tool will attempt to create the necess
   
   > Will write output to `~/Desktop/my-metadata.json`
 
-- Use the value 'none' to supress output:  
+- Use the value 'none' to suppress output:  
 
   `swift-evolution-metadata-extractor --output-path none`
 
@@ -94,7 +94,7 @@ Use the `snapshot` subcommand to record snapshots.
 
 A snapshot is a directory of input files and expected results for use in development and testing.  Snapshot directories use the file extension `evosnapshot` but are not formally declared as bundles on macOS.
 
-Ad hoc snapshots can also be manually constructed to create content for specifc tests such as verifying that validation errors are correctly detected in malformed proposals.
+Ad hoc snapshots can also be manually constructed to create content for specific tests such as verifying that validation errors are correctly detected in malformed proposals.
 
 ### Options
 The snapshot subcommand has options that work similar to extract command options:
