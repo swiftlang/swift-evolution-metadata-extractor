@@ -54,7 +54,7 @@ struct GitHubContentItem: Codable {
     var url: String
     var html_url: String
     var git_url: String
-    var download_url: String
+    var download_url: String?
     var type: String
     var _links: LinkContainer
     
@@ -63,9 +63,12 @@ struct GitHubContentItem: Codable {
         var git: String
         var html: String
     }
-    
-    func proposalSpec(sortIndex: Int) ->  ProposalSpec {
-        ProposalSpec(url: URL(string: download_url)!, sha: sha, sortIndex: sortIndex)
+
+    /// Returns `nil` if this content item corresponds to a
+    /// subdirectory instead of a direct proposal document.
+    func proposalSpec(sortIndex: Int) ->  ProposalSpec? {
+        guard let download_url else { return nil }
+        return ProposalSpec(url: URL(string: download_url)!, sha: sha, sortIndex: sortIndex)
     }
 }
 

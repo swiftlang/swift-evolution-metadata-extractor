@@ -95,11 +95,17 @@ extension ExtractionJob {
         async let previousResults = ignorePreviousResults ? [] : PreviousResultsFetcher.fetchPreviousResults()
         
         let mainBranchInfo = try await GitHubFetcher.fetchMainBranch()
-        async let proposalContentItems = GitHubFetcher.fetchProposalContentItems(for: mainBranchInfo.commit.sha)
-        
-        let proposalSpecs = try await proposalContentItems.enumerated().map { $1.proposalSpec(sortIndex: $0) }
-        
-        return await ExtractionJob(source: source, output: output, branchInfo: mainBranchInfo, proposalListing: try proposalContentItems, proposalSpecs: proposalSpecs, previousResults: try await previousResults, expectedResults: nil, forcedExtractionIDs: forcedExtractionIDs, toolVersion: toolVersion, extractionDate: extractionDate)
+        let proposalContentItems = try await GitHubFetcher.fetchProposalContentItems(for: mainBranchInfo.commit.sha)
+
+        // The proposals/ directory may have subdirectories for
+        // proposals from specific workgroups. For now, proposals
+        // in those subdirectories are filtered out of this proposal
+        // specs array.
+        let proposalSpecs = proposalContentItems.enumerated().compactMap {
+          $1.proposalSpec(sortIndex: $0)
+        }
+
+        return ExtractionJob(source: source, output: output, branchInfo: mainBranchInfo, proposalListing: proposalContentItems, proposalSpecs: proposalSpecs, previousResults: try await previousResults, expectedResults: nil, forcedExtractionIDs: forcedExtractionIDs, toolVersion: toolVersion, extractionDate: extractionDate)
     }
     
     private static func makeSnapshotExtractionJob(source: Source, output: Output, ignorePreviousResults: Bool, forcedExtractionIDs: [String], toolVersion: String, extractionDate: Date) throws -> ExtractionJob {
