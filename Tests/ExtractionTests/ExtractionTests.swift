@@ -15,46 +15,58 @@ import Foundation
 
 struct `Extraction tests` {
 
-    @Test func `All proposals`() async throws {
-        
-        let snapshotURL = try urlForSnapshot(named: "AllProposals")
-        let extractionJob = try await ExtractionJob.makeExtractionJob(from: .snapshot(snapshotURL), output: .none, ignorePreviousResults: true)
-        let expectedResults = try #require(extractionJob.expectedResults, "Snapshot at '\(snapshotURL.absoluteString)' does not contain expected results.")
-        let expectedResultsByProposalID = expectedResults.proposals.reduce(into: [:]) { $0[$1.id] = $1 }
-        
-        let extractedEvolutionMetadata = try await EvolutionMetadataExtractor.extractEvolutionMetadata(for: extractionJob)
+    struct `All proposals` {
+        private var snapshotURL: URL
+        private var extractionJob: ExtractionJob
+        private var extractedEvolutionMetadata: EvolutionMetadata
 
-        // Check top-level properties
-        #expect(extractedEvolutionMetadata.commit == expectedResults.commit)
-        #expect(extractedEvolutionMetadata.creationDate == expectedResults.creationDate)
-        #expect(extractedEvolutionMetadata.implementationVersions == expectedResults.implementationVersions)
-        #expect(extractedEvolutionMetadata.schemaVersion == expectedResults.schemaVersion)
-        #expect(extractedEvolutionMetadata.toolVersion == expectedResults.toolVersion)
-        
-        // Check proposals
-        for newProposal in extractedEvolutionMetadata.proposals {
-            let id = newProposal.id
-            guard !id.isEmpty  else {
-                continue
-            }
-            
-            guard let sourceProposal = expectedResultsByProposalID[id] else {
-                Issue.record("Unable to find id \(id) in expected results.")
-                continue
-            }
-            
-            #expect(newProposal == sourceProposal)
+        init() async throws {
+            snapshotURL = try urlForSnapshot(named: "AllProposals")
+            extractionJob = try await ExtractionJob.makeExtractionJob(from: .snapshot(snapshotURL), output: .none, ignorePreviousResults: true)
+            extractedEvolutionMetadata = try await EvolutionMetadataExtractor.extractEvolutionMetadata(for: extractionJob)
         }
-        
-        // Check the generated JSON to catch issues such as removing properties from the schema
-        let expectedResultsURL = snapshotURL.appending(path: "expected-results.json")
-        let expectedJSONData = try Data(contentsOf: expectedResultsURL)
-        let actualJSONData = try extractedEvolutionMetadata.jsonRepresentation
-        #expect(expectedJSONData == actualJSONData)
-        
-        // Uncomment to write full JSON files out to compare in a diff tool
-        // try writeJSONFilesToPath(expected: expectedJSONData, actual: actualJSONData, path: "~/Desktop")
 
+        @Test func `Extracted metadata`() async throws {
+            let expectedResults = try #require(extractionJob.expectedResults, "Snapshot from source '\(snapshotURL.absoluteString)' does not contain expected results.")
+
+            // Check top-level properties
+            #expect(extractedEvolutionMetadata.commit == expectedResults.commit)
+            #expect(extractedEvolutionMetadata.creationDate == expectedResults.creationDate)
+            #expect(extractedEvolutionMetadata.implementationVersions == expectedResults.implementationVersions)
+            #expect(extractedEvolutionMetadata.schemaVersion == expectedResults.schemaVersion)
+            #expect(extractedEvolutionMetadata.toolVersion == expectedResults.toolVersion)
+        }
+
+        // Check proposals
+        @Test func `Expected proposals`() async throws {
+            let expectedResults = try #require(extractionJob.expectedResults, "Snapshot at '\(snapshotURL.absoluteString)' does not contain expected results.")
+            let expectedResultsByProposalID = expectedResults.proposals.reduce(into: [:]) { $0[$1.id] = $1 }
+
+            for newProposal in extractedEvolutionMetadata.proposals {
+                let id = newProposal.id
+                guard !id.isEmpty  else {
+                    continue
+                }
+
+                guard let sourceProposal = expectedResultsByProposalID[id] else {
+                    Issue.record("Unable to find id \(id) in expected results.")
+                    continue
+                }
+
+                #expect(newProposal == sourceProposal)
+            }
+        }
+
+        // Check the generated JSON to catch issues such as removing properties from the schema
+        @Test func `Serialization`() throws {
+            let expectedResultsURL = snapshotURL.appending(path: "expected-results.json")
+            let expectedJSONData = try Data(contentsOf: expectedResultsURL)
+            let actualJSONData = try extractedEvolutionMetadata.jsonRepresentation
+            #expect(expectedJSONData == actualJSONData)
+
+            // Uncomment to write full JSON files out to compare in a diff tool
+            // try writeJSONFilesToPath(expected: expectedJSONData, actual: actualJSONData, path: "~/Desktop")
+        }
     }
     
     @Test func `Warnings and errors`() async throws {
