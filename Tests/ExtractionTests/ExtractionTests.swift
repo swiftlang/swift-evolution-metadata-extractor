@@ -68,24 +68,39 @@ struct `Extraction tests` {
             // try writeJSONFilesToPath(expected: expectedJSONData, actual: actualJSONData, path: "~/Desktop")
         }
     }
-    
-    @Test func `Warnings and errors`() async throws {
-        
-        let snapshotURL = try urlForSnapshot(named: "Malformed")
-        let extractionJob = try await ExtractionJob.makeExtractionJob(from: .snapshot(snapshotURL), output: .none, ignorePreviousResults: true)
-        let expectedResults = try #require(extractionJob.expectedResults, "No expected results found in bundle '\(snapshotURL.absoluteString)'")
-        
-        // VALIDATION ENHANCEMENT: Tools like Xcode like to add a newline character to empty files
-        // Possibly instead of using 0007-empty-file.md to test, test separately?
-        // Or test that the file hasn't been corrupted. (Can you even check it into github?)
 
-        let extractionMetadata = try await EvolutionMetadataExtractor.extractEvolutionMetadata(for: extractionJob)
-        
-        // This test zips the extraction results with the expected results
-        // If the two arrays don't have the same count, the test data itself has an error
-        #expect(extractionMetadata.proposals.count == expectedResults.proposals.count)
-        
-        for (actualResult, expectedResult) in zip(extractionMetadata.proposals, expectedResults.proposals) {
+    struct `Malformed proposals` {
+        private static let snapshotName = "Malformed"
+
+        private static var extractionJob: ExtractionJob {
+            get async throws {
+                let snapshotURL = try urlForSnapshot(named: snapshotName)
+                return try await ExtractionJob.makeExtractionJob(from: .snapshot(snapshotURL), output: .none, ignorePreviousResults: true)
+            }
+        }
+
+        @Test func `Extraction metadata`() async throws {
+            let extractionJob = try await Self.extractionJob
+            let expectedResults = try #require(extractionJob.expectedResults, "No expected results found for extraction job with source '\(extractionJob.source)'")
+
+            // VALIDATION ENHANCEMENT: Tools like Xcode like to add a newline character to empty files
+            // Possibly instead of using 0007-empty-file.md to test, test separately?
+            // Or test that the file hasn't been corrupted. (Can you even check it into github?)
+
+            let extractionMetadata = try await EvolutionMetadataExtractor.extractEvolutionMetadata(for: extractionJob)
+
+            // This test zips the extraction results with the expected results
+            // If the two arrays don't have the same count, the test data itself has an error
+            #expect(extractionMetadata.proposals.count == expectedResults.proposals.count)
+        }
+
+        @Test(arguments: try await {
+            let extractionJob = try await Self.extractionJob
+            let expectedResults = try #require(extractionJob.expectedResults, "No expected results found for extraction job with source '\(extractionJob.source)'")
+            let extractionMetadata = try await EvolutionMetadataExtractor.extractEvolutionMetadata(for: extractionJob)
+            return zip(extractionMetadata.proposals, expectedResults.proposals)
+        }())
+        func `Warnings and errors`(actualResult: Proposal, expectedResult: Proposal) async throws {
             #expect(actualResult == expectedResult)
         }
     }
