@@ -122,21 +122,20 @@ struct `Extraction tests` {
         }
     }
     
-    // The lines of text in review-dates-bad.txt are status headers from swift-evolution repository history
-    @Test func `Bad dates`() throws {
-        
+    @Test(arguments: try {
+        // The lines of text in review-dates-bad.txt are status headers from swift-evolution repository history
         let reviewDatesContents = try string(forResource: "review-dates-bad", withExtension: "txt")
+        return reviewDatesContents.split(separator: "\n").map(String.init)
+    }())
+    func `Bad dates`(statusString: String) throws {
 
-        let statusStrings = reviewDatesContents.split(separator: "\n")
-        for statusString in statusStrings {
-            // NOTE: This is something that should be validated!
-            // It seems a common mistake to leave out closing parenthesis or put strong marker inside closing paren
-            let match = try #require(statusString.firstMatch(of: /\((.*)\)/), "Every review item in status strings should have parenthesis with contents. \(statusString) DOES NOT MATCH PATTERN" )
-            
-            let statusDetail = String(match.1)
-            
-            #expect(StatusExtractor.datesForString(statusDetail, processingDate: Date.now) == nil, "Unexpectedly able to parse '\(statusDetail)'")
-        }
+        // NOTE: This is something that should be validated!
+        // It seems a common mistake to leave out closing parenthesis or put strong marker inside closing paren
+        let match = try #require(statusString.firstMatch(of: /\((.*)\)/), "Every review item in status strings should have parenthesis with contents. \(statusString) DOES NOT MATCH PATTERN" )
+
+        let statusDetail = String(match.1)
+
+        #expect(StatusExtractor.datesForString(statusDetail, processingDate: Date.now) == nil, "Unexpectedly able to parse '\(statusDetail)'")
     }
     
     /* Tests for breaking schema changes by serializing using the current model and then attempting to decode using a baseline version of the model from the last major schema release. The baseline model is located in the BaselineModel directory.
