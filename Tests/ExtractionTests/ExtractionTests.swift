@@ -13,7 +13,7 @@ import Foundation
 @testable import EvolutionMetadataModel
 @testable import EvolutionMetadataExtraction
 
-struct ExtractionTests {
+struct `Extraction tests` {
     
     func urlForSnapshot(named snapshotName: String) throws -> URL {
         try #require(Bundle.module.url(forResource: snapshotName, withExtension: "evosnapshot", subdirectory: "Resources"), "Unable to find snapshot \(snapshotName).evosnapshot in test bundle resources.")
@@ -39,7 +39,7 @@ struct ExtractionTests {
         try actual.write(to: FileUtilities.expandedAndStandardizedURL(for: path).appending(path: "\(filePrefix)actual.json"))
     }
 
-    @Test func testAllProposals() async throws {
+    @Test func `All proposals`() async throws {
         
         let snapshotURL = try urlForSnapshot(named: "AllProposals")
         let extractionJob = try await ExtractionJob.makeExtractionJob(from: .snapshot(snapshotURL), output: .none, ignorePreviousResults: true)
@@ -81,7 +81,7 @@ struct ExtractionTests {
 
     }
     
-    @Test func testWarningsAndErrors() async throws {
+    @Test func `Warnings and errors`() async throws {
         
         let snapshotURL = try urlForSnapshot(named: "Malformed")
         let extractionJob = try await ExtractionJob.makeExtractionJob(from: .snapshot(snapshotURL), output: .none, ignorePreviousResults: true)
@@ -103,7 +103,7 @@ struct ExtractionTests {
     }
     
     // The lines of text in review-dates-good.txt are status headers from swift-evolution repository history
-    @Test func testGoodDates() throws {
+    @Test func `Good dates`() throws {
         
         let reviewDatesContents = try string(forResource: "review-dates-good", withExtension: "txt")
         
@@ -120,7 +120,7 @@ struct ExtractionTests {
     }
     
     // The lines of text in review-dates-bad.txt are status headers from swift-evolution repository history
-    @Test func testBadDates() throws {
+    @Test func `Bad dates`() throws {
         
         let reviewDatesContents = try string(forResource: "review-dates-bad", withExtension: "txt")
 
@@ -140,7 +140,7 @@ struct ExtractionTests {
      
         Note that this test assumes that the referenced snapshots are updated to be correct for the current model.
      */
-    @Test func testForBreakingChanges() async throws {
+    @Test func `Breaking changes`() async throws {
 
         let allProposalsURL = try urlForSnapshot(named: "AllProposals")
         let malformedProposalsURL = try urlForSnapshot(named: "Malformed")
@@ -159,7 +159,7 @@ struct ExtractionTests {
     /* Test that if an unknown proposal status is encountered, decoding does not fail and decodes to an .error status with the unknown status value as part of the associated reason string.
         The 'unknown-status.json' file contains the metadata of a single proposal with the fictional unknown status of 'appealed'.
      */
-    @Test func testUnknownStatus() throws {
+    @Test func `Unknown status`() throws {
         let unknownStatusData = try data(forResource: "unknown-status", withExtension: "json")
         let proposal = try JSONDecoder().decode(Proposal.self, from: unknownStatusData)
         #expect(proposal.status == .unknownStatus("appealed"))
