@@ -14,30 +14,6 @@ import Foundation
 @testable import EvolutionMetadataExtraction
 
 struct `Extraction tests` {
-    
-    private func urlForSnapshot(named snapshotName: String) throws -> URL {
-        try #require(Bundle.module.url(forResource: snapshotName, withExtension: "evosnapshot", subdirectory: "Resources"), "Unable to find snapshot \(snapshotName).evosnapshot in test bundle resources.")
-    }
-    
-    private func data(forResource name: String, withExtension ext: String) throws -> Data {
-        let url = try #require(Bundle.module.url(forResource: name, withExtension: ext, subdirectory: "Resources"), "Unable to find resource \(name).\(ext) in test bundle resources.")
-        let data = try Data(contentsOf: url)
-        return data
-    }
-    
-    private func string(forResource name: String, withExtension ext: String) throws -> String {
-        let data = try data(forResource: name, withExtension: ext)
-        let string = try #require(String(data: data, encoding: .utf8), "Unable to make string from contents of \(name).\(ext)")
-        return string
-    }
-    
-    // Convenience to write expected and actual metadata files to disk for comparison in a diff tool
-    private func writeJSONFilesToPath(expected: Data, actual: Data, path: String, prefix: String? = nil) throws {
-        let filePrefix: String
-        if let prefix { filePrefix = "\(prefix)-" } else { filePrefix = "" }
-        try expected.write(to: FileUtilities.expandedAndStandardizedURL(for: path).appending(path: "\(filePrefix)expected.json"))
-        try actual.write(to: FileUtilities.expandedAndStandardizedURL(for: path).appending(path: "\(filePrefix)actual.json"))
-    }
 
     @Test func `All proposals`() async throws {
         
@@ -166,3 +142,28 @@ struct `Extraction tests` {
     }
 }
 
+// MARK: - Helpers
+
+private func urlForSnapshot(named snapshotName: String) throws -> URL {
+    try #require(Bundle.module.url(forResource: snapshotName, withExtension: "evosnapshot", subdirectory: "Resources"), "Unable to find snapshot \(snapshotName).evosnapshot in test bundle resources.")
+}
+
+private func data(forResource name: String, withExtension ext: String) throws -> Data {
+    let url = try #require(Bundle.module.url(forResource: name, withExtension: ext, subdirectory: "Resources"), "Unable to find resource \(name).\(ext) in test bundle resources.")
+    let data = try Data(contentsOf: url)
+    return data
+}
+
+private func string(forResource name: String, withExtension ext: String) throws -> String {
+    let data = try data(forResource: name, withExtension: ext)
+    let string = try #require(String(data: data, encoding: .utf8), "Unable to make string from contents of \(name).\(ext)")
+    return string
+}
+
+// Convenience to write expected and actual metadata files to disk for comparison in a diff tool
+private func writeJSONFilesToPath(expected: Data, actual: Data, path: String, prefix: String? = nil) throws {
+    let filePrefix: String
+    if let prefix { filePrefix = "\(prefix)-" } else { filePrefix = "" }
+    try expected.write(to: FileUtilities.expandedAndStandardizedURL(for: path).appending(path: "\(filePrefix)expected.json"))
+    try actual.write(to: FileUtilities.expandedAndStandardizedURL(for: path).appending(path: "\(filePrefix)actual.json"))
+}
