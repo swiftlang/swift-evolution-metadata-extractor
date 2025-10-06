@@ -116,20 +116,20 @@ struct `Extraction tests` {
      
         Note that this test assumes that the referenced snapshots are updated to be correct for the current model.
      */
-    @Test func `Breaking changes`() async throws {
+    @Test(arguments: [
+        "AllProposals",
+        "Malformed",
+    ])
+    func `Breaking changes`(snapshotName: String) async throws {
 
-        let allProposalsURL = try urlForSnapshot(named: "AllProposals")
-        let malformedProposalsURL = try urlForSnapshot(named: "Malformed")
-        
         let encoder = JSONEncoder()
         let decoder = JSONDecoder()
         
-        for snapshotURL in [allProposalsURL, malformedProposalsURL] {
-            let extractionJob = try await ExtractionJob.makeExtractionJob(from: .snapshot(snapshotURL), output: .none, ignorePreviousResults: true)
-            let extractedMetadata = try await EvolutionMetadataExtractor.extractEvolutionMetadata(for: extractionJob)
-            let data = try encoder.encode(extractedMetadata)
-            _ = try decoder.decode(EvolutionMetadata_v1.self, from: data)
-        }
+        let snapshotURL = try urlForSnapshot(named: snapshotName)
+        let extractionJob = try await ExtractionJob.makeExtractionJob(from: .snapshot(snapshotURL), output: .none, ignorePreviousResults: true)
+        let extractedMetadata = try await EvolutionMetadataExtractor.extractEvolutionMetadata(for: extractionJob)
+        let data = try encoder.encode(extractedMetadata)
+        _ = try decoder.decode(EvolutionMetadata_v1.self, from: data)
     }
 
     /* Test that if an unknown proposal status is encountered, decoding does not fail and decodes to an .error status with the unknown status value as part of the associated reason string.
