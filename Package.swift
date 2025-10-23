@@ -28,7 +28,7 @@ let package = Package(
         .executable(name: "swift-evolution-metadata-extractor", targets: ["swift-evolution-metadata-extractor"])
     ],
     dependencies: [
-        .package(url: "https://github.com/swiftlang/swift-markdown", from: "0.3.0"),
+        .package(url: "https://github.com/swiftlang/swift-markdown", exact: "0.7.1"),
         .package(url: "https://github.com/apple/swift-argument-parser.git", from: "1.3.0"),
     ],
     targets: [
