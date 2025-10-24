@@ -102,7 +102,7 @@ extension ExtractionJob {
         // in those subdirectories are filtered out of this proposal
         // specs array.
         let proposalSpecs = proposalContentItems.enumerated().compactMap {
-          $1.proposalSpec(sortIndex: $0)
+            $1.proposalSpec(sortIndex: $0)
         }
 
         return ExtractionJob(source: source, output: output, branchInfo: mainBranchInfo, proposalListing: proposalContentItems, proposalSpecs: proposalSpecs, previousResults: try await previousResults, expectedResults: nil, forcedExtractionIDs: forcedExtractionIDs, toolVersion: toolVersion, extractionDate: extractionDate)

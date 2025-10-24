@@ -54,14 +54,18 @@ struct GitHubContentItem: Codable {
     var url: String
     var html_url: String
     var git_url: String
-    var download_url: String?
-    var type: String
+    var download_url: String? // nil when type is "dir"
+    var type: String // "file" or "dir"
     var _links: LinkContainer
     
     struct LinkContainer: Codable {
         var `self`: String
         var git: String
         var html: String
+    }
+    
+    var isMarkdownFile: Bool {
+        type == "file" && name.hasSuffix(".md")
     }
 
     /// Returns `nil` if this content item corresponds to a
@@ -123,13 +127,14 @@ struct GitHubFetcher {
         return branchInfo
     }
     
-    // For creating snapshots we need access to the 'raw' GitHub content items
+    // Returns only content items that are Markdown files in the /proposals directory of the repo.
+    // Filters out subdirectories and files without ".md" suffix.
     static func fetchProposalContentItems(for reference: String? = nil) async throws -> [GitHubContentItem] {
         var endpoint = Endpoint.githubProposalsEndpoint
         if let reference {
             endpoint.append(queryItems: [URLQueryItem(name: "ref", value: reference)])
         }
-        return try await getGitHubAPIValue(for: endpoint, type: [GitHubContentItem].self)
+        return try await getGitHubAPIValue(for: endpoint, type: [GitHubContentItem].self).filter { $0.isMarkdownFile }
     }
 
     static func fetchPullRequestProposalList(for pullNumber: String) async throws -> [GitHubPullFileItem] {
