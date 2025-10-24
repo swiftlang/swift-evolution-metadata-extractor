@@ -13,7 +13,7 @@ extension Proposal {
     ///
     /// The `warnings` and `errors` properties contain instances of `Issue`
     ///
-    public struct Issue: Sendable, Equatable, Codable {
+    public struct Issue: Sendable, Hashable, Codable {
         
         /// Kind of issue, warning or error
         public let kind: Kind

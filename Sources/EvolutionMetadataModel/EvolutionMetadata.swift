@@ -7,7 +7,7 @@
 // See https://swift.org/LICENSE.txt for license information
 // See https://swift.org/CONTRIBUTORS.txt for the list of Swift project authors
 
-public struct EvolutionMetadata: Equatable, Sendable, Codable {
+public struct EvolutionMetadata: Sendable, Hashable, Codable {
     
     /// Schema version of this struct and its related types
     public static let schemaVersion = "1.0.0"

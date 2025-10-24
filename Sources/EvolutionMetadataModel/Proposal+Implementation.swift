@@ -10,7 +10,7 @@
 extension Proposal {
     
     /// Type representing a repository code change of a proposal implementation
-    public struct Implementation: Sendable, Equatable, Codable {
+    public struct Implementation: Sendable, Hashable, Codable {
         
         /// The GitHub account containing the implementation
         public let account: String

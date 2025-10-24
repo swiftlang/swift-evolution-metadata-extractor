@@ -18,7 +18,7 @@ extension Proposal {
     ///
     /// The `error` case has an associated `reason` version with a diagnostic string.
     /// 
-    public enum Status: Equatable, Sendable, Comparable {
+    public enum Status: Sendable, Hashable, Comparable {
         case awaitingReview
         case scheduledForReview(start: String, end: String)
         case activeReview(start: String, end: String)

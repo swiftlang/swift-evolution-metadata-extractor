@@ -10,7 +10,7 @@
 extension Proposal {
     
     /// Type representing the upcoming feature flag associated with a proposal.
-    public struct UpcomingFeatureFlag: Sendable, Equatable, Codable {
+    public struct UpcomingFeatureFlag: Sendable, Hashable, Codable {
         
         /// The upcoming feature flag
         public let flag: String

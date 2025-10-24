@@ -13,7 +13,7 @@ extension Proposal {
     ///
     /// The `authors` and `reviewManagers` properties contain instances of `Person`
     ///
-    public struct Person: Sendable, Codable, Equatable {
+    public struct Person: Sendable, Hashable, Codable {
 
         /// Name of the person
         public let name: String

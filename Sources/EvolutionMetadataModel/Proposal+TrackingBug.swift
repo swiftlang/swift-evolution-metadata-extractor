@@ -10,7 +10,7 @@
 extension Proposal {
     
     /// Type that represents a tracking bug associated with a proposal.
-    public struct TrackingBug: Sendable, Equatable, Codable {
+    public struct TrackingBug: Sendable, Hashable, Codable {
         
         /// Issue ID
         public let id: String

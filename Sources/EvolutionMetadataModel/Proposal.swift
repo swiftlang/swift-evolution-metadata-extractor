@@ -66,7 +66,7 @@ Attributes are `var` variables and not `let` constants to make it easier to buil
  
 */
 
-public struct Proposal: Equatable, Sendable, Codable, Identifiable {
+public struct Proposal: Sendable, Hashable, Codable, Identifiable {
 
     /// Proposal ID in the format _SE-NNNN_. For example: "SE-0147"
     public var id: String

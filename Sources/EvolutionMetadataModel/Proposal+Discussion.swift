@@ -10,7 +10,7 @@
 extension Proposal {
     
     /// Type that represents a discussion abou a proposal.
-    public struct Discussion: Sendable, Codable, Equatable {
+    public struct Discussion: Sendable, Hashable, Codable {
 
         /// Name of the discussion
         public let name: String
