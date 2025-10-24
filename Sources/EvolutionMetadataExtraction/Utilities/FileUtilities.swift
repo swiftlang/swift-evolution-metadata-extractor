@@ -94,50 +94,44 @@ enum JSONRewriter {
         }
         return rewrittenString
     }
-    
-    static func prettyPrintVersions(_ sourceString: String) -> String {
-                
-        var processedString = ""
-        var processingVersionsField = false
-        
-        var itemCount = 0
-        let maxPerLine = 10
-        for line in sourceString.split(separator: "\n") {
-            
-            if line.contains(/"implementationVersions" :/) {
-                processedString += line + "\n"
-                processingVersionsField = true
-                continue
-            }
 
-            if processingVersionsField {
-                if line.contains(/],/) {
-                    processedString += "\n" + line + "\n"
-                    processingVersionsField = false
-                    itemCount = 0
-                    continue
+    static func prettyPrintVersions(_ sourceString: String) -> String {
+        enum State { case searching, prettyPrinting, afterPrettyPrinting }
+        let lf = "\n"
+        let maxPerLine = 10
+        var itemCount = 0
+        var processedString = ""
+        var state = State.searching
+        for line in sourceString.split(separator: lf) {
+            switch state {
+            case .searching:
+                processedString += line + lf
+                if line.contains(#""implementationVersions" :"#) {
+                    state = .prettyPrinting
+                }
+            case .prettyPrinting:
+                if line.contains("],") {
+                    processedString += lf + line + lf
+                    state = .afterPrettyPrinting
                 } else {
                     // Use first array item as-is
                     if itemCount == 0 {
                         processedString += line
-                    }
                     // When we are at the max per line, put this array element on a new line
-                    else if itemCount == maxPerLine {
+                    } else if itemCount == maxPerLine {
                         itemCount = 0
-                        processedString += "\n" + line
-                    }
+                        processedString += lf + line
                     // Other array items on same line separated by a space
                     // The original line already contains the separating comma
-                    else {
+                    } else {
                         processedString += " " + line.trimmingCharacters(in: .whitespacesAndNewlines)
                     }
                     itemCount += 1
                 }
-            } else {
-                processedString += line + "\n"
+            case .afterPrettyPrinting:
+                processedString += line + lf
             }
         }
-        
         return processedString
     }
 }
