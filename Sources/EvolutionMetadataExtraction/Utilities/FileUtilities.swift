@@ -117,13 +117,15 @@ enum JSONRewriter {
                     // Use first array item as-is
                     if itemCount == 0 {
                         processedString += line
+                    }
                     // When we are at the max per line, put this array element on a new line
-                    } else if itemCount == maxPerLine {
+                    else if itemCount == maxPerLine {
                         itemCount = 0
                         processedString += lf + line
+                    }
                     // Other array items on same line separated by a space
                     // The original line already contains the separating comma
-                    } else {
+                    else {
                         processedString += " " + line.trimmingCharacters(in: .whitespacesAndNewlines)
                     }
                     itemCount += 1
