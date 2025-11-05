@@ -96,48 +96,38 @@ enum JSONRewriter {
     }
     
     static func prettyPrintVersions(_ sourceString: String) -> String {
-                
-        var processedString = ""
-        var processingVersionsField = false
         
-        var itemCount = 0
-        let maxPerLine = 10
-        for line in sourceString.split(separator: "\n") {
+        let versionsListRegex = /"implementationVersions" : \[\n(?<versionsList>(?:\s*"(?:(?:(?:\d+\.)+\d+)|Next)",?\n)*)/
+        var processedString: String
+        
+        if let match = sourceString.firstMatch(of: versionsListRegex) {
+            // Copy versions list string
+            var versionsString = String(match.output.versionsList)
             
-            if line.contains(/"implementationVersions" :/) {
-                processedString += line + "\n"
-                processingVersionsField = true
-                continue
+            // Remove newlines and spaces for every nth item in versions array
+            let maxPerLine = 10
+            let maxReplacements = maxPerLine - 1
+            let endlineRegex = /\n\s+/ // One or more whitespace intentionally prevents last item from matching
+            
+            var first = true
+            var startIndex = versionsString.startIndex
+            while let foundRange = versionsString[startIndex..<versionsString.endIndex].firstRange(of: endlineRegex) {
+                if first { first = false } // Find and replace endline of first list item
+                else { startIndex = foundRange.upperBound } // Skip the next found endline leaving the line break in place
+                let subrange = startIndex..<versionsString.endIndex
+                versionsString = versionsString.replacing(endlineRegex, with: " ", subrange: subrange, maxReplacements: maxReplacements)
             }
+            
+            // Replace versions list
+            let replacementRange = match.output.versionsList.startIndex..<match.output.versionsList.endIndex
+            processedString = sourceString.replacingCharacters(in: replacementRange, with: versionsString)
+            
+            processedString.replace("\n\n", with: "\n") // Replace blank lines in entire string
 
-            if processingVersionsField {
-                if line.contains(/],/) {
-                    processedString += "\n" + line + "\n"
-                    processingVersionsField = false
-                    itemCount = 0
-                    continue
-                } else {
-                    // Use first array item as-is
-                    if itemCount == 0 {
-                        processedString += line
-                    }
-                    // When we are at the max per line, put this array element on a new line
-                    else if itemCount == maxPerLine {
-                        itemCount = 0
-                        processedString += "\n" + line
-                    }
-                    // Other array items on same line separated by a space
-                    // The original line already contains the separating comma
-                    else {
-                        processedString += " " + line.trimmingCharacters(in: .whitespacesAndNewlines)
-                    }
-                    itemCount += 1
-                }
-            } else {
-                processedString += line + "\n"
-            }
+        } else {
+            processedString = sourceString
         }
-        
+        processedString.append("\n") // Add newline at end of string
         return processedString
     }
 }
