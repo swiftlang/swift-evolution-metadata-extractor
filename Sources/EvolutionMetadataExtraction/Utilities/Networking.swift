@@ -14,7 +14,7 @@ struct PreviousResultsFetcher {
     
     static let previousResultsURL = URL(string: "https://download.swift.org/swift-evolution/v1/evolution.json")!
     
-    static func fetchPreviousResults() async throws -> [Proposal] {
+    static func fetchPreviousResults() async throws -> EvolutionMetadata {
         let request = URLRequest(url: previousResultsURL, cachePolicy: .reloadIgnoringLocalCacheData)
         verbosePrint("Fetching with URLRequest:\n\(request.verboseDescription)")
         do {
@@ -22,8 +22,7 @@ struct PreviousResultsFetcher {
             
             do {
                 let decoder = JSONDecoder()
-                let evolutionMetadata = try decoder.decode(EvolutionMetadata.self, from: data)
-                return evolutionMetadata.proposals
+                return try decoder.decode(EvolutionMetadata.self, from: data)
             } catch {
                 print("Unable to decode \(EvolutionMetadata.self) from:")
                 print(String(decoding: data, as: UTF8.self))

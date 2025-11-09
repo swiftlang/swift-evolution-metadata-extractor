@@ -106,15 +106,14 @@ struct EvolutionMetadataExtractor {
     
     private static func filterProposalSpecs(for extractionJob: ExtractionJob) -> ([ProposalSpec], [SortableProposalWrapper]) {
         
-        let sortablePreviousResults = extractionJob.previousResults
+        // If there are no previous results, there can be no reuse. Return early.
+        guard let previousResults = extractionJob.previousResults else {
+            return (extractionJob.proposalSpecs, [SortableProposalWrapper]())
+        }
+        
+        let sortablePreviousResults = previousResults.proposals
             .enumerated()
             .map { SortableProposalWrapper(proposal: $1, sortIndex: $0)}
-
-        
-        // If reusableProposals is empty, there can be no reuse. Return early.
-        guard !extractionJob.previousResults.isEmpty else {
-            return (extractionJob.proposalSpecs, sortablePreviousResults)
-        }
         
         var parsedProposalsById = sortablePreviousResults.reduce(into: [String:SortableProposalWrapper]()) { $0[$1.id] = $1 }
         var reusableProposals: [SortableProposalWrapper] = []

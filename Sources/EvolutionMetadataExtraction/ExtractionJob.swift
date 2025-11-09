@@ -34,7 +34,7 @@ public struct ExtractionJob: Sendable {
     let branchInfo: GitHubBranch?
     let proposalListing: [GitHubContentItem]? // Ad-hoc snapshots may not have these
     let proposalSpecs: [ProposalSpec]
-    let previousResults: [Proposal]
+    let previousResults: EvolutionMetadata?
     let expectedResults: EvolutionMetadata?
     let forcedExtractionIDs: [String]
     let toolVersion: String
@@ -43,7 +43,7 @@ public struct ExtractionJob: Sendable {
     let temporarySnapshotDirectory: URL?
     var temporaryProposalsDirectory: URL? { temporarySnapshotDirectory?.appending(component: "proposals") }
 
-    private init(source: Source, output: Output, branchInfo: GitHubBranch? = nil, proposalListing: [GitHubContentItem]?, proposalSpecs: [ProposalSpec], previousResults: [Proposal], expectedResults: EvolutionMetadata?, forcedExtractionIDs: [String], toolVersion: String, extractionDate: Date = Date()) {
+    private init(source: Source, output: Output, branchInfo: GitHubBranch? = nil, proposalListing: [GitHubContentItem]?, proposalSpecs: [ProposalSpec], previousResults: EvolutionMetadata?, expectedResults: EvolutionMetadata?, forcedExtractionIDs: [String], toolVersion: String, extractionDate: Date = Date()) {
         self.source = source
         self.branchInfo = branchInfo
         self.proposalListing = proposalListing
@@ -92,8 +92,7 @@ extension ExtractionJob {
         
         assert(source == .network, "makeNetworkExtractionJob() requires network source")
         
-        async let previousResults = ignorePreviousResults ? [] : PreviousResultsFetcher.fetchPreviousResults()
-        
+        async let previousResults = ignorePreviousResults ? nil : PreviousResultsFetcher.fetchPreviousResults()
         let mainBranchInfo = try await GitHubFetcher.fetchMainBranch()
         let proposalContentItems = try await GitHubFetcher.fetchProposalContentItems(for: mainBranchInfo.commit.sha)
 
@@ -130,7 +129,7 @@ extension ExtractionJob {
         var proposalListing: [GitHubContentItem]? = nil
         var directoryContents: [ProposalSpec]
         var proposalSpecs: [ProposalSpec] = []
-        var previousResults: [Proposal] = []
+        var previousResults: EvolutionMetadata? = nil
         
         let branchInfo = try FileUtilities.decode(GitHubBranch.self, from: branchInfoURL)
         
@@ -152,7 +151,7 @@ extension ExtractionJob {
         }
         
         if !ignorePreviousResults {
-            if let previous = try FileUtilities.decode([Proposal].self, from: previousResultsURL) {
+            if let previous = try FileUtilities.decode(EvolutionMetadata.self, from: previousResultsURL) {
                 previousResults = previous
                 previousResultsFound = true
             }
