@@ -1,4 +1,4 @@
-// swift-tools-version: 5.9
+// swift-tools-version: 6.0
 
 // This source file is part of the Swift.org open source project
 //
@@ -12,12 +12,7 @@ import PackageDescription
 
 // Settings to use for all targets
 let swiftSettings: [SwiftSetting] = [
-    .enableUpcomingFeature("BareSlashRegexLiterals"),
     .enableUpcomingFeature("ExistentialAny"),
-    .enableUpcomingFeature("ForwardTrailingClosures"),
-    .enableUpcomingFeature("ConciseMagicFile"),
-    .enableUpcomingFeature("ImportObjcForwardDeclarations"),
-    .enableUpcomingFeature("DisableOutwardActorInference"),
 ]
 
 let package = Package(
