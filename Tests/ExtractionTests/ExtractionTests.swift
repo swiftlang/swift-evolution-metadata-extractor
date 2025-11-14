@@ -13,9 +13,10 @@ import Foundation
 @testable import EvolutionMetadataModel
 @testable import EvolutionMetadataExtraction
 
-struct `Extraction tests` {
+@Suite
+struct `Extraction Tests` {
 
-    struct `All proposals` {
+    struct `All Proposals` {
         private var snapshotURL: URL
         private var extractionJob: ExtractionJob
         private var extractedEvolutionMetadata: EvolutionMetadata
@@ -26,7 +27,7 @@ struct `Extraction tests` {
             extractedEvolutionMetadata = try await EvolutionMetadataExtractor.extractEvolutionMetadata(for: extractionJob)
         }
 
-        @Test func `Extracted metadata`() async throws {
+        @Test func `Extracted Metadata`() async throws {
             let expectedResults = try #require(extractionJob.expectedResults, "Snapshot from source '\(snapshotURL.absoluteString)' does not contain expected results.")
 
             // Check top-level properties
@@ -38,7 +39,7 @@ struct `Extraction tests` {
         }
 
         // Check proposals
-        @Test func `Expected proposals`() async throws {
+        @Test func `Expected Proposals`() async throws {
             let expectedResults = try #require(extractionJob.expectedResults, "Snapshot at '\(snapshotURL.absoluteString)' does not contain expected results.")
             let expectedResultsByProposalID = expectedResults.proposals.reduce(into: [:]) { $0[$1.id] = $1 }
 
@@ -58,7 +59,7 @@ struct `Extraction tests` {
         }
 
         // Check the generated JSON to catch issues such as removing properties from the schema
-        @Test func `Serialization`() throws {
+        @Test func `Expected Serialization`() throws {
             let expectedResultsURL = snapshotURL.appending(path: "expected-results.json")
             let expectedJSONData = try Data(contentsOf: expectedResultsURL)
             let actualJSONData = try extractedEvolutionMetadata.jsonRepresentation
@@ -69,44 +70,31 @@ struct `Extraction tests` {
         }
     }
 
-    struct `Malformed proposals` {
-        private static let snapshotName = "Malformed"
+    private static var warningsAndErrorsArguments: Zip2Sequence<[Proposal], [Proposal]> {
+      get async throws {
+        let snapshotURL = try urlForSnapshot(named: "Malformed")
+        let extractionJob = try await ExtractionJob.makeExtractionJob(from: .snapshot(snapshotURL), output: .none, ignorePreviousResults: true)
+        let expectedResults = try #require(extractionJob.expectedResults, "No expected results found for extraction job with source '\(extractionJob.source)'")
+        let extractionMetadata = try await EvolutionMetadataExtractor.extractEvolutionMetadata(for: extractionJob)
 
-        private static var extractionJob: ExtractionJob {
-            get async throws {
-                let snapshotURL = try urlForSnapshot(named: snapshotName)
-                return try await ExtractionJob.makeExtractionJob(from: .snapshot(snapshotURL), output: .none, ignorePreviousResults: true)
-            }
-        }
+        // This test zips the extraction results with the expected results. If
+        // the two arrays don't have the same count, the test data itself may have an error.
+        try #require(extractionMetadata.proposals.count == expectedResults.proposals.count)
 
-        @Test func `Extraction metadata`() async throws {
-            let extractionJob = try await Self.extractionJob
-            let expectedResults = try #require(extractionJob.expectedResults, "No expected results found for extraction job with source '\(extractionJob.source)'")
-
-            // VALIDATION ENHANCEMENT: Tools like Xcode like to add a newline character to empty files
-            // Possibly instead of using 0007-empty-file.md to test, test separately?
-            // Or test that the file hasn't been corrupted. (Can you even check it into github?)
-
-            let extractionMetadata = try await EvolutionMetadataExtractor.extractEvolutionMetadata(for: extractionJob)
-
-            // This test zips the extraction results with the expected results
-            // If the two arrays don't have the same count, the test data itself has an error
-            #expect(extractionMetadata.proposals.count == expectedResults.proposals.count)
-        }
-
-        @Test(arguments: try await {
-            let extractionJob = try await Self.extractionJob
-            let expectedResults = try #require(extractionJob.expectedResults, "No expected results found for extraction job with source '\(extractionJob.source)'")
-            let extractionMetadata = try await EvolutionMetadataExtractor.extractEvolutionMetadata(for: extractionJob)
-            return zip(extractionMetadata.proposals, expectedResults.proposals)
-        }())
-        func `Warnings and errors`(actualResult: Proposal, expectedResult: Proposal) async throws {
-            #expect(actualResult == expectedResult)
-        }
+        return zip(extractionMetadata.proposals, expectedResults.proposals)
+      }
     }
-    
+
+    // VALIDATION ENHANCEMENT: Tools like Xcode like to add a newline character to empty files
+    // Possibly instead of using 0007-empty-file.md to test, test separately?
+    // Or test that the file hasn't been corrupted. (Can you even check it into github?)
+    @Test(arguments: try await warningsAndErrorsArguments)
+    func `Warnings and Errors`(actualResult: Proposal, expectedResult: Proposal) async throws {
+        #expect(actualResult == expectedResult)
+    }
+
     // The lines of text in review-dates-good.txt are status headers from swift-evolution repository history
-    @Test func `Good dates`() throws {
+    @Test func `Good Dates`() throws {
         
         let reviewDatesContents = try string(forResource: "review-dates-good", withExtension: "txt")
         
@@ -127,7 +115,7 @@ struct `Extraction tests` {
         let reviewDatesContents = try string(forResource: "review-dates-bad", withExtension: "txt")
         return reviewDatesContents.split(separator: "\n").map(String.init)
     }())
-    func `Bad dates`(statusString: String) throws {
+    func `Bad Dates`(statusString: String) throws {
 
         // NOTE: This is something that should be validated!
         // It seems a common mistake to leave out closing parenthesis or put strong marker inside closing paren
@@ -146,7 +134,7 @@ struct `Extraction tests` {
         "AllProposals",
         "Malformed",
     ])
-    func `Breaking changes`(snapshotName: String) async throws {
+    func `Breaking Changes`(snapshotName: String) async throws {
 
         let encoder = JSONEncoder()
         let decoder = JSONDecoder()
@@ -161,7 +149,7 @@ struct `Extraction tests` {
     /* Test that if an unknown proposal status is encountered, decoding does not fail and decodes to an .error status with the unknown status value as part of the associated reason string.
         The 'unknown-status.json' file contains the metadata of a single proposal with the fictional unknown status of 'appealed'.
      */
-    @Test func `Unknown status`() throws {
+    @Test func `Unknown Status`() throws {
         let unknownStatusData = try data(forResource: "unknown-status", withExtension: "json")
         let proposal = try JSONDecoder().decode(Proposal.self, from: unknownStatusData)
         #expect(proposal.status == .unknownStatus("appealed"))
@@ -192,4 +180,8 @@ private func writeJSONFilesToPath(expected: Data, actual: Data, path: String, pr
     if let prefix { filePrefix = "\(prefix)-" } else { filePrefix = "" }
     try expected.write(to: FileUtilities.expandedAndStandardizedURL(for: path).appending(path: "\(filePrefix)expected.json"))
     try actual.write(to: FileUtilities.expandedAndStandardizedURL(for: path).appending(path: "\(filePrefix)actual.json"))
+}
+
+extension Proposal: CustomTestStringConvertible {
+    public var testDescription: String { id.isEmpty ? "No ID" : id }
 }
