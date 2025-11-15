@@ -1,10 +1,10 @@
 {
-  "commit" : "064d72daa008a6bbed846b3ef280fb723a8c9c4b",
-  "creationDate" : "2024-06-18T00:56:40Z",
+  "commit" : "d0891031bd869dc47a8305920959649177e65590",
+  "creationDate" : "2025-11-15T01:49:30Z",
   "implementationVersions" : [
     "2.2", "3.0", "3.0.1", "3.1", "4.0", "4.1", "4.2", "5.0", "5.1", "5.2",
     "5.3", "5.4", "5.5", "5.5.2", "5.6", "5.7", "5.8", "5.9", "5.9.2", "5.10",
-    "6.0"
+    "6.0", "6.1", "6.2", "6.2.3", "6.3", "Next"
   ],
   "proposals" : [
     {
@@ -215,7 +215,7 @@
           "name" : "Doug Gregor"
         }
       ],
-      "sha" : "2b78b786bd506387c4ff56cb8b7ccb31981efba1",
+      "sha" : "76349a22878793bc9ce8b8513bc1720b609b8079",
       "status" : {
         "state" : "implemented",
         "version" : "3.0"
@@ -619,7 +619,7 @@
           "name" : "Chris Lattner"
         }
       ],
-      "sha" : "9b1646ff2f633aafe582bc25df27b5dfd2dbc95a",
+      "sha" : "2bddbf171cd0fab04931922277b5440d0b72df36",
       "status" : {
         "state" : "returnedForRevision"
       },
@@ -933,7 +933,7 @@
           "name" : "Joe Groff"
         }
       ],
-      "sha" : "c86badb14a7357474c78b8df1f4339db4fa038ea",
+      "sha" : "24b89a5eb9b6977feabf3002719d289595c817db",
       "status" : {
         "state" : "rejected"
       },
@@ -2037,7 +2037,7 @@
           "name" : "Joe Groff"
         }
       ],
-      "sha" : "6461ecec58729405b0ca0f0519895b184e050afd",
+      "sha" : "478a23adf462a365fd0c232b054f70c7fb5b06eb",
       "status" : {
         "state" : "rejected"
       },
@@ -2575,7 +2575,7 @@
           "name" : "Chris Lattner"
         }
       ],
-      "sha" : "c541f9afd12da0dea145a9dc5ad78194de306d3c",
+      "sha" : "793f313095f77b8e49b5b9181cc56215e654d558",
       "status" : {
         "state" : "rejected"
       },
@@ -2639,7 +2639,7 @@
           "name" : "Chris Lattner"
         }
       ],
-      "sha" : "298e4dcde98c3c4d673d94cbe9259f426ee9e279",
+      "sha" : "78442438322f0b2c3788a64f50a022f0ae1dc93e",
       "status" : {
         "state" : "implemented",
         "version" : "4.1"
@@ -2897,7 +2897,7 @@
           "name" : "Anders Bertelrud"
         }
       ],
-      "sha" : "ff458171b2e2cca3dc85413885d94351e5791bf0",
+      "sha" : "5e3e24bfedff47d25feec2cc0bb2a4ffce9583ff",
       "status" : {
         "state" : "implemented",
         "version" : "3.1"
@@ -3100,7 +3100,7 @@
           "name" : "Chris Lattner"
         }
       ],
-      "sha" : "8f17fd830baa385e34f8561b78c31da83cc11993",
+      "sha" : "19bfd9d3bc36bb7d1cfba1c2b68b2af922bc5598",
       "status" : {
         "state" : "implemented",
         "version" : "3.0"
@@ -3511,12 +3511,12 @@
           "name" : "Joe Groff"
         }
       ],
-      "sha" : "902b0258defda3355599836f0e533753086a5ff3",
+      "sha" : "95ca69435713364d64d1570c217b1ef44b9638cd",
       "status" : {
         "state" : "implemented",
         "version" : "3.0"
       },
-      "summary" : "Swift condition clauses appear in `guard`, `if`, and `while` statements. This proposal re-architects the condition grammar to enable an arbitrary mix of Boolean expressions, `let` conditions (which test and unwrap optionals), general `case` clauses for arbitrary pattern matching, and availability tests.  It removes `where` clauses from optional binding conditions and case conditions, and eliminates gramatical ambiguity by using commas for separation between clauses instead of using them both to separate clauses and terms within each clause.  These modifications streamline Swift's syntax and alleviate the situation where many Swift developers don't know they can use arbitrary Boolean conditions after a value binding.",
+      "summary" : "Swift condition clauses appear in `guard`, `if`, and `while` statements. This proposal re-architects the condition grammar to enable an arbitrary mix of Boolean expressions, `let` conditions (which test and unwrap optionals), general `case` clauses for arbitrary pattern matching, and availability tests.  It removes `where` clauses from optional binding conditions and case conditions, and eliminates grammatical ambiguity by using commas for separation between clauses instead of using them both to separate clauses and terms within each clause.  These modifications streamline Swift's syntax and alleviate the situation where many Swift developers don't know they can use arbitrary Boolean conditions after a value binding.",
       "title" : "Restructuring Condition Clauses"
     },
     {
@@ -3734,7 +3734,7 @@
           "name" : "Chris Lattner"
         }
       ],
-      "sha" : "b43afd0446faaa27b8988d28bcdda1bb52e1d39f",
+      "sha" : "e5f4714024bdd77a88871c89f3887ff15f08b21b",
       "status" : {
         "state" : "implemented",
         "version" : "3.0"
@@ -3773,7 +3773,7 @@
           "name" : "Chris Lattner"
         }
       ],
-      "sha" : "cab2021cf871ed387f954cb31c748f819444d0a4",
+      "sha" : "6acefab32f961b288b55ee053599c167f8cdb1c5",
       "status" : {
         "state" : "implemented",
         "version" : "3.0"
@@ -3806,7 +3806,7 @@
           "name" : "Chris Lattner"
         }
       ],
-      "sha" : "77357b691826ea1fd95affc966e8060f0319e098",
+      "sha" : "b1373d8a757201fd2f83c41556dd43b1de02cb26",
       "status" : {
         "state" : "rejected"
       },
@@ -4216,7 +4216,7 @@
           "name" : "Chris Lattner"
         }
       ],
-      "sha" : "7a9728399d869c827225c22656575b6e68a7a2de",
+      "sha" : "9112147c9ad7c1af6ae3c1270715a1f982bcab9a",
       "status" : {
         "state" : "rejected"
       },
@@ -4878,7 +4878,7 @@
           "name" : "Dave Abrahams"
         }
       ],
-      "sha" : "74f3c7b0a5ef4976c9d2a07050f6d93993cfd9cb",
+      "sha" : "b425d8356ad78d96b138cdbf74233e0d2c866198",
       "status" : {
         "state" : "implemented",
         "version" : "3.0.1"
@@ -5112,7 +5112,7 @@
           "name" : "Anders Bertelrud"
         }
       ],
-      "sha" : "77cc29266d82db0e5ef4e51c491b1a9ad43e53c6",
+      "sha" : "6900359fa2caf3d2aa5705b609705433b9d23693",
       "status" : {
         "state" : "implemented",
         "version" : "3.1"
@@ -5184,7 +5184,7 @@
           "name" : "Doug Gregor"
         }
       ],
-      "sha" : "b40479613ea922e8a3957d3ee92409a960b47a7e",
+      "sha" : "7964d5d408a4cac5cb30567d3ca7d45ac976962d",
       "status" : {
         "state" : "implemented",
         "version" : "3.1"
@@ -5510,7 +5510,7 @@
           "name" : "Doug Gregor"
         }
       ],
-      "sha" : "74e685f6f420021cbc0de97d2262c800d6c11061",
+      "sha" : "a3107aef798cfb6c252363ebe9b9d7dbb0f95d51",
       "status" : {
         "state" : "implemented",
         "version" : "4.0"
@@ -5731,7 +5731,7 @@
           "name" : "Rick Ballard"
         }
       ],
-      "sha" : "9cce18f915ddf7060f828f424107476b6d21917e",
+      "sha" : "78d428e350c82ecdd7ea4d9e43f48fa5ac92589b",
       "status" : {
         "state" : "implemented",
         "version" : "4.0"
@@ -6125,7 +6125,7 @@
           "name" : "Doug Gregor"
         }
       ],
-      "sha" : "83286f50cd8d9260c8ddd824f8d5f246a2ae04ec",
+      "sha" : "0864e86a10858c611abff8acbc5cfe600f54144c",
       "status" : {
         "state" : "implemented",
         "version" : "4.0"
@@ -6162,7 +6162,7 @@
           "name" : "Ted Kremenek"
         }
       ],
-      "sha" : "edf2cd57ed2905436138d31d67418878f43725ac",
+      "sha" : "26055065f5ee92361f65c7138d48686ba4585067",
       "status" : {
         "state" : "implemented",
         "version" : "4.0"
@@ -6191,7 +6191,7 @@
           "name" : "Doug Gregor"
         }
       ],
-      "sha" : "6f791b7fc2c455385a6963ebe0ec37bb3c5477e5",
+      "sha" : "ead1768f74dfa023fa9420a0d1c97ee6614282b0",
       "status" : {
         "state" : "implemented",
         "version" : "4.2"
@@ -6251,7 +6251,7 @@
           "name" : "Ben Cohen"
         }
       ],
-      "sha" : "3deef846854dd85b61b88fc95a6be7bb6576edfb",
+      "sha" : "f11512ff961e5fea75340674cc7d02ac219ea2da",
       "status" : {
         "state" : "implemented",
         "version" : "4.0"
@@ -6386,7 +6386,7 @@
           "name" : "Ted Kremenek"
         }
       ],
-      "sha" : "1593ba1c1f4889e8a8a5949da780be5214ece9e1",
+      "sha" : "abe8de6074febe621c2addaa54c22be3354f2c90",
       "status" : {
         "state" : "implemented",
         "version" : "4.0"
@@ -6500,7 +6500,7 @@
           "name" : "Chris Lattner"
         }
       ],
-      "sha" : "854ec865ef5f40048e7719f4e7e586098f6f5f71",
+      "sha" : "eb83064787baf4664744d1a2ab3018df71ab36eb",
       "status" : {
         "state" : "implemented",
         "version" : "4.0"
@@ -6518,7 +6518,7 @@
       "authors" : [
         {
           "link" : "https:\/\/github.com\/tayloraswift",
-          "name" : "Dianna Ma (“Taylor Swift”)"
+          "name" : "Diana Ma (“Taylor Swift”)"
         }
       ],
       "discussions" : [
@@ -6543,7 +6543,7 @@
           "name" : "Doug Gregor"
         }
       ],
-      "sha" : "772376bbdbaf9f7f8dc83173bbd3a1aabaae9af3",
+      "sha" : "a8cff99c6bd14fe782a3220e002f6c80e57857ac",
       "status" : {
         "state" : "implemented",
         "version" : "4.1"
@@ -6890,7 +6890,7 @@
           "name" : "Ted Kremenek"
         }
       ],
-      "sha" : "20a15b047e3e59f705b3a750f10ca89f5bfe5f54",
+      "sha" : "bbdcc7305addfa08e004b1f5c16d7da7b760db99",
       "status" : {
         "state" : "implemented",
         "version" : "4.2"
@@ -7015,7 +7015,7 @@
           "name" : "Ted Kremenek"
         }
       ],
-      "sha" : "51133c3744deaa0aa4a600e9229a806ef2fe6867",
+      "sha" : "2b69a98991a8c8fe4aa456529f0f4fc955659447",
       "status" : {
         "state" : "implemented",
         "version" : "4.2"
@@ -7109,7 +7109,7 @@
           "name" : "Ben Cohen"
         }
       ],
-      "sha" : "59b4d0722fddb276479416299affc59c6edf61c0",
+      "sha" : "7b6608d542f584ef3c8360e132f7e2e424a2d415",
       "status" : {
         "state" : "implemented",
         "version" : "4.1"
@@ -7481,7 +7481,7 @@
           "name" : "Dave Abrahams"
         }
       ],
-      "sha" : "df5aa065c7ed7614d8ed94d4145ffacee61b3a35",
+      "sha" : "c82a4d6fa20ba3e82eeb30957d16b825d4bfe1c0",
       "status" : {
         "state" : "implemented",
         "version" : "4.2"
@@ -7557,7 +7557,7 @@
           "name" : "Boris Bügling"
         }
       ],
-      "sha" : "def6f95c7d0bcfadd191816c658e4c42b0ed1701",
+      "sha" : "78b2825f32270eabe15d402c7b33b2aa078c16b4",
       "status" : {
         "state" : "implemented",
         "version" : "4.2"
@@ -8121,7 +8121,7 @@
           "name" : "Joe Groff"
         }
       ],
-      "sha" : "024899b1580c82fba798d27ece13779cc489c30b",
+      "sha" : "cd78c92bc4869bbc69220cf879069dcb56a2dfe8",
       "status" : {
         "state" : "withdrawn"
       },
@@ -8359,7 +8359,7 @@
           "name" : "Doug Gregor"
         }
       ],
-      "sha" : "2acc16717bd0e07fe5dba528294414f31db2f4a8",
+      "sha" : "701036698b7d37946134f41e82479610554ab627",
       "status" : {
         "state" : "implemented",
         "version" : "5.0"
@@ -8474,7 +8474,7 @@
           "name" : "Joe Groff"
         }
       ],
-      "sha" : "cb8ac69f6db493ea47d185817bc4137b14f10ce4",
+      "sha" : "ec8dd5f2274d88cfd0e0e60a46e04c5278e1c99f",
       "status" : {
         "state" : "rejected"
       },
@@ -8649,7 +8649,7 @@
           "name" : "Chris Lattner"
         }
       ],
-      "sha" : "d7e7f7d7331a9ab825684a8b78b01fd6cb36af94",
+      "sha" : "f4b979f6f73a7118a8e157f85889b0ed2f9eeaf4",
       "status" : {
         "state" : "implemented",
         "version" : "5.0"
@@ -8840,7 +8840,7 @@
           "name" : "Ben Cohen"
         }
       ],
-      "sha" : "9e64b5a25fe164c1b1dd076f91bb7b089db3da3e",
+      "sha" : "b75c0a844886536ad8dabe261dee39549968d4c1",
       "status" : {
         "state" : "implemented",
         "version" : "5.1"
@@ -8930,7 +8930,7 @@
       "authors" : [
         {
           "link" : "https:\/\/github.com\/tayloraswift",
-          "name" : "Dianna Ma (“Taylor Swift”)"
+          "name" : "Diana Ma (“Taylor Swift”)"
         },
         {
           "link" : "https:\/\/github.com\/lattner",
@@ -8959,7 +8959,7 @@
           "name" : "Ben Cohen"
         }
       ],
-      "sha" : "048bbc907c79c68dee3b5edcf973f22b82df437a",
+      "sha" : "7df6c0ee758784745cb196dd76c1499049b41b6b",
       "status" : {
         "state" : "rejected"
       },
@@ -8999,7 +8999,7 @@
           "name" : "Ben Cohen"
         }
       ],
-      "sha" : "da3ea39a6172d38976fbaf96a84be582d7402cd0",
+      "sha" : "a6404963e1c1f4c211a4a0c44047ffe08ba1f199",
       "status" : {
         "state" : "implemented",
         "version" : "5.1"
@@ -9035,7 +9035,7 @@
           "name" : "Ted Kremenek"
         }
       ],
-      "sha" : "7180c5ec9b257aca37e120d7370c93bfe711629c",
+      "sha" : "28c017a2b9731fd34bee048c9a81739070c59503",
       "status" : {
         "state" : "implemented",
         "version" : "5.1"
@@ -9082,7 +9082,7 @@
           "name" : "John McCall"
         }
       ],
-      "sha" : "dae0a33fc3df3d17f2a475f7d8f0ae84ad052593",
+      "sha" : "c4fe2be0a8d03435e1dd5caa5e1da66583150387",
       "status" : {
         "state" : "accepted"
       },
@@ -9353,7 +9353,7 @@
           "name" : "Chris Lattner"
         }
       ],
-      "sha" : "bf59d62b45571b596eeb30f6400ffefe431e2942",
+      "sha" : "035161bc7b704c7832d567cadc00b06591643af1",
       "status" : {
         "state" : "implemented",
         "version" : "5.2"
@@ -9394,7 +9394,7 @@
           "name" : "Doug Gregor"
         }
       ],
-      "sha" : "ca63840d4f6fdfc5abc8542268f2152bf757cc98",
+      "sha" : "fdc1935b81b6cbffcae3accde044bc6d4db193fc",
       "status" : {
         "state" : "implemented",
         "version" : "5.1"
@@ -9499,8 +9499,24 @@
       ],
       "discussions" : [
         {
+          "link" : "https:\/\/forums.swift.org\/t\/se-0084-spinoff-newlines-as-item-separators\/2659",
+          "name" : "previous pitch 1"
+        },
+        {
+          "link" : "https:\/\/forums.swift.org\/t\/trailing-commas-in-all-expression-lists\/19527",
+          "name" : "previous pitch 2"
+        },
+        {
+          "link" : "https:\/\/forums.swift.org\/t\/pitch-eliding-commas-from-multiline-expression-lists\/22558",
+          "name" : "pitch"
+        },
+        {
+          "link" : "https:\/\/forums.swift.org\/t\/se-0257-eliding-commas-from-multiline-expression-lists\/22889",
+          "name" : "review"
+        },
+        {
           "link" : "https:\/\/forums.swift.org\/t\/se-0257-eliding-commas-from-multiline-expression-lists\/22889\/191",
-          "name" : "Rationale"
+          "name" : "returned for revision"
         }
       ],
       "id" : "SE-0257",
@@ -9519,7 +9535,7 @@
           "name" : "Ted Kremenek"
         }
       ],
-      "sha" : "e0717264003c3bfa20276a1c7698af9e3e10f3cb",
+      "sha" : "9f08aa63f16c1bb5cce71a36ca38ea9406f70b08",
       "status" : {
         "state" : "returnedForRevision"
       },
@@ -9567,7 +9583,7 @@
           "name" : "John McCall"
         }
       ],
-      "sha" : "625f464bd665309613e6d6d4c83501e7734a3d29",
+      "sha" : "68c8be7a777707ca0133373da4524f2367ec6375",
       "status" : {
         "state" : "implemented",
         "version" : "5.1"
@@ -9600,7 +9616,7 @@
           "name" : "Ben Cohen"
         }
       ],
-      "sha" : "ff167fbb1b592c6fa176f9f2a63cd4665d56a807",
+      "sha" : "c8a1249e4faba3aace82bc508fd263de1763e489",
       "status" : {
         "state" : "returnedForRevision"
       },
@@ -9644,7 +9660,7 @@
           "name" : "John McCall"
         }
       ],
-      "sha" : "7d19902b089a9d7733394274703f6b15d7987f95",
+      "sha" : "e14420908c99e6b9147b2f85c6cd81462eaf20c6",
       "status" : {
         "state" : "implemented",
         "version" : "5.1"
@@ -9685,7 +9701,7 @@
           "name" : "Ben Cohen"
         }
       ],
-      "sha" : "48fcc60f47c9aaddaaeedd2dbd8fac9858c562a9",
+      "sha" : "c19eda84de6b27568ad317a4703c217cc7d75fe5",
       "status" : {
         "state" : "implemented",
         "version" : "5.1"
@@ -9875,7 +9891,7 @@
       "authors" : [
         {
           "link" : "https:\/\/github.com\/tayloraswift",
-          "name" : "Dianna Ma (taylorswift)"
+          "name" : "Diana Ma (taylorswift)"
         }
       ],
       "discussions" : [
@@ -9900,7 +9916,7 @@
           "name" : "Ben Cohen"
         }
       ],
-      "sha" : "2ed30a3bd452ebb2c2ff209f52aa2b9e3fafba47",
+      "sha" : "1c43e8389060e05d7f4171e98d981d9eb42a962f",
       "status" : {
         "state" : "implemented",
         "version" : "5.3"
@@ -10342,7 +10358,7 @@
           "name" : "Joe Groff"
         }
       ],
-      "sha" : "0129be339a2fbd3dd64865494bd35839601e6213",
+      "sha" : "c2423c71e434bba2ca9162976d918c143ba69292",
       "status" : {
         "state" : "rejected"
       },
@@ -10939,7 +10955,7 @@
           "name" : "Ted Kremenek"
         }
       ],
-      "sha" : "bca419bdc521391ea55d425673bfb51fb8e23b9e",
+      "sha" : "2d43fdcce46463018fdf11d0e887b98e3e8e77b3",
       "status" : {
         "state" : "implemented",
         "version" : "5.6"
@@ -11188,7 +11204,7 @@
           "name" : "Saleem Abdulrasool"
         }
       ],
-      "sha" : "eeb9245f089e71596fb4928c5cc89a32e358a3ec",
+      "sha" : "599e2db5327204f05ce5943d595970365aab0742",
       "status" : {
         "state" : "implemented",
         "version" : "5.5"
@@ -11225,7 +11241,7 @@
           "name" : "Ben Cohen"
         }
       ],
-      "sha" : "d7c0b5c89b36b8e3df2008e2dc0690d008ae71d0",
+      "sha" : "6c32790ac6bae00edd5df2724c8c8465fa9c231f",
       "status" : {
         "state" : "implemented",
         "version" : "5.5"
@@ -11295,7 +11311,7 @@
           "name" : "Doug Gregor"
         }
       ],
-      "sha" : "5e70db8c354a11a5f1d0163b1d8947c465f4b3d7",
+      "sha" : "d0899264dfed133b550ee1599d7aee9ef12be42b",
       "status" : {
         "state" : "implemented",
         "version" : "5.5"
@@ -11504,7 +11520,7 @@
           "name" : "Tom Doron"
         }
       ],
-      "sha" : "12ece943880dc9c3870d4f653b3b0e70efeaa899",
+      "sha" : "7761d1b5d5c23e2f61aa4353b9c7edb9f878c595",
       "status" : {
         "state" : "implemented",
         "version" : "5.6"
@@ -11532,6 +11548,42 @@
         }
       ],
       "discussions" : [
+        {
+          "link" : "https:\/\/forums.swift.org\/t\/concurrency-structured-concurrency\/41622",
+          "name" : "first pitch"
+        },
+        {
+          "link" : "https:\/\/forums.swift.org\/t\/pitch-2-structured-concurrency\/43452",
+          "name" : "second pitch"
+        },
+        {
+          "link" : "https:\/\/forums.swift.org\/t\/pitch-3-structured-concurrency\/44496",
+          "name" : "third pitch"
+        },
+        {
+          "link" : "https:\/\/forums.swift.org\/t\/se-0304-structured-concurrency\/45314",
+          "name" : "first review"
+        },
+        {
+          "link" : "https:\/\/forums.swift.org\/t\/se-0304-2nd-review-structured-concurrency\/47217",
+          "name" : "second review"
+        },
+        {
+          "link" : "https:\/\/forums.swift.org\/t\/se-0304-3rd-review-structured-concurrency\/48847",
+          "name" : "third review"
+        },
+        {
+          "link" : "https:\/\/forums.swift.org\/t\/se-0304-4th-review-structured-concurrency\/50281",
+          "name" : "fourth review"
+        },
+        {
+          "link" : "https:\/\/forums.swift.org\/t\/accepted-with-modifications-se-0304-structured-concurrency\/51850",
+          "name" : "acceptance"
+        },
+        {
+          "link" : "https:\/\/forums.swift.org\/t\/accepted-with-modifications-se-0304-structured-concurrency\/51850\/9",
+          "name" : "revision"
+        }
       ],
       "id" : "SE-0304",
       "link" : "0304-structured-concurrency.md",
@@ -11541,7 +11593,7 @@
           "name" : "Ben Cohen"
         }
       ],
-      "sha" : "e1a54e99cbdab0e62e0e25dff7bfc70f6657d343",
+      "sha" : "4051b87b1e8fe04e0c4ceb6fc30af9638b2370cd",
       "status" : {
         "state" : "implemented",
         "version" : "5.5"
@@ -11627,7 +11679,7 @@
           "name" : "Joe Groff"
         }
       ],
-      "sha" : "381f50a226552195d9e2971485f9591311d3ab22",
+      "sha" : "4a1d6d0ee04e76f42244edd8da95b46231f19f68",
       "status" : {
         "state" : "implemented",
         "version" : "5.5"
@@ -11762,7 +11814,7 @@
           "name" : "Joe Groff"
         }
       ],
-      "sha" : "72a4f71ff14ac3b66584295c8cc3d5ed40971dcd",
+      "sha" : "460d97f02d3d163528a65ef04fbac5bdac87be34",
       "status" : {
         "state" : "implemented",
         "version" : "5.7"
@@ -11815,7 +11867,7 @@
           "name" : "Doug Gregor"
         }
       ],
-      "sha" : "370cc91d49b870305c83a0e7f50f47a5adf2cc73",
+      "sha" : "af9dc2b7d8e6c84a3f33ddb7ee36eb06f2eea478",
       "status" : {
         "state" : "implemented",
         "version" : "5.5"
@@ -11856,7 +11908,7 @@
           "name" : "John McCall"
         }
       ],
-      "sha" : "4c3f895014305b9dff31e34a3452fbb790875900",
+      "sha" : "d6f48593e5cd13e6885110cc1c98ee50163ce5fb",
       "status" : {
         "state" : "implemented",
         "version" : "5.5"
@@ -11917,7 +11969,7 @@
           "name" : "Ted Kremenek"
         }
       ],
-      "sha" : "89fb4d8b6b5210cc97b3f8294b78b6e75765b4ab",
+      "sha" : "72f35a9d04e5e4df879f86ff36c66a547f84f577",
       "status" : {
         "state" : "implemented",
         "version" : "5.5"
@@ -11978,7 +12030,7 @@
           "name" : "Doug Gregor"
         }
       ],
-      "sha" : "6f86e521517cc2209578bdebdfeeaeac29ec7ac8",
+      "sha" : "3abb7024f4da4299976e753a2f0770009f600ba3",
       "status" : {
         "state" : "implemented",
         "version" : "5.5"
@@ -12085,7 +12137,7 @@
           "name" : "Ben Cohen"
         }
       ],
-      "sha" : "3b313a221f920f1ea428b580c46e117f49d140ba",
+      "sha" : "113e762a6a938c63305922992b0d496179f06463",
       "status" : {
         "state" : "implemented",
         "version" : "5.5"
@@ -12118,7 +12170,7 @@
           "name" : "Tom Doron"
         }
       ],
-      "sha" : "1ad4a894a549a40e273a9cbc0956037c896fe8d2",
+      "sha" : "606cf9ad69ea631e53d1f74afd970b9b2c12d569",
       "status" : {
         "state" : "returnedForRevision"
       },
@@ -12154,7 +12206,7 @@
           "name" : "Tom Doron"
         }
       ],
-      "sha" : "25efcce36fb14df5bb1139a74d7fd453b54cb984",
+      "sha" : "e298dcc55ba1f0582261f6e83ee2d7f7b0cd41d9",
       "status" : {
         "state" : "implemented",
         "version" : "5.5"
@@ -12397,7 +12449,7 @@
           "name" : "Tom Doron"
         }
       ],
-      "sha" : "70abb2ce638ab0cdf4543c43e52aa31b75c0a8e5",
+      "sha" : "626710d8555b8f9d8f3582ac9e6f94a74a17ce6f",
       "status" : {
         "state" : "implemented",
         "version" : "5.6"
@@ -12693,7 +12745,7 @@
           "name" : "Tom Doron"
         }
       ],
-      "sha" : "8eb0c891a763eec00207df135ea8e7be73827bed",
+      "sha" : "3e30dc8957a07d48545c0403d2a44b6cd17e7a29",
       "status" : {
         "state" : "implemented",
         "version" : "5.6"
@@ -12840,7 +12892,7 @@
           "name" : "Doug Gregor"
         }
       ],
-      "sha" : "8f12ca614eef7d43074733105cb68a66d836e956",
+      "sha" : "eaf480380ec95568f6d5ecd0bfa092c94f99e19c",
       "status" : {
         "state" : "implemented",
         "version" : "5.6"
@@ -12921,13 +12973,16 @@
           "name" : "Ben Cohen"
         }
       ],
-      "sha" : "efe384df9162d4edb13424e8b6e6cd409828e7cc",
+      "sha" : "f3804f5a8f5395aec2eee391dfb0f2a46e332b3b",
       "status" : {
         "state" : "implemented",
         "version" : "5.6"
       },
       "summary" : "Swift 5.5 introduced mechanisms to eliminate data races from the language, including the `Sendable` protocol ([SE-0302](https:\/\/github.com\/swiftlang\/swift-evolution\/blob\/main\/proposals\/0302-concurrent-value-and-concurrent-closures.md)) to indicate which types have values that can safely be used across task and actor boundaries, and global actors ([SE-0316](https:\/\/github.com\/swiftlang\/swift-evolution\/blob\/main\/proposals\/0316-global-actors.md)) to help ensure proper synchronization with (e.g.) the main actor. However, Swift 5.5 does not fully enforce `Sendable` nor all uses of the main actor because interacting with modules which have not been updated for Swift Concurrency was found to be too onerous. We propose adding features to help developers migrate their code to support concurrency and interoperate with other modules that have not yet adopted it, providing a smooth path for the Swift ecosystem to eliminate data races.",
-      "title" : "Incremental migration to concurrency checking"
+      "title" : "Incremental migration to concurrency checking",
+      "upcomingFeatureFlag" : {
+        "flag" : "StrictConcurrency"
+      }
     },
     {
       "authors" : [
@@ -13104,7 +13159,7 @@
           "name" : "Ted Kremenek"
         }
       ],
-      "sha" : "c8ade71a5f0ba955a1b4eb5e727829e90d9b462b",
+      "sha" : "788c9350130d03101e4805c5d779cc385905313f",
       "status" : {
         "state" : "accepted"
       },
@@ -13148,7 +13203,7 @@
           "name" : "Saleem Abdulrasool"
         }
       ],
-      "sha" : "8549c3f78b9087457c11ca2a6f65dd9248a7a572",
+      "sha" : "e11e040563b760a14315296f3383632af8092a28",
       "status" : {
         "state" : "implemented",
         "version" : "5.7"
@@ -13230,7 +13285,7 @@
           "name" : "Doug Gregor"
         }
       ],
-      "sha" : "48e82755edae7da9a5c6c81f866c7024c37a82f5",
+      "sha" : "265d89d8737409ae76b6e1894c0ecfe7e410f5a3",
       "status" : {
         "state" : "implemented",
         "version" : "5.7"
@@ -13320,7 +13375,7 @@
           "name" : "Doug Gregor"
         }
       ],
-      "sha" : "1f1b90eda362373a4d53ffd28803034aef2010ab",
+      "sha" : "db105e1d92cabde3c7814f349c536b5fa6feddcf",
       "status" : {
         "state" : "implemented",
         "version" : "5.7"
@@ -13353,7 +13408,7 @@
           "name" : "Ben Cohen"
         }
       ],
-      "sha" : "967aa969474810a3a473bb3e3372204f82f9beb4",
+      "sha" : "4a196e68c6617f09ec85abae04ce72479626cef2",
       "status" : {
         "state" : "implemented",
         "version" : "5.7"
@@ -13402,7 +13457,7 @@
           "name" : "John McCall"
         }
       ],
-      "sha" : "26c9b30d14feceb6599a266429e9985ae44c423e",
+      "sha" : "b542077621759c573e7bfff77f39b75e44243ebf",
       "status" : {
         "state" : "implemented",
         "version" : "5.7"
@@ -13484,7 +13539,7 @@
           "name" : "Ben Cohen"
         }
       ],
-      "sha" : "df32e27fe57f79b7d566f48ec1196fc1b37ae0be",
+      "sha" : "41a39eae1d1c7c65137ac181ace69daeef98298e",
       "status" : {
         "state" : "implemented",
         "version" : "5.7"
@@ -13521,7 +13576,7 @@
           "name" : "Joe Groff"
         }
       ],
-      "sha" : "964297e8e89ae3b120ef8e7b8f053da4a314bbc8",
+      "sha" : "ccf49c1942b8f740ab61dbfafdd557e28e6ff07a",
       "status" : {
         "state" : "implemented",
         "version" : "5.7"
@@ -13624,7 +13679,7 @@
           "name" : "Ben Cohen"
         }
       ],
-      "sha" : "3523b40aa5d7fb81806bcfe258642f740776d746",
+      "sha" : "752e22f08511c2e1b9d558d3fa3311dd42cc5026",
       "status" : {
         "state" : "implemented",
         "version" : "5.7"
@@ -13735,7 +13790,7 @@
           "name" : "Tom Doron"
         }
       ],
-      "sha" : "cebb994700061107b23d5a79e4896bc83e1588a2",
+      "sha" : "e1ab8692c234fb3150baf756812dfeff1ed1d88a",
       "status" : {
         "state" : "implemented",
         "version" : "5.7"
@@ -13784,7 +13839,7 @@
           "name" : "Ben Cohen"
         }
       ],
-      "sha" : "ca9b7325c7f6efe926645264761b07679d20d1db",
+      "sha" : "1cbd60d3f3ef839843044a020082f6c2e4a6c980",
       "status" : {
         "state" : "implemented",
         "version" : "5.7"
@@ -14065,7 +14120,7 @@
           "name" : "Ben Cohen"
         }
       ],
-      "sha" : "3f2703b74b854ba066c699f7d3f836182214465d",
+      "sha" : "a56e074ddfa0eb29364d8afd5cf5ee7411f88701",
       "status" : {
         "state" : "implemented",
         "version" : "5.7"
@@ -14104,17 +14159,13 @@
         {
           "link" : "https:\/\/forums.swift.org\/t\/amendment-se-0364-allow-same-package-conformances\/71877",
           "name" : "amendment"
+        },
+        {
+          "link" : "https:\/\/forums.swift.org\/t\/accepted-amendment-se-0364-allow-same-package-conformances\/72880",
+          "name" : "acceptance"
         }
       ],
       "id" : "SE-0364",
-      "implementation" : [
-        {
-          "account" : "apple",
-          "id" : "36068",
-          "repository" : "swift",
-          "type" : "pull"
-        }
-      ],
       "link" : "0364-retroactive-conformance-warning.md",
       "reviewManagers" : [
         {
@@ -14122,22 +14173,13 @@
           "name" : "Steve Canon"
         }
       ],
-      "sha" : "d980022f4c4e80bdb7daa4dc7741f53e39d0fd6a",
+      "sha" : "6300d01b9e7a57f3d39d5ff6712d65a3938edbc1",
       "status" : {
-        "end" : "2024-06-17T00:00:00Z",
-        "start" : "2024-06-10T00:00:00Z",
-        "state" : "activeReview"
+        "state" : "implemented",
+        "version" : "6.0"
       },
       "summary" : "Many Swift libraries vend currency protocols, like Equatable, Hashable, Codable, among others, that unlock worlds of common functionality for types that conform to them. Sometimes, if a type from another module does not conform to a common currency protocols, developers will declare a conformance of that type to that protocol within their module. However, protocol conformances are globally unique within a process in the Swift runtime, and if multiple modules declare the same conformance, it can cause major problems for library clients and hinder the ability to evolve libraries over time.",
-      "title" : "Warning for Retroactive Conformances of External Types",
-      "warnings" : [
-        {
-          "code" : 0,
-          "kind" : "warning",
-          "message" : "Review ended on 2024-06-17 00:00:00 +0000.",
-          "suggestion" : ""
-        }
-      ]
+      "title" : "Warning for Retroactive Conformances of External Types"
     },
     {
       "authors" : [
@@ -14264,7 +14306,7 @@
           "name" : "Joe Groff"
         }
       ],
-      "sha" : "b6ca2bb8ec393146d8b4ba7c453476ae1f9698ca",
+      "sha" : "09b915db610dc65711a8c93d84952a93f1258e6b",
       "status" : {
         "state" : "implemented",
         "version" : "5.8"
@@ -14429,7 +14471,7 @@
           "name" : "John McCall"
         }
       ],
-      "sha" : "4c107ed4edb979972ac46721acd016042ed388ba",
+      "sha" : "9786754117013a1a0c5b456b86ec4bdf87bdb6f0",
       "status" : {
         "state" : "implemented",
         "version" : "5.8"
@@ -14447,15 +14489,35 @@
       "discussions" : [
         {
           "link" : "https:\/\/forums.swift.org\/t\/isolated-synchronous-deinit\/58177",
-          "name" : "pitch"
+          "name" : "first pitch"
         },
         {
           "link" : "https:\/\/forums.swift.org\/t\/se-0371-isolated-synchronous-deinit\/59754",
-          "name" : "review"
+          "name" : "first review"
         },
         {
           "link" : "https:\/\/forums.swift.org\/t\/returned-for-revision-se-0371-isolated-synchronous-deinit\/60060",
           "name" : "returned for revision"
+        },
+        {
+          "link" : "https:\/\/forums.swift.org\/t\/isolated-synchronous-deinit-2\/62565",
+          "name" : "discussion"
+        },
+        {
+          "link" : "https:\/\/forums.swift.org\/t\/pitch-2-se-0371-isolated-async-deinit\/64836",
+          "name" : "second pitch"
+        },
+        {
+          "link" : "https:\/\/forums.swift.org\/t\/sub-pitch-task-local-values-in-isolated-synchronous-deinit-and-async-deinit\/70060",
+          "name" : "sub-pitch"
+        },
+        {
+          "link" : "https:\/\/forums.swift.org\/t\/second-review-se-0371-isolated-synchronous-deinit\/73406",
+          "name" : "second review"
+        },
+        {
+          "link" : "https:\/\/forums.swift.org\/t\/accepted-with-modifications-se-0371-isolated-synchronous-deinit\/74042",
+          "name" : "accepted with modifications"
         }
       ],
       "id" : "SE-0371",
@@ -14474,11 +14536,12 @@
           "name" : "Frederick Kellison-Linn"
         }
       ],
-      "sha" : "4ffbbd84d3badcd306c23e818c85551175001eeb",
+      "sha" : "00b88aca31bcea660c8c4e15310dbbae72393ceb",
       "status" : {
-        "state" : "returnedForRevision"
+        "state" : "implemented",
+        "version" : "6.2"
       },
-      "summary" : "This feature allows `deinit`'s of actors and global-actor isolated types (GAITs) to access non-sendable isolated state, lifting restrictions imposed imposed by [SE-0327](https:\/\/github.com\/swiftlang\/swift-evolution\/blob\/main\/proposals\/0327-actor-initializers.md). This is achieved by providing runtime support for hopping onto executors in `__deallocating_deinit()`'s.",
+      "summary" : "This feature allows `deinit`'s of actors and global-actor isolated classes to access non-sendable isolated state, lifting restrictions imposed by [SE-0327](https:\/\/github.com\/swiftlang\/swift-evolution\/blob\/main\/proposals\/0327-actor-initializers.md). This is achieved by providing runtime support for hopping onto the relevant actor's executor before executing the `deinit` body.",
       "title" : "Isolated synchronous deinit"
     },
     {
@@ -14732,7 +14795,7 @@
           "name" : "Frederick Kellison-Linn"
         }
       ],
-      "sha" : "c5b2465127535e54254bf518c0b7e3c040fba44b",
+      "sha" : "396dcc93da5aed5c8039eb54652eff74269f430d",
       "status" : {
         "state" : "implemented",
         "version" : "5.8"
@@ -14956,8 +15019,16 @@
       ],
       "discussions" : [
         {
+          "link" : "https:\/\/forums.swift.org\/t\/pitch-task-pools\/61703",
+          "name" : "pitch"
+        },
+        {
+          "link" : "https:\/\/forums.swift.org\/t\/se-0381-discardresults-for-taskgroups\/62072",
+          "name" : "review"
+        },
+        {
           "link" : "https:\/\/forums.swift.org\/t\/accepted-se-0381-discardingtaskgroups\/62615",
-          "name" : "Rationale"
+          "name" : "acceptance"
         }
       ],
       "id" : "SE-0381",
@@ -14976,7 +15047,7 @@
           "name" : "Doug Gregor"
         }
       ],
-      "sha" : "aa33336db2b757912789b5b5b1f5da778d6176d4",
+      "sha" : "27ec7607b04d134683fd1adae200b220972c39ff",
       "status" : {
         "state" : "implemented",
         "version" : "5.9"
@@ -15019,6 +15090,10 @@
         {
           "link" : "https:\/\/forums.swift.org\/t\/accepted-se-0382-expression-macros\/63495",
           "name" : "acceptance"
+        },
+        {
+          "link" : "https:\/\/forums.swift.org\/t\/update-on-se-0382-and-se-0389-expression-macros-and-attached-macros\/74094",
+          "name" : "post-acceptance update"
         }
       ],
       "id" : "SE-0382",
@@ -15029,7 +15104,7 @@
           "name" : "Xiaodi Wu"
         }
       ],
-      "sha" : "c6ba68d15092fb93f840c8378980e96b29e87149",
+      "sha" : "e3a33eb558e9439932f1d2c28c0d8a8cf16c206e",
       "status" : {
         "state" : "implemented",
         "version" : "5.9"
@@ -15122,7 +15197,7 @@
           "name" : "Tony Allevato"
         }
       ],
-      "sha" : "6718630157e51125ed0b2f1dde73ba00d93ad1c7",
+      "sha" : "e7da438da22557693147b4131e58e938b961e6c1",
       "status" : {
         "state" : "implemented",
         "version" : "5.9"
@@ -15341,9 +15416,10 @@
           "name" : "Mishal Shah"
         }
       ],
-      "sha" : "ffb1538614b23b81e3fdf8652f6645d3567e8d8e",
+      "sha" : "40367a6464a96996e64617a9aeb740cf3d8d39a6",
       "status" : {
-        "state" : "accepted"
+        "state" : "implemented",
+        "version" : "6.1"
       },
       "summary" : "Cross-compilation is a common development use case. When cross-compiling, we need to refer to these concepts:",
       "title" : "Swift SDKs for Cross-Compilation"
@@ -15424,6 +15500,10 @@
         {
           "link" : "https:\/\/forums.swift.org\/t\/accepted-se-0389-attached-macros\/63593",
           "name" : "acceptance"
+        },
+        {
+          "link" : "https:\/\/forums.swift.org\/t\/update-on-se-0382-and-se-0389-expression-macros-and-attached-macros\/74094",
+          "name" : "post-acceptance update"
         }
       ],
       "id" : "SE-0389",
@@ -15434,7 +15514,7 @@
           "name" : "Tony Allevato"
         }
       ],
-      "sha" : "b412eb2655c33246e19ea6fee31792ca4bbd7e60",
+      "sha" : "fe01f3495fb3f1de0da3b3b1c51f9216443f7083",
       "status" : {
         "state" : "implemented",
         "version" : "5.9"
@@ -15625,7 +15705,7 @@
           "name" : "Joe Groff"
         }
       ],
-      "sha" : "af8925e9c45f251b95ec533fcdb2fe2ffa97e3a4",
+      "sha" : "13497cff8d6f2d4e831fb5cb68660b298d6277b2",
       "status" : {
         "state" : "implemented",
         "version" : "5.9"
@@ -15868,7 +15948,7 @@
           "name" : "John McCall"
         }
       ],
-      "sha" : "7e005623fa0dccbb3d017b88f4dc9bbdc7735c71",
+      "sha" : "ab59886f02240bc177f3df97be9d371b106fcb1b",
       "status" : {
         "state" : "implemented",
         "version" : "5.9"
@@ -15998,7 +16078,7 @@
           "name" : "Frederick Kellison-Linn"
         }
       ],
-      "sha" : "95bd502cde698bf8c723894c40c1245ca574c9be",
+      "sha" : "852421b0fdcfde0f99e717cf46fe95dba9561d6e",
       "status" : {
         "state" : "implemented",
         "version" : "5.9"
@@ -16097,7 +16177,7 @@
           "name" : "John McCall"
         }
       ],
-      "sha" : "b47ef4ee4a051fe5a27914d2348df7dd7cbe0061",
+      "sha" : "80513bae902e0a53fac8d98c412b18e504af336d",
       "status" : {
         "state" : "implemented",
         "version" : "5.9"
@@ -16142,7 +16222,7 @@
           "name" : "Saleem Abdulrasool"
         }
       ],
-      "sha" : "7153cfe920b89bf24dbacf35140733167d7695d7",
+      "sha" : "c339f2e42456714b63989e4d5bec6432f51e95f1",
       "status" : {
         "state" : "returnedForRevision"
       },
@@ -16282,7 +16362,7 @@
           "name" : "Xiaodi Wu"
         }
       ],
-      "sha" : "cb9f4722c2e369d3e241554a0e67ce9cc279bc77",
+      "sha" : "58817b3ede4c030f8e44e3116aaff82fc06cdfce",
       "status" : {
         "state" : "returnedForRevision"
       },
@@ -16412,7 +16492,7 @@
           "name" : "Frederick Kellison-Linn"
         }
       ],
-      "sha" : "06abd11b16d8adf33d8be47ca439f873fd99f5ea",
+      "sha" : "4eec8c9df65c398be137e7a2c9117782f5a4030e",
       "status" : {
         "state" : "implemented",
         "version" : "6.0"
@@ -16472,7 +16552,7 @@
           "name" : "Joe Groff"
         }
       ],
-      "sha" : "ea54a07faca5e44f37eaffbcf8808aa56f417452",
+      "sha" : "21d348b3a289004535e245ee7b114afd9146d3e3",
       "status" : {
         "state" : "implemented",
         "version" : "6.0"
@@ -16628,15 +16708,13 @@
           "name" : "Steve Canon"
         }
       ],
-      "sha" : "44bfacd731f375d436259ed6fded0de23b970226",
+      "sha" : "9ee9502297c188b60958c16e8fb6c801823b6ef5",
       "status" : {
-        "state" : "accepted"
+        "state" : "implemented",
+        "version" : "6.0"
       },
       "summary" : "Swift's error handling model allows functions and closures marked `throws` to note that they can exit by throwing an error. The error values themselves are always type-erased to `any Error`. This approach encourages errors to be handled generically, and remains a good default for most code. However, there are some places where the type erasure is unfortunate, because it doesn't allow for more precise error typing in narrow places where it is possible and desirable to handle all errors, or where the costs of type erasure are prohibitive.",
-      "title" : "Typed throws",
-      "upcomingFeatureFlag" : {
-        "flag" : "FullTypedThrows"
-      }
+      "title" : "Typed throws"
     },
     {
       "authors" : [
@@ -16683,12 +16761,16 @@
           "name" : "Holly Borla"
         }
       ],
-      "sha" : "d4c2dd89954b96b30ee2c5b0fd0924ffd66b1063",
+      "sha" : "715b245ccc12ee08cb0aaa1d98eaebce20d2f73e",
       "status" : {
-        "state" : "accepted"
+        "state" : "implemented",
+        "version" : "6.0"
       },
       "summary" : "Swift Concurrency assigns values to *isolation domains* determined by actor and task boundaries. Code running in distinct isolation domains can execute concurrently, and `Sendable` checking defines away concurrent access to shared mutable state by preventing non-`Sendable` values from being passed across isolation boundaries full stop. In practice, this is a significant semantic restriction, because it forbids natural programming patterns that are free of data races.",
-      "title" : "Region based Isolation"
+      "title" : "Region based Isolation",
+      "upcomingFeatureFlag" : {
+        "flag" : "RegionBasedIsolation"
+      }
     },
     {
       "authors" : [
@@ -16727,9 +16809,10 @@
           "name" : "Tony Allevato"
         }
       ],
-      "sha" : "4f7aa99b3885159bbfda0a6aebf610d8b1e9052f",
+      "sha" : "12797b0a2fc424f3320e94e4f3ded20a7321fd95",
       "status" : {
-        "state" : "accepted"
+        "state" : "implemented",
+        "version" : "6.0"
       },
       "summary" : "Macros augment Swift programs with additional code, which can include new declarations, expressions, and statements. One of the key ways in which one might want to augment code---synthesizing or updating the body of a function---is not currently supported by the macro system. One can create new functions that have their own function bodies, but not provide, augment, or replace function bodies for a function declared by the user.",
       "title" : "Function Body Macros"
@@ -16809,14 +16892,6 @@
         }
       ],
       "id" : "SE-0417",
-      "implementation" : [
-        {
-          "account" : "apple",
-          "id" : "68793",
-          "repository" : "swift",
-          "type" : "pull"
-        }
-      ],
       "link" : "0417-task-executor-preference.md",
       "reviewManagers" : [
         {
@@ -16824,9 +16899,10 @@
           "name" : "Doug Gregor"
         }
       ],
-      "sha" : "bafa18f6d131f16b47675bc702aaa601acaf7a36",
+      "sha" : "9f0d5848fdf7872aab06573b643e919d2ad11116",
       "status" : {
-        "state" : "accepted"
+        "state" : "implemented",
+        "version" : "6.0"
       },
       "summary" : "Swift Concurrency uses tasks and actors to model concurrency and primarily relies on actor isolation to determine where a specific piece of code shall execute.",
       "title" : "Task Executor Preference"
@@ -16861,20 +16937,6 @@
         }
       ],
       "id" : "SE-0418",
-      "implementation" : [
-        {
-          "account" : "apple",
-          "id" : "67498",
-          "repository" : "swift",
-          "type" : "pull"
-        },
-        {
-          "account" : "apple",
-          "id" : "70076",
-          "repository" : "swift",
-          "type" : "pull"
-        }
-      ],
       "link" : "0418-inferring-sendable-for-methods.md",
       "reviewManagers" : [
         {
@@ -16882,7 +16944,7 @@
           "name" : "Becca Royal-Gordon"
         }
       ],
-      "sha" : "c3203afc16e14c6a0add505651d368af84d4759e",
+      "sha" : "9e030a6872093a10b3337d61b80870707f988404",
       "status" : {
         "state" : "implemented",
         "version" : "6.0"
@@ -16959,20 +17021,6 @@
         }
       ],
       "id" : "SE-0420",
-      "implementation" : [
-        {
-          "account" : "apple",
-          "id" : "70758",
-          "repository" : "swift",
-          "type" : "pull"
-        },
-        {
-          "account" : "apple",
-          "id" : "70902",
-          "repository" : "swift",
-          "type" : "pull"
-        }
-      ],
       "link" : "0420-inheritance-of-actor-isolation.md",
       "reviewManagers" : [
         {
@@ -16980,7 +17028,7 @@
           "name" : "Xiaodi Wu"
         }
       ],
-      "sha" : "92a9767d5f183d2d66465118f04eed0187397c0d",
+      "sha" : "14f83d2603d84e97f0a5eec81f0356fff681a572",
       "status" : {
         "state" : "implemented",
         "version" : "6.0"
@@ -17021,7 +17069,7 @@
           "name" : "Freddy Kellison-Linn"
         }
       ],
-      "sha" : "94717d569e8d304ac2cda137ddbf7ea584665fc6",
+      "sha" : "c0c19c4550e710dba8ab0867846c292edaff1b98",
       "status" : {
         "state" : "implemented",
         "version" : "6.0"
@@ -17051,14 +17099,6 @@
         }
       ],
       "id" : "SE-0422",
-      "implementation" : [
-        {
-          "account" : "apple",
-          "id" : "70602",
-          "repository" : "swift",
-          "type" : "pull"
-        }
-      ],
       "link" : "0422-caller-side-default-argument-macro-expression.md",
       "reviewManagers" : [
         {
@@ -17066,7 +17106,7 @@
           "name" : "Doug Gregor"
         }
       ],
-      "sha" : "21ceac7c1c7f8c2e412dac4fb87fe453725c722f",
+      "sha" : "92b9f6f836633544c7740217ec7895ba641786e5",
       "status" : {
         "state" : "implemented",
         "version" : "6.0"
@@ -17104,26 +17144,6 @@
         }
       ],
       "id" : "SE-0423",
-      "implementation" : [
-        {
-          "account" : "apple",
-          "id" : "70867",
-          "repository" : "swift",
-          "type" : "pull"
-        },
-        {
-          "account" : "apple",
-          "id" : "71261",
-          "repository" : "swift",
-          "type" : "pull"
-        },
-        {
-          "account" : "apple",
-          "id" : "2419",
-          "repository" : "swift-syntax",
-          "type" : "pull"
-        }
-      ],
       "link" : "0423-dynamic-actor-isolation.md",
       "reviewManagers" : [
         {
@@ -17131,7 +17151,7 @@
           "name" : "Ben Cohen"
         }
       ],
-      "sha" : "a830727d7b52da641feec0aa3ffae3b3c8774e1c",
+      "sha" : "fb7215418eb92212d59578be1e3bd20186e34cf3",
       "status" : {
         "state" : "implemented",
         "version" : "6.0"
@@ -17164,14 +17184,6 @@
         }
       ],
       "id" : "SE-0424",
-      "implementation" : [
-        {
-          "account" : "apple",
-          "id" : "71172",
-          "repository" : "swift",
-          "type" : "pull"
-        }
-      ],
       "link" : "0424-custom-isolation-checking-for-serialexecutor.md",
       "reviewManagers" : [
         {
@@ -17179,9 +17191,10 @@
           "name" : "John McCall"
         }
       ],
-      "sha" : "4612463f3d9fef22c01bd079fa8587597b4dc89e",
+      "sha" : "cc7a2d0d29382f8be205c480172daf9e7cae7e58",
       "status" : {
-        "state" : "accepted"
+        "state" : "implemented",
+        "version" : "6.0"
       },
       "summary" : "[SE-0392 (Custom Actor Executors)](https:\/\/github.com\/swiftlang\/swift-evolution\/blob\/main\/proposals\/0392-custom-actor-executors.md) added support for custom actor executors, but its support is incomplete. Safety checks like [`Actor.assumeIsolated`](https:\/\/developer.apple.com\/documentation\/swift\/actor\/assumeisolated(_:file:line:)) work correctly when code is running on the actor through a task, but they don't work when code is scheduled to run on the actor's executor through some other mechanism. For example, if an actor uses a serial `DispatchQueue` as its executor, a function dispatched *directly* to the queue with DispatchQueue.async cannot use `assumeIsolated` to assert that the actor is currently isolated. This proposal fixes this by allowing custom actor executors to provide their own logic for these safety checks.",
       "title" : "Custom isolation checking for SerialExecutor"
@@ -17215,9 +17228,10 @@
           "name" : "Doug Gregor"
         }
       ],
-      "sha" : "7b3154b580a5d78b45565fd78ee666d5bdae19ac",
+      "sha" : "809464b3f8adec460216acc990395a2f2ee7ec9b",
       "status" : {
-        "state" : "accepted"
+        "state" : "implemented",
+        "version" : "6.0"
       },
       "summary" : "",
       "title" : "128-bit Integer Types"
@@ -17271,7 +17285,7 @@
           "name" : "Tony Allevato"
         }
       ],
-      "sha" : "9c8d5a008ddb92f0ae42ff5ac68d488802b76696",
+      "sha" : "f057c4dd5eb6bfadd7860e150a78756606277f1a",
       "status" : {
         "state" : "implemented",
         "version" : "6.0"
@@ -17298,6 +17312,22 @@
         {
           "link" : "https:\/\/forums.swift.org\/t\/pitch-noncopyable-generics\/68180",
           "name" : "pitch"
+        },
+        {
+          "link" : "https:\/\/forums.swift.org\/t\/se-0427-noncopyable-generics\/70525",
+          "name" : "first review"
+        },
+        {
+          "link" : "https:\/\/forums.swift.org\/t\/returned-for-revision-se-0427-noncopyable-generics\/72039",
+          "name" : "returned for revision"
+        },
+        {
+          "link" : "https:\/\/forums.swift.org\/t\/second-review-se-0427-noncopyable-generics\/72881",
+          "name" : "second review"
+        },
+        {
+          "link" : "https:\/\/forums.swift.org\/t\/accepted-se-0427-noncopyable-generics\/73560",
+          "name" : "acceptance"
         }
       ],
       "id" : "SE-0427",
@@ -17309,24 +17339,19 @@
         {
           "link" : "https:\/\/github.com\/hborla",
           "name" : "Holly Borla"
+        },
+        {
+          "link" : "https:\/\/github.com\/airspeedswift",
+          "name" : "Ben Cohen"
         }
       ],
-      "sha" : "d1a4c7f61f297420314944b2a9a94f170bd8c7c1",
+      "sha" : "321c9090e86f31f6141bfc8ee198079d17618178",
       "status" : {
-        "end" : "2024-03-22T00:00:00Z",
-        "start" : "2024-03-08T00:00:00Z",
-        "state" : "activeReview"
+        "state" : "implemented",
+        "version" : "6.0"
       },
       "summary" : "The noncopyable types introduced in [SE-0390: Noncopyable structs and enums](0390-noncopyable-structs-and-enums.md) cannot be used with generics, protocols, or existentials, leaving an expressivity gap in the language. This proposal extends Swift's type system to fill this gap.",
-      "title" : "Noncopyable Generics",
-      "warnings" : [
-        {
-          "code" : 0,
-          "kind" : "warning",
-          "message" : "Review ended on 2024-03-22 00:00:00 +0000.",
-          "suggestion" : ""
-        }
-      ]
+      "title" : "Noncopyable Generics"
     },
     {
       "authors" : [
@@ -17354,14 +17379,6 @@
         }
       ],
       "id" : "SE-0428",
-      "implementation" : [
-        {
-          "account" : "apple",
-          "id" : "70928",
-          "repository" : "swift",
-          "type" : "pull"
-        }
-      ],
       "link" : "0428-resolve-distributed-actor-protocols.md",
       "reviewManagers" : [
         {
@@ -17369,9 +17386,10 @@
           "name" : "Freddy Kellison-Linn"
         }
       ],
-      "sha" : "1e9cb6151dd2137fdfa2ff8e38d3b94b70cb718a",
+      "sha" : "e7b4128e3d6833881833f47e32ffb28d1832cc91",
       "status" : {
-        "state" : "acceptedWithRevisions"
+        "state" : "implemented",
+        "version" : "6.0"
       },
       "summary" : "Swift's distributed actors offer developers a flexible bring-your-own-runtime approach to building distributed systems using the actor paradigm. The initial design of the feature aimed for systems where all nodes of a distributed actor system (such as nodes in a [cluster](https:\/\/github.com\/apple\/swift-distributed-actors)) share the same binary, and therefore all have access to the concrete `distributed actor` declarations which may be resolved and made remote calls on.",
       "title" : "Resolve DistributedActor protocols"
@@ -17413,9 +17431,10 @@
           "name" : "Xiaodi Wu"
         }
       ],
-      "sha" : "fd54b90d48f27a4bb3321ac9f3df3daca7a54a0e",
+      "sha" : "d760ce11b9df3b570ca16422a3e117d90d9948c0",
       "status" : {
-        "state" : "accepted"
+        "state" : "implemented",
+        "version" : "6.0"
       },
       "summary" : "We propose allowing noncopyable fields in deinit-less aggregates to be consumed individually, so long as they are defined in the current module or frozen. Additionally, we propose allowing fields of such an aggregate with a deinit to be consumed individually *within that deinit*. This permits common patterns to be used with many noncopyable values.",
       "title" : "Partial consumption of noncopyable values"
@@ -17455,6 +17474,14 @@
         {
           "link" : "https:\/\/forums.swift.org\/t\/accepted-with-modifications-se-0430-second-review-sendable-parameter-and-result-values\/71850",
           "name" : "acceptance with modifications"
+        },
+        {
+          "link" : "https:\/\/forums.swift.org\/t\/pitch-revise-se-0430-to-adopt-sending-on-unsafecontinuation\/72289",
+          "name" : "amendment pitch"
+        },
+        {
+          "link" : "https:\/\/forums.swift.org\/t\/amendment-se-0430-sending-parameter-and-result-values\/72653",
+          "name" : "amendment review"
         }
       ],
       "id" : "SE-0430",
@@ -17468,9 +17495,10 @@
           "name" : "Becca Royal-Gordon"
         }
       ],
-      "sha" : "6a973018c5f1fbbcc226b442cba06e72a22dee9c",
+      "sha" : "031685c0ee7f2001e3a2c178dcc36a5ab385ace5",
       "status" : {
-        "state" : "accepted"
+        "state" : "implemented",
+        "version" : "6.0"
       },
       "summary" : "This proposal extends region isolation to enable the application of an explicit `sending` annotation to function parameters and results. A function parameter or result that is annotated with `sending` is required to be disconnected at the function boundary and thus possesses the capability of being safely sent across an isolation domain or merged into an actor-isolated region in the function's body or the function's caller respectively.",
       "title" : "`sending` parameter and result values"
@@ -17497,20 +17525,6 @@
         }
       ],
       "id" : "SE-0431",
-      "implementation" : [
-        {
-          "account" : "apple",
-          "id" : "71433",
-          "repository" : "swift",
-          "type" : "pull"
-        },
-        {
-          "account" : "apple",
-          "id" : "71574",
-          "repository" : "swift",
-          "type" : "pull"
-        }
-      ],
       "link" : "0431-isolated-any-functions.md",
       "reviewManagers" : [
         {
@@ -17518,9 +17532,10 @@
           "name" : "Doug Gregor"
         }
       ],
-      "sha" : "30fd428a51de7624f88b5e651df73cd9069fe2ce",
+      "sha" : "1797df66160cc0e3695513cd9714926985750048",
       "status" : {
-        "state" : "accepted"
+        "state" : "implemented",
+        "version" : "6.0"
       },
       "summary" : "The actor isolation of a function is an important part of how it's used.  Swift can reason precisely about the isolation of a specific function *declaration*, but when functions are passed around as *values*, Swift's function types are not expressive enough to keep up. This proposal adds a new kind of function type that carries its function's actor isolation dynamically.  This solves a variety of expressivity problems in the language.  It also allows features such as the standard library's task-creation APIs to be implemented more efficiently and with stronger semantic guarantees.",
       "title" : "`@isolated(any)` Function Types"
@@ -17550,7 +17565,7 @@
           "name" : "Ben Cohen"
         }
       ],
-      "sha" : "d8d137d156f3e86bf6da60341a9ac40149d949d1",
+      "sha" : "5eb6171845294adc3f4d366e742b56f64bb0aedf",
       "status" : {
         "state" : "implemented",
         "version" : "6.0"
@@ -17580,14 +17595,6 @@
         }
       ],
       "id" : "SE-0433",
-      "implementation" : [
-        {
-          "account" : "apple",
-          "id" : "71383",
-          "repository" : "swift",
-          "type" : "pull"
-        }
-      ],
       "link" : "0433-mutex.md",
       "reviewManagers" : [
         {
@@ -17595,9 +17602,10 @@
           "name" : "Stephen Canon"
         }
       ],
-      "sha" : "91e211f91436e049d38ef72b99d4dbed31dbe8ca",
+      "sha" : "cdb794657429bb4e85383439efccc8e47b428661",
       "status" : {
-        "state" : "accepted"
+        "state" : "implemented",
+        "version" : "6.0"
       },
       "summary" : "This proposal introduces a mutual exclusion lock, or a mutex, to the standard library. `Mutex` will be a new synchronization primitive in the synchronization module.",
       "title" : "Synchronous Mutual Exclusion Lock 🔒"
@@ -17625,6 +17633,10 @@
         {
           "link" : "https:\/\/forums.swift.org\/t\/se-0434-usability-of-global-actor-isolated-types\/71187",
           "name" : "review"
+        },
+        {
+          "link" : "https:\/\/forums.swift.org\/t\/accepted-se-0434-usability-of-global-actor-isolated-types\/72743",
+          "name" : "acceptance"
         }
       ],
       "id" : "SE-0434",
@@ -17635,22 +17647,16 @@
           "name" : "John McCall"
         }
       ],
-      "sha" : "fbd2e246eb8468a54b05f17d85394d58e2b50bea",
+      "sha" : "da254db685e81da79b85b6d28f8f389f55527b26",
       "status" : {
-        "end" : "2024-04-22T00:00:00Z",
-        "start" : "2024-04-10T00:00:00Z",
-        "state" : "activeReview"
+        "state" : "implemented",
+        "version" : "6.0"
       },
       "summary" : "This proposal encompasses a collection of changes to concurrency rules concerning global-actor-isolated types to improve their usability.",
       "title" : "Usability of global-actor-isolated types",
-      "warnings" : [
-        {
-          "code" : 0,
-          "kind" : "warning",
-          "message" : "Review ended on 2024-04-22 00:00:00 +0000.",
-          "suggestion" : ""
-        }
-      ]
+      "upcomingFeatureFlag" : {
+        "flag" : "GlobalActorIsolatedTypesUsability"
+      }
     },
     {
       "authors" : [
@@ -17674,14 +17680,6 @@
         }
       ],
       "id" : "SE-0435",
-      "implementation" : [
-        {
-          "account" : "apple",
-          "id" : "7439",
-          "repository" : "swift-package-manager",
-          "type" : "pull"
-        }
-      ],
       "link" : "0435-swiftpm-per-target-swift-language-version-setting.md",
       "reviewManagers" : [
         {
@@ -17689,9 +17687,10 @@
           "name" : "Becca Royal-Gordon"
         }
       ],
-      "sha" : "805a5ad35d18c78e49fccad2aab258254b7689a3",
+      "sha" : "c9c62e089a51c27691cbff673dd20065b2f39e5e",
       "status" : {
-        "state" : "accepted"
+        "state" : "implemented",
+        "version" : "6.0"
       },
       "summary" : "The current Swift Package Manager manifest API for specifying Swift language version(s) applies to an entire package which is limiting when adopting new language versions that have implications for source compatibility.",
       "title" : "Swift Language Version Per Target"
@@ -17728,8 +17727,14 @@
       "id" : "SE-0436",
       "implementation" : [
         {
-          "account" : "apple",
+          "account" : "swiftlang",
           "id" : "73309",
+          "repository" : "swift",
+          "type" : "pull"
+        },
+        {
+          "account" : "swiftlang",
+          "id" : "74801",
           "repository" : "swift",
           "type" : "pull"
         }
@@ -17741,9 +17746,10 @@
           "name" : "Freddy Kellison-Linn"
         }
       ],
-      "sha" : "6af20a7ca5b5042389b050723ba1b666a07365f3",
+      "sha" : "517599b667a111bd86499c77b6070d9f96ab635c",
       "status" : {
-        "state" : "accepted"
+        "state" : "implemented",
+        "version" : "6.1"
       },
       "summary" : "We propose an alternative to `@objc` classes where Objective-C header `@interface` declarations are implemented by Swift `extension`s marked with `@objc @implementation`. The resulting classes will be implemented in Swift, but will be indistinguishable from Objective-C classes, fully supporting Objective-C subclassing and runtime trickery.",
       "title" : "Objective-C implementations in Swift"
@@ -17770,20 +17776,6 @@
         }
       ],
       "id" : "SE-0437",
-      "implementation" : [
-        {
-          "account" : "apple",
-          "id" : "73807",
-          "repository" : "swift",
-          "type" : "pull"
-        },
-        {
-          "account" : "apple",
-          "id" : "73810",
-          "repository" : "swift",
-          "type" : "pull"
-        }
-      ],
       "link" : "0437-noncopyable-stdlib-primitives.md",
       "reviewManagers" : [
         {
@@ -17791,9 +17783,10 @@
           "name" : "John McCall"
         }
       ],
-      "sha" : "0c593ed7be2e6120c04b25d529bb99849c31a336",
+      "sha" : "ddef3d2c7c611e86ad16765f8ae9f1e3868d9159",
       "status" : {
-        "state" : "accepted"
+        "state" : "implemented",
+        "version" : "6.0"
       },
       "summary" : "",
       "title" : "Noncopyable Standard Library Primitives"
@@ -17812,7 +17805,15 @@
       "discussions" : [
         {
           "link" : "https:\/\/forums.swift.org\/t\/pitch-metatype-keypaths\/70767",
-          "name" : "Pitch"
+          "name" : "pitch"
+        },
+        {
+          "link" : "https:\/\/forums.swift.org\/t\/se-0438-metatype-keypaths\/72172",
+          "name" : "review"
+        },
+        {
+          "link" : "https:\/\/forums.swift.org\/t\/accepted-se-0438-metatype-keypaths\/72878",
+          "name" : "acceptance"
         }
       ],
       "id" : "SE-0438",
@@ -17831,22 +17832,2867 @@
           "name" : "Joe Groff"
         }
       ],
-      "sha" : "5b8c72ffd5194fc32d15ed62272f1ea6549524ef",
+      "sha" : "e12bd4afb6f52d9669ba7bba5406fd321576cfc0",
       "status" : {
-        "end" : "2024-06-13T00:00:00Z",
-        "start" : "2024-05-30T00:00:00Z",
-        "state" : "activeReview"
+        "state" : "implemented",
+        "version" : "6.1"
       },
       "summary" : "Key path expressions access properties dynamically. They are declared with a concrete root type and one or more key path components that define a path to a resulting value via the type’s properties, subscripts, optional-chaining expressions, forced unwrapped expressions, or self. This proposal expands key path expression access to include static properties of a type, i.e., metatype keypaths.",
-      "title" : "Metatype Keypaths",
+      "title" : "Metatype Keypaths"
+    },
+    {
+      "authors" : [
+        {
+          "link" : "https:\/\/github.com\/mateusrodriguesxyz",
+          "name" : "Mateus Rodrigues"
+        }
+      ],
+      "discussions" : [
+        {
+          "link" : "https:\/\/forums.swift.org\/t\/pitch-allow-trailing-comma-in-tuples-arguments-and-if-guard-while-conditions\/70170",
+          "name" : "pitch"
+        },
+        {
+          "link" : "https:\/\/forums.swift.org\/t\/se-0439-allow-trailing-comma-in-comma-separated-lists\/72876",
+          "name" : "review"
+        },
+        {
+          "link" : "https:\/\/forums.swift.org\/t\/accepted-with-modifications-se-0439-allow-trailing-comma-in-comma-separated-lists\/73216",
+          "name" : "acceptance"
+        }
+      ],
+      "id" : "SE-0439",
+      "implementation" : [
+        {
+          "account" : "swiftlang",
+          "id" : "74522",
+          "repository" : "swift",
+          "type" : "pull"
+        }
+      ],
+      "link" : "0439-trailing-comma-lists.md",
+      "previousProposalIDs" : [
+        "SE-0084"
+      ],
+      "reviewManagers" : [
+        {
+          "link" : "https:\/\/github.com\/xwu",
+          "name" : "Xiaodi Wu"
+        }
+      ],
+      "sha" : "1de9044bbbf31062bfeb18dfcd629ed70613e889",
+      "status" : {
+        "state" : "implemented",
+        "version" : "6.1"
+      },
+      "summary" : "This proposal aims to allow the use of trailing commas, currently restricted to array and dictionary literals, in symmetrically delimited comma-separated lists.",
+      "title" : "Allow trailing comma in comma-separated lists"
+    },
+    {
+      "authors" : [
+        {
+          "link" : "https:\/\/github.com\/kastiglione",
+          "name" : "Dave Lee"
+        }
+      ],
+      "discussions" : [
+        {
+          "link" : "https:\/\/forums.swift.org\/t\/pitch-debug-description-macro\/67711",
+          "name" : "pitch"
+        },
+        {
+          "link" : "https:\/\/forums.swift.org\/t\/se-0440-debugdescription-macro\/72958",
+          "name" : "review"
+        },
+        {
+          "link" : "https:\/\/forums.swift.org\/t\/returned-for-revision-se-0440-debugdescription-macro\/73270",
+          "name" : "returned for revision"
+        },
+        {
+          "link" : "https:\/\/forums.swift.org\/t\/second-review-se-0440-debugdescription-macro\/73325",
+          "name" : "second review"
+        },
+        {
+          "link" : "https:\/\/forums.swift.org\/t\/accepted-se-0440-debugdescription-macro\/73741",
+          "name" : "acceptance"
+        }
+      ],
+      "id" : "SE-0440",
+      "implementation" : [
+        {
+          "account" : "apple",
+          "id" : "69626",
+          "repository" : "swift",
+          "type" : "pull"
+        }
+      ],
+      "link" : "0440-debug-description-macro.md",
+      "reviewManagers" : [
+        {
+          "link" : "https:\/\/github.com\/stephentyrone",
+          "name" : "Steve Canon"
+        }
+      ],
+      "sha" : "e374da0f852bc2ca472e0c7ff459f8d0c602085c",
+      "status" : {
+        "state" : "implemented",
+        "version" : "6.0"
+      },
+      "summary" : "This proposal introduces `@DebugDescription`, a new debugging macro to the standard library, which lets data types specify a custom summary to be presented by the debugger. This macro brings improvements to the debugging experience, and simplifies the maintenance and delivery of debugger type summaries. It can be used in place of `CustomDebugStringConvertible` conformance, or in addition to, for custom use cases.",
+      "title" : "DebugDescription Macro"
+    },
+    {
+      "authors" : [
+        {
+          "link" : "https:\/\/github.com\/dempseyatgithub",
+          "name" : "James Dempsey"
+        }
+      ],
+      "discussions" : [
+        {
+          "link" : "https:\/\/forums.swift.org\/t\/pitch-formalize-swift-language-mode-naming-in-tools-and-api\/71733",
+          "name" : "first pitch"
+        },
+        {
+          "link" : "https:\/\/forums.swift.org\/t\/pitch-2-formalize-language-mode-naming-in-tools-and-api\/72136",
+          "name" : "second pitch"
+        },
+        {
+          "link" : "https:\/\/forums.swift.org\/t\/se-0441-formalize-language-mode-terminology\/73182",
+          "name" : "review"
+        },
+        {
+          "link" : "https:\/\/forums.swift.org\/t\/accepted-se-0441-formalize-language-mode-terminology\/73716",
+          "name" : "acceptance"
+        }
+      ],
+      "id" : "SE-0441",
+      "implementation" : [
+        {
+          "account" : "swiftlang",
+          "id" : "7620",
+          "repository" : "swift-package-manager",
+          "type" : "pull"
+        },
+        {
+          "account" : "swiftlang",
+          "id" : "75564",
+          "repository" : "swift",
+          "type" : "pull"
+        }
+      ],
+      "link" : "0441-formalize-language-mode-terminology.md",
+      "reviewManagers" : [
+        {
+          "link" : "https:\/\/github.com\/rjmccall",
+          "name" : "John McCall"
+        }
+      ],
+      "sha" : "d34b6eeacf7ce23be2b694537f4c9a87a06cb1a2",
+      "status" : {
+        "state" : "implemented",
+        "version" : "6.1"
+      },
+      "summary" : "The term \"Swift version” can refer to either the toolchain\/compiler version or the language mode. This ambiguity is a consistent source of confusion. This proposal formalizes the term *language mode* in tool options and APIs.",
+      "title" : "Formalize ‘language mode’ terminology"
+    },
+    {
+      "authors" : [
+        {
+          "link" : "https:\/\/github.com\/rlziii",
+          "name" : "Richard L Zarth III"
+        }
+      ],
+      "discussions" : [
+        {
+          "link" : "https:\/\/forums.swift.org\/t\/allow-taskgroups-childtaskresult-type-to-be-inferred\/72175",
+          "name" : "pitch"
+        },
+        {
+          "link" : "https:\/\/forums.swift.org\/t\/se-0442-allow-taskgroups-childtaskresult-type-to-be-inferred\/73397",
+          "name" : "review"
+        },
+        {
+          "link" : "https:\/\/forums.swift.org\/t\/accepted-se-0422-allow-taskgroups-childtaskresult-type-to-be-inferred\/73747",
+          "name" : "acceptance"
+        }
+      ],
+      "id" : "SE-0442",
+      "implementation" : [
+        {
+          "account" : "apple",
+          "id" : "74517",
+          "repository" : "swift",
+          "type" : "pull"
+        }
+      ],
+      "link" : "0442-allow-taskgroup-childtaskresult-type-to-be-inferred.md",
+      "reviewManagers" : [
+        {
+          "link" : "https:\/\/github.com\/DougGregor",
+          "name" : "Doug Gregor"
+        }
+      ],
+      "sha" : "8d64c121347c8530f7b0d754261f6e63b3686f61",
+      "status" : {
+        "state" : "implemented",
+        "version" : "6.1"
+      },
+      "summary" : "`TaskGroup` and `ThrowingTaskGroup` currently require that one of their two generics (`ChildTaskResult`) always be specified upon creation. Due to improvements in closure parameter\/result type inference introduced by [SE-0326](https:\/\/github.com\/swiftlang\/swift-evolution\/blob\/main\/proposals\/0326-extending-multi-statement-closure-inference.md) this can be simplified by allowing the compiler to infer both of the generics in most cases.",
+      "title" : "Allow TaskGroup's ChildTaskResult Type To Be Inferred"
+    },
+    {
+      "authors" : [
+        {
+          "link" : "https:\/\/github.com\/douggregor",
+          "name" : "Doug Gregor"
+        },
+        {
+          "link" : "https:\/\/github.com\/DmT021",
+          "name" : "Dmitrii Galimzianov"
+        }
+      ],
+      "discussions" : [
+        {
+          "link" : "https:\/\/forums.swift.org\/t\/warnings-as-errors-exceptions\/72925",
+          "name" : "pitch"
+        },
+        {
+          "link" : "https:\/\/forums.swift.org\/t\/se-0443-precise-control-flags-over-compiler-warnings\/74116",
+          "name" : "review"
+        },
+        {
+          "link" : "https:\/\/forums.swift.org\/t\/accepted-se-0443-precise-control-flags-over-compiler-warnings\/74377",
+          "name" : "acceptance"
+        }
+      ],
+      "id" : "SE-0443",
+      "implementation" : [
+        {
+          "account" : "swiftlang",
+          "id" : "74466",
+          "repository" : "swift",
+          "type" : "pull"
+        }
+      ],
+      "link" : "0443-warning-control-flags.md",
+      "reviewManagers" : [
+        {
+          "link" : "https:\/\/github.com\/rjmccall",
+          "name" : "John McCall"
+        }
+      ],
+      "sha" : "eb24169971c4fdb75544b22f997fd248e074309e",
+      "status" : {
+        "state" : "implemented",
+        "version" : "6.1"
+      },
+      "summary" : "This proposal introduces new compiler options that allow fine-grained control over how the compiler emits certain warnings: as warnings or as errors.",
+      "title" : "Precise Control Flags over Compiler Warnings"
+    },
+    {
+      "authors" : [
+        {
+          "link" : "https:\/\/github.com\/tshortli",
+          "name" : "Allan Shortlidge"
+        }
+      ],
+      "discussions" : [
+        {
+          "link" : "https:\/\/forums.swift.org\/t\/pitch-fixing-member-import-visibility\/71432",
+          "name" : "pitch"
+        },
+        {
+          "link" : "https:\/\/forums.swift.org\/t\/se-0444-member-import-visibility\/74519",
+          "name" : "review"
+        },
+        {
+          "link" : "https:\/\/forums.swift.org\/t\/accepted-se-0444-member-import-visibility\/74966",
+          "name" : "acceptance"
+        }
+      ],
+      "id" : "SE-0444",
+      "implementation" : [
+        {
+          "account" : "apple",
+          "id" : "72974",
+          "repository" : "swift",
+          "type" : "pull"
+        },
+        {
+          "account" : "apple",
+          "id" : "73063",
+          "repository" : "swift",
+          "type" : "pull"
+        }
+      ],
+      "link" : "0444-member-import-visibility.md",
+      "reviewManagers" : [
+        {
+          "link" : "https:\/\/github.com\/beccadax",
+          "name" : "Becca Royal-Gordon"
+        }
+      ],
+      "sha" : "7904ebc4d5b16d62e3a91a1dcd034b00147dff24",
+      "status" : {
+        "state" : "implemented",
+        "version" : "6.1"
+      },
+      "summary" : "In Swift, there are rules dictating whether the name of a declaration in another module is considered in scope. For example, if you have a program that uses the `swift-algorithms` package and you want to use the global function [chain()](https:\/\/github.com\/apple\/swift-algorithms\/blob\/33abb694280321a84aa7dc9806de284afb8ca226\/Sources\/Algorithms\/Chain.swift#L287) then you must write `import Algorithms` in the file that references that function or the compiler will consider it out of scope:",
+      "title" : "Member import visibility",
+      "trackingBugs" : [
+        {
+          "id" : "apple\/swift#46493",
+          "link" : "https:\/\/github.com\/apple\/swift\/issues\/46493"
+        }
+      ],
+      "upcomingFeatureFlag" : {
+        "flag" : "MemberImportVisibility"
+      }
+    },
+    {
+      "authors" : [
+        {
+          "link" : "https:\/\/github.com\/lorentey",
+          "name" : "Karoy Lorentey"
+        }
+      ],
+      "discussions" : [
+        {
+          "link" : "https:\/\/forums.swift.org\/t\/improving-string-index-s-printed-descriptions\/57027",
+          "name" : "pitch"
+        },
+        {
+          "link" : "https:\/\/forums.swift.org\/t\/se-0445-improving-string-indexs-printed-descriptions\/74643",
+          "name" : "review"
+        },
+        {
+          "link" : "https:\/\/forums.swift.org\/t\/accepted-with-modifications-se-0445-improving-string-index-s-printed-descriptions\/75108",
+          "name" : "acceptance"
+        }
+      ],
+      "id" : "SE-0445",
+      "implementation" : [
+        {
+          "account" : "swiftlang",
+          "id" : "75433",
+          "repository" : "swift",
+          "type" : "pull"
+        }
+      ],
+      "link" : "0445-string-index-printing.md",
+      "reviewManagers" : [
+        {
+          "link" : "https:\/\/github.com\/xwu",
+          "name" : "Xiaodi Wu"
+        }
+      ],
+      "sha" : "f1c2beaa89388473b7d068caa4b888de16e001ab",
+      "status" : {
+        "state" : "implemented",
+        "version" : "6.1"
+      },
+      "summary" : "This proposal conforms `String.Index` to `CustomDebugStringConvertible`.",
+      "title" : "Improving `String.Index`'s printed descriptions"
+    },
+    {
+      "authors" : [
+        {
+          "link" : "https:\/\/github.com\/atrick",
+          "name" : "Andrew Trick"
+        },
+        {
+          "link" : "https:\/\/github.com\/tbkka",
+          "name" : "Tim Kientzle"
+        }
+      ],
+      "discussions" : [
+        {
+          "link" : "https:\/\/forums.swift.org\/t\/pitch-non-escapable-types-and-lifetime-dependency\/69865",
+          "name" : "pitch"
+        }
+      ],
+      "id" : "SE-0446",
+      "link" : "0446-non-escapable.md",
+      "reviewManagers" : [
+        {
+          "link" : "https:\/\/github.com\/jckarter",
+          "name" : "Joe Groff"
+        }
+      ],
+      "sha" : "ab78724fd4312e83ec7f2ed8a5db63829bbf3a2d",
+      "status" : {
+        "state" : "implemented",
+        "version" : "6.2"
+      },
+      "summary" : "We propose adding a new type constraint `~Escapable` for types that can be locally copied but cannot be assigned or transferred outside of the immediate context. This complements the `~Copyable` types added with SE-0390 by introducing another set of compile-time-enforced lifetime controls that can be used for safe, highly-performant APIs.",
+      "title" : "Nonescapable Types",
+      "upcomingFeatureFlag" : {
+        "flag" : "NonescapableTypes"
+      }
+    },
+    {
+      "authors" : [
+        {
+          "link" : "https:\/\/github.com\/glessard",
+          "name" : "Guillaume Lessard"
+        },
+        {
+          "link" : "https:\/\/github.com\/milseman",
+          "name" : "Michael Ilseman"
+        },
+        {
+          "link" : "https:\/\/github.com\/atrick",
+          "name" : "Andrew Trick"
+        }
+      ],
+      "discussions" : [
+        {
+          "link" : "https:\/\/forums.swift.org\/t\/69888",
+          "name" : "Pitch 1"
+        },
+        {
+          "link" : "https:\/\/forums.swift.org\/t\/72745",
+          "name" : "Pitch 2"
+        },
+        {
+          "link" : "https:\/\/forums.swift.org\/t\/se-0447-span-safe-access-to-contiguous-storage\/74676",
+          "name" : "Review"
+        },
+        {
+          "link" : "https:\/\/forums.swift.org\/t\/accepted-se-0447-span-safe-access-to-contiguous-storage\/75508",
+          "name" : "Acceptance"
+        }
+      ],
+      "id" : "SE-0447",
+      "implementation" : [
+        {
+          "account" : "swiftlang",
+          "id" : "76406",
+          "repository" : "swift",
+          "type" : "pull"
+        }
+      ],
+      "link" : "0447-span-access-shared-contiguous-storage.md",
+      "reviewManagers" : [
+        {
+          "link" : "https:\/\/github.com\/DougGregor",
+          "name" : "Doug Gregor"
+        }
+      ],
+      "sha" : "71b3ff8aa42d8f0174d160b7c8868d6659575316",
+      "status" : {
+        "state" : "implemented",
+        "version" : "6.2"
+      },
+      "summary" : "We introduce `Span<T>`, an abstraction for container-agnostic access to contiguous memory. It will expand the expressivity of performant Swift code without compromising on the memory safety properties we rely on: temporal safety, spatial safety, definite initialization and type safety.",
+      "title" : "Span: Safe Access to Contiguous Storage"
+    },
+    {
+      "authors" : [
+        {
+          "link" : "https:\/\/github.com\/JacobHearst",
+          "name" : "Jacob Hearst"
+        },
+        {
+          "link" : "https:\/\/github.com\/milseman",
+          "name" : "Michael Ilseman"
+        }
+      ],
+      "discussions" : [
+        {
+          "link" : "https:\/\/forums.swift.org\/t\/pitch-regex-reverse-matching\/73482",
+          "name" : "pitch"
+        },
+        {
+          "link" : "https:\/\/forums.swift.org\/t\/se-0448-regex-lookbehind-assertions\/74672",
+          "name" : "review"
+        },
+        {
+          "link" : "https:\/\/forums.swift.org\/t\/accepted-se-0448-regex-lookbehind-assertions\/75111",
+          "name" : "acceptance"
+        }
+      ],
+      "id" : "SE-0448",
+      "link" : "0448-regex-lookbehind-assertions.md",
+      "reviewManagers" : [
+        {
+          "link" : "https:\/\/github.com\/stephentyrone",
+          "name" : "Steve Canon"
+        }
+      ],
+      "sha" : "744bdbd85c0fe834478d094eb4eb8a68a0135c99",
+      "status" : {
+        "state" : "accepted"
+      },
+      "summary" : "Regex supports lookahead assertions, but does not currently support lookbehind assertions. We propose adding these.",
+      "title" : "Regex lookbehind assertions"
+    },
+    {
+      "authors" : [
+        {
+          "link" : "https:\/\/github.com\/simanerush",
+          "name" : "Sima Nerush"
+        },
+        {
+          "link" : "https:\/\/github.com\/hborla",
+          "name" : "Holly Borla"
+        }
+      ],
+      "discussions" : [
+        {
+          "link" : "https:\/\/forums.swift.org\/t\/pitch-allow-nonisolated-to-prevent-global-actor-inference\/74502",
+          "name" : "pitch"
+        },
+        {
+          "link" : "https:\/\/forums.swift.org\/t\/se-0449-allow-nonisolated-to-prevent-global-actor-inference\/75116",
+          "name" : "review"
+        },
+        {
+          "link" : "https:\/\/forums.swift.org\/t\/accepted-se-0449-allow-nonisolated-to-prevent-global-actor-interference\/75539",
+          "name" : "acceptance"
+        }
+      ],
+      "id" : "SE-0449",
+      "link" : "0449-nonisolated-for-global-actor-cutoff.md",
+      "reviewManagers" : [
+        {
+          "link" : "https:\/\/github.com\/allevato",
+          "name" : "Tony Allevato"
+        }
+      ],
+      "sha" : "92d4bf5217060e1ea5ba122b595410de26a9815d",
+      "status" : {
+        "state" : "implemented",
+        "version" : "6.1"
+      },
+      "summary" : "This proposal allows annotating a set of declarations with `nonisolated` to prevent global actor inference. Additionally, it extends the existing rules for when `nonisolated` can be written on a stored property, improving usability.",
+      "title" : "Allow `nonisolated` to prevent global actor inference"
+    },
+    {
+      "authors" : [
+        {
+          "link" : "https:\/\/github.com\/FranzBusch",
+          "name" : "Franz Busch"
+        },
+        {
+          "link" : "https:\/\/github.com\/MaxDesiatov",
+          "name" : "Max Desiatov"
+        }
+      ],
+      "discussions" : [
+        {
+          "link" : "https:\/\/forums.swift.org\/t\/pitch-package-traits\/72191",
+          "name" : "pitch"
+        },
+        {
+          "link" : "https:\/\/forums.swift.org\/t\/se-0450-package-traits\/75598",
+          "name" : "review"
+        },
+        {
+          "link" : "https:\/\/forums.swift.org\/t\/accepted-with-modifications-se-0450-package-traits\/76705",
+          "name" : "acceptance"
+        }
+      ],
+      "id" : "SE-0450",
+      "link" : "0450-swiftpm-package-traits.md",
+      "reviewManagers" : [
+        {
+          "link" : "https:\/\/github.com\/shahmishal",
+          "name" : "Mishal Shah"
+        }
+      ],
+      "sha" : "70950f32d4bd6f76fede46385cfd539ea58b71da",
+      "status" : {
+        "state" : "implemented",
+        "version" : "6.1"
+      },
+      "summary" : "Over the past years the package ecosystem has grown tremendously in both the amount of packages and the functionality that individual packages offer. Additionally, Swift is being used in more environments such as embedded systems or Wasm. This proposal aims to give package authors a new tool to conditionalize the features they offer and the dependencies that they use.",
+      "title" : "Package traits"
+    },
+    {
+      "authors" : [
+        {
+          "link" : "https:\/\/github.com\/allevato",
+          "name" : "Tony Allevato"
+        }
+      ],
+      "discussions" : [
+        {
+          "link" : "https:\/\/forums.swift.org\/t\/pitch-revisiting-backtick-delimited-identifiers-that-allow-more-non-identifier-characters\/74432",
+          "name" : "pitch"
+        },
+        {
+          "link" : "https:\/\/forums.swift.org\/t\/se-0451-raw-identifiers\/75602",
+          "name" : "review"
+        },
+        {
+          "link" : "https:\/\/forums.swift.org\/t\/accepted-with-revision-se-0451-raw-identifiers\/76387",
+          "name" : "acceptance"
+        }
+      ],
+      "id" : "SE-0451",
+      "implementation" : [
+        {
+          "account" : "swiftlang",
+          "id" : "76636",
+          "repository" : "swift",
+          "type" : "pull"
+        },
+        {
+          "account" : "swiftlang",
+          "id" : "2857",
+          "repository" : "swift-syntax",
+          "type" : "pull"
+        }
+      ],
+      "link" : "0451-escaped-identifiers.md",
+      "previousProposalIDs" : [
+        "SE-0275"
+      ],
+      "reviewManagers" : [
+        {
+          "link" : "https:\/\/github.com\/jckarter",
+          "name" : "Joe Groff"
+        }
+      ],
+      "sha" : "3105c9762609cc57f5e2714a9fb789422d717e28",
+      "status" : {
+        "state" : "implemented",
+        "version" : "6.2"
+      },
+      "summary" : "This proposal adds *raw identifiers* to the Swift grammar, which are backtick-delimited identifiers that can contain characters other than the current set of identifier-allowed characters in the language.",
+      "title" : "Raw identifiers"
+    },
+    {
+      "authors" : [
+        {
+          "link" : "https:\/\/github.com\/Azoy",
+          "name" : "Alejandro Alonso"
+        },
+        {
+          "link" : "https:\/\/github.com\/jckarter",
+          "name" : "Joe Groff"
+        }
+      ],
+      "discussions" : [
+        {
+          "link" : "https:\/\/forums.swift.org\/t\/integer-generic-parameters\/74181",
+          "name" : "pitch"
+        },
+        {
+          "link" : "https:\/\/forums.swift.org\/t\/se-0452-integer-generic-parameters\/75844",
+          "name" : "first review"
+        },
+        {
+          "link" : "https:\/\/forums.swift.org\/t\/second-review-se-0452-integer-generic-parameters\/77043",
+          "name" : "second review"
+        },
+        {
+          "link" : "https:\/\/forums.swift.org\/t\/accepted-se-0452-integer-generic-parameters\/77507",
+          "name" : "acceptance"
+        }
+      ],
+      "id" : "SE-0452",
+      "implementation" : [
+        {
+          "account" : "swiftlang",
+          "id" : "75518",
+          "repository" : "swift",
+          "type" : "pull"
+        },
+        {
+          "account" : "swiftlang",
+          "id" : "78248",
+          "repository" : "swift",
+          "type" : "pull"
+        }
+      ],
+      "link" : "0452-integer-generic-parameters.md",
+      "reviewManagers" : [
+        {
+          "link" : "https:\/\/github.com\/airspeedswift",
+          "name" : "Ben Cohen"
+        }
+      ],
+      "sha" : "b2ca7b2083ef17070d0251c073963f2ba12ba31b",
+      "status" : {
+        "state" : "implemented",
+        "version" : "6.2"
+      },
+      "summary" : "In this proposal, we introduce the ability to parameterize generic types on literal integer parameters.",
+      "title" : "Integer Generic Parameters"
+    },
+    {
+      "authors" : [
+        {
+          "link" : "https:\/\/github.com\/Azoy",
+          "name" : "Alejandro Alonso"
+        }
+      ],
+      "discussions" : [
+        {
+          "link" : "https:\/\/forums.swift.org\/t\/vector-a-fixed-size-array\/75264",
+          "name" : "pitch"
+        },
+        {
+          "link" : "https:\/\/forums.swift.org\/t\/se-0453-vector-a-fixed-size-array\/76004",
+          "name" : "first review"
+        },
+        {
+          "link" : "https:\/\/forums.swift.org\/t\/returned-for-revision-se-0453-vector-a-fixed-size-array\/76411",
+          "name" : "returned for revision"
+        },
+        {
+          "link" : "https:\/\/forums.swift.org\/t\/second-review-se-0453-vector-a-fixed-size-array\/76412",
+          "name" : "second review"
+        },
+        {
+          "link" : "https:\/\/forums.swift.org\/t\/accepted-with-modifications-se-0453-inlinearray-formerly-vector-a-fixed-size-array\/77678",
+          "name" : "acceptance"
+        }
+      ],
+      "id" : "SE-0453",
+      "implementation" : [
+        {
+          "account" : "swiftlang",
+          "id" : "76438",
+          "repository" : "swift",
+          "type" : "pull"
+        }
+      ],
+      "link" : "0453-vector.md",
+      "reviewManagers" : [
+        {
+          "link" : "https:\/\/github.com\/Jumhyn",
+          "name" : "Freddy Kellison-Linn"
+        }
+      ],
+      "sha" : "d755bf66f165284e09fc8f846849a912f1c95249",
+      "status" : {
+        "state" : "implemented",
+        "version" : "6.2"
+      },
+      "summary" : "This proposal introduces a new type to the standard library, `InlineArray`, which is a fixed-size array. This is analogous to the [classical C arrays `T[N]`](https:\/\/en.cppreference.com\/w\/c\/language\/array), [C++'s `std::array<T, N>`](https:\/\/en.cppreference.com\/w\/cpp\/container\/array), and [Rust's arrays `[T; N]`](https:\/\/doc.rust-lang.org\/std\/primitive.array.html).",
+      "title" : "InlineArray, a fixed-size array"
+    },
+    {
+      "authors" : [
+        {
+          "link" : "https:\/\/github.com\/compnerd",
+          "name" : "Saleem Abdulrasool"
+        }
+      ],
+      "discussions" : [
+        {
+          "link" : "https:\/\/forums.swift.org\/t\/se-454-adopt-mimalloc-for-windows-toolchain\/77096",
+          "name" : "review"
+        },
+        {
+          "link" : "https:\/\/forums.swift.org\/t\/accepted-se-0454-custom-allocator-for-toolchain-adopt-mimalloc-for-windows-toolchain\/77413",
+          "name" : "acceptance"
+        }
+      ],
+      "id" : "SE-0454",
+      "implementation" : [
+        {
+          "account" : "swiftlang",
+          "id" : "76563",
+          "repository" : "swift",
+          "type" : "pull"
+        }
+      ],
+      "link" : "0454-memory-allocator.md",
+      "reviewManagers" : [
+        {
+          "link" : "https:\/\/github.com\/al45tair",
+          "name" : "Alastair Houghton"
+        }
+      ],
+      "sha" : "c7c6f0d75589e9edfa5210ef2f8674f7d96698aa",
+      "status" : {
+        "state" : "accepted"
+      },
+      "summary" : "The tools in the Swift toolchain require allocating data structures for compiling the code. Different memory allocators have differing performance characteristics. Changing the default memory allocator away from the default (system) allocator can yield benefits if the allocator is better tuned to the allocation patterns of the compiler.",
+      "title" : "Custom Allocator for Toolchain"
+    },
+    {
+      "authors" : [
+        {
+          "link" : "https:\/\/github.com\/jakepetroules",
+          "name" : "Jake Petroules"
+        }
+      ],
+      "discussions" : [
+        {
+          "link" : "https:\/\/forums.swift.org\/t\/pitch-swiftpm-testable-build-setting\/75084",
+          "name" : "pitch"
+        },
+        {
+          "link" : "https:\/\/forums.swift.org\/t\/se-0455-swiftpm-testable-build-setting\/77100",
+          "name" : "review"
+        },
+        {
+          "link" : "https:\/\/forums.swift.org\/t\/accepted-se-0455-swiftpm-testable-build-setting\/77510",
+          "name" : "acceptance"
+        }
+      ],
+      "id" : "SE-0455",
+      "implementation" : [
+        {
+          "account" : "swiftlang",
+          "id" : "8004",
+          "repository" : "swift-package-manager",
+          "type" : "pull"
+        }
+      ],
+      "link" : "0455-swiftpm-testable-build-setting.md",
+      "reviewManagers" : [
+        {
+          "link" : "https:\/\/github.com\/allevato",
+          "name" : "Tony Allevato"
+        }
+      ],
+      "sha" : "186eb31892977a310e4806c7e01a71004f43262b",
+      "status" : {
+        "state" : "accepted"
+      },
+      "summary" : "The current Swift Package Manager build system is currently hardcoded to pass the `-enable-testing` flag to the Swift compiler to enable `@testable import` when building in debug mode.",
+      "title" : "SwiftPM @testable build setting"
+    },
+    {
+      "authors" : [
+        {
+          "link" : "https:\/\/github.com\/glessard",
+          "name" : "Guillaume Lessard"
+        }
+      ],
+      "discussions" : [
+        {
+          "link" : "https:\/\/forums.swift.org\/t\/76138",
+          "name" : "pitch"
+        },
+        {
+          "link" : "https:\/\/forums.swift.org\/t\/se-0456-add-span-providing-properties-to-standard-library-types\/77233",
+          "name" : "review"
+        },
+        {
+          "link" : "https:\/\/forums.swift.org\/t\/77684",
+          "name" : "acceptance"
+        }
+      ],
+      "id" : "SE-0456",
+      "implementation" : [
+        {
+          "account" : "swiftlang",
+          "id" : "78561",
+          "repository" : "swift",
+          "type" : "pull"
+        },
+        {
+          "account" : "swiftlang",
+          "id" : "80116",
+          "repository" : "swift",
+          "type" : "pull"
+        },
+        {
+          "account" : "swiftlang",
+          "id" : "1276",
+          "repository" : "swift-foundation",
+          "type" : "pull"
+        }
+      ],
+      "link" : "0456-stdlib-span-properties.md",
+      "reviewManagers" : [
+        {
+          "link" : "https:\/\/github.com\/DougGregor",
+          "name" : "Doug Gregor"
+        }
+      ],
+      "sha" : "bffb608e0053623fb78c7a50d8eddb0fcb40689e",
+      "status" : {
+        "state" : "implemented",
+        "version" : "6.2"
+      },
+      "summary" : "We recently [introduced](https:\/\/github.com\/swiftlang\/swift-evolution\/blob\/main\/proposals\/0447-span-access-shared-contiguous-storage.md) the `Span` and `RawSpan` types, but did not provide ways to obtain instances of either from existing types. This proposal adds properties that vend a lifetime-dependent `Span` from a variety of standard library types, as well as vend a lifetime-dependent `RawSpan` when the underlying element type supports it.",
+      "title" : "Add `Span`-providing Properties to Standard Library Types"
+    },
+    {
+      "authors" : [
+        {
+          "link" : "https:\/\/github.com\/ph1ps",
+          "name" : "Philipp Gabriel"
+        }
+      ],
+      "discussions" : [
+        {
+          "link" : "https:\/\/forums.swift.org\/t\/pitch-adding-int128-support-to-duration",
+          "name" : "pitch"
+        },
+        {
+          "link" : "https:\/\/forums.swift.org\/t\/se-0457-expose-attosecond-representation-of-duration\/77249",
+          "name" : "review"
+        }
+      ],
+      "id" : "SE-0457",
+      "implementation" : [
+        {
+          "account" : "swiftlang",
+          "id" : "78202",
+          "repository" : "swift",
+          "type" : "pull"
+        }
+      ],
+      "link" : "0457-duration-attosecond-represenation.md",
+      "reviewManagers" : [
+        {
+          "link" : "https:\/\/github.com\/stephentyrone",
+          "name" : "Stephen Canon"
+        }
+      ],
+      "sha" : "b88984362b7248306b57032ccc707a2f63547481",
+      "status" : {
+        "state" : "implemented",
+        "version" : "6.2"
+      },
+      "summary" : "This proposal introduces public APIs to enable seamless integration of `Int128` into the `Duration` type. Specifically, it provides support for directly accessing a `Duration`'s attosecond representation via the newly available `Int128` type and simplifies the creation of `Duration` values from attoseconds.",
+      "title" : "Expose attosecond representation of `Duration`"
+    },
+    {
+      "authors" : [
+        {
+          "link" : "https:\/\/github.com\/DougGregor",
+          "name" : "Doug Gregor"
+        }
+      ],
+      "discussions" : [
+        {
+          "link" : "https:\/\/forums.swift.org\/t\/pitch-opt-in-strict-memory-safety-checking\/76689",
+          "name" : "pitch"
+        },
+        {
+          "link" : "https:\/\/forums.swift.org\/t\/se-0458-opt-in-strict-memory-safety-checking\/77274",
+          "name" : "review"
+        },
+        {
+          "link" : "https:\/\/forums.swift.org\/t\/se-0458-opt-in-strict-memory-safety-checking\/77274\/33",
+          "name" : "first revision"
+        },
+        {
+          "link" : "https:\/\/forums.swift.org\/t\/se-0458-opt-in-strict-memory-safety-checking\/77274\/51",
+          "name" : "second revision"
+        },
+        {
+          "link" : "https:\/\/forums.swift.org\/t\/accepted-se-0458-opt-in-strict-memory-safety-checking\/78116",
+          "name" : "acceptance"
+        }
+      ],
+      "id" : "SE-0458",
+      "link" : "0458-strict-memory-safety.md",
+      "reviewManagers" : [
+        {
+          "link" : "https:\/\/github.com\/rjmccall",
+          "name" : "John McCall"
+        }
+      ],
+      "sha" : "dce70053c2668be509ceb316c2568e4d17e18e22",
+      "status" : {
+        "state" : "implemented",
+        "version" : "6.2"
+      },
+      "summary" : "[Memory safety](https:\/\/en.wikipedia.org\/wiki\/Memory_safety) is a property of programming languages and their implementations that prevents programmer errors from manifesting as [undefined behavior](https:\/\/en.wikipedia.org\/wiki\/Undefined_behavior) at runtime. Undefined behavior effectively breaks the semantic model of a language, with unpredictable results including crashes, data corruption, and otherwise-impossible program states. Such behavior can lead to hard-to-reproduce bugs as well as introduce security vulnerabilities.",
+      "title" : "Opt-in Strict Memory Safety Checking"
+    },
+    {
+      "authors" : [
+        {
+          "link" : "https:\/\/github.com\/Azoy",
+          "name" : "Alejandro Alonso"
+        }
+      ],
+      "discussions" : [
+        {
+          "link" : "https:\/\/forums.swift.org\/t\/pitch-add-collection-conformance-for-enumeratedsequence\/76680",
+          "name" : "pitch"
+        },
+        {
+          "link" : "https:\/\/forums.swift.org\/t\/se-0459-add-collection-conformances-for-enumerated\/77509",
+          "name" : "review"
+        },
+        {
+          "link" : "https:\/\/forums.swift.org\/t\/accepted-with-modification-se-0459-add-collection-conformances-for-enumerated\/78082",
+          "name" : "acceptance"
+        }
+      ],
+      "id" : "SE-0459",
+      "implementation" : [
+        {
+          "account" : "swiftlang",
+          "id" : "78092",
+          "repository" : "swift",
+          "type" : "pull"
+        }
+      ],
+      "link" : "0459-enumerated-collection.md",
+      "previousProposalIDs" : [
+        "SE-0312"
+      ],
+      "reviewManagers" : [
+        {
+          "link" : "https:\/\/github.com\/airspeedswift",
+          "name" : "Ben Cohen"
+        }
+      ],
+      "sha" : "14071906cd05def45b94aa818b73d1be26642655",
+      "status" : {
+        "state" : "implemented",
+        "version" : "6.2"
+      },
+      "summary" : "This proposal aims to fix the lack of `Collection` conformance of the sequence returned by `enumerated()`, preventing it from being used in a context that requires a `Collection`.",
+      "title" : "Add `Collection` conformances for `enumerated()`"
+    },
+    {
+      "authors" : [
+        {
+          "link" : "https:\/\/github.com\/airspeedswift",
+          "name" : "Ben Cohen"
+        }
+      ],
+      "discussions" : [
+        {
+          "link" : "https:\/\/forums.swift.org\/t\/pitch-explicit-specialization\/76967",
+          "name" : "pitch"
+        },
+        {
+          "link" : "https:\/\/forums.swift.org\/t\/se-0460-explicit-specialization\/77541",
+          "name" : "review"
+        },
+        {
+          "link" : "https:\/\/forums.swift.org\/t\/accepted-se-0460-explicit-specialization\/78583",
+          "name" : "acceptance"
+        }
+      ],
+      "id" : "SE-0460",
+      "link" : "0460-specialized.md",
+      "reviewManagers" : [
+        {
+          "link" : "https:\/\/github.com\/stephentyrone",
+          "name" : "Steve Canon"
+        }
+      ],
+      "sha" : "8c5ead4bd2ded0f8ea6dbee4bfd1191522abb424",
+      "status" : {
+        "state" : "implemented",
+        "version" : "Next"
+      },
+      "summary" : "The Swift compiler has the ability to \"specialize\" a generic function at compile time. This specialization creates a custom implementation of the function, where the generic placeholders are substituted with specific types. This can unlock optimizations of that specialized function that can be dramatically faster than the unspecialized version in some circumstances. The compiler can generate this specialized version and call it when it can see at the call site with what concrete types a function is being called, and the body of the function to specialize.",
+      "title" : "Explicit Specialization"
+    },
+    {
+      "authors" : [
+        {
+          "link" : "https:\/\/github.com\/hborla",
+          "name" : "Holly Borla"
+        },
+        {
+          "link" : "https:\/\/github.com\/rjmccall",
+          "name" : "John McCall"
+        }
+      ],
+      "discussions" : [
+        {
+          "link" : "https:\/\/forums.swift.org\/t\/pitch-inherit-isolation-by-default-for-async-functions\/74862",
+          "name" : "pitch"
+        },
+        {
+          "link" : "https:\/\/forums.swift.org\/t\/se-0461-run-nonisolated-async-functions-on-the-callers-actor-by-default\/77987",
+          "name" : "first review"
+        },
+        {
+          "link" : "https:\/\/forums.swift.org\/t\/accepted-with-modifications-and-focused-re-review-se-0461-run-nonisolated-async-functions-on-the-callers-actor-by-default\/78920",
+          "name" : "acceptance with focused re-review"
+        },
+        {
+          "link" : "https:\/\/forums.swift.org\/t\/focused-re-review-se-0461-run-nonisolated-async-functions-on-the-callers-actor-by-default\/78921",
+          "name" : "second review"
+        },
+        {
+          "link" : "https:\/\/forums.swift.org\/t\/accepted-with-modifications-se-0461-run-nonisolated-async-functions-on-the-caller-s-actor-by-default\/79117",
+          "name" : "second acceptance"
+        }
+      ],
+      "id" : "SE-0461",
+      "link" : "0461-async-function-isolation.md",
+      "previousProposalIDs" : [
+        "SE-0338"
+      ],
+      "reviewManagers" : [
+        {
+          "link" : "https:\/\/github.com\/xwu",
+          "name" : "Xiaodi Wu"
+        }
+      ],
+      "sha" : "fef2459dc94fa86d537d05c8a74d77b0d8234498",
+      "status" : {
+        "state" : "implemented",
+        "version" : "6.2"
+      },
+      "summary" : "Swift's general philosophy is to prioritize safety and ease-of-use over performance, while still providing tools to write more efficient code. The current behavior of nonisolated async functions prioritizes main actor responsiveness at the expense of usability.",
+      "title" : "Run nonisolated async functions on the caller's actor by default",
+      "upcomingFeatureFlag" : {
+        "flag" : "NonisolatedNonsendingByDefault"
+      }
+    },
+    {
+      "authors" : [
+        {
+          "link" : "https:\/\/github.com\/ktoso",
+          "name" : "Konrad 'ktoso' Malawski"
+        }
+      ],
+      "discussions" : [
+        {
+          "link" : "https:\/\/forums.swift.org\/t\/pitch-task-priority-escalation-apis\/77702",
+          "name" : "pitch"
+        },
+        {
+          "link" : "https:\/\/forums.swift.org\/t\/se-0462-task-priority-escalation-apis\/77997",
+          "name" : "review"
+        },
+        {
+          "link" : "https:\/\/forums.swift.org\/t\/accepted-with-modifications-se-0462-task-priority-escalation-apis\/78488",
+          "name" : "acceptance"
+        }
+      ],
+      "id" : "SE-0462",
+      "link" : "0462-task-priority-escalation-apis.md",
+      "reviewManagers" : [
+        {
+          "link" : "https:\/\/github.com\/jumhyn",
+          "name" : "Freddy Kellison-Linn"
+        }
+      ],
+      "sha" : "f12b6dd3755c262916e5e4d3854ff358e9c8b3bb",
+      "status" : {
+        "state" : "implemented",
+        "version" : "6.2"
+      },
+      "summary" : "A large part of Swift Concurrency is its Structured Concurrency model, in which tasks automatically form parent-child relationships, and inherit certain traits from their parent task. For example, a task started from a medium priority task, also starts on the medium priority, and not only that – if the parent task gets awaited on from a higher priority task, the parent's as well as all of its child tasks' task priority will be escalated in order to avoid priority inversion problems.",
+      "title" : "Task Priority Escalation APIs"
+    },
+    {
+      "authors" : [
+        {
+          "link" : "https:\/\/github.com\/hborla",
+          "name" : "Holly Borla"
+        }
+      ],
+      "discussions" : [
+        {
+          "link" : "https:\/\/forums.swift.org\/t\/pitch-import-objective-c-completion-handler-parameters-as-sendable\/77904",
+          "name" : "pitch"
+        },
+        {
+          "link" : "https:\/\/forums.swift.org\/t\/se-0463-import-objective-c-completion-handler-parameters-as-sendable\/78169",
+          "name" : "review"
+        },
+        {
+          "link" : "https:\/\/forums.swift.org\/t\/accepted-se-0463-import-objective-c-completion-handler-parameters-as-sendable\/78489",
+          "name" : "acceptance"
+        }
+      ],
+      "id" : "SE-0463",
+      "link" : "0463-sendable-completion-handlers.md",
+      "reviewManagers" : [
+        {
+          "link" : "https:\/\/github.com\/rjmccall",
+          "name" : "John McCall"
+        }
+      ],
+      "sha" : "85729b6ae51daebf2c264ea7873965f991635aab",
+      "status" : {
+        "state" : "implemented",
+        "version" : "6.2"
+      },
+      "summary" : "This proposal changes the Objective-C importing rules such that completion handler parameters are `@Sendable` by default.",
+      "title" : "Import Objective-C completion handler parameters as `@Sendable`"
+    },
+    {
+      "authors" : [
+        {
+          "link" : "https:\/\/github.com\/milseman",
+          "name" : "Michael Ilseman"
+        },
+        {
+          "link" : "https:\/\/github.com\/glessard",
+          "name" : "Guillaume Lessard"
+        }
+      ],
+      "discussions" : [
+        {
+          "link" : "https:\/\/forums.swift.org\/t\/pitch-utf-8-processing-over-unsafe-contiguous-bytes\/69715",
+          "name" : "first pitch"
+        },
+        {
+          "link" : "https:\/\/forums.swift.org\/t\/pitch-safe-utf-8-processing-over-contiguous-bytes\/72742",
+          "name" : "second pitch"
+        },
+        {
+          "link" : "https:\/\/forums.swift.org\/t\/pitch-utf8span-safe-utf-8-processing-over-contiguous-bytes\/77483",
+          "name" : "third pitch"
+        },
+        {
+          "link" : "https:\/\/forums.swift.org\/t\/se-0464-utf8span-safe-utf-8-processing-over-contiguous-bytes\/78307",
+          "name" : "review"
+        },
+        {
+          "link" : "https:\/\/forums.swift.org\/t\/accepted-with-modifications-se-0464-safe-utf-8-processing-over-contiguous-bytes\/79218",
+          "name" : "acceptance"
+        }
+      ],
+      "id" : "SE-0464",
+      "implementation" : [
+        {
+          "account" : "swiftlang",
+          "id" : "78531",
+          "repository" : "swift",
+          "type" : "pull"
+        }
+      ],
+      "link" : "0464-utf8span-safe-utf8-processing.md",
+      "reviewManagers" : [
+        {
+          "link" : "https:\/\/github.com\/allevato",
+          "name" : "Tony Allevato"
+        }
+      ],
+      "sha" : "1f366a60049004b1147182e8a8ac46f6516465c8",
+      "status" : {
+        "state" : "implemented",
+        "version" : "6.2"
+      },
+      "summary" : "We introduce `UTF8Span` for efficient and safe Unicode processing over contiguous storage. `UTF8Span` is a memory safe non-escapable type [similar to `Span`](0447-span-access-shared-contiguous-storage.md).",
+      "title" : "UTF8Span: Safe UTF-8 Processing Over Contiguous Bytes"
+    },
+    {
+      "authors" : [
+        {
+          "link" : "https:\/\/github.com\/lorentey",
+          "name" : "Karoy Lorentey"
+        }
+      ],
+      "discussions" : [
+        {
+          "link" : "https:\/\/forums.swift.org\/t\/accepted-se-0465-standard-library-primitives-for-nonescapable-type\/78637",
+          "name" : "Acceptance"
+        },
+        {
+          "link" : "https:\/\/forums.swift.org\/t\/se-0465-standard-library-primitives-for-nonescapable-types\/78310",
+          "name" : "Review"
+        },
+        {
+          "link" : "https:\/\/forums.swift.org\/t\/pitch-nonescapable-standard-library-primitives\/77253",
+          "name" : "Pitch"
+        }
+      ],
+      "id" : "SE-0465",
+      "link" : "0465-nonescapable-stdlib-primitives.md",
+      "reviewManagers" : [
+        {
+          "link" : "https:\/\/github.com\/douggregor",
+          "name" : "Doug Gregor"
+        }
+      ],
+      "sha" : "798025fef9a4b15dfca27f746a93ddce555c93b2",
+      "status" : {
+        "state" : "implemented",
+        "version" : "6.2"
+      },
+      "summary" : "This document proposes to allow `Optional` and `Result` to hold instances of nonescapable types, and continues the work of adding support for noncopyable and nonescapable types throughout the Swift Standard Library.",
+      "title" : "Standard Library Primitives for Nonescapable Types"
+    },
+    {
+      "authors" : [
+        {
+          "link" : "https:\/\/github.com\/hborla",
+          "name" : "Holly Borla"
+        },
+        {
+          "link" : "https:\/\/github.com\/DougGregor",
+          "name" : "Doug Gregor"
+        }
+      ],
+      "discussions" : [
+        {
+          "link" : "https:\/\/forums.swift.org\/t\/pitch-control-default-actor-isolation-inference\/77482",
+          "name" : "pitch"
+        },
+        {
+          "link" : "https:\/\/forums.swift.org\/t\/se-0466-control-default-actor-isolation-inference\/78321",
+          "name" : "review"
+        },
+        {
+          "link" : "https:\/\/forums.swift.org\/t\/accepted-se-0466-control-default-actor-isolation-inference\/78926",
+          "name" : "acceptance"
+        },
+        {
+          "link" : "https:\/\/forums.swift.org\/t\/pitch-amend-se-0466-se-0470-to-improve-isolation-inference\/79854",
+          "name" : "amendment pitch"
+        },
+        {
+          "link" : "https:\/\/forums.swift.org\/t\/amendment-se-0466-control-default-actor-isolation-inference\/80994",
+          "name" : "amendment review"
+        }
+      ],
+      "id" : "SE-0466",
+      "link" : "0466-control-default-actor-isolation.md",
+      "reviewManagers" : [
+        {
+          "link" : "https:\/\/github.com\/stephentyrone",
+          "name" : "Steve Canon"
+        }
+      ],
+      "sha" : "5a1e975d253697c25232b989ee6358643c56f2c5",
+      "status" : {
+        "end" : "2025-07-15T00:00:00Z",
+        "start" : "2025-07-08T00:00:00Z",
+        "state" : "activeReview"
+      },
+      "summary" : "This proposal introduces a new compiler setting for inferring `@MainActor` isolation by default within the module to mitigate false-positive data-race safety errors in sequential code.",
+      "title" : "Control default actor isolation inference",
       "warnings" : [
         {
           "code" : 0,
           "kind" : "warning",
-          "message" : "Review ended on 2024-06-13 00:00:00 +0000.",
+          "message" : "Review ended on 2025-07-15 00:00:00 +0000.",
           "suggestion" : ""
         }
       ]
+    },
+    {
+      "authors" : [
+        {
+          "link" : "https:\/\/github.com\/glessard",
+          "name" : "Guillaume Lessard"
+        }
+      ],
+      "discussions" : [
+        {
+          "link" : "https:\/\/forums.swift.org\/t\/pitch-mutablespan\/77790",
+          "name" : "Pitch"
+        },
+        {
+          "link" : "https:\/\/forums.swift.org\/t\/se-0467-mutablespan\/78454",
+          "name" : "Review"
+        },
+        {
+          "link" : "https:\/\/forums.swift.org\/t\/accepted-se-0467-mutablespan\/78875",
+          "name" : "Acceptance"
+        }
+      ],
+      "id" : "SE-0467",
+      "implementation" : [
+        {
+          "account" : "swiftlang",
+          "id" : "79650",
+          "repository" : "swift",
+          "type" : "pull"
+        },
+        {
+          "account" : "swiftlang",
+          "id" : "80517",
+          "repository" : "swift",
+          "type" : "pull"
+        }
+      ],
+      "link" : "0467-MutableSpan.md",
+      "reviewManagers" : [
+        {
+          "link" : "https:\/\/github.com\/jckarter",
+          "name" : "Joe Groff"
+        }
+      ],
+      "sha" : "846697c393c12cee1a91e63437f2cb137e21d0f3",
+      "status" : {
+        "state" : "implemented",
+        "version" : "6.2"
+      },
+      "summary" : "We recently [introduced](https:\/\/github.com\/swiftlang\/swift-evolution\/blob\/main\/proposals\/0447-span-access-shared-contiguous-storage.md) the `Span` and `RawSpan` types, providing shared read-only access to borrowed memory. This proposal adds helper types to delegate mutations of exclusively-borrowed memory: `MutableSpan` and `MutableRawSpan`.",
+      "title" : "MutableSpan and MutableRawSpan: delegate mutations of contiguous memory"
+    },
+    {
+      "authors" : [
+        {
+          "link" : "https:\/\/github.com\/nickolas-pohilets",
+          "name" : "Mykola Pokhylets"
+        }
+      ],
+      "discussions" : [
+        {
+          "link" : "https:\/\/forums.swift.org\/t\/pitch-add-hashable-conformance-to-asyncstream-continuation\/77897",
+          "name" : "pitch"
+        },
+        {
+          "link" : "https:\/\/forums.swift.org\/t\/se-0468-hashable-conformance-for-async-throwing-stream-continuation\/78487",
+          "name" : "review"
+        },
+        {
+          "link" : "https:\/\/forums.swift.org\/t\/accepted-se-0468-hashable-conformance-for-async-throwing-stream-continuation\/79116",
+          "name" : "acceptance"
+        }
+      ],
+      "id" : "SE-0468",
+      "implementation" : [
+        {
+          "account" : "swiftlang",
+          "id" : "79457",
+          "repository" : "swift",
+          "type" : "pull"
+        }
+      ],
+      "link" : "0468-async-stream-continuation-hashable-conformance.md",
+      "reviewManagers" : [
+        {
+          "link" : "https:\/\/github.com\/Jumhyn",
+          "name" : "Freddy Kellison-Linn"
+        }
+      ],
+      "sha" : "5412d1734eb5257e7943909ea2f3df09ce7ff193",
+      "status" : {
+        "state" : "implemented",
+        "version" : "6.2"
+      },
+      "summary" : "This proposal adds a `Hashable` conformance to `Async(Throwing)Stream.Continuation` to simplify working with multiple streams.",
+      "title" : "`Hashable` conformance for `Async(Throwing)Stream.Continuation`"
+    },
+    {
+      "authors" : [
+        {
+          "link" : "https:\/\/github.com\/ktoso",
+          "name" : "Konrad Malawski"
+        },
+        {
+          "link" : "https:\/\/github.com\/Harjas12",
+          "name" : "Harjas Monga"
+        }
+      ],
+      "discussions" : [
+        {
+          "link" : "https:\/\/forums.swift.org\/t\/pitch-task-naming-api\/76115",
+          "name" : "pitch"
+        },
+        {
+          "link" : "https:\/\/forums.swift.org\/t\/se-0469-task-naming\/78509",
+          "name" : "review"
+        },
+        {
+          "link" : "https:\/\/forums.swift.org\/t\/accepted-with-modifications-se-0469-task-naming\/79438",
+          "name" : "acceptance"
+        }
+      ],
+      "id" : "SE-0469",
+      "implementation" : [
+        {
+          "account" : "swiftlang",
+          "id" : "79600",
+          "repository" : "swift",
+          "type" : "pull"
+        }
+      ],
+      "link" : "0469-task-names.md",
+      "reviewManagers" : [
+        {
+          "link" : "https:\/\/github.com\/hborla",
+          "name" : "Holly Borla"
+        }
+      ],
+      "sha" : "0d1faf7de79639dcde886f57f766fe0b65190db0",
+      "status" : {
+        "state" : "implemented",
+        "version" : "6.2"
+      },
+      "summary" : "In this proposal, we introduce several new APIs to allow developers to name their Swift Tasks for the purposes of identifying tasks in a human-readable way. These names can then be used to identify tasks by printing their names, programatically inspecting the name property, or by tools which dump and inspect tasks–such as debuggers, swift-inspect or others.",
+      "title" : "Task Naming"
+    },
+    {
+      "authors" : [
+        {
+          "link" : "https:\/\/github.com\/DougGregor",
+          "name" : "Doug Gregor"
+        }
+      ],
+      "discussions" : [
+        {
+          "link" : "https:\/\/forums.swift.org\/t\/pre-pitch-isolated-conformances\/77726",
+          "name" : "pitch"
+        },
+        {
+          "link" : "https:\/\/forums.swift.org\/t\/se-0470-global-actor-isolated-conformances\/78704",
+          "name" : "review"
+        },
+        {
+          "link" : "https:\/\/forums.swift.org\/t\/accepted-se-0470-global-actor-isolated-conformances\/79189",
+          "name" : "acceptance"
+        },
+        {
+          "link" : "https:\/\/forums.swift.org\/t\/pitch-amend-se-0466-se-0470-to-improve-isolation-inference\/79854",
+          "name" : "amendment pitch"
+        },
+        {
+          "link" : "https:\/\/forums.swift.org\/t\/amendment-se-0470-global-actor-isolated-conformances\/80999",
+          "name" : "amendment review"
+        },
+        {
+          "link" : "https:\/\/forums.swift.org\/t\/amendment-accepted-se-0470-global-actor-isolated-conformances\/81144",
+          "name" : "amendment acceptance"
+        }
+      ],
+      "id" : "SE-0470",
+      "link" : "0470-isolated-conformances.md",
+      "reviewManagers" : [
+        {
+          "link" : "https:\/\/github.com\/xwu",
+          "name" : "Xiaodi Wu"
+        }
+      ],
+      "sha" : "879bd8d05ef542ae9479ce2d5dc1ee6d51c95412",
+      "status" : {
+        "state" : "implemented",
+        "version" : "6.2"
+      },
+      "summary" : "Types isolated to a global actor (such as `@MainActor`) are useful for representing data that can only ever be used from a single concurrency context. They occur both in single-threaded programs where all code is expected to run on the main actor as well as larger applications where interaction with the UI occurs through the main actor. Unfortunately, such types are unable to conform to most protocols due to isolation mismatches:",
+      "title" : "Global-actor isolated conformances",
+      "upcomingFeatureFlag" : {
+        "flag" : "InferIsolatedConformances"
+      }
+    },
+    {
+      "authors" : [
+        {
+          "link" : "https:\/\/github.com\/ktoso",
+          "name" : "Konrad 'ktoso' Malawski"
+        }
+      ],
+      "discussions" : [
+        {
+          "link" : "https:\/\/forums.swift.org\/t\/pitch-serialexecutor-improved-custom-serialexecutor-isolation-checking\/78237\/",
+          "name" : "Pitch"
+        },
+        {
+          "link" : "https:\/\/forums.swift.org\/t\/se-0471-improved-custom-serialexecutor-isolation-checking-for-concurrency-runtime\/78834",
+          "name" : "Review"
+        },
+        {
+          "link" : "https:\/\/forums.swift.org\/t\/accepted-se-0471-improved-custom-serialexecutor-isolation-checking-for-concurrency-runtime\/79894",
+          "name" : "Acceptance"
+        }
+      ],
+      "id" : "SE-0471",
+      "link" : "0471-SerialExecutor-isIsolated.md",
+      "reviewManagers" : [
+        {
+          "link" : "https:\/\/github.com\/DougGregor",
+          "name" : "Doug Gregor"
+        }
+      ],
+      "sha" : "b91e3693ad6b2e4215f3372605d655865c053466",
+      "status" : {
+        "state" : "implemented",
+        "version" : "6.2"
+      },
+      "summary" : "In [SE-0424: Custom isolation checking for SerialExecutor](https:\/\/github.com\/swiftlang\/swift-evolution\/blob\/main\/proposals\/0424-custom-isolation-checking-for-serialexecutor.md) we introduced a way for custom executors implementing the `SerialExecutor` protocol to assert and assume the static isolation if the dynamic check succeeded. This proposal extends these capabilities, allowing custom executors to not only \"check and crash if assumption was wrong\", but also check and act on the result of the check.",
+      "title" : "Improved Custom SerialExecutor isolation checking for Concurrency Runtime"
+    },
+    {
+      "authors" : [
+        {
+          "link" : "https:\/\/github.com\/ktoso",
+          "name" : "Konrad 'ktoso' Malawski"
+        }
+      ],
+      "discussions" : [
+        {
+          "link" : "https:\/\/forums.swift.org\/t\/pitch-concurrency-starting-tasks-synchronously-from-caller-context\/77960\/",
+          "name" : "pitch"
+        },
+        {
+          "link" : "https:\/\/forums.swift.org\/t\/se-0472-starting-tasks-synchronously-from-caller-context\/78883",
+          "name" : "first review"
+        },
+        {
+          "link" : "https:\/\/forums.swift.org\/t\/returned-for-revision-se-0472-starting-tasks-synchronously-from-caller-context\/79311",
+          "name" : "returned for revision"
+        },
+        {
+          "link" : "https:\/\/forums.swift.org\/t\/second-review-se-0472-starting-tasks-synchronously-from-caller-context\/79683",
+          "name" : "second review"
+        },
+        {
+          "link" : "https:\/\/forums.swift.org\/t\/accepted-with-modifications-se-0472-starting-tasks-synchronously-from-caller-context\/80037",
+          "name" : "acceptance"
+        }
+      ],
+      "id" : "SE-0472",
+      "link" : "0472-task-start-synchronously-on-caller-context.md",
+      "reviewManagers" : [
+        {
+          "link" : "https:\/\/github.com\/allevato",
+          "name" : "Tony Allevato"
+        }
+      ],
+      "sha" : "1d266bfba4043e93f869677a68b43a4a959a419e",
+      "status" : {
+        "state" : "implemented",
+        "version" : "6.2"
+      },
+      "summary" : "Swift Concurrency's primary means of entering an asynchronous context is creating a Task (structured or unstructured), and from there onwards it is possible to call asynchronous functions, and execution of the current work may *suspend*.",
+      "title" : "Starting tasks synchronously from caller context"
+    },
+    {
+      "authors" : [
+        {
+          "link" : "https:\/\/github.com\/phausler",
+          "name" : "Philippe Hausler"
+        }
+      ],
+      "discussions" : [
+        {
+          "link" : "https:\/\/forums.swift.org\/t\/pitch-suspendingclock-and-continuousclock-epochs\/78017",
+          "name" : "pitch"
+        },
+        {
+          "link" : "https:\/\/forums.swift.org\/t\/se-0473-clock-epochs\/78923",
+          "name" : "review"
+        },
+        {
+          "link" : "https:\/\/forums.swift.org\/t\/accepted-se-0473-clock-epochs\/79221",
+          "name" : "acceptance"
+        }
+      ],
+      "id" : "SE-0473",
+      "implementation" : [
+        {
+          "account" : "swiftlang",
+          "id" : "80409",
+          "repository" : "swift",
+          "type" : "pull"
+        }
+      ],
+      "link" : "0473-clock-epochs.md",
+      "reviewManagers" : [
+        {
+          "link" : "https:\/\/github.com\/rjmccall",
+          "name" : "John McCall"
+        }
+      ],
+      "sha" : "c674352d3ccf833b766cb693158660cd6b125d9c",
+      "status" : {
+        "state" : "accepted"
+      },
+      "summary" : "[SE-0329: Clock, Instant, and Duration](https:\/\/github.com\/swiftlang\/swift-evolution\/blob\/main\/proposals\/0329-clock-instant-duration.md) introduced three concrete clock types: `SuspendingClock`, `ContinuousClock`, and `UTCClock`. While not all clocks have a meaningful concept of a reference or zero instant, `SuspendingClock` and `ContinuousClock` do, and having access to it can be useful.",
+      "title" : "Clock Epochs"
+    },
+    {
+      "authors" : [
+        {
+          "link" : "https:\/\/github.com\/airspeedswift",
+          "name" : "Ben Cohen"
+        },
+        {
+          "link" : "https:\/\/github.com\/nate-chandler",
+          "name" : "Nate Chandler"
+        },
+        {
+          "link" : "https:\/\/github.com\/jckarter\/",
+          "name" : "Joe Groff"
+        }
+      ],
+      "discussions" : [
+        {
+          "link" : "https:\/\/forums.swift.org\/t\/modify-accessors\/31872",
+          "name" : "pitch 1"
+        },
+        {
+          "link" : "https:\/\/forums.swift.org\/t\/pitch-modify-and-read-accessors\/75627",
+          "name" : "pitch 2"
+        },
+        {
+          "link" : "https:\/\/forums.swift.org\/t\/pitch-3-yielding-coroutine-accessors\/77956",
+          "name" : "pitch 3"
+        },
+        {
+          "link" : "https:\/\/forums.swift.org\/t\/se-0474-yielding-accessors\/79170",
+          "name" : "review"
+        },
+        {
+          "link" : "https:\/\/forums.swift.org\/t\/accepted-se-0474-yielding-accessors\/80273",
+          "name" : "Acceptance"
+        }
+      ],
+      "id" : "SE-0474",
+      "link" : "0474-yielding-accessors.md",
+      "reviewManagers" : [
+        {
+          "link" : "https:\/\/github.com\/stephentyrone",
+          "name" : "Steve Canon"
+        }
+      ],
+      "sha" : "a109cee5484aec66362cbd863e086723e4d9eb25",
+      "status" : {
+        "state" : "accepted"
+      },
+      "summary" : "We propose the introduction of two new accessors, `yielding mutate` and `yielding borrow`, for implementing computed properties and subscripts alongside the current `get` and `set`.",
+      "title" : "Yielding accessors"
+    },
+    {
+      "authors" : [
+        {
+          "link" : "https:\/\/github.com\/phausler",
+          "name" : "Philippe Hausler"
+        }
+      ],
+      "discussions" : [
+        {
+          "link" : "https:\/\/forums.swift.org\/t\/pitch-transactional-observation-of-values\/78315",
+          "name" : "pitch"
+        },
+        {
+          "link" : "https:\/\/forums.swift.org\/t\/se-0475-transactional-observation-of-values\/79224",
+          "name" : "review"
+        },
+        {
+          "link" : "https:\/\/forums.swift.org\/t\/accepted-se-0475-transactional-observation-of-values\/80389",
+          "name" : "acceptance"
+        }
+      ],
+      "id" : "SE-0475",
+      "link" : "0475-observed.md",
+      "reviewManagers" : [
+        {
+          "link" : "https:\/\/github.com\/Jumhyn",
+          "name" : "Freddy Kellison-Linn"
+        }
+      ],
+      "sha" : "7690394895b9dc5c6bd832216b5e5e31b99724e1",
+      "status" : {
+        "state" : "accepted"
+      },
+      "summary" : "Observation was introduced to add the ability to observe changes in graphs of objects. The initial tools for observation afforded seamless integration into SwiftUI, however aiding SwiftUI is not the only intent of the module - it is more general than that. This proposal describes a new safe, ergonomic and composable way to observe changes to models using an AsyncSequence, starting transactions at the first willSet and then emitting a value upon that transaction end at the first point of consistency by interoperating with Swift Concurrency.",
+      "title" : "Transactional Observation of Values"
+    },
+    {
+      "authors" : [
+        {
+          "link" : "https:\/\/github.com\/beccadax",
+          "name" : "Becca Royal-Gordon"
+        }
+      ],
+      "discussions" : [
+        {
+          "link" : "https:\/\/forums.swift.org\/t\/pitch-controlling-the-abi-of-a-declaration\/75123",
+          "name" : "pitch"
+        },
+        {
+          "link" : "https:\/\/forums.swift.org\/t\/se-0476-controlling-the-abi-of-a-function-initializer-property-or-subscript\/79233",
+          "name" : "review"
+        },
+        {
+          "link" : "https:\/\/forums.swift.org\/t\/accepted-with-modifications-se-0476-controlling-the-abi-of-a-function-initializer-property-or-subscript\/79644",
+          "name" : "acceptance"
+        }
+      ],
+      "id" : "SE-0476",
+      "link" : "0476-abi-attr.md",
+      "reviewManagers" : [
+        {
+          "link" : "https:\/\/github.com\/hborla",
+          "name" : "Holly Borla"
+        }
+      ],
+      "sha" : "22caeee1a23ad687f9a2398a07e29dd8d9cf3d26",
+      "status" : {
+        "state" : "implemented",
+        "version" : "6.2"
+      },
+      "summary" : "We propose introducing the `@abi` attribute, which provides an alternate version of the declaration used for name mangling. This feature would allow developers of ABI-stable libraries to make minor changes, such as changing the sendability of a parameter or renaming a declaration (so long as source compatibility is preserved in a backwards-deployable way), without requiring deep knowledge of compiler implementation details.",
+      "title" : "Controlling the ABI of a function, initializer, property, or subscript"
+    },
+    {
+      "authors" : [
+        {
+          "link" : "https:\/\/github.com\/natecook1000",
+          "name" : "Nate Cook"
+        }
+      ],
+      "discussions" : [
+        {
+          "link" : "https:\/\/forums.swift.org\/t\/pitch-default-values-for-string-interpolations\/69381",
+          "name" : "pitch"
+        },
+        {
+          "link" : "https:\/\/forums.swift.org\/t\/se-0477-default-value-in-string-interpolations\/79302",
+          "name" : "review"
+        },
+        {
+          "link" : "https:\/\/forums.swift.org\/t\/accepted-with-modification-se-0477-default-value-in-string-interpolations\/79609",
+          "name" : "acceptance"
+        }
+      ],
+      "id" : "SE-0477",
+      "implementation" : [
+        {
+          "account" : "swiftlang",
+          "id" : "80547",
+          "repository" : "swift",
+          "type" : "pull"
+        }
+      ],
+      "link" : "0477-default-interpolation-values.md",
+      "reviewManagers" : [
+        {
+          "link" : "https:\/\/github.com\/xwu",
+          "name" : "Xiaodi Wu"
+        }
+      ],
+      "sha" : "fc024885c95bedf44177f09723c1ce9b19ce54d4",
+      "status" : {
+        "state" : "implemented",
+        "version" : "6.2"
+      },
+      "summary" : "A new string interpolation syntax for providing a default string when interpolating an optional value.",
+      "title" : "Default Value in String Interpolations"
+    },
+    {
+      "authors" : [
+        {
+          "link" : "https:\/\/github.com\/hborla",
+          "name" : "Holly Borla"
+        }
+      ],
+      "discussions" : [
+        {
+          "link" : "https:\/\/forums.swift.org\/t\/pitch-a-typealias-for-per-file-default-actor-isolation\/79150",
+          "name" : "pitch"
+        },
+        {
+          "link" : "https:\/\/forums.swift.org\/t\/se-0478-default-actor-isolation-typealias\/79436",
+          "name" : "review"
+        }
+      ],
+      "id" : "SE-0478",
+      "implementation" : [
+        {
+          "account" : "swiftlang",
+          "id" : "80572",
+          "repository" : "swift",
+          "type" : "pull"
+        }
+      ],
+      "link" : "0478-default-isolation-typealias.md",
+      "previousProposalIDs" : [
+        "SE-0466"
+      ],
+      "reviewManagers" : [
+        {
+          "link" : "https:\/\/github.com\/stephentyrone",
+          "name" : "Steve Canon"
+        }
+      ],
+      "sha" : "590ea5fd7be4825d9fd15105328cea74865c7949",
+      "status" : {
+        "end" : "2025-05-05T00:00:00Z",
+        "start" : "2025-04-21T00:00:00Z",
+        "state" : "activeReview"
+      },
+      "summary" : "[SE-0466: Control default actor isolation inference](\/proposals\/0466-control-default-actor-isolation.md) introduced the ability to specify default actor isolation on a per-module basis. This proposal introduces a new typealias for specifying default actor isolation in individual source files within a module. This allows specific files to opt out of main actor isolation within a main-actor-by-default module, and opt into main actor isolation within a nonisolated-by-default module.",
+      "title" : "Default actor isolation typealias",
+      "warnings" : [
+        {
+          "code" : 0,
+          "kind" : "warning",
+          "message" : "Review ended on 2025-05-05 00:00:00 +0000.",
+          "suggestion" : ""
+        }
+      ]
+    },
+    {
+      "authors" : [
+        {
+          "link" : "https:\/\/github.com\/amritpan",
+          "name" : "Amritpan Kaur"
+        },
+        {
+          "link" : "https:\/\/github.com\/xedin",
+          "name" : "Pavel Yaskevich"
+        }
+      ],
+      "discussions" : [
+        {
+          "link" : "https:\/\/forums.swift.org\/t\/pitch-method-key-paths\/76678",
+          "name" : "pitch"
+        },
+        {
+          "link" : "https:\/\/forums.swift.org\/t\/se-0479-method-and-initializer-key-paths\/79457",
+          "name" : "review"
+        }
+      ],
+      "id" : "SE-0479",
+      "implementation" : [
+        {
+          "account" : "swiftlang",
+          "id" : "78823",
+          "repository" : "swift",
+          "type" : "pull"
+        },
+        {
+          "account" : "swiftlang",
+          "id" : "2950",
+          "repository" : "swift-syntax",
+          "type" : "pull"
+        },
+        {
+          "account" : "swiftlang",
+          "id" : "1179",
+          "repository" : "swift-foundation",
+          "type" : "pull"
+        }
+      ],
+      "link" : "0479-method-and-initializer-keypaths.md",
+      "reviewManagers" : [
+        {
+          "link" : "https:\/\/github.com\/beccadax",
+          "name" : "Becca Royal-Gordon"
+        }
+      ],
+      "sha" : "bd1db9fe2e7c425a99733f329e87e93cb6926b42",
+      "status" : {
+        "end" : "2025-05-05T00:00:00Z",
+        "start" : "2025-04-22T00:00:00Z",
+        "state" : "activeReview"
+      },
+      "summary" : "Swift key paths can be written to properties and subscripts. This proposal extends key path usage to include references to method members, such as instance and type methods, and initializers.",
+      "title" : "Method and Initializer Key Paths",
+      "warnings" : [
+        {
+          "code" : 0,
+          "kind" : "warning",
+          "message" : "Review ended on 2025-05-05 00:00:00 +0000.",
+          "suggestion" : ""
+        }
+      ]
+    },
+    {
+      "authors" : [
+        {
+          "link" : "https:\/\/github.com\/DmT021",
+          "name" : "Dmitrii Galimzianov"
+        }
+      ],
+      "discussions" : [
+        {
+          "link" : "https:\/\/forums.swift.org\/t\/pitch-warning-control-settings-for-swiftpm\/78666",
+          "name" : "pitch"
+        },
+        {
+          "link" : "https:\/\/forums.swift.org\/t\/se-0480-warning-control-settings-for-swiftpm\/79475",
+          "name" : "review"
+        },
+        {
+          "link" : "https:\/\/forums.swift.org\/t\/se-0480-warning-control-settings-for-swiftpm\/79475\/8",
+          "name" : "returned for revision"
+        },
+        {
+          "link" : "https:\/\/forums.swift.org\/t\/accepted-se-0480-warning-control-settings-for-swiftpm\/80327",
+          "name" : "acceptance"
+        }
+      ],
+      "id" : "SE-0480",
+      "implementation" : [
+        {
+          "account" : "swiftlang",
+          "id" : "8315",
+          "repository" : "swift-package-manager",
+          "type" : "pull"
+        }
+      ],
+      "link" : "0480-swiftpm-warning-control.md",
+      "previousProposalIDs" : [
+        "SE-0443"
+      ],
+      "reviewManagers" : [
+        {
+          "link" : "https:\/\/github.com\/rjmccall",
+          "name" : "John McCall"
+        },
+        {
+          "link" : "https:\/\/github.com\/FranzBusch",
+          "name" : "Franz Busch"
+        }
+      ],
+      "sha" : "c0faff43e7e395a8ff26c0b1984d026a2fdc94a8",
+      "status" : {
+        "state" : "implemented",
+        "version" : "6.2"
+      },
+      "summary" : "This proposal adds new settings to SwiftPM to control how the Swift, C, and C++ compilers treat warnings during the build process. It builds on [SE-0443](https:\/\/github.com\/swiftlang\/swift-evolution\/blob\/main\/proposals\/0443-warning-control-flags.md), which introduced warning control flags for the Swift compiler but left SwiftPM support as a future direction.",
+      "title" : "Warning Control Settings for SwiftPM"
+    },
+    {
+      "authors" : [
+        {
+          "link" : "https:\/\/github.com\/nickolas-pohilets",
+          "name" : "Mykola Pokhylets"
+        }
+      ],
+      "discussions" : [
+        {
+          "link" : "https:\/\/forums.swift.org\/t\/weak-captures-in-sendable-sending-closures\/78498",
+          "name" : "discussion"
+        },
+        {
+          "link" : "https:\/\/forums.swift.org\/t\/pitch-weak-let\/79271",
+          "name" : "pitch"
+        },
+        {
+          "link" : "https:\/\/forums.swift.org\/t\/se-0481-weak-let\/79603",
+          "name" : "review"
+        },
+        {
+          "link" : "https:\/\/forums.swift.org\/t\/accepted-se-0481-weak-let\/79895",
+          "name" : "acceptance"
+        }
+      ],
+      "id" : "SE-0481",
+      "implementation" : [
+        {
+          "account" : "swiftlang",
+          "id" : "80440",
+          "repository" : "swift",
+          "type" : "pull"
+        }
+      ],
+      "link" : "0481-weak-let.md",
+      "reviewManagers" : [
+        {
+          "link" : "https:\/\/github.com\/rjmccall",
+          "name" : "John McCall"
+        }
+      ],
+      "sha" : "ca885adc1cd9f159b0729db5f1e4bab574f9d881",
+      "status" : {
+        "state" : "accepted"
+      },
+      "summary" : "Swift provides weak object references using the `weak` modifier on variables and stored properties. Weak references become `nil` when the object is destroyed, causing the value of the variable to seem to change. Swift has therefore always required `weak` references to be declared with the `var` keyword rather than `let`. However, that causes unnecessary friction with [sendability checking](https:\/\/github.com\/swiftlang\/swift-evolution\/blob\/main\/proposals\/0302-concurrent-value-and-concurrent-closures.md): because weak references must be mutable, classes and closures with such references are unsafe to share between concurrent contexts. This proposal lifts that restriction and allows `weak` to be combined with `let`.",
+      "title" : "`weak let`"
+    },
+    {
+      "authors" : [
+        {
+          "link" : "https:\/\/github.com\/daniel-grumberg",
+          "name" : "Daniel Grumberg"
+        },
+        {
+          "link" : "https:\/\/github.com\/MaxDesiatov",
+          "name" : "Max Desiatov"
+        },
+        {
+          "link" : "https:\/\/github.com\/FranzBusch",
+          "name" : "Franz Busch"
+        }
+      ],
+      "discussions" : [
+        {
+          "link" : "https:\/\/forums.swift.org\/t\/se-0482-binary-static-library-dependencies\/79634",
+          "name" : "discussion"
+        },
+        {
+          "link" : "https:\/\/forums.swift.org\/t\/pitch-swiftpm-support-for-binary-static-library-dependencies\/78619",
+          "name" : "pitch"
+        },
+        {
+          "link" : "https:\/\/forums.swift.org\/t\/accepted-se-0482-binary-static-library-dependencies\/80042",
+          "name" : "acceptance"
+        }
+      ],
+      "id" : "SE-0482",
+      "implementation" : [
+        {
+          "account" : "swiftlang",
+          "id" : "8639",
+          "repository" : "swift-package-manager",
+          "type" : "pull"
+        },
+        {
+          "account" : "swiftlang",
+          "id" : "8741",
+          "repository" : "swift-package-manager",
+          "type" : "pull"
+        }
+      ],
+      "link" : "0482-swiftpm-static-library-binary-target-non-apple-platforms.md",
+      "reviewManagers" : [
+        {
+          "link" : "https:\/\/github.com\/kubamracek",
+          "name" : "Kuba Mracek"
+        }
+      ],
+      "sha" : "5c7d90c92c2524bf29019aeff269a98980f4e702",
+      "status" : {
+        "state" : "implemented",
+        "version" : "6.2"
+      },
+      "summary" : "Swift continues to grow as a cross-platform language supporting a wide variety of use cases from [programming embedded device](https:\/\/www.swift.org\/blog\/embedded-swift-examples\/) to [server-side development](https:\/\/www.swift.org\/documentation\/server\/) across a multitude of [operating systems](https:\/\/www.swift.org\/documentation\/articles\/static-linux-getting-started.html). However, currently SwiftPM supports linking against binary dependencies on Apple platforms only. This proposal aims to make it possible to provide static library dependencies exposing a C interface on non-Apple platforms that depend only on the standard C library. The scope of this proposal is C libraries only, distributing Swift libraries has additional challenges (see [Future directions](#future-directions).",
+      "title" : "Binary Static Library Dependencies",
+      "trackingBugs" : [
+        {
+          "id" : "Swift Package Manger Issue",
+          "link" : "https:\/\/github.com\/swiftlang\/swift-package-manager\/issues\/7035"
+        }
+      ]
+    },
+    {
+      "authors" : [
+        {
+          "link" : "https:\/\/github.com\/hamishknight",
+          "name" : "Hamish Knight"
+        },
+        {
+          "link" : "https:\/\/github.com\/airspeedswift",
+          "name" : "Ben Cohen"
+        }
+      ],
+      "discussions" : [
+        {
+          "link" : "https:\/\/forums.swift.org\/t\/pitch-inlinearray-type-sugar\/79142",
+          "name" : "pitch"
+        },
+        {
+          "link" : "https:\/\/forums.swift.org\/t\/se-0483-inlinearray-literal-syntax\/79643",
+          "name" : "first review"
+        },
+        {
+          "link" : "https:\/\/forums.swift.org\/t\/second-review-se-0483-inlinearray-type-sugar\/80337",
+          "name" : "second review"
+        },
+        {
+          "link" : "https:\/\/forums.swift.org\/t\/accepted-se-0483-inlinearray-type-sugar\/81509",
+          "name" : "acceptance"
+        }
+      ],
+      "id" : "SE-0483",
+      "link" : "0483-inline-array-sugar.md",
+      "reviewManagers" : [
+        {
+          "link" : "https:\/\/github.com\/hborla",
+          "name" : "Holly Borla"
+        }
+      ],
+      "sha" : "507605ec34cb193d6cd20781d0643bbb8c9012f2",
+      "status" : {
+        "state" : "implemented",
+        "version" : "6.2"
+      },
+      "summary" : "We propose the introduction of type sugar for the `InlineArray` type, providing more succinct syntax for declaring an inline array.",
+      "title" : "`InlineArray` Type Sugar"
+    },
+    {
+      "authors" : [
+        {
+          "link" : "https:\/\/github.com\/itaiferber",
+          "name" : "Itai Ferber"
+        }
+      ],
+      "discussions" : [
+        {
+          "link" : "https:\/\/forums.swift.org\/t\/pitch-allow-additional-arguments-to-dynamicmemberlookup-subscripts\/79558",
+          "name" : "pitch"
+        },
+        {
+          "link" : "https:\/\/forums.swift.org\/t\/se-0484-allow-additional-arguments-to-dynamicmemberlookup-subscripts\/79853",
+          "name" : "review"
+        },
+        {
+          "link" : "https:\/\/forums.swift.org\/t\/accepted-se-0484-allow-additional-arguments-to-dynamicmemberlookup-subscripts\/80167",
+          "name" : "acceptance"
+        }
+      ],
+      "id" : "SE-0484",
+      "implementation" : [
+        {
+          "account" : "swiftlang",
+          "id" : "81148",
+          "repository" : "swift",
+          "type" : "pull"
+        }
+      ],
+      "link" : "0484-allow-additional-args-to-dynamicmemberlookup-subscripts.md",
+      "previousProposalIDs" : [
+        "SE-0195",
+        "SE-0252"
+      ],
+      "reviewManagers" : [
+        {
+          "link" : "https:\/\/github.com\/xwu",
+          "name" : "Xiaodi Wu"
+        }
+      ],
+      "sha" : "744cebb58be54f107b8052353c2299f1a838b385",
+      "status" : {
+        "state" : "accepted"
+      },
+      "summary" : "SE-0195 and SE-0252 introduced and refined `@dynamicMemberLookup` to provide type-safe \"dot\"-syntax access to arbitrary members of a type by reflecting the existence of certain `subscript(dynamicMember:)` methods on that type, turning",
+      "title" : "Allow Additional Arguments to `@dynamicMemberLookup` Subscripts"
+    },
+    {
+      "authors" : [
+        {
+          "link" : "https:\/\/github.com\/glessard",
+          "name" : "Guillaume Lessard"
+        }
+      ],
+      "discussions" : [
+        {
+          "link" : "https:\/\/forums.swift.org\/t\/pitch-outputspan\/79473",
+          "name" : "Pitch"
+        },
+        {
+          "link" : "https:\/\/forums.swift.org\/t\/se-0485-outputspan-delegate-initialization-of-contiguous-memory\/80032",
+          "name" : "Review"
+        },
+        {
+          "link" : "https:\/\/forums.swift.org\/t\/accepted-with-modifications-se-0485-outputspan-delegate-initialization-of-contiguous-memory\/80435",
+          "name" : "Acceptance"
+        }
+      ],
+      "id" : "SE-0485",
+      "implementation" : [
+        {
+          "account" : "swiftlang",
+          "id" : "81637",
+          "repository" : "swift",
+          "type" : "pull"
+        }
+      ],
+      "link" : "0485-outputspan.md",
+      "reviewManagers" : [
+        {
+          "link" : "https:\/\/github.com\/DougGregor",
+          "name" : "Doug Gregor"
+        }
+      ],
+      "sha" : "76f467f6fa733406498b7c824865997193ddd99c",
+      "status" : {
+        "state" : "implemented",
+        "version" : "6.2"
+      },
+      "summary" : "Following the introduction of [`Span`](https:\/\/github.com\/swiftlang\/swift-evolution\/blob\/main\/proposals\/0447-span-access-shared-contiguous-storage.md) and [`MutableSpan`](https:\/\/github.com\/swiftlang\/swift-evolution\/blob\/main\/proposals\/0467-MutableSpan.md), this proposal adds a general facility for initialization of exclusively-borrowed memory with the `OutputSpan` and `OutputRawSpan` types. The memory represented by `OutputSpan` consists of a number of initialized elements, followed by uninitialized memory. The operations of `OutputSpan` can change the number of initialized elements in memory, unlike `MutableSpan` which always represent initialized memory representing a fixed number of elements.",
+      "title" : "OutputSpan: delegate initialization of contiguous memory"
+    },
+    {
+      "authors" : [
+        {
+          "link" : "https:\/\/github.com\/AnthonyLatsis",
+          "name" : "Anthony Latsis"
+        },
+        {
+          "link" : "https:\/\/github.com\/xedin",
+          "name" : "Pavel Yaskevich"
+        }
+      ],
+      "discussions" : [
+        {
+          "link" : "https:\/\/forums.swift.org\/t\/pitch-adoption-tooling-for-upcoming-features\/77936",
+          "name" : "Pitch"
+        },
+        {
+          "link" : "https:\/\/forums.swift.org\/t\/se-0486-migration-tooling-for-swift-features\/80121",
+          "name" : "Review"
+        }
+      ],
+      "id" : "SE-0486",
+      "link" : "0486-adoption-tooling-for-swift-features.md",
+      "reviewManagers" : [
+        {
+          "link" : "https:\/\/github.com\/FranzBusch",
+          "name" : "Franz Busch"
+        }
+      ],
+      "sha" : "81f3424f5e850ab13bdaed20409c12c72b362893",
+      "status" : {
+        "state" : "implemented",
+        "version" : "6.2"
+      },
+      "summary" : "Swift 5.8 introduced [upcoming features](https:\/\/github.com\/swiftlang\/swift-evolution\/blob\/main\/proposals\/0362-piecemeal-future-features.md), which enabled piecemeal adoption of individual source-incompatible changes that are included in a language mode. Many upcoming features have a mechanical migration, meaning the compiler can determine the exact source changes necessary to allow the code to compile under the upcoming feature while preserving the behavior of the code. This proposal seeks to improve the experience of enabling individual Swift features by providing an integrated mechanism for producing these source code modifications automatically.",
+      "title" : "Migration tooling for Swift features"
+    },
+    {
+      "authors" : [
+        {
+          "link" : "https:\/\/github.com\/xedin",
+          "name" : "Pavel Yaskevich"
+        },
+        {
+          "link" : "https:\/\/github.com\/FranzBusch",
+          "name" : "Franz Busch"
+        },
+        {
+          "link" : "https:\/\/github.com\/lukasa",
+          "name" : "Cory Benfield"
+        }
+      ],
+      "discussions" : [
+        {
+          "link" : "https:\/\/forums.swift.org\/t\/pitch-extensible-enums-for-non-resilient-modules\/77649",
+          "name" : "pitch"
+        },
+        {
+          "link" : "https:\/\/forums.swift.org\/t\/se-0487-extensible-enums\/80114",
+          "name" : "first review"
+        },
+        {
+          "link" : "https:\/\/forums.swift.org\/t\/second-review-se-0487-extensible-enums\/80837",
+          "name" : "second review"
+        },
+        {
+          "link" : "https:\/\/forums.swift.org\/t\/accepted-se-0487-nonexhaustive-enums\/81508",
+          "name" : "acceptance"
+        }
+      ],
+      "id" : "SE-0487",
+      "implementation" : [
+        {
+          "account" : "swiftlang",
+          "id" : "80503",
+          "repository" : "swift",
+          "type" : "pull"
+        }
+      ],
+      "link" : "0487-extensible-enums.md",
+      "reviewManagers" : [
+        {
+          "link" : "https:\/\/github.com\/airspeedswift",
+          "name" : "Ben Cohen"
+        }
+      ],
+      "sha" : "34dbf69a680d365138083465690950f24cbe0c25",
+      "status" : {
+        "state" : "implemented",
+        "version" : "6.2.3"
+      },
+      "summary" : "This proposal provides developers the capabilities to mark public enums in non-resilient Swift libraries as extensible. This makes Swift `enum`s vastly more useful in public API of such libraries.",
+      "title" : "Nonexhaustive enums",
+      "trackingBugs" : [
+        {
+          "id" : "apple\/swift#55110",
+          "link" : "https:\/\/github.com\/swiftlang\/swift\/issues\/55110"
+        }
+      ]
+    },
+    {
+      "authors" : [
+        {
+          "link" : "https:\/\/github.com\/glessard",
+          "name" : "Guillaume Lessard"
+        }
+      ],
+      "discussions" : [
+        {
+          "link" : "https:\/\/forums.swift.org\/t\/pitch-apply-the-extracting-slicing-pattern-to-span-and-rawspan\/80322",
+          "name" : "pitch"
+        },
+        {
+          "link" : "https:\/\/forums.swift.org\/t\/se-0488-apply-the-extracting-slicing-pattern-more-widely\/80854",
+          "name" : "review"
+        },
+        {
+          "link" : "https:\/\/forums.swift.org\/t\/accepted-se-0488-apply-the-extracting-slicing-pattern-more-widely\/81235",
+          "name" : "acceptance"
+        }
+      ],
+      "id" : "SE-0488",
+      "link" : "0488-extracting.md",
+      "reviewManagers" : [
+        {
+          "link" : "https:\/\/github.com\/allevato",
+          "name" : "Tony Allevato"
+        }
+      ],
+      "sha" : "529b1d7e535190a3453d28b4356a5a3e9c6e40bb",
+      "status" : {
+        "state" : "implemented",
+        "version" : "6.2"
+      },
+      "summary" : "Slicing containers is an important operation, and non-copyable values have introduced a significant change in the spelling of that operation. When we [introduced](0437-noncopyable-stdlib-primitives.md) non-copyable primitives to the standard library, we allowed slicing `UnsafeBufferPointer` and related types via a family of `extracting()` methods. We expanded upon these when introducing [`MutableSpan`](0467-MutableSpan.md).",
+      "title" : "Apply the extracting() slicing pattern more widely"
+    },
+    {
+      "authors" : [
+        {
+          "link" : "https:\/\/github.com\/ZevEisenberg",
+          "name" : "Zev Eisenberg"
+        }
+      ],
+      "discussions" : [
+        {
+          "link" : "https:\/\/forums.swift.org\/t\/pitch-improve-encodingerror-and-decodingerror-s-printed-descriptions\/79872",
+          "name" : "pitch"
+        },
+        {
+          "link" : "https:\/\/forums.swift.org\/t\/se-0489-improve-encodingerror-and-decodingerrors-printed-descriptions\/81021",
+          "name" : "review"
+        },
+        {
+          "link" : "https:\/\/forums.swift.org\/t\/accepted-se-0489-improve-encodingerror-and-decodingerrors-printed-descriptions\/81380",
+          "name" : "acceptance"
+        }
+      ],
+      "id" : "SE-0489",
+      "link" : "0489-codable-error-printing.md",
+      "reviewManagers" : [
+        {
+          "link" : "https:\/\/github.com\/xwu",
+          "name" : "Xiaodi Wu"
+        }
+      ],
+      "sha" : "6dd70e71a53025fde405951a7242c752c25d270a",
+      "status" : {
+        "state" : "accepted"
+      },
+      "summary" : "`EncodingError` and `DecodingError` do not specify any custom debug description. The default descriptions bury the useful information in a format that is difficult to read. Less experienced developers may assume they are not human-readable at all, even though they contain useful information. The proposal is to conform `EncodingError` and `DecodingError` to `CustomDebugStringConvertible` and provide nicely formatted debug output.",
+      "title" : "Improve `EncodingError` and `DecodingError`'s printed descriptions"
+    },
+    {
+      "authors" : [
+        {
+          "link" : "https:\/\/github.com\/tayloraswift",
+          "name" : "tayloraswift"
+        }
+      ],
+      "discussions" : [
+        {
+          "link" : "https:\/\/forums.swift.org\/t\/pitch-replaceable-library-plugins\/77605",
+          "name" : "pitch"
+        },
+        {
+          "link" : "https:\/\/forums.swift.org\/t\/se-0490-environment-constrained-shared-libraries\/81975",
+          "name" : "review"
+        }
+      ],
+      "id" : "SE-0490",
+      "implementation" : [
+        {
+          "account" : "swiftlang",
+          "id" : "8249",
+          "repository" : "swift-package-manager",
+          "type" : "pull"
+        }
+      ],
+      "link" : "0490-environment-constrained-shared-libraries.md",
+      "reviewManagers" : [
+        {
+          "link" : "https:\/\/github.com\/al45tair",
+          "name" : "Alastair Houghton"
+        }
+      ],
+      "sha" : "39e362438765bc5c0a6c58111ecd6195fd9e9f5f",
+      "status" : {
+        "end" : "2025-09-18T00:00:00Z",
+        "start" : "2025-09-05T00:00:00Z",
+        "state" : "activeReview"
+      },
+      "summary" : "SwiftPM currently has no support for non-system binary library dependencies on Linux. This proposal adds support for **Environment Constrained Shared Libraries**, which are a type of dynamic library that is shared across a fleet of machines and can be upgraded without recompiling and redeploying all applications running on those machines. We will distribute Environment Constrained Shared Libraries through the existing `.artifactbundle` format.",
+      "title" : "Environment Constrained Shared Libraries",
+      "trackingBugs" : [
+        {
+          "id" : "SR-5714",
+          "link" : "https:\/\/github.com\/swiftlang\/swift-package-manager\/issues\/5714"
+        }
+      ],
+      "warnings" : [
+        {
+          "code" : 0,
+          "kind" : "warning",
+          "message" : "Review ended on 2025-09-18 00:00:00 +0000.",
+          "suggestion" : ""
+        }
+      ]
+    },
+    {
+      "authors" : [
+        {
+          "link" : "https:\/\/github.com\/beccadax",
+          "name" : "Becca Royal-Gordon"
+        }
+      ],
+      "discussions" : [
+        {
+          "link" : "https:\/\/forums.swift.org\/t\/pitch-module-selectors\/80835",
+          "name" : "pitch"
+        },
+        {
+          "link" : "https:\/\/forums.swift.org\/t\/se-0491-module-selectors-for-name-disambiguation\/82124",
+          "name" : "review"
+        },
+        {
+          "link" : "https:\/\/forums.swift.org\/t\/accepted-se-0491-module-selectors-for-name-disambiguation\/82589",
+          "name" : "acceptance"
+        }
+      ],
+      "id" : "SE-0491",
+      "implementation" : [
+        {
+          "account" : "swiftlang",
+          "id" : "34556",
+          "repository" : "swift",
+          "type" : "pull"
+        }
+      ],
+      "link" : "0491-module-selectors.md",
+      "reviewManagers" : [
+        {
+          "link" : "",
+          "name" : "Freddy Kellison-Linn"
+        }
+      ],
+      "sha" : "ad86323f3b2f0adfd13edff6f43132e258fcadd1",
+      "status" : {
+        "state" : "accepted"
+      },
+      "summary" : "We propose that Swift's grammar be extended so that, wherever an identifier is written in source code to reference a declaration, it can be prefixed by `ModuleName::` to disambiguate which module the declaration is expected to come from. This syntax will provide a way to resolve several types of name ambiguities and conflicts.",
+      "title" : "Module selectors for name disambiguation",
+      "trackingBugs" : [
+        {
+          "id" : "swiftlang\/swift#53580",
+          "link" : "https:\/\/github.com\/swiftlang\/swift\/issues\/53580"
+        }
+      ],
+      "warnings" : [
+        {
+          "code" : 0,
+          "kind" : "warning",
+          "message" : "Review manager's link doesn't refer to a GitHub profile. Link removed.",
+          "suggestion" : ""
+        }
+      ]
+    },
+    {
+      "authors" : [
+        {
+          "link" : "https:\/\/github.com\/kubamracek",
+          "name" : "Kuba Mracek"
+        }
+      ],
+      "discussions" : [
+        {
+          "link" : "https:\/\/forums.swift.org\/t\/se-0492-section-placement-control\/82289",
+          "name" : "review"
+        },
+        {
+          "link" : "https:\/\/forums.swift.org\/t\/accepted-with-modifications-se-0492-section-placement-control\/82701",
+          "name" : "acceptance"
+        }
+      ],
+      "id" : "SE-0492",
+      "link" : "0492-section-control.md",
+      "reviewManagers" : [
+      ],
+      "sha" : "441e4a760ae19302cd7f79c0ecf94b0f413e3984",
+      "status" : {
+        "state" : "accepted"
+      },
+      "summary" : "This proposal adds `@section` and `@used` attributes which can be applied to global variables. These allow users to directly control which section of the resulting binary should global variables be emitted into, and give users the ability to disable DCE (dead code elimination) on those. The goal is to enable systems and embedded programming use cases like runtime discovery of test metadata from multiple modules, and also to serve as a low-level building block for higher-level features (e.g. linker sets, plugins).",
+      "title" : "Section Placement Control",
+      "warnings" : [
+        {
+          "code" : 0,
+          "kind" : "warning",
+          "message" : "Missing review manager(s).",
+          "suggestion" : ""
+        }
+      ]
+    },
+    {
+      "authors" : [
+        {
+          "link" : "https:\/\/github.com\/Jumhyn",
+          "name" : "Freddy Kellison-Linn"
+        }
+      ],
+      "discussions" : [
+        {
+          "link" : "https:\/\/forums.swift.org\/t\/support-async-calls-in-defer-bodies\/81790",
+          "name" : "pitch"
+        },
+        {
+          "link" : "https:\/\/forums.swift.org\/t\/se-0493-support-async-calls-in-defer-bodies\/82293",
+          "name" : "review"
+        },
+        {
+          "link" : "https:\/\/forums.swift.org\/t\/accepted-se-0493-support-async-calls-in-defer-bodies\/83023",
+          "name" : "acceptance"
+        }
+      ],
+      "id" : "SE-0493",
+      "implementation" : [
+        {
+          "account" : "swiftlang",
+          "id" : "83891",
+          "repository" : "swift",
+          "type" : "pull"
+        }
+      ],
+      "link" : "0493-defer-async.md",
+      "reviewManagers" : [
+        {
+          "link" : "https:\/\/github.com\/hborla",
+          "name" : "Holly Borla"
+        }
+      ],
+      "sha" : "1ec46c74a592d041615cb19548ecb77ea65fbcf0",
+      "status" : {
+        "state" : "accepted"
+      },
+      "summary" : "This is a targeted proposal to introduce support for asynchronous calls within `defer` statements. Such calls must be marked with `await` as any other asynchronous call would be, and `defer` statements which do asynchronous work will be implicitly awaited at any relevant scope exit point.",
+      "title" : "Support `async` calls in `defer` bodies"
+    },
+    {
+      "authors" : [
+        {
+          "link" : "https:\/\/github.com\/vanvoorden",
+          "name" : "Rick van Voorden"
+        },
+        {
+          "link" : "https:\/\/github.com\/lorentey",
+          "name" : "Karoy Lorentey"
+        }
+      ],
+      "discussions" : [
+        {
+          "link" : "https:\/\/forums.swift.org\/t\/-\/78792",
+          "name" : "prepitch"
+        },
+        {
+          "link" : "https:\/\/forums.swift.org\/t\/-\/79145",
+          "name" : "first pitch"
+        },
+        {
+          "link" : "https:\/\/forums.swift.org\/t\/-\/80496",
+          "name" : "second pitch"
+        },
+        {
+          "link" : "https:\/\/forums.swift.org\/t\/se-0494-add-isidentical-to-methods-for-quick-comparisons-to-concrete-types\/82296",
+          "name" : "review"
+        },
+        {
+          "link" : "https:\/\/forums.swift.org\/t\/se-0494-add-isidentical-to-methods-for-quick-comparisons-to-concrete-types\/82296\/142",
+          "name" : "revision"
+        },
+        {
+          "link" : "https:\/\/forums.swift.org\/t\/accepted-with-modifications-se-0494-add-isidentical-to-methods-for-quick-comparison-to-concrete-types\/82695",
+          "name" : "acceptance"
+        }
+      ],
+      "id" : "SE-0494",
+      "implementation" : [
+        {
+          "account" : "swiftlang",
+          "id" : "82055",
+          "repository" : "swift",
+          "type" : "pull"
+        },
+        {
+          "account" : "swiftlang",
+          "id" : "82438",
+          "repository" : "swift",
+          "type" : "pull"
+        },
+        {
+          "account" : "swiftlang",
+          "id" : "82439",
+          "repository" : "swift",
+          "type" : "pull"
+        }
+      ],
+      "link" : "0494-add-is-identical-methods.md",
+      "reviewManagers" : [
+        {
+          "link" : "https:\/\/github.com\/rjmccall",
+          "name" : "John McCall"
+        }
+      ],
+      "sha" : "cd3912b9cc122ca3b1e4c88ef0f5ed87e8e38399",
+      "status" : {
+        "state" : "accepted"
+      },
+      "summary" : "We propose new `isTriviallyIdentical(to:)` instance methods to concrete types for quickly determining if two instances must be equal by-value.",
+      "title" : "Add `isTriviallyIdentical(to:)` Methods for Quick Comparisons to Concrete Types"
+    },
+    {
+      "authors" : [
+        {
+          "link" : "https:\/\/github.com\/xymus",
+          "name" : "Alexis Laferrière"
+        }
+      ],
+      "discussions" : [
+        {
+          "link" : "https:\/\/forums.swift.org\/t\/pitch-formalize-cdecl\/79557",
+          "name" : "pitch"
+        },
+        {
+          "link" : "https:\/\/forums.swift.org\/t\/se-0495-c-compatible-functions-and-enums\/82365",
+          "name" : "review"
+        }
+      ],
+      "id" : "SE-0495",
+      "link" : "0495-cdecl.md",
+      "reviewManagers" : [
+        {
+          "link" : "https:\/\/github.com\/stephentyrone",
+          "name" : "Steve Canon"
+        }
+      ],
+      "sha" : "291a306737f35cb2409c36de5b2753794804a48d",
+      "status" : {
+        "state" : "implemented",
+        "version" : "6.3"
+      },
+      "summary" : "Implementing a C function in Swift eases integration of Swift and C code. This proposal introduces `@c` to mark Swift functions as callable from C, and enums as representable in C. It provides the same behavior under the `@objc` attribute for Objective-C compatible global functions.",
+      "title" : "C compatible functions and enums"
+    },
+    {
+      "authors" : [
+        {
+          "link" : "https:\/\/github.com\/aschwaighofer",
+          "name" : "Arnold Schwaighofer"
+        }
+      ],
+      "discussions" : [
+        {
+          "link" : "https:\/\/forums.swift.org\/t\/pitch-inline-always-attribute\/82040",
+          "name" : "pitch"
+        },
+        {
+          "link" : "https:\/\/forums.swift.org\/t\/se-0496-inline-always-attribute\/82480",
+          "name" : "review"
+        },
+        {
+          "link" : "https:\/\/forums.swift.org\/t\/accepted-se-0496-inline-always-attribute\/82825",
+          "name" : "acceptance"
+        }
+      ],
+      "id" : "SE-0496",
+      "implementation" : [
+        {
+          "account" : "swiftlang",
+          "id" : "84178",
+          "repository" : "swift",
+          "type" : "pull"
+        }
+      ],
+      "link" : "0496-inline-always.md",
+      "reviewManagers" : [
+        {
+          "link" : "https:\/\/github.com\/allevato",
+          "name" : "Tony Allevato"
+        }
+      ],
+      "sha" : "8a8784e97f25928df9db29e9656cc54b751c5c6c",
+      "status" : {
+        "state" : "accepted"
+      },
+      "summary" : "The Swift compiler performs an optimization that expands the body of a function into the caller called inlining. Inlining exposes the code in the callee to the code in the caller. After inlining, the Swift compiler has more context to optimize the code across caller and callee leading to better optimization in many cases. Inlining can increase code size. To avoid unnecessary code size increases, the Swift compiler uses heuristics (properties of the code) to determine whether to perform inlining. Sometimes these heuristics tell the compiler not to inline a function even though it would be beneficial to do so. The proposed attribute `@inline(always)` instructs the compiler to always inline the annotated function into the caller giving the author explicit control over the optimization.",
+      "title" : "`@inline(always)` attribute"
+    },
+    {
+      "authors" : [
+        {
+          "link" : "https:\/\/github.com\/DougGregor\/",
+          "name" : "Doug Gregor"
+        }
+      ],
+      "discussions" : [
+        {
+          "link" : "https:\/\/forums.swift.org\/t\/pitch-controlling-function-definition-visibility-in-clients\/82372",
+          "name" : "pitch"
+        },
+        {
+          "link" : "https:\/\/forums.swift.org\/t\/se-0497-controlling-function-definition-visibility-in-clients\/82666",
+          "name" : "review"
+        },
+        {
+          "link" : "https:\/\/forums.swift.org\/t\/accepted-se-0497-controlling-function-definition-visibility-in-clients\/83068",
+          "name" : "acceptance"
+        }
+      ],
+      "id" : "SE-0497",
+      "link" : "0497-definition-visibility.md",
+      "reviewManagers" : [
+        {
+          "link" : "https:\/\/github.com\/beccadax",
+          "name" : "Becca Royal-Gordon"
+        }
+      ],
+      "sha" : "b4eff36519bf01ddabb7b159becfd102d800ef41",
+      "status" : {
+        "state" : "implemented",
+        "version" : "6.3"
+      },
+      "summary" : "A number of compiler optimizations depend on whether a caller of a particular function can see the definition (body) of that function. If the caller has access to the definition, it can be specialized for the call site, for example by substituting in generic arguments, constant argument values, or any other information known at the call site that can affect how the function is compiled. The (potentially specialized) definition can also be inlined, eliminating the overhead of a function call. Even if it is neither specialized nor inlined, the function's definition can be analyzed to help the caller produce better code. For example, if an object is passed into the function, and the function definition neither shares the object nor destroys it, the caller could potentially allocate the object on the stack rather than on the heap.",
+      "title" : "Controlling function definition visibility in clients"
+    },
+    {
+      "authors" : [
+        {
+          "link" : "https:\/\/github.com\/ktoso",
+          "name" : "Konrad'ktoso'Malawski"
+        },
+        {
+          "link" : "https:\/\/github.com\/Azoy",
+          "name" : "Alejandro Alonso"
+        }
+      ],
+      "discussions" : [
+        {
+          "link" : "https:\/\/forums.swift.org\/t\/demangle-function\/25416\/16",
+          "name" : "pitch"
+        },
+        {
+          "link" : "https:\/\/forums.swift.org\/t\/pitch-expose-demangle-function-in-runtime-module\/82605",
+          "name" : "(pitch)"
+        },
+        {
+          "link" : "https:\/\/forums.swift.org\/t\/se-0498-expose-demangle-function-in-runtime-module\/83032",
+          "name" : "(review)"
+        }
+      ],
+      "id" : "SE-0498",
+      "implementation" : [
+        {
+          "account" : "swiftlang",
+          "id" : "84788",
+          "repository" : "swift",
+          "type" : "pull"
+        }
+      ],
+      "link" : "0498-runtime-demangle.md",
+      "previousProposalIDs" : [
+        "SE-0262"
+      ],
+      "reviewManagers" : [
+        {
+          "link" : "https:\/\/github.com\/stephentyrone",
+          "name" : "Steve Canon"
+        }
+      ],
+      "sha" : "c26ec6b2a799f17b9c344e608ac5e83428d1bb70",
+      "status" : {
+        "end" : "2025-11-18T00:00:00Z",
+        "start" : "2025-11-04T00:00:00Z",
+        "state" : "activeReview"
+      },
+      "summary" : "Swift symbols are subject to name mangling. These mangled names then show up in backtraces and other profiling tools. Mangled names may look something like this `$sSS7cStringSSSPys4Int8VG_tcfC` and often end up visible to developers, unless they are demangled before displaying.",
+      "title" : "Expose demangle function in Runtime module"
     }
   ],
   "schemaVersion" : "1.0.0",
