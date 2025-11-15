@@ -16,6 +16,7 @@ import Foundation
 @Suite
 struct `Extraction Tests` {
 
+    @Suite
     struct `All Proposals` {
         private var snapshotURL: URL
         private var extractionJob: ExtractionJob
@@ -27,7 +28,7 @@ struct `Extraction Tests` {
             extractedEvolutionMetadata = try await EvolutionMetadataExtractor.extractEvolutionMetadata(for: extractionJob)
         }
 
-        @Test func `Extracted Metadata`() async throws {
+        @Test func `Extracted metadata`() async throws {
             let expectedResults = try #require(extractionJob.expectedResults, "Snapshot from source '\(snapshotURL.absoluteString)' does not contain expected results.")
 
             // Check top-level properties
@@ -39,7 +40,7 @@ struct `Extraction Tests` {
         }
 
         // Check proposals
-        @Test func `Expected Proposals`() async throws {
+        @Test func `Expected proposals`() async throws {
             let expectedResults = try #require(extractionJob.expectedResults, "Snapshot at '\(snapshotURL.absoluteString)' does not contain expected results.")
             let expectedResultsByProposalID = expectedResults.proposals.reduce(into: [:]) { $0[$1.id] = $1 }
 
@@ -59,7 +60,7 @@ struct `Extraction Tests` {
         }
 
         // Check the generated JSON to catch issues such as removing properties from the schema
-        @Test func `Expected Serialization`() throws {
+        @Test func `Expected serialization`() throws {
             let expectedResultsURL = snapshotURL.appending(path: "expected-results.json")
             let expectedJSONData = try Data(contentsOf: expectedResultsURL)
             let actualJSONData = try extractedEvolutionMetadata.jsonRepresentation
@@ -89,12 +90,12 @@ struct `Extraction Tests` {
     // Possibly instead of using 0007-empty-file.md to test, test separately?
     // Or test that the file hasn't been corrupted. (Can you even check it into github?)
     @Test(arguments: try await warningsAndErrorsArguments)
-    func `Warnings and Errors`(actualResult: Proposal, expectedResult: Proposal) async throws {
+    func `Warnings and errors`(actualResult: Proposal, expectedResult: Proposal) async throws {
         #expect(actualResult == expectedResult)
     }
 
     // The lines of text in review-dates-good.txt are status headers from swift-evolution repository history
-    @Test func `Good Dates`() throws {
+    @Test func `Good dates`() throws {
         
         let reviewDatesContents = try string(forResource: "review-dates-good", withExtension: "txt")
         
@@ -115,7 +116,7 @@ struct `Extraction Tests` {
         let reviewDatesContents = try string(forResource: "review-dates-bad", withExtension: "txt")
         return reviewDatesContents.split(separator: "\n").map(String.init)
     }())
-    func `Bad Dates`(statusString: String) throws {
+    func `Bad dates`(statusString: String) throws {
 
         // NOTE: This is something that should be validated!
         // It seems a common mistake to leave out closing parenthesis or put strong marker inside closing paren
@@ -134,7 +135,7 @@ struct `Extraction Tests` {
         "AllProposals",
         "Malformed",
     ])
-    func `Breaking Changes`(snapshotName: String) async throws {
+    func `Breaking changes`(snapshotName: String) async throws {
 
         let encoder = JSONEncoder()
         let decoder = JSONDecoder()
@@ -149,7 +150,7 @@ struct `Extraction Tests` {
     /* Test that if an unknown proposal status is encountered, decoding does not fail and decodes to an .error status with the unknown status value as part of the associated reason string.
         The 'unknown-status.json' file contains the metadata of a single proposal with the fictional unknown status of 'appealed'.
      */
-    @Test func `Unknown Status`() throws {
+    @Test func `Unknown status`() throws {
         let unknownStatusData = try data(forResource: "unknown-status", withExtension: "json")
         let proposal = try JSONDecoder().decode(Proposal.self, from: unknownStatusData)
         #expect(proposal.status == .unknownStatus("appealed"))
@@ -157,6 +158,10 @@ struct `Extraction Tests` {
 }
 
 // MARK: - Helpers
+
+extension Proposal: CustomTestStringConvertible {
+    public var testDescription: String { id.isEmpty ? "No ID" : id }
+}
 
 private func urlForSnapshot(named snapshotName: String) throws -> URL {
     try #require(Bundle.module.url(forResource: snapshotName, withExtension: "evosnapshot", subdirectory: "Resources"), "Unable to find snapshot \(snapshotName).evosnapshot in test bundle resources.")
@@ -180,8 +185,4 @@ private func writeJSONFilesToPath(expected: Data, actual: Data, path: String, pr
     if let prefix { filePrefix = "\(prefix)-" } else { filePrefix = "" }
     try expected.write(to: FileUtilities.expandedAndStandardizedURL(for: path).appending(path: "\(filePrefix)expected.json"))
     try actual.write(to: FileUtilities.expandedAndStandardizedURL(for: path).appending(path: "\(filePrefix)actual.json"))
-}
-
-extension Proposal: CustomTestStringConvertible {
-    public var testDescription: String { id.isEmpty ? "No ID" : id }
 }
