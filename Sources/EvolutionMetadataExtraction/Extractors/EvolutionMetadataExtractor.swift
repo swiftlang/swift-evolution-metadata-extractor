@@ -104,7 +104,7 @@ struct EvolutionMetadataExtractor {
         }
     }
     
-    private static func filterProposalSpecs(for extractionJob: ExtractionJob) -> ([ProposalSpec], [SortableProposalWrapper]) {
+    static func filterProposalSpecs(for extractionJob: ExtractionJob) -> ([ProposalSpec], [SortableProposalWrapper]) {
         
         // If there are no previous results, there can be no reuse. Return early.
         guard let previousResults = extractionJob.previousResults else {
@@ -176,7 +176,7 @@ struct ProposalSpec: Sendable {
 /// Proposals are sorted by proposal ID. Malformed markdown may make it impossible to extract the ID.
 /// The wrapper ensures sort order is maintained.
 ///
-private struct SortableProposalWrapper {
+struct SortableProposalWrapper {
     let proposal: Proposal
     let sortIndex: Int
     var id: String { proposal.id }

@@ -71,6 +71,74 @@ struct `Extraction Tests` {
         }
     }
 
+    @Suite
+    struct `Prior Results` {
+
+        private var expectedUpdatedProposalIDs: [String : [String]] = [
+            "SameCommit" : [],
+            "WithUpdates" : ["SE-0317", "SE-0461", "SE-0490", "SE-0492", "SE-0493", "SE-0494", "SE-0495", "SE-0496", "SE-0497", "SE-0498"]
+        ]
+
+        private static var args: [Args] {
+            [
+                Args("SameCommit", true, []),
+                Args("SameCommit", true, ["SE-0420", "SE-0080", "SE-0111"]),
+                Args("SameCommit", false, []),
+                Args("SameCommit", false, ["SE-0200"]),
+                Args("SameCommit", false, ["SE-0345", "SE-0346", "SE-0347", "SE-0348"]),
+                Args("SameCommit", false, ["SE-0420", "SE-0080", "SE-0111"]),
+                Args("SameCommit", false, ["SE-0102", "SE-0099", "SE-0376", "SE-0245"]),
+                Args("SameCommit", false, ["SE-0044", "SE-0055", "SE-0067", "SE-0074", "SE-0176", "SE-0433", "SE-0390", "SE-0208"]),
+                Args("WithUpdates", true, []),
+                Args("WithUpdates", true, ["SE-0088"]),
+                Args("WithUpdates", false, []),
+                Args("WithUpdates", false, ["SE-0230"]),
+                Args("WithUpdates", false, ["SE-0245", "SE-0246", "SE-0247", "SE-0248"]),
+                Args("WithUpdates", false, ["SE-0420", "SE-0092", "SE-0121"]),
+                Args("WithUpdates", false, ["SE-0172", "SE-0098", "SE-0367", "SE-0254"]),
+                Args("WithUpdates", false, ["SE-0043", "SE-0056", "SE-0063", "SE-0076", "SE-0178", "SE-0434", "SE-0391", "SE-0218"]),
+            ]
+        }
+
+        @Test(arguments: args)
+        func `Reuse prior results`(args: Args) async throws {
+            let snapshotURL = try urlForSnapshot(named: args.snapshotName)
+
+            let extractionJob = try await ExtractionJob.makeExtractionJob(from: .snapshot(snapshotURL), output: .none, ignorePreviousResults: args.ignorePreviousResults, forcedExtractionIDs: args.forceExtractionIDs)
+
+            let proposalListingCount = try #require(extractionJob.proposalListing?.count)
+            let expectedUpdatedProposalIDs = try #require(expectedUpdatedProposalIDs[args.snapshotName])
+
+            // Concatenate, unique, and sort IDs for force extraction and expected updates
+            let forceAndUpdateProposalIDs = Set<String>(args.forceExtractionIDs + expectedUpdatedProposalIDs ).sorted()
+            let forceAndUpdateCount = forceAndUpdateProposalIDs.count
+
+            let extractCount: Int; let reuseCount: Int
+            if args.ignorePreviousResults {
+                extractCount = proposalListingCount // ignorePreviousResults always extracts all
+                reuseCount = 0
+            } else {
+                extractCount = forceAndUpdateCount
+                reuseCount = proposalListingCount - forceAndUpdateCount
+            }
+
+            let (proposalSpecsToExtract, reusableProposals) = EvolutionMetadataExtractor.filterProposalSpecs(for: extractionJob)
+
+            #expect(proposalSpecsToExtract.count == extractCount)
+            #expect(reusableProposals.count == reuseCount)
+
+            if !args.ignorePreviousResults {
+                #expect(proposalSpecsToExtract.map(\.id) == forceAndUpdateProposalIDs)
+            }
+
+            let extractedMetadata = try await EvolutionMetadataExtractor.extractEvolutionMetadata(for: extractionJob)
+            let expectedResults = try #require(extractionJob.expectedResults, "Snapshot from source '\(snapshotURL.absoluteString)' does not contain expected results.")
+            #expect(extractedMetadata == expectedResults)
+        }
+    }
+
+    // MARK: -
+
     private static var warningsAndErrorsArguments: Zip2Sequence<[Proposal], [Proposal]> {
       get async throws {
         let snapshotURL = try urlForSnapshot(named: "Malformed")
@@ -161,6 +229,46 @@ struct `Extraction Tests` {
 
 extension Proposal: CustomTestStringConvertible {
     public var testDescription: String { id.isEmpty ? "No ID" : id }
+}
+
+extension `Extraction Tests`.`Prior Results` {
+
+    struct Args: CustomTestStringConvertible {
+        let snapshotName: String
+        let ignorePreviousResults: Bool
+        let forceExtractionIDs: [String]
+
+        init(_ snapshotName: String, _ ignorePreviousResults: Bool, _ forceExtractionIDs: [String]) {
+            self.snapshotName = snapshotName
+            self.ignorePreviousResults = ignorePreviousResults
+            self.forceExtractionIDs = forceExtractionIDs
+        }
+
+        public var testDescription: String {
+            var forceSummary: String
+            if ignorePreviousResults {
+                forceSummary = ", force all"
+                if forceExtractionIDs.count > 0 {
+                    forceSummary += " + \(forceExtractionIDs.count)"
+                }
+            } else if forceExtractionIDs.count > 0 {
+                forceSummary = ", force \(forceExtractionIDs.count)"
+            } else {
+                forceSummary = ", force none"
+            }
+            return snapshotName.camelCaseToSentence() + forceSummary
+        }
+    }
+}
+
+private extension String {
+    func camelCaseToSentence() -> String {
+        unicodeScalars.dropFirst().reduce(String(prefix(1))) {
+            CharacterSet.uppercaseLetters.contains($1)
+            ? $0 + " " + String($1).lowercased()
+                : $0 + String($1)
+        }
+    }
 }
 
 private func urlForSnapshot(named snapshotName: String) throws -> URL {
