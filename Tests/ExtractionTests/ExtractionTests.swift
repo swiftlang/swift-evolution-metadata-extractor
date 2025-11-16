@@ -223,6 +223,37 @@ struct `Extraction Tests` {
         let proposal = try JSONDecoder().decode(Proposal.self, from: unknownStatusData)
         #expect(proposal.status == .unknownStatus("appealed"))
     }
+    
+    @Suite
+    struct `Snapshot Writing` {
+
+        /*  The snapshot command can generate a new snapshot from an existing snapshot. This would typically be done to
+            update the expected results of a snapshot after a change in the metadata schema or expected behavior.
+         
+            This test exercises that path by ensuring that the generated snapshot is identical to the source snapshot.
+         */
+        @Test(arguments: [
+            "AllProposals",
+            "Malformed",
+            "SameCommit",
+            "WithUpdates"
+        ])
+        func `Update snapshot`(snapshotName: String) async throws {
+            let sourceURL = try urlForSnapshot(named: snapshotName)
+            let destURL = FileManager.default.temporaryDirectory.appending(components:"_Test_Snapshots",  UUID().uuidString, sourceURL.lastPathComponent)
+            
+            let extractionJob = try await ExtractionJob.makeExtractionJob(from: .snapshot(sourceURL), output: .snapshot(destURL), ignorePreviousResults: false)
+            try await extractionJob.run()
+            
+            let sourceSubpaths = try FileManager.default.subpathsOfDirectory(atPath: sourceURL.path())
+            
+            for sourceSubpath in sourceSubpaths {
+                let sourcePath = sourceURL.appending(path: sourceSubpath).path(percentEncoded: false)
+                let destinationPath = destURL.appending(path: sourceSubpath).path(percentEncoded: false)
+                #expect(FileManager.default.contentsEqual(atPath: sourcePath, andPath: destinationPath))
+            }
+        }
+    }
 }
 
 // MARK: - Helpers

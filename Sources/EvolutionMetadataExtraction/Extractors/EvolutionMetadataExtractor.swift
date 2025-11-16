@@ -20,6 +20,15 @@ struct EvolutionMetadataExtractor {
         // Create a temporary proposals directory to write proposal files into.
         if let temporaryProposalsDirectory = extractionJob.temporaryProposalsDirectory {
             try FileManager.default.createDirectory(at: temporaryProposalsDirectory, withIntermediateDirectories: true)
+            
+            // If the source is a snapshot, copy reused proposal files to temporary proposals directory
+            if case let .snapshot(sourceBaseURL) = extractionJob.source {
+                for reusableProposal in reusableProposals {
+                    let sourceURL = sourceBaseURL.appending(components: "proposals", reusableProposal.proposal.link)
+                    let destURL = temporaryProposalsDirectory.appending(component: reusableProposal.proposal.link)
+                    try FileManager.default.copyItem(at: sourceURL, to: destURL)
+                }
+            }
         }
 
         let proposals = await extractAllProposalMetadata(from: filteredProposalSpecs, extractionJob: extractionJob)
