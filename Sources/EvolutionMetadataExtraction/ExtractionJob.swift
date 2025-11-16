@@ -30,6 +30,12 @@ public struct ExtractionJob: Sendable {
         case none
     }
     
+    struct JobMetadata {
+        let toolVersion: String
+        let commit: String?
+        let extractionDate: Date
+    }
+
     let source: Source
     let branchInfo: GitHubBranch?
     let proposalListing: [GitHubContentItem]? // Ad-hoc snapshots may not have these
@@ -37,13 +43,12 @@ public struct ExtractionJob: Sendable {
     let previousResults: EvolutionMetadata?
     let expectedResults: EvolutionMetadata?
     let forcedExtractionIDs: [String]
-    let toolVersion: String
-    let extractionDate: Date
+    let jobMetadata: JobMetadata
     let output: Output
     let temporarySnapshotDirectory: URL?
     var temporaryProposalsDirectory: URL? { temporarySnapshotDirectory?.appending(component: "proposals") }
 
-    private init(source: Source, output: Output, branchInfo: GitHubBranch? = nil, proposalListing: [GitHubContentItem]?, proposalSpecs: [ProposalSpec], previousResults: EvolutionMetadata?, expectedResults: EvolutionMetadata?, forcedExtractionIDs: [String], toolVersion: String, extractionDate: Date = Date()) {
+    private init(source: Source, output: Output, branchInfo: GitHubBranch? = nil, proposalListing: [GitHubContentItem]?, proposalSpecs: [ProposalSpec], previousResults: EvolutionMetadata?, expectedResults: EvolutionMetadata?, forcedExtractionIDs: [String], jobMetadata: JobMetadata) {
         self.source = source
         self.branchInfo = branchInfo
         self.proposalListing = proposalListing
@@ -51,9 +56,8 @@ public struct ExtractionJob: Sendable {
         self.previousResults = previousResults
         self.expectedResults = expectedResults
         self.forcedExtractionIDs = forcedExtractionIDs
-        self.toolVersion = toolVersion
-        self.extractionDate = extractionDate
         self.output = output
+        self.jobMetadata = jobMetadata
         self.temporarySnapshotDirectory = switch output {
             case .snapshot:
                 FileManager.default.temporaryDirectory.appending(component: UUID().uuidString)
@@ -104,7 +108,9 @@ extension ExtractionJob {
             $1.proposalSpec(sortIndex: $0)
         }
 
-        return ExtractionJob(source: source, output: output, branchInfo: mainBranchInfo, proposalListing: proposalContentItems, proposalSpecs: proposalSpecs, previousResults: try await previousResults, expectedResults: nil, forcedExtractionIDs: forcedExtractionIDs, toolVersion: toolVersion, extractionDate: extractionDate)
+        let jobMetadata = JobMetadata(toolVersion: toolVersion, commit: mainBranchInfo.commit.sha, extractionDate: extractionDate)
+
+        return ExtractionJob(source: source, output: output, branchInfo: mainBranchInfo, proposalListing: proposalContentItems, proposalSpecs: proposalSpecs, previousResults: try await previousResults, expectedResults: nil, forcedExtractionIDs: forcedExtractionIDs, jobMetadata: jobMetadata)
     }
     
     private static func makeSnapshotExtractionJob(source: Source, output: Output, ignorePreviousResults: Bool, forcedExtractionIDs: [String], toolVersion: String, extractionDate: Date) throws -> ExtractionJob {
@@ -119,8 +125,10 @@ extension ExtractionJob {
         verbosePrint("Using local snapshot\n'\(snapshotURL.relativePath)'")
 
         let sourceSnapshot = try Snapshot(snapshotURL: snapshotURL, ignorePreviousResults: ignorePreviousResults, extractionDate: extractionDate)
+
+        let jobMetadata = JobMetadata(toolVersion: toolVersion, commit: sourceSnapshot.branchInfo?.commit.sha, extractionDate: sourceSnapshot.snapshotDate)
                 
-        return ExtractionJob(source: source, output: output, branchInfo: sourceSnapshot.branchInfo, proposalListing: sourceSnapshot.proposalListing, proposalSpecs: sourceSnapshot.proposalSpecs, previousResults: sourceSnapshot.previousResults, expectedResults: sourceSnapshot.expectedResults, forcedExtractionIDs: forcedExtractionIDs, toolVersion: toolVersion, extractionDate: sourceSnapshot.snapshotDate)
+        return ExtractionJob(source: source, output: output, branchInfo: sourceSnapshot.branchInfo, proposalListing: sourceSnapshot.proposalListing, proposalSpecs: sourceSnapshot.proposalSpecs, previousResults: sourceSnapshot.previousResults, expectedResults: sourceSnapshot.expectedResults, forcedExtractionIDs: forcedExtractionIDs, jobMetadata: jobMetadata)
     }
 }
 

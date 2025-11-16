@@ -52,14 +52,14 @@ struct EvolutionMetadataExtractor {
         let implementationVersions =  implementationVersionSet.sorted(using: SortDescriptor(\.self))
         
         verbosePrint("Implementation Versions:", implementationVersions)
-        let formattedExtractionDate = extractionJob.extractionDate.formatted(.iso8601)
+        let formattedExtractionDate = extractionJob.jobMetadata.extractionDate.formatted(.iso8601)
 
         return EvolutionMetadata(
             creationDate: formattedExtractionDate,
             implementationVersions: implementationVersions,
             proposals: combinedProposals,
-            commit: extractionJob.branchInfo?.commit.sha ?? "",
-            toolVersion: extractionJob.toolVersion
+            commit: extractionJob.jobMetadata.commit ?? "",
+            toolVersion: extractionJob.jobMetadata.toolVersion
         )
     }
     
@@ -68,7 +68,7 @@ struct EvolutionMetadataExtractor {
         await withTaskGroup(of: SortableProposalWrapper.self, returning: [SortableProposalWrapper].self) { taskGroup in
             
             for spec in proposalSpecs {
-                taskGroup.addTask { await readAndExtractProposalMetadata(from: spec, proposalDirectoryURL: extractionJob.temporaryProposalsDirectory, extractionDate: extractionJob.extractionDate) }
+                taskGroup.addTask { await readAndExtractProposalMetadata(from: spec, proposalDirectoryURL: extractionJob.temporaryProposalsDirectory, extractionDate: extractionJob.jobMetadata.extractionDate) }
             }
             
             var proposals: [SortableProposalWrapper] = []
