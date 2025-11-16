@@ -20,6 +20,16 @@ struct Snapshot {
     var branchInfo: GitHubBranch?
     var snapshotDate: Date
     
+    init(proposalListing: [GitHubContentItem]?, directoryContents: [ProposalSpec], proposalSpecs: [ProposalSpec], previousResults: EvolutionMetadata?, expectedResults: EvolutionMetadata?, branchInfo: GitHubBranch?, snapshotDate: Date) {
+        self.proposalListing = proposalListing
+        self.directoryContents = directoryContents
+        self.proposalSpecs = proposalSpecs
+        self.previousResults = previousResults
+        self.expectedResults = expectedResults
+        self.branchInfo = branchInfo
+        self.snapshotDate = snapshotDate
+    }
+
     init(snapshotURL: URL, ignorePreviousResults: Bool, extractionDate: Date) throws {
         var proposalListingFound = false
         var previousResultsFound = false
@@ -98,13 +108,17 @@ struct Snapshot {
         }
         var addedFilenames: Set<String> = ["proposals"] // Guard statement checks that 'proposals' is present
         
+        guard let outputSnapshot = job.outputSnapshot else {
+            fatalError("Cannot write snapshot for extraction job without an outputSnapshot value")
+        }
+
         print("Writing snapshot '\(outputURL.lastPathComponent)' to '\(outputURL.absoluteURL.path())'\n")
         let encoder = JSONEncoder()
         encoder.outputFormatting = [.prettyPrinted, .sortedKeys]
         
         try FileManager.default.createDirectory(at: temporarySnapshotDirectory, withIntermediateDirectories: true)
 
-        if let branchInfo = job.branchInfo {
+        if let branchInfo = outputSnapshot.branchInfo {
             let branchInfoData = try encoder.encode(branchInfo)
             let branchInfoURL = temporarySnapshotDirectory.appending(component: "source-info.json")
             try branchInfoData.write(to: branchInfoURL)
