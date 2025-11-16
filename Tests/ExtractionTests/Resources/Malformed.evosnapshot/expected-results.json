@@ -2,7 +2,9 @@
   "commit" : "",
   "creationDate" : "2024-03-27T15:41:19Z",
   "implementationVersions" : [
-    "2.2", "3", "3.0"
+    "2.2",
+    "3",
+    "3.0"
   ],
   "proposals" : [
     {
@@ -27,16 +29,11 @@
           "code" : 0,
           "kind" : "error",
           "message" : "Missing valid proposal ID; SE-0000 is reserved.",
-          "stage" : "validate",
           "suggestion" : ""
         }
       ],
       "id" : "SE-0000",
       "link" : "0000-reserved-proposal-id.md",
-      "reviewManager" : {
-        "link" : "",
-        "name" : ""
-      },
       "reviewManagers" : [
       ],
       "sha" : "",
@@ -48,14 +45,8 @@
       "title" : "Allow (most) keywords as argument labels",
       "trackingBugs" : [
         {
-          "assignee" : "",
           "id" : "SR-344",
-          "link" : "https:\/\/bugs.swift.org\/browse\/SR-344",
-          "radar" : "",
-          "resolution" : "",
-          "status" : "",
-          "title" : "",
-          "updated" : ""
+          "link" : "https:\/\/bugs.swift.org\/browse\/SR-344"
         }
       ],
       "warnings" : [
@@ -63,7 +54,6 @@
           "code" : 0,
           "kind" : "warning",
           "message" : "Missing review manager(s).",
-          "stage" : "parse",
           "suggestion" : ""
         }
       ]
@@ -82,16 +72,11 @@
           "code" : 0,
           "kind" : "error",
           "message" : "Missing proposal ID link (SE-NNNN)[NNNN-filename.md].",
-          "stage" : "parse",
           "suggestion" : ""
         }
       ],
       "id" : "",
       "link" : "",
-      "reviewManager" : {
-        "link" : "",
-        "name" : ""
-      },
       "reviewManagers" : [
       ],
       "sha" : "",
@@ -103,14 +88,8 @@
       "title" : "Allow (most) keywords as argument labels",
       "trackingBugs" : [
         {
-          "assignee" : "",
           "id" : "SR-344",
-          "link" : "https:\/\/bugs.swift.org\/browse\/SR-344",
-          "radar" : "",
-          "resolution" : "",
-          "status" : "",
-          "title" : "",
-          "updated" : ""
+          "link" : "https:\/\/bugs.swift.org\/browse\/SR-344"
         }
       ],
       "warnings" : [
@@ -118,7 +97,6 @@
           "code" : 0,
           "kind" : "warning",
           "message" : "Missing review manager(s).",
-          "stage" : "parse",
           "suggestion" : ""
         }
       ]
@@ -133,16 +111,11 @@
           "code" : 0,
           "kind" : "error",
           "message" : "Missing list of metadata fields.",
-          "stage" : "parse",
           "suggestion" : ""
         }
       ],
       "id" : "",
       "link" : "",
-      "reviewManager" : {
-        "link" : "",
-        "name" : ""
-      },
       "reviewManagers" : [
       ],
       "sha" : "",
@@ -176,10 +149,6 @@
         }
       ],
       "link" : "0003-missing-status-field.md",
-      "reviewManager" : {
-        "link" : "https:\/\/github.com\/jopamer",
-        "name" : "Joe Pamer"
-      },
       "reviewManagers" : [
         {
           "link" : "https:\/\/github.com\/jopamer",
@@ -198,7 +167,6 @@
           "code" : 0,
           "kind" : "warning",
           "message" : "Status not found in the proposal's details list.",
-          "stage" : "parse",
           "suggestion" : ""
         }
       ]
@@ -217,7 +185,6 @@
           "code" : 0,
           "kind" : "error",
           "message" : "Missing or invalid proposal status.",
-          "stage" : "parse",
           "suggestion" : ""
         }
       ],
@@ -231,10 +198,6 @@
         }
       ],
       "link" : "0004-invalid-status-field.md",
-      "reviewManager" : {
-        "link" : "",
-        "name" : ""
-      },
       "reviewManagers" : [
       ],
       "sha" : "",
@@ -249,7 +212,6 @@
           "code" : 0,
           "kind" : "warning",
           "message" : "Missing review manager(s).",
-          "stage" : "parse",
           "suggestion" : ""
         }
       ]
@@ -273,10 +235,6 @@
       ],
       "id" : "SE-0005",
       "link" : "0005-status-field-not-strong.md",
-      "reviewManager" : {
-        "link" : "https:\/\/github.com\/DougGregor",
-        "name" : "Doug Gregor"
-      },
       "reviewManagers" : [
         {
           "link" : "https:\/\/github.com\/DougGregor",
@@ -295,7 +253,6 @@
           "code" : 0,
           "kind" : "warning",
           "message" : "Status not found in the proposal's details list.",
-          "stage" : "parse",
           "suggestion" : ""
         }
       ]
@@ -326,16 +283,11 @@
           "code" : 0,
           "kind" : "error",
           "message" : "Proposal ID link must be a relative link (SE-NNNN)[NNNN-filename.md].",
-          "stage" : "validate",
           "suggestion" : ""
         }
       ],
       "id" : "SE-0006",
       "link" : "",
-      "reviewManager" : {
-        "link" : "https:\/\/github.com\/DougGregor",
-        "name" : "Doug Gregor"
-      },
       "reviewManagers" : [
         {
           "link" : "https:\/\/github.com\/DougGregor",
@@ -360,16 +312,11 @@
           "code" : 0,
           "kind" : "error",
           "message" : "Proposal Markdown file is empty.",
-          "stage" : "parse",
           "suggestion" : ""
         }
       ],
       "id" : "",
       "link" : "",
-      "reviewManager" : {
-        "link" : "",
-        "name" : ""
-      },
       "reviewManagers" : [
       ],
       "sha" : "",
@@ -390,16 +337,11 @@
           "code" : 0,
           "kind" : "error",
           "message" : "Proposal Markdown file is empty.",
-          "stage" : "parse",
           "suggestion" : ""
         }
       ],
       "id" : "",
       "link" : "",
-      "reviewManager" : {
-        "link" : "",
-        "name" : ""
-      },
       "reviewManagers" : [
       ],
       "sha" : "",
@@ -428,16 +370,11 @@
           "code" : 0,
           "kind" : "error",
           "message" : "Proposal contains no content.",
-          "stage" : "parse",
           "suggestion" : ""
         }
       ],
       "id" : "SE-0009",
       "link" : "0009-title-is-a-paragraph.md",
-      "reviewManager" : {
-        "link" : "https:\/\/github.com\/DougGregor",
-        "name" : "Doug Gregor"
-      },
       "reviewManagers" : [
         {
           "link" : "https:\/\/github.com\/DougGregor",
@@ -469,23 +406,17 @@
           "code" : 0,
           "kind" : "error",
           "message" : "Proposal ID must include four decimal digits.",
-          "stage" : "parse",
           "suggestion" : ""
         },
         {
           "code" : 0,
           "kind" : "error",
           "message" : "Proposal ID link must be a relative link (SE-NNNN)[NNNN-filename.md].",
-          "stage" : "validate",
           "suggestion" : ""
         }
       ],
       "id" : "SE-010",
       "link" : "",
-      "reviewManager" : {
-        "link" : "https:\/\/github.com\/DougGregor",
-        "name" : "Doug Gregor"
-      },
       "reviewManagers" : [
         {
           "link" : "https:\/\/github.com\/DougGregor",
@@ -513,16 +444,11 @@
           "code" : 0,
           "kind" : "error",
           "message" : "Missing author(s).",
-          "stage" : "parse",
           "suggestion" : ""
         }
       ],
       "id" : "SE-0011",
       "link" : "0011-missing-authors-field.md",
-      "reviewManager" : {
-        "link" : "https:\/\/github.com\/DougGregor",
-        "name" : "Doug Gregor"
-      },
       "reviewManagers" : [
         {
           "link" : "https:\/\/github.com\/DougGregor",
@@ -538,14 +464,8 @@
       "title" : "Replace `typealias` keyword with `associatedtype` for associated type declarations",
       "trackingBugs" : [
         {
-          "assignee" : "",
           "id" : "SR-511",
-          "link" : "https:\/\/bugs.swift.org\/browse\/SR-511",
-          "radar" : "",
-          "resolution" : "",
-          "status" : "",
-          "title" : "",
-          "updated" : ""
+          "link" : "https:\/\/bugs.swift.org\/browse\/SR-511"
         }
       ]
     },
@@ -564,10 +484,6 @@
       ],
       "id" : "SE-0013",
       "link" : "0013-scheduled-for-review-malformed-date-range.md",
-      "reviewManager" : {
-        "link" : "https:\/\/github.com\/DougGregor",
-        "name" : "Doug Gregor"
-      },
       "reviewManagers" : [
         {
           "link" : "https:\/\/github.com\/DougGregor",
@@ -587,7 +503,6 @@
           "code" : 0,
           "kind" : "warning",
           "message" : "Missing or invalid dates for a review period.",
-          "stage" : "parse",
           "suggestion" : ""
         }
       ]
@@ -607,10 +522,6 @@
       ],
       "id" : "SE-0014",
       "link" : "0014-active-review-missing-dates.md",
-      "reviewManager" : {
-        "link" : "https:\/\/github.com\/DougGregor",
-        "name" : "Doug Gregor"
-      },
       "reviewManagers" : [
         {
           "link" : "https:\/\/github.com\/DougGregor",
@@ -627,14 +538,8 @@
       "title" : "Constraining `AnySequence.init`",
       "trackingBugs" : [
         {
-          "assignee" : "",
           "id" : "SR-474",
-          "link" : "https:\/\/bugs.swift.org\/browse\/SR-474",
-          "radar" : "",
-          "resolution" : "",
-          "status" : "",
-          "title" : "",
-          "updated" : ""
+          "link" : "https:\/\/bugs.swift.org\/browse\/SR-474"
         }
       ],
       "warnings" : [
@@ -642,7 +547,6 @@
           "code" : 0,
           "kind" : "warning",
           "message" : "Missing or invalid dates for a review period.",
-          "stage" : "parse",
           "suggestion" : ""
         }
       ]
@@ -670,10 +574,6 @@
         }
       ],
       "link" : "0015-implemented-missing-version.md",
-      "reviewManager" : {
-        "link" : "https:\/\/github.com\/dabrahams",
-        "name" : "Dave Abrahams"
-      },
       "reviewManagers" : [
         {
           "link" : "https:\/\/github.com\/dabrahams",
@@ -703,10 +603,6 @@
       ],
       "id" : "SE-0016",
       "link" : "0016-implemented-empty-parenthesis.md",
-      "reviewManager" : {
-        "link" : "https:\/\/github.com\/lattner",
-        "name" : "Chris Lattner"
-      },
       "reviewManagers" : [
         {
           "link" : "https:\/\/github.com\/lattner",
@@ -722,14 +618,8 @@
       "title" : "Add initializers to Int and UInt to convert from UnsafePointer and UnsafeMutablePointer",
       "trackingBugs" : [
         {
-          "assignee" : "",
           "id" : "SR-1115",
-          "link" : "https:\/\/bugs.swift.org\/browse\/SR-1115",
-          "radar" : "",
-          "resolution" : "",
-          "status" : "",
-          "title" : "",
-          "updated" : ""
+          "link" : "https:\/\/bugs.swift.org\/browse\/SR-1115"
         }
       ]
     },
@@ -751,16 +641,11 @@
           "code" : 0,
           "kind" : "error",
           "message" : "Author name contains extra markup; expected a link with plaintext contents.",
-          "stage" : "parse",
           "suggestion" : ""
         }
       ],
       "id" : "SE-0017",
       "link" : "0017-author-extra-markup.md",
-      "reviewManager" : {
-        "link" : "https:\/\/github.com\/lattner",
-        "name" : "Chris Lattner"
-      },
       "reviewManagers" : [
         {
           "link" : "https:\/\/github.com\/lattner",
@@ -776,14 +661,8 @@
       "title" : "Change `Unmanaged` to use `UnsafePointer`",
       "trackingBugs" : [
         {
-          "assignee" : "",
           "id" : "SR-1485",
-          "link" : "https:\/\/bugs.swift.org\/browse\/SR-1485",
-          "radar" : "",
-          "resolution" : "",
-          "status" : "",
-          "title" : "",
-          "updated" : ""
+          "link" : "https:\/\/bugs.swift.org\/browse\/SR-1485"
         }
       ]
     },
@@ -810,10 +689,6 @@
       ],
       "id" : "",
       "link" : "0019-proposal-id-extra-markup.md",
-      "reviewManager" : {
-        "link" : "https:\/\/github.com\/rballard",
-        "name" : "Rick Ballard"
-      },
       "reviewManagers" : [
         {
           "link" : "https:\/\/github.com\/rballard",
@@ -829,14 +704,8 @@
       "title" : "Swift Testing",
       "trackingBugs" : [
         {
-          "assignee" : "",
           "id" : "SR-592",
-          "link" : "https:\/\/bugs.swift.org\/browse\/SR-592",
-          "radar" : "",
-          "resolution" : "",
-          "status" : "",
-          "title" : "",
-          "updated" : ""
+          "link" : "https:\/\/bugs.swift.org\/browse\/SR-592"
         }
       ],
       "warnings" : [
@@ -844,7 +713,6 @@
           "code" : 0,
           "kind" : "warning",
           "message" : "Proposal ID contains extra markup; expected a link with plaintext contents.",
-          "stage" : "parse",
           "suggestion" : ""
         }
       ]
@@ -874,10 +742,6 @@
         }
       ],
       "link" : "0020-invalid-implementation-link-in-list.md",
-      "reviewManager" : {
-        "link" : "https:\/\/github.com\/DougGregor",
-        "name" : "Doug Gregor"
-      },
       "reviewManagers" : [
         {
           "link" : "https:\/\/github.com\/DougGregor",
@@ -896,7 +760,6 @@
           "code" : 0,
           "kind" : "warning",
           "message" : "Implementation links to a non-Swift repository.",
-          "stage" : "validate",
           "suggestion" : ""
         }
       ]
@@ -916,10 +779,6 @@
       ],
       "id" : "SE-0021",
       "link" : "0021-invalid-implementation-link.md",
-      "reviewManager" : {
-        "link" : "https:\/\/github.com\/jckarter",
-        "name" : "Joe Groff"
-      },
       "reviewManagers" : [
         {
           "link" : "https:\/\/github.com\/jckarter",
@@ -938,7 +797,6 @@
           "code" : 0,
           "kind" : "warning",
           "message" : "Implementation links to a non-Swift repository.",
-          "stage" : "validate",
           "suggestion" : ""
         }
       ]
@@ -966,10 +824,6 @@
         }
       ],
       "link" : "0022-invalid-review-manager-link.md",
-      "reviewManager" : {
-        "link" : "",
-        "name" : "Joe Groff"
-      },
       "reviewManagers" : [
         {
           "link" : "",
@@ -988,7 +842,6 @@
           "code" : 0,
           "kind" : "warning",
           "message" : "Review manager's link doesn't refer to a GitHub profile. Link removed.",
-          "stage" : "validate",
           "suggestion" : ""
         }
       ]
@@ -1040,10 +893,6 @@
       ],
       "id" : "SE-0023",
       "link" : "0023-author-link-variants.md",
-      "reviewManager" : {
-        "link" : "https:\/\/github.com\/DougGregor",
-        "name" : "Doug Gregor"
-      },
       "reviewManagers" : [
         {
           "link" : "https:\/\/github.com\/DougGregor",
@@ -1062,7 +911,6 @@
           "code" : 0,
           "kind" : "warning",
           "message" : "Author's link doesn't refer to a GitHub profile. Link removed.",
-          "stage" : "validate",
           "suggestion" : ""
         }
       ]
@@ -1082,10 +930,6 @@
       ],
       "id" : "SE-0024",
       "link" : "0024-active-review-ended.md",
-      "reviewManager" : {
-        "link" : "https:\/\/github.com\/DougGregor",
-        "name" : "Doug Gregor"
-      },
       "reviewManagers" : [
         {
           "link" : "https:\/\/github.com\/DougGregor",
@@ -1105,7 +949,6 @@
           "code" : 0,
           "kind" : "warning",
           "message" : "Review ended on 2024-01-05 00:00:00 +0000.",
-          "stage" : "validate",
           "suggestion" : ""
         }
       ]
@@ -1125,10 +968,6 @@
       ],
       "id" : "SE-0025",
       "link" : "0025-scheduled-review-ended.md",
-      "reviewManager" : {
-        "link" : "https:\/\/github.com\/DougGregor",
-        "name" : "Doug Gregor"
-      },
       "reviewManagers" : [
         {
           "link" : "https:\/\/github.com\/DougGregor",
@@ -1145,14 +984,8 @@
       "title" : "Scoped Access Level",
       "trackingBugs" : [
         {
-          "assignee" : "",
           "id" : "SR-1275",
-          "link" : "https:\/\/bugs.swift.org\/browse\/SR-1275",
-          "radar" : "",
-          "resolution" : "",
-          "status" : "",
-          "title" : "",
-          "updated" : ""
+          "link" : "https:\/\/bugs.swift.org\/browse\/SR-1275"
         }
       ],
       "warnings" : [
@@ -1160,7 +993,6 @@
           "code" : 0,
           "kind" : "warning",
           "message" : "Review ended on 2024-01-31 00:00:00 +0000.",
-          "stage" : "validate",
           "suggestion" : ""
         }
       ]
@@ -1195,16 +1027,11 @@
           "code" : 0,
           "kind" : "error",
           "message" : "Failed to extract upcoming feature flag.",
-          "stage" : "parse",
           "suggestion" : ""
         }
       ],
       "id" : "SE-0026",
       "link" : "0026-missing-upcoming-feature-flag.md",
-      "reviewManager" : {
-        "link" : "https:\/\/github.com\/jckarter\/",
-        "name" : "Joe Groff"
-      },
       "reviewManagers" : [
         {
           "link" : "https:\/\/github.com\/jckarter\/",
@@ -1236,16 +1063,11 @@
           "code" : 0,
           "kind" : "error",
           "message" : "Upcoming feature flag should not contain whitespace.",
-          "stage" : "validate",
           "suggestion" : ""
         }
       ],
       "id" : "SE-0027",
       "link" : "0027-malformed-upcoming-feature-flag.md",
-      "reviewManager" : {
-        "link" : "https:\/\/github.com\/DougGregor",
-        "name" : "Doug Gregor"
-      },
       "reviewManagers" : [
         {
           "link" : "https:\/\/github.com\/DougGregor",
@@ -1277,16 +1099,11 @@
           "code" : 0,
           "kind" : "error",
           "message" : "Failed to extract previous proposal IDs.",
-          "stage" : "parse",
           "suggestion" : ""
         }
       ],
       "id" : "SE-0028",
       "link" : "0028-missing-previous-proposal-id.md",
-      "reviewManager" : {
-        "link" : "https:\/\/github.com\/lattner",
-        "name" : "Chris Lattner"
-      },
       "reviewManagers" : [
         {
           "link" : "https:\/\/github.com\/lattner",
@@ -1302,14 +1119,8 @@
       "title" : "Modernizing Swift's Debugging Identifiers",
       "trackingBugs" : [
         {
-          "assignee" : "",
           "id" : "SR-669",
-          "link" : "https:\/\/bugs.swift.org\/browse\/SR-669",
-          "radar" : "",
-          "resolution" : "",
-          "status" : "",
-          "title" : "",
-          "updated" : ""
+          "link" : "https:\/\/bugs.swift.org\/browse\/SR-669"
         }
       ]
     },
@@ -1327,7 +1138,6 @@
           "code" : 0,
           "kind" : "error",
           "message" : "Missing Review field.",
-          "stage" : "parse",
           "suggestion" : ""
         }
       ],
@@ -1341,10 +1151,6 @@
         }
       ],
       "link" : "0029-missing-review-field.md",
-      "reviewManager" : {
-        "link" : "https:\/\/github.com\/jckarter",
-        "name" : "Joe Groff"
-      },
       "reviewManagers" : [
         {
           "link" : "https:\/\/github.com\/jckarter",
@@ -1373,16 +1179,11 @@
           "code" : 0,
           "kind" : "error",
           "message" : "Failed to extract discussions from Review field.",
-          "stage" : "parse",
           "suggestion" : ""
         }
       ],
       "id" : "SE-0030",
       "link" : "0030-malformed-review-links.md",
-      "reviewManager" : {
-        "link" : "https:\/\/github.com\/DougGregor",
-        "name" : "Doug Gregor"
-      },
       "reviewManagers" : [
         {
           "link" : "https:\/\/github.com\/DougGregor",
@@ -1397,6 +1198,6 @@
       "title" : "Property Behaviors"
     }
   ],
-  "schemaVersion" : "0.1.0",
+  "schemaVersion" : "1.0.0",
   "toolVersion" : "0.1.0"
 }
