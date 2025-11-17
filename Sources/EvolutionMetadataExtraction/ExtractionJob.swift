@@ -201,7 +201,8 @@ extension ExtractionJob {
     }
     
     private func writeSnapshot(results: EvolutionMetadata, outputURL: URL) throws {
-        try Snapshot.writeSnapshot(job: self, results: results, outputURL: outputURL)
+        guard let snapshot else { fatalError("Cannot write snapshot. Snapshot is missing.") }
+        try snapshot.writeSnapshot(results: results, outputURL: outputURL)
     }
 }
 

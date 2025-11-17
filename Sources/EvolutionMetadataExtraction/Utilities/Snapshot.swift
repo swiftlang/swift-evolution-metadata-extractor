@@ -120,21 +120,21 @@ struct Snapshot {
         
     }
     
-    
-    static func writeSnapshot(job: ExtractionJob, results: EvolutionMetadata, outputURL: URL) throws {
+    func writeSnapshot(results: EvolutionMetadata, outputURL: URL) throws {
         
-        guard let temporarySnapshotDirectory = job.snapshot?.temporarySnapshotDirectory, let temporaryProposalsDirectory = job.snapshot?.temporaryProposalsDirectory else {
+        guard let temporarySnapshotDirectory = temporarySnapshotDirectory, let temporaryProposalsDirectory = temporaryProposalsDirectory else {
             fatalError("When snapshot command is being run temporarySnapshotDirectory should never be nil")
         }
 
         guard FileManager.default.fileExists(atPath: temporaryProposalsDirectory.path(percentEncoded: false)) else {
             fatalError("Temporary proposals directory should already be created during metadata extraction")
         }
-        var addedFilenames: Set<String> = ["proposals"] // Guard statement checks that 'proposals' is present
         
-        guard let snapshot = job.snapshot else {
-            fatalError("Cannot write snapshot for extraction job without a snapshot value")
+        guard let destURL, outputURL == destURL else {
+            fatalError("Output URL does not match destination URL")
         }
+        
+        var addedFilenames: Set<String> = ["proposals"] // Guard statement checks that 'proposals' is present
 
         print("Writing snapshot '\(outputURL.lastPathComponent)' to '\(outputURL.absoluteURL.path())'\n")
         let encoder = JSONEncoder()
@@ -142,14 +142,14 @@ struct Snapshot {
         
         try FileManager.default.createDirectory(at: temporarySnapshotDirectory, withIntermediateDirectories: true)
 
-        if let branchInfo = snapshot.branchInfo {
+        if let branchInfo {
             let branchInfoData = try encoder.encode(branchInfo)
             let branchInfoURL = temporarySnapshotDirectory.appending(component: "source-info.json")
             try branchInfoData.write(to: branchInfoURL)
             addedFilenames.insert("source-info.json")
         }
         
-        if let proposalListing = snapshot.proposalListing, !proposalListing.isEmpty {
+        if let proposalListing, !proposalListing.isEmpty {
             let proposalListingData = try encoder.encode(proposalListing)
             let proposalListingURL = temporarySnapshotDirectory.appending(component: "proposal-listing.json")
             try proposalListingData.write(to: proposalListingURL)
@@ -162,7 +162,7 @@ struct Snapshot {
         addedFilenames.insert("expected-results.json")
 
         // If the source is a snapshot, make sure any additional ad-hoc files, such as READMEs are copied to the new snapshot
-        if let sourceURL = snapshot.sourceURL {
+        if let sourceURL = sourceURL {
             for srcURL in try FileManager.default.contentsOfDirectory(at: sourceURL, includingPropertiesForKeys: nil, options: .skipsSubdirectoryDescendants) {
                 if !addedFilenames.contains(srcURL.lastPathComponent) {
                     let dstURL = temporarySnapshotDirectory.appending(component: srcURL.lastPathComponent)
