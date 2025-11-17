@@ -12,6 +12,7 @@ import EvolutionMetadataModel
 
 struct Snapshot {
     let sourceURL: URL?
+    let destURL: URL?
     var proposalListing: [GitHubContentItem]? = nil // Ad-hoc snapshots may not have these
     var directoryContents: [ProposalSpec]
     var proposalSpecs: [ProposalSpec] = []
@@ -19,9 +20,13 @@ struct Snapshot {
     var expectedResults: EvolutionMetadata? = nil
     var branchInfo: GitHubBranch?
     var snapshotDate: Date
+     
+    let temporarySnapshotDirectory: URL?
+    let temporaryProposalsDirectory: URL?
     
-    init(sourceURL: URL?, proposalListing: [GitHubContentItem]?, directoryContents: [ProposalSpec], proposalSpecs: [ProposalSpec], previousResults: EvolutionMetadata?, expectedResults: EvolutionMetadata?, branchInfo: GitHubBranch?, snapshotDate: Date) {
+    init(sourceURL: URL?, destURL: URL?, proposalListing: [GitHubContentItem]?, directoryContents: [ProposalSpec], proposalSpecs: [ProposalSpec], previousResults: EvolutionMetadata?, expectedResults: EvolutionMetadata?, branchInfo: GitHubBranch?, snapshotDate: Date) {
         self.sourceURL = sourceURL
+        self.destURL = destURL
         self.proposalListing = proposalListing
         self.directoryContents = directoryContents
         self.proposalSpecs = proposalSpecs
@@ -29,9 +34,17 @@ struct Snapshot {
         self.expectedResults = expectedResults
         self.branchInfo = branchInfo
         self.snapshotDate = snapshotDate
+
+        if destURL != nil {
+            temporarySnapshotDirectory = FileManager.default.temporaryDirectory.appending(component: UUID().uuidString)
+            temporaryProposalsDirectory = temporarySnapshotDirectory?.appending(component: "proposals")
+        } else {
+            temporarySnapshotDirectory = nil
+            temporaryProposalsDirectory = nil
+        }
     }
 
-    init(snapshotURL: URL, ignorePreviousResults: Bool, extractionDate: Date) throws {
+    init(snapshotURL: URL, destURL: URL?, ignorePreviousResults: Bool, extractionDate: Date) throws {
         var proposalListingFound = false
         var previousResultsFound = false
                         
@@ -41,6 +54,15 @@ struct Snapshot {
         let previousResultsURL = snapshotURL.appending(component: "previous-results.json")
         let expectedResultsURL = snapshotURL.appending(component: "expected-results.json")
         let proposalDirectoryURL = snapshotURL.appending(component: "proposals")
+        
+        self.destURL = destURL
+        if destURL != nil {
+            temporarySnapshotDirectory = FileManager.default.temporaryDirectory.appending(component: UUID().uuidString)
+            temporaryProposalsDirectory = temporarySnapshotDirectory?.appending(component: "proposals")
+        } else {
+            temporarySnapshotDirectory = nil
+            temporaryProposalsDirectory = nil
+        }
 
         branchInfo = try FileUtilities.decode(GitHubBranch.self, from: branchInfoURL)
         
@@ -99,9 +121,9 @@ struct Snapshot {
     }
     
     
-    static func writeSnapshot(job: ExtractionJob, temporarySnapshotDirectory: URL?, temporaryProposalsDirectory: URL?, results: EvolutionMetadata, outputURL: URL) throws {
+    static func writeSnapshot(job: ExtractionJob, results: EvolutionMetadata, outputURL: URL) throws {
         
-        guard let temporarySnapshotDirectory, let temporaryProposalsDirectory else {
+        guard let temporarySnapshotDirectory = job.snapshot?.temporarySnapshotDirectory, let temporaryProposalsDirectory = job.snapshot?.temporaryProposalsDirectory else {
             fatalError("When snapshot command is being run temporarySnapshotDirectory should never be nil")
         }
 

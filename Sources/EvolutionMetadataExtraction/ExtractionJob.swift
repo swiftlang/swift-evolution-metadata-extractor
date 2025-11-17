@@ -29,13 +29,13 @@ public struct ExtractionJob: Sendable {
         case validationReport
         case none
         
-        var isSnapshot: Bool {
-            if case .snapshot = self { true }
-            else { false }
+        var snapshotURL: URL? {
+            if case let .snapshot(url) = self { url }
+            else { nil }
         }
     }
     
-    struct JobMetadata {
+    struct JobMetadata: Sendable, Codable, Equatable {
         let toolVersion: String
         let commit: String?
         let extractionDate: Date
@@ -47,8 +47,6 @@ public struct ExtractionJob: Sendable {
     let jobMetadata: JobMetadata
     let output: Output
     let snapshot: Snapshot?
-    let temporarySnapshotDirectory: URL?
-    var temporaryProposalsDirectory: URL? { temporarySnapshotDirectory?.appending(component: "proposals") }
 
     private init(output: Output, snapshot: Snapshot?, proposalSpecs: [ProposalSpec], previousResults: EvolutionMetadata?, forcedExtractionIDs: [String], jobMetadata: JobMetadata) {
         self.proposalSpecs = proposalSpecs
@@ -57,12 +55,6 @@ public struct ExtractionJob: Sendable {
         self.output = output
         self.snapshot = snapshot
         self.jobMetadata = jobMetadata
-        self.temporarySnapshotDirectory = switch output {
-            case .snapshot:
-                FileManager.default.temporaryDirectory.appending(component: UUID().uuidString)
-            default:
-                nil
-        }
     }
     
     public func run() async throws {
@@ -110,8 +102,8 @@ extension ExtractionJob {
         let jobMetadata = JobMetadata(toolVersion: toolVersion, commit: mainBranchInfo.commit.sha, extractionDate: extractionDate)
 
         let snapshot: Snapshot?
-        if output.isSnapshot {
-            snapshot = Snapshot(sourceURL: nil, proposalListing: proposalContentItems, directoryContents: [], proposalSpecs: [], previousResults: nil, expectedResults: nil, branchInfo: mainBranchInfo, snapshotDate: extractionDate)
+        if case let .snapshot(destURL) = output {
+            snapshot = Snapshot(sourceURL: nil, destURL: destURL, proposalListing: proposalContentItems, directoryContents: [], proposalSpecs: [], previousResults: nil, expectedResults: nil, branchInfo: mainBranchInfo, snapshotDate: extractionDate)
         } else {
             snapshot = nil
         }
@@ -130,7 +122,7 @@ extension ExtractionJob {
  
         verbosePrint("Using local snapshot\n'\(snapshotURL.relativePath)'")
 
-        let sourceSnapshot = try Snapshot(snapshotURL: snapshotURL, ignorePreviousResults: ignorePreviousResults, extractionDate: extractionDate)
+        let sourceSnapshot = try Snapshot(snapshotURL: snapshotURL, destURL: output.snapshotURL, ignorePreviousResults: ignorePreviousResults, extractionDate: extractionDate)
 
         let jobMetadata = JobMetadata(toolVersion: toolVersion, commit: sourceSnapshot.branchInfo?.commit.sha, extractionDate: sourceSnapshot.snapshotDate)
                 
@@ -209,7 +201,7 @@ extension ExtractionJob {
     }
     
     private func writeSnapshot(results: EvolutionMetadata, outputURL: URL) throws {
-        try Snapshot.writeSnapshot(job: self, temporarySnapshotDirectory: temporarySnapshotDirectory, temporaryProposalsDirectory: temporaryProposalsDirectory, results: results, outputURL: outputURL)
+        try Snapshot.writeSnapshot(job: self, results: results, outputURL: outputURL)
     }
 }
 

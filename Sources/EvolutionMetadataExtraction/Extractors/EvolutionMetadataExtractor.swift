@@ -18,7 +18,7 @@ struct EvolutionMetadataExtractor {
         
         // If creating a snapshot, write proposal files when fetching.
         // Create a temporary proposals directory to write proposal files into.
-        if let temporaryProposalsDirectory = extractionJob.temporaryProposalsDirectory {
+        if let temporaryProposalsDirectory = extractionJob.snapshot?.temporaryProposalsDirectory {
             try FileManager.default.createDirectory(at: temporaryProposalsDirectory, withIntermediateDirectories: true)
             
             // If the source is a snapshot, copy reused proposal files to temporary proposals directory
@@ -68,7 +68,7 @@ struct EvolutionMetadataExtractor {
         await withTaskGroup(of: SortableProposalWrapper.self, returning: [SortableProposalWrapper].self) { taskGroup in
             
             for spec in proposalSpecs {
-                taskGroup.addTask { await readAndExtractProposalMetadata(from: spec, proposalDirectoryURL: extractionJob.temporaryProposalsDirectory, extractionDate: extractionJob.jobMetadata.extractionDate) }
+                taskGroup.addTask { await readAndExtractProposalMetadata(from: spec, proposalDirectoryURL: extractionJob.snapshot?.temporaryProposalsDirectory, extractionDate: extractionJob.jobMetadata.extractionDate) }
             }
             
             var proposals: [SortableProposalWrapper] = []
