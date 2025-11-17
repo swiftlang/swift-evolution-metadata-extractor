@@ -142,8 +142,9 @@ struct `Extraction Tests` {
     private static var warningsAndErrorsArguments: Zip2Sequence<[Proposal], [Proposal]> {
       get async throws {
         let snapshotURL = try urlForSnapshot(named: "Malformed")
-        let extractionJob = try await ExtractionJob.makeExtractionJob(from: .snapshot(snapshotURL), output: .none, ignorePreviousResults: true)
-          let expectedResults = try #require(extractionJob.outputSnapshot?.expectedResults, "No expected results found for extraction job with source '\(extractionJob.source)'")
+        let source: ExtractionJob.Source = .snapshot(snapshotURL)
+        let extractionJob = try await ExtractionJob.makeExtractionJob(from: source, output: .none, ignorePreviousResults: true)
+        let expectedResults = try #require(extractionJob.outputSnapshot?.expectedResults, "No expected results found for extraction job with source '\(source)'")
         let extractionMetadata = try await EvolutionMetadataExtractor.extractEvolutionMetadata(for: extractionJob)
 
         // This test zips the extraction results with the expected results. If

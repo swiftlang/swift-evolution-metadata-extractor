@@ -11,7 +11,7 @@ import Foundation
 import EvolutionMetadataModel
 
 struct Snapshot {
-    
+    let sourceURL: URL?
     var proposalListing: [GitHubContentItem]? = nil // Ad-hoc snapshots may not have these
     var directoryContents: [ProposalSpec]
     var proposalSpecs: [ProposalSpec] = []
@@ -20,7 +20,8 @@ struct Snapshot {
     var branchInfo: GitHubBranch?
     var snapshotDate: Date
     
-    init(proposalListing: [GitHubContentItem]?, directoryContents: [ProposalSpec], proposalSpecs: [ProposalSpec], previousResults: EvolutionMetadata?, expectedResults: EvolutionMetadata?, branchInfo: GitHubBranch?, snapshotDate: Date) {
+    init(sourceURL: URL?, proposalListing: [GitHubContentItem]?, directoryContents: [ProposalSpec], proposalSpecs: [ProposalSpec], previousResults: EvolutionMetadata?, expectedResults: EvolutionMetadata?, branchInfo: GitHubBranch?, snapshotDate: Date) {
+        self.sourceURL = sourceURL
         self.proposalListing = proposalListing
         self.directoryContents = directoryContents
         self.proposalSpecs = proposalSpecs
@@ -34,6 +35,7 @@ struct Snapshot {
         var proposalListingFound = false
         var previousResultsFound = false
                         
+        sourceURL = snapshotURL
         let branchInfoURL = snapshotURL.appending(component: "source-info.json")
         let proposalListingURL = snapshotURL.appending(component: "proposal-listing.json")
         let previousResultsURL = snapshotURL.appending(component: "previous-results.json")
@@ -138,7 +140,7 @@ struct Snapshot {
         addedFilenames.insert("expected-results.json")
 
         // If the source is a snapshot, make sure any additional ad-hoc files, such as READMEs are copied to the new snapshot
-        if case let .snapshot(sourceURL) = job.source {
+        if let sourceURL = outputSnapshot.sourceURL {
             for srcURL in try FileManager.default.contentsOfDirectory(at: sourceURL, includingPropertiesForKeys: nil, options: .skipsSubdirectoryDescendants) {
                 if !addedFilenames.contains(srcURL.lastPathComponent) {
                     let dstURL = temporarySnapshotDirectory.appending(component: srcURL.lastPathComponent)

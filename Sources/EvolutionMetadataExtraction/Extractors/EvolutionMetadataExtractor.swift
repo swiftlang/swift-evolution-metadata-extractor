@@ -22,7 +22,7 @@ struct EvolutionMetadataExtractor {
             try FileManager.default.createDirectory(at: temporaryProposalsDirectory, withIntermediateDirectories: true)
             
             // If the source is a snapshot, copy reused proposal files to temporary proposals directory
-            if case let .snapshot(sourceBaseURL) = extractionJob.source {
+            if let sourceBaseURL = extractionJob.outputSnapshot?.sourceURL {
                 for reusableProposal in reusableProposals {
                     let sourceURL = sourceBaseURL.appending(components: "proposals", reusableProposal.proposal.link)
                     let destURL = temporaryProposalsDirectory.appending(component: reusableProposal.proposal.link)

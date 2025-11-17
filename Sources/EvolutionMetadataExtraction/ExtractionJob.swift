@@ -41,7 +41,6 @@ public struct ExtractionJob: Sendable {
         let extractionDate: Date
     }
 
-    let source: Source
     let proposalSpecs: [ProposalSpec]
     let previousResults: EvolutionMetadata?
     let forcedExtractionIDs: [String]
@@ -51,8 +50,7 @@ public struct ExtractionJob: Sendable {
     let temporarySnapshotDirectory: URL?
     var temporaryProposalsDirectory: URL? { temporarySnapshotDirectory?.appending(component: "proposals") }
 
-    private init(source: Source, output: Output, outputSnapshot: Snapshot?, proposalSpecs: [ProposalSpec], previousResults: EvolutionMetadata?, forcedExtractionIDs: [String], jobMetadata: JobMetadata) {
-        self.source = source
+    private init(output: Output, outputSnapshot: Snapshot?, proposalSpecs: [ProposalSpec], previousResults: EvolutionMetadata?, forcedExtractionIDs: [String], jobMetadata: JobMetadata) {
         self.proposalSpecs = proposalSpecs
         self.previousResults = previousResults
         self.forcedExtractionIDs = forcedExtractionIDs
@@ -113,12 +111,12 @@ extension ExtractionJob {
 
         let outputSnapshot: Snapshot?
         if output.isSnapshot {
-            outputSnapshot = Snapshot(proposalListing: proposalContentItems, directoryContents: [], proposalSpecs: [], previousResults: nil, expectedResults: nil, branchInfo: mainBranchInfo, snapshotDate: extractionDate)
+            outputSnapshot = Snapshot(sourceURL: nil, proposalListing: proposalContentItems, directoryContents: [], proposalSpecs: [], previousResults: nil, expectedResults: nil, branchInfo: mainBranchInfo, snapshotDate: extractionDate)
         } else {
             outputSnapshot = nil
         }
 
-        return ExtractionJob(source: source, output: output, outputSnapshot: outputSnapshot, proposalSpecs: proposalSpecs, previousResults: try await previousResults, forcedExtractionIDs: forcedExtractionIDs, jobMetadata: jobMetadata)
+        return ExtractionJob(output: output, outputSnapshot: outputSnapshot, proposalSpecs: proposalSpecs, previousResults: try await previousResults, forcedExtractionIDs: forcedExtractionIDs, jobMetadata: jobMetadata)
     }
     
     private static func makeSnapshotExtractionJob(source: Source, output: Output, ignorePreviousResults: Bool, forcedExtractionIDs: [String], toolVersion: String, extractionDate: Date) throws -> ExtractionJob {
@@ -137,7 +135,7 @@ extension ExtractionJob {
         let jobMetadata = JobMetadata(toolVersion: toolVersion, commit: sourceSnapshot.branchInfo?.commit.sha, extractionDate: sourceSnapshot.snapshotDate)
                 
         // Always use sourceSnapshot, its values are used in tests
-        return ExtractionJob(source: source, output: output, outputSnapshot: sourceSnapshot, proposalSpecs: sourceSnapshot.proposalSpecs, previousResults: sourceSnapshot.previousResults, forcedExtractionIDs: forcedExtractionIDs, jobMetadata: jobMetadata)
+        return ExtractionJob(output: output, outputSnapshot: sourceSnapshot, proposalSpecs: sourceSnapshot.proposalSpecs, previousResults: sourceSnapshot.previousResults, forcedExtractionIDs: forcedExtractionIDs, jobMetadata: jobMetadata)
     }
 }
 
