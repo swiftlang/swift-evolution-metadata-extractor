@@ -12,7 +12,7 @@ import EvolutionMetadataModel
 
 struct Snapshot {
     
-    var proposalListing: [GitHubContentItem]? = nil
+    var proposalListing: [GitHubContentItem]? = nil // Ad-hoc snapshots may not have these
     var directoryContents: [ProposalSpec]
     var proposalSpecs: [ProposalSpec] = []
     var previousResults: EvolutionMetadata? = nil
@@ -125,7 +125,7 @@ struct Snapshot {
             addedFilenames.insert("source-info.json")
         }
         
-        if let proposalListing = job.proposalListing, !proposalListing.isEmpty {
+        if let proposalListing = outputSnapshot.proposalListing, !proposalListing.isEmpty {
             let proposalListingData = try encoder.encode(proposalListing)
             let proposalListingURL = temporarySnapshotDirectory.appending(component: "proposal-listing.json")
             try proposalListingData.write(to: proposalListingURL)

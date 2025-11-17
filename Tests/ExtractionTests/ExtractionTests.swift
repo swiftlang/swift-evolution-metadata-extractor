@@ -106,7 +106,7 @@ struct `Extraction Tests` {
 
             let extractionJob = try await ExtractionJob.makeExtractionJob(from: .snapshot(snapshotURL), output: .none, ignorePreviousResults: args.ignorePreviousResults, forcedExtractionIDs: args.forceExtractionIDs)
 
-            let proposalListingCount = try #require(extractionJob.proposalListing?.count)
+            let proposalListingCount = try #require(extractionJob.outputSnapshot?.proposalListing?.count)
             let expectedUpdatedProposalIDs = try #require(expectedUpdatedProposalIDs[args.snapshotName])
 
             // Concatenate, unique, and sort IDs for force extraction and expected updates
