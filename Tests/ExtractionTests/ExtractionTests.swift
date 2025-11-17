@@ -29,7 +29,7 @@ struct `Extraction Tests` {
         }
 
         @Test func `Extracted metadata`() async throws {
-            let expectedResults = try #require(extractionJob.outputSnapshot?.expectedResults, "Snapshot from source '\(snapshotURL.absoluteString)' does not contain expected results.")
+            let expectedResults = try #require(extractionJob.snapshot?.expectedResults, "Snapshot from source '\(snapshotURL.absoluteString)' does not contain expected results.")
 
             // Check top-level properties
             #expect(extractedEvolutionMetadata.commit == expectedResults.commit)
@@ -41,7 +41,7 @@ struct `Extraction Tests` {
 
         // Check proposals
         @Test func `Expected proposals`() async throws {
-            let expectedResults = try #require(extractionJob.outputSnapshot?.expectedResults, "Snapshot at '\(snapshotURL.absoluteString)' does not contain expected results.")
+            let expectedResults = try #require(extractionJob.snapshot?.expectedResults, "Snapshot at '\(snapshotURL.absoluteString)' does not contain expected results.")
             let expectedResultsByProposalID = expectedResults.proposals.reduce(into: [:]) { $0[$1.id] = $1 }
 
             for newProposal in extractedEvolutionMetadata.proposals {
@@ -106,7 +106,7 @@ struct `Extraction Tests` {
 
             let extractionJob = try await ExtractionJob.makeExtractionJob(from: .snapshot(snapshotURL), output: .none, ignorePreviousResults: args.ignorePreviousResults, forcedExtractionIDs: args.forceExtractionIDs)
 
-            let proposalListingCount = try #require(extractionJob.outputSnapshot?.proposalListing?.count)
+            let proposalListingCount = try #require(extractionJob.snapshot?.proposalListing?.count)
             let expectedUpdatedProposalIDs = try #require(expectedUpdatedProposalIDs[args.snapshotName])
 
             // Concatenate, unique, and sort IDs for force extraction and expected updates
@@ -132,7 +132,7 @@ struct `Extraction Tests` {
             }
 
             let extractedMetadata = try await EvolutionMetadataExtractor.extractEvolutionMetadata(for: extractionJob)
-            let expectedResults = try #require(extractionJob.outputSnapshot?.expectedResults, "Snapshot from source '\(snapshotURL.absoluteString)' does not contain expected results.")
+            let expectedResults = try #require(extractionJob.snapshot?.expectedResults, "Snapshot from source '\(snapshotURL.absoluteString)' does not contain expected results.")
             #expect(extractedMetadata == expectedResults)
         }
     }
@@ -144,7 +144,7 @@ struct `Extraction Tests` {
         let snapshotURL = try urlForSnapshot(named: "Malformed")
         let source: ExtractionJob.Source = .snapshot(snapshotURL)
         let extractionJob = try await ExtractionJob.makeExtractionJob(from: source, output: .none, ignorePreviousResults: true)
-        let expectedResults = try #require(extractionJob.outputSnapshot?.expectedResults, "No expected results found for extraction job with source '\(source)'")
+        let expectedResults = try #require(extractionJob.snapshot?.expectedResults, "No expected results found for extraction job with source '\(source)'")
         let extractionMetadata = try await EvolutionMetadataExtractor.extractEvolutionMetadata(for: extractionJob)
 
         // This test zips the extraction results with the expected results. If

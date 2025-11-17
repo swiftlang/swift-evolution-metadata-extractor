@@ -110,8 +110,8 @@ struct Snapshot {
         }
         var addedFilenames: Set<String> = ["proposals"] // Guard statement checks that 'proposals' is present
         
-        guard let outputSnapshot = job.outputSnapshot else {
-            fatalError("Cannot write snapshot for extraction job without an outputSnapshot value")
+        guard let snapshot = job.snapshot else {
+            fatalError("Cannot write snapshot for extraction job without a snapshot value")
         }
 
         print("Writing snapshot '\(outputURL.lastPathComponent)' to '\(outputURL.absoluteURL.path())'\n")
@@ -120,14 +120,14 @@ struct Snapshot {
         
         try FileManager.default.createDirectory(at: temporarySnapshotDirectory, withIntermediateDirectories: true)
 
-        if let branchInfo = outputSnapshot.branchInfo {
+        if let branchInfo = snapshot.branchInfo {
             let branchInfoData = try encoder.encode(branchInfo)
             let branchInfoURL = temporarySnapshotDirectory.appending(component: "source-info.json")
             try branchInfoData.write(to: branchInfoURL)
             addedFilenames.insert("source-info.json")
         }
         
-        if let proposalListing = outputSnapshot.proposalListing, !proposalListing.isEmpty {
+        if let proposalListing = snapshot.proposalListing, !proposalListing.isEmpty {
             let proposalListingData = try encoder.encode(proposalListing)
             let proposalListingURL = temporarySnapshotDirectory.appending(component: "proposal-listing.json")
             try proposalListingData.write(to: proposalListingURL)
@@ -140,7 +140,7 @@ struct Snapshot {
         addedFilenames.insert("expected-results.json")
 
         // If the source is a snapshot, make sure any additional ad-hoc files, such as READMEs are copied to the new snapshot
-        if let sourceURL = outputSnapshot.sourceURL {
+        if let sourceURL = snapshot.sourceURL {
             for srcURL in try FileManager.default.contentsOfDirectory(at: sourceURL, includingPropertiesForKeys: nil, options: .skipsSubdirectoryDescendants) {
                 if !addedFilenames.contains(srcURL.lastPathComponent) {
                     let dstURL = temporarySnapshotDirectory.appending(component: srcURL.lastPathComponent)
