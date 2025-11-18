@@ -85,7 +85,7 @@ struct EvolutionMetadataExtractor {
         do {
             let markdownString: String
             if proposalSpec.url.isFileURL {
-                markdownString = try String(contentsOf: proposalSpec.url)
+                markdownString = try String(contentsOf: proposalSpec.url, encoding: .utf8)
             } else {
                 markdownString = try await GitHubFetcher.fetchProposalContents(from: proposalSpec.url)
             }
