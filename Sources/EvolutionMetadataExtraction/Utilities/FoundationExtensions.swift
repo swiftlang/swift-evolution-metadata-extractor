@@ -92,7 +92,7 @@ extension URLRequest {
             case .returnCacheDataElseLoad: "returnCacheDataElseLoad"
             case .returnCacheDataDontLoad: "returnCacheDataDontLoad"
             case .reloadRevalidatingCacheData: "reloadRevalidatingCacheData"
-            default: "unknown cache policy"
+            @unknown default: "unknown cache policy"
         }
         logString += "Cache Policy: \(cachePolicyString)"
 
