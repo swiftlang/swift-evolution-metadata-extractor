@@ -10,6 +10,10 @@
 import Foundation
 import ArgumentParser
 
+#if canImport(FoundationNetworking)
+import FoundationNetworking // Required on Linux
+#endif
+
 nonisolated(unsafe) private var VERBOSE_ENABLED: Bool = false // Set once in `validate(verbose:)`, read once for `verboseEnabled`.
 func verbosePrint(_ items: Any..., additionalCondition: Bool = true, separator: String = " ", terminator: String = "\n\n") {
     if verboseEnabled && additionalCondition { print(items, separator: separator, terminator: terminator) }
