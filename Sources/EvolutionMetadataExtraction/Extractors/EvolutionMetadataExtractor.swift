@@ -49,7 +49,7 @@ struct EvolutionMetadataExtractor {
                 implementationVersionSet.insert(version)
             }
         }
-        let implementationVersions =  implementationVersionSet.sorted(using: SortDescriptor(\.self))
+        let implementationVersions =  implementationVersionSet.sorted { $0.compare($1, options: .numeric) == .orderedAscending }
         
         verbosePrint("Implementation Versions:", implementationVersions)
         let formattedExtractionDate = extractionJob.jobMetadata.extractionDate.formatted(.iso8601)
