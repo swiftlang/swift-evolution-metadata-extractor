@@ -10,6 +10,10 @@
 import Foundation
 import EvolutionMetadataModel
 
+#if canImport(FoundationNetworking)
+import FoundationNetworking // Required for Linux
+#endif
+
 struct PreviousResultsFetcher {
     
     static let previousResultsURL = URL(string: "https://download.swift.org/swift-evolution/v1/evolution.json")!

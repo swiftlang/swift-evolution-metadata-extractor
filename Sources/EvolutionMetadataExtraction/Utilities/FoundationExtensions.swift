@@ -9,6 +9,20 @@
 
 import Foundation
 
+#if canImport(FoundationNetworking)
+import FoundationNetworking // Required for Linux
+#endif
+
+// Declare Core Foundation constants not available on Linux
+#if os(Linux)
+let kCFNetworkProxiesHTTPEnable = "HTTPEnable"
+let kCFNetworkProxiesHTTPProxy = "HTTPProxy"
+let kCFNetworkProxiesHTTPPort = "HTTPPort"
+let kCFNetworkProxiesHTTPSEnable = "HTTPSEnable"
+let kCFNetworkProxiesHTTPSProxy = "HTTPSProxy"
+let kCFNetworkProxiesHTTPSPort = "HTTPSPort"
+#endif // os(Linux)
+
 // Dictionary extension accepts an array of keys to search for.
 // The first key found returns a tuple of the key and its value.
 // Used to find acceptable name variations in headers and environment variables.
