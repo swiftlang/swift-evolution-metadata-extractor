@@ -174,7 +174,12 @@ struct Snapshot {
             guard addedFilenames.isEmpty else { fatalError("Not all files copied: \(addedFilenames)") }
         }
 
+#if os(Linux)
+        try FileManager.default.createDirectory(at: outputURL.deletingLastPathComponent(), withIntermediateDirectories: true)
+        try FileManager.default.moveItem(at: temporarySnapshotDirectory, to: outputURL)
+#else
         try FileManager.default.createDirectory(at: outputURL, withIntermediateDirectories: true)
         _ = try FileManager.default.replaceItemAt(outputURL, withItemAt: temporarySnapshotDirectory, options: [.usingNewMetadataOnly])
+#endif
     }
 }
