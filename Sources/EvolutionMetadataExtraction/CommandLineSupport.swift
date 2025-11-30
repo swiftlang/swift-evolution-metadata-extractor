@@ -39,10 +39,18 @@ public enum ArgumentValidation {
     public static func validateHTTPProxies() {
         _ = URLSession.customized // Reads and validates HTTP Proxy environment variables if present
     }
-    
-    // Transforms snapshot-path argument into .snapshot(URL) extraction source
-    @Sendable public static func extractionSource(_ snapshotPath: String) throws -> ExtractionJob.Source {
-        
+
+    @Sendable public static func extractionSource(snapshotURL: URL?) throws -> ExtractionJob.Source {
+        if let snapshotURL {
+            return .snapshot(snapshotURL)
+        } else {
+            return .network
+        }
+    }
+
+    // Transforms snapshot-path argument into URL
+    @Sendable public static func snapshotURL(_ snapshotPath: String) throws -> URL {
+
         let snapshotURL: URL
         
         // Check for value 'default' or 'malformed' to use the AllProposals or Malformed snapshot in the test bundle
@@ -81,7 +89,7 @@ public enum ArgumentValidation {
         } catch {
             throw ValidationError("Snapshot must be a directory with 'evosnapshot' extension")
         }
-        return .snapshot(snapshotURL)
+        return snapshotURL
     }
     
     public enum Extract {

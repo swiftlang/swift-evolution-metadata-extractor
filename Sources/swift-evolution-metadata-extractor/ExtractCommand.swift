@@ -27,7 +27,8 @@ struct ExtractCommand: AsyncParsableCommand {
     var forceAll = false
     var forcedExtractionIDs: [String] = []
     
-    @Option(name: .customLong("snapshot-path"), help: Help.Shared.Argument.snapshotPath, transform: ArgumentValidation.extractionSource)
+    @Option(name: .customLong("snapshot-path"), help: Help.Shared.Argument.snapshotPath, transform: ArgumentValidation.snapshotURL)
+    var snapshotURL: URL?
     var extractionSource: ExtractionJob.Source = .network
 
     @Flag(name: .shortAndLong, help: Help.Shared.Argument.verbose)
@@ -36,6 +37,7 @@ struct ExtractCommand: AsyncParsableCommand {
     mutating func validate() throws {
         ArgumentValidation.validate(verbose: verbose)
         ArgumentValidation.validateHTTPProxies()
+        extractionSource = try ArgumentValidation.extractionSource(snapshotURL: snapshotURL)
         (forceAll, forcedExtractionIDs) = try ArgumentValidation.Extract.validate(forceExtract: forceExtract)
     }
 

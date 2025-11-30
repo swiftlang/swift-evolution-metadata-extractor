@@ -22,7 +22,8 @@ struct SnapshotCommand: AsyncParsableCommand {
     @Option(name: [.short, .customLong("output-path")], help: Help.Shared.Argument.outputPath, transform: ArgumentValidation.Snapshot.output)
     var output: ExtractionJob.Output = ArgumentValidation.Snapshot.defaultOutput
     
-    @Option(name: .customLong("snapshot-path"), help: Help.Shared.Argument.snapshotPath, transform: ArgumentValidation.extractionSource)
+    @Option(name: .customLong("snapshot-path"), help: Help.Shared.Argument.snapshotPath, transform: ArgumentValidation.snapshotURL)
+    var snapshotURL: URL?
     var extractionSource: ExtractionJob.Source = .network
 
     @Flag(name: .shortAndLong, help: Help.Shared.Argument.verbose)
@@ -31,6 +32,7 @@ struct SnapshotCommand: AsyncParsableCommand {
     mutating func validate() throws {
         ArgumentValidation.validate(verbose: verbose)
         ArgumentValidation.validateHTTPProxies()
+        extractionSource = try ArgumentValidation.extractionSource(snapshotURL: snapshotURL)
     }
 
 
