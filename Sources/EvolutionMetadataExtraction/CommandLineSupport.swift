@@ -127,7 +127,7 @@ public enum ArgumentValidation {
         // Transforms --output--path argument into an output value
         @Sendable public static func output(_ outputPath: String) throws -> ExtractionJob.Output {
             if outputPath == "none" { .none }
-            else { .metadataJSON(FileUtilities.outputURLForPath(outputPath, defaultFileName: defaultFilename)) }
+            else { .metadataJSON(FileUtilities.outputURL(for: outputPath, defaultFileName: defaultFilename)) }
         }
     }
     
@@ -139,7 +139,7 @@ public enum ArgumentValidation {
         // Transforms --output--path argument into an output value
         @Sendable public static func output(_ outputPath: String) throws -> ExtractionJob.Output {
             if outputPath == "none" { .none }
-            else { .snapshot(FileUtilities.outputURLForPath(outputPath, defaultFileName: defaultFilename)) }
+            else { .snapshot(FileUtilities.outputURL(for: outputPath, defaultFileName: defaultFilename)) }
         }
     }
 }
