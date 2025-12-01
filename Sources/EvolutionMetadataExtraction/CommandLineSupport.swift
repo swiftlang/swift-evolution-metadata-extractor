@@ -139,6 +139,7 @@ public enum ArgumentValidation {
         // Transforms --output--path argument into an output value
         @Sendable public static func output(_ outputPath: String) throws -> ExtractionJob.Output {
             if outputPath == "none" { .none }
+            else if outputPath == "stdout" { throw ValidationError("The output path 'stdout' is not valid for the snapshot command")}
             else { .snapshot(FileUtilities.outputURL(for: outputPath, defaultFileName: defaultFilename)) }
         }
     }

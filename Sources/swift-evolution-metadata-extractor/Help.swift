@@ -30,7 +30,11 @@ enum Help {
     // Contains command help strings shared by two or more commands
     enum Shared {
         enum Argument {
-            static let outputPath: ArgumentHelp = "Path to output file. Use value 'none' to suppress output."
+            static let outputPath: ArgumentHelp = """
+                Path to output file.
+                Use 'none' to suppress output.
+                Use 'stdout' for standard output.
+                """
             static let snapshotPath: ArgumentHelp = "Path to a local .evosnapshot directory for testing during development. Use 'default' to use AllProposals snapshot in the test bundle."
             static let verbose: ArgumentHelp = "Verbose output"
         }
@@ -64,5 +68,12 @@ enum Help {
         static let discussion =  """
             Running with no arguments will read from the swift-evolution repository, extract metadata and write an '.evosnapshot' directory to the current directory.
             """
+
+        enum Argument {
+            static let outputPath: ArgumentHelp = """
+                Path to output file.
+                Use value 'none' to suppress output.
+                """
+        }
     }
 }

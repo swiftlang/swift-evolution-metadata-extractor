@@ -19,7 +19,7 @@ struct SnapshotCommand: AsyncParsableCommand {
         discussion: Help.Snapshot.discussion
     )
     
-    @Option(name: [.short, .customLong("output-path")], help: Help.Shared.Argument.outputPath, transform: ArgumentValidation.Snapshot.output)
+    @Option(name: [.short, .customLong("output-path")], help: Help.Snapshot.Argument.outputPath, transform: ArgumentValidation.Snapshot.output)
     var output: ExtractionJob.Output = ArgumentValidation.Snapshot.defaultOutput
     
     @Option(name: .customLong("snapshot-path"), help: Help.Shared.Argument.snapshotPath, transform: ArgumentValidation.snapshotURL)

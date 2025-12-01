@@ -180,13 +180,19 @@ extension ExtractionJob {
         print("Writing file '\(outputURL.lastPathComponent)' to\n'\(outputURL.absoluteURL.path())'\n")
 
         let jsonData = try results.jsonRepresentation
-        let directoryURL = outputURL.deletingLastPathComponent()
-        try FileManager.default.createDirectory(at: directoryURL, withIntermediateDirectories: true)
-        try jsonData.write(to: outputURL)
+
+        if outputURL.isStandardOutURL {
+            FileHandle.standardOutput.write(jsonData)
+        } else {
+            let directoryURL = outputURL.deletingLastPathComponent()
+            try FileManager.default.createDirectory(at: directoryURL, withIntermediateDirectories: true)
+            try jsonData.write(to: outputURL)
+        }
     }
     
     private func writeSnapshot(results: EvolutionMetadata, outputURL: URL) throws {
         guard let snapshot else { fatalError("Cannot write snapshot. Snapshot is missing.") }
+        guard outputURL != URL.standardOutURL else { fatalError("Cannot write snapshot to stdout.") }
         try snapshot.writeSnapshot(results: results, outputURL: outputURL)
     }
 }
