@@ -6,7 +6,29 @@ Add new items at the end of the relevant section under **Unreleased**.
 
 ## [Unreleased]
 
-*No new changes.*
+### Additions
+
+- Add support for Linux
+- Adopt Swift 6 language mode
+- Add Hashable conformance to model types
+- Enable documentation generation in Swift Package Index
+- Add tests for snapshot generation and previous result reuse
+
+### Changes
+
+- Migrate tests to Swift Testing
+- Update test data to lastest set of proposals and current metadata schema
+- Filter out files that are not Markdown
+- Improve performance of pretty-printed JSON generation
+- Use full metadata struct as previous results
+- Refactor snapshot details and extraction job metadata into separate types
+- Stop writing legacy `proposals.json` placeholder file
+
+### Fixes
+
+- Fix crash due to addition of subdirectory of `proposals/` in `swift-evolution` repository
+- Add workaround for swift-markdown package change preventing compilation
+- Fix typo in README
 
 ---
 
