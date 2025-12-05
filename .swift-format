@@ -1,0 +1,13 @@
+{
+    "version": 1,
+    "lineLength": 120,
+    "indentation": {
+        "spaces": 4
+    },
+    "multiElementCollectionTrailingCommas": false,
+    "indentBlankLines": true,
+    "rules": {
+        "AlwaysUseLowerCamelCase": false,
+        "NoBlockComments": false,
+    }
+}
