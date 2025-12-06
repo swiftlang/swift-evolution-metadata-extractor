@@ -136,3 +136,4 @@ For example, the `Malformed.evosnapshot` in the `ExtractionTests` target is used
 These ad hoc snapshots often include only a `proposals` directory and an `expected-results.json` file.
 
 Generally there is no `previous-results.json` file present in a snapshot, but could be present in snapshots that are used to test using previous results or forced extraction.
+
