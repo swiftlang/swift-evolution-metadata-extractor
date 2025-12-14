@@ -71,9 +71,9 @@ public struct ExtractionJob: Sendable {
     public static func makeExtractionJob(from source: Source, output: Output, ignorePreviousResults: Bool = false, forcedExtractionIDs: [String] = [], toolVersion: String = ToolVersion.version, extractionDate: Date = Date()) async throws -> ExtractionJob {
         switch source {
             case .network:
-                try await makeNetworkExtractionJob(source: source, output: output, ignorePreviousResults: ignorePreviousResults, forcedExtractionIDs: forcedExtractionIDs, toolVersion: toolVersion, extractionDate: extractionDate)
-            case .snapshot:
-                try makeSnapshotExtractionJob(source: source, output: output, ignorePreviousResults: ignorePreviousResults, forcedExtractionIDs: forcedExtractionIDs, toolVersion: toolVersion, extractionDate: extractionDate)
+                try await makeNetworkExtractionJob(output: output, ignorePreviousResults: ignorePreviousResults, forcedExtractionIDs: forcedExtractionIDs, toolVersion: toolVersion, extractionDate: extractionDate)
+            case .snapshot(let snapshotURL):
+                try makeSnapshotExtractionJob(snapshotURL: snapshotURL, output: output, ignorePreviousResults: ignorePreviousResults, forcedExtractionIDs: forcedExtractionIDs, toolVersion: toolVersion, extractionDate: extractionDate)
         }
     }
 }
@@ -82,9 +82,7 @@ public struct ExtractionJob: Sendable {
 
 extension ExtractionJob {
     
-    private static func makeNetworkExtractionJob(source: Source, output: Output, ignorePreviousResults: Bool, forcedExtractionIDs: [String], toolVersion: String, extractionDate: Date) async throws -> ExtractionJob {
-        
-        assert(source == .network, "makeNetworkExtractionJob() requires network source")
+    private static func makeNetworkExtractionJob(output: Output, ignorePreviousResults: Bool, forcedExtractionIDs: [String], toolVersion: String, extractionDate: Date) async throws -> ExtractionJob {
         
         async let previousResults = ignorePreviousResults ? nil : PreviousResultsFetcher.fetchPreviousResults()
         let mainBranchInfo = try await GitHubFetcher.fetchMainBranch()
@@ -110,11 +108,7 @@ extension ExtractionJob {
         return ExtractionJob(output: output, snapshot: snapshot, proposalSpecs: proposalSpecs, previousResults: try await previousResults, forcedExtractionIDs: forcedExtractionIDs, jobMetadata: jobMetadata)
     }
     
-    private static func makeSnapshotExtractionJob(source: Source, output: Output, ignorePreviousResults: Bool, forcedExtractionIDs: [String], toolVersion: String, extractionDate: Date) throws -> ExtractionJob {
-        
-        guard case let .snapshot(snapshotURL) = source else {
-            fatalError("makeSnapshotExtractionJob() requires snapshot source")
-        }
+    private static func makeSnapshotExtractionJob(snapshotURL: URL, output: Output, ignorePreviousResults: Bool, forcedExtractionIDs: [String], toolVersion: String, extractionDate: Date) throws -> ExtractionJob {
         
         // Argument validation should ensure correct values. Assert to catch problems in usage in tests.
         assert(snapshotURL.pathExtension == "evosnapshot", "Snapshot URL must be a directory with 'evosnapshot' extension.")
