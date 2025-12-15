@@ -36,7 +36,7 @@ struct ExtractCommand: AsyncParsableCommand {
     mutating func validate() throws {
         ArgumentValidation.validate(verbose: verbose)
         ArgumentValidation.validateHTTPProxies()
-        extractionSource = try ArgumentValidation.extractionSource(snapshotURL: snapshotURL)
+        extractionSource = try ArgumentValidation.extractionSource(snapshotURL: snapshotURL, proposalURLs: [])
         (forceAll, forcedExtractionIDs) = try ArgumentValidation.Extract.validate(forceExtract: forceExtract)
     }
 

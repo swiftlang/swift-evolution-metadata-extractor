@@ -105,6 +105,13 @@ The snapshot subcommand has options that work similar to extract command options
 - Use the `--snapshot-path` option to specify a local `evosnapshot` directory as a data source.
   
   When the expected results change for an existing snapshot, use this option to create a new snapshot containing the existing snapshot input files and the most recent expected results. This would be useful, for example when adding validation cases that generate new or different errors and warnings for proposals in the `Malformed.evosnapshot` snapshot.
+
+- Use trailing `<proposal-files>` argument of paths to proposal files in the Markdown format with the extension `md`.
+
+  Use the `<proposal-files>` argument to create an ad-hoc snapshot that will contain a `proposals` directory containing the copy of the specified files and an `expected-results.json` file.
+
+The `--snapshot-path` and path argument are mutually exclusive.
+
   
 ### Snapshot structure and contents
 A snapshot is a directory with the extension `evosnapshot` containing files with well-known names.

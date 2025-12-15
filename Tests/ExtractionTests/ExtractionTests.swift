@@ -236,7 +236,8 @@ struct `Extraction Tests` {
             "AllProposals",
             "Malformed",
             "SameCommit",
-            "WithUpdates"
+            "WithUpdates",
+            "AdHoc"
         ])
         func `Update snapshot`(snapshotName: String) async throws {
             let sourceURL = try urlForSnapshot(named: snapshotName)
@@ -251,6 +252,27 @@ struct `Extraction Tests` {
                 let sourcePath = sourceURL.appending(path: sourceSubpath).path(percentEncoded: false)
                 let destinationPath = destURL.appending(path: sourceSubpath).path(percentEncoded: false)
                 #expect(FileManager.default.contentsEqual(atPath: sourcePath, andPath: destinationPath))
+            }
+        }
+
+        @Test func `Create ad hoc snapshot`() async throws {
+            let snapshotName = "AdHoc"
+            let sourceURLs = try proposalURLs()
+            let destURL = FileManager.default.temporaryDirectory.appending(components:UUID().uuidString, snapshotName + ".evosnapshot")
+            let adHocSnapshotURL = try urlForSnapshot(named: snapshotName)
+            
+            // Use expected extraciton date in new snapshot for identical metadata
+            let extractionDate = try extractionDateForSnapshot(named: snapshotName)
+
+            let extractionJob = try await ExtractionJob.makeExtractionJob(from: .files(sourceURLs), output: .snapshot(destURL), ignorePreviousResults: true, extractionDate: extractionDate)
+            try await extractionJob.run()
+
+            let sourceSubpaths = try FileManager.default.subpathsOfDirectory(atPath: adHocSnapshotURL.path())
+
+            for sourceSubpath in sourceSubpaths {
+                let sourcePath = adHocSnapshotURL.appending(path: sourceSubpath).path(percentEncoded: false)
+                let destinationPath = destURL.appending(path: sourceSubpath).path(percentEncoded: false)
+                #expect(FileManager.default.contentsEqual(atPath: sourcePath, andPath: destinationPath), "Subpath '\(sourceSubpath)' Failed")
             }
         }
     }
@@ -304,6 +326,23 @@ private extension String {
 
 private func urlForSnapshot(named snapshotName: String) throws -> URL {
     try #require(Bundle.module.url(forResource: snapshotName, withExtension: "evosnapshot", subdirectory: "Resources"), "Unable to find snapshot \(snapshotName).evosnapshot in test bundle resources.")
+}
+
+private func proposalURLs() throws -> [URL] {
+    // Typecase to [URL] required for Linux where type returned seems to be [NSURL]
+    try #require(Bundle.module.urls(forResourcesWithExtension: "md", subdirectory: "Resources/ProposalFiles"), "Unable to find proposal files in test bundle resources.") as [URL]
+}
+
+private func expectedResultsForSnapshot(named snapshotName: String) throws -> EvolutionMetadata {
+    let snapshotURL = try urlForSnapshot(named: snapshotName)
+    let expectedResultsURL = snapshotURL.appending(component: "expected-results.json")
+    let expectedJSONData = try Data(contentsOf: expectedResultsURL)
+    return try JSONDecoder().decode(EvolutionMetadata.self, from:expectedJSONData)
+}
+
+private func extractionDateForSnapshot(named snapshotName: String) throws -> Date {
+    let expectedResults = try expectedResultsForSnapshot(named: snapshotName)
+    return try #require(ISO8601DateFormatter().date(from: expectedResults.creationDate), "Date cannot be created from creationDate string '\(expectedResults.creationDate)'")
 }
 
 private func data(forResource name: String, withExtension ext: String) throws -> Data {

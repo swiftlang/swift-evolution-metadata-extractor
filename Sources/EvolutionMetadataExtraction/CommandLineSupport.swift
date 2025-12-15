@@ -39,12 +39,25 @@ public enum ArgumentValidation {
         _ = URLSession.customized // Reads and validates HTTP Proxy environment variables if present
     }
 
-    @Sendable public static func extractionSource(snapshotURL: URL?) throws -> ExtractionJob.Source {
-        if let snapshotURL {
+    @Sendable public static func extractionSource(snapshotURL: URL?, proposalURLs: [URL]) throws -> ExtractionJob.Source {
+        if snapshotURL != nil && !proposalURLs.isEmpty {
+            throw ValidationError("Cannot provide both a snapshot path and file arguments")
+        } else if let snapshotURL {
             return .snapshot(snapshotURL)
+        } else if !proposalURLs.isEmpty {
+            return .files(proposalURLs)
         } else {
             return .network
         }
+    }
+    
+    // Transforms file path argument into URL
+    @Sendable public static func proposalURL(_ filePath: String) throws -> URL {
+        let proposalURL = FileUtilities.expandedAndStandardizedURL(for: filePath)
+        guard proposalURL.pathExtension == "md" else {
+            throw ValidationError("Proposal file paths must be Markdown files with the path extension '.md'")
+        }
+        return proposalURL
     }
 
     // Transforms snapshot-path argument into URL

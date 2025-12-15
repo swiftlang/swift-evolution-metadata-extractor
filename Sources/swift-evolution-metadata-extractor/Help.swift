@@ -36,6 +36,7 @@ enum Help {
                 """
             static let snapshotPath: ArgumentHelp = "Path to a local .evosnapshot directory for testing during development. Use 'default' to use AllProposals snapshot in the test bundle."
             static let verbose: ArgumentHelp = "Verbose output"
+            static let proposalFiles = ArgumentHelp("List of paths to Markdown proposal files with 'md' extension", valueName: "proposal-files")
         }
     }
     
@@ -66,6 +67,12 @@ enum Help {
         
         static let discussion =  """
             Running with no arguments will read from the swift-evolution repository, extract metadata and write an '.evosnapshot' directory to the current directory.
+
+            Use the --snapshot-path option to regenerate a snapshot from an existing .evosnapshot directory.
+
+            Use <proposal-files> arguments to create an ad-hoc snapshot that will contain a copy of the specified files and an expected-results.json file.
+
+            The --snapshot-path option and <proposal-files> arguments are mutually exclusive.
             """
 
         enum Argument {
