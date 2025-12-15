@@ -14,6 +14,7 @@ Add new items at the end of the relevant section under **Unreleased**.
 - Enable documentation generation in Swift Package Index
 - Add tests for snapshot generation and previous result reuse
 - Add output to standard out for `extract` command
+- Add proposal paths argument to `snapshot` command
 
 ### Changes
 

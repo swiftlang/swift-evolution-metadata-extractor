@@ -20,6 +20,7 @@ public struct ExtractionJob: Sendable {
     public enum Source: Sendable, Codable, Equatable {
         case network
         case snapshot(URL)
+        case files([URL])
     }
     
     public enum Output: Sendable, Codable, Equatable {
@@ -74,6 +75,8 @@ public struct ExtractionJob: Sendable {
                 try await makeNetworkExtractionJob(output: output, ignorePreviousResults: ignorePreviousResults, forcedExtractionIDs: forcedExtractionIDs, toolVersion: toolVersion, extractionDate: extractionDate)
             case .snapshot(let snapshotURL):
                 try makeSnapshotExtractionJob(snapshotURL: snapshotURL, output: output, ignorePreviousResults: ignorePreviousResults, forcedExtractionIDs: forcedExtractionIDs, toolVersion: toolVersion, extractionDate: extractionDate)
+            case .files(let fileURLs):
+                try makeFilesExtractionJob(fileURLs: fileURLs, output: output, ignorePreviousResults: ignorePreviousResults, forcedExtractionIDs: forcedExtractionIDs, toolVersion: toolVersion, extractionDate: extractionDate)
         }
     }
 }
@@ -121,6 +124,29 @@ extension ExtractionJob {
                 
         // Always use sourceSnapshot, its values are used in tests
         return ExtractionJob(output: output, snapshot: sourceSnapshot, proposalSpecs: sourceSnapshot.proposalSpecs, previousResults: sourceSnapshot.previousResults, forcedExtractionIDs: forcedExtractionIDs, jobMetadata: jobMetadata)
+    }
+
+    private static func makeFilesExtractionJob(fileURLs: [URL], output: Output, ignorePreviousResults: Bool, forcedExtractionIDs: [String], toolVersion: String, extractionDate: Date) throws -> ExtractionJob {
+        
+        guard ignorePreviousResults == true && forcedExtractionIDs.isEmpty else {
+            fatalError("Extraction from a file URLs always ignores previous results and performs a full extraction")
+        }
+        
+        let proposalSpecs = fileURLs
+            .sorted(using: SortDescriptor(\URL.lastPathComponent, order: .forward))
+            .enumerated()
+            .map { ProposalSpec(url: $1, sha: "", sortIndex: $0) }
+
+        let jobMetadata = JobMetadata(toolVersion: toolVersion, commit: "", extractionDate: extractionDate)
+
+        let snapshot: Snapshot?
+        if case let .snapshot(destURL) = output {
+            snapshot = Snapshot(sourceURL: nil, destURL: destURL, proposalListing: nil, directoryContents: [], proposalSpecs: [], previousResults: nil, expectedResults: nil, branchInfo: nil, snapshotDate: extractionDate)
+        } else {
+            snapshot = nil
+        }
+
+        return ExtractionJob(output: output, snapshot: snapshot, proposalSpecs: proposalSpecs, previousResults: nil, forcedExtractionIDs: forcedExtractionIDs, jobMetadata: jobMetadata)
     }
 }
 

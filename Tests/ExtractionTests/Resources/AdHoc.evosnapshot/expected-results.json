@@ -1,0 +1,356 @@
+{
+  "commit" : "",
+  "creationDate" : "2025-12-14T20:46:04Z",
+  "implementationVersions" : [
+    "2.2", "5.0", "5.5", "5.7", "5.9", "6.0"
+  ],
+  "proposals" : [
+    {
+      "authors" : [
+        {
+          "link" : "https:\/\/github.com\/anandabits",
+          "name" : "Matthew Johnson"
+        }
+      ],
+      "discussions" : [
+        {
+          "link" : "https:\/\/forums.swift.org\/t\/proposal-draft-flexible-memberwise-initialization\/698",
+          "name" : "pitch"
+        },
+        {
+          "link" : "https:\/\/forums.swift.org\/t\/review-se-0018-flexible-memberwise-initialization\/939",
+          "name" : "review"
+        },
+        {
+          "link" : "https:\/\/forums.swift.org\/t\/review-se-0018-flexible-memberwise-initialization\/939\/22",
+          "name" : "deferral"
+        },
+        {
+          "link" : "https:\/\/forums.swift.org\/t\/returning-or-rejecting-all-the-deferred-evolution-proposals\/60724",
+          "name" : "return for revision"
+        }
+      ],
+      "id" : "SE-0018",
+      "link" : "0018-flexible-memberwise-initialization.md",
+      "reviewManagers" : [
+        {
+          "link" : "https:\/\/github.com\/lattner",
+          "name" : "Chris Lattner"
+        }
+      ],
+      "sha" : "",
+      "status" : {
+        "state" : "returnedForRevision"
+      },
+      "summary" : "The Swift compiler is currently able to generate a memberwise initializer for use in some circumstances, however there are currently many limitations to this.  This proposal builds on the idea of a compiler generated memberwise initializer, making the capability available to any initializer that opts in.",
+      "title" : "Flexible Memberwise Initialization"
+    },
+    {
+      "authors" : [
+        {
+          "link" : "https:\/\/github.com\/erica",
+          "name" : "Erica Sadun"
+        }
+      ],
+      "discussions" : [
+        {
+          "link" : "https:\/\/forums.swift.org\/t\/accepted-se-0028-modernizing-swifts-debugging-identifiers-line-etc\/1303",
+          "name" : "Rationale"
+        }
+      ],
+      "id" : "SE-0028",
+      "link" : "0028-modernizing-debug-identifiers.md",
+      "reviewManagers" : [
+        {
+          "link" : "https:\/\/github.com\/lattner",
+          "name" : "Chris Lattner"
+        }
+      ],
+      "sha" : "",
+      "status" : {
+        "state" : "implemented",
+        "version" : "2.2"
+      },
+      "summary" : "This proposal aims to eliminate Swift's use of \"[screaming snake case](https:\/\/en.wikipedia.org\/wiki\/Snake_case)\" like `__FILE__` and `__FUNCTION__` and replacing identifier instances with common [octothorpe-prefixed](https:\/\/en.wiktionary.org\/wiki\/octothorpe) lowercase `#identifier` representations.",
+      "title" : "Modernizing Swift's Debugging Identifiers",
+      "trackingBugs" : [
+        {
+          "id" : "SR-669",
+          "link" : "https:\/\/bugs.swift.org\/browse\/SR-669"
+        }
+      ]
+    },
+    {
+      "authors" : [
+        {
+          "link" : "https:\/\/github.com\/jshier",
+          "name" : "Jon Shier"
+        }
+      ],
+      "discussions" : [
+        {
+          "link" : "https:\/\/forums.swift.org\/t\/se-0235-add-result-to-the-standard-library\/17752",
+          "name" : "initial review"
+        },
+        {
+          "link" : "https:\/\/forums.swift.org\/t\/revised-se-0235-add-result-to-the-standard-library\/18371",
+          "name" : "second review"
+        },
+        {
+          "link" : "https:\/\/forums.swift.org\/t\/accepted-with-modifications-se-0235-add-result-to-the-standard-library\/18603",
+          "name" : "acceptance"
+        }
+      ],
+      "id" : "SE-0235",
+      "implementation" : [
+        {
+          "account" : "apple",
+          "id" : "21073",
+          "repository" : "swift",
+          "type" : "pull"
+        },
+        {
+          "account" : "apple",
+          "id" : "21225",
+          "repository" : "swift",
+          "type" : "pull"
+        },
+        {
+          "account" : "apple",
+          "id" : "21378",
+          "repository" : "swift",
+          "type" : "pull"
+        }
+      ],
+      "link" : "0235-add-result.md",
+      "reviewManagers" : [
+        {
+          "link" : "https:\/\/github.com\/lattner",
+          "name" : "Chris Lattner"
+        }
+      ],
+      "sha" : "",
+      "status" : {
+        "state" : "implemented",
+        "version" : "5.0"
+      },
+      "summary" : "Swift's current error-handling, using `throws`, `try`, and `catch`, offers automatic and synchronous handling of errors through explicit syntax and runtime behavior. However, it lacks the flexibility needed to cover all error propagation and handling in the language. `Result` is a type commonly used for manual propagation and handling of errors in other languages and within the Swift community. Therefore this proposal seeks to add such a type to the Swift standard library.",
+      "title" : "Add Result to the Standard Library"
+    },
+    {
+      "authors" : [
+        {
+          "link" : "https:\/\/github.com\/rjmccall",
+          "name" : "John McCall"
+        },
+        {
+          "link" : "https:\/\/github.com\/jckarter",
+          "name" : "Joe Groff"
+        },
+        {
+          "link" : "https:\/\/github.com\/DougGregor",
+          "name" : "Doug Gregor"
+        },
+        {
+          "link" : "https:\/\/github.com\/ktoso",
+          "name" : "Konrad Malawski"
+        }
+      ],
+      "discussions" : [
+      ],
+      "id" : "SE-0300",
+      "link" : "0300-continuation.md",
+      "reviewManagers" : [
+        {
+          "link" : "https:\/\/github.com\/airspeedswift",
+          "name" : "Ben Cohen"
+        }
+      ],
+      "sha" : "",
+      "status" : {
+        "state" : "implemented",
+        "version" : "5.5"
+      },
+      "summary" : "Asynchronous Swift code needs to be able to work with existing synchronous code that uses techniques such as completion callbacks and delegate methods to respond to events. Asynchronous tasks can suspend themselves on **continuations** which synchronous code can then capture and invoke to resume the task in response to an event.",
+      "title" : "Continuations for interfacing async tasks with synchronous code"
+    },
+    {
+      "authors" : [
+        {
+          "link" : "https:\/\/github.com\/ktoso",
+          "name" : "Konrad 'ktoso' Malawski"
+        },
+        {
+          "link" : "https:\/\/github.com\/xedin",
+          "name" : "Pavel Yaskevich"
+        },
+        {
+          "link" : "https:\/\/github.com\/DougGregor",
+          "name" : "Doug Gregor"
+        },
+        {
+          "link" : "https:\/\/github.com\/kavon",
+          "name" : "Kavon Farvardin"
+        }
+      ],
+      "discussions" : [
+        {
+          "link" : "https:\/\/forums.swift.org\/t\/accepted-se-0336-distributed-actor-isolation\/54726",
+          "name" : "Acceptance"
+        }
+      ],
+      "id" : "SE-0336",
+      "link" : "0336-distributed-actor-isolation.md",
+      "reviewManagers" : [
+        {
+          "link" : "https:\/\/github.com\/jckarter",
+          "name" : "Joe Groff"
+        }
+      ],
+      "sha" : "",
+      "status" : {
+        "state" : "implemented",
+        "version" : "5.7"
+      },
+      "summary" : "With the recent introduction of [actors](https:\/\/github.com\/swiftlang\/swift-evolution\/blob\/main\/proposals\/0306-actors.md) to the language, Swift gained powerful and foundational building blocks for expressing *thread-safe* concurrent programs. This proposal is the first in a series of proposals aiming to extend Swift's actor runtime with the concept of *distributed actors*, allowing developers leverage the actor model not only in local, but also distributed settings.",
+      "title" : "Distributed Actor Isolation"
+    },
+    {
+      "authors" : [
+        {
+          "link" : "https:\/\/github.com\/jckarter",
+          "name" : "Joe Groff"
+        },
+        {
+          "link" : "https:\/\/github.com\/gottesmm",
+          "name" : "Michael Gottesman"
+        },
+        {
+          "link" : "https:\/\/github.com\/atrick",
+          "name" : "Andrew Trick"
+        },
+        {
+          "link" : "https:\/\/github.com\/kavon",
+          "name" : "Kavon Farvardin"
+        }
+      ],
+      "discussions" : [
+        {
+          "link" : "https:\/\/forums.swift.org\/t\/pitch-noncopyable-or-move-only-structs-and-enums\/61903",
+          "name" : "pitch"
+        },
+        {
+          "link" : "https:\/\/forums.swift.org\/t\/se-0390-noncopyable-structs-and-enums\/63258",
+          "name" : "first review"
+        },
+        {
+          "link" : "https:\/\/forums.swift.org\/t\/second-review-se-0390-noncopyable-structs-and-enums\/63866",
+          "name" : "second review"
+        },
+        {
+          "link" : "https:\/\/forums.swift.org\/t\/accepted-se-0390-noncopyable-structs-and-enums\/65157",
+          "name" : "acceptance"
+        }
+      ],
+      "id" : "SE-0390",
+      "link" : "0390-noncopyable-structs-and-enums.md",
+      "reviewManagers" : [
+        {
+          "link" : "https:\/\/github.com\/stephentyrone",
+          "name" : "Stephen Canon"
+        }
+      ],
+      "sha" : "",
+      "status" : {
+        "state" : "implemented",
+        "version" : "5.9"
+      },
+      "summary" : "This proposal introduces the concept of **noncopyable** types (also known as \"move-only\" types). An instance of a noncopyable type always has unique ownership, unlike normal Swift types which can be freely copied.",
+      "title" : "Noncopyable structs and enums"
+    },
+    {
+      "authors" : [
+        {
+          "link" : "https:\/\/github.com\/DougGregor",
+          "name" : "Doug Gregor"
+        }
+      ],
+      "discussions" : [
+        {
+          "link" : "https:\/\/forums.swift.org\/t\/function-body-macros\/66471",
+          "name" : "pitch"
+        },
+        {
+          "link" : "https:\/\/forums.swift.org\/t\/se-0415-function-body-macros\/68847",
+          "name" : "review"
+        },
+        {
+          "link" : "https:\/\/forums.swift.org\/t\/returned-for-revision-se-0415-function-body-macros\/69114",
+          "name" : "returned for revision"
+        },
+        {
+          "link" : "https:\/\/forums.swift.org\/t\/se-0415-second-review-function-body-macros\/71644",
+          "name" : "second review"
+        },
+        {
+          "link" : "https:\/\/forums.swift.org\/t\/accepted-se-0415-function-body-macros\/72013",
+          "name" : "acceptance"
+        }
+      ],
+      "id" : "SE-0415",
+      "link" : "0415-function-body-macros.md",
+      "reviewManagers" : [
+        {
+          "link" : "https:\/\/github.com\/allevato",
+          "name" : "Tony Allevato"
+        }
+      ],
+      "sha" : "",
+      "status" : {
+        "state" : "implemented",
+        "version" : "6.0"
+      },
+      "summary" : "Macros augment Swift programs with additional code, which can include new declarations, expressions, and statements. One of the key ways in which one might want to augment code---synthesizing or updating the body of a function---is not currently supported by the macro system. One can create new functions that have their own function bodies, but not provide, augment, or replace function bodies for a function declared by the user.",
+      "title" : "Function Body Macros"
+    },
+    {
+      "authors" : [
+        {
+          "link" : "https:\/\/github.com\/ApolloZhu",
+          "name" : "Apollo Zhu"
+        }
+      ],
+      "discussions" : [
+        {
+          "link" : "https:\/\/forums.swift.org\/t\/pitch-expression-macro-as-caller-side-default-argument\/69019",
+          "name" : "pitch"
+        },
+        {
+          "link" : "https:\/\/forums.swift.org\/t\/se-0422-expression-macro-as-caller-side-default-argument\/69730",
+          "name" : "review"
+        },
+        {
+          "link" : "https:\/\/forums.swift.org\/t\/accepted-se-0422-expression-macro-as-caller-side-default-argument\/70050",
+          "name" : "acceptance"
+        }
+      ],
+      "id" : "SE-0422",
+      "link" : "0422-caller-side-default-argument-macro-expression.md",
+      "reviewManagers" : [
+        {
+          "link" : "https:\/\/github.com\/DougGregor",
+          "name" : "Doug Gregor"
+        }
+      ],
+      "sha" : "",
+      "status" : {
+        "state" : "implemented",
+        "version" : "6.0"
+      },
+      "summary" : "This proposal aims to lift the restriction afore set in [SE-0382 \"Expression macros\"](https:\/\/github.com\/swiftlang\/swift-evolution\/blob\/main\/proposals\/0382-expression-macros.md) to allow non-built-in expression macros as caller-side default argument expressions.",
+      "title" : "Expression macro as caller-side default argument"
+    }
+  ],
+  "schemaVersion" : "1.0.0",
+  "toolVersion" : "0.1.0"
+}
