@@ -261,7 +261,7 @@ struct `Extraction Tests` {
             let destURL = FileManager.default.temporaryDirectory.appending(components:UUID().uuidString, snapshotName + ".evosnapshot")
             let adHocSnapshotURL = try urlForSnapshot(named: snapshotName)
             
-            // Use expected extraciton date in new snapshot for identical metadata
+            // Use expected extraction date in new snapshot for identical metadata
             let extractionDate = try extractionDateForSnapshot(named: snapshotName)
 
             let extractionJob = try await ExtractionJob.makeExtractionJob(from: .files(sourceURLs), output: .snapshot(destURL), ignorePreviousResults: true, extractionDate: extractionDate)
