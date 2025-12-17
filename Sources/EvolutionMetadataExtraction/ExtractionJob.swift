@@ -128,9 +128,8 @@ extension ExtractionJob {
 
     private static func makeFilesExtractionJob(fileURLs: [URL], output: Output, ignorePreviousResults: Bool, forcedExtractionIDs: [String], toolVersion: String, extractionDate: Date) throws -> ExtractionJob {
         
-        guard ignorePreviousResults == true && forcedExtractionIDs.isEmpty else {
-            fatalError("Extraction from a file URLs always ignores previous results and performs a full extraction")
-        }
+        // Argument validation should ensure correct values. Assert to catch problems in usage in tests.
+        assert(ignorePreviousResults == true && forcedExtractionIDs.isEmpty, "Extraction from a file URLs always ignores previous results and performs a full extraction")
         
         let proposalSpecs = fileURLs
             .sorted(using: SortDescriptor(\URL.lastPathComponent, order: .forward))
