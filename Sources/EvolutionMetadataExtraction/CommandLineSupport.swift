@@ -41,7 +41,7 @@ public enum ArgumentValidation {
 
     @Sendable public static func extractionSource(snapshotURL: URL?, proposalURLs: [URL]) throws -> ExtractionJob.Source {
         if snapshotURL != nil && !proposalURLs.isEmpty {
-            throw ValidationError("Cannot provide both a snapshot path and file arguments")
+            throw ValidationError("Cannot provide both a --snapshot-path and <proposal file> arguments")
         } else if let snapshotURL {
             return .snapshot(snapshotURL)
         } else if !proposalURLs.isEmpty {
