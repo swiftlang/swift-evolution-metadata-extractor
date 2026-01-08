@@ -58,7 +58,7 @@ struct EvolutionMetadataExtractor {
             implementationVersions: implementationVersions,
             proposals: combinedProposals,
             commit: extractionJob.jobMetadata.commit ?? "",
-            toolVersion: extractionJob.jobMetadata.toolVersion
+            toolVersion: ToolVersion.version
         )
     }
     
