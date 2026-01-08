@@ -213,15 +213,3 @@ extension ExtractionJob {
         try snapshot.writeSnapshot(results: results, outputURL: outputURL)
     }
 }
-
-extension EvolutionMetadata {
-    var jsonRepresentation: Data {
-        get throws {
-            let encoder = JSONEncoder()
-            encoder.outputFormatting = [.prettyPrinted, .sortedKeys]
-            let data = try encoder.encode(self)
-            let adjustedData = JSONRewriter.applyRewritersToJSONData(rewriters: [JSONRewriter.prettyPrintVersions], data: data)
-            return adjustedData
-        }
-    }
-}
