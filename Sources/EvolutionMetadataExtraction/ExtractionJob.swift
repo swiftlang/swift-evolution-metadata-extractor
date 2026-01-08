@@ -117,7 +117,7 @@ extension ExtractionJob {
  
         verbosePrint("Using local snapshot\n'\(snapshotURL.relativePath)'")
 
-        let sourceSnapshot = try Snapshot(snapshotURL: snapshotURL, destURL: output.snapshotURL, ignorePreviousResults: ignorePreviousResults, extractionDate: extractionDate)
+        let sourceSnapshot = try Snapshot.makeSnapshot(from: snapshotURL, destURL: output.snapshotURL, ignorePreviousResults: ignorePreviousResults, extractionDate: extractionDate)
 
         let jobMetadata = JobMetadata(commit: sourceSnapshot.branchInfo?.commit.sha, extractionDate: sourceSnapshot.snapshotDate)
                 

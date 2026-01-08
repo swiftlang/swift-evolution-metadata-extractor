@@ -43,34 +43,26 @@ struct Snapshot {
         }
     }
 
-    init(snapshotURL: URL, destURL: URL?, ignorePreviousResults: Bool, extractionDate: Date) throws {
+    static func makeSnapshot(from snapshotURL: URL, destURL: URL?, ignorePreviousResults: Bool, extractionDate: Date) throws -> Snapshot{
         var proposalListingFound = false
         var previousResultsFound = false
                         
-        sourceURL = snapshotURL
         let branchInfoURL = snapshotURL.appending(component: "source-info.json")
         let proposalListingURL = snapshotURL.appending(component: "proposal-listing.json")
         let previousResultsURL = snapshotURL.appending(component: "previous-results.json")
         let expectedResultsURL = snapshotURL.appending(component: "expected-results.json")
         let proposalDirectoryURL = snapshotURL.appending(component: "proposals")
-        
-        self.destURL = destURL
-        if destURL != nil {
-            temporarySnapshotDirectory = FileManager.default.temporaryDirectory.appending(component: UUID().uuidString)
-            temporaryProposalsDirectory = temporarySnapshotDirectory?.appending(component: "proposals")
-        } else {
-            temporarySnapshotDirectory = nil
-            temporaryProposalsDirectory = nil
-        }
 
-        branchInfo = try FileUtilities.decode(GitHubBranch.self, from: branchInfoURL)
-        
-        directoryContents = try FileManager.default.contentsOfDirectory(at: proposalDirectoryURL, includingPropertiesForKeys: nil)
+        let branchInfo = try FileUtilities.decode(GitHubBranch.self, from: branchInfoURL)
+
+        let directoryContents = try FileManager.default.contentsOfDirectory(at: proposalDirectoryURL, includingPropertiesForKeys: nil)
             .sorted(by: { $0.lastPathComponent < $1.lastPathComponent })
             .filter { $0.pathExtension == "md"}
             .enumerated()
             .map { ProposalSpec(url: $1, sha: "", sortIndex: $0) } // try! SHA1.hexForData(Data(contentsOf: $0)))
 
+        let proposalSpecs: [ProposalSpec]
+        let proposalListing: [GitHubContentItem]?
         if let contentItems = try FileUtilities.decode([GitHubContentItem].self, from: proposalListingURL) {
             proposalListing = contentItems
             proposalSpecs = contentItems.enumerated().map { ProposalSpec(url: snapshotURL.appending(path: $1.path), sha: $1.sha, sortIndex: $0) }
@@ -79,9 +71,11 @@ struct Snapshot {
                 print("WARNING: Number of proposals in proposals directory does not match number of proposals in 'proposal-listing.json")
             }
         } else {
+            proposalListing = nil
             proposalSpecs = directoryContents
         }
         
+        var previousResults: EvolutionMetadata? = nil
         if !ignorePreviousResults {
             if let previous = try FileUtilities.decode(EvolutionMetadata.self, from: previousResultsURL) {
                 previousResults = previous
@@ -89,10 +83,11 @@ struct Snapshot {
             }
         }
         
-        expectedResults = try FileUtilities.decode(EvolutionMetadata.self, from: expectedResultsURL)
+        let expectedResults = try FileUtilities.decode(EvolutionMetadata.self, from: expectedResultsURL)
 
         // If expected results has a non-empty creation date string, use that as the extraction date
         // Note that ad-hoc snapshots will potentially have an empty creation date string
+        let snapshotDate: Date
         if let dateString = expectedResults?.creationDate, !dateString.isEmpty {
             snapshotDate = try Date(dateString, strategy: .iso8601)
         } else {
@@ -110,6 +105,9 @@ struct Snapshot {
                     Proposal count: \(proposalSpecs.count)
                     """)
         
+        return Snapshot(sourceURL: snapshotURL, destURL: destURL, proposalListing: proposalListing, directoryContents: directoryContents, proposalSpecs: proposalSpecs, previousResults: previousResults, expectedResults: expectedResults, branchInfo: branchInfo, snapshotDate: snapshotDate)
+
+
         // Expected test file directory structure:
         //
         // proposals/XXXX-proposal-files.md : Directory of proposal markdown files
