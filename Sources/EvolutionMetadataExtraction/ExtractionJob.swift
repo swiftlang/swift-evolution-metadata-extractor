@@ -36,7 +36,6 @@ public struct ExtractionJob: Sendable {
     }
     
     struct JobMetadata: Sendable, Codable, Equatable {
-        let toolVersion: String
         let commit: String?
         let extractionDate: Date
     }
@@ -69,14 +68,14 @@ public struct ExtractionJob: Sendable {
 
     }
     
-    public static func makeExtractionJob(from source: Source, output: Output, ignorePreviousResults: Bool = false, forcedExtractionIDs: [String] = [], toolVersion: String = ToolVersion.version, extractionDate: Date = Date()) async throws -> ExtractionJob {
+    public static func makeExtractionJob(from source: Source, output: Output, ignorePreviousResults: Bool = false, forcedExtractionIDs: [String] = [], extractionDate: Date = Date()) async throws -> ExtractionJob {
         switch source {
             case .network:
-                try await makeNetworkExtractionJob(output: output, ignorePreviousResults: ignorePreviousResults, forcedExtractionIDs: forcedExtractionIDs, toolVersion: toolVersion, extractionDate: extractionDate)
+                try await makeNetworkExtractionJob(output: output, ignorePreviousResults: ignorePreviousResults, forcedExtractionIDs: forcedExtractionIDs, extractionDate: extractionDate)
             case .snapshot(let snapshotURL):
-                try makeSnapshotExtractionJob(snapshotURL: snapshotURL, output: output, ignorePreviousResults: ignorePreviousResults, forcedExtractionIDs: forcedExtractionIDs, toolVersion: toolVersion, extractionDate: extractionDate)
+                try makeSnapshotExtractionJob(snapshotURL: snapshotURL, output: output, ignorePreviousResults: ignorePreviousResults, forcedExtractionIDs: forcedExtractionIDs, extractionDate: extractionDate)
             case .files(let fileURLs):
-                try makeFilesExtractionJob(fileURLs: fileURLs, output: output, ignorePreviousResults: ignorePreviousResults, forcedExtractionIDs: forcedExtractionIDs, toolVersion: toolVersion, extractionDate: extractionDate)
+                try makeFilesExtractionJob(fileURLs: fileURLs, output: output, ignorePreviousResults: ignorePreviousResults, forcedExtractionIDs: forcedExtractionIDs, extractionDate: extractionDate)
         }
     }
 }
@@ -85,7 +84,7 @@ public struct ExtractionJob: Sendable {
 
 extension ExtractionJob {
     
-    private static func makeNetworkExtractionJob(output: Output, ignorePreviousResults: Bool, forcedExtractionIDs: [String], toolVersion: String, extractionDate: Date) async throws -> ExtractionJob {
+    private static func makeNetworkExtractionJob(output: Output, ignorePreviousResults: Bool, forcedExtractionIDs: [String], extractionDate: Date) async throws -> ExtractionJob {
         
         async let previousResults = ignorePreviousResults ? nil : PreviousResultsFetcher.fetchPreviousResults()
         let mainBranchInfo = try await GitHubFetcher.fetchMainBranch()
@@ -99,7 +98,7 @@ extension ExtractionJob {
             $1.proposalSpec(sortIndex: $0)
         }
 
-        let jobMetadata = JobMetadata(toolVersion: toolVersion, commit: mainBranchInfo.commit.sha, extractionDate: extractionDate)
+        let jobMetadata = JobMetadata(commit: mainBranchInfo.commit.sha, extractionDate: extractionDate)
 
         let snapshot: Snapshot?
         if case let .snapshot(destURL) = output {
@@ -111,7 +110,7 @@ extension ExtractionJob {
         return ExtractionJob(output: output, snapshot: snapshot, proposalSpecs: proposalSpecs, previousResults: try await previousResults, forcedExtractionIDs: forcedExtractionIDs, jobMetadata: jobMetadata)
     }
     
-    private static func makeSnapshotExtractionJob(snapshotURL: URL, output: Output, ignorePreviousResults: Bool, forcedExtractionIDs: [String], toolVersion: String, extractionDate: Date) throws -> ExtractionJob {
+    private static func makeSnapshotExtractionJob(snapshotURL: URL, output: Output, ignorePreviousResults: Bool, forcedExtractionIDs: [String], extractionDate: Date) throws -> ExtractionJob {
         
         // Argument validation should ensure correct values. Assert to catch problems in usage in tests.
         assert(snapshotURL.pathExtension == "evosnapshot", "Snapshot URL must be a directory with 'evosnapshot' extension.")
@@ -120,13 +119,13 @@ extension ExtractionJob {
 
         let sourceSnapshot = try Snapshot(snapshotURL: snapshotURL, destURL: output.snapshotURL, ignorePreviousResults: ignorePreviousResults, extractionDate: extractionDate)
 
-        let jobMetadata = JobMetadata(toolVersion: toolVersion, commit: sourceSnapshot.branchInfo?.commit.sha, extractionDate: sourceSnapshot.snapshotDate)
+        let jobMetadata = JobMetadata(commit: sourceSnapshot.branchInfo?.commit.sha, extractionDate: sourceSnapshot.snapshotDate)
                 
         // Always use sourceSnapshot, its values are used in tests
         return ExtractionJob(output: output, snapshot: sourceSnapshot, proposalSpecs: sourceSnapshot.proposalSpecs, previousResults: sourceSnapshot.previousResults, forcedExtractionIDs: forcedExtractionIDs, jobMetadata: jobMetadata)
     }
 
-    private static func makeFilesExtractionJob(fileURLs: [URL], output: Output, ignorePreviousResults: Bool, forcedExtractionIDs: [String], toolVersion: String, extractionDate: Date) throws -> ExtractionJob {
+    private static func makeFilesExtractionJob(fileURLs: [URL], output: Output, ignorePreviousResults: Bool, forcedExtractionIDs: [String], extractionDate: Date) throws -> ExtractionJob {
         
         // Argument validation should ensure correct values. Assert to catch problems in usage in tests.
         assert(ignorePreviousResults == true && forcedExtractionIDs.isEmpty, "Extraction from a file URLs always ignores previous results and performs a full extraction")
@@ -136,7 +135,7 @@ extension ExtractionJob {
             .enumerated()
             .map { ProposalSpec(url: $1, sha: "", sortIndex: $0) }
 
-        let jobMetadata = JobMetadata(toolVersion: toolVersion, commit: "", extractionDate: extractionDate)
+        let jobMetadata = JobMetadata(commit: "", extractionDate: extractionDate)
 
         let snapshot: Snapshot?
         if case let .snapshot(destURL) = output {
