@@ -51,19 +51,23 @@ enum FileUtilities {
         return nil
     }()
     
-    static func decode<T: Decodable>(_ type: T.Type, from fileURL: URL, required: Bool = false) throws -> T? {
-        do { let data = try Data(contentsOf: fileURL)
-            let decoder = JSONDecoder()
-            let value = try decoder.decode(type, from: data)
-            return value
+    static func data(from fileURL: URL, required: Bool = false) throws -> Data? {
+        do {
+            return try Data(contentsOf: fileURL)
         } catch let error as CocoaError {
             // Missing file is expected on occassion
             if error.code == CocoaError.fileReadNoSuchFile && !required {
                 return nil
             }
             else { throw error }
-        } catch {
-            throw error
+        }
+    }
+
+    static func decode<T: Decodable>(_ type: T.Type, from fileURL: URL, required: Bool = false) throws -> T? {
+        if let data = try data(from: fileURL, required: required) {
+            return try JSONDecoder().decode(type, from: data)
+        } else {
+            return nil
         }
     }
 
