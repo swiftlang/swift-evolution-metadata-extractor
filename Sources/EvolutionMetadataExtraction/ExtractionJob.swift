@@ -86,7 +86,7 @@ extension ExtractionJob {
     
     private static func makeNetworkExtractionJob(output: Output, ignorePreviousResults: Bool, forcedExtractionIDs: [String], extractionDate: Date) async throws -> ExtractionJob {
         
-        async let previousResults = ignorePreviousResults ? nil : PreviousResultsFetcher.fetchPreviousResults()
+        async let previousResults = previousResults(from: PreviousResultsFetcher.previousResultsURL, ignorePreviousResults: ignorePreviousResults)
         let mainBranchInfo = try await GitHubFetcher.fetchMainBranch()
         let proposalContentItems = try await GitHubFetcher.fetchProposalContentItems(for: mainBranchInfo.commit.sha)
 
@@ -145,6 +145,29 @@ extension ExtractionJob {
         }
 
         return ExtractionJob(output: output, snapshot: snapshot, proposalSpecs: proposalSpecs, previousResults: nil, forcedExtractionIDs: forcedExtractionIDs, jobMetadata: jobMetadata)
+    }
+
+    static func previousResults(from url: URL, ignorePreviousResults: Bool) async throws -> EvolutionMetadata? {
+        if ignorePreviousResults { return nil }
+
+        let data: Data?
+        if url.isFileURL {
+            data = try FileUtilities.data(from: url)
+        } else {
+            data = try await PreviousResultsFetcher.fetchPreviousResultsData(url: url)
+        }
+
+        guard let data else { return nil }
+
+        do {
+            let decoder = JSONDecoder()
+            let previousResults = try decoder.decode(EvolutionMetadata.self, from: data)
+            return previousResults
+        } catch {
+            print("Unable to decode \(EvolutionMetadata.self) from:")
+            print(String(decoding: data, as: UTF8.self))
+            throw error
+        }
     }
 }
 
