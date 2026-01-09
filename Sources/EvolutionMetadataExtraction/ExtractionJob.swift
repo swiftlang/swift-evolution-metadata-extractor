@@ -73,7 +73,7 @@ public struct ExtractionJob: Sendable {
             case .network:
                 try await makeNetworkExtractionJob(output: output, ignorePreviousResults: ignorePreviousResults, forcedExtractionIDs: forcedExtractionIDs, extractionDate: extractionDate)
             case .snapshot(let snapshotURL):
-                try makeSnapshotExtractionJob(snapshotURL: snapshotURL, output: output, ignorePreviousResults: ignorePreviousResults, forcedExtractionIDs: forcedExtractionIDs, extractionDate: extractionDate)
+                try await makeSnapshotExtractionJob(snapshotURL: snapshotURL, output: output, ignorePreviousResults: ignorePreviousResults, forcedExtractionIDs: forcedExtractionIDs, extractionDate: extractionDate)
             case .files(let fileURLs):
                 try makeFilesExtractionJob(fileURLs: fileURLs, output: output, ignorePreviousResults: ignorePreviousResults, forcedExtractionIDs: forcedExtractionIDs, extractionDate: extractionDate)
         }
@@ -110,14 +110,14 @@ extension ExtractionJob {
         return ExtractionJob(output: output, snapshot: snapshot, proposalSpecs: proposalSpecs, previousResults: try await previousResults, forcedExtractionIDs: forcedExtractionIDs, jobMetadata: jobMetadata)
     }
     
-    private static func makeSnapshotExtractionJob(snapshotURL: URL, output: Output, ignorePreviousResults: Bool, forcedExtractionIDs: [String], extractionDate: Date) throws -> ExtractionJob {
-        
+    private static func makeSnapshotExtractionJob(snapshotURL: URL, output: Output, ignorePreviousResults: Bool, forcedExtractionIDs: [String], extractionDate: Date) async throws -> ExtractionJob {
+
         // Argument validation should ensure correct values. Assert to catch problems in usage in tests.
         assert(snapshotURL.pathExtension == "evosnapshot", "Snapshot URL must be a directory with 'evosnapshot' extension.")
  
         verbosePrint("Using local snapshot\n'\(snapshotURL.relativePath)'")
 
-        let sourceSnapshot = try Snapshot.makeSnapshot(from: snapshotURL, destURL: output.snapshotURL, ignorePreviousResults: ignorePreviousResults, extractionDate: extractionDate)
+        let sourceSnapshot = try await Snapshot.makeSnapshot(from: snapshotURL, destURL: output.snapshotURL, ignorePreviousResults: ignorePreviousResults, extractionDate: extractionDate)
 
         let jobMetadata = JobMetadata(commit: sourceSnapshot.branchInfo?.commit.sha, extractionDate: sourceSnapshot.snapshotDate)
                 
