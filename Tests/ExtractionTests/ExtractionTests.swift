@@ -223,7 +223,20 @@ struct `Extraction Tests` {
         let proposal = try JSONDecoder().decode(Proposal.self, from: unknownStatusData)
         #expect(proposal.status == .unknownStatus("appealed"))
     }
-    
+
+    @Test(arguments: [
+        (filename: "old-schema-version", currentSchema: false, currentTool: true, currentMetadata: false),
+        (filename: "old-tool-version", currentSchema: true, currentTool: false, currentMetadata: false),
+        (filename: "current-metadata-versions", currentSchema: true, currentTool: true, currentMetadata: true),
+    ])
+    func `Metadata version changes`(argument: (filename: String, currentSchema: Bool, currentTool: Bool, currentMetadata: Bool)) throws {
+        let url = try #require(Bundle.module.url(forResource: argument.filename, withExtension: "json", subdirectory: "Resources/MetadataVersions"), "Unable to find resource \(argument.filename).json in test bundle resources.")
+        let evolutionMetadata = try #require(try FileUtilities.decode(EvolutionMetadata.self, from: url, required: true))
+        #expect(evolutionMetadata.hasCurrentSchemaVersion == argument.currentSchema)
+        #expect(evolutionMetadata.hasCurrentToolVersion == argument.currentTool)
+        #expect(evolutionMetadata.hasCurrentMetadataVersions == argument.currentMetadata)
+    }
+
     @Suite
     struct `Snapshot Writing` {
 

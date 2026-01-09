@@ -1,0 +1,85 @@
+{
+  "commit" : "",
+  "creationDate" : "2025-12-18T16:05:06Z",
+  "implementationVersions" : [
+    "5.5", "6.0"
+  ],
+  "proposals" : [
+    {
+      "authors" : [
+        {
+          "link" : "https:\/\/github.com\/rjmccall",
+          "name" : "John McCall"
+        },
+        {
+          "link" : "https:\/\/github.com\/jckarter",
+          "name" : "Joe Groff"
+        },
+        {
+          "link" : "https:\/\/github.com\/DougGregor",
+          "name" : "Doug Gregor"
+        },
+        {
+          "link" : "https:\/\/github.com\/ktoso",
+          "name" : "Konrad Malawski"
+        }
+      ],
+      "discussions" : [
+      ],
+      "id" : "SE-0300",
+      "link" : "0300-continuation.md",
+      "reviewManagers" : [
+        {
+          "link" : "https:\/\/github.com\/airspeedswift",
+          "name" : "Ben Cohen"
+        }
+      ],
+      "sha" : "",
+      "status" : {
+        "state" : "implemented",
+        "version" : "5.5"
+      },
+      "summary" : "Asynchronous Swift code needs to be able to work with existing synchronous code that uses techniques such as completion callbacks and delegate methods to respond to events. Asynchronous tasks can suspend themselves on **continuations** which synchronous code can then capture and invoke to resume the task in response to an event.",
+      "title" : "Continuations for interfacing async tasks with synchronous code"
+    },
+    {
+      "authors" : [
+        {
+          "link" : "https:\/\/github.com\/ApolloZhu",
+          "name" : "Apollo Zhu"
+        }
+      ],
+      "discussions" : [
+        {
+          "link" : "https:\/\/forums.swift.org\/t\/pitch-expression-macro-as-caller-side-default-argument\/69019",
+          "name" : "pitch"
+        },
+        {
+          "link" : "https:\/\/forums.swift.org\/t\/se-0422-expression-macro-as-caller-side-default-argument\/69730",
+          "name" : "review"
+        },
+        {
+          "link" : "https:\/\/forums.swift.org\/t\/accepted-se-0422-expression-macro-as-caller-side-default-argument\/70050",
+          "name" : "acceptance"
+        }
+      ],
+      "id" : "SE-0422",
+      "link" : "0422-caller-side-default-argument-macro-expression.md",
+      "reviewManagers" : [
+        {
+          "link" : "https:\/\/github.com\/DougGregor",
+          "name" : "Doug Gregor"
+        }
+      ],
+      "sha" : "",
+      "status" : {
+        "state" : "implemented",
+        "version" : "6.0"
+      },
+      "summary" : "This proposal aims to lift the restriction afore set in [SE-0382 \"Expression macros\"](https:\/\/github.com\/swiftlang\/swift-evolution\/blob\/main\/proposals\/0382-expression-macros.md) to allow non-built-in expression macros as caller-side default argument expressions.",
+      "title" : "Expression macro as caller-side default argument"
+    }
+  ],
+  "schemaVersion" : "0.9.0",
+  "toolVersion" : "0.1.0"
+}
