@@ -14,27 +14,14 @@ import FoundationNetworking // Required for Linux
 #endif
 
 struct PreviousResultsFetcher {
-    
+
     static let previousResultsURL = URL(string: "https://download.swift.org/swift-evolution/v1/evolution.json")!
-    
-    static func fetchPreviousResults() async throws -> EvolutionMetadata {
-        let request = URLRequest(url: previousResultsURL, cachePolicy: .reloadIgnoringLocalCacheData)
+
+    static func fetchPreviousResultsData(url: URL) async throws -> Data {
+        let request = URLRequest(url: url, cachePolicy: .reloadIgnoringLocalCacheData)
         verbosePrint("Fetching with URLRequest:\n\(request.verboseDescription)")
-        do {
-            let (data, _) = try await URLSession.customized.data(for: request)
-            
-            do {
-                let decoder = JSONDecoder()
-                return try decoder.decode(EvolutionMetadata.self, from: data)
-            } catch {
-                print("Unable to decode \(EvolutionMetadata.self) from:")
-                print(String(decoding: data, as: UTF8.self))
-                throw error
-            }
-        } catch {
-            print(error)
-            throw error
-        }
+        let (data, _) = try await URLSession.customized.data(for: request)
+        return data
     }
 }
 
