@@ -25,6 +25,7 @@ Add new items at the end of the relevant section under **Unreleased**.
 - Use full metadata struct as previous results
 - Refactor snapshot details and extraction job metadata into separate types
 - Stop writing legacy `proposals.json` placeholder file
+- Always perform full extraction if schema or tool version changes
 
 ### Fixes
 
