@@ -162,7 +162,7 @@ extension ExtractionJob {
         do {
             let decoder = JSONDecoder()
             let previousResults = try decoder.decode(EvolutionMetadata.self, from: data)
-            return previousResults
+            return previousResults.hasCurrentMetadataVersions ? previousResults : nil
         } catch {
             print("Unable to decode \(EvolutionMetadata.self) from:")
             print(String(decoding: data, as: UTF8.self))
