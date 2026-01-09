@@ -43,7 +43,7 @@ struct Snapshot {
         }
     }
 
-    static func makeSnapshot(from snapshotURL: URL, destURL: URL?, ignorePreviousResults: Bool, extractionDate: Date) throws -> Snapshot{
+    static func makeSnapshot(from snapshotURL: URL, destURL: URL?, ignorePreviousResults: Bool, extractionDate: Date) async throws -> Snapshot{
         var proposalListingFound = false
         var previousResultsFound = false
                         
@@ -75,13 +75,8 @@ struct Snapshot {
             proposalSpecs = directoryContents
         }
         
-        var previousResults: EvolutionMetadata? = nil
-        if !ignorePreviousResults {
-            if let previous = try FileUtilities.decode(EvolutionMetadata.self, from: previousResultsURL) {
-                previousResults = previous
-                previousResultsFound = true
-            }
-        }
+        let previousResults = try await ExtractionJob.previousResults(from: previousResultsURL, ignorePreviousResults: ignorePreviousResults)
+        previousResultsFound = previousResults != nil
         
         let expectedResults = try FileUtilities.decode(EvolutionMetadata.self, from: expectedResultsURL)
 
