@@ -10,6 +10,11 @@ import Foundation
 import EvolutionMetadataModel
 
 extension EvolutionMetadata {
+
+    var hasCurrentToolVersion: Bool { toolVersion == ToolVersion.version }
+    var hasCurrentSchemaVersion: Bool { schemaVersion == EvolutionMetadata.schemaVersion }
+    var hasCurrentMetadataVersions: Bool { hasCurrentToolVersion && hasCurrentSchemaVersion }
+
     var jsonRepresentation: Data {
         get throws {
             let encoder = JSONEncoder()
