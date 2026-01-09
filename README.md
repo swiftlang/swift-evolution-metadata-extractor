@@ -56,6 +56,8 @@ Use the `--force-extract` option to force all or specified proposals to be fetch
 - Use the `--force-extract` option multiple times for multiple proposals:  
   `swift-evolution-metadata-extractor --force-extract SE-0287 --force-extract SE-0123`
 
+If the current schema or tool version is different from the previous results, the previous results will be ignored and a full extraction will be performed.
+
 ### Snapshot path
 
 Use the `--snapshot-path` option to specify a local `evosnapshot` directory as a data source during development.
