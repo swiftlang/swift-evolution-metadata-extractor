@@ -237,6 +237,25 @@ struct `Extraction Tests` {
         #expect(evolutionMetadata.hasCurrentMetadataVersions == argument.currentMetadata)
     }
 
+    @Test(arguments:
+            [(filename: "old-schema-version", expectsNil: true, fileExists: true),
+             (filename: "old-tool-version", expectsNil: true, fileExists: true),
+             (filename: "current-metadata-versions", expectsNil: false, fileExists: true),
+             (filename: "missing-file", expectsNil: true, fileExists: false)],
+          [true, false])
+    func `Previous results`(argument: (filename: String, expectsNil: Bool, fileExists: Bool), ignorePreviousResults: Bool) async throws {
+        let url = Bundle.module.url(forResource: argument.filename, withExtension: "json", subdirectory: "Resources/MetadataVersions")
+        let sourceURL: URL
+        if argument.fileExists {
+            sourceURL = try #require(url, "Unable to find resource \(argument.filename).json in test bundle resources.")
+        } else {
+            sourceURL = Bundle.module.bundleURL.appending(components: "Resources", "MetadataVersions", argument.filename).appendingPathExtension("json")
+        }
+        let previousResults = try await ExtractionJob.previousResults(from: sourceURL, ignorePreviousResults: ignorePreviousResults)
+        if argument.expectsNil || ignorePreviousResults { #expect(previousResults == nil) }
+        else { #expect(previousResults != nil) }
+    }
+
     @Test(arguments: try allTestSnapshotNames)
     func `Check snapshot versions`(snapshotName: String) async throws {
         let snapshotURL = try urlForSnapshot(named: snapshotName)
