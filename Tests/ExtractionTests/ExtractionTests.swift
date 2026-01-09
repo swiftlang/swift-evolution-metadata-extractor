@@ -237,6 +237,16 @@ struct `Extraction Tests` {
         #expect(evolutionMetadata.hasCurrentMetadataVersions == argument.currentMetadata)
     }
 
+    @Test(arguments: try allTestSnapshotNames)
+    func `Check snapshot versions`(snapshotName: String) async throws {
+        let snapshotURL = try urlForSnapshot(named: snapshotName)
+        let snapshot = try await Snapshot.makeSnapshot(from: snapshotURL, destURL: nil, ignorePreviousResults: false, extractionDate: Date())
+        let expectedResults = try #require(snapshot.expectedResults)
+        #expect(expectedResults.hasCurrentSchemaVersion == true, "Expected results for snapshot '\(snapshotName)' does not have the current schema version '\(EvolutionMetadata.schemaVersion)'. Update snapshot to current schema version.")
+        #expect(expectedResults.hasCurrentToolVersion == true, "Expected results for snapshot '\(snapshotName)' does not have the current tool version '\(ToolVersion.version)'. Update snapshot to current tool version.")
+        #expect(expectedResults.hasCurrentMetadataVersions == true)
+    }
+
     @Suite
     struct `Snapshot Writing` {
 
@@ -245,13 +255,7 @@ struct `Extraction Tests` {
          
             This test exercises that path by ensuring that the generated snapshot is identical to the source snapshot.
          */
-        @Test(arguments: [
-            "AllProposals",
-            "Malformed",
-            "SameCommit",
-            "WithUpdates",
-            "AdHoc"
-        ])
+        @Test(arguments: try allTestSnapshotNames)
         func `Update snapshot`(snapshotName: String) async throws {
             let sourceURL = try urlForSnapshot(named: snapshotName)
             let destURL = FileManager.default.temporaryDirectory.appending(components:"_Test_Snapshots",  UUID().uuidString, sourceURL.lastPathComponent)
@@ -339,6 +343,14 @@ private extension String {
 
 private func urlForSnapshot(named snapshotName: String) throws -> URL {
     try #require(Bundle.module.url(forResource: snapshotName, withExtension: "evosnapshot", subdirectory: "Resources"), "Unable to find snapshot \(snapshotName).evosnapshot in test bundle resources.")
+}
+
+private var allTestSnapshotNames: [String] {
+    get throws {
+        // Typecase to [URL] required for Linux where type returned seems to be [NSURL]
+        let snapshotURLs = try #require(Bundle.module.urls(forResourcesWithExtension: "evosnapshot", subdirectory: "Resources"), "Unable to find .evosnapshot snapshots in test bundle resources.") as [URL]
+        return snapshotURLs.map { $0.deletingPathExtension().lastPathComponent }
+    }
 }
 
 private func proposalURLs() throws -> [URL] {
