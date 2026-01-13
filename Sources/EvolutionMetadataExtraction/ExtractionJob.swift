@@ -88,7 +88,8 @@ extension ExtractionJob {
         
         async let previousResults = previousResults(from: PreviousResultsFetcher.previousResultsURL, ignorePreviousResults: ignorePreviousResults)
         let mainBranchInfo = try await GitHubFetcher.fetchMainBranch()
-        let proposalContentItems = try await GitHubFetcher.fetchProposalContentItems(for: mainBranchInfo.commit.sha)
+        let sha = mainBranchInfo.commit.sha
+        let proposalContentItems = try await GitHubFetcher.fetchProposalContentItems(for: sha)
 
         // The proposals/ directory may have subdirectories for
         // proposals from specific workgroups. For now, proposals
@@ -98,7 +99,7 @@ extension ExtractionJob {
             $1.proposalSpec(sortIndex: $0)
         }
 
-        let jobMetadata = JobMetadata(commit: mainBranchInfo.commit.sha, extractionDate: extractionDate)
+        let jobMetadata = JobMetadata(commit: sha, extractionDate: extractionDate)
 
         let snapshot: Snapshot?
         if case let .snapshot(destURL) = output {
