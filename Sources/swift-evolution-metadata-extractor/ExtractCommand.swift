@@ -33,10 +33,13 @@ struct ExtractCommand: AsyncParsableCommand {
     @Flag(name: .shortAndLong, help: Help.Shared.Argument.verbose)
     var verbose: Bool = false
 
+    @Argument(help: Help.Shared.Argument.proposalFiles, transform: ArgumentValidation.proposalURL)
+    var proposalURLs: [URL] = []
+
     mutating func validate() throws {
         ArgumentValidation.validate(verbose: verbose)
         ArgumentValidation.validateHTTPProxies()
-        extractionSource = try ArgumentValidation.extractionSource(snapshotURL: snapshotURL, proposalURLs: [])
+        extractionSource = try ArgumentValidation.extractionSource(snapshotURL: snapshotURL, proposalURLs: proposalURLs)
         (forceAll, forcedExtractionIDs) = try ArgumentValidation.Extract.validate(forceExtract: forceExtract)
     }
 

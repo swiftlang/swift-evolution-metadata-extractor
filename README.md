@@ -74,6 +74,15 @@ See [Snapshots for Development and Testing](#snapshots-for-development-and-testi
 
 Use the `--verbose` option (`-v`) for verbose output as the tool runs.
 
+### Proposal files argument
+
+Use trailing `<proposal-files>` argument of paths to proposal files in the Markdown format with the extension `md`.
+
+This argument is primarily used in utility scripts within the project itself.
+
+The `--snapshot-path` and `<proposal-files>` argument are mutually exclusive.
+
+
 ### Environment variables
 Use optional environment variables to provide proxy and authorization information.
 
@@ -112,7 +121,7 @@ The snapshot subcommand has options that work similar to extract command options
 
   Use the `<proposal-files>` argument to create an ad-hoc snapshot that will contain a `proposals` directory containing the copy of the specified files and an `expected-results.json` file.
 
-The `--snapshot-path` and path argument are mutually exclusive.
+The `--snapshot-path` and `<proposal-files>` argument are mutually exclusive.
 
   
 ### Snapshot structure and contents
