@@ -134,6 +134,35 @@ struct `Extraction Tests` {
             let expectedResults = try #require(extractionJob.snapshot?.expectedResults, "Snapshot from source '\(snapshotURL.absoluteString)' does not contain expected results.")
             #expect(extractedMetadata == expectedResults)
         }
+
+        /* The snapshot 'WithUpdates' contains previous results and is used to test the logic that identifies
+           and processes only proposals that are new or updated.
+
+           The snapshot 'WithUpdates-BaseCommit' is a snapshot with the previous state.
+
+           The metadata extracted from the 'WithUpdates-BaseCommit' snapshot serves as the previous results of the
+           'WithUpdates' snapshot used in the `Reuse prior results` test.
+
+           When the schema or tool versions change, test snapshots are regenerated for the new versions.
+
+           This test checks the invariant that the 'WithUpdates-BaseCommit' expected results equals the extracted results
+           and the prior results of the 'WithUpdates' snapshot
+        */
+        @Test func `Last expected equals prior results`() async throws {
+            let snapshotURL = try urlForSnapshot(named: "WithUpdates")
+            let snapshot = try await Snapshot.makeSnapshot(from: snapshotURL, destURL: nil, ignorePreviousResults: false, extractionDate: Date())
+
+            let priorSnapshotURL = try urlForSnapshot(named: "WithUpdates-BaseCommit")
+            let extractionJob = try await ExtractionJob.makeExtractionJob(from: .snapshot(priorSnapshotURL), output: .none, ignorePreviousResults: false)
+            let priorSnapshot = try #require(extractionJob.snapshot)
+
+            let previousResults = try #require(snapshot.previousResults)
+            let priorExpectedResults = try #require(priorSnapshot.expectedResults)
+            #expect(priorExpectedResults == previousResults)
+
+            let calculatedPriorResults = try await EvolutionMetadataExtractor.extractEvolutionMetadata(for: extractionJob)
+            #expect(calculatedPriorResults == previousResults)
+        }
     }
 
     // MARK: -
