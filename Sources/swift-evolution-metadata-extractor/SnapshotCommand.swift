@@ -29,7 +29,7 @@ struct SnapshotCommand: AsyncParsableCommand {
     var verbose: Bool = false
 
     @Argument(help: Help.Shared.Argument.proposalFiles, transform: ArgumentValidation.proposalURL)
-    var proposalURLs: [URL]
+    var proposalURLs: [URL] = []
 
     mutating func validate() throws {
         ArgumentValidation.validate(verbose: verbose)
