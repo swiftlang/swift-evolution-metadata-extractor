@@ -1,6 +1,6 @@
 {
-  "commit" : "d0891031bd869dc47a8305920959649177e65590",
-  "creationDate" : "2025-11-15T01:49:30Z",
+  "commit" : "c323a918cc1b51bab7e1653b6b2d7df87d1f104e",
+  "creationDate" : "2026-01-14T13:53:26Z",
   "implementationVersions" : [
     "2.2", "3.0", "3.0.1", "3.1", "4.0", "4.1", "4.2", "5.0", "5.1", "5.2",
     "5.3", "5.4", "5.5", "5.5.2", "5.6", "5.7", "5.8", "5.9", "5.9.2", "5.10",
@@ -9738,9 +9738,9 @@
           "name" : "Joe Groff"
         }
       ],
-      "sha" : "447a02c7f975f24467a3db52088e8348d661c19a",
+      "sha" : "3b796c6a289826ce6dd540108634c813fc19dcf4",
       "status" : {
-        "state" : "returnedForRevision"
+        "state" : "withdrawn"
       },
       "summary" : "Introduce a new standard library function, `demangle`, that takes a mangled Swift symbol, like `$sSS7cStringSSSPys4Int8VG_tcfC`, and output the human readable Swift symbol, like `Swift.String.init(cString: Swift.UnsafePointer<Swift.Int8>) -> Swift.String`.",
       "title" : "Demangle Function"
@@ -10695,9 +10695,9 @@
           "name" : "Saleem Abdulrasool"
         }
       ],
-      "sha" : "963cf56eafa449574d86dcaa797960971bdb9eb7",
+      "sha" : "0b5a65213745088218df35837872dfe9e0cd42ee",
       "status" : {
-        "state" : "accepted"
+        "state" : "returnedForRevision"
       },
       "summary" : "Introduce `Equatable`, `Comparable`, and `Hashable` conformance for all tuples whose elements are themselves `Equatable`, `Comparable`, and `Hashable`.",
       "title" : "Tuples Conform to `Equatable`, `Comparable`, and `Hashable`"
@@ -15705,7 +15705,7 @@
           "name" : "Joe Groff"
         }
       ],
-      "sha" : "13497cff8d6f2d4e831fb5cb68660b298d6277b2",
+      "sha" : "57df10400adfc38a085502fad34e1da6db8e5053",
       "status" : {
         "state" : "implemented",
         "version" : "5.9"
@@ -17532,7 +17532,7 @@
           "name" : "Doug Gregor"
         }
       ],
-      "sha" : "1797df66160cc0e3695513cd9714926985750048",
+      "sha" : "ee28df338692bb197e88f2f0222abaf4e958e27e",
       "status" : {
         "state" : "implemented",
         "version" : "6.0"
@@ -17880,7 +17880,7 @@
           "name" : "Xiaodi Wu"
         }
       ],
-      "sha" : "1de9044bbbf31062bfeb18dfcd629ed70613e889",
+      "sha" : "8dc2b4448b61c165a403e25a0e5b2bbe2c64b714",
       "status" : {
         "state" : "implemented",
         "version" : "6.1"
@@ -18972,7 +18972,7 @@
           "name" : "Freddy Kellison-Linn"
         }
       ],
-      "sha" : "f12b6dd3755c262916e5e4d3854ff358e9c8b3bb",
+      "sha" : "d2f677da52204fffa596070494377c899c67e41b",
       "status" : {
         "state" : "implemented",
         "version" : "6.2"
@@ -19152,22 +19152,13 @@
           "name" : "Steve Canon"
         }
       ],
-      "sha" : "5a1e975d253697c25232b989ee6358643c56f2c5",
+      "sha" : "77ce67a9f303436eff881ec51cfa814bd1c17c83",
       "status" : {
-        "end" : "2025-07-15T00:00:00Z",
-        "start" : "2025-07-08T00:00:00Z",
-        "state" : "activeReview"
+        "state" : "implemented",
+        "version" : "6.2"
       },
       "summary" : "This proposal introduces a new compiler setting for inferring `@MainActor` isolation by default within the module to mitigate false-positive data-race safety errors in sequential code.",
-      "title" : "Control default actor isolation inference",
-      "warnings" : [
-        {
-          "code" : 0,
-          "kind" : "warning",
-          "message" : "Review ended on 2025-07-15 00:00:00 +0000.",
-          "suggestion" : ""
-        }
-      ]
+      "title" : "Control default actor isolation inference"
     },
     {
       "authors" : [
@@ -19677,6 +19668,10 @@
         {
           "link" : "https:\/\/forums.swift.org\/t\/se-0478-default-actor-isolation-typealias\/79436",
           "name" : "review"
+        },
+        {
+          "link" : "https:\/\/forums.swift.org\/t\/returned-for-revision-se-0478-default-actor-isolation-typealias\/80253",
+          "name" : "return for revision"
         }
       ],
       "id" : "SE-0478",
@@ -19698,22 +19693,12 @@
           "name" : "Steve Canon"
         }
       ],
-      "sha" : "590ea5fd7be4825d9fd15105328cea74865c7949",
+      "sha" : "52af25dc9245e780df189497529c30956df9f9c9",
       "status" : {
-        "end" : "2025-05-05T00:00:00Z",
-        "start" : "2025-04-21T00:00:00Z",
-        "state" : "activeReview"
+        "state" : "returnedForRevision"
       },
       "summary" : "[SE-0466: Control default actor isolation inference](\/proposals\/0466-control-default-actor-isolation.md) introduced the ability to specify default actor isolation on a per-module basis. This proposal introduces a new typealias for specifying default actor isolation in individual source files within a module. This allows specific files to opt out of main actor isolation within a main-actor-by-default module, and opt into main actor isolation within a nonisolated-by-default module.",
-      "title" : "Default actor isolation typealias",
-      "warnings" : [
-        {
-          "code" : 0,
-          "kind" : "warning",
-          "message" : "Review ended on 2025-05-05 00:00:00 +0000.",
-          "suggestion" : ""
-        }
-      ]
+      "title" : "Default actor isolation typealias"
     },
     {
       "authors" : [
@@ -19766,20 +19751,12 @@
       ],
       "sha" : "bd1db9fe2e7c425a99733f329e87e93cb6926b42",
       "status" : {
-        "end" : "2025-05-05T00:00:00Z",
-        "start" : "2025-04-22T00:00:00Z",
+        "end" : "2026-05-05T00:00:00Z",
+        "start" : "2026-04-22T00:00:00Z",
         "state" : "activeReview"
       },
       "summary" : "Swift key paths can be written to properties and subscripts. This proposal extends key path usage to include references to method members, such as instance and type methods, and initializers.",
-      "title" : "Method and Initializer Key Paths",
-      "warnings" : [
-        {
-          "code" : 0,
-          "kind" : "warning",
-          "message" : "Review ended on 2025-05-05 00:00:00 +0000.",
-          "suggestion" : ""
-        }
-      ]
+      "title" : "Method and Initializer Key Paths"
     },
     {
       "authors" : [
@@ -19878,12 +19855,15 @@
           "name" : "John McCall"
         }
       ],
-      "sha" : "ca885adc1cd9f159b0729db5f1e4bab574f9d881",
+      "sha" : "a08729b1e67b1683c504c3a89c315b252229a842",
       "status" : {
         "state" : "accepted"
       },
       "summary" : "Swift provides weak object references using the `weak` modifier on variables and stored properties. Weak references become `nil` when the object is destroyed, causing the value of the variable to seem to change. Swift has therefore always required `weak` references to be declared with the `var` keyword rather than `let`. However, that causes unnecessary friction with [sendability checking](https:\/\/github.com\/swiftlang\/swift-evolution\/blob\/main\/proposals\/0302-concurrent-value-and-concurrent-closures.md): because weak references must be mutable, classes and closures with such references are unsafe to share between concurrent contexts. This proposal lifts that restriction and allows `weak` to be combined with `let`.",
-      "title" : "`weak let`"
+      "title" : "`weak let`",
+      "upcomingFeatureFlag" : {
+        "flag" : "ImmutableWeakCaptures"
+      }
     },
     {
       "authors" : [
@@ -20174,7 +20154,7 @@
           "name" : "Ben Cohen"
         }
       ],
-      "sha" : "34dbf69a680d365138083465690950f24cbe0c25",
+      "sha" : "290947cdcd6a546e1b46c91515dd9399794276dd",
       "status" : {
         "state" : "implemented",
         "version" : "6.2.3"
@@ -20296,8 +20276,8 @@
       ],
       "sha" : "39e362438765bc5c0a6c58111ecd6195fd9e9f5f",
       "status" : {
-        "end" : "2025-09-18T00:00:00Z",
-        "start" : "2025-09-05T00:00:00Z",
+        "end" : "2026-09-18T00:00:00Z",
+        "start" : "2026-09-05T00:00:00Z",
         "state" : "activeReview"
       },
       "summary" : "SwiftPM currently has no support for non-system binary library dependencies on Linux. This proposal adds support for **Environment Constrained Shared Libraries**, which are a type of dynamic library that is shared across a fleet of machines and can be upgraded without recompiling and redeploying all applications running on those machines. We will distribute Environment Constrained Shared Libraries through the existing `.artifactbundle` format.",
@@ -20306,14 +20286,6 @@
         {
           "id" : "SR-5714",
           "link" : "https:\/\/github.com\/swiftlang\/swift-package-manager\/issues\/5714"
-        }
-      ],
-      "warnings" : [
-        {
-          "code" : 0,
-          "kind" : "warning",
-          "message" : "Review ended on 2025-09-18 00:00:00 +0000.",
-          "suggestion" : ""
         }
       ]
     },
@@ -20396,7 +20368,7 @@
       "link" : "0492-section-control.md",
       "reviewManagers" : [
       ],
-      "sha" : "441e4a760ae19302cd7f79c0ecf94b0f413e3984",
+      "sha" : "ee851e5af1d73c5c1bb0917fb5fe41bc468e7110",
       "status" : {
         "state" : "accepted"
       },
@@ -20511,6 +20483,12 @@
           "id" : "82439",
           "repository" : "swift",
           "type" : "pull"
+        },
+        {
+          "account" : "swiftlang",
+          "id" : "84998",
+          "repository" : "swift",
+          "type" : "pull"
         }
       ],
       "link" : "0494-add-is-identical-methods.md",
@@ -20520,9 +20498,10 @@
           "name" : "John McCall"
         }
       ],
-      "sha" : "cd3912b9cc122ca3b1e4c88ef0f5ed87e8e38399",
+      "sha" : "0f24457a7edbeacedd61bf9fd0b65424fd9fecbd",
       "status" : {
-        "state" : "accepted"
+        "state" : "implemented",
+        "version" : "Next"
       },
       "summary" : "We propose new `isTriviallyIdentical(to:)` instance methods to concrete types for quickly determining if two instances must be equal by-value.",
       "title" : "Add `isTriviallyIdentical(to:)` Methods for Quick Comparisons to Concrete Types"
@@ -20655,15 +20634,19 @@
       "discussions" : [
         {
           "link" : "https:\/\/forums.swift.org\/t\/demangle-function\/25416\/16",
-          "name" : "pitch"
+          "name" : "first pitch"
         },
         {
           "link" : "https:\/\/forums.swift.org\/t\/pitch-expose-demangle-function-in-runtime-module\/82605",
-          "name" : "(pitch)"
+          "name" : "second pitch"
         },
         {
           "link" : "https:\/\/forums.swift.org\/t\/se-0498-expose-demangle-function-in-runtime-module\/83032",
-          "name" : "(review)"
+          "name" : "review"
+        },
+        {
+          "link" : "https:\/\/forums.swift.org\/t\/accepted-se-0498-expose-demangle-function-in-runtime-module\/84111",
+          "name" : "acceptance"
         }
       ],
       "id" : "SE-0498",
@@ -20685,14 +20668,268 @@
           "name" : "Steve Canon"
         }
       ],
-      "sha" : "c26ec6b2a799f17b9c344e608ac5e83428d1bb70",
+      "sha" : "e71a7cb44df72f7f2a7bb9ea196394c21b396460",
       "status" : {
-        "end" : "2025-11-18T00:00:00Z",
-        "start" : "2025-11-04T00:00:00Z",
-        "state" : "activeReview"
+        "state" : "accepted"
       },
       "summary" : "Swift symbols are subject to name mangling. These mangled names then show up in backtraces and other profiling tools. Mangled names may look something like this `$sSS7cStringSSSPys4Int8VG_tcfC` and often end up visible to developers, unless they are demangled before displaying.",
       "title" : "Expose demangle function in Runtime module"
+    },
+    {
+      "authors" : [
+        {
+          "link" : "https:\/\/github.com\/airspeedswift",
+          "name" : "Ben Cohen"
+        }
+      ],
+      "discussions" : [
+        {
+          "link" : "https:\/\/forums.swift.org\/t\/support-copyable-escapable-in-simple-standard-library-protocols\/83083",
+          "name" : "pitch"
+        },
+        {
+          "link" : "https:\/\/forums.swift.org\/t\/se-0499-support-copyable-escapable-in-simple-standard-library-protocols\/83297",
+          "name" : "review"
+        },
+        {
+          "link" : "https:\/\/forums.swift.org\/t\/accepted-with-modifications-se-0499-support-copyable-escapable-in-simple-standard-library-protocols\/83754",
+          "name" : "acceptance"
+        }
+      ],
+      "id" : "SE-0499",
+      "implementation" : [
+        {
+          "account" : "swiftlang",
+          "id" : "85079",
+          "repository" : "swift",
+          "type" : "pull"
+        }
+      ],
+      "link" : "0499-support-non-copyable-simple-protocols.md",
+      "reviewManagers" : [
+        {
+          "link" : "https:\/\/github.com\/hborla",
+          "name" : "Holly Borla"
+        }
+      ],
+      "sha" : "40ec911fc51122c94ad7bd46845283d59c574fc8",
+      "status" : {
+        "state" : "accepted"
+      },
+      "summary" : "The following protocols will be marked as refining `~Copyable` and `~Escapable`:",
+      "title" : "Support ~Copyable, ~Escapable in simple standard library protocols"
+    },
+    {
+      "authors" : [
+        {
+          "link" : "https:\/\/github.com\/johnbute",
+          "name" : "John Bute"
+        }
+      ],
+      "discussions" : [
+        {
+          "link" : "https:\/\/forums.swift.org\/t\/pitch-improving-package-creation-with-custom-templates-swiftpm-template-initialization\/81525",
+          "name" : "pitch"
+        },
+        {
+          "link" : "https:\/\/forums.swift.org\/t\/se-0500-improving-package-creation-with-custom-templates\/83321",
+          "name" : "review"
+        },
+        {
+          "link" : "https:\/\/forums.swift.org\/t\/accepted-with-modifications-se-0500-improving-package-creation-with-custom-templates\/84129",
+          "name" : "acceptance"
+        }
+      ],
+      "id" : "SE-0500",
+      "implementation" : [
+        {
+          "account" : "swiftlang",
+          "id" : "9211",
+          "repository" : "swift-package-manager",
+          "type" : "pull"
+        }
+      ],
+      "link" : "0500-package-manager-templates.md",
+      "reviewManagers" : [
+        {
+          "link" : "https:\/\/github.com\/FranzBusch",
+          "name" : "Franz Busch"
+        }
+      ],
+      "sha" : "e82d359572f0593d468962001c55a2232dba9d28",
+      "status" : {
+        "state" : "accepted"
+      },
+      "summary" : "This proposal introduces a system that enables Swift packages to declare reusable templates with customizable logic for generating package code tailored to a user's specific use case. These templates can be distributed like any other Swift package and instantiated in a standardized, first-class manner using an enhanced `swift package init` command.",
+      "title" : "Improving package creation with custom templates: SwiftPM Template Initialization"
+    },
+    {
+      "authors" : [
+        {
+          "link" : "https:\/\/github.com\/bkhouri",
+          "name" : "Sam Khouri"
+        }
+      ],
+      "discussions" : [
+        {
+          "link" : "https:\/\/forums.swift.org\/t\/pitch-adding-html-coverage-support\/82358",
+          "name" : "Pitch"
+        },
+        {
+          "link" : "https:\/\/forums.swift.org\/t\/se-0501-html-coverage-report\/83601\/1",
+          "name" : "Review"
+        }
+      ],
+      "id" : "SE-0501",
+      "implementation" : [
+        {
+          "account" : "swiftlang",
+          "id" : "9076",
+          "repository" : "swift-package-manager",
+          "type" : "pull"
+        }
+      ],
+      "link" : "0501-swiftpm-html-coverage-report.md",
+      "reviewManagers" : [
+        {
+          "link" : "https:\/\/github.com\/daveyc123",
+          "name" : "David Cummings"
+        }
+      ],
+      "sha" : "c896e031b244907912c92e971e945bd8e68819eb",
+      "status" : {
+        "end" : "2026-12-22T00:00:00Z",
+        "start" : "2026-12-07T00:00:00Z",
+        "state" : "activeReview"
+      },
+      "summary" : "Currently, `swift test` supports generating a JSON coverage report, which is great for ingesting into various systems. The JSON, however, is not very \"human-readable\" while iterating at-desk.",
+      "title" : "HTML Coverage Report"
+    },
+    {
+      "authors" : [
+        {
+          "link" : "https:\/\/github.com\/hamishknight",
+          "name" : "Hamish Knight"
+        },
+        {
+          "link" : "https:\/\/github.com\/hborla",
+          "name" : "Holly Borla"
+        }
+      ],
+      "discussions" : [
+        {
+          "link" : "https:\/\/forums.swift.org\/t\/pitch-exclude-private-initialized-properties-from-memberwise-initializer\/83348",
+          "name" : "pitch"
+        },
+        {
+          "link" : "https:\/\/forums.swift.org\/t\/se-0502-exclude-private-initialized-properties-from-memberwise-initializer\/84022",
+          "name" : "review"
+        }
+      ],
+      "id" : "SE-0502",
+      "implementation" : [
+        {
+          "account" : "swiftlang",
+          "id" : "84514",
+          "repository" : "swift",
+          "type" : "pull"
+        }
+      ],
+      "link" : "0502-exclude-private-from-memberwise-init.md",
+      "reviewManagers" : [
+        {
+          "link" : "https:\/\/github.com\/allevato",
+          "name" : "Tony Allevato"
+        }
+      ],
+      "sha" : "80c1885909e86fed84fe27fe813c2d74f61e87bf",
+      "status" : {
+        "end" : "2026-01-22T00:00:00Z",
+        "start" : "2026-01-08T00:00:00Z",
+        "state" : "activeReview"
+      },
+      "summary" : "We propose changing the rules for the implicit memberwise initializer such that it does not include properties with initial values that are less accessible than the most accessible property in the initializer, up to `internal`. This ensures that the resulting memberwise initializer is not unnecessarily forced to be `private` when introducing a new `private` property with an initial value.",
+      "title" : "Exclude private initialized properties from memberwise initializer"
+    },
+    {
+      "authors" : [
+        {
+          "link" : "https:\/\/github.com\/kavon",
+          "name" : "Kavon Farvardin"
+        }
+      ],
+      "discussions" : [
+        {
+          "link" : "https:\/\/forums.swift.org\/t\/pitch-suppressed-associated-types-with-defaults\/83663",
+          "name" : "pitch"
+        },
+        {
+          "link" : "https:\/\/forums.swift.org\/t\/se-0503-suppressed-default-conformances-on-associated-types-with-defaults\/84070",
+          "name" : "review"
+        }
+      ],
+      "id" : "SE-0503",
+      "link" : "0503-suppressed-associated-types.md",
+      "previousProposalIDs" : [
+        "SE-0427",
+        "SE-0446"
+      ],
+      "reviewManagers" : [
+        {
+          "link" : "https:\/\/github.com\/airspeedswift",
+          "name" : "Ben Cohen"
+        }
+      ],
+      "sha" : "8de4480aad5ab276fe3b867bb6b20b471c24344f",
+      "status" : {
+        "end" : "2026-01-25T00:00:00Z",
+        "start" : "2026-01-11T00:00:00Z",
+        "state" : "activeReview"
+      },
+      "summary" : "An associated type defines a generic type in a protocol. You use them to help define the protocol's requirements. This Queue has two associated types, Element and Allocator:",
+      "title" : "Suppressed Default Conformances on Associated Types With Defaults"
+    },
+    {
+      "authors" : [
+        {
+          "link" : "https:\/\/github.com\/ktoso",
+          "name" : "Konrad 'ktoso' Malawski"
+        }
+      ],
+      "discussions" : [
+        {
+          "link" : "https:\/\/forums.swift.org\/t\/pitch-task-cancellation-shields\/83379",
+          "name" : "pitch"
+        },
+        {
+          "link" : "https:\/\/forums.swift.org\/t\/se-0504-task-cancellation-shields\/84095",
+          "name" : "review"
+        }
+      ],
+      "id" : "SE-0504",
+      "implementation" : [
+        {
+          "account" : "swiftlang",
+          "id" : "85637",
+          "repository" : "swift",
+          "type" : "pull"
+        }
+      ],
+      "link" : "0504-task-cancellation-shields.md",
+      "reviewManagers" : [
+        {
+          "link" : "https:\/\/github.com\/rjmccall",
+          "name" : "John McCall"
+        }
+      ],
+      "sha" : "3a48413896f7d97a425e988ca6dcf8a494a0d8a2",
+      "status" : {
+        "end" : "2026-01-26T00:00:00Z",
+        "start" : "2026-01-12T00:00:00Z",
+        "state" : "activeReview"
+      },
+      "summary" : "This proposal introduces a new mechanism to temporarily \"ignore\" task cancellation, called task cancellation shields.",
+      "title" : "Task Cancellation Shields"
     }
   ],
   "schemaVersion" : "1.0.0",
