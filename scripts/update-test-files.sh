@@ -24,7 +24,7 @@ set -euo pipefail
 #
 
 
-single_snapshot=$1
+single_snapshot=${1:-""}
 
 if [[ -z "$single_snapshot" ]]; then
     printf "\nUpdating test files. Original files will be placed in the 'ReplacedFiles' directory.\n\n"
@@ -50,7 +50,7 @@ fi
 echo "Creating directory 'ReplacedFiles'."
 
 # Change to package directory. Clean and build swift-evolution-metadata-extractor tool.
-cd $package_dir || exit 1
+cd "$package_dir" || exit 1
 
 printf "\nClean swift-evolution-metadata-extractor package\n\n"
 swift package clean
