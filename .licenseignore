@@ -1,4 +1,5 @@
 **/*.yml
+**/*.sh
 CODEOWNERS
 LICENSE.txt
 README.md
