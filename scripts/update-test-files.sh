@@ -1,4 +1,6 @@
-#!/bin/sh
+#!/bin/bash
+
+set -euo pipefail
 
 # update-test-files
 #
@@ -24,14 +26,14 @@
 
 single_snapshot=$1
 
-if [[ $single_snapshot == "" ]]; then
-    echo "\nUpdating test files. Original files will be placed in the 'ReplacedFiles' directory.\n"
+if [[ -z "$single_snapshot" ]]; then
+    printf "\nUpdating test files. Original files will be placed in the 'ReplacedFiles' directory.\n\n"
 else
-    echo "\nUpdating '$single_snapshot' snapshot. Original snapshot will be placed in the 'ReplacedFiles' directory.\n"
+    printf "\nUpdating '%s' snapshot. Original snapshot will be placed in the 'ReplacedFiles' directory.\n\n" "$single_snapshot"
 fi
 
-script_dir=$(dirname "$(readlink -f "$0")")
-package_dir=$(readlink -f $script_dir/..)
+script_dir="$(cd "$(dirname "$0")" && pwd)"
+package_dir="$(cd "$script_dir/.." && pwd)"
 seme_command="$package_dir/.build/release/swift-evolution-metadata-extractor"
 test_resources_dir="$package_dir/Tests/ExtractionTests/Resources"
 expected_results_file="expected-results.json"
@@ -39,49 +41,48 @@ previous_results_file="previous-results.json"
 
 # Create directory for replaced files
 replaced_files_dir="$test_resources_dir/ReplacedFiles"
-mkdir $replaced_files_dir
 
-if [ $? -ne 0 ]; then
-    echo "\nDirectory 'ReplacedFiles' still exists. Ensure that replaced files are no longer needed, delete the 'ReplacedFiles' directory and re-run the script.\n"
-    exit
-else
-    echo "Creating directory 'ReplacedFiles'."
+if ! mkdir "$replaced_files_dir" 2>/dev/null; then
+    printf "\nDirectory 'ReplacedFiles' still exists. Ensure that replaced files are no longer needed, delete the 'ReplacedFiles' directory and re-run the script.\n\n"
+    exit 1
 fi
 
-# Change to package directory. Clean and build swift-evolution-metadata-extractor tool.
-cd $package_dir
+echo "Creating directory 'ReplacedFiles'."
 
-echo "\nClean swift-evolution-metadata-extractor package\n"
+# Change to package directory. Clean and build swift-evolution-metadata-extractor tool.
+cd $package_dir || exit 1
+
+printf "\nClean swift-evolution-metadata-extractor package\n\n"
 swift package clean
 
-echo "Build swift-evolution-metadata-extractor\n"
+printf "Build swift-evolution-metadata-extractor\n\n"
 swift build -c release
 
 # For each snapshot in the test resources directory
-for file in ${test_resources_dir}/*.evosnapshot
+for file in "${test_resources_dir}"/*.evosnapshot
 do
-    snapshot_name=$(basename $file .evosnapshot)
+    snapshot_name=$(basename "$file" .evosnapshot)
 
     # Filter on command line argument
-    if [[ $single_snapshot == "" ]] || [[ $single_snapshot == $snapshot_name ]] || [[ "${single_snapshot}-BaseCommit" == $snapshot_name ]]; then
+    if [[ -z "$single_snapshot" ]] || [[ "$single_snapshot" == "$snapshot_name" ]] || [[ "${single_snapshot}-BaseCommit" == "$snapshot_name" ]]; then
 
         snapshot_path="$test_resources_dir/$snapshot_name.evosnapshot"
         new_snapshot_path="$test_resources_dir/$snapshot_name-NEW.evosnapshot"
 
         # When updating AllProposals always fetch latest from repository
-        if [[ $snapshot_name == "AllProposals" ]]; then
-            $seme_command snapshot -o $new_snapshot_path
+        if [[ "$snapshot_name" == "AllProposals" ]]; then
+            "$seme_command" snapshot -o "$new_snapshot_path"
             readme_path="$snapshot_path/README.txt"
-            cp $readme_path "$new_snapshot_path/README.txt"
+            cp "$readme_path" "$new_snapshot_path/README.txt"
         else
-            $seme_command snapshot --snapshot-path $snapshot_path -o $new_snapshot_path
+            "$seme_command" snapshot --snapshot-path "$snapshot_path" -o "$new_snapshot_path"
         fi
 
 
         # The SameCommit snapshot tests reuse of the previous results
         # if the commit is the same and the versions haven't changed.
         # In the test bundle, this means the previous results is the same as the expected results
-        if [ $snapshot_name == "SameCommit" ]; then
+        if [ "$snapshot_name" == "SameCommit" ]; then
                         
             previous_creation_date=$(grep "creationDate" "$snapshot_path/$previous_results_file")
 
@@ -93,15 +94,15 @@ do
             sed -i '' "s/ *\"creationDate\" : \".*\",/$previous_creation_date/" "$new_snapshot_path/$previous_results_file"
         fi
         
-        mv $snapshot_path $replaced_files_dir
-        mv $new_snapshot_path $snapshot_path
+        mv "$snapshot_path" "$replaced_files_dir"
+        mv "$new_snapshot_path" "$snapshot_path"
 
     fi
 #   echo "$file"
 done
 
 # Move expected results of base commit snapshot to be the previous results of WithUpdates snapshot
-if [[ $single_snapshot == "" ]] || [[ $single_snapshot == "WithUpdates" ]]; then
+if [[ -z "$single_snapshot" ]] || [[ "$single_snapshot" == "WithUpdates" ]]; then
 
     prior_snapshot_path="$test_resources_dir/WithUpdates-BaseCommit.evosnapshot"
     new_snapshot_path="$test_resources_dir/WithUpdates.evosnapshot"
@@ -125,37 +126,37 @@ fi
 # Except for these fields, the files are identical.
 
 # Only update if all test files are being updated
-if [[ $single_snapshot == "" ]]; then
+if [[ -z "$single_snapshot" ]]; then
 
     proposal_files_dir="$test_resources_dir/ProposalFiles"
     metadata_version_files_dir="$test_resources_dir/MetadataVersions"
     replaced_metadata_version_files_dir="$replaced_files_dir/MetadataVersions"
-    mkdir $replaced_metadata_version_files_dir
+    mkdir "$replaced_metadata_version_files_dir"
 
     current_metadata_versions_file="$metadata_version_files_dir/current-metadata-versions.json"
     replaced_current_metadata_versions_file="$replaced_metadata_version_files_dir/current-metadata-versions.json"
     
-    previous_creation_date=$(grep "creationDate" $current_metadata_versions_file)
+    previous_creation_date=$(grep "creationDate" "$current_metadata_versions_file")
 
-    mv $current_metadata_versions_file $replaced_current_metadata_versions_file
-    $seme_command -o $current_metadata_versions_file "$proposal_files_dir/0300-continuation.md" "$proposal_files_dir/0422-caller-side-default-argument-macro-expression.md"
-    sed -i '' "s/ *\"creationDate\" : \".*\",/$previous_creation_date/" $current_metadata_versions_file
+    mv "$current_metadata_versions_file" "$replaced_current_metadata_versions_file"
+    "$seme_command" -o "$current_metadata_versions_file" "$proposal_files_dir/0300-continuation.md" "$proposal_files_dir/0422-caller-side-default-argument-macro-expression.md"
+    sed -i '' "s/ *\"creationDate\" : \".*\",/$previous_creation_date/" "$current_metadata_versions_file"
     
     
     old_tool_version_file="$metadata_version_files_dir/old-tool-version.json"
     replaced_old_tool_version_file="$replaced_metadata_version_files_dir/old-tool-version.json"
 
-    mv $old_tool_version_file $replaced_old_tool_version_file
-    cp $current_metadata_versions_file $old_tool_version_file
-    sed -i '' 's/"toolVersion" : "[0-9]\.[0-9]\.[0-9]"/"toolVersion" : "0\.0\.9"/' $old_tool_version_file
+    mv "$old_tool_version_file" "$replaced_old_tool_version_file"
+    cp "$current_metadata_versions_file" "$old_tool_version_file"
+    sed -i '' 's/"toolVersion" : "[0-9]\.[0-9]\.[0-9]"/"toolVersion" : "0\.0\.9"/' "$old_tool_version_file"
 
 
     old_schema_version_file="$metadata_version_files_dir/old-schema-version.json"
     replaced_old_schema_version_file="$replaced_metadata_version_files_dir/old-schema-version.json"
 
-    mv $old_schema_version_file $replaced_old_schema_version_file
-    cp $current_metadata_versions_file $old_schema_version_file
-    sed -i '' 's/"schemaVersion" : "[0-9]\.[0-9]\.[0-9]"/"schemaVersion" : "0\.9\.0"/' $old_schema_version_file
+    mv "$old_schema_version_file" "$replaced_old_schema_version_file"
+    cp "$current_metadata_versions_file" "$old_schema_version_file"
+    sed -i '' 's/"schemaVersion" : "[0-9]\.[0-9]\.[0-9]"/"schemaVersion" : "0\.9\.0"/' "$old_schema_version_file"
 
 fi
 

@@ -1,4 +1,6 @@
-#!/bin/sh
+#!/bin/bash
+
+set -euo pipefail
 
 # update-all-proposals-snapshot
 #
@@ -13,5 +15,5 @@
 # ensure tests pass, commit the changes, and delete the ReplacedFiles directory and its contents.
 #
 
-script_dir=$(dirname "$(readlink -f "$0")")
+script_dir="$(cd "$(dirname "$0")" && pwd)"
 "$script_dir/update-test-files.sh" AllProposals
