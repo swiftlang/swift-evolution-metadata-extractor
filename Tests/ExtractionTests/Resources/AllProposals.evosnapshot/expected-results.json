@@ -1,6 +1,6 @@
 {
-  "commit" : "c323a918cc1b51bab7e1653b6b2d7df87d1f104e",
-  "creationDate" : "2026-01-14T13:53:26Z",
+  "commit" : "c8b652bedceb4abda7c80db111c3f5b4293c5145",
+  "creationDate" : "2026-01-20T18:10:36Z",
   "implementationVersions" : [
     "2.2", "3.0", "3.0.1", "3.1", "4.0", "4.1", "4.2", "5.0", "5.1", "5.2",
     "5.3", "5.4", "5.5", "5.5.2", "5.6", "5.7", "5.8", "5.9", "5.9.2", "5.10",
@@ -12666,7 +12666,7 @@
           "name" : "Ted Kremenek"
         }
       ],
-      "sha" : "ea6892efaff901c3e0a858860f3e21e4cf7e4ac8",
+      "sha" : "02cdfa76bf2f0daa72ade139e0428aa3de6e1ee0",
       "status" : {
         "state" : "returnedForRevision"
       },
@@ -19009,7 +19009,7 @@
           "name" : "John McCall"
         }
       ],
-      "sha" : "85729b6ae51daebf2c264ea7873965f991635aab",
+      "sha" : "51e59d9d8886196a0df7cbc3230e039094c55bc7",
       "status" : {
         "state" : "implemented",
         "version" : "6.2"
@@ -20796,9 +20796,9 @@
           "name" : "David Cummings"
         }
       ],
-      "sha" : "c896e031b244907912c92e971e945bd8e68819eb",
+      "sha" : "5fdbe80da1e37b7a33537830cbca7cb76323fc62",
       "status" : {
-        "end" : "2026-12-22T00:00:00Z",
+        "end" : "2027-01-30T00:00:00Z",
         "start" : "2026-12-07T00:00:00Z",
         "state" : "activeReview"
       },
@@ -20930,8 +20930,100 @@
       },
       "summary" : "This proposal introduces a new mechanism to temporarily \"ignore\" task cancellation, called task cancellation shields.",
       "title" : "Task Cancellation Shields"
+    },
+    {
+      "authors" : [
+        {
+          "link" : "https:\/\/github.com\/al45tair",
+          "name" : "Alastair Houghton"
+        }
+      ],
+      "discussions" : [
+        {
+          "link" : "https:\/\/forums.swift.org\/t\/pitch-custom-main-and-global-executors\/77247",
+          "name" : "first"
+        },
+        {
+          "link" : "https:\/\/forums.swift.org\/t\/pitch-2-custom-main-and-global-executors\/78437",
+          "name" : "second pitch"
+        },
+        {
+          "link" : "https:\/\/forums.swift.org\/t\/pitch-3-custom-main-and-global-executors\/80638",
+          "name" : "third pitch"
+        },
+        {
+          "link" : "https:\/\/forums.swift.org\/t\/se-0505-delayed-enqueuing-for-executors\/84157",
+          "name" : "review"
+        }
+      ],
+      "id" : "SE-0505",
+      "link" : "0505-delayed-enqueuing.md",
+      "reviewManagers" : [
+        {
+          "link" : "https:\/\/github.com\/Jumhyn",
+          "name" : "Freddy Kellison-Linn"
+        }
+      ],
+      "sha" : "a03c06365034af522dcb5994eac413a8265c6f7f",
+      "status" : {
+        "end" : "2026-01-27T00:00:00Z",
+        "start" : "2026-01-15T00:00:00Z",
+        "state" : "activeReview"
+      },
+      "summary" : "(This was previously pitched as part of the Custom Main and Global Executors proposal, but has been split out into a separate proposal here.)",
+      "title" : "Delayed Enqueuing for Executors"
+    },
+    {
+      "authors" : [
+        {
+          "link" : "https:\/\/github.com\/phausler",
+          "name" : "Philippe Hausler"
+        }
+      ],
+      "discussions" : [
+        {
+          "link" : "https:\/\/forums.swift.org\/t\/pitch-advanced-observation-tracking\/83521",
+          "name" : "pitch"
+        },
+        {
+          "link" : "https:\/\/forums.swift.org\/t\/se-0506-advanced-observation-tracking\/84246",
+          "name" : "review"
+        }
+      ],
+      "errors" : [
+        {
+          "code" : 0,
+          "kind" : "error",
+          "message" : "Proposal ID link must be a relative link (SE-NNNN)[NNNN-filename.md].",
+          "suggestion" : ""
+        }
+      ],
+      "id" : "SE-0506",
+      "link" : "",
+      "reviewManagers" : [
+        {
+          "link" : "https:\/\/github.com\/stephentyrone",
+          "name" : "Steve Canon"
+        }
+      ],
+      "sha" : "62dbe82f531e74ab0f4aaf0e8f43cd78d31c691d",
+      "status" : {
+        "end" : "",
+        "start" : "",
+        "state" : "activeReview"
+      },
+      "summary" : "Observation has one primary public entry point for observing the changes to `@Observable` types. This proposal adds two new versions that allow more fine-grained control and advanced behaviors. In particular, it is not intended to be a natural progression for all users of Observation, but instead a set of specialized tools for advanced use cases such as developing middleware infrastructure or the underpinnings to widgeting systems. Most developers using Observation will still be best served by using the `@Observable` macro and possibly in conjunction with the `Observations` type for iterating transactional values. However, in the advanced use cases where it is needed, this proposal fills a much needed gap.",
+      "title" : "Advanced Observation Tracking",
+      "warnings" : [
+        {
+          "code" : 0,
+          "kind" : "warning",
+          "message" : "Missing or invalid dates for a review period.",
+          "suggestion" : ""
+        }
+      ]
     }
   ],
   "schemaVersion" : "1.0.0",
-  "toolVersion" : "0.1.0"
+  "toolVersion" : "1.0.0"
 }

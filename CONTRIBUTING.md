@@ -73,6 +73,8 @@ The schema version is incremented as follows:
 
 When a major or minor change is made to the schema, the baseline model types in the BaselineModel directory of the test target should also be updated for the new baseline.
 
+NOTE: To be a non-breaking change, new properties must be declared as optional in order to allow for reading of previously generated metadata files.
+
 ### Tool Version
 The tool version is incremented as follows:
 
@@ -86,3 +88,14 @@ The tool version is incremented as follows:
 When the schema or tool version increments, the package version is incremented in the same way (major/minor/patch).
 
 The package version may also be incremented for bug fixes or internal improvements that do not affect the public interface of the schema or the tool.
+
+### Version Update Process
+
+When updating the tool or schema version, files used in the tests need to be updated to reflect the updated version.
+
+The tool version is defined in the `ToolVersion` struct defined in `CommandLineSupport.swift`.
+The schema version is defined in the `EvolutionMetadata` struct in `EvolutionMetadata.swift`.
+
+Run the script `update-test-files.sh` to update all snapshots and json files used for tests.
+
+When updating the tool or schema version, tests will initially fail. After updating the test files, all tests should pass.
