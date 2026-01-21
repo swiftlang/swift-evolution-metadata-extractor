@@ -6,7 +6,17 @@ Add new items at the end of the relevant section under **Unreleased**.
 
 ## [Unreleased]
 
-*No new changes.*
+### Additions
+
+*No additions*
+
+### Changes
+
+- Support extraction of new "Summary of changes" section
+
+### Fixes
+
+*No fixes*
 
 ---
 
