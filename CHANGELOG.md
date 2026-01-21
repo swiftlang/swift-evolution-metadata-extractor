@@ -12,7 +12,7 @@ Add new items at the end of the relevant section under **Unreleased**.
 
 ### Changes
 
-- Support extraction of new "Summary of changes" section
+- Support extraction of new "Summary of changes" section ([#79])
 
 ### Fixes
 
@@ -81,3 +81,4 @@ This changelog's format is based on [Keep a Changelog](https://keepachangelog.co
 [#70]: https://github.com/swiftlang/swift-evolution-metadata-extractor/pull/70
 [#72]: https://github.com/swiftlang/swift-evolution-metadata-extractor/pull/72
 [#74]: https://github.com/swiftlang/swift-evolution-metadata-extractor/pull/74
+[#79]: https://github.com/swiftlang/swift-evolution-metadata-extractor/pull/79
