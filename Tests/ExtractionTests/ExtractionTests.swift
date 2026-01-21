@@ -295,6 +295,17 @@ struct `Extraction Tests` {
         #expect(expectedResults.hasCurrentMetadataVersions == true)
     }
 
+    // This tests the newly introduced "Summary of changes" section, which replaces the "Introduction" section.
+    // The test is only required until a number of proposals in the AllProposals snapshot use the new heading.
+    // At that time, this test and the SummaryOfChange snapshot can be removed.
+    @Test func `Temporary summary of changes check`() async throws {
+        let snapshotURL = try urlForSnapshot(named: "SummaryOfChange")
+        let extractionJob = try await ExtractionJob.makeExtractionJob(from: .snapshot(snapshotURL), output: .none, ignorePreviousResults: true)
+        let extractedEvolutionMetadata = try await EvolutionMetadataExtractor.extractEvolutionMetadata(for: extractionJob)
+        let expectedResults = try expectedResultsForSnapshot(named: "SummaryOfChange")
+        #expect(extractedEvolutionMetadata == expectedResults)
+    }
+
     @Suite
     struct `Snapshot Writing` {
 

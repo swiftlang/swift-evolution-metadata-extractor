@@ -19,9 +19,12 @@ struct SummaryExtractor: ValueExtractor {
         var summary = ""
         var foundIntroduction = false
         for child in document.children {
-            
+
+            // VALIDATION ENHANCEMENT: Potential for stricter validation of section heading and contents
+            // https://github.com/swiftlang/swift-evolution-metadata-extractor/issues/77
+            // https://github.com/swiftlang/swift-evolution-metadata-extractor/issues/78
             if let heading = child as? Heading {
-                if heading.plainText.contains("Introduction") {
+                if heading.plainText.contains("Introduction") || heading.plainText.contains("Summary of change") || heading.plainText.contains("Summary Of Change") {
                     foundIntroduction = true
                 } else if foundIntroduction {
                     break
