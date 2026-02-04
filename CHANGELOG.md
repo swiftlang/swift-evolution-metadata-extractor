@@ -8,7 +8,7 @@ Add new items at the end of the relevant section under **Unreleased**.
 
 ### Additions
 
-*No additions*
+- Add `validate` subcommand to generate validate reports
 
 ### Changes
 

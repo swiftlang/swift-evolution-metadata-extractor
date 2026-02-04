@@ -26,7 +26,7 @@ public struct ExtractionJob: Sendable {
     public enum Output: Sendable, Codable, Equatable {
         case metadataJSON(URL)
         case snapshot(URL)
-        case validationReport
+        case validationReport(URL)
         case none
         
         var snapshotURL: URL? {
@@ -212,7 +212,9 @@ extension ExtractionJob {
                 try ExtractionJob.writeEvolutionResultsAsJSON(results: results, outputURL: outputURL)
             case .snapshot(let outputURL):
                 try writeSnapshot(results: results, outputURL: outputURL)
-            case .validationReport, .none:
+            case .validationReport(let outputURL):
+                try ExtractionJob.writeValidationReport(results: results, outputURL: outputURL)
+            case .none:
                 return
         }
     }
@@ -235,5 +237,23 @@ extension ExtractionJob {
         guard let snapshot else { fatalError("Cannot write snapshot. Snapshot is missing.") }
         guard outputURL != URL.standardOutURL else { fatalError("Cannot write snapshot to stdout.") }
         try snapshot.writeSnapshot(results: results, outputURL: outputURL)
+    }
+
+    private static func writeValidationReport(results: EvolutionMetadata, outputURL: URL) throws {
+
+        let report = results.validationReport
+
+        if outputURL.isStandardOutURL {
+            print(report)
+        } else {
+            let data = Data(report.utf8)
+            let directoryURL = outputURL.deletingLastPathComponent()
+            try FileManager.default.createDirectory(at: directoryURL, withIntermediateDirectories: true)
+            try data.write(to: outputURL)
+        }
+        
+        if results.hasErrors {
+            try exitWithFailure()
+        }
     }
 }

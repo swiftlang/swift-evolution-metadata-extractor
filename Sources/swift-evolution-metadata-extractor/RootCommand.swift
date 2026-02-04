@@ -17,7 +17,7 @@ struct RootCommand: AsyncParsableCommand {
         usage: Help.Root.usage,
         discussion: Help.Root.discussion,
         version: ToolVersion.version,
-        subcommands: [ExtractCommand.self, SnapshotCommand.self],
+        subcommands: [ExtractCommand.self, SnapshotCommand.self, ValidateCommand.self],
         defaultSubcommand: ExtractCommand.self
     )
 }

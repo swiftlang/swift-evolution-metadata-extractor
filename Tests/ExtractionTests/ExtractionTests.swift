@@ -190,6 +190,15 @@ struct `Extraction Tests` {
     func `Warnings and errors`(actualResult: Proposal, expectedResult: Proposal) async throws {
         #expect(actualResult == expectedResult)
     }
+    
+    @Test func `Exit failure for validation report with errors`() async throws {
+        await #expect(processExitsWith: .failure) {
+            let snapshotURL = try urlForSnapshot(named: "Malformed")
+            let source: ExtractionJob.Source = .snapshot(snapshotURL)
+            let extractionJob = try await ExtractionJob.makeExtractionJob(from: source, output: .validationReport(URL.standardOutURL), ignorePreviousResults: true)
+            try await extractionJob.run()
+        }
+    }
 
     // The lines of text in review-dates-good.txt are status headers from swift-evolution repository history
     @Test func `Good dates`() throws {
