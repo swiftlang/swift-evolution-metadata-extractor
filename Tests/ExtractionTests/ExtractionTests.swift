@@ -23,7 +23,7 @@ struct `Extraction Tests` {
 
         init() async throws {
             snapshotURL = try urlForSnapshot(named: "AllProposals")
-            extractionJob = try await ExtractionJob.makeExtractionJob(from: .snapshot(snapshotURL), output: .none, ignorePreviousResults: true)
+            extractionJob = try await ExtractionJob.makeExtractionJob(source: .snapshot(snapshotURL), output: .none, ignorePreviousResults: true)
             extractedEvolutionMetadata = try await EvolutionMetadataExtractor.extractEvolutionMetadata(for: extractionJob)
         }
 
@@ -103,7 +103,7 @@ struct `Extraction Tests` {
         func `Reuse prior results`(args: Args) async throws {
             let snapshotURL = try urlForSnapshot(named: args.snapshotName)
 
-            let extractionJob = try await ExtractionJob.makeExtractionJob(from: .snapshot(snapshotURL), output: .none, ignorePreviousResults: args.ignorePreviousResults, forcedExtractionIDs: args.forceExtractionIDs)
+            let extractionJob = try await ExtractionJob.makeExtractionJob(source: .snapshot(snapshotURL), output: .none, ignorePreviousResults: args.ignorePreviousResults, forcedExtractionIDs: args.forceExtractionIDs)
 
             let proposalListingCount = try #require(extractionJob.snapshot?.proposalListing?.count)
             let expectedUpdatedProposalIDs = try #require(expectedUpdatedProposalIDs[args.snapshotName])
@@ -150,10 +150,10 @@ struct `Extraction Tests` {
         */
         @Test func `Last expected equals prior results`() async throws {
             let snapshotURL = try urlForSnapshot(named: "WithUpdates")
-            let snapshot = try await Snapshot.makeSnapshot(from: snapshotURL, destURL: nil, ignorePreviousResults: false, extractionDate: Date())
+            let snapshot = try await Snapshot.makeSnapshot(snapshotURL: snapshotURL, destURL: nil, ignorePreviousResults: false, extractionDate: Date())
 
             let priorSnapshotURL = try urlForSnapshot(named: "WithUpdates-BaseCommit")
-            let extractionJob = try await ExtractionJob.makeExtractionJob(from: .snapshot(priorSnapshotURL), output: .none, ignorePreviousResults: false)
+            let extractionJob = try await ExtractionJob.makeExtractionJob(source: .snapshot(priorSnapshotURL), output: .none, ignorePreviousResults: false)
             let priorSnapshot = try #require(extractionJob.snapshot)
 
             let previousResults = try #require(snapshot.previousResults)
@@ -171,7 +171,7 @@ struct `Extraction Tests` {
       get async throws {
         let snapshotURL = try urlForSnapshot(named: "Malformed")
         let source: ExtractionJob.Source = .snapshot(snapshotURL)
-        let extractionJob = try await ExtractionJob.makeExtractionJob(from: source, output: .none, ignorePreviousResults: true)
+        let extractionJob = try await ExtractionJob.makeExtractionJob(source: source, output: .none, ignorePreviousResults: true)
         let expectedResults = try #require(extractionJob.snapshot?.expectedResults, "No expected results found for extraction job with source '\(source)'")
         let extractionMetadata = try await EvolutionMetadataExtractor.extractEvolutionMetadata(for: extractionJob)
 
@@ -195,7 +195,7 @@ struct `Extraction Tests` {
         await #expect(processExitsWith: .failure) {
             let snapshotURL = try urlForSnapshot(named: "Malformed")
             let source: ExtractionJob.Source = .snapshot(snapshotURL)
-            let extractionJob = try await ExtractionJob.makeExtractionJob(from: source, output: .validationReport(URL.standardOutURL), ignorePreviousResults: true)
+            let extractionJob = try await ExtractionJob.makeExtractionJob(source: source, output: .validationReport(URL.standardOutURL), ignorePreviousResults: true)
             try await extractionJob.run()
         }
     }
@@ -247,7 +247,7 @@ struct `Extraction Tests` {
         let decoder = JSONDecoder()
         
         let snapshotURL = try urlForSnapshot(named: snapshotName)
-        let extractionJob = try await ExtractionJob.makeExtractionJob(from: .snapshot(snapshotURL), output: .none, ignorePreviousResults: true)
+        let extractionJob = try await ExtractionJob.makeExtractionJob(source: .snapshot(snapshotURL), output: .none, ignorePreviousResults: true)
         let extractedMetadata = try await EvolutionMetadataExtractor.extractEvolutionMetadata(for: extractionJob)
         let data = try encoder.encode(extractedMetadata)
         _ = try decoder.decode(EvolutionMetadata_v1.self, from: data)
@@ -297,7 +297,7 @@ struct `Extraction Tests` {
     @Test(arguments: try allTestSnapshotNames)
     func `Check snapshot versions`(snapshotName: String) async throws {
         let snapshotURL = try urlForSnapshot(named: snapshotName)
-        let snapshot = try await Snapshot.makeSnapshot(from: snapshotURL, destURL: nil, ignorePreviousResults: false, extractionDate: Date())
+        let snapshot = try await Snapshot.makeSnapshot(snapshotURL: snapshotURL, destURL: nil, ignorePreviousResults: false, extractionDate: Date())
         let expectedResults = try #require(snapshot.expectedResults)
         #expect(expectedResults.hasCurrentSchemaVersion == true, "Expected results for snapshot '\(snapshotName)' does not have the current schema version '\(EvolutionMetadata.schemaVersion)'. Update snapshot to current schema version.")
         #expect(expectedResults.hasCurrentToolVersion == true, "Expected results for snapshot '\(snapshotName)' does not have the current tool version '\(ToolVersion.version)'. Update snapshot to current tool version.")
@@ -309,7 +309,7 @@ struct `Extraction Tests` {
     // At that time, this test and the SummaryOfChange snapshot can be removed.
     @Test func `Temporary summary of changes check`() async throws {
         let snapshotURL = try urlForSnapshot(named: "SummaryOfChange")
-        let extractionJob = try await ExtractionJob.makeExtractionJob(from: .snapshot(snapshotURL), output: .none, ignorePreviousResults: true)
+        let extractionJob = try await ExtractionJob.makeExtractionJob(source: .snapshot(snapshotURL), output: .none, ignorePreviousResults: true)
         let extractedEvolutionMetadata = try await EvolutionMetadataExtractor.extractEvolutionMetadata(for: extractionJob)
         let expectedResults = try expectedResultsForSnapshot(named: "SummaryOfChange")
         #expect(extractedEvolutionMetadata == expectedResults)
@@ -328,7 +328,7 @@ struct `Extraction Tests` {
             let sourceURL = try urlForSnapshot(named: snapshotName)
             let destURL = FileManager.default.temporaryDirectory.appending(components:"_Test_Snapshots",  UUID().uuidString, sourceURL.lastPathComponent)
             
-            let extractionJob = try await ExtractionJob.makeExtractionJob(from: .snapshot(sourceURL), output: .snapshot(destURL), ignorePreviousResults: false)
+            let extractionJob = try await ExtractionJob.makeExtractionJob(source: .snapshot(sourceURL), output: .snapshot(destURL), ignorePreviousResults: false)
             try await extractionJob.run()
             
             let sourceSubpaths = try FileManager.default.subpathsOfDirectory(atPath: sourceURL.path())
@@ -349,7 +349,7 @@ struct `Extraction Tests` {
             // Use expected extraction date in new snapshot for identical metadata
             let extractionDate = try extractionDateForSnapshot(named: snapshotName)
 
-            let extractionJob = try await ExtractionJob.makeExtractionJob(from: .files(sourceURLs), output: .snapshot(destURL), ignorePreviousResults: true, extractionDate: extractionDate)
+            let extractionJob = try await ExtractionJob.makeExtractionJob(source: .files(sourceURLs), output: .snapshot(destURL), ignorePreviousResults: true, extractionDate: extractionDate)
             try await extractionJob.run()
 
             let sourceSubpaths = try FileManager.default.subpathsOfDirectory(atPath: adHocSnapshotURL.path())

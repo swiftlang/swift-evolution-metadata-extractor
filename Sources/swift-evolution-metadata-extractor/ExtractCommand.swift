@@ -45,7 +45,7 @@ struct ExtractCommand: AsyncParsableCommand {
 
     
     func run() async throws {
-        let extractionJob = try await ExtractionJob.makeExtractionJob(from: extractionSource, output: output, ignorePreviousResults: forceAll, forcedExtractionIDs: forcedExtractionIDs)
+        let extractionJob = try await ExtractionJob.makeExtractionJob(source: extractionSource, output: output, ignorePreviousResults: forceAll, forcedExtractionIDs: forcedExtractionIDs)
         try await extractionJob.run()
     }
 }

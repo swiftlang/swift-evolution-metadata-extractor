@@ -43,7 +43,7 @@ struct Snapshot {
         }
     }
 
-    static func makeSnapshot(from snapshotURL: URL, destURL: URL?, ignorePreviousResults: Bool, extractionDate: Date) async throws -> Snapshot{
+    static func makeSnapshot(snapshotURL: URL, destURL: URL?, ignorePreviousResults: Bool, extractionDate: Date) async throws -> Snapshot{
         var proposalListingFound = false
         var previousResultsFound = false
                         

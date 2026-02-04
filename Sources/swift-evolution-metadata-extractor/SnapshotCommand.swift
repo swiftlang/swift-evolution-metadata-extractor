@@ -40,7 +40,7 @@ struct SnapshotCommand: AsyncParsableCommand {
 
     func run() async throws {
         // Always ignore previous results when generating a snapshot
-        let extractionJob = try await ExtractionJob.makeExtractionJob(from: extractionSource, output: output, ignorePreviousResults: true)
+        let extractionJob = try await ExtractionJob.makeExtractionJob(source: extractionSource, output: output, ignorePreviousResults: true)
         try await extractionJob.run()
     }
 }
