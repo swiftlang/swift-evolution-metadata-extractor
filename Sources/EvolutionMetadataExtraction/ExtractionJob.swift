@@ -68,7 +68,7 @@ public struct ExtractionJob: Sendable {
 
     }
     
-    public static func makeExtractionJob(from source: Source, output: Output, ignorePreviousResults: Bool = false, forcedExtractionIDs: [String] = [], extractionDate: Date = Date()) async throws -> ExtractionJob {
+    public static func makeExtractionJob(source: Source, output: Output, ignorePreviousResults: Bool = false, forcedExtractionIDs: [String] = [], extractionDate: Date = Date()) async throws -> ExtractionJob {
         switch source {
             case .network:
                 try await makeNetworkExtractionJob(output: output, ignorePreviousResults: ignorePreviousResults, forcedExtractionIDs: forcedExtractionIDs, extractionDate: extractionDate)
@@ -118,7 +118,7 @@ extension ExtractionJob {
  
         verbosePrint("Using local snapshot\n'\(snapshotURL.relativePath)'")
 
-        let sourceSnapshot = try await Snapshot.makeSnapshot(from: snapshotURL, destURL: output.snapshotURL, ignorePreviousResults: ignorePreviousResults, extractionDate: extractionDate)
+        let sourceSnapshot = try await Snapshot.makeSnapshot(snapshotURL: snapshotURL, destURL: output.snapshotURL, ignorePreviousResults: ignorePreviousResults, extractionDate: extractionDate)
 
         let jobMetadata = JobMetadata(commit: sourceSnapshot.branchInfo?.commit.sha, extractionDate: sourceSnapshot.snapshotDate)
                 
