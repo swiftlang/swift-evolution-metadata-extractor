@@ -36,7 +36,7 @@ Add new items at the end of the relevant section under **Unreleased**.
 ### Changes
 
 - Migrate tests to Swift Testing ([#51])
-- Update test data to lastest set of proposals and current metadata schema ([#72])
+- Update test data to latest set of proposals and current metadata schema ([#72])
 - Filter out files that are not Markdown
 - Improve performance of pretty-printed JSON generation
 - Use full metadata struct as previous results
