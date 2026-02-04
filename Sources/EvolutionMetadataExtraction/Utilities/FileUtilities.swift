@@ -55,7 +55,7 @@ enum FileUtilities {
         do {
             return try Data(contentsOf: fileURL)
         } catch let error as CocoaError {
-            // Missing file is expected on occassion
+            // Missing file is expected on occasion
             if error.code == CocoaError.fileReadNoSuchFile && !required {
                 return nil
             }
