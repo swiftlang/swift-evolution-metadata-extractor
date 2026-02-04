@@ -82,4 +82,16 @@ enum Help {
                 """
         }
     }
+
+    enum Validate {
+        static let commandName = "validate"
+
+        static let abstract = "Extracts metadata from Swift evolution proposals and generates a validation report."
+
+        static let discussion =  """
+        Running with no arguments will read from the swift-evolution repository, extract metadata and write a validation report to stdout.
+        
+        If validation errors are found the process will exit with error code 1.
+        """
+    }
 }

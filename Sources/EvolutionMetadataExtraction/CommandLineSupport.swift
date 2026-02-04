@@ -27,6 +27,12 @@ public enum ToolVersion {
 
 // MARK: -
 
+func exitWithFailure() throws {
+    throw ExitCode.failure
+}
+
+// MARK: -
+
 public enum ArgumentValidation {
     
     // Call first in the `validate()` method of each command
@@ -153,6 +159,18 @@ public enum ArgumentValidation {
             if outputPath == "none" { .none }
             else if outputPath == "stdout" { throw ValidationError("The output path 'stdout' is not valid for the snapshot command")}
             else { .snapshot(FileUtilities.outputURL(for: outputPath, defaultFileName: defaultFilename)) }
+        }
+    }
+
+    public enum Validate {
+        
+        public static let defaultFilename = "ValidationReport.txt"
+        public static let defaultOutput: ExtractionJob.Output = .validationReport(URL.standardOutURL)
+        
+        // Transforms --output--path argument into an output value
+        @Sendable public static func output(_ outputPath: String) throws -> ExtractionJob.Output {
+            if outputPath == "none" { .none }
+            else { .validationReport(FileUtilities.outputURL(for: outputPath, defaultFileName: defaultFilename)) }
         }
     }
 }

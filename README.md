@@ -98,6 +98,27 @@ When present, the provided token will be included as an authorization header in 
 ## EvolutionMetadataModel Library
 The package vends the `EvolutionMetadataModel` library. The library defines `Codable`, `Equatable`, `Sendable` value types that are suitable for decoding the generated evolution metadata file.
 
+## Validation Reports
+The `validate` command will extract metadata and generate a validation report containing any validation errors or warnings found.  By default the report will be written to standard out.
+
+If errors are found the tool will exit with an error code.
+
+The validate command is intended to be run on pull requests to ensure malformed proposal files are not committed.
+
+### Options
+The validate subcommand has options that work similar to extract command options:
+- Use the `--output-path` option (`-o`) to specify a different output location or filename.
+
+- Use the `--verbose` option (`-v`) for verbose output as the tool runs.
+
+- Use the `--snapshot-path` option to specify a local `evosnapshot` directory as a data source.
+
+- Use trailing `<proposal-files>` argument of paths to proposal files in the Markdown format with the extension `md`.
+
+  Use the `<proposal-files>` argument to validate one or more local proposal files.
+
+The `--snapshot-path` and `<proposal-files>` argument are mutually exclusive.
+
 ## Snapshots for Development and Testing
 Use the `snapshot` subcommand to record snapshots.
 
