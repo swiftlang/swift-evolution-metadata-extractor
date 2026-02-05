@@ -9,7 +9,7 @@ Add new items at the end of the relevant section under **Unreleased**.
 ### Additions
 
 - Add `validate` subcommand to generate validate reports ([#79])
-- Add `--pull-request` option to validate proposals in a pull request
+- Add `--pull-request` option to validate proposals in a pull request ([#86])
 
 ### Changes
 
@@ -84,3 +84,4 @@ This changelog's format is based on [Keep a Changelog](https://keepachangelog.co
 [#74]: https://github.com/swiftlang/swift-evolution-metadata-extractor/pull/74
 [#79]: https://github.com/swiftlang/swift-evolution-metadata-extractor/pull/79
 [#83]: https://github.com/swiftlang/swift-evolution-metadata-extractor/pull/83
+[#86]: https://github.com/swiftlang/swift-evolution-metadata-extractor/pull/86
