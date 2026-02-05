@@ -10,6 +10,7 @@ import Foundation
 import EvolutionMetadataModel
 
 struct Snapshot {
+    let project: Project
     let sourceURL: URL?
     let destURL: URL?
     var proposalListing: [GitHubContentItem]? = nil // Ad-hoc snapshots may not have these
@@ -23,7 +24,8 @@ struct Snapshot {
     let temporarySnapshotDirectory: URL?
     let temporaryProposalsDirectory: URL?
     
-    init(sourceURL: URL?, destURL: URL?, proposalListing: [GitHubContentItem]?, directoryContents: [ProposalSpec], proposalSpecs: [ProposalSpec], previousResults: EvolutionMetadata?, expectedResults: EvolutionMetadata?, branchInfo: GitHubBranch?, snapshotDate: Date) {
+    init(project: Project, sourceURL: URL?, destURL: URL?, proposalListing: [GitHubContentItem]?, directoryContents: [ProposalSpec], proposalSpecs: [ProposalSpec], previousResults: EvolutionMetadata?, expectedResults: EvolutionMetadata?, branchInfo: GitHubBranch?, snapshotDate: Date) {
+        self.project = project
         self.sourceURL = sourceURL
         self.destURL = destURL
         self.proposalListing = proposalListing
@@ -43,7 +45,7 @@ struct Snapshot {
         }
     }
 
-    static func makeSnapshot(snapshotURL: URL, destURL: URL?, ignorePreviousResults: Bool, extractionDate: Date) async throws -> Snapshot{
+    static func makeSnapshot(project: Project = Project.default, snapshotURL: URL, destURL: URL?, ignorePreviousResults: Bool, extractionDate: Date) async throws -> Snapshot{
         var proposalListingFound = false
         var previousResultsFound = false
                         
@@ -100,7 +102,7 @@ struct Snapshot {
                     Proposal count: \(proposalSpecs.count)
                     """)
         
-        return Snapshot(sourceURL: snapshotURL, destURL: destURL, proposalListing: proposalListing, directoryContents: directoryContents, proposalSpecs: proposalSpecs, previousResults: previousResults, expectedResults: expectedResults, branchInfo: branchInfo, snapshotDate: snapshotDate)
+        return Snapshot(project: project, sourceURL: snapshotURL, destURL: destURL, proposalListing: proposalListing, directoryContents: directoryContents, proposalSpecs: proposalSpecs, previousResults: previousResults, expectedResults: expectedResults, branchInfo: branchInfo, snapshotDate: snapshotDate)
 
 
         // Expected test file directory structure:

@@ -108,7 +108,7 @@ extension ExtractionJob {
 
         let snapshot: Snapshot?
         if case let .snapshot(destURL) = output {
-            snapshot = Snapshot(sourceURL: nil, destURL: destURL, proposalListing: proposalContentItems, directoryContents: [], proposalSpecs: [], previousResults: nil, expectedResults: nil, branchInfo: mainBranchInfo, snapshotDate: extractionDate)
+            snapshot = Snapshot(project: project, sourceURL: nil, destURL: destURL, proposalListing: proposalContentItems, directoryContents: [], proposalSpecs: [], previousResults: nil, expectedResults: nil, branchInfo: mainBranchInfo, snapshotDate: extractionDate)
         } else {
             snapshot = nil
         }
@@ -123,7 +123,7 @@ extension ExtractionJob {
  
         verbosePrint("Using local snapshot\n'\(snapshotURL.relativePath)'")
 
-        let sourceSnapshot = try await Snapshot.makeSnapshot(snapshotURL: snapshotURL, destURL: output.snapshotURL, ignorePreviousResults: ignorePreviousResults, extractionDate: extractionDate)
+        let sourceSnapshot = try await Snapshot.makeSnapshot(project: project, snapshotURL: snapshotURL, destURL: output.snapshotURL, ignorePreviousResults: ignorePreviousResults, extractionDate: extractionDate)
 
         let jobMetadata = JobMetadata(commit: sourceSnapshot.branchInfo?.commit.sha, extractionDate: sourceSnapshot.snapshotDate)
                 
@@ -145,7 +145,7 @@ extension ExtractionJob {
 
         let snapshot: Snapshot?
         if case let .snapshot(destURL) = output {
-            snapshot = Snapshot(sourceURL: nil, destURL: destURL, proposalListing: nil, directoryContents: [], proposalSpecs: [], previousResults: nil, expectedResults: nil, branchInfo: nil, snapshotDate: extractionDate)
+            snapshot = Snapshot(project: project, sourceURL: nil, destURL: destURL, proposalListing: nil, directoryContents: [], proposalSpecs: [], previousResults: nil, expectedResults: nil, branchInfo: nil, snapshotDate: extractionDate)
         } else {
             snapshot = nil
         }
@@ -170,7 +170,7 @@ extension ExtractionJob {
 
         let snapshot: Snapshot?
         if case let .snapshot(destURL) = output {
-            snapshot = Snapshot(sourceURL: nil, destURL: destURL, proposalListing: nil, directoryContents: [], proposalSpecs: [], previousResults: nil, expectedResults: nil, branchInfo: nil, snapshotDate: extractionDate)
+            snapshot = Snapshot(project: project, sourceURL: nil, destURL: destURL, proposalListing: nil, directoryContents: [], proposalSpecs: [], previousResults: nil, expectedResults: nil, branchInfo: nil, snapshotDate: extractionDate)
         } else {
             snapshot = nil
         }
