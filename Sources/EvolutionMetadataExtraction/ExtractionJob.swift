@@ -41,6 +41,7 @@ public struct ExtractionJob: Sendable {
         let extractionDate: Date
     }
 
+    let project: Project
     let proposalSpecs: [ProposalSpec]
     let previousResults: EvolutionMetadata?
     let forcedExtractionIDs: [String]
@@ -48,7 +49,8 @@ public struct ExtractionJob: Sendable {
     let output: Output
     let snapshot: Snapshot?
 
-    private init(output: Output, snapshot: Snapshot?, proposalSpecs: [ProposalSpec], previousResults: EvolutionMetadata?, forcedExtractionIDs: [String], jobMetadata: JobMetadata) {
+    private init(project: Project, output: Output, snapshot: Snapshot?, proposalSpecs: [ProposalSpec], previousResults: EvolutionMetadata?, forcedExtractionIDs: [String], jobMetadata: JobMetadata) {
+        self.project = project
         self.proposalSpecs = proposalSpecs
         self.previousResults = previousResults
         self.forcedExtractionIDs = forcedExtractionIDs
@@ -69,16 +71,16 @@ public struct ExtractionJob: Sendable {
 
     }
     
-    public static func makeExtractionJob(source: Source, output: Output, ignorePreviousResults: Bool = false, forcedExtractionIDs: [String] = [], extractionDate: Date = Date()) async throws -> ExtractionJob {
+    public static func makeExtractionJob(project: Project = Project.default, source: Source, output: Output, ignorePreviousResults: Bool = false, forcedExtractionIDs: [String] = [], extractionDate: Date = Date()) async throws -> ExtractionJob {
         switch source {
             case .network:
-                try await makeNetworkExtractionJob(output: output, ignorePreviousResults: ignorePreviousResults, forcedExtractionIDs: forcedExtractionIDs, extractionDate: extractionDate)
+                try await makeNetworkExtractionJob(project: project, output: output, ignorePreviousResults: ignorePreviousResults, forcedExtractionIDs: forcedExtractionIDs, extractionDate: extractionDate)
             case .snapshot(let snapshotURL):
-                try await makeSnapshotExtractionJob(snapshotURL: snapshotURL, output: output, ignorePreviousResults: ignorePreviousResults, forcedExtractionIDs: forcedExtractionIDs, extractionDate: extractionDate)
+                try await makeSnapshotExtractionJob(project: project, snapshotURL: snapshotURL, output: output, ignorePreviousResults: ignorePreviousResults, forcedExtractionIDs: forcedExtractionIDs, extractionDate: extractionDate)
             case .files(let fileURLs):
-                try makeFilesExtractionJob(fileURLs: fileURLs, output: output, ignorePreviousResults: ignorePreviousResults, forcedExtractionIDs: forcedExtractionIDs, extractionDate: extractionDate)
+                try makeFilesExtractionJob(project: project, fileURLs: fileURLs, output: output, ignorePreviousResults: ignorePreviousResults, forcedExtractionIDs: forcedExtractionIDs, extractionDate: extractionDate)
             case .pullRequest(let pullRequestID):
-                try await makePullRequestExtractionJob(pullRequestID: pullRequestID, output: output, ignorePreviousResults: ignorePreviousResults, forcedExtractionIDs: forcedExtractionIDs, extractionDate: extractionDate)
+                try await makePullRequestExtractionJob(project: project, pullRequestID: pullRequestID, output: output, ignorePreviousResults: ignorePreviousResults, forcedExtractionIDs: forcedExtractionIDs, extractionDate: extractionDate)
         }
     }
 }
@@ -87,7 +89,7 @@ public struct ExtractionJob: Sendable {
 
 extension ExtractionJob {
     
-    private static func makeNetworkExtractionJob(output: Output, ignorePreviousResults: Bool, forcedExtractionIDs: [String], extractionDate: Date) async throws -> ExtractionJob {
+    private static func makeNetworkExtractionJob(project: Project, output: Output, ignorePreviousResults: Bool, forcedExtractionIDs: [String], extractionDate: Date) async throws -> ExtractionJob {
         
         async let previousResults = previousResults(from: PreviousResultsFetcher.previousResultsURL, ignorePreviousResults: ignorePreviousResults)
         let mainBranchInfo = try await GitHubFetcher.fetchMainBranch()
@@ -111,10 +113,10 @@ extension ExtractionJob {
             snapshot = nil
         }
 
-        return ExtractionJob(output: output, snapshot: snapshot, proposalSpecs: proposalSpecs, previousResults: try await previousResults, forcedExtractionIDs: forcedExtractionIDs, jobMetadata: jobMetadata)
+        return ExtractionJob(project: project, output: output, snapshot: snapshot, proposalSpecs: proposalSpecs, previousResults: try await previousResults, forcedExtractionIDs: forcedExtractionIDs, jobMetadata: jobMetadata)
     }
     
-    private static func makeSnapshotExtractionJob(snapshotURL: URL, output: Output, ignorePreviousResults: Bool, forcedExtractionIDs: [String], extractionDate: Date) async throws -> ExtractionJob {
+    private static func makeSnapshotExtractionJob(project: Project, snapshotURL: URL, output: Output, ignorePreviousResults: Bool, forcedExtractionIDs: [String], extractionDate: Date) async throws -> ExtractionJob {
 
         // Argument validation should ensure correct values. Assert to catch problems in usage in tests.
         assert(snapshotURL.pathExtension == "evosnapshot", "Snapshot URL must be a directory with 'evosnapshot' extension.")
@@ -126,10 +128,10 @@ extension ExtractionJob {
         let jobMetadata = JobMetadata(commit: sourceSnapshot.branchInfo?.commit.sha, extractionDate: sourceSnapshot.snapshotDate)
                 
         // Always use sourceSnapshot, its values are used in tests
-        return ExtractionJob(output: output, snapshot: sourceSnapshot, proposalSpecs: sourceSnapshot.proposalSpecs, previousResults: sourceSnapshot.previousResults, forcedExtractionIDs: forcedExtractionIDs, jobMetadata: jobMetadata)
+        return ExtractionJob(project: project, output: output, snapshot: sourceSnapshot, proposalSpecs: sourceSnapshot.proposalSpecs, previousResults: sourceSnapshot.previousResults, forcedExtractionIDs: forcedExtractionIDs, jobMetadata: jobMetadata)
     }
 
-    private static func makeFilesExtractionJob(fileURLs: [URL], output: Output, ignorePreviousResults: Bool, forcedExtractionIDs: [String], extractionDate: Date) throws -> ExtractionJob {
+    private static func makeFilesExtractionJob(project: Project, fileURLs: [URL], output: Output, ignorePreviousResults: Bool, forcedExtractionIDs: [String], extractionDate: Date) throws -> ExtractionJob {
         
         // Argument validation should ensure correct values. Assert to catch problems in usage in tests.
         assert(ignorePreviousResults == true && forcedExtractionIDs.isEmpty, "Extraction from a file URLs always ignores previous results and performs a full extraction")
@@ -148,10 +150,10 @@ extension ExtractionJob {
             snapshot = nil
         }
 
-        return ExtractionJob(output: output, snapshot: snapshot, proposalSpecs: proposalSpecs, previousResults: nil, forcedExtractionIDs: forcedExtractionIDs, jobMetadata: jobMetadata)
+        return ExtractionJob(project: project, output: output, snapshot: snapshot, proposalSpecs: proposalSpecs, previousResults: nil, forcedExtractionIDs: forcedExtractionIDs, jobMetadata: jobMetadata)
     }
 
-    private static func makePullRequestExtractionJob(pullRequestID: Int, output: Output, ignorePreviousResults: Bool, forcedExtractionIDs: [String], extractionDate: Date) async throws -> ExtractionJob {
+    private static func makePullRequestExtractionJob(project: Project, pullRequestID: Int, output: Output, ignorePreviousResults: Bool, forcedExtractionIDs: [String], extractionDate: Date) async throws -> ExtractionJob {
 
         // Argument validation should ensure correct values. Assert to catch problems in usage in tests.
         assert(ignorePreviousResults == true && forcedExtractionIDs.isEmpty, "Extraction from a pull request always ignores previous results and performs a full extraction")
@@ -173,7 +175,7 @@ extension ExtractionJob {
             snapshot = nil
         }
 
-        return ExtractionJob(output: output, snapshot: snapshot, proposalSpecs: proposalSpecs, previousResults: nil, forcedExtractionIDs: forcedExtractionIDs, jobMetadata: jobMetadata)
+        return ExtractionJob(project: project, output: output, snapshot: snapshot, proposalSpecs: proposalSpecs, previousResults: nil, forcedExtractionIDs: forcedExtractionIDs, jobMetadata: jobMetadata)
     }
 
     static func previousResults(from url: URL, ignorePreviousResults: Bool) async throws -> EvolutionMetadata? {

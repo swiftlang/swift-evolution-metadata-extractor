@@ -17,7 +17,7 @@ let swiftSettings: [SwiftSetting] = [
 
 let package = Package(
     name: "swift-evolution-metadata-extractor",
-    platforms: [ .macOS(.v14) ],
+    platforms: [ .macOS(.v15) ],
     products: [
         .library(name: "EvolutionMetadataModel", targets: ["EvolutionMetadataModel"]),
         .executable(name: "swift-evolution-metadata-extractor", targets: ["swift-evolution-metadata-extractor"])
