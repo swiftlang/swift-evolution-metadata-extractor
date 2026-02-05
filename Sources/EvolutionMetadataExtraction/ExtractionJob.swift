@@ -101,7 +101,7 @@ extension ExtractionJob {
         // in those subdirectories are filtered out of this proposal
         // specs array.
         let proposalSpecs = proposalContentItems.enumerated().compactMap {
-            $1.proposalSpec(sortIndex: $0)
+            $1.proposalSpec(project: project, sortIndex: $0)
         }
 
         let jobMetadata = JobMetadata(commit: sha, extractionDate: extractionDate)
@@ -139,7 +139,7 @@ extension ExtractionJob {
         let proposalSpecs = fileURLs
             .sorted(using: SortDescriptor(\URL.lastPathComponent, order: .forward))
             .enumerated()
-            .map { ProposalSpec(url: $1, sha: "", sortIndex: $0) }
+            .map { ProposalSpec(project: project, url: $1, sha: "", sortIndex: $0) }
 
         let jobMetadata = JobMetadata(commit: "", extractionDate: extractionDate)
 
@@ -163,7 +163,7 @@ extension ExtractionJob {
         // The proposals/ directory may have subdirectories for proposals from specific workgroups.
         // Proposals in those subdirectories are filtered out of this proposal specs array.
         let proposalSpecs = proposalContentItems.enumerated().compactMap {
-            $1.proposalSpec(sortIndex: $0)
+            $1.proposalSpec(project: project, sortIndex: $0)
         }
 
         let jobMetadata = JobMetadata(commit: "", extractionDate: extractionDate)

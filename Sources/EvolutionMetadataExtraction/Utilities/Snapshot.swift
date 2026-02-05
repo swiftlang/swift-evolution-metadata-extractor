@@ -61,13 +61,13 @@ struct Snapshot {
             .sorted(by: { $0.lastPathComponent < $1.lastPathComponent })
             .filter { $0.pathExtension == "md"}
             .enumerated()
-            .map { ProposalSpec(url: $1, sha: "", sortIndex: $0) } // try! SHA1.hexForData(Data(contentsOf: $0)))
+            .map { ProposalSpec(project: project, url: $1, sha: "", sortIndex: $0) } // try! SHA1.hexForData(Data(contentsOf: $0)))
 
         let proposalSpecs: [ProposalSpec]
         let proposalListing: [GitHubContentItem]?
         if let contentItems = try FileUtilities.decode([GitHubContentItem].self, from: proposalListingURL) {
             proposalListing = contentItems
-            proposalSpecs = contentItems.enumerated().map { ProposalSpec(url: snapshotURL.appending(path: $1.path), sha: $1.sha, sortIndex: $0) }
+            proposalSpecs = contentItems.enumerated().map { ProposalSpec(project: project, url: snapshotURL.appending(path: $1.path), sha: $1.sha, sortIndex: $0) }
             proposalListingFound = true
             if directoryContents.count != proposalSpecs.count {
                 print("WARNING: Number of proposals in proposals directory does not match number of proposals in 'proposal-listing.json")
