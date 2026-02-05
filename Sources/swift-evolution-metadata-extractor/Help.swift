@@ -91,7 +91,13 @@ enum Help {
         static let discussion =  """
         Running with no arguments will read from the swift-evolution repository, extract metadata and write a validation report to stdout.
         
+        To validate the proposal files in a pull request, use the --pull-request option with the pull number.
+        
         If validation errors are found the process will exit with error code 1.
         """
+
+        enum Argument {
+            static let pullRequest: ArgumentHelp = "Pull request number."
+        }
     }
 }

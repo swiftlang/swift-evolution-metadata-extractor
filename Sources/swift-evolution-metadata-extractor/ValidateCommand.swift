@@ -28,13 +28,16 @@ struct ValidateCommand: AsyncParsableCommand {
     @Flag(name: .shortAndLong, help: Help.Shared.Argument.verbose)
     var verbose: Bool = false
 
+    @Option(name: .long, help: Help.Validate.Argument.pullRequest)
+    var pullRequest: Int?
+
     @Argument(help: Help.Shared.Argument.proposalFiles, transform: ArgumentValidation.proposalURL)
     var proposalURLs: [URL] = []
 
     mutating func validate() throws {
         ArgumentValidation.validate(verbose: verbose)
         ArgumentValidation.validateHTTPProxies()
-        extractionSource = try ArgumentValidation.extractionSource(snapshotURL: snapshotURL, proposalURLs: proposalURLs)
+        extractionSource = try ArgumentValidation.extractionSource(snapshotURL: snapshotURL, proposalURLs: proposalURLs, pullRequest: pullRequest)
     }
 
 
