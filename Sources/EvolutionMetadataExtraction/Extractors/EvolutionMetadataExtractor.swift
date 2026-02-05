@@ -166,13 +166,15 @@ struct EvolutionMetadataExtractor {
 /// The listing of proposals to be processed may come from a GitHub proposal listing or scanning the contents of a directory.
 ///
 struct ProposalSpec: Sendable {
+    let project: Project
     let url: URL
     let sha: String
     let sortIndex: Int
     var id: String { "SE-" + url.lastPathComponent.prefix(4) }
     var filename: String { url.lastPathComponent }
     
-    init(url: URL, sha: String, sortIndex: Int) {
+    init(project: Project, url: URL, sha: String, sortIndex: Int) {
+        self.project = project
         self.url = url
         self.sha = sha
         self.sortIndex = sortIndex
