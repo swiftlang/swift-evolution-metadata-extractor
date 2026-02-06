@@ -91,10 +91,10 @@ extension ExtractionJob {
     
     private static func makeNetworkExtractionJob(project: Project, output: Output, ignorePreviousResults: Bool, forcedExtractionIDs: [String], extractionDate: Date) async throws -> ExtractionJob {
         
-        async let previousResults = previousResults(from: PreviousResultsFetcher.previousResultsURL, ignorePreviousResults: ignorePreviousResults)
-        let mainBranchInfo = try await GitHubFetcher.fetchMainBranch()
+        async let previousResults = previousResults(from: project.previousResultsURL, ignorePreviousResults: ignorePreviousResults)
+        let mainBranchInfo = try await GitHubFetcher.fetchMainBranch(for: project)
         let sha = mainBranchInfo.commit.sha
-        let proposalContentItems = try await GitHubFetcher.fetchProposalContentItems(for: sha)
+        let proposalContentItems = try await GitHubFetcher.fetchProposalContentItems(for: project, sha: sha)
 
         // The proposals/ directory may have subdirectories for
         // proposals from specific workgroups. For now, proposals
@@ -158,7 +158,7 @@ extension ExtractionJob {
         // Argument validation should ensure correct values. Assert to catch problems in usage in tests.
         assert(ignorePreviousResults == true && forcedExtractionIDs.isEmpty, "Extraction from a pull request always ignores previous results and performs a full extraction")
 
-        let proposalContentItems = try await GitHubFetcher.fetchPullRequestProposalList(for: pullRequestID)
+        let proposalContentItems = try await GitHubFetcher.fetchPullRequestProposalList(for: project, pullRequestNumber: pullRequestID)
 
         // The proposals/ directory may have subdirectories for proposals from specific workgroups.
         // Proposals in those subdirectories are filtered out of this proposal specs array.

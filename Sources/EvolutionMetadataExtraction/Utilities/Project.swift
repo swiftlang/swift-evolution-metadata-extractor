@@ -20,6 +20,7 @@ public final class Project: Sendable {
     nonisolated(unsafe) let proposalRegex: Regex<Substring>
     let previousResultsURL: URL
     let defaultOutputFilename: String
+    private let endpointBaseURL: URL
     let mainBranchEndpoint: URL
     let proposalListingEndpoint: URL
     let validationExclusions: [Int:RangeSet<Int>]
@@ -35,9 +36,14 @@ public final class Project: Sendable {
         self.defaultOutputFilename = defaultOutputFilename
         self.validationExclusions = validationExclusions
 
-        let endpointBaseURL = URL(string: "https://api.github.com/repos/")!.appending(components: organization, repository)
+        self.endpointBaseURL = URL(string: "https://api.github.com/repos/")!.appending(components: organization, repository)
         self.mainBranchEndpoint = endpointBaseURL.appending(path:"branches/main")
         self.proposalListingEndpoint = endpointBaseURL.appending(path: "contents/" + path)
+    }
+
+    func githubPullEndpoint(for request: Int) -> URL {
+        endpointBaseURL.appending(path: "pulls/\(request)/files")
+            .appending(queryItems: [URLQueryItem(name: "per_page", value: "100")])
     }
 
     public static var `default`: Project {
