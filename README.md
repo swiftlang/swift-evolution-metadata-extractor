@@ -113,7 +113,7 @@ The validate command is intended to be run on pull requests to ensure malformed 
 
 ### Options
 The validate subcommand also has options that work similar to extract command options:
-- Use the `--pull-request` option to specify a different output location or filename.
+- Use the `--pull-request` option to specify a pull request number to review.
 
 - Use the `--output-path` option (`-o`) to specify a different output location or filename.
 
