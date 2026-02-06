@@ -77,6 +77,12 @@ struct GitHubPullFileItem: Codable {
     var contents_url: String
     var patch: String
     
+    var isProposalFile: Bool {
+        status != "removed" &&
+        filename.hasPrefix("proposals/") &&
+        filename.hasSuffix(".md")
+    }
+
     func proposalSpec(sortIndex: Int) ->  ProposalSpec {
         ProposalSpec(url: URL(string: raw_url)!, sha: sha, sortIndex: sortIndex)
     }
@@ -90,8 +96,9 @@ struct GitHubFetcher {
         static let githubMainBranchEndpoint = endpointBaseURL.appending(path:"branches/main")
         static let githubIssuesEndpoint = endpointBaseURL.appending(path: "issues?since=2023-08-01T01:00:00Z&state=all")
         static let githubProposalsEndpoint = endpointBaseURL.appending(path: "contents/proposals" )
-        static func githubPullEndpoint(for request: String) -> URL {
+        static func githubPullEndpoint(for request: Int) -> URL {
             endpointBaseURL.appending(path: "pulls/\(request)/files")
+                .appending(queryItems: [URLQueryItem(name: "per_page", value: "100")])
         }
     }
     
@@ -126,11 +133,10 @@ struct GitHubFetcher {
         return try await getGitHubAPIValue(for: endpoint, type: [GitHubContentItem].self).filter { $0.isMarkdownFile }
     }
 
-    static func fetchPullRequestProposalList(for pullNumber: String) async throws -> [GitHubPullFileItem] {
+    static func fetchPullRequestProposalList(for pullNumber: Int) async throws -> [GitHubPullFileItem] {
         let endpointURL = Endpoint.githubPullEndpoint(for: pullNumber)
         let contents = try await getGitHubAPIValue(for: endpointURL, type: [GitHubPullFileItem].self)
-        return contents
-            .filter { $0.filename.hasPrefix("proposals/") }
+        return contents.filter { $0.isProposalFile }
     }
     
     static func getGitHubAPIValue<T: Decodable>(for endpoint: URL, type: T.Type, cachePolicy: URLRequest.CachePolicy = .useProtocolCachePolicy) async throws -> T {

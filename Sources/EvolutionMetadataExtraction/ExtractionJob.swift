@@ -21,6 +21,7 @@ public struct ExtractionJob: Sendable {
         case network
         case snapshot(URL)
         case files([URL])
+        case pullRequest(Int)
     }
     
     public enum Output: Sendable, Codable, Equatable {
@@ -76,6 +77,8 @@ public struct ExtractionJob: Sendable {
                 try await makeSnapshotExtractionJob(snapshotURL: snapshotURL, output: output, ignorePreviousResults: ignorePreviousResults, forcedExtractionIDs: forcedExtractionIDs, extractionDate: extractionDate)
             case .files(let fileURLs):
                 try makeFilesExtractionJob(fileURLs: fileURLs, output: output, ignorePreviousResults: ignorePreviousResults, forcedExtractionIDs: forcedExtractionIDs, extractionDate: extractionDate)
+            case .pullRequest(let pullRequestID):
+                try await makePullRequestExtractionJob(pullRequestID: pullRequestID, output: output, ignorePreviousResults: ignorePreviousResults, forcedExtractionIDs: forcedExtractionIDs, extractionDate: extractionDate)
         }
     }
 }
@@ -135,6 +138,31 @@ extension ExtractionJob {
             .sorted(using: SortDescriptor(\URL.lastPathComponent, order: .forward))
             .enumerated()
             .map { ProposalSpec(url: $1, sha: "", sortIndex: $0) }
+
+        let jobMetadata = JobMetadata(commit: "", extractionDate: extractionDate)
+
+        let snapshot: Snapshot?
+        if case let .snapshot(destURL) = output {
+            snapshot = Snapshot(sourceURL: nil, destURL: destURL, proposalListing: nil, directoryContents: [], proposalSpecs: [], previousResults: nil, expectedResults: nil, branchInfo: nil, snapshotDate: extractionDate)
+        } else {
+            snapshot = nil
+        }
+
+        return ExtractionJob(output: output, snapshot: snapshot, proposalSpecs: proposalSpecs, previousResults: nil, forcedExtractionIDs: forcedExtractionIDs, jobMetadata: jobMetadata)
+    }
+
+    private static func makePullRequestExtractionJob(pullRequestID: Int, output: Output, ignorePreviousResults: Bool, forcedExtractionIDs: [String], extractionDate: Date) async throws -> ExtractionJob {
+
+        // Argument validation should ensure correct values. Assert to catch problems in usage in tests.
+        assert(ignorePreviousResults == true && forcedExtractionIDs.isEmpty, "Extraction from a pull request always ignores previous results and performs a full extraction")
+
+        let proposalContentItems = try await GitHubFetcher.fetchPullRequestProposalList(for: pullRequestID)
+
+        // The proposals/ directory may have subdirectories for proposals from specific workgroups.
+        // Proposals in those subdirectories are filtered out of this proposal specs array.
+        let proposalSpecs = proposalContentItems.enumerated().compactMap {
+            $1.proposalSpec(sortIndex: $0)
+        }
 
         let jobMetadata = JobMetadata(commit: "", extractionDate: extractionDate)
 

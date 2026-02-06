@@ -45,13 +45,17 @@ public enum ArgumentValidation {
         _ = URLSession.customized // Reads and validates HTTP Proxy environment variables if present
     }
 
-    @Sendable public static func extractionSource(snapshotURL: URL?, proposalURLs: [URL]) throws -> ExtractionJob.Source {
-        if snapshotURL != nil && !proposalURLs.isEmpty {
-            throw ValidationError("Cannot provide both a --snapshot-path and <proposal file> arguments")
+    @Sendable public static func extractionSource(snapshotURL: URL?, proposalURLs: [URL], pullRequest: Int? = nil) throws -> ExtractionJob.Source {
+        if (snapshotURL != nil && !proposalURLs.isEmpty) ||
+            (snapshotURL != nil && pullRequest != nil) ||
+            (pullRequest != nil && !proposalURLs.isEmpty) {
+            throw ValidationError("--pull-request, --snapshot-path, and <proposal file> arguments are mutually exclusive")
         } else if let snapshotURL {
             return .snapshot(snapshotURL)
         } else if !proposalURLs.isEmpty {
             return .files(proposalURLs)
+        } else if let pullRequest {
+            return .pullRequest(pullRequest)
         } else {
             return .network
         }

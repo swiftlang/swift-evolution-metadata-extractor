@@ -101,12 +101,20 @@ The package vends the `EvolutionMetadataModel` library. The library defines `Cod
 ## Validation Reports
 The `validate` command will extract metadata and generate a validation report containing any validation errors or warnings found.  By default the report will be written to standard out.
 
-If errors are found the tool will exit with an error code.
+To validate the proposal files in a pull request, use the `--pull-request` option with the pull request number.
+
+  `swift-evolution-metadata-extractor validate --pull-request 2474`
+  
+  > Will write a validation report of the proposal files in pull request #2474.
+
+If validation errors are found the tool will exit with an error code.
 
 The validate command is intended to be run on pull requests to ensure malformed proposal files are not committed.
 
+Note that the `--pull-request` option has a limit of 100 changed files.
+
 ### Options
-The validate subcommand has options that work similar to extract command options:
+The validate subcommand also has options that work similar to extract command options:
 - Use the `--output-path` option (`-o`) to specify a different output location or filename.
 
 - Use the `--verbose` option (`-v`) for verbose output as the tool runs.
@@ -117,7 +125,7 @@ The validate subcommand has options that work similar to extract command options
 
   Use the `<proposal-files>` argument to validate one or more local proposal files.
 
-The `--snapshot-path` and `<proposal-files>` argument are mutually exclusive.
+The `--pull-request`, `--snapshot-path` and `<proposal-files>` argument are mutually exclusive.
 
 ## Snapshots for Development and Testing
 Use the `snapshot` subcommand to record snapshots.
