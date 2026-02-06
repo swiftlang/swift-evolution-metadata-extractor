@@ -17,8 +17,8 @@ struct HeaderFieldExtractor: MarkupWalker, ValueExtractor {
     private var warnings: [Proposal.Issue] = []
     private var errors: [Proposal.Issue] = []
     
-    mutating func extractValue(from document: Document) -> ExtractionResult<[String: ListItem]> {
-        guard let headerFields = document.child(through: [(1, UnorderedList.self)]) as? UnorderedList else {
+    mutating func extractValue(from src: DocumentSource) -> ExtractionResult<[String: ListItem]> {
+        guard let headerFields = src.document.child(through: [(1, UnorderedList.self)]) as? UnorderedList else {
             return ExtractionResult(value: nil, warnings: warnings, errors: errors)
         }
         visit(headerFields)

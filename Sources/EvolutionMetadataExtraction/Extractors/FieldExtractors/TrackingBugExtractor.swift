@@ -19,8 +19,8 @@ struct TrackingBugExtractor: MarkupWalker, ValueExtractor {
     }
     private var _trackingBugs: [Proposal.TrackingBug] = []
     
-    mutating func extractValue(from headerFieldsByLabel: [String : ListItem]) -> ExtractionResult<[Proposal.TrackingBug]> {
-        if let (_, headerField) = headerFieldsByLabel[["Bug", "Bugs"]] {
+    mutating func extractValue(from src: HeaderFieldSource) -> ExtractionResult<[Proposal.TrackingBug]> {
+        if let (_, headerField) = src.headerFieldsByLabel[["Bug", "Bugs"]] {
             visit(headerField)
         }
         

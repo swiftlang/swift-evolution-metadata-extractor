@@ -10,16 +10,16 @@ import Markdown
 import EvolutionMetadataModel
 
 struct AuthorExtractor: ValueExtractor {
-    func extractValue(from headerFieldsByLabel: [String : ListItem]) -> ExtractionResult<[Proposal.Person]> {
+    func extractValue(from src: HeaderFieldSource) -> ExtractionResult<[Proposal.Person]> {
         var personExtractor = PersonExtractor(role: .author)
-        return personExtractor.personArray(from: headerFieldsByLabel)
+        return personExtractor.personArray(from: src)
     }
 }
 
 struct ReviewManagerExtractor: ValueExtractor {
-    func extractValue(from headerFieldsByLabel: [String : ListItem]) -> ExtractionResult<[Proposal.Person]> {
+    func extractValue(from src: HeaderFieldSource) -> ExtractionResult<[Proposal.Person]> {
         var personExtractor = PersonExtractor(role: .reviewManager)
-        return personExtractor.personArray(from: headerFieldsByLabel)
+        return personExtractor.personArray(from: src)
     }
 }
 
@@ -40,13 +40,13 @@ struct PersonExtractor: MarkupWalker {
         self.role = role
     }
     
-    mutating func personArray(from headerFields: [String : ListItem]) -> ExtractionResult<[Proposal.Person]> {
+    mutating func personArray(from src: HeaderFieldSource) -> ExtractionResult<[Proposal.Person]> {
         let headerLabels = switch role {
             case .author: ["Author", "Authors"]
             // VALIDATION ENHANCEMENT: Normalize capitalization to 'Review Manager'
             case .reviewManager: ["Review manager", "Review Manager", "Review managers", "Review Managers"]
         }
-        if let (_, headerField) = headerFields[headerLabels] {
+        if let (_, headerField) = src.headerFieldsByLabel[headerLabels] {
             visit(headerField)
         }
         

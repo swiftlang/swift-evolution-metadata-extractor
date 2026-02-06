@@ -14,9 +14,6 @@ import FoundationNetworking // Required for Linux
 #endif
 
 struct PreviousResultsFetcher {
-
-    static let previousResultsURL = URL(string: "https://download.swift.org/swift-evolution/v1/evolution.json")!
-
     static func fetchPreviousResultsData(url: URL) async throws -> Data {
         let request = URLRequest(url: url, cachePolicy: .reloadIgnoringLocalCacheData)
         verbosePrint("Fetching with URLRequest:\n\(request.verboseDescription)")
@@ -59,9 +56,9 @@ struct GitHubContentItem: Codable {
 
     /// Returns `nil` if this content item corresponds to a
     /// subdirectory instead of a direct proposal document.
-    func proposalSpec(sortIndex: Int) ->  ProposalSpec? {
+    func proposalSpec(project: Project, sortIndex: Int) ->  ProposalSpec? {
         guard let download_url else { return nil }
-        return ProposalSpec(url: URL(string: download_url)!, sha: sha, sortIndex: sortIndex)
+        return ProposalSpec(project: project, url: URL(string: download_url)!, sha: sha, sortIndex: sortIndex)
     }
 }
 
@@ -83,24 +80,13 @@ struct GitHubPullFileItem: Codable {
         filename.hasSuffix(".md")
     }
 
-    func proposalSpec(sortIndex: Int) ->  ProposalSpec {
-        ProposalSpec(url: URL(string: raw_url)!, sha: sha, sortIndex: sortIndex)
+    func proposalSpec(project: Project, sortIndex: Int) ->  ProposalSpec {
+        ProposalSpec(project: project, url: URL(string: raw_url)!, sha: sha, sortIndex: sortIndex)
     }
 
 }
 
 struct GitHubFetcher {
-    
-    struct Endpoint {
-        private static let endpointBaseURL = URL(string: "https://api.github.com/repos/swiftlang/swift-evolution")!
-        static let githubMainBranchEndpoint = endpointBaseURL.appending(path:"branches/main")
-        static let githubIssuesEndpoint = endpointBaseURL.appending(path: "issues?since=2023-08-01T01:00:00Z&state=all")
-        static let githubProposalsEndpoint = endpointBaseURL.appending(path: "contents/proposals" )
-        static func githubPullEndpoint(for request: Int) -> URL {
-            endpointBaseURL.appending(path: "pulls/\(request)/files")
-                .appending(queryItems: [URLQueryItem(name: "per_page", value: "100")])
-        }
-    }
     
     static let gitHubTokenHeaderValue: String? = {
         if let githubToken = ProcessInfo.processInfo.environment["GITHUB_TOKEN"] {
@@ -116,25 +102,25 @@ struct GitHubFetcher {
         return String(decoding: data, as: UTF8.self)
     }
         
-    static func fetchMainBranch() async throws -> GitHubBranch {
+    static func fetchMainBranch(for project: Project) async throws -> GitHubBranch {
         // Always reload since a new commit may have occurred.
         // Caching for other calls is fine since the branch commit SHA is included in the requested URL
-        let branchInfo = try await getGitHubAPIValue(for: Endpoint.githubMainBranchEndpoint, type: GitHubBranch.self, cachePolicy: .reloadIgnoringLocalCacheData)
+        let branchInfo = try await getGitHubAPIValue(for: project.mainBranchEndpoint, type: GitHubBranch.self, cachePolicy: .reloadIgnoringLocalCacheData)
         return branchInfo
     }
     
     // Returns only content items that are Markdown files in the /proposals directory of the repo.
     // Filters out subdirectories and files without ".md" suffix.
-    static func fetchProposalContentItems(for reference: String? = nil) async throws -> [GitHubContentItem] {
-        var endpoint = Endpoint.githubProposalsEndpoint
+    static func fetchProposalContentItems(for project: Project, sha reference: String? = nil) async throws -> [GitHubContentItem] {
+        var endpoint = project.proposalListingEndpoint
         if let reference {
             endpoint.append(queryItems: [URLQueryItem(name: "ref", value: reference)])
         }
         return try await getGitHubAPIValue(for: endpoint, type: [GitHubContentItem].self).filter { $0.isMarkdownFile }
     }
 
-    static func fetchPullRequestProposalList(for pullNumber: Int) async throws -> [GitHubPullFileItem] {
-        let endpointURL = Endpoint.githubPullEndpoint(for: pullNumber)
+    static func fetchPullRequestProposalList(for project: Project, pullRequestNumber: Int) async throws -> [GitHubPullFileItem] {
+        let endpointURL = project.githubPullEndpoint(for: pullRequestNumber)
         let contents = try await getGitHubAPIValue(for: endpointURL, type: [GitHubPullFileItem].self)
         return contents.filter { $0.isProposalFile }
     }
