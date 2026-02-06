@@ -10,6 +10,16 @@ import Foundation
 import Markdown
 import EvolutionMetadataModel
 
+struct DocumentSource {
+    let proposalSpec: ProposalSpec
+    let document: Document
+}
+
+struct HeaderFieldSource {
+    let proposalSpec: ProposalSpec
+    let headerFieldsByLabel: [String : ListItem]
+}
+
 struct ProposalMetadataExtractor {
     
     /// Extracts the metadata from a Swift Evolution proposal
@@ -35,6 +45,7 @@ struct ProposalMetadataExtractor {
         }
         
         let document = Document(parsing: markdown, options: [.disableSmartOpts])
+        let documentSource = DocumentSource(proposalSpec: proposalSpec, document: document)
         
         guard !document.isEmpty else {
             proposal.errors = [.emptyMarkdownFile]
@@ -43,40 +54,41 @@ struct ProposalMetadataExtractor {
         
         // VALIDATION ENHANCEMENT: Currently no error or warning reported if missing title or summary.
         // Change to if lets to detect missing values and report.
-        proposal.title = extractValue(from: document, with: TitleExtractor.self) ?? ""
-        proposal.summary = extractValue(from: document, with: SummaryExtractor.self) ?? ""
+        proposal.title = extractValue(from: documentSource, with: TitleExtractor.self) ?? ""
+        proposal.summary = extractValue(from: documentSource, with: SummaryExtractor.self) ?? ""
         
-        if let headerFieldsByLabel = extractValue(from: document, with: HeaderFieldExtractor.self) {
-            
-            let proposalLink = extractValue(from: headerFieldsByLabel, with: ProposalLinkExtractor.self)
+        if let headerFieldsByLabel = extractValue(from: documentSource, with: HeaderFieldExtractor.self) {
+            let headerFieldsSource = HeaderFieldSource(proposalSpec: proposalSpec, headerFieldsByLabel: headerFieldsByLabel)
+
+            let proposalLink = extractValue(from: headerFieldsSource, with: ProposalLinkExtractor.self)
             proposal.id = proposalLink?.text ?? ""
             proposal.link = proposalLink?.destination ?? ""
             /* VALIDATION ENHANCEMENT: Probably also want to validate that the destination link matches the passed-in filename and the id matches the proposalID field */
             
-            if let authors = extractValue(from: headerFieldsByLabel, with: AuthorExtractor.self), !authors.isEmpty {
+            if let authors = extractValue(from: headerFieldsSource, with: AuthorExtractor.self), !authors.isEmpty {
                 proposal.authors = authors
             } else {
                 errors.append(.missingAuthors)
             }
             
-            if let reviewManagers = extractValue(from: headerFieldsByLabel, with: ReviewManagerExtractor.self), !reviewManagers.isEmpty {
+            if let reviewManagers = extractValue(from: headerFieldsSource, with: ReviewManagerExtractor.self), !reviewManagers.isEmpty {
                 proposal.reviewManagers = reviewManagers
             } else {
                 warnings.append(.missingReviewManagers)
             }
             
-            proposal.upcomingFeatureFlag = extractValue(from: headerFieldsByLabel, with: UpcomingFeatureFlagExtractor.self)
-            proposal.previousProposalIDs = extractValue(from: headerFieldsByLabel, with: PreviousProposalExtractor.self)
-            proposal.trackingBugs = extractValue(from: headerFieldsByLabel, with: TrackingBugExtractor.self)
-            proposal.implementation = extractValue(from: headerFieldsByLabel, with: ImplementationExtractor.self)
+            proposal.upcomingFeatureFlag = extractValue(from: headerFieldsSource, with: UpcomingFeatureFlagExtractor.self)
+            proposal.previousProposalIDs = extractValue(from: headerFieldsSource, with: PreviousProposalExtractor.self)
+            proposal.trackingBugs = extractValue(from: headerFieldsSource, with: TrackingBugExtractor.self)
+            proposal.implementation = extractValue(from: headerFieldsSource, with: ImplementationExtractor.self)
             
-            if let discussions = extractValue(from: (headerFieldsByLabel, proposalSpec.id), with: DiscussionExtractor.self) {
+            if let discussions = extractValue(from: headerFieldsSource, with: DiscussionExtractor.self) {
                 proposal.discussions = discussions
             } else {
                 errors.append(.missingReviewField)
             }
             
-            if let status = extractValue(from: (headerFieldsByLabel, extractionDate), with: StatusExtractor.self) {
+            if let status = extractValue(from: (headerFieldsSource, extractionDate), with: StatusExtractor.self) {
                 if case .implemented(let version) = status, version == "none" {
                     // VALIDATION ENHANCEMENT: Figure out a better way to special case the missing version strings for these proposals
                     // VALIDATION ENHANCEMENT: Possibly just add version strings to the actual proposals
