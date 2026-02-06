@@ -111,10 +111,10 @@ If validation errors are found the tool will exit with an error code.
 
 The validate command is intended to be run on pull requests to ensure malformed proposal files are not committed.
 
+Note that the `--pull-request` option has a limit of 100 changed files.
+
 ### Options
 The validate subcommand also has options that work similar to extract command options:
-- Use the `--pull-request` option to specify a pull request number to review.
-
 - Use the `--output-path` option (`-o`) to specify a different output location or filename.
 
 - Use the `--verbose` option (`-v`) for verbose output as the tool runs.
