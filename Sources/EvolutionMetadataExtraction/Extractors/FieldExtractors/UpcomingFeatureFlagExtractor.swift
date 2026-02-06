@@ -24,9 +24,9 @@ struct UpcomingFeatureFlagExtractor: MarkupWalker, ValueExtractor {
         }
     }
 
-    mutating func extractValue(from headerFieldsByLabel: [String : ListItem]) -> ExtractionResult<Proposal.UpcomingFeatureFlag> {
+    mutating func extractValue(from src: HeaderFieldSource) -> ExtractionResult<Proposal.UpcomingFeatureFlag> {
         
-        if let uffField = headerFieldsByLabel["Upcoming Feature Flag"] {
+        if let uffField = src.headerFieldsByLabel["Upcoming Feature Flag"] {
             visit(uffField)
             
             // validate that flag is extracted if header is present

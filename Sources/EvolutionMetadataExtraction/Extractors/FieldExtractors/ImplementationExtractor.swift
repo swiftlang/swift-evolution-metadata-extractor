@@ -20,8 +20,8 @@ struct ImplementationExtractor: MarkupWalker, ValueExtractor {
     }
     private var _implementaton: [Proposal.Implementation] = []
     
-    mutating func extractValue(from headerFieldsByLabel: [String : ListItem]) -> ExtractionResult<[Proposal.Implementation]> {
-        if let (_ , headerField) = headerFieldsByLabel[["Implementation", "Implementations"]] {
+    mutating func extractValue(from src: HeaderFieldSource) -> ExtractionResult<[Proposal.Implementation]> {
+        if let (_ , headerField) = src.headerFieldsByLabel[["Implementation", "Implementations"]] {
             visit(headerField)
         }
         // Implementation field is optional. Take no action / add no warning if it is not found

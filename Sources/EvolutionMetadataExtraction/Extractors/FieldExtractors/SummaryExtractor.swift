@@ -14,11 +14,11 @@ struct SummaryExtractor: ValueExtractor {
     private var warnings: [Proposal.Issue] = []
     private var errors: [Proposal.Issue] = []
     
-    func extractValue(from document: Document) -> ExtractionResult<String> {
+    func extractValue(from src: DocumentSource) -> ExtractionResult<String> {
                 
         var summary = ""
         var foundIntroduction = false
-        for child in document.children {
+        for child in src.document.children {
 
             // VALIDATION ENHANCEMENT: Potential for stricter validation of section heading and contents
             // https://github.com/swiftlang/swift-evolution-metadata-extractor/issues/77

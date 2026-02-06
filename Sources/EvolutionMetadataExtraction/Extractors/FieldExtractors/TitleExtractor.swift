@@ -14,11 +14,11 @@ struct TitleExtractor: ValueExtractor {
     private var warnings: [Proposal.Issue] = []
     private var errors: [Proposal.Issue] = []
     
-    mutating func extractValue(from document: Document) -> ExtractionResult<String> {
+    mutating func extractValue(from src: DocumentSource) -> ExtractionResult<String> {
         
         var title: String?
         
-        if let titleElement = document.child(at: 0) as? Heading {
+        if let titleElement = src.document.child(at: 0) as? Heading {
             
             // VALIDATION ENHANCEMENT: Add warning or error that the title is badly formatted in the markdown
 //            if titleElement.level != 1 {
