@@ -40,13 +40,13 @@ struct PersonExtractor: MarkupWalker {
         self.role = role
     }
     
-    mutating func personArray(from src: HeaderFieldSource) -> ExtractionResult<[Proposal.Person]> {
+    mutating func personArray(from source: HeaderFieldSource) -> ExtractionResult<[Proposal.Person]> {
         let headerLabels = switch role {
             case .author: ["Author", "Authors"]
             // VALIDATION ENHANCEMENT: Normalize capitalization to 'Review Manager'
             case .reviewManager: ["Review manager", "Review Manager", "Review managers", "Review Managers"]
         }
-        if let (_, headerField) = src.headerFieldsByLabel[headerLabels] {
+        if let (_, headerField) = source[headerLabels] {
             visit(headerField)
         }
         

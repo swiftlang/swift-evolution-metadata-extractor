@@ -18,6 +18,9 @@ struct DocumentSource {
 struct HeaderFieldSource {
     let proposalSpec: ProposalSpec
     let headerFieldsByLabel: [String : ListItem]
+    subscript(key: String) -> ListItem? { headerFieldsByLabel[key] }
+    subscript(key: [String]) -> (key: String, value: ListItem)? { headerFieldsByLabel[key] }
+    subscript(key: String...) -> (key: String, value: ListItem)? { headerFieldsByLabel[key] }
 }
 
 struct ProposalMetadataExtractor {
