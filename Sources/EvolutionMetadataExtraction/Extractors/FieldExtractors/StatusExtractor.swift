@@ -18,12 +18,12 @@ struct StatusExtractor: MarkupWalker, ValueExtractor {
     private var extractionDate: Date = Date()
     var status: Proposal.Status? = nil
     
-    mutating func extractValue(from sourceValues: (src: HeaderFieldSource, extractionDate: Date)) -> ExtractionResult<Proposal.Status> {
+    mutating func extractValue(from sourceValues: (source: HeaderFieldSource, extractionDate: Date)) -> ExtractionResult<Proposal.Status> {
         
         extractionDate = sourceValues.extractionDate
         
         // If 'Status' field not found, report
-        if let headerField = sourceValues.src.headerFieldsByLabel["Status"] {
+        if let headerField = sourceValues.source["Status"] {
             visit(headerField)
         }
         

@@ -19,9 +19,9 @@ struct PreviousProposalExtractor: MarkupWalker, ValueExtractor {
     }
     private var _previousProposalIDs: [String] = []
     
-    mutating func extractValue(from src: HeaderFieldSource) -> ExtractionResult<[String]> {
+    mutating func extractValue(from source: HeaderFieldSource) -> ExtractionResult<[String]> {
         
-        if let prevPropField = src.headerFieldsByLabel[["Previous Proposal", "Previous Proposals"]] {
+        if let prevPropField = source["Previous Proposal", "Previous Proposals"] {
             visit(prevPropField.value)
             
             // validate that if the header field is here at least one proposal ID was found

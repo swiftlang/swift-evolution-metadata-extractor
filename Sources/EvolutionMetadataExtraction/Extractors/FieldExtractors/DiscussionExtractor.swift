@@ -16,17 +16,17 @@ struct DiscussionExtractor: MarkupWalker, ValueExtractor {
     
     private var discussions: [Proposal.Discussion] = []
 
-    mutating func extractValue(from src: HeaderFieldSource) -> ExtractionResult<[Proposal.Discussion]> {
+    mutating func extractValue(from source: HeaderFieldSource) -> ExtractionResult<[Proposal.Discussion]> {
         
         // VALIDATION ENHANCEMENT: Normalize naming to 'Review' in the source proposals.
-        if let (_, headerField) = src.headerFieldsByLabel[["Review", "Reviews", "Decision Notes", "Decision notes"]] {
+        if let (_, headerField) = source["Review", "Reviews", "Decision Notes", "Decision notes"] {
             visit(headerField)
             
             // VALIDATION ENHANCEMENT: Correct proposals with known issues and remove special case logic.
             // Currently a fair number of older proposals are missing links to discussions or do not
             // format discussions correctly. Those issues should be corrected in the proposals themselves.
             // Once all of those issues are resolved, the legacy check can be removed.
-            if discussions.isEmpty && !Legacy.discussionExtractionFailures.contains(src.proposalSpec.id) {
+            if discussions.isEmpty && !Legacy.discussionExtractionFailures.contains(source.proposalSpec.id) {
                 errors.append(.discussionExtractionFailure)
             }
         } else {
@@ -35,7 +35,7 @@ struct DiscussionExtractor: MarkupWalker, ValueExtractor {
             // field for a variety of reasons. Those issues should be corrected in the proposals themselves.
             // Once all of those issues are resolved, the legacy check can be removed.
             // Note that some very early proposals may not have valid discussions be extracted.
-            if !Legacy.missingReviewFields.contains(src.proposalSpec.id) {
+            if !Legacy.missingReviewFields.contains(source.proposalSpec.id) {
                 errors.append(.missingReviewField)
             }
         }
