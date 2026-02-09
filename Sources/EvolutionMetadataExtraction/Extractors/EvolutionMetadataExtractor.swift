@@ -170,7 +170,7 @@ struct ProposalSpec: Sendable {
     let url: URL
     let sha: String
     let sortIndex: Int
-    var id: String { "SE-" + url.lastPathComponent.prefix(4) }
+    var id: String { "\(project.proposalPrefix)-\(url.lastPathComponent.prefix(4))" }
     var filename: String { url.lastPathComponent }
     
     init(project: Project, url: URL, sha: String, sortIndex: Int) {
