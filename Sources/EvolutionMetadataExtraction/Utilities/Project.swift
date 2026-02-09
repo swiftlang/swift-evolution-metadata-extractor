@@ -16,7 +16,7 @@ public final class Project: Sendable {
     let organization: String
     let repository: String
     let path: String
-    let projectPrefix: String
+    let proposalPrefix: String
     nonisolated(unsafe) let proposalRegex: Regex<Substring>
     let previousResultsURL: URL
     let defaultOutputFilename: String
@@ -25,12 +25,12 @@ public final class Project: Sendable {
     let proposalListingEndpoint: URL
     let validationExclusions: [Int:RangeSet<Int>]
     
-    private init(name: String, organization: String, repository: String, path: String, projectPrefix: String, proposalRegex: Regex<Substring>, previousResultsURL: URL, defaultOutputFilename: String, validationExclusions: [Int:RangeSet<Int>]) {
+    private init(name: String, organization: String, repository: String, path: String, proposalPrefix: String, proposalRegex: Regex<Substring>, previousResultsURL: URL, defaultOutputFilename: String, validationExclusions: [Int:RangeSet<Int>]) {
         self.name = name
         self.organization = organization
         self.repository = repository
         self.path = path
-        self.projectPrefix = projectPrefix
+        self.proposalPrefix = proposalPrefix
         self.proposalRegex = proposalRegex
         self.previousResultsURL = previousResultsURL
         self.defaultOutputFilename = defaultOutputFilename
@@ -55,7 +55,7 @@ public final class Project: Sendable {
         organization: "swiftlang",
         repository: "swift-evolution",
         path: "proposals",
-        projectPrefix: "SE-",
+        proposalPrefix: "SE",
         proposalRegex: /^SE-\d\d\d\d$/,
         previousResultsURL: URL(string: "https://download.swift.org/swift-evolution/v1/evolution.json")!,
         defaultOutputFilename: "evolution.json",
@@ -67,7 +67,7 @@ public final class Project: Sendable {
         organization: "swiftlang",
         repository: "swift-evolution",
         path: "proposals/testing",
-        projectPrefix: "ST-",
+        proposalPrefix: "ST",
         proposalRegex: /^ST-\d\d\d\d$/,
         previousResultsURL: URL(string: "https://download.swift.org/swift-evolution/v1/testing-evolution.json")!,
         defaultOutputFilename: "testing-evolution.json",
@@ -79,7 +79,7 @@ public final class Project: Sendable {
         organization: "swiftlang",
         repository: "swift-foundation",
         path: "Proposals",
-        projectPrefix: "SF-",
+        proposalPrefix: "SF",
         proposalRegex: /^SF-\d\d\d\d$/,
         previousResultsURL: URL(string: "https://download.swift.org/swift-evolution/v1/foundation-evolution.json")!,
         defaultOutputFilename: "foundation-evolution.json",
