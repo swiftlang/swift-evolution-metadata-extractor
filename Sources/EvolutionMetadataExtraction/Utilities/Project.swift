@@ -23,9 +23,9 @@ public final class Project: Sendable {
     private let endpointBaseURL: URL
     let mainBranchEndpoint: URL
     let proposalListingEndpoint: URL
-    let validationExclusions: [Int:RangeSet<Int>]
+    let validationExemptions: [Int:RangeSet<Int>]
     
-    private init(name: String, organization: String, repository: String, path: String, proposalPrefix: String, proposalRegex: Regex<Substring>, previousResultsURL: URL, defaultOutputFilename: String, validationExclusions: [Int:RangeSet<Int>]) {
+    private init(name: String, organization: String, repository: String, path: String, proposalPrefix: String, proposalRegex: Regex<Substring>, previousResultsURL: URL, defaultOutputFilename: String, validationExemptions: [Int:RangeSet<Int>]) {
         self.name = name
         self.organization = organization
         self.repository = repository
@@ -34,7 +34,7 @@ public final class Project: Sendable {
         self.proposalRegex = proposalRegex
         self.previousResultsURL = previousResultsURL
         self.defaultOutputFilename = defaultOutputFilename
-        self.validationExclusions = validationExclusions
+        self.validationExemptions = validationExemptions
 
         self.endpointBaseURL = URL(string: "https://api.github.com/repos/")!.appending(components: organization, repository)
         self.mainBranchEndpoint = endpointBaseURL.appending(path:"branches/main")
@@ -59,7 +59,7 @@ public final class Project: Sendable {
         proposalRegex: /^SE-\d\d\d\d$/,
         previousResultsURL: URL(string: "https://download.swift.org/swift-evolution/v1/evolution.json")!,
         defaultOutputFilename: "evolution.json",
-        validationExclusions: [:]
+        validationExemptions: [:]
     )
 
     public static let swiftTesting = Project(
@@ -71,7 +71,7 @@ public final class Project: Sendable {
         proposalRegex: /^ST-\d\d\d\d$/,
         previousResultsURL: URL(string: "https://download.swift.org/swift-evolution/v1/testing-evolution.json")!,
         defaultOutputFilename: "testing-evolution.json",
-        validationExclusions: [:]
+        validationExemptions: [:]
     )
 
     public static let foundation = Project(
@@ -83,6 +83,6 @@ public final class Project: Sendable {
         proposalRegex: /^SF-\d\d\d\d$/,
         previousResultsURL: URL(string: "https://download.swift.org/swift-evolution/v1/foundation-evolution.json")!,
         defaultOutputFilename: "foundation-evolution.json",
-        validationExclusions: [:]
+        validationExemptions: [:]
     )
 }
