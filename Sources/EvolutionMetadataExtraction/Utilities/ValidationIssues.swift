@@ -48,6 +48,12 @@ extension Proposal.Issue {
     // MARK: - Header Field Errors
 
     // MARK: - Proposal
+    static let missingProposalField = Proposal.Issue(
+        kind: .error,
+        code: 30,
+        message: "Missing proposal field."
+    )
+
     static let missingProposalIDLink = Proposal.Issue(
         kind: .error,
         code: 31,
