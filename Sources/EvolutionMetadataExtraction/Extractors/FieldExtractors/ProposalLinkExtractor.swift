@@ -19,7 +19,7 @@ struct ProposalLinkExtractor: MarkupWalker, ValueExtractor {
         if let headerField = source["Proposal"] {
             visit(headerField)
         } else {
-            errors.append(.missingProposalIDLink)
+            errors.append(.missingProposalField)
         }
         if let proposalLink {
             

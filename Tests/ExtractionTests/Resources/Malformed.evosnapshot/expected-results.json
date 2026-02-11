@@ -1196,6 +1196,61 @@
       },
       "summary" : "There are property implementation patterns that come up repeatedly. Rather than hardcode a fixed set of patterns into the compiler, we should provide a general \"property behavior\" mechanism to allow these patterns to be defined as libraries.",
       "title" : "Property Behaviors"
+    },
+    {
+      "authors" : [
+        {
+          "link" : "https:\/\/github.com\/DougGregor",
+          "name" : "Doug Gregor"
+        }
+      ],
+      "discussions" : [
+      ],
+      "errors" : [
+        {
+          "code" : 30,
+          "kind" : "error",
+          "message" : "Missing proposal field.",
+          "suggestion" : ""
+        },
+        {
+          "code" : 31,
+          "kind" : "error",
+          "message" : "Missing proposal ID link (SE-NNNN)[NNNN-filename.md].",
+          "suggestion" : ""
+        },
+        {
+          "code" : 110,
+          "kind" : "error",
+          "message" : "Missing Review field.",
+          "suggestion" : ""
+        }
+      ],
+      "id" : "",
+      "link" : "",
+      "reviewManagers" : [
+      ],
+      "sha" : "",
+      "status" : {
+        "state" : "implemented",
+        "version" : "2.2"
+      },
+      "summary" : "Argument labels are an important part of the interface of a Swift function, describing what particular arguments to the function do and improving readability. Sometimes, the most natural label for an argument coincides with a language keyword, such as `in`, `repeat`, or `defer`. Such keywords should be allowed as argument labels, allowing better expression of these interfaces.",
+      "title" : "Allow (most) keywords as argument labels",
+      "trackingBugs" : [
+        {
+          "id" : "SR-344",
+          "link" : "https:\/\/bugs.swift.org\/browse\/SR-344"
+        }
+      ],
+      "warnings" : [
+        {
+          "code" : 50,
+          "kind" : "warning",
+          "message" : "Missing review manager(s).",
+          "suggestion" : ""
+        }
+      ]
     }
   ],
   "schemaVersion" : "1.0.0",
