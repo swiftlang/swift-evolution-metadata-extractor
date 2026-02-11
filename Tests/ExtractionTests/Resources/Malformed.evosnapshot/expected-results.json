@@ -26,7 +26,7 @@
       ],
       "errors" : [
         {
-          "code" : 0,
+          "code" : 34,
           "kind" : "error",
           "message" : "Missing valid proposal ID; SE-0000 is reserved.",
           "suggestion" : ""
@@ -51,7 +51,7 @@
       ],
       "warnings" : [
         {
-          "code" : 0,
+          "code" : 50,
           "kind" : "warning",
           "message" : "Missing review manager(s).",
           "suggestion" : ""
@@ -69,7 +69,7 @@
       ],
       "errors" : [
         {
-          "code" : 0,
+          "code" : 31,
           "kind" : "error",
           "message" : "Missing proposal ID link (SE-NNNN)[NNNN-filename.md].",
           "suggestion" : ""
@@ -94,7 +94,7 @@
       ],
       "warnings" : [
         {
-          "code" : 0,
+          "code" : 50,
           "kind" : "warning",
           "message" : "Missing review manager(s).",
           "suggestion" : ""
@@ -108,7 +108,7 @@
       ],
       "errors" : [
         {
-          "code" : 0,
+          "code" : 3,
           "kind" : "error",
           "message" : "Missing list of metadata fields.",
           "suggestion" : ""
@@ -164,7 +164,7 @@
       "title" : "Removing `var` from Function Parameters",
       "warnings" : [
         {
-          "code" : 0,
+          "code" : 60,
           "kind" : "warning",
           "message" : "Status not found in the proposal's details list.",
           "suggestion" : ""
@@ -182,7 +182,7 @@
       ],
       "errors" : [
         {
-          "code" : 0,
+          "code" : 61,
           "kind" : "error",
           "message" : "Missing or invalid proposal status.",
           "suggestion" : ""
@@ -209,7 +209,7 @@
       "title" : "Remove the `++` and `--` operators",
       "warnings" : [
         {
-          "code" : 0,
+          "code" : 50,
           "kind" : "warning",
           "message" : "Missing review manager(s).",
           "suggestion" : ""
@@ -250,7 +250,7 @@
       "title" : "Better Translation of Objective-C APIs Into Swift",
       "warnings" : [
         {
-          "code" : 0,
+          "code" : 60,
           "kind" : "warning",
           "message" : "Status not found in the proposal's details list.",
           "suggestion" : ""
@@ -280,7 +280,7 @@
       ],
       "errors" : [
         {
-          "code" : 0,
+          "code" : 34,
           "kind" : "error",
           "message" : "Proposal ID link must be a relative link (SE-NNNN)[NNNN-filename.md].",
           "suggestion" : ""
@@ -309,7 +309,7 @@
       ],
       "errors" : [
         {
-          "code" : 0,
+          "code" : 2,
           "kind" : "error",
           "message" : "Proposal Markdown file is empty.",
           "suggestion" : ""
@@ -334,7 +334,7 @@
       ],
       "errors" : [
         {
-          "code" : 0,
+          "code" : 2,
           "kind" : "error",
           "message" : "Proposal Markdown file is empty.",
           "suggestion" : ""
@@ -367,7 +367,7 @@
       ],
       "errors" : [
         {
-          "code" : 0,
+          "code" : 1,
           "kind" : "error",
           "message" : "Proposal contains no content.",
           "suggestion" : ""
@@ -403,13 +403,13 @@
       ],
       "errors" : [
         {
-          "code" : 0,
+          "code" : 32,
           "kind" : "error",
           "message" : "Proposal ID must include four decimal digits.",
           "suggestion" : ""
         },
         {
-          "code" : 0,
+          "code" : 34,
           "kind" : "error",
           "message" : "Proposal ID link must be a relative link (SE-NNNN)[NNNN-filename.md].",
           "suggestion" : ""
@@ -441,7 +441,7 @@
       ],
       "errors" : [
         {
-          "code" : 0,
+          "code" : 40,
           "kind" : "error",
           "message" : "Missing author(s).",
           "suggestion" : ""
@@ -500,7 +500,7 @@
       "title" : "Remove Partial Application of Non-Final Super Methods (Swift 2.2)",
       "warnings" : [
         {
-          "code" : 0,
+          "code" : 63,
           "kind" : "warning",
           "message" : "Missing or invalid dates for a review period.",
           "suggestion" : ""
@@ -544,7 +544,7 @@
       ],
       "warnings" : [
         {
-          "code" : 0,
+          "code" : 63,
           "kind" : "warning",
           "message" : "Missing or invalid dates for a review period.",
           "suggestion" : ""
@@ -638,7 +638,7 @@
       ],
       "errors" : [
         {
-          "code" : 0,
+          "code" : 41,
           "kind" : "error",
           "message" : "Author name contains extra markup; expected a link with plaintext contents.",
           "suggestion" : ""
@@ -710,7 +710,7 @@
       ],
       "warnings" : [
         {
-          "code" : 0,
+          "code" : 33,
           "kind" : "warning",
           "message" : "Proposal ID contains extra markup; expected a link with plaintext contents.",
           "suggestion" : ""
@@ -757,7 +757,7 @@
       "title" : "Swift Language Version Build Configuration",
       "warnings" : [
         {
-          "code" : 0,
+          "code" : 80,
           "kind" : "warning",
           "message" : "Implementation links to a non-Swift repository.",
           "suggestion" : ""
@@ -794,7 +794,7 @@
       "title" : "Naming Functions with Argument Labels",
       "warnings" : [
         {
-          "code" : 0,
+          "code" : 80,
           "kind" : "warning",
           "message" : "Implementation links to a non-Swift repository.",
           "suggestion" : ""
@@ -839,7 +839,7 @@
       "title" : "Referencing the Objective-C selector of a method",
       "warnings" : [
         {
-          "code" : 0,
+          "code" : 53,
           "kind" : "warning",
           "message" : "Review manager's link doesn't refer to a GitHub profile. Link removed.",
           "suggestion" : ""
@@ -908,7 +908,7 @@
       "title" : "API Design Guidelines",
       "warnings" : [
         {
-          "code" : 0,
+          "code" : 43,
           "kind" : "warning",
           "message" : "Author's link doesn't refer to a GitHub profile. Link removed.",
           "suggestion" : ""
@@ -1024,7 +1024,7 @@
       ],
       "errors" : [
         {
-          "code" : 0,
+          "code" : 90,
           "kind" : "error",
           "message" : "Failed to extract upcoming feature flag.",
           "suggestion" : ""
@@ -1060,7 +1060,7 @@
       ],
       "errors" : [
         {
-          "code" : 0,
+          "code" : 91,
           "kind" : "error",
           "message" : "Upcoming feature flag should not contain whitespace.",
           "suggestion" : ""
@@ -1096,7 +1096,7 @@
       ],
       "errors" : [
         {
-          "code" : 0,
+          "code" : 100,
           "kind" : "error",
           "message" : "Failed to extract previous proposal IDs.",
           "suggestion" : ""
@@ -1135,7 +1135,7 @@
       ],
       "errors" : [
         {
-          "code" : 0,
+          "code" : 110,
           "kind" : "error",
           "message" : "Missing Review field.",
           "suggestion" : ""
@@ -1176,7 +1176,7 @@
       ],
       "errors" : [
         {
-          "code" : 0,
+          "code" : 111,
           "kind" : "error",
           "message" : "Failed to extract discussions from Review field.",
           "suggestion" : ""

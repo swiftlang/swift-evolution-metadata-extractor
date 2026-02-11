@@ -35,7 +35,7 @@
       ],
       "warnings" : [
         {
-          "code" : 0,
+          "code" : 50,
           "kind" : "warning",
           "message" : "Missing review manager(s).",
           "suggestion" : ""
@@ -72,7 +72,7 @@
       "title" : "Removing currying `func` declaration syntax",
       "warnings" : [
         {
-          "code" : 0,
+          "code" : 50,
           "kind" : "warning",
           "message" : "Missing review manager(s).",
           "suggestion" : ""
@@ -146,7 +146,7 @@
       "title" : "Remove the `++` and `--` operators",
       "warnings" : [
         {
-          "code" : 0,
+          "code" : 50,
           "kind" : "warning",
           "message" : "Missing review manager(s).",
           "suggestion" : ""
@@ -20312,7 +20312,7 @@
       ],
       "warnings" : [
         {
-          "code" : 0,
+          "code" : 63,
           "kind" : "warning",
           "message" : "Missing or invalid dates for a review period.",
           "suggestion" : ""
@@ -20370,7 +20370,7 @@
       ],
       "warnings" : [
         {
-          "code" : 0,
+          "code" : 53,
           "kind" : "warning",
           "message" : "Review manager's link doesn't refer to a GitHub profile. Link removed.",
           "suggestion" : ""
@@ -20404,7 +20404,7 @@
       "title" : "Section Placement Control",
       "warnings" : [
         {
-          "code" : 0,
+          "code" : 50,
           "kind" : "warning",
           "message" : "Missing review manager(s).",
           "suggestion" : ""
@@ -20570,7 +20570,7 @@
       "title" : "C compatible functions and enums",
       "warnings" : [
         {
-          "code" : 0,
+          "code" : 63,
           "kind" : "warning",
           "message" : "Missing or invalid dates for a review period.",
           "suggestion" : ""
