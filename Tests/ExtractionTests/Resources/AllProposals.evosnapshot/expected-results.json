@@ -1,6 +1,6 @@
 {
-  "commit" : "c8b652bedceb4abda7c80db111c3f5b4293c5145",
-  "creationDate" : "2026-01-20T18:10:36Z",
+  "commit" : "6fb1b122d9fef06d239aa7d8e91e648d7d063515",
+  "creationDate" : "2026-02-11T18:35:05Z",
   "implementationVersions" : [
     "2.2", "3.0", "3.0.1", "3.1", "4.0", "4.1", "4.2", "5.0", "5.1", "5.2",
     "5.3", "5.4", "5.5", "5.5.2", "5.6", "5.7", "5.8", "5.9", "5.9.2", "5.10",
@@ -35,7 +35,7 @@
       ],
       "warnings" : [
         {
-          "code" : 0,
+          "code" : 50,
           "kind" : "warning",
           "message" : "Missing review manager(s).",
           "suggestion" : ""
@@ -72,7 +72,7 @@
       "title" : "Removing currying `func` declaration syntax",
       "warnings" : [
         {
-          "code" : 0,
+          "code" : 50,
           "kind" : "warning",
           "message" : "Missing review manager(s).",
           "suggestion" : ""
@@ -146,7 +146,7 @@
       "title" : "Remove the `++` and `--` operators",
       "warnings" : [
         {
-          "code" : 0,
+          "code" : 50,
           "kind" : "warning",
           "message" : "Missing review manager(s).",
           "suggestion" : ""
@@ -19431,7 +19431,7 @@
           "name" : "Tony Allevato"
         }
       ],
-      "sha" : "1d266bfba4043e93f869677a68b43a4a959a419e",
+      "sha" : "021c820e817f5d52ba7192ea2af5585d18402341",
       "status" : {
         "state" : "implemented",
         "version" : "6.2"
@@ -19476,9 +19476,10 @@
           "name" : "John McCall"
         }
       ],
-      "sha" : "c674352d3ccf833b766cb693158660cd6b125d9c",
+      "sha" : "e4896dba5f1a703cf80d787018a1252334353abe",
       "status" : {
-        "state" : "accepted"
+        "state" : "implemented",
+        "version" : "6.3"
       },
       "summary" : "[SE-0329: Clock, Instant, and Duration](https:\/\/github.com\/swiftlang\/swift-evolution\/blob\/main\/proposals\/0329-clock-instant-duration.md) introduced three concrete clock types: `SuspendingClock`, `ContinuousClock`, and `UTCClock`. While not all clocks have a meaningful concept of a reference or zero instant, `SuspendingClock` and `ContinuousClock` do, and having access to it can be useful.",
       "title" : "Clock Epochs"
@@ -19564,9 +19565,10 @@
           "name" : "Freddy Kellison-Linn"
         }
       ],
-      "sha" : "7690394895b9dc5c6bd832216b5e5e31b99724e1",
+      "sha" : "cef9ae6e18641fbc43949c1c3e1da06f0f49724b",
       "status" : {
-        "state" : "accepted"
+        "state" : "implemented",
+        "version" : "6.2"
       },
       "summary" : "Observation was introduced to add the ability to observe changes in graphs of objects. The initial tools for observation afforded seamless integration into SwiftUI, however aiding SwiftUI is not the only intent of the module - it is more general than that. This proposal describes a new safe, ergonomic and composable way to observe changes to models using an AsyncSequence, starting transactions at the first willSet and then emitting a value upon that transaction end at the first point of consistency by interoperating with Swift Concurrency.",
       "title" : "Transactional Observation of Values"
@@ -20322,11 +20324,11 @@
       "link" : "0491-module-selectors.md",
       "reviewManagers" : [
         {
-          "link" : "",
+          "link" : "https:\/\/github.com\/Jumhyn",
           "name" : "Freddy Kellison-Linn"
         }
       ],
-      "sha" : "ad86323f3b2f0adfd13edff6f43132e258fcadd1",
+      "sha" : "99c0d956161e13d89b696d2e125bb5a3525e8c20",
       "status" : {
         "state" : "accepted"
       },
@@ -20336,14 +20338,6 @@
         {
           "id" : "swiftlang\/swift#53580",
           "link" : "https:\/\/github.com\/swiftlang\/swift\/issues\/53580"
-        }
-      ],
-      "warnings" : [
-        {
-          "code" : 0,
-          "kind" : "warning",
-          "message" : "Review manager's link doesn't refer to a GitHub profile. Link removed.",
-          "suggestion" : ""
         }
       ]
     },
@@ -20367,21 +20361,17 @@
       "id" : "SE-0492",
       "link" : "0492-section-control.md",
       "reviewManagers" : [
+        {
+          "link" : "https:\/\/github.com\/DougGregor\/",
+          "name" : "Doug Gregor"
+        }
       ],
-      "sha" : "ee851e5af1d73c5c1bb0917fb5fe41bc468e7110",
+      "sha" : "33206f250c9ed243bf8849d867e65799f813f2fe",
       "status" : {
         "state" : "accepted"
       },
       "summary" : "This proposal adds `@section` and `@used` attributes which can be applied to global variables. These allow users to directly control which section of the resulting binary should global variables be emitted into, and give users the ability to disable DCE (dead code elimination) on those. The goal is to enable systems and embedded programming use cases like runtime discovery of test metadata from multiple modules, and also to serve as a low-level building block for higher-level features (e.g. linker sets, plugins).",
-      "title" : "Section Placement Control",
-      "warnings" : [
-        {
-          "code" : 0,
-          "kind" : "warning",
-          "message" : "Missing review manager(s).",
-          "suggestion" : ""
-        }
-      ]
+      "title" : "Section Placement Control"
     },
     {
       "authors" : [
@@ -20668,7 +20658,7 @@
           "name" : "Steve Canon"
         }
       ],
-      "sha" : "e71a7cb44df72f7f2a7bb9ea196394c21b396460",
+      "sha" : "1a3e9ca4c53de03a3a6e98b53d6ac8b5f7157348",
       "status" : {
         "state" : "accepted"
       },
@@ -20824,6 +20814,10 @@
         {
           "link" : "https:\/\/forums.swift.org\/t\/se-0502-exclude-private-initialized-properties-from-memberwise-initializer\/84022",
           "name" : "review"
+        },
+        {
+          "link" : "https:\/\/forums.swift.org\/t\/accepted-with-modifications-se-0502-exclude-private-initialized-properties-from-memberwise-initializer\/84565",
+          "name" : "acceptance"
         }
       ],
       "id" : "SE-0502",
@@ -20842,11 +20836,9 @@
           "name" : "Tony Allevato"
         }
       ],
-      "sha" : "80c1885909e86fed84fe27fe813c2d74f61e87bf",
+      "sha" : "a2348683fb407f29d8a5789ddea4eca8a590f6e1",
       "status" : {
-        "end" : "2026-01-22T00:00:00Z",
-        "start" : "2026-01-08T00:00:00Z",
-        "state" : "activeReview"
+        "state" : "accepted"
       },
       "summary" : "We propose changing the rules for the implicit memberwise initializer such that it does not include properties with initial values that are less accessible than the most accessible property in the initializer, up to `internal`. This ensures that the resulting memberwise initializer is not unnecessarily forced to be `private` when introducing a new `private` property with an initial value.",
       "title" : "Exclude private initialized properties from memberwise initializer"
@@ -20887,7 +20879,15 @@
         "state" : "activeReview"
       },
       "summary" : "An associated type defines a generic type in a protocol. You use them to help define the protocol's requirements. This Queue has two associated types, Element and Allocator:",
-      "title" : "Suppressed Default Conformances on Associated Types With Defaults"
+      "title" : "Suppressed Default Conformances on Associated Types With Defaults",
+      "warnings" : [
+        {
+          "code" : 0,
+          "kind" : "warning",
+          "message" : "Review ended on 2026-01-25 00:00:00 +0000.",
+          "suggestion" : ""
+        }
+      ]
     },
     {
       "authors" : [
@@ -20904,6 +20904,10 @@
         {
           "link" : "https:\/\/forums.swift.org\/t\/se-0504-task-cancellation-shields\/84095",
           "name" : "review"
+        },
+        {
+          "link" : "https:\/\/forums.swift.org\/t\/accepted-se-0504-task-cancellation-shields\/84667",
+          "name" : "acceptance"
         }
       ],
       "id" : "SE-0504",
@@ -20922,11 +20926,9 @@
           "name" : "John McCall"
         }
       ],
-      "sha" : "3a48413896f7d97a425e988ca6dcf8a494a0d8a2",
+      "sha" : "ff509ee92ecb8188f10b312bffd55bc8185cf6ae",
       "status" : {
-        "end" : "2026-01-26T00:00:00Z",
-        "start" : "2026-01-12T00:00:00Z",
-        "state" : "activeReview"
+        "state" : "accepted"
       },
       "summary" : "This proposal introduces a new mechanism to temporarily \"ignore\" task cancellation, called task cancellation shields.",
       "title" : "Task Cancellation Shields"
@@ -20971,7 +20973,15 @@
         "state" : "activeReview"
       },
       "summary" : "(This was previously pitched as part of the Custom Main and Global Executors proposal, but has been split out into a separate proposal here.)",
-      "title" : "Delayed Enqueuing for Executors"
+      "title" : "Delayed Enqueuing for Executors",
+      "warnings" : [
+        {
+          "code" : 0,
+          "kind" : "warning",
+          "message" : "Review ended on 2026-01-27 00:00:00 +0000.",
+          "suggestion" : ""
+        }
+      ]
     },
     {
       "authors" : [
@@ -20990,26 +21000,18 @@
           "name" : "review"
         }
       ],
-      "errors" : [
-        {
-          "code" : 0,
-          "kind" : "error",
-          "message" : "Proposal ID link must be a relative link (SE-NNNN)[NNNN-filename.md].",
-          "suggestion" : ""
-        }
-      ],
       "id" : "SE-0506",
-      "link" : "",
+      "link" : "0506-advanced-observation-tracking.md",
       "reviewManagers" : [
         {
           "link" : "https:\/\/github.com\/stephentyrone",
           "name" : "Steve Canon"
         }
       ],
-      "sha" : "62dbe82f531e74ab0f4aaf0e8f43cd78d31c691d",
+      "sha" : "1a1f136c1aebcae19e968f8465f6d612e7bbde2d",
       "status" : {
-        "end" : "",
-        "start" : "",
+        "end" : "2026-02-03T00:00:00Z",
+        "start" : "2026-01-20T00:00:00Z",
         "state" : "activeReview"
       },
       "summary" : "Observation has one primary public entry point for observing the changes to `@Observable` types. This proposal adds two new versions that allow more fine-grained control and advanced behaviors. In particular, it is not intended to be a natural progression for all users of Observation, but instead a set of specialized tools for advanced use cases such as developing middleware infrastructure or the underpinnings to widgeting systems. Most developers using Observation will still be best served by using the `@Observable` macro and possibly in conjunction with the `Observations` type for iterating transactional values. However, in the advanced use cases where it is needed, this proposal fills a much needed gap.",
@@ -21018,8 +21020,228 @@
         {
           "code" : 0,
           "kind" : "warning",
-          "message" : "Missing or invalid dates for a review period.",
+          "message" : "Review ended on 2026-02-03 00:00:00 +0000.",
           "suggestion" : ""
+        }
+      ]
+    },
+    {
+      "authors" : [
+        {
+          "link" : "https:\/\/github.com\/meg-gupta",
+          "name" : "Meghana Gupta"
+        },
+        {
+          "link" : "https:\/\/github.com\/tbkka",
+          "name" : "Tim Kientzle"
+        }
+      ],
+      "discussions" : [
+        {
+          "link" : "https:\/\/forums.swift.org\/t\/se-0507-borrow-and-mutate-accessors\/84376",
+          "name" : "review"
+        },
+        {
+          "link" : "https:\/\/forums.swift.org\/t\/pitch-borrowing-accessors\/83933",
+          "name" : "pitch"
+        }
+      ],
+      "id" : "SE-0507",
+      "link" : "0507-borrow-accessors.md",
+      "reviewManagers" : [
+        {
+          "link" : "https:\/\/github.com\/DougGregor\/",
+          "name" : "Doug Gregor"
+        }
+      ],
+      "sha" : "19cd6248e329c5cf038bbe43da289dbad7b28481",
+      "status" : {
+        "end" : "2026-02-09T00:00:00Z",
+        "start" : "2026-01-26T00:00:00Z",
+        "state" : "activeReview"
+      },
+      "summary" : "Borrowing accessors — introduced with the new keywords `borrow` and `mutate` — allow implementing computed properties and subscripts using *borrowing semantics*.  These augment the existing `get`, `set`, `yielding borrow`, and `yielding mutate` accessors to complete the design described in the “Prospective Vision for Accessors”: https:\/\/forums.swift.org\/t\/prospective-vision-accessors\/76707",
+      "title" : "Borrow and Mutate Accessors",
+      "warnings" : [
+        {
+          "code" : 0,
+          "kind" : "warning",
+          "message" : "Review ended on 2026-02-09 00:00:00 +0000.",
+          "suggestion" : ""
+        }
+      ]
+    },
+    {
+      "authors" : [
+        {
+          "link" : "https:\/\/github.com\/calda",
+          "name" : "Cal Stephens"
+        }
+      ],
+      "discussions" : [
+        {
+          "link" : "https:\/\/forums.swift.org\/t\/support-trailing-closure-syntax-for-single-argument-array-and-dictionary-initializers\/83900",
+          "name" : "pitch"
+        },
+        {
+          "link" : "https:\/\/forums.swift.org\/t\/se-0508-array-expression-trailing-closures\/84479",
+          "name" : "review"
+        }
+      ],
+      "id" : "SE-0508",
+      "implementation" : [
+        {
+          "account" : "swiftlang",
+          "id" : "86244",
+          "repository" : "swift",
+          "type" : "pull"
+        }
+      ],
+      "link" : "0508-array-expression-trailing-closures.md",
+      "reviewManagers" : [
+        {
+          "link" : "https:\/\/github.com\/xwu",
+          "name" : "Xiaodi Wu"
+        }
+      ],
+      "sha" : "3bec402f02c44d2c6b2e8d7754d082a6a27349f5",
+      "status" : {
+        "end" : "2026-02-12T00:00:00Z",
+        "start" : "2026-01-30T00:00:00Z",
+        "state" : "activeReview"
+      },
+      "summary" : "We add support for using trailing closures following array types in expressions.",
+      "title" : "Array expression trailing closures"
+    },
+    {
+      "authors" : [
+        {
+          "link" : "https:\/\/github.com\/echeng3805",
+          "name" : "Ev Cheng"
+        }
+      ],
+      "discussions" : [
+        {
+          "link" : "https:\/\/forums.swift.org\/t\/pitch-software-bill-of-materials-sbom-generation-for-swift-package-manager\/83499",
+          "name" : "pitch"
+        },
+        {
+          "link" : "https:\/\/forums.swift.org\/t\/se-0509-software-bill-of-materials-sbom-generation-for-swift-package-manager\/84516",
+          "name" : "review"
+        }
+      ],
+      "id" : "SE-0509",
+      "implementation" : [
+        {
+          "account" : "swiftlang",
+          "id" : "9633",
+          "repository" : "swift-package-manager",
+          "type" : "pull"
+        }
+      ],
+      "link" : "0509-swift-sboms-via-swiftpm.md",
+      "reviewManagers" : [
+        {
+          "link" : "https:\/\/github.com\/FranzBusch",
+          "name" : "Franz Busch"
+        }
+      ],
+      "sha" : "5114738d93d28d9bebf2f2f178508b7ab19ed54d",
+      "status" : {
+        "end" : "2026-02-16T00:00:00Z",
+        "start" : "2026-02-02T00:00:00Z",
+        "state" : "activeReview"
+      },
+      "summary" : "An SBOM (Software Bill of Materials) provides a detailed inventory of software components included in an artifact. SBOMs allow developers to improve and analyze the software supply chain security profile for their Swift projects (for example, determining whether a dependency that's being used has a vulnerability). Also, some companies, governments, and other regulatory bodies require SBOMs to be produced for auditing purposes.",
+      "title" : "Software Bill of Materials (SBOM) Generation for Swift Package Manager"
+    },
+    {
+      "authors" : [
+        {
+          "link" : "https:\/\/github.com\/tayloraswift",
+          "name" : "Diana Ma"
+        }
+      ],
+      "discussions" : [
+        {
+          "link" : "https:\/\/forums.swift.org\/t\/giving-dictionary-mapvalues-access-to-the-associated-key\/83904",
+          "name" : "pitch"
+        },
+        {
+          "link" : "https:\/\/forums.swift.org\/t\/se-0510-dictionary-mapvalueswithkeys\/84547",
+          "name" : "review"
+        }
+      ],
+      "id" : "SE-0510",
+      "implementation" : [
+        {
+          "account" : "swiftlang",
+          "id" : "86268",
+          "repository" : "swift",
+          "type" : "pull"
+        }
+      ],
+      "link" : "0510-dictionary-mapvalues-with-keys.md",
+      "reviewManagers" : [
+        {
+          "link" : "https:\/\/github.com\/stephentyrone",
+          "name" : "Steve Canon"
+        }
+      ],
+      "sha" : "fd2c5b0734826ae8cb766776d83cdd81d1561664",
+      "status" : {
+        "end" : "2026-02-17T00:00:00Z",
+        "start" : "2026-02-03T00:00:00Z",
+        "state" : "activeReview"
+      },
+      "summary" : "I propose adding a method `Dictionary.mapValuesWithKeys` that passes the `Key` to the transformation closure.",
+      "title" : "Introduce `Dictionary.mapValuesWithKeys`"
+    },
+    {
+      "authors" : [
+        {
+          "link" : "https:\/\/github.com\/hi2gage",
+          "name" : "Gage Halverson"
+        }
+      ],
+      "discussions" : [
+        {
+          "link" : "https:\/\/forums.swift.org\/t\/proposal-swift-package-add-target-plugin-command-to-swiftpm\/77930",
+          "name" : "Pitch"
+        },
+        {
+          "link" : "https:\/\/forums.swift.org\/t\/se-0511-swiftpm-add-target-plugin-command\/84587",
+          "name" : "Review"
+        }
+      ],
+      "id" : "SE-0511",
+      "implementation" : [
+        {
+          "account" : "swiftlang",
+          "id" : "8432",
+          "repository" : "swift-package-manager",
+          "type" : "pull"
+        }
+      ],
+      "link" : "0511-swiftpm-add-target-plugin.md",
+      "reviewManagers" : [
+        {
+          "link" : "https:\/\/github.com\/mikaelacaron",
+          "name" : "Mikaela Caron"
+        }
+      ],
+      "sha" : "04fc2c8ef7959ddad150b8714148bff504c25d7c",
+      "status" : {
+        "end" : "2026-02-19T00:00:00Z",
+        "start" : "2026-02-05T00:00:00Z",
+        "state" : "activeReview"
+      },
+      "summary" : "This proposal introduces a new `swift package add-target-plugin` command that allows developers to add plugin usages to existing targets in their `Package.swift` manifest directly from the command line.",
+      "title" : "SwiftPM Add Target Plugin Command",
+      "trackingBugs" : [
+        {
+          "id" : "swiftlang\/swift-package-manager#8169",
+          "link" : "https:\/\/github.com\/swiftlang\/swift-package-manager\/issues\/8169"
         }
       ]
     }
