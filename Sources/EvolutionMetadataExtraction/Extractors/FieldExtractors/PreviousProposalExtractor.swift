@@ -10,16 +10,19 @@ import Markdown
 import EvolutionMetadataModel
 
 struct PreviousProposalExtractor: MarkupWalker, ValueExtractor {
-    
+
+    private var source: HeaderFieldSource
+    init(source: HeaderFieldSource) { self.source = source }
+
     private var warnings: [Proposal.Issue] = []
     private var errors: [Proposal.Issue] = []
-    
+
     private var previousProposalIDs: [String]? {
         _previousProposalIDs.isEmpty ? nil : _previousProposalIDs
     }
     private var _previousProposalIDs: [String] = []
-    
-    mutating func extractValue(from source: HeaderFieldSource) -> ExtractionResult<[String]> {
+
+    mutating func extractValue() -> ExtractionResult<[String]> {
         
         if let prevPropField = source["Previous Proposal", "Previous Proposals"] {
             visit(prevPropField.value)

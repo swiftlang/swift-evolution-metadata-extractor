@@ -11,11 +11,15 @@ import EvolutionMetadataModel
 
 struct ProposalLinkExtractor: MarkupWalker, ValueExtractor {
     
-    private var proposalLink: LinkInfo? = nil
+    private var source: HeaderFieldSource
+    init(source: HeaderFieldSource) { self.source = source }
+
     private var warnings: [Proposal.Issue] = []
     private var errors: [Proposal.Issue] = []
-    
-    mutating func extractValue(from source: HeaderFieldSource) -> ExtractionResult<LinkInfo> {
+
+    private var proposalLink: LinkInfo? = nil
+
+    mutating func extractValue() -> ExtractionResult<LinkInfo> {
         if let headerField = source["Proposal"] {
             visit(headerField)
         } else {
@@ -35,7 +39,7 @@ struct ProposalLinkExtractor: MarkupWalker, ValueExtractor {
                     errors.append(.reservedProposalID)
                 }
                 
-                if !proposalLink.text.contains(source.proposalSpec.project.proposalRegex) {
+                if !proposalLink.text.contains(source.project.proposalRegex) {
                     self.proposalLink?.destination = "" // Do not include an incorrect destination
                     errors.append(.proposalIDWrongDigitCount)
                 }
@@ -54,10 +58,6 @@ struct ProposalLinkExtractor: MarkupWalker, ValueExtractor {
     }
     
     mutating func visitLink(_ link: Link) -> () {
-        guard let value = LinkInfo(link: link) else {
-            errors.append(.missingProposalIDLink)
-            return
-        }
-        proposalLink = value
+        proposalLink = LinkInfo(link: link)
     }
 }
