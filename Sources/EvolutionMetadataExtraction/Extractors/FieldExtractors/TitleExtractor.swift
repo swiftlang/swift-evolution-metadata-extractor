@@ -14,9 +14,7 @@ struct TitleExtractor: ValueExtractor {
     private var source: DocumentSource
     init(source: DocumentSource) { self.source = source }
 
-    private var warnings: [Proposal.Issue] = []
-    private var errors: [Proposal.Issue] = []
-
+    private var issues = IssueWrapper()
     mutating func extractValue() -> ExtractionResult<String> {
         
         var title: String?
@@ -30,9 +28,9 @@ struct TitleExtractor: ValueExtractor {
             title = titleElement.plainText
             
         } else {
-            errors.append(.proposalContainsNoContent)
+            issues.reportIssue(.proposalContainsNoContent, source: source)
         }
-        return ExtractionResult(value: title, warnings: warnings, errors: errors)
+        return ExtractionResult(value: title, warnings: issues.warnings, errors: issues.errors)
         
     }
 }

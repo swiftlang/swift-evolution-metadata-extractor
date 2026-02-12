@@ -14,9 +14,7 @@ struct DiscussionExtractor: MarkupWalker, ValueExtractor {
     private var source: HeaderFieldSource
     init(source: HeaderFieldSource) { self.source = source }
 
-    private var warnings: [Proposal.Issue] = []
-    private var errors: [Proposal.Issue] = []
-    
+    private var issues = IssueWrapper()
     private var discussions: [Proposal.Discussion] = []
 
     mutating func extractValue() -> ExtractionResult<[Proposal.Discussion]> {
@@ -30,7 +28,7 @@ struct DiscussionExtractor: MarkupWalker, ValueExtractor {
             // format discussions correctly. Those issues should be corrected in the proposals themselves.
             // Once all of those issues are resolved, the legacy check can be removed.
             if discussions.isEmpty && !Legacy.discussionExtractionFailures.contains(source.proposalSpec.id) {
-                errors.append(.discussionExtractionFailure)
+                issues.reportIssue(.discussionExtractionFailure, source: source)
             }
         } else {
             // VALIDATION ENHANCEMENT: Add field to proposals with missing field and remove special case logic.
@@ -39,7 +37,7 @@ struct DiscussionExtractor: MarkupWalker, ValueExtractor {
             // Once all of those issues are resolved, the legacy check can be removed.
             // Note that some very early proposals may not have valid discussions be extracted.
             if !Legacy.missingReviewFields.contains(source.proposalSpec.id) {
-                errors.append(.missingReviewField)
+                issues.reportIssue(.missingReviewField, source: source)
             }
         }
         
@@ -52,7 +50,7 @@ struct DiscussionExtractor: MarkupWalker, ValueExtractor {
         //   - non-standard discussion names
         // - Formatting (in parenthesis, separated by comma, etc.
         
-        return ExtractionResult(value: discussions, warnings: warnings, errors: errors)
+        return ExtractionResult(value: discussions, warnings: issues.warnings, errors: issues.errors)
     }
     
     // Existing proposals with known validation errors.
@@ -73,7 +71,7 @@ struct DiscussionExtractor: MarkupWalker, ValueExtractor {
         if let discussionURL = linkInfo.swiftForumsDestination {
             discussions.append(Proposal.Discussion(name: linkInfo.text, link: discussionURL))
         } else {
-            warnings.append(.invalidDiscussionLink)
+            issues.reportIssue(.invalidDiscussionLink, source: source)
         }
     }
 }

@@ -14,9 +14,7 @@ struct PreviousProposalExtractor: MarkupWalker, ValueExtractor {
     private var source: HeaderFieldSource
     init(source: HeaderFieldSource) { self.source = source }
 
-    private var warnings: [Proposal.Issue] = []
-    private var errors: [Proposal.Issue] = []
-
+    private var issues = IssueWrapper()
     private var previousProposalIDs: [String]? {
         _previousProposalIDs.isEmpty ? nil : _previousProposalIDs
     }
@@ -29,11 +27,11 @@ struct PreviousProposalExtractor: MarkupWalker, ValueExtractor {
             
             // validate that if the header field is here at least one proposal ID was found
             if _previousProposalIDs.isEmpty {
-                errors.append(.previousProposalIDsExtractionFailure)
+                issues.reportIssue(.previousProposalIDsExtractionFailure, source: source)
             }
         }
         
-        return ExtractionResult(value: previousProposalIDs, warnings: warnings, errors: errors)
+        return ExtractionResult(value: previousProposalIDs, warnings: issues.warnings, errors: issues.errors)
     }
     
     mutating func visitText(_ text: Text) -> () {

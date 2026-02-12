@@ -14,21 +14,19 @@ struct ProposalLinkExtractor: MarkupWalker, ValueExtractor {
     private var source: HeaderFieldSource
     init(source: HeaderFieldSource) { self.source = source }
 
-    private var warnings: [Proposal.Issue] = []
-    private var errors: [Proposal.Issue] = []
-
+    private var issues = IssueWrapper()
     private var proposalLink: LinkInfo? = nil
 
     mutating func extractValue() -> ExtractionResult<LinkInfo> {
         if let headerField = source["Proposal"] {
             visit(headerField)
         } else {
-            errors.append(.missingProposalField)
+            issues.reportIssue(.missingProposalField, source: source)
         }
         if let proposalLink {
             
             if !proposalLink.containsTextElement {
-                warnings.append(.proposalIDHasExtraMarkup)
+                issues.reportIssue(.proposalIDHasExtraMarkup, source: source)
             }
             
             // VALIDATION ENHANCEMENT: To match legacy behavior, if ID has extra markup, the
@@ -36,25 +34,25 @@ struct ProposalLinkExtractor: MarkupWalker, ValueExtractor {
             if !proposalLink.text.isEmpty {
                 
                 if proposalLink.text == "SE-0000" {
-                    errors.append(.reservedProposalID)
+                    issues.reportIssue(.reservedProposalID, source: source)
                 }
                 
                 if !proposalLink.text.contains(source.project.proposalRegex) {
                     self.proposalLink?.destination = "" // Do not include an incorrect destination
-                    errors.append(.proposalIDWrongDigitCount)
+                    issues.reportIssue(.proposalIDWrongDigitCount, source: source)
                 }
 
                 // The link should be relative and contain the correct number of digits.
                 if !proposalLink.destination.contains(/^\d\d\d\d-.*\.md$/) {
                     self.proposalLink?.destination = "" // Do not include an incorrect destination
-                    errors.append(Proposal.Issue.invalidProposalIDLink)
+                    issues.reportIssue(Proposal.Issue.invalidProposalIDLink, source: source)
                 }
             }
             
         } else {
-            errors.append(.missingProposalIDLink)
+            issues.reportIssue(.missingProposalIDLink, source: source)
         }
-        return ExtractionResult(value: proposalLink ?? LinkInfo(text: "", destination: ""), warnings: warnings, errors: errors)
+        return ExtractionResult(value: proposalLink ?? LinkInfo(text: "", destination: ""), warnings: issues.warnings, errors: issues.errors)
     }
     
     mutating func visitLink(_ link: Link) -> () {

@@ -40,9 +40,7 @@ struct PersonExtractor: MarkupWalker {
         self.role = role
     }
     
-    private var warnings: [Proposal.Issue] = []
-    private var errors: [Proposal.Issue] = []
-
+    private var issues = IssueWrapper()
     private var personList: [Proposal.Person] = []
 
     mutating func personArray() -> ExtractionResult<[Proposal.Person]> {
@@ -57,7 +55,7 @@ struct PersonExtractor: MarkupWalker {
         
         // VALIDATION ENHANCEMENT: Log a warning if no review manager.  It should be a CI validation error also
 
-        return ExtractionResult(value: personList, warnings: warnings, errors: errors)
+        return ExtractionResult(value: personList, warnings: issues.warnings, errors: issues.errors)
     }
 
     mutating func visitLink(_ link: Link) -> () {
@@ -66,7 +64,7 @@ struct PersonExtractor: MarkupWalker {
         }
         // VALIDATION ENHANCEMENT: Add 'extra markup error' for review managers
         if !linkInfo.containsTextElement && role == .author {
-            errors.append(.authorsHaveExtraMarkup)
+            issues.reportIssue(.authorsHaveExtraMarkup, source: source)
         }
         
         let destination: String
@@ -74,8 +72,8 @@ struct PersonExtractor: MarkupWalker {
             destination = validatedDestination
         } else {
             switch role {
-                case .author: warnings.append(.invalidAuthorLink)
-                case .reviewManager: warnings.append(.invalidReviewManagerLink)
+                case .author: issues.reportIssue(.invalidAuthorLink, source: source)
+                case .reviewManager: issues.reportIssue(.invalidReviewManagerLink, source: source)
             }
             destination = ""
         }
