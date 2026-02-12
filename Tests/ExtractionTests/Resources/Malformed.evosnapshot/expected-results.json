@@ -30,6 +30,12 @@
           "kind" : "error",
           "message" : "Missing valid proposal ID; SE-0000 is reserved.",
           "suggestion" : ""
+        },
+        {
+          "code" : 50,
+          "kind" : "error",
+          "message" : "Missing review manager(s).",
+          "suggestion" : ""
         }
       ],
       "id" : "SE-0000",
@@ -47,14 +53,6 @@
         {
           "id" : "SR-344",
           "link" : "https:\/\/bugs.swift.org\/browse\/SR-344"
-        }
-      ],
-      "warnings" : [
-        {
-          "code" : 50,
-          "kind" : "warning",
-          "message" : "Missing review manager(s).",
-          "suggestion" : ""
         }
       ]
     },
@@ -90,14 +88,6 @@
         {
           "id" : "SR-344",
           "link" : "https:\/\/bugs.swift.org\/browse\/SR-344"
-        }
-      ],
-      "warnings" : [
-        {
-          "code" : 50,
-          "kind" : "warning",
-          "message" : "Missing review manager(s).",
-          "suggestion" : ""
         }
       ]
     },
@@ -206,15 +196,7 @@
         "state" : "error"
       },
       "summary" : "The increment\/decrement operators in Swift were added very early in the development of Swift, as a carry-over from C.  These were added without much consideration, and haven't been thought about much since then.  This document provides a fresh look at them, and ultimately recommends we just remove them entirely, since they are confusing and not carrying their weight.",
-      "title" : "Remove the `++` and `--` operators",
-      "warnings" : [
-        {
-          "code" : 50,
-          "kind" : "warning",
-          "message" : "Missing review manager(s).",
-          "suggestion" : ""
-        }
-      ]
+      "title" : "Remove the `++` and `--` operators"
     },
     {
       "authors" : [
@@ -1220,6 +1202,12 @@
           "suggestion" : ""
         },
         {
+          "code" : 50,
+          "kind" : "error",
+          "message" : "Missing review manager(s).",
+          "suggestion" : ""
+        },
+        {
           "code" : 110,
           "kind" : "error",
           "message" : "Missing Review field.",
@@ -1241,14 +1229,6 @@
         {
           "id" : "SR-344",
           "link" : "https:\/\/bugs.swift.org\/browse\/SR-344"
-        }
-      ],
-      "warnings" : [
-        {
-          "code" : 50,
-          "kind" : "warning",
-          "message" : "Missing review manager(s).",
-          "suggestion" : ""
         }
       ]
     }

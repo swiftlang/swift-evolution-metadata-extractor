@@ -32,14 +32,6 @@
           "id" : "SR-344",
           "link" : "https:\/\/bugs.swift.org\/browse\/SR-344"
         }
-      ],
-      "warnings" : [
-        {
-          "code" : 50,
-          "kind" : "warning",
-          "message" : "Missing review manager(s).",
-          "suggestion" : ""
-        }
       ]
     },
     {
@@ -69,15 +61,7 @@
         "version" : "3.0"
       },
       "summary" : "Curried function declaration syntax `func foo(x: Int)(y: Int)` is of limited usefulness and creates a lot of language and implementation complexity. We should remove it.",
-      "title" : "Removing currying `func` declaration syntax",
-      "warnings" : [
-        {
-          "code" : 50,
-          "kind" : "warning",
-          "message" : "Missing review manager(s).",
-          "suggestion" : ""
-        }
-      ]
+      "title" : "Removing currying `func` declaration syntax"
     },
     {
       "authors" : [
@@ -143,15 +127,7 @@
         "version" : "3.0"
       },
       "summary" : "The increment\/decrement operators in Swift were added very early in the development of Swift, as a carry-over from C.  These were added without much consideration, and haven't been thought about much since then.  This document provides a fresh look at them, and ultimately recommends we just remove them entirely, since they are confusing and not carrying their weight.",
-      "title" : "Remove the `++` and `--` operators",
-      "warnings" : [
-        {
-          "code" : 50,
-          "kind" : "warning",
-          "message" : "Missing review manager(s).",
-          "suggestion" : ""
-        }
-      ]
+      "title" : "Remove the `++` and `--` operators"
     },
     {
       "authors" : [
@@ -20390,6 +20366,14 @@
           "name" : "review"
         }
       ],
+      "errors" : [
+        {
+          "code" : 50,
+          "kind" : "error",
+          "message" : "Missing review manager(s).",
+          "suggestion" : ""
+        }
+      ],
       "id" : "SE-0492",
       "link" : "0492-section-control.md",
       "reviewManagers" : [
@@ -20401,15 +20385,7 @@
         "state" : "activeReview"
       },
       "summary" : "This proposal adds `@section` and `@used` attributes which can be applied to global variables. These allow users to directly control which section of the resulting binary should global variables be emitted into, and give users the ability to disable DCE (dead code elimination) on those. The goal is to enable systems and embedded programming use cases like runtime discovery of test metadata from multiple modules, and also to serve as a low-level building block for higher-level features (e.g. linker sets, plugins).",
-      "title" : "Section Placement Control",
-      "warnings" : [
-        {
-          "code" : 50,
-          "kind" : "warning",
-          "message" : "Missing review manager(s).",
-          "suggestion" : ""
-        }
-      ]
+      "title" : "Section Placement Control"
     },
     {
       "authors" : [

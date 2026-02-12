@@ -16,6 +16,10 @@ Add new items at the end of the relevant section under **Unreleased**.
 - Support extraction of new "Summary of changes" section ([#79])
 - Errors and warnings now include unique error codes ([#90])
 - Add generalized mechanism for validation exemptions ([#92])
+- Promote warnings to errors:
+    - 'missing review manager'
+    - 'missing review manager link'
+    - 'missing author link'
 
 ### Fixes
 

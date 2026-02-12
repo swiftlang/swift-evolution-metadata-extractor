@@ -77,6 +77,10 @@ public final class Project: Sendable {
             // Once corrected, the exemption for the corrected proposal can be removed.
             Issue.discussionExtractionFailure.code:
                 RangeSet(0392),
+            
+            // Some early proposals did not have a review manager
+            Issue.missingReviewManagers.code:
+                RangeSet([0001, 0002, 0004]),
         ]
     )
 
@@ -89,7 +93,11 @@ public final class Project: Sendable {
         proposalRegex: /^ST-\d\d\d\d$/,
         previousResultsURL: URL(string: "https://download.swift.org/swift-evolution/v1/testing-evolution.json")!,
         defaultOutputFilename: "testing-evolution.json",
-        validationExemptions: [:]
+        validationExemptions: [
+            // Early proposals did not have a review manager
+            Issue.missingReviewManagers.code:
+                RangeSet(.upTo(0008)),
+        ]
     )
 
     public static let foundation = Project(

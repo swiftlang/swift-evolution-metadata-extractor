@@ -98,7 +98,7 @@ extension Proposal.Issue {
     )
 
     static let authorMissingProfileLink = Proposal.Issue(
-        kind: .warning,
+        kind: .error,
         code: 42,
         message: "Author missing link."
     )
@@ -111,11 +111,13 @@ extension Proposal.Issue {
 
     // MARK: - Review Manager
     static let missingReviewManagers = Proposal.Issue(
-        kind: .warning,
+        kind: .error,
         code: 50,
         message: "Missing review manager(s)."
     )
 
+    // Currently unused.
+    // Consider changing to reviewManagersHaveExtraMarkup to mirror author error
     static let multipleReviewManagers = Proposal.Issue(
         kind: .warning,
         code: 51,
@@ -123,7 +125,7 @@ extension Proposal.Issue {
     )
 
     static let reviewManagerMissingProfileLink = Proposal.Issue(
-        kind: .warning,
+        kind: .error,
         code: 52,
         message: "Review manager missing profile link."
     )
