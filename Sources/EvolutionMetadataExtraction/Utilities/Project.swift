@@ -7,6 +7,10 @@
 // See https://swift.org/CONTRIBUTORS.txt for the list of Swift project authors
 
 import Foundation
+import EvolutionMetadataModel
+
+// typealias improves readability of validationExemptions definitions
+fileprivate typealias Issue = Proposal.Issue
 
 /**
  Represents a software project with its own set of evolution proposals.
@@ -59,7 +63,21 @@ public final class Project: Sendable {
         proposalRegex: /^SE-\d\d\d\d$/,
         previousResultsURL: URL(string: "https://download.swift.org/swift-evolution/v1/evolution.json")!,
         defaultOutputFilename: "evolution.json",
-        validationExemptions: [:]
+        validationExemptions: [
+    
+            // 'Review' is a required field, but currently a fair number of older proposals are missing the
+            // field for a variety of reasons. Those issues should be corrected in the proposals themselves.
+            // Once corrected, the exemption for the corrected proposal can be removed.
+            // Note that some early proposals may not have valid discussions be added and will always need exemption.
+            Issue.missingReviewField.code:
+                RangeSet([0001, 0002, 0004, 0020, 0051, 0079, 0100, 0176, 0177, 0188, 0193, 0194, 0196, 0198, 0201, 0203, 0205, 0208, 0209, 0210, 0212, 0213, 0219, 0243, 0245, 0247, 0248, 0249, 0250, 0252, 0259, 0263, 0268, 0269, 0273, 0278, 0284, 0289, 0295, 0300, 0303, 0304, 0312, 0313, 0317, 0318, 0337, 0338, 0341, 0343, 0344, 0348, 0350, 0356, 0365, 0385]),
+
+            // Some older proposals are missing links to discussions or do not format discussions correctly.
+            // Those issues should be corrected in the proposals themselves.
+            // Once corrected, the exemption for the corrected proposal can be removed.
+            Issue.discussionExtractionFailure.code:
+                RangeSet(0392),
+        ]
     )
 
     public static let swiftTesting = Project(
@@ -85,4 +103,28 @@ public final class Project: Sendable {
         defaultOutputFilename: "foundation-evolution.json",
         validationExemptions: [:]
     )
+}
+
+// MARK: - Range and RangeSet Extensions
+
+/* Extensions to Range and RangeSet to increase clarity of validationExemptions definitions */
+
+private extension Range where Bound == Int {
+    static func upTo(_ upperBound: Int) -> Range { 0..<upperBound }
+}
+
+private extension RangeSet where Bound == Int {
+    static var allExempt: RangeSet { RangeSet(0..<Int.max) }
+}
+
+/*  Creates a Range from an integer literal of the form value..<(value + 1).
+    For Int.max, the lower and upper bounds of the range are Int.max.
+    Although a retroactive conformance, the risk of this being officially added
+    to the standard library is very low.
+ */
+extension Range: @retroactive ExpressibleByIntegerLiteral where Bound == Int {
+    public typealias IntegerLiteralType = Int
+    public init(integerLiteral value: Int) {
+        self.init(uncheckedBounds: (lower: value, upper: value == Int.max ? Int.max : value + 1))
+    }
 }
