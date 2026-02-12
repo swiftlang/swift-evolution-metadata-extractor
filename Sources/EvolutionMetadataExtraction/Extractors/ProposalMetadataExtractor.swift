@@ -10,19 +10,6 @@ import Foundation
 import Markdown
 import EvolutionMetadataModel
 
-struct DocumentSource {
-    let proposalSpec: ProposalSpec
-    let document: Document
-}
-
-struct HeaderFieldSource {
-    let proposalSpec: ProposalSpec
-    let headerFieldsByLabel: [String : ListItem]
-    subscript(key: String) -> ListItem? { headerFieldsByLabel[key] }
-    subscript(key: [String]) -> (key: String, value: ListItem)? { headerFieldsByLabel[key] }
-    subscript(key: String...) -> (key: String, value: ListItem)? { headerFieldsByLabel[key] }
-}
-
 struct ProposalMetadataExtractor {
     
     /// Extracts the metadata from a Swift Evolution proposal
@@ -188,6 +175,39 @@ struct LinkInfo {
         }
     }
 }
+
+// Protocol and structs to encapsulate source information for extractors
+
+protocol IssueSource {
+    var project: Project { get }
+    var proposalNumber: Int { get }
+}
+
+struct DocumentSource: IssueSource {
+    private let proposalSpec: ProposalSpec
+    let document: Document
+    var project: Project { proposalSpec.project }
+    var proposalNumber: Int { proposalSpec.number }
+    init(proposalSpec: ProposalSpec, document: Document) {
+        self.proposalSpec = proposalSpec
+        self.document = document
+    }
+}
+
+struct HeaderFieldSource: IssueSource {
+    let proposalSpec: ProposalSpec
+    let headerFieldsByLabel: [String : ListItem]
+    var project: Project { proposalSpec.project }
+    var proposalNumber: Int { proposalSpec.number }
+    subscript(key: String) -> ListItem? { headerFieldsByLabel[key] }
+    subscript(key: [String]) -> (key: String, value: ListItem)? { headerFieldsByLabel[key] }
+    subscript(key: String...) -> (key: String, value: ListItem)? { headerFieldsByLabel[key] }
+    init(proposalSpec: ProposalSpec, headerFieldsByLabel: [String : ListItem]) {
+        self.proposalSpec = proposalSpec
+        self.headerFieldsByLabel = headerFieldsByLabel
+    }
+}
+
 
 
 
