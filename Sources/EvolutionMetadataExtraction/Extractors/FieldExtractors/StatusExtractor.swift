@@ -11,19 +11,23 @@ import Markdown
 import EvolutionMetadataModel
 
 struct StatusExtractor: MarkupWalker, ValueExtractor {
-
+    
+    private var source: HeaderFieldSource
+    private var extractionDate: Date = Date()
+    init(source: (source: HeaderFieldSource, extractionDate: Date)) {
+        self.source = source.source
+        self.extractionDate = source.extractionDate
+    }
+    
     private var warnings: [Proposal.Issue] = []
     private var errors: [Proposal.Issue] = []
     
-    private var extractionDate: Date = Date()
     var status: Proposal.Status? = nil
     
-    mutating func extractValue(from sourceValues: (source: HeaderFieldSource, extractionDate: Date)) -> ExtractionResult<Proposal.Status> {
-        
-        extractionDate = sourceValues.extractionDate
+    mutating func extractValue() -> ExtractionResult<Proposal.Status> {
         
         // If 'Status' field not found, report
-        if let headerField = sourceValues.source["Status"] {
+        if let headerField = source["Status"] {
             visit(headerField)
         }
         
@@ -33,7 +37,6 @@ struct StatusExtractor: MarkupWalker, ValueExtractor {
         }
         return ExtractionResult(value: status, warnings: warnings, errors: errors)
     }
-
 
     mutating func visitStrong(_ strong: Strong) -> () {
         guard let statusElement = strong.child(at: 0) as? Text else {
@@ -71,7 +74,7 @@ struct StatusExtractor: MarkupWalker, ValueExtractor {
             status = .statusExtractionFailed
         }
     }
-    
+
     static func versionForString(_ fullVersionString: String) -> String {
         guard !fullVersionString.isEmpty else {
             return "none" // If empty string, return 'none' as a sentinel value
@@ -117,13 +120,13 @@ struct StatusExtractor: MarkupWalker, ValueExtractor {
         // For a date range, only 1 or 2 month values are valid
         guard monthMatches.count != 0 && monthMatches.count < 3 else {
             // VALIDATION ENHANCEMENT
-//            print("ERROR: '\(string)': Unexpected month count of \(monthMatches.count)")
+            //            print("ERROR: '\(string)': Unexpected month count of \(monthMatches.count)")
             return nil
         }
         
         let startMonth = String(monthMatches[0].0)
         let endMonth = monthMatches.count == 2 ? String(monthMatches[1].0) : startMonth
-//        print(startMonth, endMonth)
+        //        print(startMonth, endMonth)
         
         // Only interested in numbers of one or two digits
         let dayMatches = string.matches(of: integerMatcher).filter { $0.count <= 2 }

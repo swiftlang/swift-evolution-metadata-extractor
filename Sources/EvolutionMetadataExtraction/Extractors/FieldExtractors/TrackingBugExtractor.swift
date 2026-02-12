@@ -11,6 +11,9 @@ import EvolutionMetadataModel
 
 struct TrackingBugExtractor: MarkupWalker, ValueExtractor {
 
+    private var source: HeaderFieldSource
+    init(source: HeaderFieldSource) { self.source = source }
+
     private var warnings: [Proposal.Issue] = []
     private var errors: [Proposal.Issue] = []
 
@@ -18,8 +21,8 @@ struct TrackingBugExtractor: MarkupWalker, ValueExtractor {
         _trackingBugs.isEmpty ? nil : _trackingBugs
     }
     private var _trackingBugs: [Proposal.TrackingBug] = []
-    
-    mutating func extractValue(from source: HeaderFieldSource) -> ExtractionResult<[Proposal.TrackingBug]> {
+
+    mutating func extractValue() -> ExtractionResult<[Proposal.TrackingBug]> {
         if let (_, headerField) = source["Bug", "Bugs"] {
             visit(headerField)
         }

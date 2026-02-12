@@ -11,12 +11,15 @@ import EvolutionMetadataModel
 
 struct DiscussionExtractor: MarkupWalker, ValueExtractor {
     
+    private var source: HeaderFieldSource
+    init(source: HeaderFieldSource) { self.source = source }
+
     private var warnings: [Proposal.Issue] = []
     private var errors: [Proposal.Issue] = []
     
     private var discussions: [Proposal.Discussion] = []
 
-    mutating func extractValue(from source: HeaderFieldSource) -> ExtractionResult<[Proposal.Discussion]> {
+    mutating func extractValue() -> ExtractionResult<[Proposal.Discussion]> {
         
         // VALIDATION ENHANCEMENT: Normalize naming to 'Review' in the source proposals.
         if let (_, headerField) = source["Review", "Reviews", "Decision Notes", "Decision notes"] {

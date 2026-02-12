@@ -12,6 +12,9 @@ import EvolutionMetadataModel
 
 struct ImplementationExtractor: MarkupWalker, ValueExtractor {
 
+    private var source: HeaderFieldSource
+    init(source: HeaderFieldSource) { self.source = source }
+
     private var warnings: [Proposal.Issue] = []
     private var errors: [Proposal.Issue] = []
 
@@ -20,7 +23,7 @@ struct ImplementationExtractor: MarkupWalker, ValueExtractor {
     }
     private var _implementaton: [Proposal.Implementation] = []
     
-    mutating func extractValue(from source: HeaderFieldSource) -> ExtractionResult<[Proposal.Implementation]> {
+    mutating func extractValue() -> ExtractionResult<[Proposal.Implementation]> {
         if let (_ , headerField) = source["Implementation", "Implementations"] {
             visit(headerField)
         }

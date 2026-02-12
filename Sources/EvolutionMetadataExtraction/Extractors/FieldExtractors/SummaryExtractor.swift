@@ -10,15 +10,18 @@ import Markdown
 import EvolutionMetadataModel
 
 struct SummaryExtractor: ValueExtractor {
-    
+
+    private var source: DocumentSource
+    init(source: DocumentSource) { self.source = source }
+
     private var warnings: [Proposal.Issue] = []
     private var errors: [Proposal.Issue] = []
-    
-    func extractValue(from src: DocumentSource) -> ExtractionResult<String> {
-                
+
+    func extractValue() -> ExtractionResult<String> {
+
         var summary = ""
         var foundIntroduction = false
-        for child in src.document.children {
+        for child in source.document.children {
 
             // VALIDATION ENHANCEMENT: Potential for stricter validation of section heading and contents
             // https://github.com/swiftlang/swift-evolution-metadata-extractor/issues/77

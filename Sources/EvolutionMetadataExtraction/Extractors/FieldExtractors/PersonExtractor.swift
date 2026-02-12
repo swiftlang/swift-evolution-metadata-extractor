@@ -10,16 +10,20 @@ import Markdown
 import EvolutionMetadataModel
 
 struct AuthorExtractor: ValueExtractor {
-    func extractValue(from src: HeaderFieldSource) -> ExtractionResult<[Proposal.Person]> {
-        var personExtractor = PersonExtractor(role: .author)
-        return personExtractor.personArray(from: src)
+    private let source: HeaderFieldSource
+    init(source: HeaderFieldSource) { self.source = source }
+    func extractValue() -> ExtractionResult<[Proposal.Person]> {
+        var personExtractor = PersonExtractor(source: source, role: .author)
+        return personExtractor.personArray()
     }
 }
 
 struct ReviewManagerExtractor: ValueExtractor {
-    func extractValue(from src: HeaderFieldSource) -> ExtractionResult<[Proposal.Person]> {
-        var personExtractor = PersonExtractor(role: .reviewManager)
-        return personExtractor.personArray(from: src)
+    private let source: HeaderFieldSource
+    init(source: HeaderFieldSource) { self.source = source }
+    func extractValue() -> ExtractionResult<[Proposal.Person]> {
+        var personExtractor = PersonExtractor(source: source, role: .reviewManager)
+        return personExtractor.personArray()
     }
 }
 
@@ -28,19 +32,20 @@ struct PersonExtractor: MarkupWalker {
         case author
         case reviewManager
     }
-    
+
+    private var source: HeaderFieldSource
     private var role: Role
+    init(source: HeaderFieldSource, role: Role) {
+        self.source = source
+        self.role = role
+    }
     
     private var warnings: [Proposal.Issue] = []
     private var errors: [Proposal.Issue] = []
 
     private var personList: [Proposal.Person] = []
-    
-    init(role: Role) {
-        self.role = role
-    }
-    
-    mutating func personArray(from source: HeaderFieldSource) -> ExtractionResult<[Proposal.Person]> {
+
+    mutating func personArray() -> ExtractionResult<[Proposal.Person]> {
         let headerLabels = switch role {
             case .author: ["Author", "Authors"]
             // VALIDATION ENHANCEMENT: Normalize capitalization to 'Review Manager'

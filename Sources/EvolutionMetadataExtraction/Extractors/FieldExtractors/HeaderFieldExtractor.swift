@@ -12,13 +12,16 @@ import EvolutionMetadataModel
 // VALIDATION ENHANCEMENT: Add test that checks against valid header field labels
 struct HeaderFieldExtractor: MarkupWalker, ValueExtractor {
 
-    private var headerItemsByLabel: [String: ListItem] = [:]
+    private var source: DocumentSource
+    init(source: DocumentSource) { self.source = source }
 
     private var warnings: [Proposal.Issue] = []
     private var errors: [Proposal.Issue] = []
-    
-    mutating func extractValue(from src: DocumentSource) -> ExtractionResult<[String: ListItem]> {
-        guard let headerFields = src.document.child(through: [(1, UnorderedList.self)]) as? UnorderedList else {
+
+    private var headerItemsByLabel: [String: ListItem] = [:]
+
+    mutating func extractValue() -> ExtractionResult<[String: ListItem]> {
+        guard let headerFields = source.document.child(through: [(1, UnorderedList.self)]) as? UnorderedList else {
             return ExtractionResult(value: nil, warnings: warnings, errors: errors)
         }
         visit(headerFields)

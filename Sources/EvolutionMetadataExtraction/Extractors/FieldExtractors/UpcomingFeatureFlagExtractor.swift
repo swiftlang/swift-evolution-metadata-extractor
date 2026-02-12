@@ -10,12 +10,15 @@ import Markdown
 import EvolutionMetadataModel
 
 struct UpcomingFeatureFlagExtractor: MarkupWalker, ValueExtractor {
-    
+
+    private var source: HeaderFieldSource
+    init(source: HeaderFieldSource) { self.source = source }
+
     private var warnings: [Proposal.Issue] = []
     private var errors: [Proposal.Issue] = []
-    
+
     private var flag: String?
-    
+
     private var uff: Proposal.UpcomingFeatureFlag? {
         if let flag {
             return Proposal.UpcomingFeatureFlag(flag: flag)
@@ -24,7 +27,7 @@ struct UpcomingFeatureFlagExtractor: MarkupWalker, ValueExtractor {
         }
     }
 
-    mutating func extractValue(from source: HeaderFieldSource) -> ExtractionResult<Proposal.UpcomingFeatureFlag> {
+    mutating func extractValue() -> ExtractionResult<Proposal.UpcomingFeatureFlag> {
         
         if let uffField = source["Upcoming Feature Flag"] {
             visit(uffField)

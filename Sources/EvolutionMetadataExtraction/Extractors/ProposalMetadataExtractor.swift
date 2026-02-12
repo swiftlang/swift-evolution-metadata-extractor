@@ -27,8 +27,8 @@ struct ProposalMetadataExtractor {
         var errors: [Proposal.Issue] = []
         
         func extractValue<T: ValueExtractor>(from source: T.Source, with extractorType: T.Type) -> T.ResultValue? {
-            var extractor = extractorType.init()
-            let result = extractor.extractValue(from: source)
+            var extractor = extractorType.init(source: source)
+            let result = extractor.extractValue()
             warnings.append(contentsOf: result.warnings)
             errors.append(contentsOf: result.errors)
             return result.value
@@ -110,8 +110,8 @@ struct ProposalMetadataExtractor {
 protocol ValueExtractor {
     associatedtype Source
     associatedtype ResultValue
-    mutating func extractValue(from source: Source) -> ExtractionResult<ResultValue>
-    init()
+    init(source: Source)
+    mutating func extractValue() -> ExtractionResult<ResultValue>
 }
 
 /* Returns an optional value and parsing or validation warnings and errors.
