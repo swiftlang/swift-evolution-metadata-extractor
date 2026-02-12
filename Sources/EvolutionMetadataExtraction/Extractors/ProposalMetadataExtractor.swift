@@ -19,18 +19,15 @@ struct ProposalMetadataExtractor {
     ///   - extractionDate: Extraction date used to determine expired review periods
     /// - Returns: The extracted proposal metadata
     static func extractProposalMetadata(from markdown: String, proposalSpec: ProposalSpec, extractionDate: Date) -> Proposal {
-                
+
+        var issues = IssueWrapper()
         var proposal = Proposal()
         proposal.sha = proposalSpec.sha
-        
-        var warnings: [Proposal.Issue] = []
-        var errors: [Proposal.Issue] = []
-        
+
         func extractValue<T: ValueExtractor>(from source: T.Source, with extractorType: T.Type) -> T.ResultValue? {
             var extractor = extractorType.init(source: source)
             let result = extractor.extractValue()
-            warnings.append(contentsOf: result.warnings)
-            errors.append(contentsOf: result.errors)
+            issues.append(errors: result.errors, warnings: result.warnings)
             return result.value
         }
         
@@ -58,13 +55,13 @@ struct ProposalMetadataExtractor {
             if let authors = extractValue(from: headerFieldsSource, with: AuthorExtractor.self), !authors.isEmpty {
                 proposal.authors = authors
             } else {
-                errors.append(.missingAuthors)
+                issues.reportIssue(.missingAuthors, source: headerFieldsSource)
             }
             
             if let reviewManagers = extractValue(from: headerFieldsSource, with: ReviewManagerExtractor.self), !reviewManagers.isEmpty {
                 proposal.reviewManagers = reviewManagers
             } else {
-                warnings.append(.missingReviewManagers)
+                issues.reportIssue(.missingReviewManagers, source: headerFieldsSource)
             }
             
             proposal.upcomingFeatureFlag = extractValue(from: headerFieldsSource, with: UpcomingFeatureFlagExtractor.self)
@@ -75,7 +72,7 @@ struct ProposalMetadataExtractor {
             if let discussions = extractValue(from: headerFieldsSource, with: DiscussionExtractor.self) {
                 proposal.discussions = discussions
             } else {
-                errors.append(.missingReviewField)
+                issues.reportIssue(.missingReviewField, source: headerFieldsSource)
             }
             
             if let status = extractValue(from: (headerFieldsSource, extractionDate), with: StatusExtractor.self) {
@@ -96,12 +93,12 @@ struct ProposalMetadataExtractor {
                 proposal.status = .statusExtractionFailed
             }
         } else {
-            errors.append(.missingMetadataFields)
+            issues.reportIssue(.missingMetadataFields, source: documentSource)
         }
         
-        // Add warnings and errors if present
-        if !warnings.isEmpty { proposal.warnings = warnings }
-        if !errors.isEmpty { proposal.errors = errors }
+        // Add warnings and errors to proposal if present
+        if !issues.warnings.isEmpty { proposal.warnings = issues.warnings }
+        if !issues.errors.isEmpty { proposal.errors = issues.errors }
 
         return proposal
     }
@@ -176,7 +173,26 @@ struct LinkInfo {
     }
 }
 
-// Protocol and structs to encapsulate source information for extractors
+// Protocol and structs to encapsulate source and issue information for extractors
+
+struct IssueWrapper {
+    private(set) var errors: [Proposal.Issue] = []
+    private(set) var warnings: [Proposal.Issue] = []
+    mutating func reportIssue<Source: IssueSource>(_ issue: Proposal.Issue, source: Source) {
+        if let exclusions = source.project.validationExemptions[issue.code],
+           exclusions.contains(source.proposalNumber) { return }
+        else {
+            switch issue.kind {
+                case .error: errors.append(issue)
+                case .warning: warnings.append(issue)
+            }
+        }
+    }
+    mutating func append(errors: [Proposal.Issue], warnings: [Proposal.Issue]) {
+        self.errors.append(contentsOf: errors)
+        self.warnings.append(contentsOf: warnings)
+    }
+}
 
 protocol IssueSource {
     var project: Project { get }

@@ -15,9 +15,7 @@ struct ImplementationExtractor: MarkupWalker, ValueExtractor {
     private var source: HeaderFieldSource
     init(source: HeaderFieldSource) { self.source = source }
 
-    private var warnings: [Proposal.Issue] = []
-    private var errors: [Proposal.Issue] = []
-
+    private var issues = IssueWrapper()
     private var implementaton: [Proposal.Implementation]? {
         _implementaton.isEmpty ? nil : _implementaton
     }
@@ -29,7 +27,7 @@ struct ImplementationExtractor: MarkupWalker, ValueExtractor {
         }
         // Implementation field is optional. Take no action / add no warning if it is not found
         
-        return ExtractionResult(value: implementaton, warnings: warnings, errors: errors)
+        return ExtractionResult(value: implementaton, warnings: issues.warnings, errors: issues.errors)
     }
 
     
@@ -77,7 +75,7 @@ struct ImplementationExtractor: MarkupWalker, ValueExtractor {
         
         // VALIDATION ENHANCEMENT: The legacy tool lowercases the tested value. This is probably not necessary.
         guard account == "apple" || account == "swiftlang" else {
-            warnings.append(.invalidImplementationLink)
+            issues.reportIssue(.invalidImplementationLink, source: source)
             return
         }
         

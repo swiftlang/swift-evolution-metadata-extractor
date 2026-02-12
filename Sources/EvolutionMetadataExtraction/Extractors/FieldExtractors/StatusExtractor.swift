@@ -19,9 +19,7 @@ struct StatusExtractor: MarkupWalker, ValueExtractor {
         self.extractionDate = source.extractionDate
     }
     
-    private var warnings: [Proposal.Issue] = []
-    private var errors: [Proposal.Issue] = []
-    
+    private var issues = IssueWrapper()
     var status: Proposal.Status? = nil
     
     mutating func extractValue() -> ExtractionResult<Proposal.Status> {
@@ -33,9 +31,9 @@ struct StatusExtractor: MarkupWalker, ValueExtractor {
         
         // This checks both that the field is found and is successfully extracted
         if status == nil {
-            warnings.append(.missingStatus)
+            issues.reportIssue(.missingStatus, source: source)
         }
-        return ExtractionResult(value: status, warnings: warnings, errors: errors)
+        return ExtractionResult(value: status, warnings: issues.warnings, errors: issues.errors)
     }
 
     mutating func visitStrong(_ strong: Strong) -> () {
@@ -60,17 +58,17 @@ struct StatusExtractor: MarkupWalker, ValueExtractor {
                 start = result.start
                 end = result.end
                 if let warning = result.reviewEndedWarning {
-                    warnings.append(warning)
+                    issues.reportIssue(warning, source: source)
                 }
             } else {
-                warnings.append(.missingOrInvalidReviewDates)
+                issues.reportIssue(.missingOrInvalidReviewDates, source: source)
             }
         }
         
         if let rawStatus = Proposal.Status(name: statusString, version: version, start: start, end: end) {
             status = rawStatus
         } else {
-            errors.append(.missingOrInvalidStatus)
+            issues.reportIssue(.missingOrInvalidStatus, source: source)
             status = .statusExtractionFailed
         }
     }

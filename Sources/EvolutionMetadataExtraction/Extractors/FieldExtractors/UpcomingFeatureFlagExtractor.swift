@@ -14,9 +14,7 @@ struct UpcomingFeatureFlagExtractor: MarkupWalker, ValueExtractor {
     private var source: HeaderFieldSource
     init(source: HeaderFieldSource) { self.source = source }
 
-    private var warnings: [Proposal.Issue] = []
-    private var errors: [Proposal.Issue] = []
-
+    private var issues = IssueWrapper()
     private var flag: String?
 
     private var uff: Proposal.UpcomingFeatureFlag? {
@@ -36,15 +34,15 @@ struct UpcomingFeatureFlagExtractor: MarkupWalker, ValueExtractor {
             if let flag {
                 if flag.contains(/\s/) {
                     self.flag = nil
-                    errors.append(.malformedUpcomingFeatureFlag)
+                    issues.reportIssue(.malformedUpcomingFeatureFlag, source: source)
                 }
             } else {
-                errors.append(.upcomingFeatureFlagExtractionFailure)
+                issues.reportIssue(.upcomingFeatureFlagExtractionFailure, source: source)
             }
             
         }
         
-        return ExtractionResult(value: uff, warnings: warnings, errors: errors)
+        return ExtractionResult(value: uff, warnings: issues.warnings, errors: issues.errors)
     }
     
     mutating func visitInlineCode(_ inlineCode: InlineCode) -> () {
