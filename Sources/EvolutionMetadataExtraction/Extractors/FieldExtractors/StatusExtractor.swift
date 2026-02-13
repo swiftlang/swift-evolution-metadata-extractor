@@ -176,9 +176,6 @@ struct StatusExtractor: MarkupWalker, ValueExtractor {
         if wrappedEndDate < startDate {
             wrappedEndDate = formatter.date(from: "\(endMonth) \(endDay) \(presentYear + 1)")!
         }
-
-        // Note this is not an error, it would be added as a warning.
-        // VALIDATION ENHANCEMENT: Add (x) days before showing this.
         
         // Specify explicit GMT time zone and 'en_US_POSIX' locale
         let dateFormatStyle = Date.ISO8601FormatStyle(timeZone: TimeZone.gmt).locale(Locale.en_US_POSIX)
