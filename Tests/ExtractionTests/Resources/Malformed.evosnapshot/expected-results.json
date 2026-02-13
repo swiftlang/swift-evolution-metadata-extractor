@@ -925,15 +925,7 @@
         "state" : "activeReview"
       },
       "summary" : "Introduce a new operator an \"Optional Value Setter\". If the optional is set via this operator then the new value is only set if there isn't an already existing value.",
-      "title" : "Optional Value Setter `??=`",
-      "warnings" : [
-        {
-          "code" : 0,
-          "kind" : "warning",
-          "message" : "Review ended on 2024-01-05 00:00:00 +0000.",
-          "suggestion" : ""
-        }
-      ]
+      "title" : "Optional Value Setter `??=`"
     },
     {
       "authors" : [
@@ -968,14 +960,6 @@
         {
           "id" : "SR-1275",
           "link" : "https:\/\/bugs.swift.org\/browse\/SR-1275"
-        }
-      ],
-      "warnings" : [
-        {
-          "code" : 0,
-          "kind" : "warning",
-          "message" : "Review ended on 2024-01-31 00:00:00 +0000.",
-          "suggestion" : ""
         }
       ]
     },

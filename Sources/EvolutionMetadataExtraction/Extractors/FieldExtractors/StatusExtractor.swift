@@ -57,9 +57,6 @@ struct StatusExtractor: MarkupWalker, ValueExtractor {
             if let result = StatusExtractor.datesForString(String(statusMatch.details ?? ""), processingDate: extractionDate) {
                 start = result.start
                 end = result.end
-                if let warning = result.reviewEndedWarning {
-                    issues.reportIssue(warning, source: source)
-                }
             } else {
                 issues.reportIssue(.missingOrInvalidReviewDates, source: source)
             }
@@ -106,7 +103,7 @@ struct StatusExtractor: MarkupWalker, ValueExtractor {
     // For testing, a different processing date can be provided
     // VALIDATION ENHANCEMENT: A date range like (Apr 29 - May 3) will parse incorrectly by finding May and thinking both dates are in May
     // VALIDATION ENHANCEMENT: Something like (4 - 13 April 2022) will parse correctly. Should probably validate to the expected format
-    static func datesForString(_ string: String, processingDate: Date) -> (start: String, end: String, reviewEndedWarning: Proposal.Issue?)? {
+    static func datesForString(_ string: String, processingDate: Date) -> (start: String, end: String)? {
         
         // used in two case blocks; hoisting up here for reuse
         let integerMatcher = /\d+/
@@ -182,14 +179,10 @@ struct StatusExtractor: MarkupWalker, ValueExtractor {
 
         // Note this is not an error, it would be added as a warning.
         // VALIDATION ENHANCEMENT: Add (x) days before showing this.
-        var reviewEndedWarning: Proposal.Issue?
-        if processingDate > wrappedEndDate {
-            reviewEndedWarning = .reviewEnded(on: wrappedEndDate)
-        }
         
         // Specify explicit GMT time zone and 'en_US_POSIX' locale
         let dateFormatStyle = Date.ISO8601FormatStyle(timeZone: TimeZone.gmt).locale(Locale.en_US_POSIX)
-        return (startDate.formatted(dateFormatStyle), wrappedEndDate.formatted(dateFormatStyle), reviewEndedWarning)
+        return (startDate.formatted(dateFormatStyle), wrappedEndDate.formatted(dateFormatStyle))
     }
 }
 
