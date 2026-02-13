@@ -211,16 +211,4 @@ extension Proposal.Issue {
         code: 112,
         message: "Discussion link doesn't refer to a Swift forum thread. Discussion removed."
     )
-
-    // VALIDATION ENHANCEMENTS: Consider not including the date in the review message, or not including time components.
-    // Comparing results currently breaks if recorded test values and actual values are generated in different time zones.
-    // Using GMT with generated legacy tool results to avoid for the present
-    static func reviewEnded(on endDate: Date) -> Proposal.Issue {
-        var calender = Calendar(identifier: .gregorian)
-        calender.timeZone = TimeZone.gmt
-        return Proposal.Issue(
-            kind: .warning,
-            message: "Review ended on \(calender.startOfDay(for: endDate))."
-        )
-    }
 }

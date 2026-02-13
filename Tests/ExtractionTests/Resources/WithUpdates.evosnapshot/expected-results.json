@@ -19135,15 +19135,7 @@
         "state" : "activeReview"
       },
       "summary" : "This proposal introduces a new compiler setting for inferring `@MainActor` isolation by default within the module to mitigate false-positive data-race safety errors in sequential code.",
-      "title" : "Control default actor isolation inference",
-      "warnings" : [
-        {
-          "code" : 0,
-          "kind" : "warning",
-          "message" : "Review ended on 2025-07-15 00:00:00 +0000.",
-          "suggestion" : ""
-        }
-      ]
+      "title" : "Control default actor isolation inference"
     },
     {
       "authors" : [
@@ -19681,15 +19673,7 @@
         "state" : "activeReview"
       },
       "summary" : "[SE-0466: Control default actor isolation inference](\/proposals\/0466-control-default-actor-isolation.md) introduced the ability to specify default actor isolation on a per-module basis. This proposal introduces a new typealias for specifying default actor isolation in individual source files within a module. This allows specific files to opt out of main actor isolation within a main-actor-by-default module, and opt into main actor isolation within a nonisolated-by-default module.",
-      "title" : "Default actor isolation typealias",
-      "warnings" : [
-        {
-          "code" : 0,
-          "kind" : "warning",
-          "message" : "Review ended on 2025-05-05 00:00:00 +0000.",
-          "suggestion" : ""
-        }
-      ]
+      "title" : "Default actor isolation typealias"
     },
     {
       "authors" : [
@@ -19747,15 +19731,7 @@
         "state" : "activeReview"
       },
       "summary" : "Swift key paths can be written to properties and subscripts. This proposal extends key path usage to include references to method members, such as instance and type methods, and initializers.",
-      "title" : "Method and Initializer Key Paths",
-      "warnings" : [
-        {
-          "code" : 0,
-          "kind" : "warning",
-          "message" : "Review ended on 2025-05-05 00:00:00 +0000.",
-          "suggestion" : ""
-        }
-      ]
+      "title" : "Method and Initializer Key Paths"
     },
     {
       "authors" : [
@@ -20285,14 +20261,6 @@
           "id" : "SR-5714",
           "link" : "https:\/\/github.com\/swiftlang\/swift-package-manager\/issues\/5714"
         }
-      ],
-      "warnings" : [
-        {
-          "code" : 0,
-          "kind" : "warning",
-          "message" : "Review ended on 2025-09-18 00:00:00 +0000.",
-          "suggestion" : ""
-        }
       ]
     },
     {
@@ -20537,15 +20505,7 @@
         "state" : "activeReview"
       },
       "summary" : "Implementing a C function in Swift eases integration of Swift and C code. This proposal introduces `@c` to mark Swift functions as callable from C, and enums as representable in C. It provides the same behavior under the `@objc` attribute for Objective-C compatible global functions.",
-      "title" : "C compatible functions and enums",
-      "warnings" : [
-        {
-          "code" : 0,
-          "kind" : "warning",
-          "message" : "Review ended on 2025-10-09 00:00:00 +0000.",
-          "suggestion" : ""
-        }
-      ]
+      "title" : "C compatible functions and enums"
     },
     {
       "authors" : [
