@@ -28,19 +28,27 @@ extension EvolutionMetadata {
     var hasErrors: Bool { proposals.contains { $0.hasErrors } }
 
     var validationReport: String {
+        let dateString: String = creationDate.replacingOccurrences(of: "T", with: " ")
         var report = """
             Swift Evolution Validation Report
-            Generated: \(creationDate)
-            Tool Version: \(toolVersion)\n\n
+            \(dateString)
+            ----------\n\n
             """
         let errorProposals = proposals.filter { $0.hasIssues }
         
         if errorProposals.isEmpty {
-            report += "NO ISSUES FOUND\n"
+            report += "NO ISSUES FOUND\n\n"
         } else {
             report += "ISSUES FOUND\n\n"
             report = errorProposals.reduce(into: report) { $0 += $1.validationReport + "\n" }
         }
+        
+        report += """
+            ----------
+            Validation performed by swift-evolution-metadata-extractor
+            https://github.com/swiftlang/swift-evolution-metadata-extractor
+            (v\(toolVersion))\n
+            """
         return report
     }
 }
@@ -80,6 +88,9 @@ extension Proposal {
         var report = "\t\(heading)\n"
         for issue in issues {
             report += "\t\(issue.message)\n"
+            if !issue.suggestion.isEmpty {
+                report += "\n\t\(issue.suggestion.replacingOccurrences(of: "\n", with: "\n\t"))\n"
+            }
         }
         return report
     }
