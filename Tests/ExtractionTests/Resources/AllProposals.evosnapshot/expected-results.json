@@ -1,6 +1,6 @@
 {
-  "commit" : "99d43502653b6fd3f521066c8a1971bce6a99bac",
-  "creationDate" : "2026-02-13T16:13:10Z",
+  "commit" : "29bbbc28ea5211bf3a38f54b24a893287080e640",
+  "creationDate" : "2026-03-13T19:45:52Z",
   "implementationVersions" : [
     "2.2", "3.0", "3.0.1", "3.1", "4.0", "4.1", "4.2", "5.0", "5.1", "5.2",
     "5.3", "5.4", "5.5", "5.5.2", "5.6", "5.7", "5.8", "5.9", "5.9.2", "5.10",
@@ -11217,7 +11217,7 @@
           "name" : "Ben Cohen"
         }
       ],
-      "sha" : "6c32790ac6bae00edd5df2724c8c8465fa9c231f",
+      "sha" : "35f2398da93425fd31310d807189c74509a76b08",
       "status" : {
         "state" : "implemented",
         "version" : "5.5"
@@ -18908,7 +18908,7 @@
           "name" : "Xiaodi Wu"
         }
       ],
-      "sha" : "fef2459dc94fa86d537d05c8a74d77b0d8234498",
+      "sha" : "1817266f66d378a59a0d43346360bddbbfdb68ef",
       "status" : {
         "state" : "implemented",
         "version" : "6.2"
@@ -19833,9 +19833,10 @@
           "name" : "John McCall"
         }
       ],
-      "sha" : "a08729b1e67b1683c504c3a89c315b252229a842",
+      "sha" : "ea4a8106aca77b20c42c42f8dddf6c1d093b6d4b",
       "status" : {
-        "state" : "accepted"
+        "state" : "implemented",
+        "version" : "6.3"
       },
       "summary" : "Swift provides weak object references using the `weak` modifier on variables and stored properties. Weak references become `nil` when the object is destroyed, causing the value of the variable to seem to change. Swift has therefore always required `weak` references to be declared with the `var` keyword rather than `let`. However, that causes unnecessary friction with [sendability checking](https:\/\/github.com\/swiftlang\/swift-evolution\/blob\/main\/proposals\/0302-concurrent-value-and-concurrent-closures.md): because weak references must be mutable, classes and closures with such references are unsafe to share between concurrent contexts. This proposal lifts that restriction and allows `weak` to be combined with `let`.",
       "title" : "`weak let`",
@@ -20212,9 +20213,10 @@
           "name" : "Xiaodi Wu"
         }
       ],
-      "sha" : "6dd70e71a53025fde405951a7242c752c25d270a",
+      "sha" : "1f767bfa0ae9b931baa72c06f1f9c66bee92b3b8",
       "status" : {
-        "state" : "accepted"
+        "state" : "implemented",
+        "version" : "6.3"
       },
       "summary" : "`EncodingError` and `DecodingError` do not specify any custom debug description. The default descriptions bury the useful information in a format that is difficult to read. Less experienced developers may assume they are not human-readable at all, even though they contain useful information. The proposal is to conform `EncodingError` and `DecodingError` to `CustomDebugStringConvertible` and provide nicely formatted debug output.",
       "title" : "Improve `EncodingError` and `DecodingError`'s printed descriptions"
@@ -20342,9 +20344,10 @@
           "name" : "Doug Gregor"
         }
       ],
-      "sha" : "33206f250c9ed243bf8849d867e65799f813f2fe",
+      "sha" : "830f31b3436fc0bbdad74738e46e3a5ab04755b7",
       "status" : {
-        "state" : "accepted"
+        "state" : "implemented",
+        "version" : "6.3"
       },
       "summary" : "This proposal adds `@section` and `@used` attributes which can be applied to global variables. These allow users to directly control which section of the resulting binary should global variables be emitted into, and give users the ability to disable DCE (dead code elimination) on those. The goal is to enable systems and embedded programming use cases like runtime discovery of test metadata from multiple modules, and also to serve as a low-level building block for higher-level features (e.g. linker sets, plugins).",
       "title" : "Section Placement Control"
@@ -20542,9 +20545,10 @@
           "name" : "Tony Allevato"
         }
       ],
-      "sha" : "8a8784e97f25928df9db29e9656cc54b751c5c6c",
+      "sha" : "df997f0d2fec20c7e2f0c990bc161c163969e9ce",
       "status" : {
-        "state" : "accepted"
+        "state" : "implemented",
+        "version" : "6.3"
       },
       "summary" : "The Swift compiler performs an optimization that expands the body of a function into the caller called inlining. Inlining exposes the code in the callee to the code in the caller. After inlining, the Swift compiler has more context to optimize the code across caller and callee leading to better optimization in many cases. Inlining can increase code size. To avoid unnecessary code size increases, the Swift compiler uses heuristics (properties of the code) to determine whether to perform inlining. Sometimes these heuristics tell the compiler not to inline a function even though it would be beneficial to do so. The proposed attribute `@inline(always)` instructs the compiler to always inline the annotated function into the caller giving the author explicit control over the optimization.",
       "title" : "`@inline(always)` attribute"
@@ -20762,11 +20766,9 @@
           "name" : "David Cummings"
         }
       ],
-      "sha" : "5fdbe80da1e37b7a33537830cbca7cb76323fc62",
+      "sha" : "9a36b854ec650025c2c2e800f87dcfa67493dde7",
       "status" : {
-        "end" : "2027-01-30T00:00:00Z",
-        "start" : "2026-12-07T00:00:00Z",
-        "state" : "activeReview"
+        "state" : "accepted"
       },
       "summary" : "Currently, `swift test` supports generating a JSON coverage report, which is great for ingesting into various systems. The JSON, however, is not very \"human-readable\" while iterating at-desk.",
       "title" : "HTML Coverage Report"
@@ -20994,6 +20996,10 @@
       ],
       "discussions" : [
         {
+          "link" : "https:\/\/forums.swift.org\/t\/accepted-se-0507-borrow-and-mutate-accessors\/85266",
+          "name" : "acceptance"
+        },
+        {
           "link" : "https:\/\/forums.swift.org\/t\/se-0507-borrow-and-mutate-accessors\/84376",
           "name" : "review"
         },
@@ -21010,11 +21016,9 @@
           "name" : "Doug Gregor"
         }
       ],
-      "sha" : "19cd6248e329c5cf038bbe43da289dbad7b28481",
+      "sha" : "88f6ad0c20e810a8170531fc726f585651185f03",
       "status" : {
-        "end" : "2026-02-09T00:00:00Z",
-        "start" : "2026-01-26T00:00:00Z",
-        "state" : "activeReview"
+        "state" : "accepted"
       },
       "summary" : "Borrowing accessors — introduced with the new keywords `borrow` and `mutate` — allow implementing computed properties and subscripts using *borrowing semantics*.  These augment the existing `get`, `set`, `yielding borrow`, and `yielding mutate` accessors to complete the design described in the “Prospective Vision for Accessors”: https:\/\/forums.swift.org\/t\/prospective-vision-accessors\/76707",
       "title" : "Borrow and Mutate Accessors"
@@ -21034,6 +21038,10 @@
         {
           "link" : "https:\/\/forums.swift.org\/t\/se-0508-array-expression-trailing-closures\/84479",
           "name" : "review"
+        },
+        {
+          "link" : "https:\/\/forums.swift.org\/t\/accepted-se-0508-array-expression-trailing-closures\/84728",
+          "name" : "acceptance"
         }
       ],
       "id" : "SE-0508",
@@ -21052,11 +21060,10 @@
           "name" : "Xiaodi Wu"
         }
       ],
-      "sha" : "3bec402f02c44d2c6b2e8d7754d082a6a27349f5",
+      "sha" : "09b22e659211d6f2ac4320c5fa36276e1081fad9",
       "status" : {
-        "end" : "2026-02-12T00:00:00Z",
-        "start" : "2026-01-30T00:00:00Z",
-        "state" : "activeReview"
+        "state" : "implemented",
+        "version" : "Next"
       },
       "summary" : "We add support for using trailing closures following array types in expressions.",
       "title" : "Array expression trailing closures"
@@ -21076,6 +21083,10 @@
         {
           "link" : "https:\/\/forums.swift.org\/t\/se-0509-software-bill-of-materials-sbom-generation-for-swift-package-manager\/84516",
           "name" : "review"
+        },
+        {
+          "link" : "https:\/\/forums.swift.org\/t\/accepted-se-0509-software-bill-of-materials-sbom-generation-for-swift-package-manager\/85045",
+          "name" : "acceptance"
         }
       ],
       "id" : "SE-0509",
@@ -21094,11 +21105,9 @@
           "name" : "Franz Busch"
         }
       ],
-      "sha" : "5114738d93d28d9bebf2f2f178508b7ab19ed54d",
+      "sha" : "f48224e5040cc1dfb6edbb8ab0ca1812daa7f6bd",
       "status" : {
-        "end" : "2026-02-16T00:00:00Z",
-        "start" : "2026-02-02T00:00:00Z",
-        "state" : "activeReview"
+        "state" : "accepted"
       },
       "summary" : "An SBOM (Software Bill of Materials) provides a detailed inventory of software components included in an artifact. SBOMs allow developers to improve and analyze the software supply chain security profile for their Swift projects (for example, determining whether a dependency that's being used has a vulnerability). Also, some companies, governments, and other regulatory bodies require SBOMs to be produced for auditing purposes.",
       "title" : "Software Bill of Materials (SBOM) Generation for Swift Package Manager"
@@ -21192,6 +21201,369 @@
           "link" : "https:\/\/github.com\/swiftlang\/swift-package-manager\/issues\/8169"
         }
       ]
+    },
+    {
+      "authors" : [
+        {
+          "link" : "https:\/\/github.com\/grynspan",
+          "name" : "Jonathan Grynspan"
+        }
+      ],
+      "discussions" : [
+        {
+          "link" : "https:\/\/forums.swift.org\/t\/should-we-document-the-behavior-of-mutex-withlockifavailable\/83166",
+          "name" : "pre-pitch"
+        },
+        {
+          "link" : "https:\/\/forums.swift.org\/t\/pitch-document-the-lack-of-spurious-failures-in-mutex-withlockifavailable\/84279",
+          "name" : "pitch"
+        },
+        {
+          "link" : "https:\/\/forums.swift.org\/t\/se-0512-document-that-mutex-withlockifavailable-cannot-spuriously-fail\/84789",
+          "name" : "review"
+        },
+        {
+          "link" : "https:\/\/forums.swift.org\/t\/accepted-se-0512-document-that-mutex-withlockifavailable-cannot-spuriously-fail\/85225",
+          "name" : "acceptance"
+        }
+      ],
+      "id" : "SE-0512",
+      "implementation" : [
+        {
+          "account" : "swiftlang",
+          "id" : "85497",
+          "repository" : "swift",
+          "type" : "pull"
+        }
+      ],
+      "link" : "0512-withlockifavailable-cannot-spuriously-fail.md",
+      "reviewManagers" : [
+        {
+          "link" : "https:\/\/github.com\/rjmccall",
+          "name" : "John McCall"
+        }
+      ],
+      "sha" : "d4c56cc91a7037522553f2a61386264eda971d4d",
+      "status" : {
+        "state" : "implemented",
+        "version" : "6.0"
+      },
+      "summary" : "Modifies the documentation of [`Mutex.withLockIfAvailable(_:)`](https:\/\/developer.apple.com\/documentation\/synchronization\/mutex\/withlockifavailable(_:)) to add a guarantee that it is not subject to spurious failures. The implementation already cannot spuriously fail.",
+      "title" : "Document that `Mutex.withLockIfAvailable(_:)` cannot spuriously fail"
+    },
+    {
+      "authors" : [
+        {
+          "link" : "https:\/\/github.com\/grynspan",
+          "name" : "Jonathan Grynspan"
+        }
+      ],
+      "discussions" : [
+        {
+          "link" : "https:\/\/forums.swift.org\/t\/pitch-api-to-get-the-path-to-the-current-executable\/84137",
+          "name" : "pitch"
+        },
+        {
+          "link" : "https:\/\/forums.swift.org\/t\/se-0513-api-to-get-the-path-to-the-current-executable\/84800",
+          "name" : "review"
+        },
+        {
+          "link" : "https:\/\/forums.swift.org\/t\/returned-for-revision-se-0513-api-to-get-the-path-to-the-current-executable\/85220",
+          "name" : "returned for revision"
+        }
+      ],
+      "id" : "SE-0513",
+      "implementation" : [
+        {
+          "account" : "swiftlang",
+          "id" : "85496",
+          "repository" : "swift",
+          "type" : "pull"
+        }
+      ],
+      "link" : "0513-commandline-executablepath.md",
+      "reviewManagers" : [
+        {
+          "link" : "https:\/\/github.com\/allevato",
+          "name" : "Tony Allevato"
+        }
+      ],
+      "sha" : "67a7c921d3610b61ae74b1d11bccaa327739c0a1",
+      "status" : {
+        "state" : "returnedForRevision"
+      },
+      "summary" : "This proposal adds to the Swift standard library an interface for reading the path to the currently-executing binary. This value is useful to developers who need to spawn additional processes or who need to present information about the current program to the user.",
+      "title" : "API to get the path to the current executable"
+    },
+    {
+      "authors" : [
+        {
+          "link" : "https:\/\/github.com\/clintonpi",
+          "name" : "Clinton Nkwocha"
+        }
+      ],
+      "discussions" : [
+        {
+          "link" : "https:\/\/forums.swift.org\/t\/pitch-hashable-conformance-for-dictionary-keys-collectionofone-and-emptycollection\/84117",
+          "name" : "pitch"
+        },
+        {
+          "link" : "https:\/\/forums.swift.org\/t\/se-0514-hashable-conformance-for-dictionary-keys-collectionofone-and-emptycollection\/84852",
+          "name" : "review"
+        }
+      ],
+      "id" : "SE-0514",
+      "implementation" : [
+        {
+          "account" : "swiftlang",
+          "id" : "86899",
+          "repository" : "swift",
+          "type" : "pull"
+        }
+      ],
+      "link" : "0514-hashable-conformance-for-dictionarykeys-collectionofone-emptycollection.md",
+      "reviewManagers" : [
+        {
+          "link" : "https:\/\/github.com\/stephentyrone",
+          "name" : "Steve Canon"
+        }
+      ],
+      "sha" : "fdd1df572b4340534a549b57ed0c3b22030d9c12",
+      "status" : {
+        "end" : "2026-03-06T00:00:00Z",
+        "start" : "2026-02-20T00:00:00Z",
+        "state" : "activeReview"
+      },
+      "summary" : "This proposal adds `Hashable` conformance to three standard library collection types: `Dictionary.Keys`, `CollectionOfOne` and `EmptyCollection`.",
+      "title" : "`Hashable` Conformance for `Dictionary.Keys`, `CollectionOfOne` and `EmptyCollection`"
+    },
+    {
+      "authors" : [
+        {
+          "link" : "https:\/\/github.com\/airspeedswift",
+          "name" : "Ben Cohen"
+        }
+      ],
+      "discussions" : [
+        {
+          "link" : "https:\/\/forums.swift.org\/t\/pitch-allow-reduce-to-produce-noncopyable-results\/84073",
+          "name" : "pitch"
+        },
+        {
+          "link" : "https:\/\/forums.swift.org\/t\/se-0515-allow-reduce-to-produce-noncopyable-results\/84997",
+          "name" : "review"
+        },
+        {
+          "link" : "https:\/\/forums.swift.org\/t\/accepted-se-0515-allow-reduce-to-produce-noncopyable-results\/85286",
+          "name" : "acceptance"
+        }
+      ],
+      "id" : "SE-0515",
+      "implementation" : [
+        {
+          "account" : "swiftlang",
+          "id" : "85716",
+          "repository" : "swift",
+          "type" : "pull"
+        }
+      ],
+      "link" : "0515-noncopyable-reduce.md",
+      "reviewManagers" : [
+        {
+          "link" : "https:\/\/github.com\/jckarter",
+          "name" : "Joe Groff"
+        }
+      ],
+      "sha" : "2eb469d3852fa49a22057a19927e41327fdaae96",
+      "status" : {
+        "state" : "accepted"
+      },
+      "summary" : "A proposal to alter `Sequence.reduce(_:_:)` to:",
+      "title" : "Allow `reduce` to produce noncopyable results"
+    },
+    {
+      "authors" : [
+        {
+          "link" : "https:\/\/github.com\/natecook1000",
+          "name" : "Nate Cook"
+        },
+        {
+          "link" : "https:\/\/github.com\/airspeedswift",
+          "name" : "Ben Cohen"
+        }
+      ],
+      "discussions" : [
+        {
+          "link" : "https:\/\/forums.swift.org\/t\/pitch-borrowing-sequence\/84332",
+          "name" : "pitch"
+        },
+        {
+          "link" : "https:\/\/forums.swift.org\/t\/se-0516-borrowing-sequence\/85122",
+          "name" : "review"
+        }
+      ],
+      "id" : "SE-0516",
+      "implementation" : [
+        {
+          "account" : "swiftlang",
+          "id" : "86811",
+          "repository" : "swift",
+          "type" : "pull"
+        },
+        {
+          "account" : "swiftlang",
+          "id" : "87483",
+          "repository" : "swift",
+          "type" : "pull"
+        }
+      ],
+      "link" : "0516-borrowing-sequence.md",
+      "reviewManagers" : [
+        {
+          "link" : "https:\/\/github.com\/hborla",
+          "name" : "Holly Borla"
+        }
+      ],
+      "sha" : "d230ef8d03d91f1c580eadca1a04dffc21296a5f",
+      "status" : {
+        "end" : "2026-03-17T00:00:00Z",
+        "start" : "2026-03-03T00:00:00Z",
+        "state" : "activeReview"
+      },
+      "summary" : "We propose a new protocol for iteration, `BorrowingSequence`, which will work with noncopyable types and provide more efficient iteration in some circumstances for copyable types. The Swift compiler will support use of this protocol via the familiar `for`-`in` syntax.",
+      "title" : "Borrowing Sequence"
+    },
+    {
+      "authors" : [
+        {
+          "link" : "https:\/\/github.com\/Azoy",
+          "name" : "Alejandro Alonso"
+        }
+      ],
+      "discussions" : [
+        {
+          "link" : "https:\/\/forums.swift.org\/t\/pitch-box\/84014",
+          "name" : "pitch"
+        }
+      ],
+      "id" : "SE-0517",
+      "implementation" : [
+        {
+          "account" : "swiftlang",
+          "id" : "86336",
+          "repository" : "swift",
+          "type" : "pull"
+        }
+      ],
+      "link" : "0517-uniquebox.md",
+      "reviewManagers" : [
+        {
+          "link" : "https:\/\/github.com\/airspeedswift",
+          "name" : "Ben Cohen"
+        }
+      ],
+      "sha" : "e7c233e6bb8db444c3e7bcfd808682060472db89",
+      "status" : {
+        "end" : "2026-03-13T00:00:00Z",
+        "start" : "2026-03-02T00:00:00Z",
+        "state" : "activeReview"
+      },
+      "summary" : "We propose to introduce a new type in the standard library `UniqueBox` which is a smart pointer type that uniquely owns a value on the heap.",
+      "title" : "UniqueBox"
+    },
+    {
+      "authors" : [
+        {
+          "link" : "https:\/\/github.com\/xedin",
+          "name" : "Pavel Yaskevich"
+        }
+      ],
+      "discussions" : [
+        {
+          "link" : "https:\/\/forums.swift.org\/t\/pitch-sendable-conformance-for-suppressing-sendable-inference\/83288",
+          "name" : "pitch"
+        },
+        {
+          "link" : "https:\/\/forums.swift.org\/t\/se-0518-sendable-for-explicitly-marking-non-sendable-types\/85132",
+          "name" : "review"
+        }
+      ],
+      "id" : "SE-0518",
+      "implementation" : [
+        {
+          "account" : "swiftlang",
+          "id" : "84777",
+          "repository" : "swift",
+          "type" : "pull"
+        },
+        {
+          "account" : "swiftlang",
+          "id" : "85105",
+          "repository" : "swift",
+          "type" : "pull"
+        }
+      ],
+      "link" : "0518-tilde-sendable.md",
+      "reviewManagers" : [
+        {
+          "link" : "https:\/\/github.com\/xwu",
+          "name" : "Xiaodi Wu"
+        }
+      ],
+      "sha" : "3b27b4519c5f1a9ce4ee1b63ec270ae2f1c2bdb5",
+      "status" : {
+        "end" : "2026-03-16T00:00:00Z",
+        "start" : "2026-03-03T00:00:00Z",
+        "state" : "activeReview"
+      },
+      "summary" : "Introduces `~Sendable` conformance syntax to explicitly suppress a conformance to `Sendable`, which would prevent automatic `Sendable` inference on types, and provide an alternative way to mark types as non-`Sendable` without inheritance impact.",
+      "title" : "`~Sendable` for explicitly marking non-`Sendable` types"
+    },
+    {
+      "authors" : [
+        {
+          "link" : "https:\/\/github.com\/jckarter",
+          "name" : "Joe Groff"
+        },
+        {
+          "link" : "https:\/\/github.com\/Azoy",
+          "name" : "Alejandro Alonso"
+        }
+      ],
+      "discussions" : [
+        {
+          "link" : "https:\/\/forums.swift.org\/...",
+          "name" : "pitch"
+        },
+        {
+          "link" : "https:\/\/forums.swift.org\/t\/se-0519-borrow-and-inout-types-for-safe-first-class-references\/85151",
+          "name" : "review"
+        }
+      ],
+      "id" : "SE-0519",
+      "implementation" : [
+        {
+          "account" : "swiftlang",
+          "id" : "87222",
+          "repository" : "swift",
+          "type" : "pull"
+        }
+      ],
+      "link" : "0519-borrow-inout-types.md",
+      "reviewManagers" : [
+        {
+          "link" : "https:\/\/github.com\/DougGregor",
+          "name" : "Doug Gregor"
+        }
+      ],
+      "sha" : "217c84aa8c030ea4b6cdc3a1b7947637814bdb03",
+      "status" : {
+        "end" : "2026-03-17T00:00:00Z",
+        "start" : "2026-03-04T00:00:00Z",
+        "state" : "activeReview"
+      },
+      "summary" : "Two new standard library types, `Borrow` and `Inout`, represent safe references to another value, with shared (immutable) or exclusive (mutable) access respectively.",
+      "title" : "`Borrow` and `Inout` types for safe, first-class references"
     }
   ],
   "schemaVersion" : "1.0.0",

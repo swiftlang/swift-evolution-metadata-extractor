@@ -485,7 +485,7 @@
           "code" : 63,
           "kind" : "warning",
           "message" : "Missing or invalid dates for a review period.",
-          "suggestion" : ""
+          "suggestion" : "Review date ranges:\n    - Include the year\n    - Use full month names\n    - Separate dates by a hyphen or three periods\n    - Can include leading zero for single digit days\n    - For dates in the same year, only a trailing year is required\n    - For dates in the same month, only a leading month is required\n\nExamples:\n    March 3-15, 2026\n    July 01 - July 09, 2026\n    September 29...October 13, 2024\n    December 12, 2025...January 09, 2026"
         }
       ]
     },
@@ -529,7 +529,7 @@
           "code" : 63,
           "kind" : "warning",
           "message" : "Missing or invalid dates for a review period.",
-          "suggestion" : ""
+          "suggestion" : "Review date ranges:\n    - Include the year\n    - Use full month names\n    - Separate dates by a hyphen or three periods\n    - Can include leading zero for single digit days\n    - For dates in the same year, only a trailing year is required\n    - For dates in the same month, only a leading month is required\n\nExamples:\n    March 3-15, 2026\n    July 01 - July 09, 2026\n    September 29...October 13, 2024\n    December 12, 2025...January 09, 2026"
         }
       ]
     },

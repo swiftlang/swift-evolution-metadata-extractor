@@ -160,7 +160,22 @@ extension Proposal.Issue {
     static let missingOrInvalidReviewDates = Proposal.Issue(
         kind: .warning,
         code: 63,
-        message: "Missing or invalid dates for a review period."
+        message: "Missing or invalid dates for a review period.",
+        suggestion: """
+            Review date ranges:
+                - Include the year
+                - Use full month names
+                - Separate dates by a hyphen or three periods
+                - Can include leading zero for single digit days
+                - For dates in the same year, only a trailing year is required
+                - For dates in the same month, only a leading month is required
+
+            Examples:
+                March 3-15, 2026
+                July 01 - July 09, 2026
+                September 29...October 13, 2024
+                December 12, 2025...January 09, 2026
+            """
     )
 
     // MARK: - Bugs

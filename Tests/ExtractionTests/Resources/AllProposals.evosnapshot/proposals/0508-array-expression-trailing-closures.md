@@ -3,9 +3,9 @@
 * Proposal: [SE-0508](0508-array-expression-trailing-closures.md)
 * Authors: [Cal Stephens](https://github.com/calda)
 * Review Manager: [Xiaodi Wu](https://github.com/xwu)
-* Status: **Active review (January 30...February 12, 2026)**
+* Status: **Implemented (Swift Next)**
 * Implementation: [swiftlang/swift#86244](https://github.com/swiftlang/swift/pull/86244)
-* Review: ([pitch](https://forums.swift.org/t/support-trailing-closure-syntax-for-single-argument-array-and-dictionary-initializers/83900)) ([review](https://forums.swift.org/t/se-0508-array-expression-trailing-closures/84479))
+* Review: ([pitch](https://forums.swift.org/t/support-trailing-closure-syntax-for-single-argument-array-and-dictionary-initializers/83900)) ([review](https://forums.swift.org/t/se-0508-array-expression-trailing-closures/84479)) ([acceptance](https://forums.swift.org/t/accepted-se-0508-array-expression-trailing-closures/84728))
 
 ## Summary of changes
 
@@ -316,6 +316,6 @@ We could _narrow_ the source break by only allowing trailing closures following 
 
 Thank you to Tony Allevato for encouraging to investigate this improvement and sharing feedback on the pitch.
 
-Thank you to for Xiaodi Wu for sharing feedback on the pitch and developing the argument that the closure result builder use case is too fragile to be worth accommodating.
+Thank you to Xiaodi Wu for sharing feedback on the pitch and developing the argument that the closure result builder use case is too fragile to be worth accommodating.
 
 Thank you to Jed Fox for sharing the `InlineArray` trailing closure example.
