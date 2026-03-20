@@ -29,9 +29,12 @@ extension EvolutionMetadata {
 
     var validationReport: String {
         let dateString: String = creationDate.replacingOccurrences(of: "T", with: " ")
+        func proposalString(_ count: Int) -> String { "\(count) Proposal\(count == 1 ? "" : "s")" }
+
         var report = """
             Swift Evolution Validation Report
             \(dateString)
+            \(proposalString(proposals.count)) Validated
             ----------\n\n
             """
         let errorProposals = proposals.filter { $0.hasIssues }
@@ -39,7 +42,7 @@ extension EvolutionMetadata {
         if errorProposals.isEmpty {
             report += "NO ISSUES FOUND\n\n"
         } else {
-            report += "ISSUES FOUND\n\n"
+            report += "ISSUES FOUND IN \(proposalString(errorProposals.count).uppercased())\n\n"
             report = errorProposals.reduce(into: report) { $0 += $1.validationReport + "\n" }
         }
         
