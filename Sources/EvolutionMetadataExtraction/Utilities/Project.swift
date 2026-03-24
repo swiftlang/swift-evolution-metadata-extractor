@@ -60,7 +60,7 @@ public final class Project: Sendable {
         repository: "swift-evolution",
         path: "proposals",
         proposalPrefix: "SE",
-        proposalRegex: /^SE-\d\d\d\d$/,
+        proposalRegex: /^SE-\d{4}$/,
         previousResultsURL: URL(string: "https://download.swift.org/swift-evolution/v1/evolution.json")!,
         defaultOutputFilename: "evolution.json",
         validationExemptions: [
@@ -90,7 +90,7 @@ public final class Project: Sendable {
         repository: "swift-evolution",
         path: "proposals/testing",
         proposalPrefix: "ST",
-        proposalRegex: /^ST-\d\d\d\d$/,
+        proposalRegex: /^ST-\d{4}$/,
         previousResultsURL: nil, // URL(string: "https://download.swift.org/swift-evolution/v1/testing-evolution.json")!,
         defaultOutputFilename: "testing-evolution.json",
         validationExemptions: [
@@ -106,7 +106,7 @@ public final class Project: Sendable {
         repository: "swift-foundation",
         path: "Proposals",
         proposalPrefix: "SF",
-        proposalRegex: /^SF-\d\d\d\d$/,
+        proposalRegex: /^SF-\d{4}$/,
         previousResultsURL: nil, // URL(string: "https://download.swift.org/swift-evolution/v1/foundation-evolution.json")!,
         defaultOutputFilename: "foundation-evolution.json",
         validationExemptions: [:]

@@ -43,7 +43,7 @@ struct ProposalLinkExtractor: MarkupWalker, ValueExtractor {
                 }
 
                 // The link should be relative and contain the correct number of digits.
-                if !proposalLink.destination.contains(/^\d\d\d\d-.*\.md$/) {
+                if !proposalLink.destination.contains(/^\d{4}-.*\.md$/) {
                     self.proposalLink?.destination = "" // Do not include an incorrect destination
                     issues.reportIssue(Proposal.Issue.invalidProposalIDLink, source: source)
                 }

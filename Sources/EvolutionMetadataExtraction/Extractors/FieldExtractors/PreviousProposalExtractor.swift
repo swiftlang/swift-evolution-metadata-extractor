@@ -36,7 +36,7 @@ struct PreviousProposalExtractor: MarkupWalker, ValueExtractor {
     
     mutating func visitText(_ text: Text) -> () {
         // VALIDATION ENHANCEMENT: Potentially look for missing links or text that does not include a proposal ID
-        for match in text.string.matches(of: /SE-\d\d\d\d/) {
+        for match in text.string.matches(of: /SE-\d{4}/) {
             _previousProposalIDs.append(String(match.0))
         }
     }

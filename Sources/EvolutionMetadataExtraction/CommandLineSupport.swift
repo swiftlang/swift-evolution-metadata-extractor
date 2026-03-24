@@ -128,7 +128,7 @@ public enum ArgumentValidation {
                 for arg in forceExtract {
                     if arg == "all" {
                         forceAll = true
-                    } else if arg.contains(/^SE-\d\d\d\d$/){
+                    } else if arg.contains(/^SE-\d{4}/){
                         forcedExtractionIDs.append(arg)
                     } else {
                         throw ValidationError("Valid --force-extraction values are 'all' and proposal ids of the form 'SE-NNNN'")
