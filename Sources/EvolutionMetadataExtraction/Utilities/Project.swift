@@ -22,14 +22,14 @@ public final class Project: Sendable {
     let path: String
     let proposalPrefix: String
     nonisolated(unsafe) let proposalRegex: Regex<Substring>
-    let previousResultsURL: URL
+    let previousResultsURL: URL?
     let defaultOutputFilename: String
     private let endpointBaseURL: URL
     let mainBranchEndpoint: URL
     let proposalListingEndpoint: URL
     let validationExemptions: [Int:RangeSet<Int>]
     
-    private init(name: String, organization: String, repository: String, path: String, proposalPrefix: String, proposalRegex: Regex<Substring>, previousResultsURL: URL, defaultOutputFilename: String, validationExemptions: [Int:RangeSet<Int>]) {
+    private init(name: String, organization: String, repository: String, path: String, proposalPrefix: String, proposalRegex: Regex<Substring>, previousResultsURL: URL?, defaultOutputFilename: String, validationExemptions: [Int:RangeSet<Int>]) {
         self.name = name
         self.organization = organization
         self.repository = repository
@@ -91,7 +91,7 @@ public final class Project: Sendable {
         path: "proposals/testing",
         proposalPrefix: "ST",
         proposalRegex: /^ST-\d\d\d\d$/,
-        previousResultsURL: URL(string: "https://download.swift.org/swift-evolution/v1/testing-evolution.json")!,
+        previousResultsURL: nil, // URL(string: "https://download.swift.org/swift-evolution/v1/testing-evolution.json")!,
         defaultOutputFilename: "testing-evolution.json",
         validationExemptions: [
             // Early proposals did not have a review manager
@@ -107,7 +107,7 @@ public final class Project: Sendable {
         path: "Proposals",
         proposalPrefix: "SF",
         proposalRegex: /^SF-\d\d\d\d$/,
-        previousResultsURL: URL(string: "https://download.swift.org/swift-evolution/v1/foundation-evolution.json")!,
+        previousResultsURL: nil, // URL(string: "https://download.swift.org/swift-evolution/v1/foundation-evolution.json")!,
         defaultOutputFilename: "foundation-evolution.json",
         validationExemptions: [:]
     )
