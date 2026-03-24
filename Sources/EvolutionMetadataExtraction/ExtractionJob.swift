@@ -178,8 +178,9 @@ extension ExtractionJob {
         return ExtractionJob(project: project, output: output, snapshot: snapshot, proposalSpecs: proposalSpecs, previousResults: nil, forcedExtractionIDs: forcedExtractionIDs, jobMetadata: jobMetadata)
     }
 
-    static func previousResults(from url: URL, ignorePreviousResults: Bool) async throws -> EvolutionMetadata? {
+    static func previousResults(from url: URL?, ignorePreviousResults: Bool) async throws -> EvolutionMetadata? {
         if ignorePreviousResults { return nil }
+        guard let url else { return nil }
 
         let data: Data?
         if url.isFileURL {
