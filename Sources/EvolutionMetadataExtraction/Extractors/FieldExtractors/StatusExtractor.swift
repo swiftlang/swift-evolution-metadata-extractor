@@ -204,6 +204,8 @@ extension Proposal.Status {
             case "Accepted with modifications".lowercased(): self = .accepted
             case "Partially implemented".lowercased(): self = .implemented(version: version)
             case "Implemented with Modifications".lowercased(): self = .implemented(version: version)
+            // TEMPORARY: Treat 'Expired' as Rejected until addition is confirmed and dashboard is updated
+            case "Expired".lowercased(): self = .rejected
             default: return nil
         }
     }
