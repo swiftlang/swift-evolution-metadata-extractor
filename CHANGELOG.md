@@ -21,6 +21,7 @@ Add new items at the end of the relevant section under **Unreleased**.
     - 'missing review manager link'
     - 'missing author link'
 - Remove warning for proposals with past due review period ([#94])
+- Include validation report as part of extract command verbose output ([#105])
 
 ### Fixes
 
@@ -96,3 +97,4 @@ This changelog's format is based on [Keep a Changelog](https://keepachangelog.co
 [#92]: https://github.com/swiftlang/swift-evolution-metadata-extractor/pull/92
 [#93]: https://github.com/swiftlang/swift-evolution-metadata-extractor/pull/93
 [#94]: https://github.com/swiftlang/swift-evolution-metadata-extractor/pull/94
+[#105]: https://github.com/swiftlang/swift-evolution-metadata-extractor/pull/105
