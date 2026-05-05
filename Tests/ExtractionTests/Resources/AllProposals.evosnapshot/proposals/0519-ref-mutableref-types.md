@@ -1,16 +1,16 @@
-# `Borrow` and `Inout` types for safe, first-class references
+# `Ref` and `MutableRef` types for safe, first-class references
 
-* Proposal: [SE-0519](0519-borrow-inout-types.md)
+* Proposal: [SE-0519](0519-ref-mutableref-types.md)
 * Authors: [Joe Groff](https://github.com/jckarter), [Alejandro Alonso](https://github.com/Azoy)
 * Review Manager: [Doug Gregor](https://github.com/DougGregor)
-* Status: **Active review (March 4...17, 2026)**
+* Status: **Implemented (Swift 6.4)**
 * Implementation: [swiftlang/swift#87222](https://github.com/swiftlang/swift/pull/87222), available in recent `main` development snapshots on swift.org
 * Previous Revision: *if applicable* [1](https://github.com/swiftlang/swift-evolution/blob/...commit-ID.../proposals/NNNN-filename.md)
 * Review: ([pitch](https://forums.swift.org/...)) ([review](https://forums.swift.org/t/se-0519-borrow-and-inout-types-for-safe-first-class-references/85151))
 
 ## Summary of changes
 
-Two new standard library types, `Borrow` and `Inout`, represent safe
+Two new standard library types, `Ref` and `MutableRef`, represent safe
 references to another value, with shared (immutable) or
 exclusive (mutable) access respectively.
 
@@ -39,12 +39,12 @@ properly.
 ## Proposed solution
 
 We introduce two new generic types to the standard library to represent
-references as first-class, non-`Escapable` types. `Borrow`
+references as first-class, non-`Escapable` types. `Ref`
 represents a shared borrow of another value, which can be used to read the
 target value but not consume or modify its contents:
 
 ```swift
-public struct Borrow<Value: ~Copyable>: Copyable & ~Escapable {
+public struct Ref<Value: ~Copyable>: Copyable & ~Escapable {
   @_lifetime(borrow target)
   public init(_ target: borrowing Value)
 
@@ -52,12 +52,12 @@ public struct Borrow<Value: ~Copyable>: Copyable & ~Escapable {
 }
 ```
 
-`Inout<T>` represents an exclusive access to another value, granting the
-owner of the `Inout` the ability to modify the target value and assume
-exclusive use of the target value for as long as the `Inout` value is active:
+`MutableRef<T>` represents an exclusive access to another value, granting the
+owner of the `MutableRef` the ability to modify the target value and assume
+exclusive use of the target value for as long as the `MutableRef` value is active:
 
 ```swift
-public struct Inout<Value: ~Copyable>: ~Copyable & ~Escapable {
+public struct MutableRef<Value: ~Copyable>: ~Copyable & ~Escapable {
   @_lifetime(&target)
   public init(_ target: inout Value)
 
@@ -70,8 +70,8 @@ construct `~Escapable` values, and also use [`borrow` and `mutate` accessors](ht
 provide efficient access to the target value without unnecessary limitations on the scope
 of the access.
 
-References are formed by passing the target to one of the `Borrow.init` or
-`Inout.init` initializers. Once formed, the target value can be accessed
+References are formed by passing the target to one of the `Ref.init` or
+`MutableRef.init` initializers. Once formed, the target value can be accessed
 through the reference's `value` property. Using these types, developers can
 bind a local reference to a nested value once for repeated operations:
 
@@ -79,7 +79,7 @@ bind a local reference to a nested value once for repeated operations:
 func updateTotal(in dictionary: inout [String: Int], for key: String,
                  with values: [Int]) {
   // Project a key out of a dictionary once...
-  var entry = Inout(&dictionary[key, default: 0])
+  var entry = MutableRef(&dictionary[key, default: 0])
 
   // ...and then repeatedly modify it, without repeatedly looking into the
   // hash table
@@ -97,11 +97,11 @@ struct Vec3 {
   var x, y, z: Double
 
   @_lifetime(&self)
-  mutating func at(index: Int) -> Inout<Double> {
+  mutating func at(index: Int) -> MutableRef<Double> {
     switch index {
-    case 0: return Inout(&x)
-    case 1: return Inout(&y)
-    case 2: return Inout(&z)
+    case 0: return MutableRef(&x)
+    case 1: return MutableRef(&y)
+    case 2: return MutableRef(&z)
     default:
       fatalError("out of bounds")
     }
@@ -109,7 +109,7 @@ struct Vec3 {
 }
 ```
 
-`Borrow` and `Inout` can also appear as fields of other non-`Escapable` types:
+`Ref` and `MutableRef` can also appear as fields of other non-`Escapable` types:
 
 ```swift
 // A struct-of-arrays of people records.
@@ -127,18 +127,18 @@ struct People {
 
 // A mutable reference to a single person.
 struct Person: ~Copyable, ~Escapable {
-  var name: Inout<String>
-  var age: Inout<Int>
+  var name: MutableRef<String>
+  var age: MutableRef<Int>
 }
 ```
 
-`Borrow` and `Inout` furthermore allow for references to be used as generic
+`Ref` and `MutableRef` furthermore allow for references to be used as generic
 parameters, allowing containers and wrappers which support non-`Escapable` types
 to contain references:
 
 ```
 @_lifetime(&array)
-func element(of array: inout [Int], at: Int) -> Inout<Int>? {
+func element(of array: inout [Int], at: Int) -> MutableRef<Int>? {
   if at >= 0 && at < array.count {
     return &array[at]
   } else {
@@ -151,24 +151,24 @@ func element(of array: inout [Int], at: Int) -> Inout<Int>? {
 
 ### Lifetime dependence
 
-Both `Borrow` and `Inout` are non-`Escapable` types. Once formed, they carry
+Both `Ref` and `MutableRef` are non-`Escapable` types. Once formed, they carry
 a lifetime dependency on their target, so can be used only as long as the
-target value can remain borrowed (in the case of `Borrow`) or exclusively
-accessed (in the case of `Inout`). Conversely, the target undergoes a borrow
+target value can remain borrowed (in the case of `Ref`) or exclusively
+accessed (in the case of `MutableRef`). Conversely, the target undergoes a borrow
 or exclusive access for the duration of the reference's lifetime, so the
-target may only undergo other borrowing accesses while a dependent `Borrow`
-is in use, and cannot be used directly at all while a dependent `Inout` has
+target may only undergo other borrowing accesses while a dependent `Ref`
+is in use, and cannot be used directly at all while a dependent `MutableRef` has
 exclusive access to it.
 
 ```swift
 var totals = [17, 38]
 
 do {
-  let apples = Borrow(totals[0])
+  let apples = Ref(totals[0])
 
   print(apples.value) // prints 17
 
-  apples.value += 2 // ERROR, Borrow.value is read only
+  apples.value += 2 // ERROR, Ref.value is read only
 
   totals[1] += 1 // ERROR, cannot mutate `totals` while borrowed
 
@@ -177,9 +177,9 @@ do {
 }
 
 do {
-  var bananas = Inout(&totals[1])
+  var bananas = MutableRef(&totals[1])
 
-  bananas.value += 2 // we can mutate the value through `Inout`
+  bananas.value += 2 // we can mutate the value through `MutableRef`
 
   print(bananas.value) // prints 40
 
@@ -194,19 +194,19 @@ print(totals) // prints [17, 42]
 
 This behavior is analogous to the interaction between an `Array` and dependent
 `Span` or `MutableSpan` values accessed through its `span` and `mutableSpan`
-properties. (Indeed, one could look at `Borrow` and `Inout` as being the
+properties. (Indeed, one could look at `Ref` and `MutableRef` as being the
 single-value analogs to the multiple-value-referencing `Span` and `MutableSpan`,
 respectively.)
 
 ### Interaction with nontrivial accesses
 
-A `Borrow` can target any value, and `Inout` can target any mutable location,
+A `Ref` can target any value, and `MutableRef` can target any mutable location,
 including properties or subscripted values produced as the result of `get`/`set`
 pairs, yielded by `yielding` coroutine accessors, guarded by dynamic exclusivity
 checks, or observed by `didSet`/`willSet` accessors. In these situations,
 the access will first be initiated to form the target value (invoking the
 getter, starting the `yielding borrow` or `yielding mutate` coroutine, etc.).
-The `Borrow` or `Inout` reference will then be formed targeting that value.
+The `Ref` or `MutableRef` reference will then be formed targeting that value.
 When the reference's lifetime ends, the access will be ended (invoking the
 setter, resuming the `yielding` coroutine, invoking `willSet` and/or `didSet`
 observers).
@@ -229,41 +229,41 @@ struct NoisyCounter {
 
 var counter = NoisyCounter(67)
 do {
-  var counterRef = Inout(&counter.value) // begins access to `counter.value`, prints "counted 67"
+  var counterRef = MutableRef(&counter.value) // begins access to `counter.value`, prints "counted 67"
   counterRef.value += 1
   counterRef.value += 1
   // access to `counter.value` ends, prints "updating counter to 69"
 }
 ```
 
-Note that `Borrow` and `Inout` are *dependent on* the access; they only
+Note that `Ref` and `MutableRef` are *dependent on* the access; they only
 reference the target value and do not capture any context in order to end the
-access themselves. Therefore, a `Borrow` or `Inout` derived from a nontrivial
+access themselves. Therefore, a `Ref` or `MutableRef` derived from a nontrivial
 access generally cannot have its lifetime extended beyond its immediate caller,
 since the caller must execute the code to end the access at the end of the
 reference's lifetime.
 
 ```swift
 @_lifetime(&target)
-func noisyCounterRef(from target: inout NoisyCounter) -> Inout<Int> {
-  // ERROR, would extend the lifetime of `Inout` outside of the formal access
-  return Inout(&target.value)
+func noisyCounterRef(from target: inout NoisyCounter) -> MutableRef<Int> {
+  // ERROR, would extend the lifetime of `MutableRef` outside of the formal access
+  return MutableRef(&target.value)
 }
 ```
 
 Direct accesses to `struct` stored properties, direct accesses to immutable
 `class` stored properties, or accesses that go through `borrow` or `mutate`
 accessors do not require any code execution at the end of the access, so
-`Borrow` and `Inout` values targeting those are only limited by the parent
+`Ref` and `MutableRef` values targeting those are only limited by the parent
 access from which the property or subscript was projected.
 
-### Representation of `Borrow`
+### Representation of `Ref`
 
-Reading the following section is not necessary to use `Borrow`, but is
+Reading the following section is not necessary to use `Ref`, but is
 of interest to understand its type layout and implementation.
 
 Depending on the properties of the `Value` type
-parameter, `Borrow<Value>` may either be represented as a pointer to the
+parameter, `Ref<Value>` may either be represented as a pointer to the
 target value in memory, or as a bitwise copy of the target value's representation.
 The pointer representation is used if `Value` meets any of the following
 criteria:
@@ -274,7 +274,7 @@ criteria:
 
 The size threshold aligns with the Swift calling convention's threshold for
 passing and returning values in registers, to avoid wasteful
-bitwise-copying of very large values while ensuring that `Borrow`s can be passed
+bitwise-copying of very large values while ensuring that `Ref`s can be passed
 and returned across function boundaries without being dependent on temporary
 stack allocations.
 
@@ -292,36 +292,36 @@ types as **bitwise-borrowable**, since a borrow can be passed across functions
 by bitwise copy.
 
 As such, immutable values of *bitwise-borrowable* type do not have a stable address.
-However, with the introduction of `Borrow` values, it ought to be possible to
-define functions that, given a borrow of a value, returns a `Borrow` (or,
-more usefully, a type containing a `Borrow`) with the same lifetime as that
+However, with the introduction of `Ref` values, it ought to be possible to
+define functions that, given a borrow of a value, returns a `Ref` (or,
+more usefully, a type containing a `Ref`) with the same lifetime as that
 borrow:
 
 ```swift
 @_lifetime(borrow target)
-func refer<T>(to target: T) -> Borrow<T> {
+func refer<T>(to target: T) -> Ref<T> {
   // This ought to be allowed
-  Borrow(target)
+  Ref(target)
 }
 ```
 
-If `Borrow` always used a pointer-to-target representation, then forming a
-`Borrow` targeting a bitwise-borrowable value would require storing that value
+If `Ref` always used a pointer-to-target representation, then forming a
+`Ref` targeting a bitwise-borrowable value would require storing that value
 in memory, possibly in a temporary stack allocation. A temporary stack
 allocation would mean that functions would be unable to receive a borrowed
-parameter, form a `Borrow` of it, and return that value, since the `Borrow`
+parameter, form a `Ref` of it, and return that value, since the `Ref`
 would depend on the function's own stack frame:
 
 ```swift
 @_lifetime(borrow target)
-func refer(to target: AnyObject) -> Borrow<AnyObject> {
+func refer(to target: AnyObject) -> Ref<AnyObject> {
   // This ought to be allowed, so `target` can't be spilled to a local
   // temporary allocation
-  Borrow(target)
+  Ref(target)
 }
 ```
 
-Therefore, a `Borrow` of a small *bitwise-borrowable* type takes on the representation
+Therefore, a `Ref` of a small *bitwise-borrowable* type takes on the representation
 of the value itself, unless the type is also *addressable-for-dependencies*
 (described below).
 
@@ -350,53 +350,50 @@ above, this ensures that in the call to `span(over:)`, the `array` parameter
 exists in memory that outlives the call, allowing the `Span` to be safely
 formed and returned to the caller.
 
-`Borrow` should not interfere with the lifetime of dependent values projected
-from the target through the `Borrow`, so when the `Value` type is
-*addressable-for-dependencies*, `Borrow` uses the pointer representation.
+`Ref` should not interfere with the lifetime of dependent values projected
+from the target through the `Ref`, so when the `Value` type is
+*addressable-for-dependencies*, `Ref` uses the pointer representation.
 
 ```swift
 @_lifetime(copy borrow)
-func span(over borrow: Borrow<[2 of Int8]>) -> Span<Int8> {
+func span(over borrow: Ref<[2 of Int8]>) -> Span<Int8> {
   // This also ought to be allowed
   return borrow.target.span
 }
 ```
 
 Since the calling convention rules pass *addressable-for-dependencies*
-types by pointer when there is a returned dependency, and any `Borrow` value
-returned would be a dependency, `Borrow` using the pointer representation does
-not interfere with forming and returning a `Borrow` from a borrowed parameter:
+types by pointer when there is a returned dependency, and any `Ref` value
+returned would be a dependency, `Ref` using the pointer representation does
+not interfere with forming and returning a `Ref` from a borrowed parameter:
 
 ```swift
 @_lifetime(borrow target)
-func refer(to target: [2 of Int8]) -> Borrow<[2 of Int8]> {
+func refer(to target: [2 of Int8]) -> Ref<[2 of Int8]> {
   // This ought to be allowed. `target` is received by pointer, so
-  // `Borrow<[2 of Int8]>` using the pointer representation can point to the
+  // `Ref<[2 of Int8]>` using the pointer representation can point to the
   // caller's memory.
-  Borrow(target)
+  Ref(target)
 }
 ```
 
 `struct`, `union`, and `class` types imported from C, Objective-C, and C++ are
 always considered to be *addressable-for-dependencies*. This is intended to make
-it easier for `Borrow` types to interact with data types in those languages
+it easier for `Ref` types to interact with data types in those languages
 that use pointers and/or C++ references to represent relationships between values.
 
-### Representation of `Inout`
+### Representation of `MutableRef`
 
 `inout` parameters are always passed by address at the machine calling convention
-level, so `Inout` can use a pointer representation in all cases without limiting
+level, so `MutableRef` can use a pointer representation in all cases without limiting
 its ability to be passed across function call boundaries.
 
 ## Source compatibility
 
 This proposal adds two new top-level declarations to the standard library,
-`Borrow` and `Inout`. According to GitHub code search, existing code
-that declares a [`struct Borrow`](https://github.com/search?q=%22struct+Borrow%22+language%3ASwift&type=code&ref=advsearch)
-or [`struct Inout`](https://github.com/search?q=%22struct+Inout%22+language%3ASwift&type=code&ref=advsearch) is rare, though not nonexistent. Swift's name lookup
-rules favor locally-defined and explicitly-imported names over standard
-library names, so existing code should continue to compile and behave as
-it used to.
+`Ref` and `MutableRef`. Swift's name lookup rules favor locally-defined and
+explicitly-imported names over standard library names, so existing code should
+continue to compile and behave as it used to.
 
 ## ABI compatibility
 
@@ -404,7 +401,7 @@ This proposal is additive and does not affect the ABI of existing code.
 
 ## Implications on adoption
 
-Generic support for `Borrow` requires new runtime type layout functionality,
+Generic support for `Ref` requires new runtime type layout functionality,
 which may limit the availability of these types when targeting older Swift
 runtimes.
 
@@ -412,23 +409,23 @@ runtimes.
 
 ### Local reference bindings in more places
 
-Using `Borrow` and `Inout`, developers can form reference bindings anywhere
+Using `Ref` and `MutableRef`, developers can form reference bindings anywhere
 a variable or property can be declared, reaching beyond the limited places in
 the language that references can be formed. This technically satisfies our
 developers' long-standing desire to be able to form local reference bindings,
-and store references as members of types; however, since `Borrow` and
-`Inout` are distinct types, with their own value and members distinct from the
-target type, working with `Borrow` or `Inout` requires notational overhead to form and
+and store references as members of types; however, since `Ref` and
+`MutableRef` are distinct types, with their own value and members distinct from the
+target type, working with `Ref` or `MutableRef` requires notational overhead to form and
 dereference the reference separate from the target. This leaves them as an
 unsatisfying endpoint to the local reference bindings story.
 
 In the future, we should still consider introducing primitive reference binding
 syntax to the language (which could be viewed as sugar over forming an explicit
-`Borrow` or `Inout`):
+`Ref` or `MutableRef`):
 
 ```swift
 // Explicitly-formed reference
-let x = Borrow(y)
+let x = Ref(y)
 x.value.foo()
 
 // Reference binding sugar (strawman syntax)
@@ -437,24 +434,24 @@ x.foo()
 ```
 
 One might ask, if we're still going to talk about adding reference bindings,
-why also have `Borrow` and `Inout` as separate types? The explicit reference
+why also have `Ref` and `MutableRef` as separate types? The explicit reference
 types would still play a role in addressing the fundamental limitations of
 reference bindings:
 
 - Since a reference binding's name refers to the target value, and in particular,
   assignments through the binding would reassign the target value, the reference
   itself cannot be reassigned. In a graph of values that refer to each other
-  through `Borrow` or `Inout` references, a traversal loop can update a `Borrow`
+  through `Ref` or `MutableRef` references, a traversal loop can update a `Ref`
   variable in-place as it advances through the graph, but not a `borrow` binding.
 
-- `Borrow` and `Inout` can be used as type arguments to generic types
+- `Ref` and `MutableRef` can be used as type arguments to generic types
   and functions. This allows for references to participate in generic algorithms
   and data structures without those data structures having any specific knowledge
   of them; the generic interface in question only needs to be able to accept
   `~Escapable` types.
 
 Although we should consider bindings, and we would likely recommend that
-developers prefer the bindings where possible, `Borrow` and `Inout` are
+developers prefer the bindings where possible, `Ref` and `MutableRef` are
 primitives that provide expressivity what bindings can, and the types also
 provide a "desugaring" explanation for how the bindings work in the future.
 As such, we consider the types to be an important permanent addition to the
@@ -463,37 +460,37 @@ language.
 ### Implicit dereferencing or member forwarding
 
 As another approach to reduce the syntactic overhead of using
-`Borrow` and `Inout`, we might consider giving `Borrow` or `Inout` dynamic
+`Ref` and `MutableRef`, we might consider giving `Ref` or `MutableRef` dynamic
 member lookup capabilities, or introducing something like Rust's `Deref` trait
-to automatically forward name lookups from `Borrow` or `Inout` to the target
-`value`. Any such mechanism will be imperfect, since `Borrow` and
-`Inout`'s own members will shadow any forwarding mechanism.
+to automatically forward name lookups from `Ref` or `MutableRef` to the target
+`value`. Any such mechanism will be imperfect, since `Ref` and
+`MutableRef`'s own members will shadow any forwarding mechanism.
 
 ### `~Escapable` target types
 
-As proposed here, `Borrow` and `Inout` both require their target type to
+As proposed here, `Ref` and `MutableRef` both require their target type to
 be `Escapable`. There are implementation limitations in the compiler that
 prevent implementing references to non-`Escapable` types. With the limitations
 of the current lifetime system, the non-`Escapable` `value` projected from
-a `Borrow` or `Inout` would also be artificially lifetime-constrained to the
+a `Ref` or `MutableRef` would also be artificially lifetime-constrained to the
 lifetime of the reference, since the current model lacks the ability to track
 multiple lifetimes per value.
 
 ### A borrowing reference type that is always represented as a pointer
 
-As discussed in the "Representation of `Borrow`" section, `Borrow<Value>`
+As discussed in the "Representation of `Ref`" section, `Ref<Value>`
 will use a value representation for some `Value` types, rather than a pointer.
 This should be transparent to most native Swift code, but in some situations,
 particularly when doing manual data layout or interoperating with other
 languages, it may be interesting to have a variant that is always represented
 as a pointer. That type would sometimes be forced to have a shorter maximum
-lifetime than `Borrow` can provide if the target needs to have a temporary
+lifetime than `Ref` can provide if the target needs to have a temporary
 memory location formed to point to.
 
 ### Generalized single-yield coroutines
 
 As discussed in the "Interaction with nontrivial accesses" section, when a
-`Borrow` or `Inout` targets a value that is referenced through a nontrivial
+`Ref` or `MutableRef` targets a value that is referenced through a nontrivial
 access (such as a `get`/`set` pair, a `yielding` coroutine accessor, a stored
 property with dynamic exclusivity checking, etc.), the reference's lifetime is
 confined to the caller that initiated the access, since that same caller must
@@ -503,10 +500,10 @@ only accessors, that could provide a way to define functions that compute
 references depending on nontrivial accesses:
 
 ```swift
-yielding func noisyCounterRef(from target: inout NoisyCounter) -> Inout<Int> {
-  // this would be OK, since we're yielding `Inout` to the caller without
+yielding func noisyCounterRef(from target: inout NoisyCounter) -> MutableRef<Int> {
+  // this would be OK, since we're yielding `MutableRef` to the caller without
   // ending the current execution context
-  yield Inout(&target.value)
+  yield MutableRef(&target.value)
 }
 ```
 
@@ -518,59 +515,53 @@ contexts of any accesses to be passed along with the value reference itself.
 Such a type would naturally use more space and incur more execution overhead
 to use, but may be useful in some circumstances.
 
-### `exclusive` ownership or reborrowing for `Inout.value`
+### `exclusive` ownership or reborrowing for `MutableRef.value`
 
-`Inout` shares an ergonomic problem with `MutableSpan`: for safety, mutation
-of the target `value` through `Inout` requires exclusive access to the `Inout` value.
+`MutableRef` shares an ergonomic problem with `MutableSpan`: for safety, mutation
+of the target `value` through `MutableRef` requires exclusive access to the `MutableRef` value.
 In Swift today, this exclusive access can only be exercised through mutable
-bindings, which will force `Inout` values to be assigned to `var` bindings even
-if the `Inout` value itself is never mutated, and prevent expressions returning
-`Inout` values from being used directly in mutation expressions:
+bindings, which will force `MutableRef` values to be assigned to `var` bindings even
+if the `MutableRef` value itself is never mutated, and prevent expressions returning
+`MutableRef` values from being used directly in mutation expressions:
 
 ```swift
 var source = #"print("Hello World")"#
 
-let ref = Inout(&source)
+let ref = MutableRef(&source)
 // ERROR, mutating `value` requires mutable access to `ref`
 ref.value += #"; print("Goodbye Universe")"#
 
-func getRef(from: inout String) -> Inout<String> { return Inout(&from) }
+func getRef(from: inout String) -> MutableRef<String> { return MutableRef(&from) }
 
 // ERROR, mutating `value` requires mutable access to temporary value
 getRef(from: &source).value += #"; print("...except for that guy")"#
 ```
 
 Any of the remedies we are considering for `MutableSpan` are also applicable
-to `Inout`:
+to `MutableRef`:
 
 - A new `exclusive` ownership mode, which is applicable to values that
   are exclusively owned either because they offer mutable access or because they
-  are owned immutable values, would allow for temporary and immutable `Inout`
+  are owned immutable values, would allow for temporary and immutable `MutableRef`
   values to be projected safely.
 - Alternatively, a mechanism similar to Rust's "reborrowing" mechanism, whereby
   mutable references are consumed by projection operations but can be re-formed
   after those dependent projections are completed, could also be made to work
-  with `Inout` values and derived projections.
+  with `MutableRef` values and derived projections.
 
 ## Alternatives considered
 
-### Naming the `Inout` type
+### Naming these types `Borrow` and `Inout`
 
-Our usual naming conventions might argue that the proper spelling of the
-`inout`-capturing reference type would be `InOut`, capitalizing both words.
-The authors subjectively find this odd-looking, and hard to type, and see
-`inout` in its specialized usage as a keyword as more akin to a single word than a true
-compound of its components.
-
-There has been talk in the past of possibly superseding `inout` with the
-`mutating` keyword, to bring it in line with the `mutating` modifier on
-methods and fit it into the `borrowing`/`consuming` naming scheme for the
-other parameter ownership modifiers. That might suggest `Mutable` or something
-along those lines as the name of the reference type.
+The previous version of this proposal used the names `Borrow` and `Inout` during
+the review phase. It was decided in the acceptance of this proposal that
+`Ref` and `MutableRef` were better fits for these types. `Ref` is better because
+we are actually talking about a safe reference and `MutableRef` follows the
+pattern set by `Span` and `MutableSpan` quite well.
 
 ### Naming the `value` property
 
-We propose giving `Borrow` and `Inout` a property named `value` to
+We propose giving `Ref` and `MutableRef` a property named `value` to
 access the target value. This aligns with the interface of the [proposed `Unique` type](https://forums.swift.org/t/pitch-box/84014). Some other possibilities we
 considered include:
 
