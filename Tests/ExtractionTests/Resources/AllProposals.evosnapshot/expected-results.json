@@ -1,10 +1,10 @@
 {
-  "commit" : "29bbbc28ea5211bf3a38f54b24a893287080e640",
-  "creationDate" : "2026-03-13T19:45:52Z",
+  "commit" : "11324a8923388ffde0862b8708c031badb04ce07",
+  "creationDate" : "2026-05-05T20:46:04Z",
   "implementationVersions" : [
     "2.2", "3.0", "3.0.1", "3.1", "4.0", "4.1", "4.2", "5.0", "5.1", "5.2",
     "5.3", "5.4", "5.5", "5.5.2", "5.6", "5.7", "5.8", "5.9", "5.9.2", "5.10",
-    "6.0", "6.1", "6.2", "6.2.3", "6.3", "Next"
+    "6.0", "6.1", "6.2", "6.2.3", "6.3", "6.4"
   ],
   "proposals" : [
     {
@@ -9040,6 +9040,10 @@
         {
           "link" : "https:\/\/forums.swift.org\/t\/accepted-with-modifications-se-0246-generic-math-functions\/22244\/26",
           "name" : "acceptance"
+        },
+        {
+          "link" : "https:\/\/forums.swift.org\/t\/expired-se-0246-generic-math-s-functions\/85744",
+          "name" : "expiration"
         }
       ],
       "id" : "SE-0246",
@@ -9058,9 +9062,9 @@
           "name" : "John McCall"
         }
       ],
-      "sha" : "c4fe2be0a8d03435e1dd5caa5e1da66583150387",
+      "sha" : "0a886c62eca54cdb906f5f3777d4a9e9d99e14ce",
       "status" : {
-        "state" : "accepted"
+        "state" : "rejected"
       },
       "summary" : "This proposal introduces two new protocols to the standard library: `ElementaryFunctions` and `Real`. These protocols combine to provide \"basic math functions\" in generic contexts for floating-point and SIMD types, and provide a path to extend that functionality to planned complex types in the future.",
       "title" : "Generic Math(s) Functions"
@@ -12762,7 +12766,7 @@
           "name" : "Ben Cohen"
         }
       ],
-      "sha" : "850529c3a5bad3261493e67ea74a347aab8eddb3",
+      "sha" : "2b6d305ed4a05738669266f39308a6495928d682",
       "status" : {
         "state" : "implemented",
         "version" : "5.7"
@@ -13552,7 +13556,7 @@
           "name" : "Joe Groff"
         }
       ],
-      "sha" : "ccf49c1942b8f740ab61dbfafdd557e28e6ff07a",
+      "sha" : "603e368148d375b2c2b522cfb5b4913b04f9b2bf",
       "status" : {
         "state" : "implemented",
         "version" : "5.7"
@@ -17261,7 +17265,7 @@
           "name" : "Tony Allevato"
         }
       ],
-      "sha" : "f057c4dd5eb6bfadd7860e150a78756606277f1a",
+      "sha" : "3a9073a788643380d354844223429c510061704c",
       "status" : {
         "state" : "implemented",
         "version" : "6.0"
@@ -18856,10 +18860,10 @@
           "name" : "Steve Canon"
         }
       ],
-      "sha" : "8c5ead4bd2ded0f8ea6dbee4bfd1191522abb424",
+      "sha" : "b13f54b2f7084012bba07ba80dd596c40177af06",
       "status" : {
         "state" : "implemented",
-        "version" : "Next"
+        "version" : "6.3"
       },
       "summary" : "The Swift compiler has the ability to \"specialize\" a generic function at compile time. This specialization creates a custom implementation of the function, where the generic placeholders are substituted with specific types. This can unlock optimizations of that specialized function that can be dramatically faster than the unspecialized version in some circumstances. The compiler can generate this specialized version and call it when it can see at the call site with what concrete types a function is being called, and the body of the function to specialize.",
       "title" : "Explicit Specialization"
@@ -19255,6 +19259,14 @@
         {
           "link" : "https:\/\/forums.swift.org\/t\/accepted-with-modifications-se-0469-task-naming\/79438",
           "name" : "acceptance"
+        },
+        {
+          "link" : "https:\/\/forums.swift.org\/t\/amend-se-0469-task-names-to-include-instance-property\/85460",
+          "name" : "amendment pitch"
+        },
+        {
+          "link" : "https:\/\/forums.swift.org\/t\/amended-se-0469-task-naming\/85841",
+          "name" : "amendment acceptance"
         }
       ],
       "id" : "SE-0469",
@@ -19273,7 +19285,7 @@
           "name" : "Holly Borla"
         }
       ],
-      "sha" : "0d1faf7de79639dcde886f57f766fe0b65190db0",
+      "sha" : "24c466950138bc1194be179b7ea243169a104e56",
       "status" : {
         "state" : "implemented",
         "version" : "6.2"
@@ -19697,6 +19709,10 @@
         {
           "link" : "https:\/\/forums.swift.org\/t\/se-0479-method-and-initializer-key-paths\/79457",
           "name" : "review"
+        },
+        {
+          "link" : "https:\/\/forums.swift.org\/t\/returned-for-revision-se-0479-method-and-initializer-key-paths\/80262",
+          "name" : "returned for revision"
         }
       ],
       "id" : "SE-0479",
@@ -19727,11 +19743,9 @@
           "name" : "Becca Royal-Gordon"
         }
       ],
-      "sha" : "bd1db9fe2e7c425a99733f329e87e93cb6926b42",
+      "sha" : "153e85bf16a9266646402e325300d1bf8cbb7a08",
       "status" : {
-        "end" : "2026-05-05T00:00:00Z",
-        "start" : "2026-04-22T00:00:00Z",
-        "state" : "activeReview"
+        "state" : "returnedForRevision"
       },
       "summary" : "Swift key paths can be written to properties and subscripts. This proposal extends key path usage to include references to method members, such as instance and type methods, and initializers.",
       "title" : "Method and Initializer Key Paths"
@@ -20236,6 +20250,10 @@
         {
           "link" : "https:\/\/forums.swift.org\/t\/se-0490-environment-constrained-shared-libraries\/81975",
           "name" : "review"
+        },
+        {
+          "link" : "https:\/\/forums.swift.org\/t\/returned-for-revision-se-0490-environment-constrained-shared-libraries\/82212",
+          "name" : "returned for revision"
         }
       ],
       "id" : "SE-0490",
@@ -20254,11 +20272,9 @@
           "name" : "Alastair Houghton"
         }
       ],
-      "sha" : "39e362438765bc5c0a6c58111ecd6195fd9e9f5f",
+      "sha" : "130473fd0b500417c1f00ba7072d73079edf222b",
       "status" : {
-        "end" : "2026-09-18T00:00:00Z",
-        "start" : "2026-09-05T00:00:00Z",
-        "state" : "activeReview"
+        "state" : "returnedForRevision"
       },
       "summary" : "SwiftPM currently has no support for non-system binary library dependencies on Linux. This proposal adds support for **Environment Constrained Shared Libraries**, which are a type of dynamic library that is shared across a fleet of machines and can be upgraded without recompiling and redeploying all applications running on those machines. We will distribute Environment Constrained Shared Libraries through the existing `.artifactbundle` format.",
       "title" : "Environment Constrained Shared Libraries",
@@ -20306,9 +20322,10 @@
           "name" : "Freddy Kellison-Linn"
         }
       ],
-      "sha" : "99c0d956161e13d89b696d2e125bb5a3525e8c20",
+      "sha" : "b5fef18abb95d733afeee8a5922534cabb269f45",
       "status" : {
-        "state" : "accepted"
+        "state" : "implemented",
+        "version" : "6.3"
       },
       "summary" : "We propose that Swift's grammar be extended so that, wherever an identifier is written in source code to reference a declaration, it can be prefixed by `ModuleName::` to disambiguate which module the declaration is expected to come from. This syntax will provide a way to resolve several types of name ambiguities and conflicts.",
       "title" : "Module selectors for name disambiguation",
@@ -20389,9 +20406,10 @@
           "name" : "Holly Borla"
         }
       ],
-      "sha" : "1ec46c74a592d041615cb19548ecb77ea65fbcf0",
+      "sha" : "2bfc15008ef02a617796ac234c99752c5ea56c94",
       "status" : {
-        "state" : "accepted"
+        "state" : "implemented",
+        "version" : "6.4"
       },
       "summary" : "This is a targeted proposal to introduce support for asynchronous calls within `defer` statements. Such calls must be marked with `await` as any other asynchronous call would be, and `defer` statements which do asynchronous work will be implicitly awaited at any relevant scope exit point.",
       "title" : "Support `async` calls in `defer` bodies"
@@ -20467,10 +20485,10 @@
           "name" : "John McCall"
         }
       ],
-      "sha" : "0f24457a7edbeacedd61bf9fd0b65424fd9fecbd",
+      "sha" : "76957489815b39e25ace8148b430007c8630de14",
       "status" : {
         "state" : "implemented",
-        "version" : "Next"
+        "version" : "6.4"
       },
       "summary" : "We propose new `isTriviallyIdentical(to:)` instance methods to concrete types for quickly determining if two instances must be equal by-value.",
       "title" : "Add `isTriviallyIdentical(to:)` Methods for Quick Comparisons to Concrete Types"
@@ -20594,7 +20612,7 @@
       "authors" : [
         {
           "link" : "https:\/\/github.com\/ktoso",
-          "name" : "Konrad'ktoso'Malawski"
+          "name" : "Konrad 'ktoso' Malawski"
         },
         {
           "link" : "https:\/\/github.com\/Azoy",
@@ -20638,9 +20656,10 @@
           "name" : "Steve Canon"
         }
       ],
-      "sha" : "1a3e9ca4c53de03a3a6e98b53d6ac8b5f7157348",
+      "sha" : "0818043e4d02a20fdc1cf803ef8b18b577e0ddf9",
       "status" : {
-        "state" : "accepted"
+        "state" : "implemented",
+        "version" : "6.4"
       },
       "summary" : "Swift symbols are subject to name mangling. These mangled names then show up in backtraces and other profiling tools. Mangled names may look something like this `$sSS7cStringSSSPys4Int8VG_tcfC` and often end up visible to developers, unless they are demangled before displaying.",
       "title" : "Expose demangle function in Runtime module"
@@ -20682,9 +20701,10 @@
           "name" : "Holly Borla"
         }
       ],
-      "sha" : "40ec911fc51122c94ad7bd46845283d59c574fc8",
+      "sha" : "dc54f73372ff8ede6ffe64891fb69b7b7b01faef",
       "status" : {
-        "state" : "accepted"
+        "state" : "implemented",
+        "version" : "6.4"
       },
       "summary" : "The following protocols will be marked as refining `~Copyable` and `~Escapable`:",
       "title" : "Support ~Copyable, ~Escapable in simple standard library protocols"
@@ -20743,11 +20763,15 @@
       "discussions" : [
         {
           "link" : "https:\/\/forums.swift.org\/t\/pitch-adding-html-coverage-support\/82358",
-          "name" : "Pitch"
+          "name" : "pitch"
         },
         {
-          "link" : "https:\/\/forums.swift.org\/t\/se-0501-html-coverage-report\/83601\/1",
-          "name" : "Review"
+          "link" : "https:\/\/forums.swift.org\/t\/se-0501-html-coverage-report\/83601",
+          "name" : "review"
+        },
+        {
+          "link" : "https:\/\/forums.swift.org\/t\/accepted-se-0501-html-coverage-report\/85288",
+          "name" : "acceptance"
         }
       ],
       "id" : "SE-0501",
@@ -20766,11 +20790,11 @@
           "name" : "David Cummings"
         }
       ],
-      "sha" : "9a36b854ec650025c2c2e800f87dcfa67493dde7",
+      "sha" : "2d5feeae2886d8c573990ae1ba6a10a841fae9a6",
       "status" : {
         "state" : "accepted"
       },
-      "summary" : "Currently, `swift test` supports generating a JSON coverage report, which is great for ingesting into various systems. The JSON, however, is not very \"human-readable\" while iterating at-desk.",
+      "summary" : "Currently, `swift test` supports generating a JSON coverage report, which is great for ingesting into various systems. The JSON, however, is not very \"human-readable\" during iterative development at-desk.",
       "title" : "HTML Coverage Report"
     },
     {
@@ -20805,6 +20829,12 @@
           "id" : "84514",
           "repository" : "swift",
           "type" : "pull"
+        },
+        {
+          "account" : "swiftlang",
+          "id" : "87028",
+          "repository" : "swift",
+          "type" : "pull"
         }
       ],
       "link" : "0502-exclude-private-from-memberwise-init.md",
@@ -20814,9 +20844,10 @@
           "name" : "Tony Allevato"
         }
       ],
-      "sha" : "a2348683fb407f29d8a5789ddea4eca8a590f6e1",
+      "sha" : "098091eaca0c20d1f9dae26b48b366fd286ba9da",
       "status" : {
-        "state" : "accepted"
+        "state" : "implemented",
+        "version" : "6.4"
       },
       "summary" : "We propose changing the rules for the implicit memberwise initializer such that it does not include properties with initial values that are less accessible than the most accessible property in the initializer, up to `internal`. This ensures that the resulting memberwise initializer is not unnecessarily forced to be `private` when introducing a new `private` property with an initial value.",
       "title" : "Exclude private initialized properties from memberwise initializer"
@@ -20850,11 +20881,9 @@
           "name" : "Ben Cohen"
         }
       ],
-      "sha" : "8de4480aad5ab276fe3b867bb6b20b471c24344f",
+      "sha" : "c1ee5ff1d440feac5f60abcdfdd5d4ee151e34c5",
       "status" : {
-        "end" : "2026-01-25T00:00:00Z",
-        "start" : "2026-01-11T00:00:00Z",
-        "state" : "activeReview"
+        "state" : "accepted"
       },
       "summary" : "An associated type defines a generic type in a protocol. You use them to help define the protocol's requirements. This Queue has two associated types, Element and Allocator:",
       "title" : "Suppressed Default Conformances on Associated Types With Defaults"
@@ -20896,9 +20925,10 @@
           "name" : "John McCall"
         }
       ],
-      "sha" : "ff509ee92ecb8188f10b312bffd55bc8185cf6ae",
+      "sha" : "7207b18a99f305eff763903deec158a29b39f724",
       "status" : {
-        "state" : "accepted"
+        "state" : "implemented",
+        "version" : "6.4"
       },
       "summary" : "This proposal introduces a new mechanism to temporarily \"ignore\" task cancellation, called task cancellation shields.",
       "title" : "Task Cancellation Shields"
@@ -20976,7 +21006,7 @@
           "name" : "Steve Canon"
         }
       ],
-      "sha" : "9a0d41c00242b16e8e5586ff462fae4c3cdf3c5b",
+      "sha" : "2efbd158fc724dbec49e336b02ef4a0f35f6f67b",
       "status" : {
         "state" : "accepted"
       },
@@ -20996,16 +21026,16 @@
       ],
       "discussions" : [
         {
-          "link" : "https:\/\/forums.swift.org\/t\/accepted-se-0507-borrow-and-mutate-accessors\/85266",
-          "name" : "acceptance"
+          "link" : "https:\/\/forums.swift.org\/t\/pitch-borrowing-accessors\/83933",
+          "name" : "pitch"
         },
         {
           "link" : "https:\/\/forums.swift.org\/t\/se-0507-borrow-and-mutate-accessors\/84376",
           "name" : "review"
         },
         {
-          "link" : "https:\/\/forums.swift.org\/t\/pitch-borrowing-accessors\/83933",
-          "name" : "pitch"
+          "link" : "https:\/\/forums.swift.org\/t\/accepted-se-0507-borrow-and-mutate-accessors\/85266",
+          "name" : "acceptance"
         }
       ],
       "id" : "SE-0507",
@@ -21016,9 +21046,10 @@
           "name" : "Doug Gregor"
         }
       ],
-      "sha" : "88f6ad0c20e810a8170531fc726f585651185f03",
+      "sha" : "163842bbcce18f9422f77efff79c1564797f0efa",
       "status" : {
-        "state" : "accepted"
+        "state" : "implemented",
+        "version" : "6.4"
       },
       "summary" : "Borrowing accessors — introduced with the new keywords `borrow` and `mutate` — allow implementing computed properties and subscripts using *borrowing semantics*.  These augment the existing `get`, `set`, `yielding borrow`, and `yielding mutate` accessors to complete the design described in the “Prospective Vision for Accessors”: https:\/\/forums.swift.org\/t\/prospective-vision-accessors\/76707",
       "title" : "Borrow and Mutate Accessors"
@@ -21060,10 +21091,10 @@
           "name" : "Xiaodi Wu"
         }
       ],
-      "sha" : "09b22e659211d6f2ac4320c5fa36276e1081fad9",
+      "sha" : "88436cda9af25e6c7b0be6f002cea24720ca465c",
       "status" : {
         "state" : "implemented",
-        "version" : "Next"
+        "version" : "6.4"
       },
       "summary" : "We add support for using trailing closures following array types in expressions.",
       "title" : "Array expression trailing closures"
@@ -21105,9 +21136,10 @@
           "name" : "Franz Busch"
         }
       ],
-      "sha" : "f48224e5040cc1dfb6edbb8ab0ca1812daa7f6bd",
+      "sha" : "741ae8988849185c2105afad149e865e3961d819",
       "status" : {
-        "state" : "accepted"
+        "state" : "implemented",
+        "version" : "6.4"
       },
       "summary" : "An SBOM (Software Bill of Materials) provides a detailed inventory of software components included in an artifact. SBOMs allow developers to improve and analyze the software supply chain security profile for their Swift projects (for example, determining whether a dependency that's being used has a vulnerability). Also, some companies, governments, and other regulatory bodies require SBOMs to be produced for auditing purposes.",
       "title" : "Software Bill of Materials (SBOM) Generation for Swift Package Manager"
@@ -21127,6 +21159,10 @@
         {
           "link" : "https:\/\/forums.swift.org\/t\/se-0510-dictionary-mapvalueswithkeys\/84547",
           "name" : "review"
+        },
+        {
+          "link" : "https:\/\/forums.swift.org\/t\/accepted-with-modifications-se-0510-dictionary-mapvalueswithkeys\/85124",
+          "name" : "acceptance"
         }
       ],
       "id" : "SE-0510",
@@ -21145,11 +21181,9 @@
           "name" : "Steve Canon"
         }
       ],
-      "sha" : "fd2c5b0734826ae8cb766776d83cdd81d1561664",
+      "sha" : "d0053f6b4ef0002d56f339f8414fcbcef60169ea",
       "status" : {
-        "end" : "2026-02-17T00:00:00Z",
-        "start" : "2026-02-03T00:00:00Z",
-        "state" : "activeReview"
+        "state" : "accepted"
       },
       "summary" : "I propose adding a method `Dictionary.mapValuesWithKeys` that passes the `Key` to the transformation closure.",
       "title" : "Introduce `Dictionary.mapValuesWithKeys`"
@@ -21164,11 +21198,15 @@
       "discussions" : [
         {
           "link" : "https:\/\/forums.swift.org\/t\/proposal-swift-package-add-target-plugin-command-to-swiftpm\/77930",
-          "name" : "Pitch"
+          "name" : "pitch"
         },
         {
           "link" : "https:\/\/forums.swift.org\/t\/se-0511-swiftpm-add-target-plugin-command\/84587",
-          "name" : "Review"
+          "name" : "review"
+        },
+        {
+          "link" : "https:\/\/forums.swift.org\/t\/accepted-se-0511-add-target-plugin-command-to-swift-package-manager\/86206",
+          "name" : "acceptance"
         }
       ],
       "id" : "SE-0511",
@@ -21187,11 +21225,9 @@
           "name" : "Mikaela Caron"
         }
       ],
-      "sha" : "04fc2c8ef7959ddad150b8714148bff504c25d7c",
+      "sha" : "17c4c396e57ea29c6532f84ff23a187f0206ad3f",
       "status" : {
-        "end" : "2026-02-19T00:00:00Z",
-        "start" : "2026-02-05T00:00:00Z",
-        "state" : "activeReview"
+        "state" : "accepted"
       },
       "summary" : "This proposal introduces a new `swift package add-target-plugin` command that allows developers to add plugin usages to existing targets in their `Package.swift` manifest directly from the command line.",
       "title" : "SwiftPM Add Target Plugin Command",
@@ -21310,6 +21346,10 @@
         {
           "link" : "https:\/\/forums.swift.org\/t\/se-0514-hashable-conformance-for-dictionary-keys-collectionofone-and-emptycollection\/84852",
           "name" : "review"
+        },
+        {
+          "link" : "https:\/\/forums.swift.org\/t\/accepted-se-0514-hashable-conformance-for-dictionary-keys-collectionofone-and-emptycollection\/85228",
+          "name" : "acceptance"
         }
       ],
       "id" : "SE-0514",
@@ -21328,11 +21368,10 @@
           "name" : "Steve Canon"
         }
       ],
-      "sha" : "fdd1df572b4340534a549b57ed0c3b22030d9c12",
+      "sha" : "95b70b9d65baf8890e82459ba9e27c22786f61be",
       "status" : {
-        "end" : "2026-03-06T00:00:00Z",
-        "start" : "2026-02-20T00:00:00Z",
-        "state" : "activeReview"
+        "state" : "implemented",
+        "version" : "6.4"
       },
       "summary" : "This proposal adds `Hashable` conformance to three standard library collection types: `Dictionary.Keys`, `CollectionOfOne` and `EmptyCollection`.",
       "title" : "`Hashable` Conformance for `Dictionary.Keys`, `CollectionOfOne` and `EmptyCollection`"
@@ -21400,6 +21439,10 @@
         {
           "link" : "https:\/\/forums.swift.org\/t\/se-0516-borrowing-sequence\/85122",
           "name" : "review"
+        },
+        {
+          "link" : "https:\/\/forums.swift.org\/t\/returned-for-revision-se-0516-borrowing-sequence\/85846",
+          "name" : "returned for revision"
         }
       ],
       "id" : "SE-0516",
@@ -21424,11 +21467,9 @@
           "name" : "Holly Borla"
         }
       ],
-      "sha" : "d230ef8d03d91f1c580eadca1a04dffc21296a5f",
+      "sha" : "76dd12b5ad1f986dbc36c1920e9bd636fe029800",
       "status" : {
-        "end" : "2026-03-17T00:00:00Z",
-        "start" : "2026-03-03T00:00:00Z",
-        "state" : "activeReview"
+        "state" : "returnedForRevision"
       },
       "summary" : "We propose a new protocol for iteration, `BorrowingSequence`, which will work with noncopyable types and provide more efficient iteration in some circumstances for copyable types. The Swift compiler will support use of this protocol via the familiar `for`-`in` syntax.",
       "title" : "Borrowing Sequence"
@@ -21444,6 +21485,10 @@
         {
           "link" : "https:\/\/forums.swift.org\/t\/pitch-box\/84014",
           "name" : "pitch"
+        },
+        {
+          "link" : "https:\/\/forums.swift.org\/t\/se-0517-uniquebox\/85107",
+          "name" : "review"
         }
       ],
       "id" : "SE-0517",
@@ -21462,11 +21507,9 @@
           "name" : "Ben Cohen"
         }
       ],
-      "sha" : "e7c233e6bb8db444c3e7bcfd808682060472db89",
+      "sha" : "e0834640851b25071b8f27528e8ad383f151a70a",
       "status" : {
-        "end" : "2026-03-13T00:00:00Z",
-        "start" : "2026-03-02T00:00:00Z",
-        "state" : "activeReview"
+        "state" : "accepted"
       },
       "summary" : "We propose to introduce a new type in the standard library `UniqueBox` which is a smart pointer type that uniquely owns a value on the heap.",
       "title" : "UniqueBox"
@@ -21486,6 +21529,10 @@
         {
           "link" : "https:\/\/forums.swift.org\/t\/se-0518-sendable-for-explicitly-marking-non-sendable-types\/85132",
           "name" : "review"
+        },
+        {
+          "link" : "https:\/\/forums.swift.org\/t\/accepted-se-0518-sendable-for-explicitly-marking-non-sendable-types\/85397",
+          "name" : "acceptance"
         }
       ],
       "id" : "SE-0518",
@@ -21510,11 +21557,10 @@
           "name" : "Xiaodi Wu"
         }
       ],
-      "sha" : "3b27b4519c5f1a9ce4ee1b63ec270ae2f1c2bdb5",
+      "sha" : "459b91f95bb6d44b9aa3514a308b5c9f0ed55663",
       "status" : {
-        "end" : "2026-03-16T00:00:00Z",
-        "start" : "2026-03-03T00:00:00Z",
-        "state" : "activeReview"
+        "state" : "implemented",
+        "version" : "6.4"
       },
       "summary" : "Introduces `~Sendable` conformance syntax to explicitly suppress a conformance to `Sendable`, which would prevent automatic `Sendable` inference on types, and provide an alternative way to mark types as non-`Sendable` without inheritance impact.",
       "title" : "`~Sendable` for explicitly marking non-`Sendable` types"
@@ -21549,21 +21595,536 @@
           "type" : "pull"
         }
       ],
-      "link" : "0519-borrow-inout-types.md",
+      "link" : "0519-ref-mutableref-types.md",
       "reviewManagers" : [
         {
           "link" : "https:\/\/github.com\/DougGregor",
           "name" : "Doug Gregor"
         }
       ],
-      "sha" : "217c84aa8c030ea4b6cdc3a1b7947637814bdb03",
+      "sha" : "f56a44295e2a3909033e7e2b5381953f55b480fd",
       "status" : {
-        "end" : "2026-03-17T00:00:00Z",
-        "start" : "2026-03-04T00:00:00Z",
+        "state" : "implemented",
+        "version" : "6.4"
+      },
+      "summary" : "Two new standard library types, `Ref` and `MutableRef`, represent safe references to another value, with shared (immutable) or exclusive (mutable) access respectively.",
+      "title" : "`Ref` and `MutableRef` types for safe, first-class references"
+    },
+    {
+      "authors" : [
+        {
+          "link" : "https:\/\/github.com\/ktoso",
+          "name" : "Konrad 'ktoso' Malawski"
+        }
+      ],
+      "discussions" : [
+        {
+          "link" : "https:\/\/forums.swift.org\/t\/pitch-remove-discardableresult-from-throwing-task-initializers\/84721",
+          "name" : "pitch"
+        },
+        {
+          "link" : "https:\/\/forums.swift.org\/t\/se-0520-discardable-result-use-in-task-initializers\/85374",
+          "name" : "review"
+        },
+        {
+          "link" : "https:\/\/forums.swift.org\/t\/accepted-se-0520-discardable-result-use-in-task-initializers\/86159",
+          "name" : "acceptance"
+        }
+      ],
+      "id" : "SE-0520",
+      "implementation" : [
+        {
+          "account" : "swiftlang",
+          "id" : "87439",
+          "repository" : "swift",
+          "type" : "pull"
+        }
+      ],
+      "link" : "0520-discardableresult-task-initializers.md",
+      "reviewManagers" : [
+        {
+          "link" : "https:\/\/github.com\/hborla",
+          "name" : "Holly Borla"
+        }
+      ],
+      "sha" : "707c61946417888114b005286a9903a9b3aaa4df",
+      "status" : {
+        "state" : "accepted"
+      },
+      "summary" : "Previously, `@discardableResult` was applied universally to all Task initializers, making it too easy to accidentally miss that a thrown error was ignored. We propose to introduce a new warning that will be applied to throwing Task initializers, in order to help developers not \"miss\" handling errors thrown by tasks.",
+      "title" : "Discardable result use in Task initializers"
+    },
+    {
+      "authors" : [
+        {
+          "link" : "https:\/\/github.com\/allevato",
+          "name" : "Tony Allevato"
+        }
+      ],
+      "discussions" : [
+        {
+          "link" : "https:\/\/forums.swift.org\/t\/pitch-allow-some-p-and-any-p-removing-the-need-for-parentheses\/84656",
+          "name" : "pitch"
+        },
+        {
+          "link" : "https:\/\/forums.swift.org\/t\/se-0521-improved-syntax-for-optionals-of-opaque-and-existential-types\/85377",
+          "name" : "review"
+        },
+        {
+          "link" : "https:\/\/forums.swift.org\/t\/accepted-with-modifications-se-0521-improved-syntax-for-optionals-of-opaque-and-existential-types\/86115",
+          "name" : "accepted with modifications"
+        }
+      ],
+      "id" : "SE-0521",
+      "implementation" : [
+        {
+          "account" : "swiftlang",
+          "id" : "87115",
+          "repository" : "swift",
+          "type" : "pull"
+        },
+        {
+          "account" : "swiftlang",
+          "id" : "3268",
+          "repository" : "swift-syntax",
+          "type" : "pull"
+        }
+      ],
+      "link" : "0521-improved-optional-opaque-and-any.md",
+      "reviewManagers" : [
+        {
+          "link" : "https:\/\/github.com\/Jumhyn",
+          "name" : "Freddy Kellison-Linn"
+        }
+      ],
+      "sha" : "0cae016d76eac3c32c4a2ac5bc1ebd7af14a9c99",
+      "status" : {
+        "state" : "accepted"
+      },
+      "summary" : "Allows the types `some P?` and `any P?` to be written, having the same meaning as `(some P)?` and `(any P)?` respectively.",
+      "title" : "Improved Syntax for Optionals of Opaque and Existential Types"
+    },
+    {
+      "authors" : [
+        {
+          "link" : "https:\/\/github.com\/artemcm",
+          "name" : "Artem Chikin"
+        },
+        {
+          "link" : "https:\/\/github.com\/douggregor",
+          "name" : "Doug Gregor"
+        },
+        {
+          "link" : "https:\/\/github.com\/hborla",
+          "name" : "Holly Borla"
+        }
+      ],
+      "discussions" : [
+        {
+          "link" : "https:\/\/forums.swift.org\/t\/pitch-source-level-control-over-compiler-warnings\/82766",
+          "name" : "pitch"
+        },
+        {
+          "link" : "https:\/\/forums.swift.org\/t\/se-0522-source-level-control-over-compiler-warnings\/85453",
+          "name" : "review"
+        },
+        {
+          "link" : "https:\/\/forums.swift.org\/t\/accepted-se-0522-source-level-control-over-compiler-warnings\/85860",
+          "name" : "acceptance"
+        }
+      ],
+      "id" : "SE-0522",
+      "implementation" : [
+        {
+          "account" : "swiftlang",
+          "id" : "85036",
+          "repository" : "swift",
+          "type" : "pull"
+        },
+        {
+          "account" : "swiftlang",
+          "id" : "3174",
+          "repository" : "swift-syntax",
+          "type" : "pull"
+        }
+      ],
+      "link" : "0522-source-warning-control.md",
+      "reviewManagers" : [
+        {
+          "link" : "https:\/\/github.com\/allevato",
+          "name" : "Tony Allevato"
+        }
+      ],
+      "sha" : "0590f1aa7d0234cc45cd145d481ccb45a7ab2a67",
+      "status" : {
+        "state" : "accepted"
+      },
+      "summary" : "This proposal introduces a new declaration attribute for controlling compiler warning behavior in specific code regions: to be emitted as warnings, errors, or suppressed.",
+      "title" : "Source-Level Control Over Compiler Warnings"
+    },
+    {
+      "authors" : [
+        {
+          "link" : "https:\/\/github.com\/fabianfett",
+          "name" : "Fabian Fett"
+        },
+        {
+          "link" : "https:\/\/github.com\/ktoso",
+          "name" : "Konrad Malawski"
+        }
+      ],
+      "discussions" : [
+        {
+          "link" : "https:\/\/forums.swift.org\/t\/pitch-hashable-conformance-for-unownedtaskexecutor\/85143",
+          "name" : "pitch"
+        },
+        {
+          "link" : "https:\/\/forums.swift.org\/t\/se-0523-hashable-conformance-for-unownedtaskexecutor\/85593",
+          "name" : "review"
+        },
+        {
+          "link" : "https:\/\/forums.swift.org\/t\/accepted-se-0523-hashable-conformance-for-unownedtaskexecutor\/85931",
+          "name" : "acceptance"
+        }
+      ],
+      "id" : "SE-0523",
+      "implementation" : [
+        {
+          "account" : "swiftlang",
+          "id" : "73968",
+          "repository" : "swift",
+          "type" : "pull"
+        }
+      ],
+      "link" : "0523-hashable-unownedtask-executor.md",
+      "reviewManagers" : [
+        {
+          "link" : "https:\/\/github.com\/rjmccall",
+          "name" : "John McCall"
+        }
+      ],
+      "sha" : "891ce9129b22a78a55b124a2b1ef17629f9eca5e",
+      "status" : {
+        "state" : "implemented",
+        "version" : "6.4"
+      },
+      "summary" : "This proposal adds `Hashable` conformance to `UnownedTaskExecutor`, enabling its use as a dictionary key and in sets. `UnownedTaskExecutor` already conforms to `Equatable`; this is a natural and source-compatible extension of that conformance.",
+      "title" : "Hashable conformance for `UnownedTaskExecutor`"
+    },
+    {
+      "authors" : [
+        {
+          "link" : "https:\/\/github.com\/MaxDesiatov",
+          "name" : "Max Desiatov"
+        }
+      ],
+      "discussions" : [
+        {
+          "link" : "https:\/\/forums.swift.org\/t\/pitch-add-withtemporaryallocation-using-output-raw-span\/84923",
+          "name" : "pitch"
+        },
+        {
+          "link" : "https:\/\/forums.swift.org\/t\/se-0524-add-withtemporaryallocation-using-output-raw-span\/85745",
+          "name" : "review"
+        },
+        {
+          "link" : "https:\/\/forums.swift.org\/t\/accepted-se-0524-add-withtemporaryallocation-using-output-raw-span\/86032",
+          "name" : "acceptance"
+        }
+      ],
+      "id" : "SE-0524",
+      "implementation" : [
+        {
+          "account" : "swiftlang",
+          "id" : "85866",
+          "repository" : "swift",
+          "type" : "pull"
+        }
+      ],
+      "link" : "0524-span-temporary-allocation.md",
+      "reviewManagers" : [
+        {
+          "link" : "https:\/\/github.com\/douggregor",
+          "name" : "Doug Gregor"
+        }
+      ],
+      "sha" : "a99f5b32fcb5273059dc519b529ab9e65d171ef5",
+      "status" : {
+        "state" : "implemented",
+        "version" : "6.4"
+      },
+      "summary" : "This proposal introduces new top-level functions that provide a temporary buffer wrapped in an `OutputSpan` or `OutputRawSpan`. This enables safe initialization of temporary memory, leveraging the safety guarantees of these span types while utilizing the stack-allocation optimization of `withUnsafeTemporaryAllocation`.",
+      "title" : "Add `withTemporaryAllocation` using `Output(Raw)Span`"
+    },
+    {
+      "authors" : [
+        {
+          "link" : "https:\/\/github.com\/glessard",
+          "name" : "Guillaume Lessard"
+        }
+      ],
+      "discussions" : [
+        {
+          "link" : "https:\/\/forums.swift.org\/t\/83966",
+          "name" : "pitch 1"
+        },
+        {
+          "link" : "https:\/\/forums.swift.org\/t\/84144",
+          "name" : "pitch 2"
+        },
+        {
+          "link" : "https:\/\/forums.swift.org\/t\/se-0525-safe-loading-api-for-rawspan\/85811",
+          "name" : "review"
+        }
+      ],
+      "id" : "SE-0525",
+      "implementation" : [
+        {
+          "account" : "swiftlang",
+          "id" : "88304",
+          "repository" : "swift",
+          "type" : "pull"
+        }
+      ],
+      "link" : "0525-rawspan-safe-loading-api.md",
+      "reviewManagers" : [
+        {
+          "link" : "https:\/\/github.com\/xwu",
+          "name" : "Xiaodi Wu"
+        }
+      ],
+      "sha" : "a4624fa76d2e5a25e95bc7258bc0429de201914b",
+      "status" : {
+        "end" : "2026-04-16T00:00:00Z",
+        "start" : "2026-04-03T00:00:00Z",
         "state" : "activeReview"
       },
-      "summary" : "Two new standard library types, `Borrow` and `Inout`, represent safe references to another value, with shared (immutable) or exclusive (mutable) access respectively.",
-      "title" : "`Borrow` and `Inout` types for safe, first-class references"
+      "summary" : "We introduce a set of safe API to load and store values of certain safe types from the memory represented by `RawSpan`, `MutableSpan` and `OutputRawSpan` instances. This will bolster the value of Swift in contexts where a process needs the ability to send data to other running processes via untyped buffers, as well as provide a set of building blocks for parsing utilities.",
+      "title" : "Safe loading API for `RawSpan`"
+    },
+    {
+      "authors" : [
+        {
+          "link" : "https:\/\/github.com\/FranzBusch",
+          "name" : "Franz Busch"
+        },
+        {
+          "link" : "https:\/\/github.com\/phausler",
+          "name" : "Philippe Hausler"
+        },
+        {
+          "link" : "https:\/\/github.com\/ktoso",
+          "name" : "Konrad Malawski"
+        }
+      ],
+      "discussions" : [
+        {
+          "link" : "https:\/\/forums.swift.org\/t\/pitch-withdeadline\/85262",
+          "name" : "pitch"
+        },
+        {
+          "link" : "https:\/\/forums.swift.org\/t\/se-0526-withdeadline\/85850",
+          "name" : "review"
+        },
+        {
+          "link" : "https:\/\/forums.swift.org\/t\/returned-for-revision-se-0526-withdeadline\/86438",
+          "name" : "returned for revision"
+        }
+      ],
+      "id" : "SE-0526",
+      "link" : "0526-deadline.md",
+      "reviewManagers" : [
+        {
+          "link" : "https:\/\/github.com\/Jumhyn",
+          "name" : "Freddy Kellison-Linn"
+        }
+      ],
+      "sha" : "4c9f524128518f01a2455c3b37c1d021c890221d",
+      "status" : {
+        "state" : "returnedForRevision"
+      },
+      "summary" : "This proposal introduces `withDeadline`, a function that executes asynchronous operations with a composable absolute time limit. The function accepts a continuous clock instant representing the deadline by which the operation must complete. If the operation completes before the deadline, the function returns the result; if the deadline expires first, the operation is cancelled.",
+      "title" : "withDeadline"
+    },
+    {
+      "authors" : [
+        {
+          "link" : "https:\/\/github.com\/lorentey",
+          "name" : "Karoy Lorentey"
+        },
+        {
+          "link" : "https:\/\/github.com\/Azoy",
+          "name" : "Alejandro Alonso"
+        }
+      ],
+      "discussions" : [
+        {
+          "link" : "https:\/\/forums.swift.org\/t\/pitch-rigidarray-and-uniquearray\/85455",
+          "name" : "pitch"
+        },
+        {
+          "link" : "https:\/\/forums.swift.org\/t\/se-0527-rigidarray-and-uniquearray\/85985",
+          "name" : "review"
+        }
+      ],
+      "id" : "SE-0527",
+      "implementation" : [
+        {
+          "account" : "swiftlang",
+          "id" : "87521",
+          "repository" : "swift",
+          "type" : "pull"
+        }
+      ],
+      "link" : "0527-rigidarray-uniquearray.md",
+      "reviewManagers" : [
+        {
+          "link" : "https:\/\/github.com\/stephentyrone",
+          "name" : "Steve Canon"
+        }
+      ],
+      "sha" : "075f538fd258ac88ed901348973a38507498516c",
+      "status" : {
+        "end" : "2026-04-27T00:00:00Z",
+        "start" : "2026-04-13T00:00:00Z",
+        "state" : "activeReview"
+      },
+      "summary" : "We propose to introduce two new array types to the Swift Standard Library, `RigidArray` and `UniqueArray`, that are both capable of storing noncopyable elements.",
+      "title" : "RigidArray and UniqueArray"
+    },
+    {
+      "authors" : [
+        {
+          "link" : "https:\/\/github.com\/fabianfett",
+          "name" : "Fabian Fett"
+        },
+        {
+          "link" : "https:\/\/github.com\/ktoso",
+          "name" : "Konrad Malawski"
+        }
+      ],
+      "discussions" : [
+        {
+          "link" : "https:\/\/forums.swift.org\/t\/pitch-rigidarray-and-uniquearray\/85455",
+          "name" : "pitch"
+        },
+        {
+          "link" : "https:\/\/forums.swift.org\/t\/se-0528-non-copyable-continuation\/86055",
+          "name" : "review"
+        }
+      ],
+      "id" : "SE-0528",
+      "implementation" : [
+        {
+          "account" : "swiftlang",
+          "id" : "88182",
+          "repository" : "swift",
+          "type" : "pull"
+        }
+      ],
+      "link" : "0528-noncopyable-continuation.md",
+      "reviewManagers" : [
+        {
+          "link" : "https:\/\/github.com\/jckarter",
+          "name" : "Joe Groff"
+        }
+      ],
+      "sha" : "6ca0e400d84db67ad5dd95c946b860feacf87d28",
+      "status" : {
+        "end" : "2026-04-28T00:00:00Z",
+        "start" : "2026-04-15T00:00:00Z",
+        "state" : "activeReview"
+      },
+      "summary" : "While the new `Continuation` improves the ergonomics of continuations in a lot of places, we still rely on a runtime trap, if a continuation is dropped. Since we use a noncopyable type here, the compiler already injects deinit calls at the places where a continuation is dropped. We could consider adding a new mode for `~Copyable` types, that signals, that instead of adding `deinit`s the compiler enforces that a type must be explicitly consumed. This would turn the runtime trap into a compiler error.",
+      "title" : "`Continuation` — Safe and Performant Async Continuations"
+    },
+    {
+      "authors" : [
+        {
+          "link" : "https:\/\/github.com\/milseman",
+          "name" : "Michael Ilseman"
+        },
+        {
+          "link" : "https:\/\/github.com\/compnerd",
+          "name" : "Saleem Abdulrasool"
+        }
+      ],
+      "discussions" : [
+        {
+          "link" : "https:\/\/forums.swift.org\/t\/pitch-add-filepath-to-the-standard-library\/84812",
+          "name" : "first pitch"
+        },
+        {
+          "link" : "https:\/\/forums.swift.org\/t\/pitch-2-add-filepath-to-stdlib\/85695",
+          "name" : "second pitch"
+        },
+        {
+          "link" : "https:\/\/forums.swift.org\/t\/se-0529-add-filepath-to-the-standard-library\/86194",
+          "name" : "review"
+        }
+      ],
+      "id" : "SE-0529",
+      "link" : "0529-filepath-in-stdlib.md",
+      "reviewManagers" : [
+        {
+          "link" : "https:\/\/github.com\/rjmccall",
+          "name" : "John McCall"
+        }
+      ],
+      "sha" : "e91914e0315f2b94f370b5b5e2aef7bf3914efd6",
+      "status" : {
+        "end" : "2026-05-04T00:00:00Z",
+        "start" : "2026-04-22T00:00:00Z",
+        "state" : "activeReview"
+      },
+      "summary" : "We propose adding `FilePath` and its essential operations to the Swift standard library. `FilePath` parses platform-specific path syntax on the developer's behalf, provides a normalized view of path components, and enables resolution against the filesystem. This proposal establishes the core types (`FilePath`, `FilePath.Anchor`, `FilePath.Component`, `FilePath.ComponentView`), their conformances, and the essential operations needed to adopt `FilePath` as a currency type. Additional syntactic convenience methods and platform-specific path decomposition API are planned as [future additions](#future-directions).",
+      "title" : "Add `FilePath` to the Standard Library"
+    },
+    {
+      "authors" : [
+        {
+          "link" : "https:\/\/github.com\/ktoso",
+          "name" : "Konrad 'ktoso' Malawski"
+        },
+        {
+          "link" : "https:\/\/github.com\/mattmassicotte",
+          "name" : "Matt Massicotte"
+        }
+      ],
+      "discussions" : [
+        {
+          "link" : "https:\/\/forums.swift.org\/t\/pitch-result-codable-conformance-and-async-catching-init\/78566",
+          "name" : "First Pitch"
+        },
+        {
+          "link" : "https:\/\/forums.swift.org\/t\/se-0530-async-result-support\/86346",
+          "name" : "Review"
+        }
+      ],
+      "id" : "SE-0530",
+      "implementation" : [
+        {
+          "account" : "swiftlang",
+          "id" : "88465",
+          "repository" : "swift",
+          "type" : "pull"
+        }
+      ],
+      "link" : "0530-async-result-support.md",
+      "reviewManagers" : [
+        {
+          "link" : "https:\/\/github.com\/douggregor",
+          "name" : "Doug Gregor"
+        }
+      ],
+      "sha" : "069ddc52732d5c9dc7724b9226f8defca3dad707",
+      "status" : {
+        "end" : "2026-05-12T00:00:00Z",
+        "start" : "2026-04-28T00:00:00Z",
+        "state" : "activeReview"
+      },
+      "summary" : "The `Result` type is a very useful tool for managing code that can throw. However, it is missing an initializer that makes using the type with asynchronous code inconvenient.",
+      "title" : "Async Result Support"
     }
   ],
   "schemaVersion" : "1.0.0",

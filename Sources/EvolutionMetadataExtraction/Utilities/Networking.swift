@@ -54,6 +54,12 @@ struct GitHubContentItem: Codable {
         type == "file" && name.hasSuffix(".md")
     }
 
+    // A proposal file was renamed with the original file left in the repository.
+    // This predicate checks for the original file name which should be filtered out.
+    var hasDuplicateProposalID: Bool {
+        name == "0519-borrow-inout-types.md"
+    }
+
     /// Returns `nil` if this content item corresponds to a
     /// subdirectory instead of a direct proposal document.
     func proposalSpec(project: Project, sortIndex: Int) ->  ProposalSpec? {
@@ -116,7 +122,7 @@ struct GitHubFetcher {
         if let reference {
             endpoint.append(queryItems: [URLQueryItem(name: "ref", value: reference)])
         }
-        return try await getGitHubAPIValue(for: endpoint, type: [GitHubContentItem].self).filter { $0.isMarkdownFile }
+        return try await getGitHubAPIValue(for: endpoint, type: [GitHubContentItem].self).filter { $0.isMarkdownFile && !$0.hasDuplicateProposalID }
     }
 
     static func fetchPullRequestProposalList(for project: Project, pullRequestNumber: Int) async throws -> [GitHubPullFileItem] {
