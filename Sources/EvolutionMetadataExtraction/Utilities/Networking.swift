@@ -81,9 +81,9 @@ struct GitHubPullFileItem: Codable {
     var patch: String?
     var previous_filename: String?
 
-    var isProposalFile: Bool {
+    func isProposalFile(for project: Project) -> Bool {
         status != "removed" &&
-        filename.hasPrefix("proposals/") &&
+        filename.hasPrefix("\(project.path)/") &&
         filename.hasSuffix(".md")
     }
 
@@ -129,7 +129,7 @@ struct GitHubFetcher {
     static func fetchPullRequestProposalList(for project: Project, pullRequestNumber: Int) async throws -> [GitHubPullFileItem] {
         let endpointURL = project.githubPullEndpoint(for: pullRequestNumber)
         let contents = try await getGitHubAPIValue(for: endpointURL, type: [GitHubPullFileItem].self)
-        return contents.filter { $0.isProposalFile }
+        return contents.filter { $0.isProposalFile(for: project) }
     }
     
     static func getGitHubAPIValue<T: Decodable>(for endpoint: URL, type: T.Type, cachePolicy: URLRequest.CachePolicy = .useProtocolCachePolicy) async throws -> T {
