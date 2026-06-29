@@ -78,8 +78,9 @@ struct GitHubPullFileItem: Codable {
     var blob_url: String
     var raw_url: String
     var contents_url: String
-    var patch: String
-    
+    var patch: String?
+    var previous_filename: String?
+
     var isProposalFile: Bool {
         status != "removed" &&
         filename.hasPrefix("proposals/") &&
