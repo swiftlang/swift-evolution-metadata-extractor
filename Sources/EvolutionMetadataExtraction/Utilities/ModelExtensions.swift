@@ -70,7 +70,7 @@ extension Proposal {
 
     var validationReport: String {
         var report: String = ""
-        if hasErrors || hasWarnings {
+        if hasIssues {
             let adjustedID = id.isEmpty ? "<Missing ID>" : id
             let adjustedTitle = title.isEmpty ? "<Missing Title>" : "'\(title)'"
             report += (id.isEmpty && title.isEmpty) ? "<Missing ID & Title>" : "\(adjustedID) \(adjustedTitle)"
@@ -78,23 +78,39 @@ extension Proposal {
             report += "\n\n"
 
             if hasErrors, let errors {
-                report += issuesReport(heading: "ERRORS", issues: errors) + "\n"
+                report += issuesReport(heading: nil, issues: errors)
+            }
+            if hasErrors && hasWarnings {
+                report += "\n"
             }
             if hasWarnings, let warnings {
-                report += issuesReport(heading: "WARNINGS", issues: warnings) + "\n"
+                report += issuesReport(heading: nil, issues: warnings)
             }
         }
         return report
     }
 
-    private func issuesReport(heading: String, issues: [Proposal.Issue]) -> String {
-        var report = "\t\(heading)\n"
+    private func issuesReport(heading: String?, issues: [Proposal.Issue]) -> String {
+        var report: String
+        if let heading { report = "\t\(heading)\n" }
+        else { report = "" }
         for issue in issues {
-            report += "\t\(issue.message)\n"
+            report += "\t\(issue.kindLabel): \(issue.message)\n"
             if !issue.suggestion.isEmpty {
                 report += "\n\t\(issue.suggestion.replacingOccurrences(of: "\n", with: "\n\t"))\n"
             }
         }
         return report
+    }
+}
+
+// MARK: -
+
+extension Proposal.Issue {
+    var kindLabel: String {
+        switch kind {
+            case .error: "ERROR"
+            case .warning: "WARNING"
+        }
     }
 }
