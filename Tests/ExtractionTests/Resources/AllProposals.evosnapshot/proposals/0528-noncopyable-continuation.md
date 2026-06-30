@@ -3,14 +3,17 @@
 * Proposal: [SE-0528](0528-noncopyable-continuation.md)
 * Authors: [Fabian Fett](https://github.com/fabianfett), [Konrad Malawski](https://github.com/ktoso)
 * Review Manager: [Joe Groff](https://github.com/jckarter)
-* Status: **Active Review (April 15...28, 2026)** 
+* Status: **Implemented (Swift 6.4)**
 * Implementation: [swiftlang/swift#88182](https://github.com/swiftlang/swift/pull/88182)
 * Related Proposals: 
     - [SE-0300: Continuations for interfacing async tasks with synchronous code](https://github.com/swiftlang/swift-evolution/blob/main/proposals/0300-continuation.md)
     - [SE-0390: Noncopyable structs and enums](https://github.com/swiftlang/swift-evolution/blob/main/proposals/0390-noncopyable-structs-and-enums.md)
     - [SE-0413: Typed throws](https://github.com/swiftlang/swift-evolution/blob/main/proposals/0413-typed-throws.md)
+* Previous Revision: [as reviewed](https://github.com/swiftlang/swift-evolution/blob/2eb76e3e778d02664b4f32081658a9561abbace9/proposals/0528-noncopyable-continuation.md)
 * Review: ([pitch](https://forums.swift.org/t/pitch-rigidarray-and-uniquearray/85455))
     ([review](https://forums.swift.org/t/se-0528-non-copyable-continuation/86055))
+    ([acceptance](https://forums.swift.org/t/accepted-se-0528-non-copyable-continuation/86533))
+
 
 ## Summary
 
@@ -135,7 +138,7 @@ It is not possible to directly instantiate a `Continuation` type, and instead on
 ```swift
 public nonisolated(nonsending) func withContinuation<Success: ~Copyable, Failure: Error>(
     of: Success.Type,
-    throws: Failure.Type,
+    throwing: Failure.Type,
     _ body: (consuming Continuation<Success, Failure>) -> Void
 ) async throws(Failure) -> Success { ... }
 
@@ -168,7 +171,7 @@ let data = await withContinuation(of: Data.self) { continuation in
 This follows the same pattern used by other standard library APIs like `withThrowingTaskGroup`.
 The type flows naturally at the call site, and the closure parameter needs no annotation.
 
-**The `throws:` parameter and typed throws:**
+**The `throwing:` parameter and typed throws:**
 
 SE-0300 introduced two separate free functions — `withCheckedContinuation` and `withCheckedThrowingContinuation` — because Swift had no way to express a single function that was conditionally throwing based on a type parameter. The only option was duplication.
 
@@ -178,21 +181,21 @@ SE-0413 (typed throws) removes that limitation. A single function parameterized 
 - `Failure == MySpecificError` — the call site must `try` and the compiler knows the thrown type exactly.
 - `Failure == any Error` — equivalent to the old untyped `throws`.
 
-The `throws:` parameter is the type witness for `Failure`, serving the same role as `of:` does for `Success`: it surfaces the type at the call site rather than burying it in a closure signature.
+The `throwing:` parameter is the type witness for `Failure`, serving the same role as `of:` does for `Success`: it surfaces the type at the call site rather than burying it in a closure signature.
 
 ```swift
-// Non-throwing — throws: defaults to Never.self, no try needed
+// Non-throwing — throwing: defaults to Never.self, no try needed
 let data = await withContinuation(of: Data.self) { continuation in
         // ...
 }
 
 // Typed throwing — compiler knows only NetworkError can be thrown
-let data = try await withContinuation(of: Data.self, throws: NetworkError.self) { continuation in
+let data = try await withContinuation(of: Data.self, throwing: NetworkError.self) { continuation in
     // ...
 }
 
 // Untyped throwing — matches the old withCheckedThrowingContinuation behavior
-let data = try await withContinuation(of: Data.self, throws: (any Error).self) { continuation in
+let data = try await withContinuation(of: Data.self, throwing: (any Error).self) { continuation in
     // ...
 }
 ```
@@ -204,7 +207,7 @@ Two separate functions (`withContinuation` / `withThrowingContinuation`) would c
 Not all use-cases can make use of the non-copyable Continuation type. For example, situations where the continuation must be passed to multiple callbacks, where some library guarantees that only one of the callbacks is executed, e.g.:
 
 ```swift
-try await withContinuation(of: Int.self, throws: (any Error).self) { c in // ❌ (2): 'c' consumed more than once
+try await withContinuation(of: Int.self, throwing: (any Error).self) { c in // ❌ (2): 'c' consumed more than once
   // not guaranteed at compile time that these closures execute exactly once (!)
   // ❌ (1): noncopyable 'c' cannot be consumed when captured by an escaping closure
   someLib.onSuccess { c.resume(returning: $0) } // note (2): consumed here
@@ -219,7 +222,7 @@ In general, callbacks are not guaranteed to run exactly-one, so even for this re
 In these situations, it may be necessary to convert an **existing** `Continuation` (e.g. passed to you through another function), to a `CheckedContinuation`, which will allow this use case to be handled with dynamic safety checks in place:
 
 ```swift
-try await withContinuation(of: Int.self, throws: (any Error).self) { c in
+try await withContinuation(of: Int.self, throwing: (any Error).self) { c in
   let checked = CheckedContinuation(c)
   // or:   
   //   let unsafeCC = UnsafeContinuation(c)
@@ -258,7 +261,7 @@ Migrating from `CheckedContinuation` to `Continuation` is mechanical:
 | Before | After |
 |---|---|
 | `withCheckedContinuation { … }` | `withContinuation(of: T.self) { … }` |
-| `withCheckedThrowingContinuation { … }` | `withContinuation(of: T.self, throws: (any Error).self) { … }` |
+| `withCheckedThrowingContinuation { … }` | `withContinuation(of: T.self, throwing: (any Error).self) { … }` |
 | `CheckedContinuation<T, E>` | `Continuation<T, E>` |
 
 Because `Continuation` is `~Copyable`, some code patterns that implicitly copy the continuation (e.g., capturing it in a closure) will produce compile-time errors after migration. In those cases developers have to use the existing `Checked/UnsafeContinuation` syntax, depending on their use-case. 
