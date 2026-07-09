@@ -137,18 +137,16 @@ extension Proposal.Issue {
     )
 
     // MARK: - Status
-    // VALIDATION ENHANCEMENT: Why is this only a warning?
     static let missingStatus = Proposal.Issue(
-        kind: .warning,
+        kind: .error,
         code: 60,
-        message: "Status not found in the proposal's details list."
+        message: "Status field missing."
     )
 
-    // How different from missingStatus?
-    static let missingOrInvalidStatus = Proposal.Issue(
+    static let invalidStatus = Proposal.Issue(
         kind: .error,
         code: 61,
-        message: "Missing or invalid proposal status."
+        message: "Invalid proposal status."
     )
 
     static let missingImplementedVersion = Proposal.Issue(
