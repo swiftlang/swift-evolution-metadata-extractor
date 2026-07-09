@@ -27,12 +27,13 @@ struct StatusExtractor: MarkupWalker, ValueExtractor {
         // If 'Status' field not found, report
         if let headerField = source["Status"] {
             visit(headerField)
-        }
-        
-        // This checks both that the field is found and is successfully extracted
-        if status == nil {
+            if status == nil {
+                issues.reportIssue(.invalidStatus, source: source)
+            }
+        } else {
             issues.reportIssue(.missingStatus, source: source)
         }
+
         return ExtractionResult(value: status, warnings: issues.warnings, errors: issues.errors)
     }
 
@@ -65,7 +66,7 @@ struct StatusExtractor: MarkupWalker, ValueExtractor {
         if let rawStatus = Proposal.Status(name: statusString, version: version, start: start, end: end) {
             status = rawStatus
         } else {
-            issues.reportIssue(.missingOrInvalidStatus, source: source)
+            issues.reportIssue(.invalidStatus, source: source)
             status = .statusExtractionFailed
         }
     }

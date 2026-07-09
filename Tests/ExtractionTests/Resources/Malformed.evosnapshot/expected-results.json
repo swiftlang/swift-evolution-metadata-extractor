@@ -129,6 +129,14 @@
           "name" : "Rationale"
         }
       ],
+      "errors" : [
+        {
+          "code" : 60,
+          "kind" : "error",
+          "message" : "Status field missing.",
+          "suggestion" : ""
+        }
+      ],
       "id" : "SE-0003",
       "implementation" : [
         {
@@ -151,15 +159,7 @@
         "state" : "error"
       },
       "summary" : "There has been some confusion of semantics when a function parameter is marked as `inout` compared to `var`. Both give a mutable local copy of a value but parameters marked `inout` are automatically written back.",
-      "title" : "Removing `var` from Function Parameters",
-      "warnings" : [
-        {
-          "code" : 60,
-          "kind" : "warning",
-          "message" : "Status not found in the proposal's details list.",
-          "suggestion" : ""
-        }
-      ]
+      "title" : "Removing `var` from Function Parameters"
     },
     {
       "authors" : [
@@ -174,7 +174,7 @@
         {
           "code" : 61,
           "kind" : "error",
-          "message" : "Missing or invalid proposal status.",
+          "message" : "Invalid proposal status.",
           "suggestion" : ""
         }
       ],
@@ -215,6 +215,14 @@
           "name" : "Rationale"
         }
       ],
+      "errors" : [
+        {
+          "code" : 61,
+          "kind" : "error",
+          "message" : "Invalid proposal status.",
+          "suggestion" : ""
+        }
+      ],
       "id" : "SE-0005",
       "link" : "0005-status-field-not-strong.md",
       "reviewManagers" : [
@@ -229,15 +237,7 @@
         "state" : "error"
       },
       "summary" : "This proposal describes how we can improve Swift's \"Clang Importer\", which is responsible for mapping C and Objective-C APIs into Swift, to translate the names of Objective-C functions, types, methods, properties, etc. into names that more closely align with the [Swift API Design Guidelines](https:\/\/swift.org\/documentation\/api-design-guidelines) being developed as part of Swift 3. Our approach focuses on the differences between the Objective-C [Coding Guidelines for Cocoa](https:\/\/developer.apple.com\/library\/mac\/documentation\/Cocoa\/Conceptual\/CodingGuidelines\/CodingGuidelines.html) and the Swift API Design Guidelines, using some simple linguistic analysis to aid the automatic translation from Objective-C names to more \"Swifty\" names.",
-      "title" : "Better Translation of Objective-C APIs Into Swift",
-      "warnings" : [
-        {
-          "code" : 60,
-          "kind" : "warning",
-          "message" : "Status not found in the proposal's details list.",
-          "suggestion" : ""
-        }
-      ]
+      "title" : "Better Translation of Objective-C APIs Into Swift"
     },
     {
       "authors" : [
