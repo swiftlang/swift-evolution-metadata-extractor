@@ -1,6 +1,6 @@
 {
-  "commit" : "91d49d9551018ebcb32512f12050d61d07e87a81",
-  "creationDate" : "2026-06-30T02:42:54Z",
+  "commit" : "7b3fc931d9ae857a43dd4873bfb03591dc80a9eb",
+  "creationDate" : "2026-07-10T13:17:47Z",
   "implementationVersions" : [
     "2.2", "3.0", "3.0.1", "3.1", "4.0", "4.1", "4.2", "5.0", "5.1", "5.2",
     "5.3", "5.4", "5.5", "5.5.2", "5.6", "5.7", "5.8", "5.9", "5.9.2", "5.10",
@@ -20220,7 +20220,7 @@
           "name" : "Tony Allevato"
         }
       ],
-      "sha" : "529b1d7e535190a3453d28b4356a5a3e9c6e40bb",
+      "sha" : "89d25ee780a37d3189e1991318d0a7cd0cc0c66c",
       "status" : {
         "state" : "implemented",
         "version" : "6.2"
@@ -21211,12 +21211,12 @@
           "name" : "Steve Canon"
         }
       ],
-      "sha" : "d0053f6b4ef0002d56f339f8414fcbcef60169ea",
+      "sha" : "cc846a3dd29590145ae2640cf64e1ab9a796cf15",
       "status" : {
         "state" : "accepted"
       },
-      "summary" : "I propose adding a method `Dictionary.mapValuesWithKeys` that passes the `Key` to the transformation closure.",
-      "title" : "Introduce `Dictionary.mapValuesWithKeys`"
+      "summary" : "I propose adding a method `Dictionary.mapKeyedValues` that passes the `Key` to the transformation closure.",
+      "title" : "Introduce `Dictionary.mapKeyedValues`"
     },
     {
       "authors" : [
@@ -21340,6 +21340,10 @@
         {
           "link" : "https:\/\/forums.swift.org\/t\/second-review-se-0513-api-to-get-the-path-to-the-current-executable\/87445",
           "name" : "second review"
+        },
+        {
+          "link" : "https:\/\/forums.swift.org\/t\/accepted-se-0513-api-to-get-the-path-to-the-current-executable\/87925",
+          "name" : "acceptance"
         }
       ],
       "id" : "SE-0513",
@@ -21358,11 +21362,9 @@
           "name" : "Tony Allevato"
         }
       ],
-      "sha" : "691185051afd0992b53739a71a834f6d6f9b166d",
+      "sha" : "bb3c04978558779e5d8fd751597cc12c579a52c1",
       "status" : {
-        "end" : "2026-06-30T00:00:00Z",
-        "start" : "2026-06-16T00:00:00Z",
-        "state" : "activeReview"
+        "state" : "accepted"
       },
       "summary" : "This proposal adds to the Swift standard library an interface for reading the path to the currently-executing binary. This value is useful to developers who need to spawn additional processes or who need to present information about the current program to the user.",
       "title" : "API to get the path to the current executable"
@@ -22259,11 +22261,9 @@
           "name" : "Ben Cohen"
         }
       ],
-      "sha" : "93bfb026df0f10d04b39c825005e8adee7ecabeb",
+      "sha" : "96eaa7f81f45c9939efcc9ebed8a3960787c70c0",
       "status" : {
-        "end" : "2026-05-29T00:00:00Z",
-        "start" : "2026-05-18T00:00:00Z",
-        "state" : "activeReview"
+        "state" : "accepted"
       },
       "summary" : "Several language constructs in Swift require the use of integer literal values: generic value arguments ([SE-0452](https:\/\/github.com\/swiftlang\/swift-evolution\/blob\/main\/proposals\/0452-integer-generic-parameters.md)), variables attributed with `@section` ([SE-0492](https:\/\/github.com\/swiftlang\/swift-evolution\/blob\/main\/proposals\/0492-section-control.md)), and enum raw values. This proposal builds on the notion of a \"constant expression\" introduced in [SE-0492](https:\/\/github.com\/swiftlang\/swift-evolution\/blob\/main\/proposals\/0492-section-control.md), renaming it *literal expression*, and expanding it to include integer arithmetic, bitwise, and unary operations on literal values of standard library integer types, as well as references to other compile-time-known integer variables. Literal expressions are constant-folded to a single literal value result at compile time. The change is strictly additive with no API or ABI impact.",
       "title" : "Literal Expressions"
@@ -22283,6 +22283,14 @@
         {
           "link" : "https:\/\/forums.swift.org\/t\/se-0532-optional-noncopyable-improvements-and-generalizations\/86941",
           "name" : "review"
+        },
+        {
+          "link" : "https:\/\/forums.swift.org\/t\/se-0532-optional-noncopyable-improvements-and-generalizations\/86941\/16",
+          "name" : "revision"
+        },
+        {
+          "link" : "https:\/\/forums.swift.org\/t\/accepted-with-modifications-se-0532-optional-noncopyable-improvements-and-generalizations\/88126",
+          "name" : "acceptance"
         }
       ],
       "id" : "SE-0532",
@@ -22301,13 +22309,11 @@
           "name" : "John McCall"
         }
       ],
-      "sha" : "f4163b9ef20e14c9bf334a6a9051737ace0eec43",
+      "sha" : "e2e4f504a1c7675b604ab8dac82464ccd05262d9",
       "status" : {
-        "end" : "2026-06-08T00:00:00Z",
-        "start" : "2026-05-26T00:00:00Z",
-        "state" : "activeReview"
+        "state" : "accepted"
       },
-      "summary" : "Introduces three new methods on `Optional` to help support noncopyable wrapped values: `borrow()`, `mutate()`, and `insert()`. Also generalizes `map`, `flatMap`, and `unsafelyUnwrapped`.",
+      "summary" : "Introduces two new properties and a new method on `Optional` to help support noncopyable wrapped values: `ref`, `mutableRef`, and `put()`. Also generalizes `map`, `flatMap`, and `unsafelyUnwrapped`.",
       "title" : "`Optional` noncopyable improvements and generalizations"
     },
     {
@@ -22391,8 +22397,50 @@
           "link" : "https:\/\/github.com\/swiftlang\/swift\/issues\/80711"
         }
       ]
+    },
+    {
+      "authors" : [
+        {
+          "link" : "https:\/\/github.com\/samuelmurray",
+          "name" : "Samuel Murray"
+        }
+      ],
+      "discussions" : [
+        {
+          "link" : "https:\/\/forums.swift.org\/t\/pitch-add-cli-to-edit-global-configuration-of-mirrors\/86091",
+          "name" : "pitch"
+        },
+        {
+          "link" : "https:\/\/forums.swift.org\/t\/se-0535-add-cli-for-editing-global-mirrors-configuration\/88091",
+          "name" : "review"
+        }
+      ],
+      "id" : "SE-0535",
+      "implementation" : [
+        {
+          "account" : "swiftlang",
+          "id" : "9950",
+          "repository" : "swift-package-manager",
+          "type" : "pull"
+        }
+      ],
+      "link" : "0535-global-mirrors-configuration-cli.md",
+      "reviewManagers" : [
+        {
+          "link" : "https:\/\/github.com\/0xTim",
+          "name" : "Tim Condon"
+        }
+      ],
+      "sha" : "4d2c1d63ebf1fc0e58f1f319064471fa4c7beafc",
+      "status" : {
+        "end" : "2026-07-20T00:00:00Z",
+        "start" : "2026-07-06T00:00:00Z",
+        "state" : "activeReview"
+      },
+      "summary" : "SPM has support for both local (per-project) and shared (per-user) mirrors configuration, though the CLI only allows for editing the local configuration file. This proposal adds an optional `--global` flag to the existing CLI for editing the global configuration.",
+      "title" : "Add CLI for editing global mirrors configuration"
     }
   ],
   "schemaVersion" : "1.0.0",
-  "toolVersion" : "1.0.0"
+  "toolVersion" : "1.1.0"
 }
