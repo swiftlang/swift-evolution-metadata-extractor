@@ -6,6 +6,8 @@ Add new items at the end of the relevant section under **Unreleased**.
 
 ## [Unreleased]
 
+## [1.1.0] - 2026-07-10
+
 ### Additions
 
 - Add `validate` subcommand to generate validate reports ([#83])
@@ -16,16 +18,20 @@ Add new items at the end of the relevant section under **Unreleased**.
 - Support extraction of new "Summary of changes" section ([#79])
 - Errors and warnings now include unique error codes ([#90])
 - Add generalized mechanism for validation exemptions ([#92])
-- Promote warnings to errors ([#93])
+- Promote warnings to errors ([#93], [#117])
     - 'missing review manager'
     - 'missing review manager link'
     - 'missing author link'
+    - 'missing Status field'
 - Remove warning for proposals with past due review period ([#94])
+- Add detailed recovery suggestion for review date range errors ([#100])
+- Validation report format improvements ([#99], [#101], [#115])
 - Include validation report as part of extract command verbose output ([#105])
 
 ### Fixes
 
-*No fixes*
+- Fix crash caused by duplicate proposal ID ([#106])
+- Fix crash when decoding pull request file listing ([#111])
 
 ---
 
@@ -68,11 +74,12 @@ Add new items at the end of the relevant section under **Unreleased**.
 
 ---
 
-This changelog's format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
+This changelog's format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 
 <!-- Link references for releases -->
 
-[Unreleased]: https://github.com/swiftlang/swift-evolution-metadata-extractor/compare/1.0.0...HEAD
+[Unreleased]: https://github.com/swiftlang/swift-evolution-metadata-extractor/compare/1.1.0...HEAD
+[1.1.0]: https://github.com/swiftlang/swift-evolution-metadata-extractor/releases/tag/1.0.0...1.1.0
 [1.0.0]: https://github.com/swiftlang/swift-evolution-metadata-extractor/releases/tag/0.1.0...1.0.0
 [0.1.0]: https://github.com/swiftlang/swift-evolution-metadata-extractor/releases/tag/0.1.0
 
@@ -97,4 +104,11 @@ This changelog's format is based on [Keep a Changelog](https://keepachangelog.co
 [#92]: https://github.com/swiftlang/swift-evolution-metadata-extractor/pull/92
 [#93]: https://github.com/swiftlang/swift-evolution-metadata-extractor/pull/93
 [#94]: https://github.com/swiftlang/swift-evolution-metadata-extractor/pull/94
+[#99]: https://github.com/swiftlang/swift-evolution-metadata-extractor/pull/99
+[#100]: https://github.com/swiftlang/swift-evolution-metadata-extractor/pull/100
+[#101]: https://github.com/swiftlang/swift-evolution-metadata-extractor/pull/101
 [#105]: https://github.com/swiftlang/swift-evolution-metadata-extractor/pull/105
+[#106]: https://github.com/swiftlang/swift-evolution-metadata-extractor/pull/106
+[#111]: https://github.com/swiftlang/swift-evolution-metadata-extractor/pull/111
+[#115]: https://github.com/swiftlang/swift-evolution-metadata-extractor/pull/115
+[#117]: https://github.com/swiftlang/swift-evolution-metadata-extractor/pull/117
