@@ -69,7 +69,7 @@
         {
           "code" : 31,
           "kind" : "error",
-          "message" : "Missing proposal ID link (SE-NNNN)[NNNN-filename.md].",
+          "message" : "Missing proposal ID link [SE-NNNN](NNNN-filename.md).",
           "suggestion" : ""
         }
       ],
@@ -264,7 +264,7 @@
         {
           "code" : 34,
           "kind" : "error",
-          "message" : "Proposal ID link must be a relative link (SE-NNNN)[NNNN-filename.md].",
+          "message" : "Proposal ID link must be a relative link [SE-NNNN](NNNN-filename.md).",
           "suggestion" : ""
         }
       ],
@@ -393,7 +393,7 @@
         {
           "code" : 34,
           "kind" : "error",
-          "message" : "Proposal ID link must be a relative link (SE-NNNN)[NNNN-filename.md].",
+          "message" : "Proposal ID link must be a relative link [SE-NNNN](NNNN-filename.md).",
           "suggestion" : ""
         }
       ],
@@ -1182,7 +1182,7 @@
         {
           "code" : 31,
           "kind" : "error",
-          "message" : "Missing proposal ID link (SE-NNNN)[NNNN-filename.md].",
+          "message" : "Missing proposal ID link [SE-NNNN](NNNN-filename.md).",
           "suggestion" : ""
         },
         {
