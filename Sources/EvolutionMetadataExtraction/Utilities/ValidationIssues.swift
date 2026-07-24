@@ -57,7 +57,7 @@ extension Proposal.Issue {
     static let missingProposalIDLink = Proposal.Issue(
         kind: .error,
         code: 31,
-        message: "Missing proposal ID link (SE-NNNN)[NNNN-filename.md]."
+        message: "Missing proposal ID link [SE-NNNN](NNNN-filename.md)."
     )
 
     static let proposalIDWrongDigitCount = Proposal.Issue(
@@ -75,7 +75,7 @@ extension Proposal.Issue {
     static let invalidProposalIDLink = Proposal.Issue(
         kind: .error,
         code: 34,
-        message: "Proposal ID link must be a relative link (SE-NNNN)[NNNN-filename.md]."
+        message: "Proposal ID link must be a relative link [SE-NNNN](NNNN-filename.md)."
     )
 
     static let reservedProposalID = Proposal.Issue(
