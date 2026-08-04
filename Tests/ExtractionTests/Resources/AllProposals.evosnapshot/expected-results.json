@@ -1,10 +1,10 @@
 {
-  "commit" : "7b3fc931d9ae857a43dd4873bfb03591dc80a9eb",
-  "creationDate" : "2026-07-10T13:17:47Z",
+  "commit" : "773ecb9564d5308c959ca378c632daa2f73f1c6c",
+  "creationDate" : "2026-08-04T09:02:55Z",
   "implementationVersions" : [
     "2.2", "3.0", "3.0.1", "3.1", "4.0", "4.1", "4.2", "5.0", "5.1", "5.2",
     "5.3", "5.4", "5.5", "5.5.2", "5.6", "5.7", "5.8", "5.9", "5.9.2", "5.10",
-    "6.0", "6.1", "6.2", "6.2.3", "6.3", "6.4"
+    "6.0", "6.1", "6.2", "6.2.3", "6.3", "6.4", "Next"
   ],
   "proposals" : [
     {
@@ -8918,6 +8918,18 @@
         }
       ],
       "discussions" : [
+        {
+          "link" : "https:\/\/forums.swift.org\/t\/prepitch-character-integer-literals\/10442",
+          "name" : "pitch"
+        },
+        {
+          "link" : "https:\/\/forums.swift.org\/t\/se-0243-codepoint-and-character-literals\/21188",
+          "name" : "review"
+        },
+        {
+          "link" : "https:\/\/forums.swift.org\/t\/se-0243-codepoint-and-character-literals\/21188\/341",
+          "name" : "rejection"
+        }
       ],
       "id" : "SE-0243",
       "implementation" : [
@@ -8935,7 +8947,7 @@
           "name" : "Ben Cohen"
         }
       ],
-      "sha" : "7df6c0ee758784745cb196dd76c1499049b41b6b",
+      "sha" : "d99618859f11661a4d34ee9beef94aa4a07be5c1",
       "status" : {
         "state" : "rejected"
       },
@@ -11573,7 +11585,7 @@
           "name" : "Ben Cohen"
         }
       ],
-      "sha" : "4051b87b1e8fe04e0c4ceb6fc30af9638b2370cd",
+      "sha" : "f29c49d197eb9179f5de7f9d962e301a0c6684f5",
       "status" : {
         "state" : "implemented",
         "version" : "5.5"
@@ -12972,6 +12984,18 @@
         }
       ],
       "discussions" : [
+        {
+          "link" : "https:\/\/forums.swift.org\/t\/pitch-clarify-the-execution-of-non-actor-isolated-async-functions\/54435",
+          "name" : "pitch"
+        },
+        {
+          "link" : "https:\/\/forums.swift.org\/t\/se-0338-clarify-the-execution-of-non-actor-isolated-async-functions\/54621",
+          "name" : "review"
+        },
+        {
+          "link" : "https:\/\/forums.swift.org\/t\/accepted-se-0338-clarify-the-execution-of-non-actor-isolated-async-functions\/54929",
+          "name" : "acceptance"
+        }
       ],
       "id" : "SE-0338",
       "link" : "0338-clarify-execution-non-actor-async.md",
@@ -12981,7 +13005,7 @@
           "name" : "Doug Gregor"
         }
       ],
-      "sha" : "d7d8d29aaeeb80c1b1534b00375b4c8c0a232cb0",
+      "sha" : "6ce58f8e1345c6978fd2caabf850541e6bc0b4b5",
       "status" : {
         "state" : "implemented",
         "version" : "5.7"
@@ -14169,6 +14193,18 @@
         }
       ],
       "discussions" : [
+        {
+          "link" : "https:\/\/forums.swift.org\/t\/allow-implicit-self-for-weak-self-captures-after-self-is-unwrapped\/54262",
+          "name" : "pitch"
+        },
+        {
+          "link" : "https:\/\/forums.swift.org\/t\/se-0365-allow-implicit-self-for-weak-self-captures-after-self-is-unwrapped\/59040",
+          "name" : "review"
+        },
+        {
+          "link" : "https:\/\/forums.swift.org\/t\/accepted-se-0365-allow-implicit-self-for-weak-self-captures-after-self-is-unwrapped\/59517",
+          "name" : "acceptance"
+        }
       ],
       "id" : "SE-0365",
       "implementation" : [
@@ -14192,7 +14228,7 @@
           "name" : "Saleem Abdulrasool"
         }
       ],
-      "sha" : "bb86d69bcbdeab4c944664103883e34897606bda",
+      "sha" : "14387456c450e70e3819c59700514bb5af3e0f89",
       "status" : {
         "state" : "implemented",
         "version" : "5.8"
@@ -15208,6 +15244,18 @@
         }
       ],
       "discussions" : [
+        {
+          "link" : "https:\/\/forums.swift.org\/t\/pitch-custom-metadata-attributes\/62016",
+          "name" : "pitch"
+        },
+        {
+          "link" : "https:\/\/forums.swift.org\/t\/se-0385-custom-reflection-metadata\/62777",
+          "name" : "review"
+        },
+        {
+          "link" : "https:\/\/forums.swift.org\/t\/returned-for-revision-se-0385-custom-reflection-metadata\/63758",
+          "name" : "returned for revision"
+        }
       ],
       "id" : "SE-0385",
       "implementation" : [
@@ -15255,7 +15303,7 @@
           "name" : "Doug Gregor"
         }
       ],
-      "sha" : "8c7d571cf9d1259488d2df47033973041cbd1016",
+      "sha" : "6092f0f8c64c745a0743348bbcc98a0273e8bad1",
       "status" : {
         "state" : "returnedForRevision"
       },
@@ -16741,7 +16789,7 @@
           "name" : "Holly Borla"
         }
       ],
-      "sha" : "715b245ccc12ee08cb0aaa1d98eaebce20d2f73e",
+      "sha" : "b59c5d0adc82e5f9ac6b2e4163c01fb7cb8858c1",
       "status" : {
         "state" : "implemented",
         "version" : "6.0"
@@ -16964,9 +17012,10 @@
           "name" : "Steve Canon"
         }
       ],
-      "sha" : "d185267a866fc63865f8ff196682f1b17f1f0ce3",
+      "sha" : "996e045ba41388c8f9344f89127bdda7ddbc10ad",
       "status" : {
-        "state" : "accepted"
+        "state" : "implemented",
+        "version" : "6.2"
       },
       "summary" : "This year we are improving the usability of Swift for command line and server-side development by adding first-class support for backtraces to Swift.",
       "title" : "Swift Backtrace API"
@@ -19678,6 +19727,10 @@
         {
           "link" : "https:\/\/forums.swift.org\/t\/second-review-se-0478-file-level-defaults\/87154",
           "name" : "second review"
+        },
+        {
+          "link" : "https:\/\/forums.swift.org\/t\/accepted-with-modifications-se-0478-file-level-defaults\/88293",
+          "name" : "acceptance"
         }
       ],
       "id" : "SE-0478",
@@ -19711,11 +19764,9 @@
           "name" : "Steve Canon"
         }
       ],
-      "sha" : "a576b058e2bc514cfd77557a191961957f8f6c58",
+      "sha" : "bf94160c4f896ab6fdddaf8789c30d83196a2026",
       "status" : {
-        "end" : "2026-06-19T00:00:00Z",
-        "start" : "2026-06-05T00:00:00Z",
-        "state" : "activeReview"
+        "state" : "accepted"
       },
       "summary" : "Introduces `default` declaration syntax to specify default actor isolation, `@diagnose` behavior, or `@available` restrictions for every top-level declaration in the file.",
       "title" : "File-level defaults"
@@ -20023,7 +20074,7 @@
       "implementation" : [
         {
           "account" : "swiftlang",
-          "id" : "81148",
+          "id" : "88480",
           "repository" : "swift",
           "type" : "pull"
         }
@@ -20039,9 +20090,10 @@
           "name" : "Xiaodi Wu"
         }
       ],
-      "sha" : "744cebb58be54f107b8052353c2299f1a838b385",
+      "sha" : "592fcf521f5581759c5af8867fb0bdff42e1b3da",
       "status" : {
-        "state" : "accepted"
+        "state" : "implemented",
+        "version" : "Next"
       },
       "summary" : "SE-0195 and SE-0252 introduced and refined `@dynamicMemberLookup` to provide type-safe \"dot\"-syntax access to arbitrary members of a type by reflecting the existence of certain `subscript(dynamicMember:)` methods on that type, turning",
       "title" : "Allow Additional Arguments to `@dynamicMemberLookup` Subscripts"
@@ -21036,9 +21088,10 @@
           "name" : "Steve Canon"
         }
       ],
-      "sha" : "2efbd158fc724dbec49e336b02ef4a0f35f6f67b",
+      "sha" : "c2e7ad45abadb5c8217ac08c7ab955aa06d5bbfa",
       "status" : {
-        "state" : "accepted"
+        "state" : "implemented",
+        "version" : "6.4"
       },
       "summary" : "Observation has one primary public entry point for observing the changes to `@Observable` types. This proposal adds two new versions that allow more fine-grained control and advanced behaviors. In particular, it is not intended to be a natural progression for all users of Observation, but instead a set of specialized tools for advanced use cases such as developing middleware infrastructure or the underpinnings to widgeting systems. Most developers using Observation will still be best served by using the `@Observable` macro and possibly in conjunction with the `Observations` type for iterating transactional values. However, in the advanced use cases where it is needed, this proposal fills a much needed gap.",
       "title" : "Advanced Observation Tracking"
@@ -21811,9 +21864,10 @@
           "name" : "Tony Allevato"
         }
       ],
-      "sha" : "0590f1aa7d0234cc45cd145d481ccb45a7ab2a67",
+      "sha" : "437e1cb77e13b787e6638dfa79de0c1674777cbe",
       "status" : {
-        "state" : "accepted"
+        "state" : "implemented",
+        "version" : "6.4"
       },
       "summary" : "This proposal introduces a new declaration attribute for controlling compiler warning behavior in specific code regions: to be emitted as warnings, errors, or suppressed.",
       "title" : "Source-Level Control Over Compiler Warnings"
@@ -21941,7 +21995,13 @@
       "implementation" : [
         {
           "account" : "swiftlang",
-          "id" : "88304",
+          "id" : "88640",
+          "repository" : "swift",
+          "type" : "pull"
+        },
+        {
+          "account" : "swiftlang",
+          "id" : "88702",
           "repository" : "swift",
           "type" : "pull"
         }
@@ -21953,9 +22013,10 @@
           "name" : "Xiaodi Wu"
         }
       ],
-      "sha" : "4ffa0a5f107a9dca77bd605fe7b99bad4a15e76f",
+      "sha" : "c957ab652d5838e8e4b05ce04c37983ec1847379",
       "status" : {
-        "state" : "accepted"
+        "state" : "implemented",
+        "version" : "6.4"
       },
       "summary" : "We introduce a set of safe API to load and store values of certain safe types from the memory represented by `RawSpan`, `MutableSpan`, `MutableRawSpan` and `OutputRawSpan` instances. This will bolster the value of Swift in contexts where a process needs the ability to send data to other running processes via untyped buffers, as well as provide a set of building blocks for parsing utilities.",
       "title" : "Safe loading API for `RawSpan`"
@@ -21999,6 +22060,10 @@
         {
           "link" : "https:\/\/forums.swift.org\/t\/third-review-se-0526-withdeadline\/87787",
           "name" : "third review"
+        },
+        {
+          "link" : "https:\/\/forums.swift.org\/t\/accepted-with-modifications-se-0526-withdeadline\/88645",
+          "name" : "accepted with modifications"
         }
       ],
       "id" : "SE-0526",
@@ -22009,11 +22074,9 @@
           "name" : "Freddy Kellison-Linn"
         }
       ],
-      "sha" : "5a985aa82ac9b018a8cab3bd560b48bb765f887c",
+      "sha" : "871e63e6dd2de71f96da62528a82e6b2d92f1200",
       "status" : {
-        "end" : "2026-07-12T00:00:00Z",
-        "start" : "2026-06-28T00:00:00Z",
-        "state" : "activeReview"
+        "state" : "accepted"
       },
       "summary" : "This proposal introduces `withDeadline`, a function that executes asynchronous operations with a composable absolute time limit. The function accepts a continuous clock instant representing the deadline by which the operation must complete. If the operation completes before the deadline, the function returns the result; if the deadline expires first, the operation is cancelled.",
       "title" : "withDeadline"
@@ -22063,9 +22126,10 @@
           "name" : "Steve Canon"
         }
       ],
-      "sha" : "12facb6f66b953b0efebb1ebdfc38401c48f1bfb",
+      "sha" : "6c6fbd3933ba60254cc6654dce6240eb526b2557",
       "status" : {
-        "state" : "accepted"
+        "state" : "implemented",
+        "version" : "6.4"
       },
       "summary" : "We propose to introduce two new array types to the Swift Standard Library, `RigidArray` and `UniqueArray`, that are both capable of storing noncopyable elements.",
       "title" : "UniqueArray"
@@ -22327,6 +22391,14 @@
         {
           "link" : "https:\/\/forums.swift.org\/t\/pitch-reasync-and-reasyncmembers-macros\/86180",
           "name" : "pitch"
+        },
+        {
+          "link" : "https:\/\/forums.swift.org\/t\/se-0533-generating-synchronous-overloads-of-async-functions-with-a-macro\/87019",
+          "name" : "review"
+        },
+        {
+          "link" : "https:\/\/forums.swift.org\/t\/rejected-se-0533-generating-synchronous-overloads-of-async-functions-with-a-macro\/88186",
+          "name" : "rejection"
         }
       ],
       "id" : "SE-0533",
@@ -22337,11 +22409,9 @@
           "name" : "Joe Groff"
         }
       ],
-      "sha" : "bef7582811b0658927d6c5eb987141e3cee49642",
+      "sha" : "e85932feb8a37b0ae3d3a6433e57a430e479081d",
       "status" : {
-        "end" : "2026-06-15T00:00:00Z",
-        "start" : "2026-06-01T00:00:00Z",
-        "state" : "activeReview"
+        "state" : "rejected"
       },
       "summary" : "This proposal adds an `@Reasync` macro that generates a synchronous overload of an `async` function, allowing a single source of truth for functions that must exist in both synchronous and asynchronous forms.",
       "title" : "Generating synchronous overloads of `async` functions with a macro"
@@ -22361,6 +22431,10 @@
         {
           "link" : "https:\/\/forums.swift.org\/t\/review-se-0534-opt-in-exact-matching-for-version-identifiers-with-build-metadata\/87815",
           "name" : "review"
+        },
+        {
+          "link" : "https:\/\/forums.swift.org\/t\/rejected-se-0534-opt-in-exact-matching-for-version-identifiers\/88571",
+          "name" : "rejection"
         }
       ],
       "id" : "SE-0534",
@@ -22379,11 +22453,9 @@
           "name" : "Franz Busch"
         }
       ],
-      "sha" : "7131d7c47e4e80f95fedc58e4b8213bc49e56b49",
+      "sha" : "1a4e6078b339cf44cbb5d3311e2f5e9e8e93272f",
       "status" : {
-        "end" : "2026-07-06T00:00:00Z",
-        "start" : "2026-06-29T00:00:00Z",
-        "state" : "activeReview"
+        "state" : "rejected"
       },
       "summary" : "Swift Package Manager follows Semantic Versioning 2.0.0 for version precedence, so build metadata (`+...`) is ignored when comparing versions. That is correct for ranges, but it prevents a package from explicitly selecting a published variant such as `1.0.0+debug` over `1.0.0+release`.",
       "title" : "Opt-in exact matching for version identifiers with build metadata",
@@ -22439,6 +22511,210 @@
       },
       "summary" : "SPM has support for both local (per-project) and shared (per-user) mirrors configuration, though the CLI only allows for editing the local configuration file. This proposal adds an optional `--global` flag to the existing CLI for editing the global configuration.",
       "title" : "Add CLI for editing global mirrors configuration"
+    },
+    {
+      "authors" : [
+        {
+          "link" : "https:\/\/github.com\/plemarquand",
+          "name" : "Paul LeMarquand"
+        }
+      ],
+      "discussions" : [
+        {
+          "link" : "https:\/\/forums.swift.org\/t\/pitch-package-registry-search\/86320",
+          "name" : "pitch"
+        },
+        {
+          "link" : "https:\/\/forums.swift.org\/t\/se-05-package-registry-search\/88203",
+          "name" : "review"
+        },
+        {
+          "link" : "https:\/\/forums.swift.org\/t\/accepted-with-modifications-se-0536-package-registry-search\/88746",
+          "name" : "acceptance"
+        }
+      ],
+      "id" : "SE-0536",
+      "implementation" : [
+        {
+          "account" : "swiftlang",
+          "id" : "10125",
+          "repository" : "swift-package-manager",
+          "type" : "pull"
+        }
+      ],
+      "link" : "0536-registry-search.md",
+      "reviewManagers" : [
+        {
+          "link" : "https:\/\/github.com\/mikaelacaron",
+          "name" : "Mikaela Caron"
+        }
+      ],
+      "sha" : "0016df038eadb5baa4b7c240a18ef09606fbd5eb",
+      "status" : {
+        "state" : "accepted"
+      },
+      "summary" : "[SE-0292](https:\/\/github.com\/swiftlang\/swift-evolution\/blob\/main\/proposals\/0292-package-registry-service.md) introduced a package registry service for the Swift ecosystem. Its future directions section identified package search as a natural extension of the registry service. This pitch proposes adding a search endpoint to the [package registry specification](https:\/\/github.com\/swiftlang\/swift-package-manager\/blob\/main\/Documentation\/PackageRegistry\/Registry.md) and a corresponding `swift package-registry search` subcommand to Swift Package Manager, enabling users to discover packages in registries by name, author, and other criteria.",
+      "title" : "Package Registry Search"
+    },
+    {
+      "authors" : [
+        {
+          "link" : "https:\/\/github.com\/DougGregor",
+          "name" : "Doug Gregor"
+        }
+      ],
+      "discussions" : [
+        {
+          "link" : "https:\/\/forums.swift.org\/t\/pitch-extending-section-to-functions\/87174",
+          "name" : "pitch"
+        },
+        {
+          "link" : "https:\/\/forums.swift.org\/t\/se-0537-section-placement-control-for-functions\/88298",
+          "name" : "review"
+        }
+      ],
+      "id" : "SE-0537",
+      "link" : "0537-function-sections.md",
+      "reviewManagers" : [
+        {
+          "link" : "https:\/\/github.com\/beccadax",
+          "name" : "Becca Royal-Gordon"
+        }
+      ],
+      "sha" : "3e4ee288ccd16818e1565aa66a82f60c12641fbd",
+      "status" : {
+        "end" : "2026-07-27T00:00:00Z",
+        "start" : "2026-07-14T00:00:00Z",
+        "state" : "activeReview"
+      },
+      "summary" : "This proposal extends the `@section` attribute introduced in [SE-0492](https:\/\/github.com\/swiftlang\/swift-evolution\/blob\/main\/proposals\/0492-section-control.md) to also allow functions to be annotated with `@section`. This can be useful in embedded systems where some code (for example the boot code for firmware) needs to be in a particular section in the binary.",
+      "title" : "Section Placement Control for Functions"
+    },
+    {
+      "authors" : [
+        {
+          "link" : "https:\/\/github.com\/FranzBusch",
+          "name" : "Franz Busch"
+        }
+      ],
+      "discussions" : [
+        {
+          "link" : "https:\/\/forums.swift.org\/t\/pitch-disconnected-type-for-modeling-disconnected-values\/86815",
+          "name" : "pitch"
+        },
+        {
+          "link" : "https:\/\/forums.swift.org\/t\/se-0538-disconnected\/88361",
+          "name" : "review"
+        }
+      ],
+      "id" : "SE-0538",
+      "implementation" : [
+        {
+          "account" : "swiftlang",
+          "id" : "89597",
+          "repository" : "swift",
+          "type" : "pull"
+        }
+      ],
+      "link" : "0538-disconnected.md",
+      "reviewManagers" : [
+        {
+          "link" : "https:\/\/github.com\/hborla",
+          "name" : "Holly Borla"
+        }
+      ],
+      "sha" : "b5795ee94fa919ed4dd22295a848fd0281cc3be6",
+      "status" : {
+        "end" : "2026-07-31T00:00:00Z",
+        "start" : "2026-07-17T00:00:00Z",
+        "state" : "activeReview"
+      },
+      "summary" : "[SE-0414](https:\/\/github.com\/swiftlang\/swift-evolution\/blob\/main\/proposals\/0414-region-based-isolation.md) introduced region-based isolation which leverages control flow sensitive diagnostics to determine whether non-`Sendable` values are safe to send across isolation boundaries. [SE-0430](https:\/\/github.com\/swiftlang\/swift-evolution\/blob\/main\/proposals\/0430-transferring-parameters-and-results.md) introduced the `sending` parameter and result annotation to explicitly mark values that must be in a disconnected region at function boundaries.",
+      "title" : "Disconnected"
+    },
+    {
+      "authors" : [
+        {
+          "link" : "https:\/\/github.com\/nilsgrabenhorst",
+          "name" : "Nils Grabenhorst"
+        }
+      ],
+      "discussions" : [
+        {
+          "link" : "https:\/\/forums.swift.org\/t\/pitch-lazy-accessor-macros\/87515",
+          "name" : "pitch"
+        },
+        {
+          "link" : "https:\/\/forums.swift.org\/t\/se-0539-enable-macros-to-grant-self-access-for-property-initializers\/88713",
+          "name" : "review"
+        }
+      ],
+      "id" : "SE-0539",
+      "implementation" : [
+        {
+          "account" : "swiftlang",
+          "id" : "89757",
+          "repository" : "swift",
+          "type" : "pull"
+        }
+      ],
+      "link" : "0539-self-access-for-property-initializers.md",
+      "reviewManagers" : [
+        {
+          "link" : "https:\/\/github.com\/allevato",
+          "name" : "Tony Allevato"
+        }
+      ],
+      "sha" : "217e001f5527f55cd9965d1e624bb7dedfffb7f4",
+      "status" : {
+        "end" : "2026-08-16T00:00:00Z",
+        "start" : "2026-08-02T00:00:00Z",
+        "state" : "activeReview"
+      },
+      "summary" : "Adds an optional `initialization: selfAvailable` parameter for `accessor` macro role declarations. This parameter declares that the macro moves a property initializer expression to a new context, where access to `self` and instance members is available.",
+      "title" : "Enable Macros to Grant `self` Access for Property Initializers"
+    },
+    {
+      "authors" : [
+        {
+          "link" : "https:\/\/github.com\/mattmassicotte",
+          "name" : "Matt Massicotte"
+        }
+      ],
+      "discussions" : [
+        {
+          "link" : "https:\/\/forums.swift.org\/t\/default-package-swift-settings\/71872",
+          "name" : "pitch"
+        },
+        {
+          "link" : "https:\/\/forums.swift.org\/t\/se-0540-default-package-settings\/88748",
+          "name" : "review"
+        }
+      ],
+      "id" : "SE-0540",
+      "implementation" : [
+        {
+          "account" : "swiftlang",
+          "id" : "10033",
+          "repository" : "swift-package-manager",
+          "type" : "pull"
+        }
+      ],
+      "link" : "0540-default-target-settings.md",
+      "reviewManagers" : [
+        {
+          "link" : "https:\/\/github.com\/mikaelacaron",
+          "name" : "Mikaela Caron"
+        }
+      ],
+      "sha" : "d895cc8451114cd19fa20752358db06c90bd8e3b",
+      "status" : {
+        "end" : "2026-08-17T00:00:00Z",
+        "start" : "2026-08-03T00:00:00Z",
+        "state" : "activeReview"
+      },
+      "summary" : "It is very common for Swift packages to using the same settings flags across all their targets. A built-in mechanism to apply these base settings offers improved readability and convenience for package manifests.",
+      "title" : "Default Target Settings"
     }
   ],
   "schemaVersion" : "1.0.0",
