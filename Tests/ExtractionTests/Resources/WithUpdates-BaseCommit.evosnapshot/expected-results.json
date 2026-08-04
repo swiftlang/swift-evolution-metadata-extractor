@@ -8919,6 +8919,14 @@
       ],
       "discussions" : [
       ],
+      "errors" : [
+        {
+          "code" : 110,
+          "kind" : "error",
+          "message" : "Missing Review field.",
+          "suggestion" : ""
+        }
+      ],
       "id" : "SE-0243",
       "implementation" : [
         {
@@ -12969,6 +12977,14 @@
       ],
       "discussions" : [
       ],
+      "errors" : [
+        {
+          "code" : 110,
+          "kind" : "error",
+          "message" : "Missing Review field.",
+          "suggestion" : ""
+        }
+      ],
       "id" : "SE-0338",
       "link" : "0338-clarify-execution-non-actor-async.md",
       "reviewManagers" : [
@@ -14166,6 +14182,14 @@
       ],
       "discussions" : [
       ],
+      "errors" : [
+        {
+          "code" : 110,
+          "kind" : "error",
+          "message" : "Missing Review field.",
+          "suggestion" : ""
+        }
+      ],
       "id" : "SE-0365",
       "implementation" : [
         {
@@ -15204,6 +15228,14 @@
         }
       ],
       "discussions" : [
+      ],
+      "errors" : [
+        {
+          "code" : 110,
+          "kind" : "error",
+          "message" : "Missing Review field.",
+          "suggestion" : ""
+        }
       ],
       "id" : "SE-0385",
       "implementation" : [

@@ -6,6 +6,14 @@ Add new items at the end of the relevant section under **Unreleased**.
 
 ## [Unreleased]
 
+### Changes
+
+- Remove validation exceptions for updating proposals ([#121])
+
+### Fixes
+
+- Fix incorrect error message ([#119])
+
 ## [1.1.0] - 2026-07-10
 
 ### Additions
@@ -112,3 +120,5 @@ This changelog's format is based on [Keep a Changelog](https://keepachangelog.co
 [#111]: https://github.com/swiftlang/swift-evolution-metadata-extractor/pull/111
 [#115]: https://github.com/swiftlang/swift-evolution-metadata-extractor/pull/115
 [#117]: https://github.com/swiftlang/swift-evolution-metadata-extractor/pull/117
+[#119]: https://github.com/swiftlang/swift-evolution-metadata-extractor/pull/119
+[#121]: https://github.com/swiftlang/swift-evolution-metadata-extractor/pull/121
