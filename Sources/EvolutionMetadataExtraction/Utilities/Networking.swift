@@ -90,7 +90,7 @@ struct GitHubPullFileItem: Codable {
     func proposalSpec(project: Project, sortIndex: Int) ->  ProposalSpec {
         // The url values contain percent-encoded slashes (%2F) in directory paths
         // This prevented proper extraction of the proposal number from the proposal filename
-        return ProposalSpec(project: project, url: URL(string: raw_url.removingPercentEncoding!)!, sha: sha, sortIndex: sortIndex)
+        ProposalSpec(project: project, url: URL(string: raw_url.removingPercentEncoding!)!, sha: sha, sortIndex: sortIndex)
     }
 
 }
