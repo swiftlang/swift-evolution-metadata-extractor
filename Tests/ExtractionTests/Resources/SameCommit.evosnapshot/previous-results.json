@@ -11496,6 +11496,14 @@
       ],
       "discussions" : [
       ],
+      "errors" : [
+        {
+          "code" : 110,
+          "kind" : "error",
+          "message" : "Missing Review field.",
+          "suggestion" : ""
+        }
+      ],
       "id" : "SE-0303",
       "link" : "0303-swiftpm-extensible-build-tools.md",
       "reviewManagers" : [

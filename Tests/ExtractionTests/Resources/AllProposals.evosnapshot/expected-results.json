@@ -1,6 +1,6 @@
 {
-  "commit" : "773ecb9564d5308c959ca378c632daa2f73f1c6c",
-  "creationDate" : "2026-08-04T09:02:55Z",
+  "commit" : "c9b9ff663a3755650a1c7107a45c41be6411a5b9",
+  "creationDate" : "2026-08-25T05:19:55Z",
   "implementationVersions" : [
     "2.2", "3.0", "3.0.1", "3.1", "4.0", "4.1", "4.2", "5.0", "5.1", "5.2",
     "5.3", "5.4", "5.5", "5.5.2", "5.6", "5.7", "5.8", "5.9", "5.9.2", "5.10",
@@ -7843,7 +7843,7 @@
           "name" : "Joe Groff"
         }
       ],
-      "sha" : "b689e549eea12cadc6870a06843d2d19f9680683",
+      "sha" : "9daf9bd7984ebafb9b933ea10955550e1ac597d0",
       "status" : {
         "state" : "rejected"
       },
@@ -8625,7 +8625,7 @@
           "name" : "Chris Lattner"
         }
       ],
-      "sha" : "f4b979f6f73a7118a8e157f85889b0ed2f9eeaf4",
+      "sha" : "e363c54de8e54d03f734856b39982bd54205c065",
       "status" : {
         "state" : "implemented",
         "version" : "5.0"
@@ -9872,7 +9872,7 @@
           "name" : "John McCall"
         }
       ],
-      "sha" : "fcb605aee2164c031ca52d92165ada0828f8927f",
+      "sha" : "bf63478f68cb3d27336d232809ac8e74bd29f84e",
       "status" : {
         "state" : "returnedForRevision"
       },
@@ -11503,8 +11503,44 @@
         }
       ],
       "discussions" : [
+        {
+          "link" : "https:\/\/forums.swift.org\/t\/pitch-swiftpm-extensible-build-tools\/44715",
+          "name" : "pitch"
+        },
+        {
+          "link" : "https:\/\/forums.swift.org\/t\/se-0303-package-manager-extensible-build-tools\/45106",
+          "name" : "first review"
+        },
+        {
+          "link" : "https:\/\/forums.swift.org\/t\/se-0303-2nd-review-package-manager-extensible-build-tools\/47438",
+          "name" : "second review"
+        },
+        {
+          "link" : "https:\/\/forums.swift.org\/t\/accepted-se-0303-package-manager-extensible-build-tools\/47741",
+          "name" : "acceptance"
+        },
+        {
+          "link" : "https:\/\/forums.swift.org\/t\/pitch-amend-se-0303-plugin-api-to-use-main-for-plugin-entry-point\/51250",
+          "name" : "amendment pitch"
+        },
+        {
+          "link" : "https:\/\/forums.swift.org\/t\/amendment-se-0303-package-manager-extensible-build-tools\/51763",
+          "name" : "amendment review"
+        },
+        {
+          "link" : "https:\/\/forums.swift.org\/t\/accepted-with-modifications-amendment-to-se-0303-package-manager-extensible-build-tools\/52060",
+          "name" : "amendment acceptance"
+        }
       ],
       "id" : "SE-0303",
+      "implementation" : [
+        {
+          "account" : "apple",
+          "id" : "3712",
+          "repository" : "swift-package-manager",
+          "type" : "pull"
+        }
+      ],
       "link" : "0303-swiftpm-extensible-build-tools.md",
       "reviewManagers" : [
         {
@@ -11512,7 +11548,7 @@
           "name" : "Tom Doron"
         }
       ],
-      "sha" : "7761d1b5d5c23e2f61aa4353b9c7edb9f878c595",
+      "sha" : "0ba09d1d5a22df2d4e9aa4a61bc76a8587dc8e28",
       "status" : {
         "state" : "implemented",
         "version" : "5.6"
@@ -12284,9 +12320,10 @@
           "name" : "Tom Doron"
         }
       ],
-      "sha" : "098b2170277b1903c9898ad6bb48d68f1f2441b1",
+      "sha" : "06f714024b5e33b1eb7e39acf60e15b49018fa02",
       "status" : {
-        "state" : "accepted"
+        "state" : "implemented",
+        "version" : "5.6"
       },
       "summary" : "The [package registry service](https:\/\/github.com\/swiftlang\/swift-evolution\/blob\/main\/proposals\/0292-package-registry-service.md) defines endpoints for fetching packages.",
       "title" : "Package Registry Service - Publish Endpoint"
@@ -13163,9 +13200,9 @@
           "name" : "Ted Kremenek"
         }
       ],
-      "sha" : "788c9350130d03101e4805c5d779cc385905313f",
+      "sha" : "c4b448b1d40e387505652ab32876794f1a54e8e6",
       "status" : {
-        "state" : "accepted"
+        "state" : "rejected"
       },
       "summary" : "Swift 5.3.1 introduced [statically linking the Swift runtime libraries on Linux](https:\/\/forums.swift.org\/t\/static-linking-on-linux-in-swift-5-3-1\/). With this feature, users can set the `--static-swift-stdlib` flag when invoking  SwiftPM commands (or the long form `-Xswiftc -static-stdlib`) in order to statically link the Swift runtime libraries into the program.",
       "title" : "Statically link Swift runtime libraries by default on supported platforms"
@@ -16789,7 +16826,7 @@
           "name" : "Holly Borla"
         }
       ],
-      "sha" : "b59c5d0adc82e5f9ac6b2e4163c01fb7cb8858c1",
+      "sha" : "062dd3dde756e155a407a8e2906054a1c57a5b60",
       "status" : {
         "state" : "implemented",
         "version" : "6.0"
@@ -18239,6 +18276,14 @@
         {
           "link" : "https:\/\/forums.swift.org\/t\/pitch-non-escapable-types-and-lifetime-dependency\/69865",
           "name" : "pitch"
+        },
+        {
+          "link" : "https:\/\/forums.swift.org\/t\/se-0446-nonescapable-types\/74666",
+          "name" : "review"
+        },
+        {
+          "link" : "https:\/\/forums.swift.org\/t\/accepted-with-modifications-se-0446-nonescapable-types\/75504",
+          "name" : "acceptance"
         }
       ],
       "id" : "SE-0446",
@@ -18249,16 +18294,13 @@
           "name" : "Joe Groff"
         }
       ],
-      "sha" : "ab78724fd4312e83ec7f2ed8a5db63829bbf3a2d",
+      "sha" : "6398ade7a629916afc92bbc0a719b13592312692",
       "status" : {
         "state" : "implemented",
         "version" : "6.2"
       },
       "summary" : "We propose adding a new type constraint `~Escapable` for types that can be locally copied but cannot be assigned or transferred outside of the immediate context. This complements the `~Copyable` types added with SE-0390 by introducing another set of compile-time-enforced lifetime controls that can be used for safe, highly-performant APIs.",
-      "title" : "Nonescapable Types",
-      "upcomingFeatureFlag" : {
-        "flag" : "NonescapableTypes"
-      }
+      "title" : "Nonescapable Types"
     },
     {
       "authors" : [
@@ -18909,7 +18951,7 @@
           "name" : "Steve Canon"
         }
       ],
-      "sha" : "b13f54b2f7084012bba07ba80dd596c40177af06",
+      "sha" : "c9bd45603b34f73339ba2544d34136152c87701b",
       "status" : {
         "state" : "implemented",
         "version" : "6.3"
@@ -19095,7 +19137,7 @@
           "name" : "Tony Allevato"
         }
       ],
-      "sha" : "1f366a60049004b1147182e8a8ac46f6516465c8",
+      "sha" : "9d1c3f915760bc2a867b78fabb85898e8ac52cc1",
       "status" : {
         "state" : "implemented",
         "version" : "6.2"
@@ -21174,7 +21216,7 @@
           "name" : "Xiaodi Wu"
         }
       ],
-      "sha" : "88436cda9af25e6c7b0be6f002cea24720ca465c",
+      "sha" : "a9f83f751efaecd8d374cc63d3d321f9f5ad81a3",
       "status" : {
         "state" : "implemented",
         "version" : "6.4"
@@ -21308,9 +21350,10 @@
           "name" : "Mikaela Caron"
         }
       ],
-      "sha" : "17c4c396e57ea29c6532f84ff23a187f0206ad3f",
+      "sha" : "d6a69457fd0a3b214cc039277d5617fd633c8fb2",
       "status" : {
-        "state" : "accepted"
+        "state" : "implemented",
+        "version" : "6.4"
       },
       "summary" : "This proposal introduces a new `swift package add-target-plugin` command that allows developers to add plugin usages to existing targets in their `Package.swift` manifest directly from the command line.",
       "title" : "SwiftPM Add Target Plugin Command",
@@ -21542,6 +21585,10 @@
         {
           "link" : "https:\/\/forums.swift.org\/t\/second-review-se-0516-iterable\/87106",
           "name" : "second review"
+        },
+        {
+          "link" : "https:\/\/forums.swift.org\/t\/accepted-with-modifications-se-0516-iterable\/88806",
+          "name" : "acceptance"
         }
       ],
       "id" : "SE-0516",
@@ -21572,11 +21619,9 @@
           "name" : "Holly Borla"
         }
       ],
-      "sha" : "ba4306ee33a4cbedc74b951581845c0a5c6c0c1e",
+      "sha" : "6df30e2542873f1428486062da3df1dbe23a1d7e",
       "status" : {
-        "end" : "2026-06-30T00:00:00Z",
-        "start" : "2026-06-04T00:00:00Z",
-        "state" : "activeReview"
+        "state" : "accepted"
       },
       "summary" : "We propose a new protocol for iteration, `Iterable`, which provides a universal implementation point for synchronous iteration. Types conforming to `Iterable` can be noncopyable or nonescapable, can have noncopyable elements, and can throw during iteration. The Swift compiler will support use of this protocol via the familiar `for`-`in` syntax.",
       "title" : "`Iterable`"
@@ -22485,6 +22530,10 @@
         {
           "link" : "https:\/\/forums.swift.org\/t\/se-0535-add-cli-for-editing-global-mirrors-configuration\/88091",
           "name" : "review"
+        },
+        {
+          "link" : "https:\/\/forums.swift.org\/t\/accepted-se-0535-add-cli-for-editing-global-mirrors-configuration\/88795",
+          "name" : "acceptance"
         }
       ],
       "id" : "SE-0535",
@@ -22503,11 +22552,9 @@
           "name" : "Tim Condon"
         }
       ],
-      "sha" : "4d2c1d63ebf1fc0e58f1f319064471fa4c7beafc",
+      "sha" : "4a16506c20c19465ed4a3acd9028d26a4c554a7f",
       "status" : {
-        "end" : "2026-07-20T00:00:00Z",
-        "start" : "2026-07-06T00:00:00Z",
-        "state" : "activeReview"
+        "state" : "accepted"
       },
       "summary" : "SPM has support for both local (per-project) and shared (per-user) mirrors configuration, though the CLI only allows for editing the local configuration file. This proposal adds an optional `--global` flag to the existing CLI for editing the global configuration.",
       "title" : "Add CLI for editing global mirrors configuration"
@@ -22571,6 +22618,10 @@
         {
           "link" : "https:\/\/forums.swift.org\/t\/se-0537-section-placement-control-for-functions\/88298",
           "name" : "review"
+        },
+        {
+          "link" : "https:\/\/forums.swift.org\/t\/accepted-with-modifications-se-0537-section-placement-control-for-functions\/88933",
+          "name" : "accepted with modification"
         }
       ],
       "id" : "SE-0537",
@@ -22581,11 +22632,10 @@
           "name" : "Becca Royal-Gordon"
         }
       ],
-      "sha" : "3e4ee288ccd16818e1565aa66a82f60c12641fbd",
+      "sha" : "6c0e101608022ab9e44dae1328753d66e9eb51a1",
       "status" : {
-        "end" : "2026-07-27T00:00:00Z",
-        "start" : "2026-07-14T00:00:00Z",
-        "state" : "activeReview"
+        "state" : "implemented",
+        "version" : "Next"
       },
       "summary" : "This proposal extends the `@section` attribute introduced in [SE-0492](https:\/\/github.com\/swiftlang\/swift-evolution\/blob\/main\/proposals\/0492-section-control.md) to also allow functions to be annotated with `@section`. This can be useful in embedded systems where some code (for example the boot code for firmware) needs to be in a particular section in the binary.",
       "title" : "Section Placement Control for Functions"
@@ -22647,6 +22697,10 @@
         {
           "link" : "https:\/\/forums.swift.org\/t\/se-0539-enable-macros-to-grant-self-access-for-property-initializers\/88713",
           "name" : "review"
+        },
+        {
+          "link" : "https:\/\/forums.swift.org\/t\/returned-for-revision-se-0539-enable-macros-to-grant-self-access-for-property-initializers\/89155",
+          "name" : "returned for revision"
         }
       ],
       "id" : "SE-0539",
@@ -22665,11 +22719,9 @@
           "name" : "Tony Allevato"
         }
       ],
-      "sha" : "217e001f5527f55cd9965d1e624bb7dedfffb7f4",
+      "sha" : "0b5acb1d16409c5c50c7b1492de10fa8be545c04",
       "status" : {
-        "end" : "2026-08-16T00:00:00Z",
-        "start" : "2026-08-02T00:00:00Z",
-        "state" : "activeReview"
+        "state" : "returnedForRevision"
       },
       "summary" : "Adds an optional `initialization: selfAvailable` parameter for `accessor` macro role declarations. This parameter declares that the macro moves a property initializer expression to a new context, where access to `self` and instance members is available.",
       "title" : "Enable Macros to Grant `self` Access for Property Initializers"
@@ -22707,14 +22759,282 @@
           "name" : "Mikaela Caron"
         }
       ],
-      "sha" : "d895cc8451114cd19fa20752358db06c90bd8e3b",
+      "sha" : "76bade711322b3b26e29812e1fa1210b60c1d777",
       "status" : {
         "end" : "2026-08-17T00:00:00Z",
         "start" : "2026-08-03T00:00:00Z",
         "state" : "activeReview"
       },
-      "summary" : "It is very common for Swift packages to using the same settings flags across all their targets. A built-in mechanism to apply these base settings offers improved readability and convenience for package manifests.",
+      "summary" : "It is very common for Swift packages to use the same settings flags across all their targets. A built-in mechanism to apply these base settings offers improved readability and convenience for package manifests.",
       "title" : "Default Target Settings"
+    },
+    {
+      "authors" : [
+        {
+          "link" : "https:\/\/github.com\/owenv",
+          "name" : "Owen Voorhees"
+        }
+      ],
+      "discussions" : [
+        {
+          "link" : "https:\/\/forums.swift.org\/t\/pitch-flexible-swift-c-interoperability-in-packages\/88354",
+          "name" : "pitch"
+        },
+        {
+          "link" : "https:\/\/forums.swift.org\/t\/se-0541-flexible-swift-c-interoperability-for-packages\/88796",
+          "name" : "review"
+        }
+      ],
+      "id" : "SE-0541",
+      "implementation" : [
+        {
+          "account" : "swiftlang",
+          "id" : "10292",
+          "repository" : "swift-package-manager",
+          "type" : "pull"
+        },
+        {
+          "account" : "swiftlang",
+          "id" : "1537",
+          "repository" : "swift-build",
+          "type" : "pull"
+        },
+        {
+          "account" : "swiftlang",
+          "id" : "1546",
+          "repository" : "swift-build",
+          "type" : "pull"
+        },
+        {
+          "account" : "swiftlang",
+          "id" : "90774",
+          "repository" : "swift",
+          "type" : "pull"
+        }
+      ],
+      "link" : "0541-flexible-swift-c-interoperability-for-packages.md",
+      "reviewManagers" : [
+        {
+          "link" : "https:\/\/github.com\/0xTim",
+          "name" : "Tim Condon"
+        }
+      ],
+      "sha" : "befa8aa05174e366643d795430f6ef74647c1cf8",
+      "status" : {
+        "end" : "2026-08-19T00:00:00Z",
+        "start" : "2026-08-05T00:00:00Z",
+        "state" : "activeReview"
+      },
+      "summary" : "Swift has great support for bidirectional interoperability with C, C++, and Objective-C, but historically SwiftPM has restricted the set of interop features available to package authors. This proposal lifts most of those restrictions, giving packages a new set of tools to organize their code.",
+      "title" : "Flexible Swift\/C Interoperability for Packages"
+    },
+    {
+      "authors" : [
+        {
+          "link" : "https:\/\/github.com\/clive819",
+          "name" : "Clive Liu"
+        }
+      ],
+      "discussions" : [
+        {
+          "link" : "https:\/\/forums.swift.org\/t\/pitch-package-manager-conditional-plugin\/86217",
+          "name" : "pitch"
+        },
+        {
+          "link" : "https:\/\/forums.swift.org\/t\/se-0542-package-manager-condition-plugins\/88820",
+          "name" : "review"
+        }
+      ],
+      "id" : "SE-0542",
+      "implementation" : [
+        {
+          "account" : "swiftlang",
+          "id" : "10119",
+          "repository" : "swift-package-manager",
+          "type" : "pull"
+        }
+      ],
+      "link" : "0542-package-manager-conditional-plugin.md",
+      "reviewManagers" : [
+        {
+          "link" : "https:\/\/github.com\/daveyc123",
+          "name" : "David Cummings"
+        }
+      ],
+      "sha" : "4a290625eba374e0826050399262ce3845b545b2",
+      "status" : {
+        "end" : "2026-08-21T00:00:00Z",
+        "start" : "2026-08-06T00:00:00Z",
+        "state" : "activeReview"
+      },
+      "summary" : "This proposal extends the `plugins` parameter of SwiftPM target declarations to support conditional plugin application. A new `PluginUsageCondition` type lets package authors gate a plugin on the **host platform** (where the plugin will run), the **target platform** (where the compiled product will run), and the **traits** enabled for the build. This follows the `.when(...)` pattern established by [SE-0273](https:\/\/github.com\/swiftlang\/swift-evolution\/blob\/main\/proposals\/0273-swiftpm-conditional-target-dependencies.md) and [SE-0450](https:\/\/github.com\/swiftlang\/swift-evolution\/blob\/main\/proposals\/0450-swiftpm-package-traits.md), but is shaped to fit the distinct host\/target story that plugins have.",
+      "title" : "Package Manager Conditional Plugin"
+    },
+    {
+      "authors" : [
+        {
+          "link" : "https:\/\/github.com\/Azoy",
+          "name" : "Alejandro Alonso"
+        },
+        {
+          "link" : "https:\/\/github.com\/stephentyrone",
+          "name" : "Steve Canon"
+        }
+      ],
+      "discussions" : [
+        {
+          "link" : "https:\/\/forums.swift.org\/t\/conform-inlinearray-to-hashable\/88432",
+          "name" : "pitch"
+        },
+        {
+          "link" : "https:\/\/forums.swift.org\/t\/se-0543-inlinearray-hashable\/88843",
+          "name" : "review"
+        },
+        {
+          "link" : "https:\/\/forums.swift.org\/t\/accepted-se-0543-inlinearray-hashable\/89056",
+          "name" : "acceptance"
+        }
+      ],
+      "id" : "SE-0543",
+      "link" : "0543-inline-array-hashable.md",
+      "reviewManagers" : [
+        {
+          "link" : "https:\/\/github.com\/xwu",
+          "name" : "Xiaodi Wu"
+        }
+      ],
+      "sha" : "0efedeec7447fb826468683f67d4e7e839fa6ae3",
+      "status" : {
+        "state" : "accepted"
+      },
+      "summary" : "InlineArray conditionally conforms to Equatable and Hashable when Element does.",
+      "title" : "InlineArray: Hashable"
+    },
+    {
+      "authors" : [
+        {
+          "link" : "https:\/\/github.com\/jckarter",
+          "name" : "Joe Groff"
+        }
+      ],
+      "discussions" : [
+        {
+          "link" : "https:\/\/forums.swift.org\/t\/mutation-and-consumption-in-non-copyable-type-deinit-s\/82390",
+          "name" : "first pitch"
+        },
+        {
+          "link" : "https:\/\/forums.swift.org\/t\/pitch-2-allowing-for-partial-mutation-and-consumption-inside-of-non-copyable-type-deinit\/88437",
+          "name" : "second pitch"
+        },
+        {
+          "link" : "https:\/\/forums.swift.org\/t\/se-0544-mutation-and-consumption-in-non-copyable-type-deinits\/88903",
+          "name" : "review"
+        }
+      ],
+      "id" : "SE-0544",
+      "implementation" : [
+        {
+          "account" : "swiftlang",
+          "id" : "90836",
+          "repository" : "swift",
+          "type" : "pull"
+        }
+      ],
+      "link" : "0544-mutate-or-consume-in-deinit.md",
+      "reviewManagers" : [
+        {
+          "link" : "https:\/\/github.com\/rjmccall",
+          "name" : "John McCall"
+        }
+      ],
+      "sha" : "c0aa722de90028903a9998e3a95230a2a09cbf27",
+      "status" : {
+        "end" : "2026-08-24T00:00:00Z",
+        "start" : "2026-08-10T00:00:00Z",
+        "state" : "activeReview"
+      },
+      "summary" : "Non-`Copyable` types can define a `deinit` to clean up owned resources at the end of their lifetime; however, prior to this proposal, `self` was restricted to be immutable and borrowable only within the body of `deinit` up to this point. We propose to allow `deinit` to mutate and\/or consume the fields of `self`, but still prevent the mutation or consumption of `self` as an entire value in order to avoid problems with value resurrection.",
+      "title" : "Mutation and consumption in non-`Copyable` type `deinit`s"
+    },
+    {
+      "authors" : [
+        {
+          "link" : "https:\/\/github.com\/owenv",
+          "name" : "Owen Voorhees"
+        }
+      ],
+      "discussions" : [
+        {
+          "link" : "https:\/\/forums.swift.org\/t\/pitch-swiftpm-build-performance-debugging-options\/87369",
+          "name" : "pitch"
+        },
+        {
+          "link" : "https:\/\/forums.swift.org\/t\/se-0545-swiftpm-build-performance-debugging-options\/88943",
+          "name" : "review"
+        }
+      ],
+      "id" : "SE-0545",
+      "link" : "0545-build-debugging-options.md",
+      "reviewManagers" : [
+        {
+          "link" : "https:\/\/github.com\/shahmishal",
+          "name" : "Mishal Shah"
+        }
+      ],
+      "sha" : "dca0a561a0c9013a750a1c109c808c975fcd66cb",
+      "status" : {
+        "end" : "2026-08-26T00:00:00Z",
+        "start" : "2026-08-12T00:00:00Z",
+        "state" : "activeReview"
+      },
+      "summary" : "This proposal introduces two new SwiftPM CLI options, `--trace-events-file` and `--enable-task-backtraces`, which can be used to analyze the performance of clean and incremental builds and identify common issues.",
+      "title" : "SwiftPM Build Performance Debugging Options"
+    },
+    {
+      "authors" : [
+        {
+          "link" : "https:\/\/github.com\/stephencelis",
+          "name" : "Stephen Celis"
+        },
+        {
+          "link" : "https:\/\/github.com\/mbrandonw",
+          "name" : "Brandon Williams"
+        }
+      ],
+      "discussions" : [
+        {
+          "link" : "https:\/\/forums.swift.org\/t\/same-file-memberwise-initializer-extensions\/88466",
+          "name" : "pitch"
+        },
+        {
+          "link" : "https:\/\/forums.swift.org\/t\/se-0546-same-file-memberwise-initializer-extensions\/89120",
+          "name" : "review"
+        }
+      ],
+      "id" : "SE-0546",
+      "implementation" : [
+        {
+          "account" : "swiftlang",
+          "id" : "90710",
+          "repository" : "swift",
+          "type" : "pull"
+        }
+      ],
+      "link" : "0546-memberwise-init-extensions.md",
+      "reviewManagers" : [
+        {
+          "link" : "https:\/\/github.com\/stephentyrone",
+          "name" : "Stephen Canon"
+        }
+      ],
+      "sha" : "2338d12b21492da42d6325b23edf36a268b25da9",
+      "status" : {
+        "end" : "2026-09-04T00:00:00Z",
+        "start" : "2026-08-21T00:00:00Z",
+        "state" : "activeReview"
+      },
+      "summary" : "Allows a struct's memberwise initializer to be defined in a same-file extension.",
+      "title" : "Same-file memberwise initializer extensions"
     }
   ],
   "schemaVersion" : "1.0.0",

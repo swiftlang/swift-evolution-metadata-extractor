@@ -8,7 +8,7 @@ Add new items at the end of the relevant section under **Unreleased**.
 
 ### Changes
 
-- Remove validation exceptions for updating proposals ([#121])
+- Remove validation exemptions for updated proposals ([#121], [#132])
 
 ### Fixes
 
@@ -124,3 +124,4 @@ This changelog's format is based on [Keep a Changelog](https://keepachangelog.co
 [#119]: https://github.com/swiftlang/swift-evolution-metadata-extractor/pull/119
 [#121]: https://github.com/swiftlang/swift-evolution-metadata-extractor/pull/121
 [#131]: https://github.com/swiftlang/swift-evolution-metadata-extractor/pull/131
+[#132]: https://github.com/swiftlang/swift-evolution-metadata-extractor/pull/132
