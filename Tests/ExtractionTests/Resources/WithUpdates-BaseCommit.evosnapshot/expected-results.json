@@ -20272,6 +20272,14 @@
           "name" : "review"
         }
       ],
+      "errors" : [
+        {
+          "code" : 63,
+          "kind" : "error",
+          "message" : "Missing or invalid dates for a review period.",
+          "suggestion" : "Review date ranges:\n    - Include the year\n    - Use full month names\n    - Separate dates by a hyphen or three periods\n    - Can include leading zero for single digit days\n    - For dates in the same year, only a trailing year is required\n    - For dates in the same month, only a leading month is required\n\nExamples:\n    March 3-15, 2026\n    July 01 - July 09, 2026\n    September 29...October 13, 2024\n    December 12, 2025...January 09, 2026"
+        }
+      ],
       "id" : "SE-0490",
       "implementation" : [
         {
@@ -20300,14 +20308,6 @@
         {
           "id" : "SR-5714",
           "link" : "https:\/\/github.com\/swiftlang\/swift-package-manager\/issues\/5714"
-        }
-      ],
-      "warnings" : [
-        {
-          "code" : 63,
-          "kind" : "warning",
-          "message" : "Missing or invalid dates for a review period.",
-          "suggestion" : "Review date ranges:\n    - Include the year\n    - Use full month names\n    - Separate dates by a hyphen or three periods\n    - Can include leading zero for single digit days\n    - For dates in the same year, only a trailing year is required\n    - For dates in the same month, only a leading month is required\n\nExamples:\n    March 3-15, 2026\n    July 01 - July 09, 2026\n    September 29...October 13, 2024\n    December 12, 2025...January 09, 2026"
         }
       ]
     },
@@ -20528,6 +20528,14 @@
           "name" : "review"
         }
       ],
+      "errors" : [
+        {
+          "code" : 63,
+          "kind" : "error",
+          "message" : "Missing or invalid dates for a review period.",
+          "suggestion" : "Review date ranges:\n    - Include the year\n    - Use full month names\n    - Separate dates by a hyphen or three periods\n    - Can include leading zero for single digit days\n    - For dates in the same year, only a trailing year is required\n    - For dates in the same month, only a leading month is required\n\nExamples:\n    March 3-15, 2026\n    July 01 - July 09, 2026\n    September 29...October 13, 2024\n    December 12, 2025...January 09, 2026"
+        }
+      ],
       "id" : "SE-0495",
       "link" : "0495-cdecl.md",
       "reviewManagers" : [
@@ -20543,15 +20551,7 @@
         "state" : "activeReview"
       },
       "summary" : "Implementing a C function in Swift eases integration of Swift and C code. This proposal introduces `@c` to mark Swift functions as callable from C, and enums as representable in C. It provides the same behavior under the `@objc` attribute for Objective-C compatible global functions.",
-      "title" : "C compatible functions and enums",
-      "warnings" : [
-        {
-          "code" : 63,
-          "kind" : "warning",
-          "message" : "Missing or invalid dates for a review period.",
-          "suggestion" : "Review date ranges:\n    - Include the year\n    - Use full month names\n    - Separate dates by a hyphen or three periods\n    - Can include leading zero for single digit days\n    - For dates in the same year, only a trailing year is required\n    - For dates in the same month, only a leading month is required\n\nExamples:\n    March 3-15, 2026\n    July 01 - July 09, 2026\n    September 29...October 13, 2024\n    December 12, 2025...January 09, 2026"
-        }
-      ]
+      "title" : "C compatible functions and enums"
     },
     {
       "authors" : [
