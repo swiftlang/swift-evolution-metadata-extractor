@@ -464,6 +464,14 @@
           "name" : "Rationale"
         }
       ],
+      "errors" : [
+        {
+          "code" : 63,
+          "kind" : "error",
+          "message" : "Missing or invalid dates for a review period.",
+          "suggestion" : "Review date ranges:\n    - Include the year\n    - Use full month names\n    - Separate dates by a hyphen or three periods\n    - Can include leading zero for single digit days\n    - For dates in the same year, only a trailing year is required\n    - For dates in the same month, only a leading month is required\n\nExamples:\n    March 3-15, 2026\n    July 01 - July 09, 2026\n    September 29...October 13, 2024\n    December 12, 2025...January 09, 2026"
+        }
+      ],
       "id" : "SE-0013",
       "link" : "0013-scheduled-for-review-malformed-date-range.md",
       "reviewManagers" : [
@@ -479,15 +487,7 @@
         "state" : "scheduledForReview"
       },
       "summary" : "Prior to Swift 2.2, calls to superclass methods like `super.foo()` in Native Swift classes were dispatched statically by recording a reference to the function and calling it directly by its mangled name. In Swift 2.2, class methods invoked via `super` will use dynamic dispatch. That is, the method will be looked up in the superclass's vtable at runtime. However, if the method is marked with `final`, it will use the old static dispatch, since no class will be able to override it.",
-      "title" : "Remove Partial Application of Non-Final Super Methods (Swift 2.2)",
-      "warnings" : [
-        {
-          "code" : 63,
-          "kind" : "warning",
-          "message" : "Missing or invalid dates for a review period.",
-          "suggestion" : "Review date ranges:\n    - Include the year\n    - Use full month names\n    - Separate dates by a hyphen or three periods\n    - Can include leading zero for single digit days\n    - For dates in the same year, only a trailing year is required\n    - For dates in the same month, only a leading month is required\n\nExamples:\n    March 3-15, 2026\n    July 01 - July 09, 2026\n    September 29...October 13, 2024\n    December 12, 2025...January 09, 2026"
-        }
-      ]
+      "title" : "Remove Partial Application of Non-Final Super Methods (Swift 2.2)"
     },
     {
       "authors" : [
@@ -500,6 +500,14 @@
         {
           "link" : "https:\/\/forums.swift.org\/t\/accepted-se-0014-constraining-anysequence-init\/924",
           "name" : "Rationale"
+        }
+      ],
+      "errors" : [
+        {
+          "code" : 63,
+          "kind" : "error",
+          "message" : "Missing or invalid dates for a review period.",
+          "suggestion" : "Review date ranges:\n    - Include the year\n    - Use full month names\n    - Separate dates by a hyphen or three periods\n    - Can include leading zero for single digit days\n    - For dates in the same year, only a trailing year is required\n    - For dates in the same month, only a leading month is required\n\nExamples:\n    March 3-15, 2026\n    July 01 - July 09, 2026\n    September 29...October 13, 2024\n    December 12, 2025...January 09, 2026"
         }
       ],
       "id" : "SE-0014",
@@ -522,14 +530,6 @@
         {
           "id" : "SR-474",
           "link" : "https:\/\/bugs.swift.org\/browse\/SR-474"
-        }
-      ],
-      "warnings" : [
-        {
-          "code" : 63,
-          "kind" : "warning",
-          "message" : "Missing or invalid dates for a review period.",
-          "suggestion" : "Review date ranges:\n    - Include the year\n    - Use full month names\n    - Separate dates by a hyphen or three periods\n    - Can include leading zero for single digit days\n    - For dates in the same year, only a trailing year is required\n    - For dates in the same month, only a leading month is required\n\nExamples:\n    March 3-15, 2026\n    July 01 - July 09, 2026\n    September 29...October 13, 2024\n    December 12, 2025...January 09, 2026"
         }
       ]
     },

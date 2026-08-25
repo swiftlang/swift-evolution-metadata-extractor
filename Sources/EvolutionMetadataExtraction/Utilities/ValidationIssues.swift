@@ -156,7 +156,7 @@ extension Proposal.Issue {
     )
 
     static let missingOrInvalidReviewDates = Proposal.Issue(
-        kind: .warning,
+        kind: .error,
         code: 63,
         message: "Missing or invalid dates for a review period.",
         suggestion: """

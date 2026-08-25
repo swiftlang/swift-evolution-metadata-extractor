@@ -9,6 +9,8 @@ Add new items at the end of the relevant section under **Unreleased**.
 ### Changes
 
 - Remove validation exemptions for updated proposals ([#121], [#132])
+- Promote warning to error ([#133])
+    - 'missing or invalid review dates'
 
 ### Fixes
 
@@ -125,3 +127,4 @@ This changelog's format is based on [Keep a Changelog](https://keepachangelog.co
 [#121]: https://github.com/swiftlang/swift-evolution-metadata-extractor/pull/121
 [#131]: https://github.com/swiftlang/swift-evolution-metadata-extractor/pull/131
 [#132]: https://github.com/swiftlang/swift-evolution-metadata-extractor/pull/132
+[#133]: https://github.com/swiftlang/swift-evolution-metadata-extractor/pull/133
