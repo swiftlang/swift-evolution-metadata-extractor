@@ -80,9 +80,21 @@ extension Proposal.Issue {
 
     static let reservedProposalID = Proposal.Issue(
         kind: .error,
-        code: 34,
+        code: 35,
         message: "Missing valid proposal ID; SE-0000 is reserved."
     )
+
+    static func incorrectProposalLinkFilename(id: String, filename: String) -> Proposal.Issue {
+        Proposal.Issue(
+            kind: .error,
+            code: 36,
+            message: "Proposal link does not match proposal file name.",
+            suggestion: """
+                Change the Proposal header field to:
+                    * Proposal: [\(id)](\(filename))
+                """
+        )
+    }
 
     // MARK: - Author
     static let missingAuthors = Proposal.Issue(

@@ -6,6 +6,10 @@ Add new items at the end of the relevant section under **Unreleased**.
 
 ## [Unreleased]
 
+### Additions
+
+- Validate link in Proposal field matches proposal filename ([#134])
+
 ### Changes
 
 - Remove validation exemptions for updated proposals ([#121], [#132])
@@ -128,3 +132,4 @@ This changelog's format is based on [Keep a Changelog](https://keepachangelog.co
 [#131]: https://github.com/swiftlang/swift-evolution-metadata-extractor/pull/131
 [#132]: https://github.com/swiftlang/swift-evolution-metadata-extractor/pull/132
 [#133]: https://github.com/swiftlang/swift-evolution-metadata-extractor/pull/133
+[#134]: https://github.com/swiftlang/swift-evolution-metadata-extractor/pull/134
