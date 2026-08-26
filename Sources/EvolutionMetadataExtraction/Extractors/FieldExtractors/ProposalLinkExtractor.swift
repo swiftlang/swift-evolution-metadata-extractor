@@ -47,6 +47,11 @@ struct ProposalLinkExtractor: MarkupWalker, ValueExtractor {
                     self.proposalLink?.destination = "" // Do not include an incorrect destination
                     issues.reportIssue(Proposal.Issue.invalidProposalIDLink, source: source)
                 }
+
+                else if proposalLink.destination != source.proposalSpec.filename {
+                    issues.reportIssue(Proposal.Issue.incorrectProposalLinkFilename(id: proposalLink.text, filename: source.proposalSpec.filename), source: source)
+                }
+
             }
             
         } else {
