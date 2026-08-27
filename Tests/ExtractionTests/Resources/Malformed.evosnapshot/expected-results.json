@@ -1259,12 +1259,116 @@
       ],
       "sha" : "",
       "status" : {
-        "end" : "2024-08-21T00:00:00Z",
-        "start" : "2024-08-06T00:00:00Z",
+        "end" : "2026-08-21T00:00:00Z",
+        "start" : "2026-08-06T00:00:00Z",
         "state" : "activeReview"
       },
       "summary" : "This proposal extends the `plugins` parameter of SwiftPM target declarations to support conditional plugin application. A new `PluginUsageCondition` type lets package authors gate a plugin on the **host platform** (where the plugin will run), the **target platform** (where the compiled product will run), and the **traits** enabled for the build. This follows the `.when(...)` pattern established by [SE-0273](https:\/\/github.com\/swiftlang\/swift-evolution\/blob\/main\/proposals\/0273-swiftpm-conditional-target-dependencies.md) and [SE-0450](https:\/\/github.com\/swiftlang\/swift-evolution\/blob\/main\/proposals\/0450-swiftpm-package-traits.md), but is shaped to fit the distinct host\/target story that plugins have.",
       "title" : "Package Manager Conditional Plugin"
+    },
+    {
+      "authors" : [
+        {
+          "link" : "https:\/\/github.com\/stephencelis",
+          "name" : "Stephen Celis"
+        },
+        {
+          "link" : "https:\/\/github.com\/mbrandonw",
+          "name" : "Brandon Williams"
+        }
+      ],
+      "discussions" : [
+        {
+          "link" : "https:\/\/forums.swift.org\/t\/same-file-memberwise-initializer-extensions\/88466",
+          "name" : "pitch"
+        },
+        {
+          "link" : "https:\/\/forums.swift.org\/t\/se-0546-same-file-memberwise-initializer-extensions\/89120",
+          "name" : "review"
+        }
+      ],
+      "errors" : [
+        {
+          "code" : 66,
+          "kind" : "error",
+          "message" : "The start date of the review period is after the end date.",
+          "suggestion" : "This error is most common when a date range spans two years.\nIf that is the case, specify a start year to resolve the issue. \n\nExample:\n    December 12, 2025...January 9, 2026"
+        }
+      ],
+      "id" : "SE-0546",
+      "implementation" : [
+        {
+          "account" : "swiftlang",
+          "id" : "90710",
+          "repository" : "swift",
+          "type" : "pull"
+        }
+      ],
+      "link" : "0546-invalid-review-period-date-range.md",
+      "reviewManagers" : [
+        {
+          "link" : "https:\/\/github.com\/stephentyrone",
+          "name" : "Stephen Canon"
+        }
+      ],
+      "sha" : "",
+      "status" : {
+        "end" : "2026-01-04T00:00:00Z",
+        "start" : "2026-12-21T00:00:00Z",
+        "state" : "activeReview"
+      },
+      "summary" : "Allows a struct's memberwise initializer to be defined in a same-file extension.",
+      "title" : "Same-file memberwise initializer extensions"
+    },
+    {
+      "authors" : [
+        {
+          "link" : "https:\/\/github.com\/owenv",
+          "name" : "Owen Voorhees"
+        }
+      ],
+      "discussions" : [
+        {
+          "link" : "https:\/\/forums.swift.org\/t\/pitch-compilation-caching-support-in-swiftpm\/88079",
+          "name" : "pitch"
+        },
+        {
+          "link" : "https:\/\/forums.swift.org\/t\/se-0547-swiftpm-support-for-compilation-caching\/89191",
+          "name" : "review"
+        }
+      ],
+      "errors" : [
+        {
+          "code" : 67,
+          "kind" : "error",
+          "message" : "The review period start and end dates are the same day.",
+          "suggestion" : ""
+        }
+      ],
+      "id" : "SE-0547",
+      "implementation" : [
+        {
+          "account" : "swiftlang",
+          "id" : "10246",
+          "repository" : "swift-package-manager",
+          "type" : "pull"
+        }
+      ],
+      "link" : "0547-single-day-review-period.md",
+      "reviewManagers" : [
+        {
+          "link" : "https:\/\/github.com\/shahmishal",
+          "name" : "Mishal Shah"
+        }
+      ],
+      "sha" : "",
+      "status" : {
+        "end" : "2026-08-25T00:00:00Z",
+        "start" : "2026-08-25T00:00:00Z",
+        "state" : "activeReview"
+      },
+      "summary" : "The Swift and Clang compilers have existing support for leveraging a CAS (Content Addressable Store) to cache compilation outputs and replay them in subsequent builds. This proposal introduces support for configuring compilation caching in SwiftPM on a per-build, per-package, or global basis.",
+      "title" : "SwiftPM Support for Compilation Caching"
     }
   ],
   "schemaVersion" : "1.0.0",

@@ -16,9 +16,8 @@ struct ProposalMetadataExtractor {
     /// - Parameters:
     ///   - markdown: The markdown string of a Swift Evolution proposal
     ///   - proposalSpec: Proposal specification including the proposal ID
-    ///   - extractionDate: Extraction date used to determine expired review periods
     /// - Returns: The extracted proposal metadata
-    static func extractProposalMetadata(from markdown: String, proposalSpec: ProposalSpec, extractionDate: Date) -> Proposal {
+    static func extractProposalMetadata(from markdown: String, proposalSpec: ProposalSpec) -> Proposal {
 
         var issues = IssueWrapper()
         var proposal = Proposal()
@@ -75,7 +74,7 @@ struct ProposalMetadataExtractor {
                 issues.reportIssue(.missingReviewField, source: headerFieldsSource)
             }
             
-            if let status = extractValue(from: (headerFieldsSource, extractionDate), with: StatusExtractor.self) {
+            if let status = extractValue(from: headerFieldsSource, with: StatusExtractor.self) {
                 if case .implemented(let version) = status, version == "none" {
                     // VALIDATION ENHANCEMENT: Figure out a better way to special case the missing version strings for these proposals
                     // VALIDATION ENHANCEMENT: Possibly just add version strings to the actual proposals

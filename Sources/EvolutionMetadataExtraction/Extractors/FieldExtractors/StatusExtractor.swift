@@ -13,12 +13,8 @@ import EvolutionMetadataModel
 struct StatusExtractor: MarkupWalker, ValueExtractor {
     
     private var source: HeaderFieldSource
-    private var extractionDate: Date = Date()
-    init(source: (source: HeaderFieldSource, extractionDate: Date)) {
-        self.source = source.source
-        self.extractionDate = source.extractionDate
-    }
-    
+    init(source: HeaderFieldSource) { self.source = source }
+
     private var issues = IssueWrapper()
     var status: Proposal.Status? = nil
     
@@ -55,7 +51,7 @@ struct StatusExtractor: MarkupWalker, ValueExtractor {
             version = StatusExtractor.versionForString(String(statusMatch.details ?? ""))
         }
         else if statusString.contains(/(Scheduled for|Active) Review/.ignoresCase()) {
-            if let result = StatusExtractor.datesForString(String(statusMatch.details ?? ""), processingDate: extractionDate) {
+            if let result = datesForString(String(statusMatch.details ?? "")) {
                 start = result.start
                 end = result.end
             } else {
@@ -70,6 +66,8 @@ struct StatusExtractor: MarkupWalker, ValueExtractor {
             status = .statusExtractionFailed
         }
     }
+
+// MARK: -
 
     static func versionForString(_ fullVersionString: String) -> String {
         guard !fullVersionString.isEmpty else {
@@ -99,91 +97,93 @@ struct StatusExtractor: MarkupWalker, ValueExtractor {
         
         return version
     }
-    
-    // The processing date is typically the default value of 'now', the date of the processing
-    // For testing, a different processing date can be provided
-    // VALIDATION ENHANCEMENT: A date range like (Apr 29 - May 3) will parse incorrectly by finding May and thinking both dates are in May
-    // VALIDATION ENHANCEMENT: Something like (4 - 13 April 2022) will parse correctly. Should probably validate to the expected format
-    static func datesForString(_ string: String, processingDate: Date) -> (start: String, end: String)? {
-        
-        // used in two case blocks; hoisting up here for reuse
-        let integerMatcher = /\d+/
-        
-        let monthMatcher = /January|February|March|April|May|June|July|August|September|October|November|December/.ignoresCase()
-        
-        let monthMatches = string.matches(of: monthMatcher)
-        
-        // For a date range, only 1 or 2 month values are valid
-        guard monthMatches.count != 0 && monthMatches.count < 3 else {
-            // VALIDATION ENHANCEMENT
-            //            print("ERROR: '\(string)': Unexpected month count of \(monthMatches.count)")
+
+// MARK: -
+
+    // Returning nil from this method signifies a malformed date range string (the regex does not match)
+    // The caller is responsible for reporting the error
+    // Note that this function will return successfully extracted dates, even if there are
+    // issues with the dates extracted, such as an end date earlier than a start date
+    // These issues are reported by this method, but do no prevent return of the extracted dates
+    mutating func datesForString (_ string: String) -> (start: String, end: String)? {
+        if let (startDate, endDate) = StatusExtractor.datesForString(string) {
+
+            // Ensure end date is later than start date
+            let calendar = Calendar(identifier: .gregorian)
+            if startDate > endDate {
+                issues.reportIssue(.invalidReviewPeriodDateRange, source: source)
+            } else if calendar.isDate(startDate, equalTo: endDate, toGranularity: .day) {
+                issues.reportIssue(.singleDayReviewPeriod, source: source)
+            }
+
+            // Specify explicit GMT time zone and 'en_US_POSIX' locale
+            let dateFormatStyle = Date.ISO8601FormatStyle(timeZone: TimeZone.gmt).locale(Locale.en_US_POSIX)
+            return (startDate.formatted(dateFormatStyle), endDate.formatted(dateFormatStyle))
+
+        } else {
             return nil
         }
-        
-        let startMonth = String(monthMatches[0].0)
-        let endMonth = monthMatches.count == 2 ? String(monthMatches[1].0) : startMonth
-        //        print(startMonth, endMonth)
-        
-        // Only interested in numbers of one or two digits
-        let dayMatches = string.matches(of: integerMatcher).filter { $0.count <= 2 }
-        guard dayMatches.count == 2 else {
-            // VALIDATION ENHANCEMENT
-//            print("ERROR: '\(string)': Unexpected day count of \(dayMatches.count)")
+    }
+
+    // Does not allow 3-letter month abbreviations
+    // Currently in use
+    nonisolated(unsafe) static private let dateRegex = /(?<startMonth>January|February|March|April|May|June|July|August|September|October|November|December)(?: )(?<startDay>(?:[1-3][0-9])|(?:0?[1-9]))(?:, (?<startYear>2[0-9]{3}))?(?:(?: [-–] )|(?:[-–])|(?:\.\.\.))(?:(?<endMonth>January|February|March|April|May|June|July|August|September|October|November|December) )?(?<endDay>(?:[1-3][0-9])|(?:0?[1-9]))(?:, (?<endYear>2[0-9]{3}))/
+
+    // Allows 3-letter month abbreviations
+    // Currently unused
+    nonisolated(unsafe) static private let alternateDateRegex = /(?<startMonth>(?:Jan(?:uary)?)|(?:Feb(?:ruary)?)|(?:Mar(?:ch)?)|(?:Apr(?:il)?)|(?:May)|(?:Jun(?:e)?)|(?:Jul(?:y)?)|(?:Aug(?:ust)?)|(?:Sep(?:tember)?)|(?:Oct(?:ober)?)|(?:Nov(?:ember)?)|(?:Dec(?:ember)?))(?: )(?<startDay>(?:[1-3][0-9])|(?:0?[1-9]))(?:, (?<startYear>2[0-9]{3}))?(?:(?: [-–] )|(?:[-–])|(?:\.\.\.))(?:(?<endMonth>(?:Jan(?:uary)?)|(?:Feb(?:ruary)?)|(?:Mar(?:ch)?)|(?:Apr(?:il)?)|(?:May)|(?:Jun(?:e)?)|(?:Jul(?:y)?)|(?:Aug(?:ust)?)|(?:Sep(?:tember)?)|(?:Oct(?:ober)?)|(?:Nov(?:ember)?)|(?:Dec(?:ember)?)) )?(?<endDay>(?:[1-3][0-9])|(?:0?[1-9]))(?:, (?<endYear>2[0-9]{3}))/
+
+    private static let months = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"]
+
+    // This method focuses only on extracting the start and end dates from the content string
+    // It does not perform additional validation on the dates
+    // This allows the 'Good dates' / 'Bad dates' tests to use this function directly without reporting
+    // proposal-specific issues
+    static func datesForString(_ string: String) -> (start: Date, end: Date)? {
+
+        func monthNumber(for str: String) -> Int? {
+            if let index = months.firstIndex(of: str) { index + 1 } else { nil }
+        }
+
+        if let dateMatch = string.firstMatch(of: dateRegex) {
+
+            let startDay = Int(String(dateMatch.startDay))!
+            let endDay = Int(String(dateMatch.endDay))!
+
+            let startMonth = monthNumber(for: String(dateMatch.startMonth.prefix(3)))!
+            let endMonth = if let rawEndMonth = dateMatch.endMonth {
+                monthNumber(for: String(rawEndMonth.prefix(3)))!
+            } else {
+                startMonth
+            }
+
+            let endYear = Int(String(dateMatch.endYear))!
+            let startYear = if let rawStartYear = dateMatch.startYear {
+                Int(String(rawStartYear))!
+            } else {
+                endYear
+            }
+
+            let calendar = Calendar(identifier: .gregorian)
+            
+            let startDateComponents = DateComponents(calendar: calendar, timeZone: TimeZone.gmt, year: startYear, month: startMonth, day: startDay)
+            let startDate = startDateComponents.date!
+
+            let endDateComponents = DateComponents(calendar: calendar, timeZone: TimeZone.gmt, year: endYear, month: endMonth, day: endDay)
+            let endDate = endDateComponents.date!
+
+            return (startDate, endDate)
+
+        } else {
             return nil
         }
-
-        let (startDay, endDay) = (String(dayMatches[0].0), String(dayMatches[1].0))
-        
-        // Specify GMT time zone so parsed date is normalized to midnight GMT
-        // Setting explicit locale to ensure repeatable results
-        let formatter = DateFormatter()
-        formatter.dateFormat = "MMMM' 'd' 'yyyy"
-        formatter.timeZone = TimeZone.gmt
-        formatter.locale = Locale.en_US_POSIX
-        
-        let presentFormatter = DateFormatter()
-        presentFormatter.dateFormat = "y"
-        let presentYear: Int = Int(presentFormatter.string(from: processingDate))!
-        
-        guard
-            let startDate = formatter.date(from: "\(startMonth) \(startDay) \(presentYear)"),
-            let endDate = formatter.date(from: "\(endMonth) \(endDay) \(presentYear)")
-        else {
-            return nil // sort of a diagnostic-less error here, but it'll show up as an invalid date
-        }
-
-        // VALIDATION ENHANCEMENT: This rationale is no longer valid. Proposals now include the year in date ranges.
-        // VALIDATION ENHANCEMENT: For purposes of transition from legacy to new tool, keep logic the same
-        // VALIDATION ENHANCEMENT: Consider updating after transition
-        /*
-        Discussion of rationale:
-
-        SE proposal dates, in our format, lack a year specifier.
-        If someone schedules a review from March 2-6 in 2014,
-        then forgets to update it until 2015, this code will
-        assume that the review should take place from March 2-6 in 2015 (or the current year)
-
-        Since we lack a year specifier, we also need to consider mistakes in
-        date entry vs. "wrapping" dates, like a Dec 31 - Jan 4 date.
-
-        Here, I'm assuming that any wrapping date is valid, and assuming
-        that the intent is to wrap/span to the next year.
-
-        Alternatively, we could detect if the difference is, say > 1 month,
-        then warn/complain about the span.
-        */
-        
-        var wrappedEndDate = endDate
-        if wrappedEndDate < startDate {
-            wrappedEndDate = formatter.date(from: "\(endMonth) \(endDay) \(presentYear + 1)")!
-        }
-        
-        // Specify explicit GMT time zone and 'en_US_POSIX' locale
-        let dateFormatStyle = Date.ISO8601FormatStyle(timeZone: TimeZone.gmt).locale(Locale.en_US_POSIX)
-        return (startDate.formatted(dateFormatStyle), wrappedEndDate.formatted(dateFormatStyle))
     }
 }
 
+// MARK: -
+
+// Failable initializer validates that a string is a supported status value
+// For nil returns, the caller is reponsible for reporting the issue
 extension Proposal.Status {
     // VALIDATION ENHANCEMENT: Consider normalizing capitalization of statuses and validating correct capitalization
     public init?(name: String, version: String = "", start: String = "", end: String = "", reason: String = "") {

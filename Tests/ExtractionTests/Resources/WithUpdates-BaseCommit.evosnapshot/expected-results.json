@@ -19687,6 +19687,14 @@
           "name" : "review"
         }
       ],
+      "errors" : [
+        {
+          "code" : 63,
+          "kind" : "error",
+          "message" : "Missing or invalid dates for a review period.",
+          "suggestion" : "Review date ranges:\n    - Include the year\n    - Use full month names\n    - Separate dates by a hyphen or three periods\n    - Can include leading zero for single digit days\n    - For dates in the same year, only a trailing year is required\n    - For dates in the same month, only a leading month is required\n\nExamples:\n    March 3-15, 2026\n    July 01 - July 09, 2026\n    September 29...October 13, 2024\n    December 12, 2025...January 09, 2026"
+        }
+      ],
       "id" : "SE-0478",
       "implementation" : [
         {
@@ -19708,8 +19716,8 @@
       ],
       "sha" : "590ea5fd7be4825d9fd15105328cea74865c7949",
       "status" : {
-        "end" : "2025-05-05T00:00:00Z",
-        "start" : "2025-04-21T00:00:00Z",
+        "end" : "",
+        "start" : "",
         "state" : "activeReview"
       },
       "summary" : "[SE-0466: Control default actor isolation inference](\/proposals\/0466-control-default-actor-isolation.md) introduced the ability to specify default actor isolation on a per-module basis. This proposal introduces a new typealias for specifying default actor isolation in individual source files within a module. This allows specific files to opt out of main actor isolation within a main-actor-by-default module, and opt into main actor isolation within a nonisolated-by-default module.",
@@ -19734,6 +19742,14 @@
         {
           "link" : "https:\/\/forums.swift.org\/t\/se-0479-method-and-initializer-key-paths\/79457",
           "name" : "review"
+        }
+      ],
+      "errors" : [
+        {
+          "code" : 63,
+          "kind" : "error",
+          "message" : "Missing or invalid dates for a review period.",
+          "suggestion" : "Review date ranges:\n    - Include the year\n    - Use full month names\n    - Separate dates by a hyphen or three periods\n    - Can include leading zero for single digit days\n    - For dates in the same year, only a trailing year is required\n    - For dates in the same month, only a leading month is required\n\nExamples:\n    March 3-15, 2026\n    July 01 - July 09, 2026\n    September 29...October 13, 2024\n    December 12, 2025...January 09, 2026"
         }
       ],
       "id" : "SE-0479",
@@ -19766,8 +19782,8 @@
       ],
       "sha" : "bd1db9fe2e7c425a99733f329e87e93cb6926b42",
       "status" : {
-        "end" : "2025-05-05T00:00:00Z",
-        "start" : "2025-04-22T00:00:00Z",
+        "end" : "",
+        "start" : "",
         "state" : "activeReview"
       },
       "summary" : "Swift key paths can be written to properties and subscripts. This proposal extends key path usage to include references to method members, such as instance and type methods, and initializers.",
@@ -20388,6 +20404,12 @@
           "kind" : "error",
           "message" : "Missing review manager(s).",
           "suggestion" : ""
+        },
+        {
+          "code" : 63,
+          "kind" : "error",
+          "message" : "Missing or invalid dates for a review period.",
+          "suggestion" : "Review date ranges:\n    - Include the year\n    - Use full month names\n    - Separate dates by a hyphen or three periods\n    - Can include leading zero for single digit days\n    - For dates in the same year, only a trailing year is required\n    - For dates in the same month, only a leading month is required\n\nExamples:\n    March 3-15, 2026\n    July 01 - July 09, 2026\n    September 29...October 13, 2024\n    December 12, 2025...January 09, 2026"
         }
       ],
       "id" : "SE-0492",
@@ -20396,8 +20418,8 @@
       ],
       "sha" : "9cb160550fbb8ac70405fd1251125fab96053323",
       "status" : {
-        "end" : "2025-10-14T00:00:00Z",
-        "start" : "2025-09-22T00:00:00Z",
+        "end" : "",
+        "start" : "",
         "state" : "activeReview"
       },
       "summary" : "This proposal adds `@section` and `@used` attributes which can be applied to global variables. These allow users to directly control which section of the resulting binary should global variables be emitted into, and give users the ability to disable DCE (dead code elimination) on those. The goal is to enable systems and embedded programming use cases like runtime discovery of test metadata from multiple modules, and also to serve as a low-level building block for higher-level features (e.g. linker sets, plugins).",
@@ -20474,6 +20496,14 @@
           "name" : "review"
         }
       ],
+      "errors" : [
+        {
+          "code" : 63,
+          "kind" : "error",
+          "message" : "Missing or invalid dates for a review period.",
+          "suggestion" : "Review date ranges:\n    - Include the year\n    - Use full month names\n    - Separate dates by a hyphen or three periods\n    - Can include leading zero for single digit days\n    - For dates in the same year, only a trailing year is required\n    - For dates in the same month, only a leading month is required\n\nExamples:\n    March 3-15, 2026\n    July 01 - July 09, 2026\n    September 29...October 13, 2024\n    December 12, 2025...January 09, 2026"
+        }
+      ],
       "id" : "SE-0494",
       "implementation" : [
         {
@@ -20504,8 +20534,8 @@
       ],
       "sha" : "076d35f9a575de9572e47f0ad12577db82cb4704",
       "status" : {
-        "end" : "2025-10-06T00:00:00Z",
-        "start" : "2025-09-22T00:00:00Z",
+        "end" : "",
+        "start" : "",
         "state" : "activeReview"
       },
       "summary" : "We propose new `isIdentical(to:)` instance methods to concrete types for quickly determining if two instances must be equal by-value.",

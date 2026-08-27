@@ -213,7 +213,7 @@ struct `Extraction Tests` {
             
             let statusDetail = String(match.1)
             
-            #expect(StatusExtractor.datesForString(statusDetail, processingDate: Date.now) != nil, "Unable to parse '\(statusDetail)'")
+            #expect(StatusExtractor.datesForString(statusDetail) != nil, "Unable to parse '\(statusDetail)'")
         }
     }
     
@@ -230,7 +230,7 @@ struct `Extraction Tests` {
 
         let statusDetail = String(match.1)
 
-        #expect(StatusExtractor.datesForString(statusDetail, processingDate: Date.now) == nil, "Unexpectedly able to parse '\(statusDetail)'")
+        #expect(StatusExtractor.datesForString(statusDetail) == nil, "Unexpectedly able to parse '\(statusDetail)'")
     }
     
     /* Tests for breaking schema changes by serializing using the current model and then attempting to decode using a baseline version of the model from the last major schema release. The baseline model is located in the BaselineModel directory.
