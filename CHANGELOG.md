@@ -6,6 +6,12 @@ Add new items at the end of the relevant section under **Unreleased**.
 
 ## [Unreleased]
 
+*No changes.*
+
+---
+
+## [1.1.1] - 2026-08-27
+
 ### Additions
 
 - Validate link in Proposal field matches proposal filename ([#134])
@@ -24,6 +30,8 @@ Add new items at the end of the relevant section under **Unreleased**.
 
 - Fix proposals in pull requests ignoring validation exemptions ([#131])
 - Fix incorrect error message ([#119])
+
+---
 
 ## [1.1.0] - 2026-07-10
 
@@ -97,7 +105,8 @@ This changelog's format is based on [Keep a Changelog](https://keepachangelog.co
 
 <!-- Link references for releases -->
 
-[Unreleased]: https://github.com/swiftlang/swift-evolution-metadata-extractor/compare/1.1.0...HEAD
+[Unreleased]: https://github.com/swiftlang/swift-evolution-metadata-extractor/compare/1.1.1...HEAD
+[1.1.1]: https://github.com/swiftlang/swift-evolution-metadata-extractor/releases/tag/1.1.0...1.1.1
 [1.1.0]: https://github.com/swiftlang/swift-evolution-metadata-extractor/releases/tag/1.0.0...1.1.0
 [1.0.0]: https://github.com/swiftlang/swift-evolution-metadata-extractor/releases/tag/0.1.0...1.0.0
 [0.1.0]: https://github.com/swiftlang/swift-evolution-metadata-extractor/releases/tag/0.1.0
