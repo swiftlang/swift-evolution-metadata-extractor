@@ -12,6 +12,10 @@ Add new items at the end of the relevant section under **Unreleased**.
 
 ### Changes
 
+- Improve review period validation ([#135])
+    - Require year and remove year-guessing heuristic
+    - Report error for invalid date ranges
+    - Add stricter date range format validation
 - Remove validation exemptions for updated proposals ([#121], [#132])
 - Promote warning to error ([#133])
     - 'missing or invalid review dates'
@@ -133,3 +137,4 @@ This changelog's format is based on [Keep a Changelog](https://keepachangelog.co
 [#132]: https://github.com/swiftlang/swift-evolution-metadata-extractor/pull/132
 [#133]: https://github.com/swiftlang/swift-evolution-metadata-extractor/pull/133
 [#134]: https://github.com/swiftlang/swift-evolution-metadata-extractor/pull/134
+[#135]: https://github.com/swiftlang/swift-evolution-metadata-extractor/pull/135

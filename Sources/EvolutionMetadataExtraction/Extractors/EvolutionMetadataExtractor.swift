@@ -67,7 +67,7 @@ struct EvolutionMetadataExtractor {
         await withTaskGroup(of: SortableProposalWrapper.self, returning: [SortableProposalWrapper].self) { taskGroup in
             
             for spec in proposalSpecs {
-                taskGroup.addTask { await readAndExtractProposalMetadata(from: spec, proposalDirectoryURL: extractionJob.snapshot?.temporaryProposalsDirectory, extractionDate: extractionJob.jobMetadata.extractionDate) }
+                taskGroup.addTask { await readAndExtractProposalMetadata(from: spec, proposalDirectoryURL: extractionJob.snapshot?.temporaryProposalsDirectory) }
             }
             
             var proposals: [SortableProposalWrapper] = []
@@ -80,7 +80,7 @@ struct EvolutionMetadataExtractor {
 
     }
     
-    private static func readAndExtractProposalMetadata(from proposalSpec: ProposalSpec, proposalDirectoryURL: URL?, extractionDate: Date) async -> SortableProposalWrapper {
+    private static func readAndExtractProposalMetadata(from proposalSpec: ProposalSpec, proposalDirectoryURL: URL?) async -> SortableProposalWrapper {
         do {
             let markdownString: String
             if proposalSpec.url.isFileURL {
@@ -95,7 +95,7 @@ struct EvolutionMetadataExtractor {
                 try data.write(to: proposalFileURL)
             }
 
-            let proposal = ProposalMetadataExtractor.extractProposalMetadata(from: markdownString, proposalSpec: proposalSpec, extractionDate: extractionDate)
+            let proposal = ProposalMetadataExtractor.extractProposalMetadata(from: markdownString, proposalSpec: proposalSpec)
             
             // For proposals that fail proposal link / id extraction, provides a way to identify the problem file in validation reports
             // When activated, be sure to set the link back to empty string post-validation report

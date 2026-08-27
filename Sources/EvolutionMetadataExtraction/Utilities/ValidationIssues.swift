@@ -188,6 +188,28 @@ extension Proposal.Issue {
             """
     )
 
+    // TODO: Invalid implemented version = 64
+    // TODO: Invalid review dates (split from missing) = 65
+
+    static let invalidReviewPeriodDateRange = Proposal.Issue(
+        kind: .error,
+        code: 66,
+        message: "The start date of the review period is after the end date.",
+        suggestion: """
+            This error is most common when a date range spans two years.
+            If that is the case, specify a start year to resolve the issue. 
+            
+            Example:
+                December 12, 2025...January 9, 2026
+            """
+    )
+
+    static let singleDayReviewPeriod = Proposal.Issue(
+        kind: .error,
+        code: 67,
+        message: "The review period start and end dates are the same day."
+    )
+
     // MARK: - Bugs
     // TODO: malformed bug = 70
 

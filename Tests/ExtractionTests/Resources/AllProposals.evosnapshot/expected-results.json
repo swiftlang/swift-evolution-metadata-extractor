@@ -1,6 +1,6 @@
 {
-  "commit" : "c9b9ff663a3755650a1c7107a45c41be6411a5b9",
-  "creationDate" : "2026-08-25T05:47:22Z",
+  "commit" : "c8623621aacc8e3f364bb0f3cb07675177a1ec4e",
+  "creationDate" : "2026-08-27T18:38:18Z",
   "implementationVersions" : [
     "2.2", "3.0", "3.0.1", "3.1", "4.0", "4.1", "4.2", "5.0", "5.1", "5.2",
     "5.3", "5.4", "5.5", "5.5.2", "5.6", "5.7", "5.8", "5.9", "5.9.2", "5.10",
@@ -22655,6 +22655,10 @@
         {
           "link" : "https:\/\/forums.swift.org\/t\/se-0538-disconnected\/88361",
           "name" : "review"
+        },
+        {
+          "link" : "https:\/\/forums.swift.org\/t\/accepted-with-modifications-se-0538-disconnected\/89181",
+          "name" : "acceptance"
         }
       ],
       "id" : "SE-0538",
@@ -22673,11 +22677,9 @@
           "name" : "Holly Borla"
         }
       ],
-      "sha" : "b5795ee94fa919ed4dd22295a848fd0281cc3be6",
+      "sha" : "1159858714efe580dcc4ecd1bfb19aad638288ec",
       "status" : {
-        "end" : "2026-07-31T00:00:00Z",
-        "start" : "2026-07-17T00:00:00Z",
-        "state" : "activeReview"
+        "state" : "accepted"
       },
       "summary" : "[SE-0414](https:\/\/github.com\/swiftlang\/swift-evolution\/blob\/main\/proposals\/0414-region-based-isolation.md) introduced region-based isolation which leverages control flow sensitive diagnostics to determine whether non-`Sendable` values are safe to send across isolation boundaries. [SE-0430](https:\/\/github.com\/swiftlang\/swift-evolution\/blob\/main\/proposals\/0430-transferring-parameters-and-results.md) introduced the `sending` parameter and result annotation to explicitly mark values that must be in a disconnected region at function boundaries.",
       "title" : "Disconnected"
@@ -22783,6 +22785,10 @@
         {
           "link" : "https:\/\/forums.swift.org\/t\/se-0541-flexible-swift-c-interoperability-for-packages\/88796",
           "name" : "review"
+        },
+        {
+          "link" : "https:\/\/forums.swift.org\/t\/accepted-se-0541-flexible-swift-c-interoperability-for-packages\/89183",
+          "name" : "acceptance"
         }
       ],
       "id" : "SE-0541",
@@ -22819,11 +22825,9 @@
           "name" : "Tim Condon"
         }
       ],
-      "sha" : "befa8aa05174e366643d795430f6ef74647c1cf8",
+      "sha" : "70768ef1a44b9c7a6e49e00eb33bb29f2f3eb7dc",
       "status" : {
-        "end" : "2026-08-19T00:00:00Z",
-        "start" : "2026-08-05T00:00:00Z",
-        "state" : "activeReview"
+        "state" : "accepted"
       },
       "summary" : "Swift has great support for bidirectional interoperability with C, C++, and Objective-C, but historically SwiftPM has restricted the set of interop features available to package authors. This proposal lifts most of those restrictions, giving packages a new set of tools to organize their code.",
       "title" : "Flexible Swift\/C Interoperability for Packages"
@@ -22861,7 +22865,7 @@
           "name" : "David Cummings"
         }
       ],
-      "sha" : "4a290625eba374e0826050399262ce3845b545b2",
+      "sha" : "b71ca225d86a9c4ba01cb6b0a134fb49220f3fd3",
       "status" : {
         "end" : "2026-08-21T00:00:00Z",
         "start" : "2026-08-06T00:00:00Z",
@@ -22929,6 +22933,10 @@
         {
           "link" : "https:\/\/forums.swift.org\/t\/se-0544-mutation-and-consumption-in-non-copyable-type-deinits\/88903",
           "name" : "review"
+        },
+        {
+          "link" : "https:\/\/forums.swift.org\/t\/accepted-se-0544-mutation-and-consumption-in-non-copyable-type-deinits\/89190",
+          "name" : "acceptance"
         }
       ],
       "id" : "SE-0544",
@@ -22947,11 +22955,9 @@
           "name" : "John McCall"
         }
       ],
-      "sha" : "c0aa722de90028903a9998e3a95230a2a09cbf27",
+      "sha" : "583cc50db983471fa3abe1f8499a9c7323bbc37c",
       "status" : {
-        "end" : "2026-08-24T00:00:00Z",
-        "start" : "2026-08-10T00:00:00Z",
-        "state" : "activeReview"
+        "state" : "accepted"
       },
       "summary" : "Non-`Copyable` types can define a `deinit` to clean up owned resources at the end of their lifetime; however, prior to this proposal, `self` was restricted to be immutable and borrowable only within the body of `deinit` up to this point. We propose to allow `deinit` to mutate and\/or consume the fields of `self`, but still prevent the mutation or consumption of `self` as an entire value in order to avoid problems with value resurrection.",
       "title" : "Mutation and consumption in non-`Copyable` type `deinit`s"
@@ -22981,7 +22987,7 @@
           "name" : "Mishal Shah"
         }
       ],
-      "sha" : "dca0a561a0c9013a750a1c109c808c975fcd66cb",
+      "sha" : "0be1b1d1fab73cdaf5522fe9e99467b1aa5fd83d",
       "status" : {
         "end" : "2026-08-26T00:00:00Z",
         "start" : "2026-08-12T00:00:00Z",
@@ -23035,6 +23041,48 @@
       },
       "summary" : "Allows a struct's memberwise initializer to be defined in a same-file extension.",
       "title" : "Same-file memberwise initializer extensions"
+    },
+    {
+      "authors" : [
+        {
+          "link" : "https:\/\/github.com\/owenv",
+          "name" : "Owen Voorhees"
+        }
+      ],
+      "discussions" : [
+        {
+          "link" : "https:\/\/forums.swift.org\/t\/pitch-compilation-caching-support-in-swiftpm\/88079",
+          "name" : "pitch"
+        },
+        {
+          "link" : "https:\/\/forums.swift.org\/t\/se-0547-swiftpm-support-for-compilation-caching\/89191",
+          "name" : "review"
+        }
+      ],
+      "id" : "SE-0547",
+      "implementation" : [
+        {
+          "account" : "swiftlang",
+          "id" : "10246",
+          "repository" : "swift-package-manager",
+          "type" : "pull"
+        }
+      ],
+      "link" : "0547-swiftpm-compilation-caching.md",
+      "reviewManagers" : [
+        {
+          "link" : "https:\/\/github.com\/shahmishal",
+          "name" : "Mishal Shah"
+        }
+      ],
+      "sha" : "fa2f42f891214bd9cba3f0df00d3c3b1a0ef75a9",
+      "status" : {
+        "end" : "2026-09-01T00:00:00Z",
+        "start" : "2026-08-25T00:00:00Z",
+        "state" : "activeReview"
+      },
+      "summary" : "The Swift and Clang compilers have existing support for leveraging a CAS (Content Addressable Store) to cache compilation outputs and replay them in subsequent builds. This proposal introduces support for configuring compilation caching in SwiftPM on a per-build, per-package, or global basis.",
+      "title" : "SwiftPM Support for Compilation Caching"
     }
   ],
   "schemaVersion" : "1.0.0",
