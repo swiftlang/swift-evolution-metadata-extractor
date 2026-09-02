@@ -173,6 +173,10 @@ struct ProposalSpec: Sendable {
     let sortIndex: Int
     var id: String { "\(project.proposalPrefix)-\(url.lastPathComponent.prefix(4))" }
     var filename: String { url.lastPathComponent }
+
+    // True when the proposal has not yet been assigned a number, i.e. the filename uses the
+    // 'NNNN-' placeholder
+    var isPlaceholderNumber: Bool { number == -1 }
     
     init(project: Project, url: URL, sha: String, sortIndex: Int) {
         self.project = project

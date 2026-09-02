@@ -210,6 +210,16 @@ extension Proposal.Issue {
         message: "The review period start and end dates are the same day."
     )
 
+    static let numberedProposalAwaitingReview = Proposal.Issue(
+        kind: .error,
+        code: 68,
+        message: "A proposal with an assigned number should not have 'Awaiting review' status.",
+        suggestion: """
+            Proposals awaiting review use the SE-NNNN placeholder ID until a number is assigned.
+            When the review is scheduled, update the status to 'Scheduled for review' with the review dates.
+            """
+    )
+
     // MARK: - Bugs
     // TODO: malformed bug = 70
 
