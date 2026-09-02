@@ -1369,6 +1369,102 @@
       },
       "summary" : "The Swift and Clang compilers have existing support for leveraging a CAS (Content Addressable Store) to cache compilation outputs and replay them in subsequent builds. This proposal introduces support for configuring compilation caching in SwiftPM on a per-build, per-package, or global basis.",
       "title" : "SwiftPM Support for Compilation Caching"
+    },
+    {
+      "authors" : [
+        {
+          "link" : "https:\/\/github.com\/swiftdev",
+          "name" : "Author Name"
+        }
+      ],
+      "discussions" : [
+        {
+          "link" : "https:\/\/forums.swift.org\/t\/some-pitch-thread\/12345",
+          "name" : "pitch"
+        }
+      ],
+      "errors" : [
+        {
+          "code" : 68,
+          "kind" : "error",
+          "message" : "A proposal with an assigned number should not have 'Awaiting review' status.",
+          "suggestion" : "Proposals awaiting review use the SE-NNNN placeholder ID until a number is assigned.\nWhen the review is scheduled, update the status to 'Scheduled for review' with the review dates."
+        }
+      ],
+      "id" : "SE-0548",
+      "link" : "0548-numbered-awaiting-review.md",
+      "reviewManagers" : [
+        {
+          "link" : "https:\/\/github.com\/swiftdev",
+          "name" : "Review Manager"
+        }
+      ],
+      "sha" : "",
+      "status" : {
+        "state" : "awaitingReview"
+      },
+      "summary" : "This proposal has been assigned a number but still has the status `Awaiting review`. That combination is inconsistent: proposals awaiting review are expected to use the `SE-NNNN` placeholder until a number is assigned, so this reports a single error for the mismatch.",
+      "title" : "Numbered proposal still awaiting review"
+    },
+    {
+      "authors" : [
+        {
+          "link" : "https:\/\/github.com\/swiftdev",
+          "name" : "Author Name"
+        }
+      ],
+      "discussions" : [
+      ],
+      "id" : "SE-NNNN",
+      "implementation" : [
+        {
+          "account" : "swiftlang",
+          "id" : "00000",
+          "repository" : "swift",
+          "type" : "pull"
+        }
+      ],
+      "link" : "",
+      "reviewManagers" : [
+      ],
+      "sha" : "",
+      "status" : {
+        "state" : "awaitingReview"
+      },
+      "summary" : "This proposal has not yet been assigned a number. It uses the `SE-NNNN` placeholder and the `NNNN-` filename prefix from the proposal template, has a `TBD` review manager, and no `Review` field. In this draft state none of those should be reported as errors.",
+      "title" : "Draft proposal awaiting review with a placeholder review manager"
+    },
+    {
+      "authors" : [
+        {
+          "link" : "https:\/\/github.com\/swiftdev",
+          "name" : "Author Name"
+        }
+      ],
+      "discussions" : [
+        {
+          "link" : "https:\/\/forums.swift.org\/t\/some-pitch-thread\/12345",
+          "name" : "pitch"
+        }
+      ],
+      "id" : "SE-NNNN",
+      "implementation" : [
+        {
+          "account" : "swiftlang",
+          "id" : "00000",
+          "repository" : "swift",
+          "type" : "pull"
+        }
+      ],
+      "link" : "",
+      "reviewManagers" : [
+      ],
+      "sha" : "",
+      "status" : {
+        "state" : "awaitingReview"
+      },
+      "summary" : "This proposal has not yet been assigned a number, but it does include a `Review` field with a pitch discussion link. The placeholder `SE-NNNN` id, `NNNN-` filename, and `TBD` review manager should not be reported as errors while the status is `Awaiting review`.",
+      "title" : "Draft proposal awaiting review with a pitch link"
     }
   ],
   "schemaVersion" : "1.0.0",

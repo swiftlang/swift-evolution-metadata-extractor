@@ -6,7 +6,16 @@ Add new items at the end of the relevant section under **Unreleased**.
 
 ## [Unreleased]
 
-*No changes.*
+### Additions
+
+- Validate that proposals awaiting review use the `SE-NNNN` placeholder ([#136])
+    - Report an error when a proposal with an assigned number still has status `Awaiting review`
+
+### Fixes
+
+- Do not report errors for not-yet-numbered draft proposals ([#136])
+    - A proposal using the `SE-NNNN` placeholder id with status `Awaiting review` no longer
+      reports errors for the placeholder id, missing review manager, or missing review field
 
 ---
 
@@ -147,3 +156,4 @@ This changelog's format is based on [Keep a Changelog](https://keepachangelog.co
 [#133]: https://github.com/swiftlang/swift-evolution-metadata-extractor/pull/133
 [#134]: https://github.com/swiftlang/swift-evolution-metadata-extractor/pull/134
 [#135]: https://github.com/swiftlang/swift-evolution-metadata-extractor/pull/135
+[#136]: https://github.com/swiftlang/swift-evolution-metadata-extractor/pull/136

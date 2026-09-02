@@ -50,30 +50,30 @@ struct ProposalMetadataExtractor {
             proposal.id = proposalLink?.text ?? ""
             proposal.link = proposalLink?.destination ?? ""
             /* VALIDATION ENHANCEMENT: Probably also want to validate that the destination link matches the passed-in filename and the id matches the proposalID field */
-            
+
             if let authors = extractValue(from: headerFieldsSource, with: AuthorExtractor.self), !authors.isEmpty {
                 proposal.authors = authors
             } else {
                 issues.reportIssue(.missingAuthors, source: headerFieldsSource)
             }
-            
+
             if let reviewManagers = extractValue(from: headerFieldsSource, with: ReviewManagerExtractor.self), !reviewManagers.isEmpty {
                 proposal.reviewManagers = reviewManagers
             } else {
                 issues.reportIssue(.missingReviewManagers, source: headerFieldsSource)
             }
-            
+
             proposal.upcomingFeatureFlag = extractValue(from: headerFieldsSource, with: UpcomingFeatureFlagExtractor.self)
             proposal.previousProposalIDs = extractValue(from: headerFieldsSource, with: PreviousProposalExtractor.self)
             proposal.trackingBugs = extractValue(from: headerFieldsSource, with: TrackingBugExtractor.self)
             proposal.implementation = extractValue(from: headerFieldsSource, with: ImplementationExtractor.self)
-            
+
             if let discussions = extractValue(from: headerFieldsSource, with: DiscussionExtractor.self) {
                 proposal.discussions = discussions
             } else {
                 issues.reportIssue(.missingReviewField, source: headerFieldsSource)
             }
-            
+
             if let status = extractValue(from: headerFieldsSource, with: StatusExtractor.self) {
                 if case .implemented(let version) = status, version == "none" {
                     // VALIDATION ENHANCEMENT: Figure out a better way to special case the missing version strings for these proposals
@@ -90,6 +90,24 @@ struct ProposalMetadataExtractor {
             } else {
                 // VALIDATION ENHANCEMENT: Report an error
                 proposal.status = .statusExtractionFailed
+            }
+
+            // Proposals with the status 'Awaiting review' have not yet been assigned a number and
+            // are expected to use the NNNN number placeholder. In that draft state the number,
+            // review manager, and review discussion are not yet known. A proposal that is awaiting
+            // review but already has a number is inconsistent and is reported instead
+            if proposal.status == .awaitingReview {
+                if proposalSpec.isPlaceholderNumber {
+                    issues.removeError(withCode: Proposal.Issue.proposalIDWrongDigitCount)
+                    issues.removeError(withCode: Proposal.Issue.invalidProposalIDLink)
+                    issues.removeError(withCode: Proposal.Issue.missingReviewManagers)
+                    issues.removeError(withCode: Proposal.Issue.missingReviewField)
+                    issues.removeError(withCode: Proposal.Issue.discussionExtractionFailure)
+                    // A 'TBD' / 'TODO' review manager placeholder is parsed as a person, so drop it
+                    proposal.reviewManagers.removeAll { ["tbd", "todo"].contains($0.name.lowercased()) }
+                } else {
+                    issues.reportIssue(.numberedProposalAwaitingReview, source: headerFieldsSource)
+                }
             }
         } else {
             issues.reportIssue(.missingMetadataFields, source: documentSource)
@@ -190,6 +208,9 @@ struct IssueWrapper {
     mutating func append(errors: [Proposal.Issue], warnings: [Proposal.Issue]) {
         self.errors.append(contentsOf: errors)
         self.warnings.append(contentsOf: warnings)
+    }
+    mutating func removeError(withCode issue: Proposal.Issue) {
+        errors.removeAll { $0.code == issue.code }
     }
 }
 
