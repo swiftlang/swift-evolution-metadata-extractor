@@ -119,11 +119,19 @@ public enum ArgumentValidation {
         public static let defaultFilename = "evolution.json"
         public static let defaultOutput: ExtractionJob.Output = .metadataJSON(URL(filePath: defaultFilename))
         
-        static public func validate(forceExtract: [String]) throws -> (forceAll: Bool, forcedExtractionIDs: [String]) {
-            
+        static public func validate(forceExtract: [String], source: ExtractionJob.Source) throws -> (forceAll: Bool, forcedExtractionIDs: [String]) {
+
             var forceAll = false
             var forcedExtractionIDs: [String] = []
-            
+
+            // files source never reuses previous results
+            if case .files = source {
+                if !forceExtract.isEmpty {
+                    print("Extraction is always performed on proposal file arguments. --force-extraction values are ignored.")
+                }
+                return (true, [])
+            }
+
             if !forceExtract.isEmpty {
                 for arg in forceExtract {
                     if arg == "all" {

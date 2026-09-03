@@ -10,6 +10,10 @@ Add new items at the end of the relevant section under **Unreleased**.
 
 - Validate presence of version for Implemented status ([#139])
 
+### Fixes
+
+- Fix assertion when using proposal file arguments with extract command ([#141])
+
 ---
 
 ## [1.1.1] - 2026-08-27
@@ -150,3 +154,4 @@ This changelog's format is based on [Keep a Changelog](https://keepachangelog.co
 [#134]: https://github.com/swiftlang/swift-evolution-metadata-extractor/pull/134
 [#135]: https://github.com/swiftlang/swift-evolution-metadata-extractor/pull/135
 [#139]: https://github.com/swiftlang/swift-evolution-metadata-extractor/pull/139
+[#141]: https://github.com/swiftlang/swift-evolution-metadata-extractor/pull/141
