@@ -72,6 +72,10 @@ public final class Project: Sendable {
             Issue.missingReviewField.code:
                 RangeSet(0001, 0002, 0004, 0020, 0051, 0079, 0100, 0176, 0177, 0188, 0193, 0194, 0196, 0198, 0201, 0203, 0205, 0208, 0209, 0210, 0212, 0213, 0219, 0245, 0247, 0248, 0249, 0250, 0252, 0259, 0263, 0268, 0269, 0273, 0278, 0284, 0289, 0295, 0300, 0312, 0313, 0317, 0318, 0337, 0341, 0343, 0344, 0348, 0350, 0356),
 
+            // Some older proposals have no implementation version
+            Issue.missingOrInvalidImplementedVersion.code:
+                RangeSet(0110, 0264),
+
             // Some older proposals are missing links to discussions or do not format discussions correctly.
             // Those issues should be corrected in the proposals themselves.
             // Once corrected, the exemption for the corrected proposal can be removed.

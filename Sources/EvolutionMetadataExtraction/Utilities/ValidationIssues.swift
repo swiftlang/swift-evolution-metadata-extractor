@@ -161,10 +161,10 @@ extension Proposal.Issue {
         message: "Invalid proposal status."
     )
 
-    static let missingImplementedVersion = Proposal.Issue(
-        kind: .warning,
+    static let missingOrInvalidImplementedVersion = Proposal.Issue(
+        kind: .error,
         code: 62,
-        message: "Missing Swift version number for an implemented proposal."
+        message: "Missing or invalid Swift version number for an implemented proposal."
     )
 
     static let missingOrInvalidReviewDates = Proposal.Issue(
@@ -188,7 +188,7 @@ extension Proposal.Issue {
             """
     )
 
-    // TODO: Invalid implemented version = 64
+    // TODO: Invalid implemented version (split from missing) = 64
     // TODO: Invalid review dates (split from missing) = 65
 
     static let invalidReviewPeriodDateRange = Proposal.Issue(
