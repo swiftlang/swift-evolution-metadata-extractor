@@ -49,14 +49,8 @@ struct ProposalMetadataExtractor {
             // Extract status before other header fields to allow for status-specific validation
             if let status = extractValue(from: headerFieldsSource, with: StatusExtractor.self) {
                 if case .implemented(let version) = status, version == "none" {
-                    // VALIDATION ENHANCEMENT: Figure out a better way to special case the missing version strings for these proposals
-                    // VALIDATION ENHANCEMENT: Possibly just add version strings to the actual proposals
-                    if proposalSpec.id == "SE-0264" || proposalSpec.id == "SE-0110" {
-                        proposal.status = .implemented(version: "")
-                    } else {
-                        // VALIDATION ENHANCEMENT: This *should* be a validation error
-                        proposal.status = .implemented(version: "")
-                    }
+                    proposal.status = .implemented(version: "")
+                    issues.reportIssue(.missingOrInvalidImplementedVersion, source: headerFieldsSource)
                 } else {
                     proposal.status = status
                 }

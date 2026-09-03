@@ -546,6 +546,14 @@
           "name" : "Rationale"
         }
       ],
+      "errors" : [
+        {
+          "code" : 62,
+          "kind" : "error",
+          "message" : "Missing or invalid Swift version number for an implemented proposal.",
+          "suggestion" : ""
+        }
+      ],
       "id" : "SE-0015",
       "implementation" : [
         {
@@ -581,6 +589,14 @@
         {
           "link" : "https:\/\/forums.swift.org\/t\/accepted-se-0016-adding-initializers-to-int-and-uint-to-convert-from-unsafepointer-and-unsafemutablepointer\/2005",
           "name" : "Rationale"
+        }
+      ],
+      "errors" : [
+        {
+          "code" : 62,
+          "kind" : "error",
+          "message" : "Missing or invalid Swift version number for an implemented proposal.",
+          "suggestion" : ""
         }
       ],
       "id" : "SE-0016",

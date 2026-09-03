@@ -6,7 +6,9 @@ Add new items at the end of the relevant section under **Unreleased**.
 
 ## [Unreleased]
 
-*No changes.*
+### Additions
+
+- Validate presence of version for Implemented status ([#139])
 
 ---
 
@@ -147,3 +149,4 @@ This changelog's format is based on [Keep a Changelog](https://keepachangelog.co
 [#133]: https://github.com/swiftlang/swift-evolution-metadata-extractor/pull/133
 [#134]: https://github.com/swiftlang/swift-evolution-metadata-extractor/pull/134
 [#135]: https://github.com/swiftlang/swift-evolution-metadata-extractor/pull/135
+[#139]: https://github.com/swiftlang/swift-evolution-metadata-extractor/pull/139
