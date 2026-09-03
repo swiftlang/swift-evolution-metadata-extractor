@@ -46,6 +46,25 @@ struct ProposalMetadataExtractor {
         if let headerFieldsByLabel = extractValue(from: documentSource, with: HeaderFieldExtractor.self) {
             let headerFieldsSource = HeaderFieldSource(proposalSpec: proposalSpec, headerFieldsByLabel: headerFieldsByLabel)
 
+            // Extract status before other header fields to allow for status-specific validation
+            if let status = extractValue(from: headerFieldsSource, with: StatusExtractor.self) {
+                if case .implemented(let version) = status, version == "none" {
+                    // VALIDATION ENHANCEMENT: Figure out a better way to special case the missing version strings for these proposals
+                    // VALIDATION ENHANCEMENT: Possibly just add version strings to the actual proposals
+                    if proposalSpec.id == "SE-0264" || proposalSpec.id == "SE-0110" {
+                        proposal.status = .implemented(version: "")
+                    } else {
+                        // VALIDATION ENHANCEMENT: This *should* be a validation error
+                        proposal.status = .implemented(version: "")
+                    }
+                } else {
+                    proposal.status = status
+                }
+            } else {
+                // VALIDATION ENHANCEMENT: Report an error
+                proposal.status = .statusExtractionFailed
+            }
+
             let proposalLink = extractValue(from: headerFieldsSource, with: ProposalLinkExtractor.self)
             proposal.id = proposalLink?.text ?? ""
             proposal.link = proposalLink?.destination ?? ""
@@ -73,31 +92,15 @@ struct ProposalMetadataExtractor {
             } else {
                 issues.reportIssue(.missingReviewField, source: headerFieldsSource)
             }
-            
-            if let status = extractValue(from: headerFieldsSource, with: StatusExtractor.self) {
-                if case .implemented(let version) = status, version == "none" {
-                    // VALIDATION ENHANCEMENT: Figure out a better way to special case the missing version strings for these proposals
-                    // VALIDATION ENHANCEMENT: Possibly just add version strings to the actual proposals
-                    if proposalSpec.id == "SE-0264" || proposalSpec.id == "SE-0110" {
-                        proposal.status = .implemented(version: "")
-                    } else {
-                        // VALIDATION ENHANCEMENT: This *should* be a validation error
-                        proposal.status = .implemented(version: "")
-                    }
-                } else {
-                    proposal.status = status
-                }
-            } else {
-                // VALIDATION ENHANCEMENT: Report an error
-                proposal.status = .statusExtractionFailed
-            }
+
         } else {
             issues.reportIssue(.missingMetadataFields, source: documentSource)
         }
         
         // Add warnings and errors to proposal if present
-        if !issues.warnings.isEmpty { proposal.warnings = issues.warnings }
-        if !issues.errors.isEmpty { proposal.errors = issues.errors }
+        // Sort to keep order consistent for snapshot comparison tests regardless of extraction order
+        if !issues.warnings.isEmpty { proposal.warnings = issues.warnings.sorted(using: SortDescriptor(\.code)) }
+        if !issues.errors.isEmpty { proposal.errors = issues.errors.sorted(using: SortDescriptor(\.code)) }
 
         return proposal
     }
