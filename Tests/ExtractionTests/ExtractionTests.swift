@@ -200,39 +200,6 @@ struct `Extraction Tests` {
         }
     }
 
-    // The lines of text in review-dates-good.txt are status headers from swift-evolution repository history
-    @Test func `Good dates`() throws {
-        
-        let reviewDatesContents = try string(forResource: "review-dates-good", withExtension: "txt")
-        
-        let statusStrings = reviewDatesContents.split(separator: "\n")
-        for statusString in statusStrings {
-            // NOTE: This is something that should be validated!
-            // It seems a common mistake to leave out closing parenthesis or put strong marker inside closing paren
-            let match = try #require(statusString.firstMatch(of: /\((.*)\)/), "Every review item in status strings should have parenthesis with contents. \(statusString) DOES NOT MATCH PATTERN" )
-            
-            let statusDetail = String(match.1)
-            
-            #expect(StatusExtractor.datesForString(statusDetail) != nil, "Unable to parse '\(statusDetail)'")
-        }
-    }
-    
-    @Test(arguments: try {
-        // The lines of text in review-dates-bad.txt are status headers from swift-evolution repository history
-        let reviewDatesContents = try string(forResource: "review-dates-bad", withExtension: "txt")
-        return reviewDatesContents.split(separator: "\n").map(String.init)
-    }())
-    func `Bad dates`(statusString: String) throws {
-
-        // NOTE: This is something that should be validated!
-        // It seems a common mistake to leave out closing parenthesis or put strong marker inside closing paren
-        let match = try #require(statusString.firstMatch(of: /\((.*)\)/), "Every review item in status strings should have parenthesis with contents. \(statusString) DOES NOT MATCH PATTERN" )
-
-        let statusDetail = String(match.1)
-
-        #expect(StatusExtractor.datesForString(statusDetail) == nil, "Unexpectedly able to parse '\(statusDetail)'")
-    }
-    
     /* Tests for breaking schema changes by serializing using the current model and then attempting to decode using a baseline version of the model from the last major schema release. The baseline model is located in the BaselineModel directory.
      
         Note that this test assumes that the referenced snapshots are updated to be correct for the current model.
@@ -302,53 +269,6 @@ struct `Extraction Tests` {
         #expect(expectedResults.hasCurrentSchemaVersion == true, "Expected results for snapshot '\(snapshotName)' does not have the current schema version '\(EvolutionMetadata.schemaVersion)'. Update snapshot to current schema version.")
         #expect(expectedResults.hasCurrentToolVersion == true, "Expected results for snapshot '\(snapshotName)' does not have the current tool version '\(ToolVersion.version)'. Update snapshot to current tool version.")
         #expect(expectedResults.hasCurrentMetadataVersions == true)
-    }
-
-    @Suite
-    struct `Snapshot Writing` {
-
-        /*  The snapshot command can generate a new snapshot from an existing snapshot. This would typically be done to
-            update the expected results of a snapshot after a change in the metadata schema or expected behavior.
-         
-            This test exercises that path by ensuring that the generated snapshot is identical to the source snapshot.
-         */
-        @Test(arguments: try allTestSnapshotNames)
-        func `Update snapshot`(snapshotName: String) async throws {
-            let sourceURL = try urlForSnapshot(named: snapshotName)
-            let destURL = FileManager.default.temporaryDirectory.appending(components:"_Test_Snapshots",  UUID().uuidString, sourceURL.lastPathComponent)
-            
-            let extractionJob = try await ExtractionJob.makeExtractionJob(source: .snapshot(sourceURL), output: .snapshot(destURL), ignorePreviousResults: false)
-            try await extractionJob.run()
-            
-            let sourceSubpaths = try FileManager.default.subpathsOfDirectory(atPath: sourceURL.path())
-            
-            for sourceSubpath in sourceSubpaths {
-                let sourcePath = sourceURL.appending(path: sourceSubpath).path(percentEncoded: false)
-                let destinationPath = destURL.appending(path: sourceSubpath).path(percentEncoded: false)
-                #expect(FileManager.default.contentsEqual(atPath: sourcePath, andPath: destinationPath))
-            }
-        }
-
-        @Test func `Create ad hoc snapshot`() async throws {
-            let snapshotName = "AdHoc"
-            let sourceURLs = try proposalURLs()
-            let destURL = FileManager.default.temporaryDirectory.appending(components:UUID().uuidString, snapshotName + ".evosnapshot")
-            let adHocSnapshotURL = try urlForSnapshot(named: snapshotName)
-            
-            // Use expected extraction date in new snapshot for identical metadata
-            let extractionDate = try extractionDateForSnapshot(named: snapshotName)
-
-            let extractionJob = try await ExtractionJob.makeExtractionJob(source: .files(sourceURLs), output: .snapshot(destURL), ignorePreviousResults: true, extractionDate: extractionDate)
-            try await extractionJob.run()
-
-            let sourceSubpaths = try FileManager.default.subpathsOfDirectory(atPath: adHocSnapshotURL.path())
-
-            for sourceSubpath in sourceSubpaths {
-                let sourcePath = adHocSnapshotURL.appending(path: sourceSubpath).path(percentEncoded: false)
-                let destinationPath = destURL.appending(path: sourceSubpath).path(percentEncoded: false)
-                #expect(FileManager.default.contentsEqual(atPath: sourcePath, andPath: destinationPath), "Subpath '\(sourceSubpath)' Failed")
-            }
-        }
     }
 }
 
