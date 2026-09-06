@@ -11,15 +11,15 @@ import Markdown
 import EvolutionMetadataModel
 
 struct StatusExtractor: MarkupWalker, ValueExtractor {
-    
+
     private var source: HeaderFieldSource
     init(source: HeaderFieldSource) { self.source = source }
 
     private var issues = IssueWrapper()
     var status: Proposal.Status? = nil
-    
+
     mutating func extractValue() -> ExtractionResult<Proposal.Status> {
-        
+
         // If 'Status' field not found, report
         if let headerField = source["Status"] {
             visit(headerField)
@@ -48,7 +48,17 @@ struct StatusExtractor: MarkupWalker, ValueExtractor {
         var end = ""
         
         if statusString.contains(/Implemented/.ignoresCase()) {
-            version = StatusExtractor.versionForString(String(statusMatch.details ?? ""))
+            if let detailsString = statusMatch.details.map(String.init) {
+                let (versionString, diagnostics) = StatusExtractor.versionResultForString(detailsString)
+                if let versionString {
+                    version = versionString
+                }
+                if versionString == nil || !diagnostics.isEmpty {
+                    issues.reportIssue(.malformedImplementationVersion(source: detailsString, diagnostics: diagnostics), source: source)
+                }
+            } else {
+                issues.reportIssue(.missingOrInvalidImplementedVersion, source: source)
+            }
         }
         else if statusString.contains(/(Scheduled for|Active) Review/.ignoresCase()) {
             if let result = datesForString(String(statusMatch.details ?? "")) {
@@ -67,35 +77,98 @@ struct StatusExtractor: MarkupWalker, ValueExtractor {
         }
     }
 
-// MARK: -
+    // MARK: -
 
-    static func versionForString(_ fullVersionString: String) -> String {
-        guard !fullVersionString.isEmpty else {
-            return "none" // If empty string, return 'none' as a sentinel value
+    nonisolated(unsafe) static private let versionRegex = /Swift (?<version>(?:[1-9]\.[0-9]+(?:\.[0-9]+)?)|Next)/
+
+    // This method makes a best effort attempt to extract a valid version
+    // The return value can include both a version and diagnostics
+    // if diagnostics, use diagnostics in creating malformed version error with additional suggestion
+    // if version, version is valid and should be used
+    // if version is nil with no diagnostics, no valid version found and return a basic malformed version error
+    static func versionResultForString(_ fullVersionString: String) -> (version: String?, diagnostics: DiagnosticMessageSet) {
+        var versionString: String? = nil
+        var diagnostics: DiagnosticMessageSet = []
+
+        if let versionMatch = fullVersionString.wholeMatch(of: versionRegex) {
+            versionString = String(versionMatch.version)
         }
-        
-        let version: String
-        // Strip out 'Swift ' if it exists
-        // VALIDATION ENHANCEMENT: Potentially normalize the few proposals that don't list Swift and add validation error
-        let swiftStrippedString: String
-        if let index = fullVersionString.firstRange(of: "Swift ") {
-            let substring = fullVersionString[index.upperBound...]
-            swiftStrippedString = String(substring)
-        } else {
-            swiftStrippedString = fullVersionString
+        // SE-0273 adds notes within the parenthesis, continue extracting the version
+        else if let versionMatch = fullVersionString.firstMatch(of: versionRegex){
+            versionString = String(versionMatch.version)
+            diagnostics.insert(.extraText)
         }
-        
-        // Handle the one case where there is a long comment after the version number
-        // Would probably want to test this and error out anyway
-        let substrings = swiftStrippedString.split(separator: " ")
-        //            let version: String
-        if substrings.isEmpty {
-            version = ""
-        } else {
-            version = String(substrings[0])
+        // Use lenient regex to diagnose common issues
+        else {
+            let results = lenientVersionResultForString(fullVersionString)
+            versionString = results.version
+            diagnostics.formUnion(results.diagnostics)
         }
-        
-        return version
+
+        return (versionString, diagnostics)
+    }
+
+    // Lenient regex to diagnose errors
+    nonisolated(unsafe) static private let lenientVersionRegex = /(?<prefix>(?<swift>[Ss]wift) )?(?<version>(?:(?<majorVersion>[1-9][0-9]*)(?<minorPatchVersion>\.[0-9]*(?:\.[0-9]+)?)?)|[Nn]ext)/
+
+    // This method uses more lenient pattern matching to diagnose common issues.
+    // By the time this method is called, the version string has already failed strict matching.
+    // If a valid version can be extracted, it is reported.
+    private static func lenientVersionResultForString(_ fullVersionString: String) -> (version: String?, diagnostics: DiagnosticMessageSet) {
+        var versionString: String? = nil
+        var diagnostics: DiagnosticMessageSet = []
+
+        // Use lenient regex to diagnose common issues
+        if let versionMatch = fullVersionString.firstMatch(of: lenientVersionRegex) {
+            var validVersion: String? = nil
+
+            // If a numeric version is found, check for issues
+            if let majorVersion = versionMatch.majorVersion {
+                var versionIssueFound = false
+
+                if majorVersion.count > 1 {
+                    versionIssueFound = true
+                    diagnostics.insert(.majorVersionTooLarge)
+                }
+
+                if versionMatch.minorPatchVersion == nil {
+                    versionIssueFound = true
+                    diagnostics.insert(.minorVersionMissing)
+                }
+
+                if !versionIssueFound {
+                    validVersion = String(versionMatch.version)
+                }
+            }
+
+            if versionMatch.version == "Next" {
+                validVersion = String(versionMatch.version)
+            }
+
+            if versionMatch.version == "next" {
+                validVersion = "Next"
+                diagnostics.insert(.nextMiscapitalized)
+            }
+
+            if versionMatch.prefix == nil {
+                diagnostics.insert(.swiftMissing)
+            }
+
+            if versionMatch.swift == "swift" {
+                diagnostics.insert(.swiftMiscapitalized)
+            }
+
+            if let majorVersion = versionMatch.majorVersion, majorVersion.count > 1 {
+                diagnostics.insert(.majorVersionTooLarge)
+            }
+
+            // If a valid version was found report it, even if there are other issues
+            if let validVersion {
+                versionString = validVersion
+            }
+        }
+
+        return (versionString, diagnostics)
     }
 
 // MARK: -

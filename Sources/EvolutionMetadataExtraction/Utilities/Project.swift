@@ -76,6 +76,10 @@ public final class Project: Sendable {
             Issue.missingOrInvalidImplementedVersion.code:
                 RangeSet(0110, 0264),
 
+            // Some proposals includes an ad hoc implementation note
+            Issue.malformedImplementationVersionCode:
+                RangeSet(0273),
+
             // Some older proposals are missing links to discussions or do not format discussions correctly.
             // Those issues should be corrected in the proposals themselves.
             // Once corrected, the exemption for the corrected proposal can be removed.

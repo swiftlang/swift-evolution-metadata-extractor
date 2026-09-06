@@ -1,6 +1,6 @@
 {
-  "commit" : "c8623621aacc8e3f364bb0f3cb07675177a1ec4e",
-  "creationDate" : "2026-08-27T19:12:50Z",
+  "commit" : "a7702237a8a7e5154f12c1716a0133d5ebf7a86d",
+  "creationDate" : "2026-09-06T21:30:31Z",
   "implementationVersions" : [
     "2.2", "3.0", "3.0.1", "3.1", "4.0", "4.1", "4.2", "5.0", "5.1", "5.2",
     "5.3", "5.4", "5.5", "5.5.2", "5.6", "5.7", "5.8", "5.9", "5.9.2", "5.10",
@@ -19597,7 +19597,7 @@
         },
         {
           "link" : "https:\/\/forums.swift.org\/t\/accepted-se-0474-yielding-accessors\/80273",
-          "name" : "Acceptance"
+          "name" : "acceptance"
         }
       ],
       "id" : "SE-0474",
@@ -19608,7 +19608,7 @@
           "name" : "Steve Canon"
         }
       ],
-      "sha" : "a109cee5484aec66362cbd863e086723e4d9eb25",
+      "sha" : "9596ee9bd04e3bfe4c1ef0254b5006ea7ac3259b",
       "status" : {
         "state" : "accepted"
       },
@@ -20914,9 +20914,10 @@
           "name" : "David Cummings"
         }
       ],
-      "sha" : "2d5feeae2886d8c573990ae1ba6a10a841fae9a6",
+      "sha" : "5432838dd4f8f7d67fca4a7292edeaaaa0a97c0e",
       "status" : {
-        "state" : "accepted"
+        "state" : "implemented",
+        "version" : "Next"
       },
       "summary" : "Currently, `swift test` supports generating a JSON coverage report, which is great for ingesting into various systems. The JSON, however, is not very \"human-readable\" during iterative development at-desk.",
       "title" : "HTML Coverage Report"
@@ -22743,6 +22744,10 @@
         {
           "link" : "https:\/\/forums.swift.org\/t\/se-0540-default-package-settings\/88748",
           "name" : "review"
+        },
+        {
+          "link" : "https:\/\/forums.swift.org\/t\/accepted-with-modifications-se-0540-default-package-settings\/89398",
+          "name" : "acceptance"
         }
       ],
       "id" : "SE-0540",
@@ -22761,11 +22766,9 @@
           "name" : "Mikaela Caron"
         }
       ],
-      "sha" : "76bade711322b3b26e29812e1fa1210b60c1d777",
+      "sha" : "08ddd177a0561fd861e5d518e84c2a7bc800dc49",
       "status" : {
-        "end" : "2026-08-17T00:00:00Z",
-        "start" : "2026-08-03T00:00:00Z",
-        "state" : "activeReview"
+        "state" : "accepted"
       },
       "summary" : "It is very common for Swift packages to use the same settings flags across all their targets. A built-in mechanism to apply these base settings offers improved readability and convenience for package manifests.",
       "title" : "Default Target Settings"
@@ -22825,9 +22828,10 @@
           "name" : "Tim Condon"
         }
       ],
-      "sha" : "70768ef1a44b9c7a6e49e00eb33bb29f2f3eb7dc",
+      "sha" : "6de9bbae660b1b4fcac70732179ab5e191b697f7",
       "status" : {
-        "state" : "accepted"
+        "state" : "implemented",
+        "version" : "Next"
       },
       "summary" : "Swift has great support for bidirectional interoperability with C, C++, and Objective-C, but historically SwiftPM has restricted the set of interop features available to package authors. This proposal lifts most of those restrictions, giving packages a new set of tools to organize their code.",
       "title" : "Flexible Swift\/C Interoperability for Packages"
@@ -23083,6 +23087,48 @@
       },
       "summary" : "The Swift and Clang compilers have existing support for leveraging a CAS (Content Addressable Store) to cache compilation outputs and replay them in subsequent builds. This proposal introduces support for configuring compilation caching in SwiftPM on a per-build, per-package, or global basis.",
       "title" : "SwiftPM Support for Compilation Caching"
+    },
+    {
+      "authors" : [
+        {
+          "link" : "https:\/\/github.com\/ktoso",
+          "name" : "Konrad 'ktoso' Malawski"
+        }
+      ],
+      "discussions" : [
+        {
+          "link" : "https:\/\/forums.swift.org\/t\/pitch-resignremoteid-for-remote-distributed-actor-references\/89078",
+          "name" : "pitch"
+        },
+        {
+          "link" : "https:\/\/forums.swift.org\/t\/se-0548-resignremoteid-for-remote-distributed-actor-references\/89365",
+          "name" : "review"
+        }
+      ],
+      "id" : "SE-0548",
+      "implementation" : [
+        {
+          "account" : "swiftlang",
+          "id" : "91610",
+          "repository" : "swift",
+          "type" : "pull"
+        }
+      ],
+      "link" : "0548-resign-remote-id.md",
+      "reviewManagers" : [
+        {
+          "link" : "https:\/\/github.com\/douggregor",
+          "name" : "Doug Gregor"
+        }
+      ],
+      "sha" : "f22471ecab4ddc009695a3f01bf57a2733dec743",
+      "status" : {
+        "end" : "2026-09-17T00:00:00Z",
+        "start" : "2026-09-03T00:00:00Z",
+        "state" : "activeReview"
+      },
+      "summary" : "Distributed actors have their identity managed by an associated `DistributedActorSystem`. Today, the system observes the lifecycle of *local* distributed actor instances through the `assignID(_:)` \/ `resignID(_:)` pair, and participates in the *creation* of remote references through `resolve(id:as:)`. There is no way to observe when a remote reference has been deinitialized.",
+      "title" : "resignRemoteID for remote distributed actor references"
     }
   ],
   "schemaVersion" : "1.0.0",

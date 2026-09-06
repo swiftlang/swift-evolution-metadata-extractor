@@ -180,7 +180,7 @@ extension Proposal.Issue {
                 - For dates in the same year, only a trailing year is required
                 - For dates in the same month, only a leading month is required
 
-            Examples:
+            Correctly Formatted Examples:
                 March 3-15, 2026
                 July 01 - July 09, 2026
                 September 29...October 13, 2024
@@ -188,7 +188,34 @@ extension Proposal.Issue {
             """
     )
 
-    // TODO: Invalid implemented version (split from missing) = 64
+    private static func malformedImplementationVersionSuggestion(source: String, diagnostics: DiagnosticMessageSet) -> String {
+        """
+        The string '\(source)' is not formatted correctly.
+        The version string should be of the form 'Swift X.X' or 'Swift Next'
+        """
+        +
+        (diagnostics.isEmpty ? "\n" : "\n\nAdditional Notes:\n" + diagnostics.reduce(into: "", { $0 += "- \($1.rawValue)\n" }))
+        +
+        """
+        
+        Correctly Formatted Examples:
+            Swift 6.0
+            Swift 5.10
+            Swift 5.6.3
+            Swift 4.3
+            Swift Next
+        """
+    }
+
+    static let malformedImplementationVersionCode = 64
+    static func malformedImplementationVersion(source: String, diagnostics: DiagnosticMessageSet) -> Proposal.Issue {
+        Proposal.Issue(
+            kind: .error,
+            code: malformedImplementationVersionCode,
+            message: "Malformed implemented version string",
+            suggestion: malformedImplementationVersionSuggestion(source: source, diagnostics: diagnostics)
+        )
+    }
     // TODO: Invalid review dates (split from missing) = 65
 
     static let invalidReviewPeriodDateRange = Proposal.Issue(
@@ -258,4 +285,29 @@ extension Proposal.Issue {
         code: 112,
         message: "Discussion link doesn't refer to a Swift forum thread. Discussion removed."
     )
+}
+
+// MARK: - Diagnostic Messages
+
+// Sometimes there can be multiple diagnosable reasons for a particular issue
+// Rather than create a separate issue and issue code for each,
+// a diagnostic messages helps providen an appropriate suggestion
+// to help correct the issue.
+//
+// For example, a malformed version string of the Implemented status.
+//
+// These are modeled as an enum rather than string variables so the reporting
+// of diagnostic messages being reported can be tested without relying on the
+// value of the strings.
+//
+typealias DiagnosticMessageSet = Set<Proposal.Issue.DiagnosticMessage>
+extension Proposal.Issue {
+    enum DiagnosticMessage: String, Hashable, Sendable {
+        case extraText = "Extra text found in version string"
+        case swiftMiscapitalized = "The string 'swift' must be capitalized"
+        case swiftMissing = "Version must include 'Swift'"
+        case nextMiscapitalized = "The string 'next' should be capitalized"
+        case minorVersionMissing = "Version must include minor version"
+        case majorVersionTooLarge = "Major version must be a single digit"
+    }
 }
