@@ -11498,6 +11498,12 @@
       ],
       "errors" : [
         {
+          "code" : 64,
+          "kind" : "error",
+          "message" : "Malformed implemented version string",
+          "suggestion" : "The string '5.6' is not formatted correctly.\nThe version string should be of the form 'Swift X.X' or 'Swift Next'\n\nAdditional Notes:\n- Version must include 'Swift'\n\nCorrectly Formatted Examples:\n    Swift 6.0\n    Swift 5.10\n    Swift 5.6.3\n    Swift 4.3\n    Swift Next"
+        },
+        {
           "code" : 110,
           "kind" : "error",
           "message" : "Missing Review field.",
@@ -19066,6 +19072,14 @@
           "name" : "acceptance"
         }
       ],
+      "errors" : [
+        {
+          "code" : 64,
+          "kind" : "error",
+          "message" : "Malformed implemented version string",
+          "suggestion" : "The string '6.2' is not formatted correctly.\nThe version string should be of the form 'Swift X.X' or 'Swift Next'\n\nAdditional Notes:\n- Version must include 'Swift'\n\nCorrectly Formatted Examples:\n    Swift 6.0\n    Swift 5.10\n    Swift 5.6.3\n    Swift 4.3\n    Swift Next"
+        }
+      ],
       "id" : "SE-0464",
       "implementation" : [
         {
@@ -19692,7 +19706,7 @@
           "code" : 63,
           "kind" : "error",
           "message" : "Missing or invalid dates for a review period.",
-          "suggestion" : "Review date ranges:\n    - Include the year\n    - Use full month names\n    - Separate dates by a hyphen or three periods\n    - Can include leading zero for single digit days\n    - For dates in the same year, only a trailing year is required\n    - For dates in the same month, only a leading month is required\n\nExamples:\n    March 3-15, 2026\n    July 01 - July 09, 2026\n    September 29...October 13, 2024\n    December 12, 2025...January 09, 2026"
+          "suggestion" : "Review date ranges:\n    - Include the year\n    - Use full month names\n    - Separate dates by a hyphen or three periods\n    - Can include leading zero for single digit days\n    - For dates in the same year, only a trailing year is required\n    - For dates in the same month, only a leading month is required\n\nCorrectly Formatted Examples:\n    March 3-15, 2026\n    July 01 - July 09, 2026\n    September 29...October 13, 2024\n    December 12, 2025...January 09, 2026"
         }
       ],
       "id" : "SE-0478",
@@ -19749,7 +19763,7 @@
           "code" : 63,
           "kind" : "error",
           "message" : "Missing or invalid dates for a review period.",
-          "suggestion" : "Review date ranges:\n    - Include the year\n    - Use full month names\n    - Separate dates by a hyphen or three periods\n    - Can include leading zero for single digit days\n    - For dates in the same year, only a trailing year is required\n    - For dates in the same month, only a leading month is required\n\nExamples:\n    March 3-15, 2026\n    July 01 - July 09, 2026\n    September 29...October 13, 2024\n    December 12, 2025...January 09, 2026"
+          "suggestion" : "Review date ranges:\n    - Include the year\n    - Use full month names\n    - Separate dates by a hyphen or three periods\n    - Can include leading zero for single digit days\n    - For dates in the same year, only a trailing year is required\n    - For dates in the same month, only a leading month is required\n\nCorrectly Formatted Examples:\n    March 3-15, 2026\n    July 01 - July 09, 2026\n    September 29...October 13, 2024\n    December 12, 2025...January 09, 2026"
         }
       ],
       "id" : "SE-0479",
@@ -20293,7 +20307,7 @@
           "code" : 63,
           "kind" : "error",
           "message" : "Missing or invalid dates for a review period.",
-          "suggestion" : "Review date ranges:\n    - Include the year\n    - Use full month names\n    - Separate dates by a hyphen or three periods\n    - Can include leading zero for single digit days\n    - For dates in the same year, only a trailing year is required\n    - For dates in the same month, only a leading month is required\n\nExamples:\n    March 3-15, 2026\n    July 01 - July 09, 2026\n    September 29...October 13, 2024\n    December 12, 2025...January 09, 2026"
+          "suggestion" : "Review date ranges:\n    - Include the year\n    - Use full month names\n    - Separate dates by a hyphen or three periods\n    - Can include leading zero for single digit days\n    - For dates in the same year, only a trailing year is required\n    - For dates in the same month, only a leading month is required\n\nCorrectly Formatted Examples:\n    March 3-15, 2026\n    July 01 - July 09, 2026\n    September 29...October 13, 2024\n    December 12, 2025...January 09, 2026"
         }
       ],
       "id" : "SE-0490",
@@ -20559,7 +20573,7 @@
           "code" : 63,
           "kind" : "error",
           "message" : "Missing or invalid dates for a review period.",
-          "suggestion" : "Review date ranges:\n    - Include the year\n    - Use full month names\n    - Separate dates by a hyphen or three periods\n    - Can include leading zero for single digit days\n    - For dates in the same year, only a trailing year is required\n    - For dates in the same month, only a leading month is required\n\nExamples:\n    March 3-15, 2026\n    July 01 - July 09, 2026\n    September 29...October 13, 2024\n    December 12, 2025...January 09, 2026"
+          "suggestion" : "Review date ranges:\n    - Include the year\n    - Use full month names\n    - Separate dates by a hyphen or three periods\n    - Can include leading zero for single digit days\n    - For dates in the same year, only a trailing year is required\n    - For dates in the same month, only a leading month is required\n\nCorrectly Formatted Examples:\n    March 3-15, 2026\n    July 01 - July 09, 2026\n    September 29...October 13, 2024\n    December 12, 2025...January 09, 2026"
         }
       ],
       "id" : "SE-0495",
@@ -20690,7 +20704,7 @@
           "code" : 63,
           "kind" : "error",
           "message" : "Missing or invalid dates for a review period.",
-          "suggestion" : "Review date ranges:\n    - Include the year\n    - Use full month names\n    - Separate dates by a hyphen or three periods\n    - Can include leading zero for single digit days\n    - For dates in the same year, only a trailing year is required\n    - For dates in the same month, only a leading month is required\n\nExamples:\n    March 3-15, 2026\n    July 01 - July 09, 2026\n    September 29...October 13, 2024\n    December 12, 2025...January 09, 2026"
+          "suggestion" : "Review date ranges:\n    - Include the year\n    - Use full month names\n    - Separate dates by a hyphen or three periods\n    - Can include leading zero for single digit days\n    - For dates in the same year, only a trailing year is required\n    - For dates in the same month, only a leading month is required\n\nCorrectly Formatted Examples:\n    March 3-15, 2026\n    July 01 - July 09, 2026\n    September 29...October 13, 2024\n    December 12, 2025...January 09, 2026"
         }
       ],
       "id" : "SE-0498",

@@ -9,6 +9,9 @@ Add new items at the end of the relevant section under **Unreleased**.
 ### Additions
 
 - Validate presence of version for Implemented status ([#139])
+- Improve Implemented version validation ([#144])
+    - Add stricter validation
+    - Report diagnostic messages for common errors
 
 ### Fixes
 
@@ -155,3 +158,4 @@ This changelog's format is based on [Keep a Changelog](https://keepachangelog.co
 [#135]: https://github.com/swiftlang/swift-evolution-metadata-extractor/pull/135
 [#139]: https://github.com/swiftlang/swift-evolution-metadata-extractor/pull/139
 [#141]: https://github.com/swiftlang/swift-evolution-metadata-extractor/pull/141
+[#144]: https://github.com/swiftlang/swift-evolution-metadata-extractor/pull/144

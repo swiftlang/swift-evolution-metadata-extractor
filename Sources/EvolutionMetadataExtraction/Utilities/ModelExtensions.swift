@@ -109,7 +109,7 @@ extension Proposal.Issue {
         let indent = String(repeating: "\t", count: indentLevel)
         var result = indent + "\(kindLabel): \(message)\n"
         if !suggestion.isEmpty {
-            result += "\n\(indent)\t\(suggestion.replacingOccurrences(of: "\n", with: "\n\(indent)"))\n"
+            result += "\n\(indent)\(suggestion.replacingOccurrences(of: "\n", with: "\n\(indent)"))\n"
         }
         return result
     }
