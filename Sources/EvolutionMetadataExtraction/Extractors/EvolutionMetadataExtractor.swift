@@ -130,10 +130,12 @@ struct EvolutionMetadataExtractor {
         let needsParsing = extractionJob.proposalSpecs.reduce(into: [ProposalSpec]()) { partialResult, githubProposal in
             if let parsedProposal = parsedProposalsById.removeValue(forKey: githubProposal.id) {
                 if parsedProposal.sha == githubProposal.sha && !extractionJob.forcedExtractionIDs.contains(githubProposal.id) {
-                    // This assertion tests the assumption that proposals with the same ID will have same sort index
-                    // In the repository, because proposals are only added and never change sort order
-                    // In snapshots because they are static
-                    assert(parsedProposal.sortIndex == githubProposal.sortIndex)
+                    // This precondition tests the assumption that proposals with the same ID will have same sort index
+                    // In the repository, because proposals are only added, never removed, have a unique number
+                    // and never change sort order. In snapshots because they are static.
+                    // If this precondition fails in production, the most likely cause is a duplicate proposal number.
+                    // (Note that SE-0519 is an exception to the unique proposal file number invariant and is special-cased.)
+                    precondition(parsedProposal.sortIndex == githubProposal.sortIndex)
                     reusableProposals.append(parsedProposal)
                 }
                 else {
