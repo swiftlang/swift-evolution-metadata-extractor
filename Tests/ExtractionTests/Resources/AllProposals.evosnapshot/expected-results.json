@@ -1,6 +1,6 @@
 {
-  "commit" : "a7702237a8a7e5154f12c1716a0133d5ebf7a86d",
-  "creationDate" : "2026-09-06T21:30:31Z",
+  "commit" : "f91c861dfebbb53f0869e1035d502cbf34855714",
+  "creationDate" : "2026-09-15T03:43:52Z",
   "implementationVersions" : [
     "2.2", "3.0", "3.0.1", "3.1", "4.0", "4.1", "4.2", "5.0", "5.1", "5.2",
     "5.3", "5.4", "5.5", "5.5.2", "5.6", "5.7", "5.8", "5.9", "5.9.2", "5.10",
@@ -13142,6 +13142,18 @@
         }
       ],
       "discussions" : [
+        {
+          "link" : "https:\/\/forums.swift.org\/t\/pitch-opaque-parameter-types\/54914",
+          "name" : "pitch"
+        },
+        {
+          "link" : "https:\/\/forums.swift.org\/t\/se-0341-opaque-parameter-declarations\/55082",
+          "name" : "review"
+        },
+        {
+          "link" : "https:\/\/forums.swift.org\/t\/accepted-with-modifications-se-0341-opaque-parameters\/55397",
+          "name" : "acceptance with modifications"
+        }
       ],
       "id" : "SE-0341",
       "implementation" : [
@@ -13159,7 +13171,7 @@
           "name" : "Ben Cohen"
         }
       ],
-      "sha" : "e32446149015fa48c0303589abbde7343df55a55",
+      "sha" : "ad47cae7198fdbbb7c335df6d311aff1ac02ccb0",
       "status" : {
         "state" : "implemented",
         "version" : "5.7"
@@ -13215,6 +13227,18 @@
         }
       ],
       "discussions" : [
+        {
+          "link" : "https:\/\/forums.swift.org\/t\/concurrency-in-top-level-code\/55001",
+          "name" : "pitch"
+        },
+        {
+          "link" : "https:\/\/forums.swift.org\/t\/se-0343-concurrency-in-top-level-code\/55477",
+          "name" : "review"
+        },
+        {
+          "link" : "https:\/\/forums.swift.org\/t\/accepted-se-0343-concurrency-in-top-level-code\/55904",
+          "name" : "acceptance"
+        }
       ],
       "id" : "SE-0343",
       "implementation" : [
@@ -13244,7 +13268,7 @@
           "name" : "Saleem Abdulrasool"
         }
       ],
-      "sha" : "e11e040563b760a14315296f3383632af8092a28",
+      "sha" : "f47925077a4e16dfd75acbf4fca5af83ab53be54",
       "status" : {
         "state" : "implemented",
         "version" : "5.7"
@@ -13280,6 +13304,30 @@
         }
       ],
       "discussions" : [
+        {
+          "link" : "https:\/\/forums.swift.org\/t\/pitch-distributed-actor-runtime\/54045",
+          "name" : "first pitch"
+        },
+        {
+          "link" : "https:\/\/forums.swift.org\/t\/pitch-2-distributed-actor-runtime\/55124",
+          "name" : "second pitch"
+        },
+        {
+          "link" : "https:\/\/forums.swift.org\/t\/se-0344-distributed-actor-runtime\/55525",
+          "name" : "first review"
+        },
+        {
+          "link" : "https:\/\/forums.swift.org\/t\/returned-for-revision-se-0344-distributed-actor-runtime\/55836",
+          "name" : "returned for revision"
+        },
+        {
+          "link" : "https:\/\/forums.swift.org\/t\/se-0344-second-review-distributed-actor-runtime\/56002",
+          "name" : "second review"
+        },
+        {
+          "link" : "https:\/\/forums.swift.org\/t\/accepted-se-0344-distributed-actor-runtime\/56416",
+          "name" : "acceptance"
+        }
       ],
       "id" : "SE-0344",
       "link" : "0344-distributed-actor-runtime.md",
@@ -13289,7 +13337,7 @@
           "name" : "Joe Groff"
         }
       ],
-      "sha" : "b052a3531c402fa761ad38d773cbd5c4e85728ba",
+      "sha" : "61d1091f8223fcdb0dce6d3ebd70766467ff38c1",
       "status" : {
         "state" : "implemented",
         "version" : "5.7"
@@ -13432,6 +13480,18 @@
         }
       ],
       "discussions" : [
+        {
+          "link" : "https:\/\/forums.swift.org\/t\/pitch-buildpartialblock-for-result-builders\/55561",
+          "name" : "pitch"
+        },
+        {
+          "link" : "https:\/\/forums.swift.org\/t\/se-0348-buildpartialblock-for-result-builders\/56143",
+          "name" : "review"
+        },
+        {
+          "link" : "https:\/\/forums.swift.org\/t\/accepted-se-0348-buildpartialblock-for-result-builders\/56527",
+          "name" : "acceptance"
+        }
       ],
       "id" : "SE-0348",
       "implementation" : [
@@ -13449,7 +13509,7 @@
           "name" : "Ben Cohen"
         }
       ],
-      "sha" : "4a196e68c6617f09ec85abae04ce72479626cef2",
+      "sha" : "b64c5d8660de229d2ca7bf1c3252fd3cfc933c4f",
       "status" : {
         "state" : "implemented",
         "version" : "5.7"
@@ -13784,6 +13844,18 @@
         }
       ],
       "discussions" : [
+        {
+          "link" : "https:\/\/forums.swift.org\/t\/pitch-swift-snippets\/56348",
+          "name" : "pitch"
+        },
+        {
+          "link" : "https:\/\/forums.swift.org\/t\/se-0356-swift-snippets\/57097",
+          "name" : "review"
+        },
+        {
+          "link" : "https:\/\/forums.swift.org\/t\/accepted-with-modifications-se-0356-swift-snippets\/58150",
+          "name" : "acceptance with modifications"
+        }
       ],
       "id" : "SE-0356",
       "implementation" : [
@@ -13831,7 +13903,7 @@
           "name" : "Tom Doron"
         }
       ],
-      "sha" : "e1ab8692c234fb3150baf756812dfeff1ed1d88a",
+      "sha" : "a7b1f4dc0e71b22092c4a73cbc2f9266a66f5fd1",
       "status" : {
         "state" : "implemented",
         "version" : "5.7"
@@ -17999,7 +18071,7 @@
           "name" : "Steve Canon"
         }
       ],
-      "sha" : "e374da0f852bc2ca472e0c7ff459f8d0c602085c",
+      "sha" : "c421dbcfeff7ec128a467c439da4c2c11dd30a8c",
       "status" : {
         "state" : "implemented",
         "version" : "6.0"
@@ -21006,9 +21078,10 @@
           "name" : "Ben Cohen"
         }
       ],
-      "sha" : "c1ee5ff1d440feac5f60abcdfdd5d4ee151e34c5",
+      "sha" : "a749198a5984ea0bc35b5838ea6682d521e4caa6",
       "status" : {
-        "state" : "accepted"
+        "state" : "implemented",
+        "version" : "6.4"
       },
       "summary" : "An associated type defines a generic type in a protocol. You use them to help define the protocol's requirements. This Queue has two associated types, Element and Allocator:",
       "title" : "Suppressed Default Conformances on Associated Types With Defaults"
@@ -21620,9 +21693,10 @@
           "name" : "Holly Borla"
         }
       ],
-      "sha" : "6df30e2542873f1428486062da3df1dbe23a1d7e",
+      "sha" : "6c24f1a6557cf60fec5b0aa541f5fd3bd834d5e7",
       "status" : {
-        "state" : "accepted"
+        "state" : "implemented",
+        "version" : "6.4"
       },
       "summary" : "We propose a new protocol for iteration, `Iterable`, which provides a universal implementation point for synchronous iteration. Types conforming to `Iterable` can be noncopyable or nonescapable, can have noncopyable elements, and can throw during iteration. The Swift compiler will support use of this protocol via the familiar `for`-`in` syntax.",
       "title" : "`Iterable`"
@@ -21660,9 +21734,10 @@
           "name" : "Ben Cohen"
         }
       ],
-      "sha" : "e0834640851b25071b8f27528e8ad383f151a70a",
+      "sha" : "c69df66efd11500469cfbec941bec354c36bfcf2",
       "status" : {
-        "state" : "accepted"
+        "state" : "implemented",
+        "version" : "6.4"
       },
       "summary" : "We propose to introduce a new type in the standard library `UniqueBox` which is a smart pointer type that uniquely owns a value on the heap.",
       "title" : "UniqueBox"
@@ -21910,7 +21985,7 @@
           "name" : "Tony Allevato"
         }
       ],
-      "sha" : "437e1cb77e13b787e6638dfa79de0c1674777cbe",
+      "sha" : "e03bfc103e1b13d2a92b33049c81d79ecfc2fae2",
       "status" : {
         "state" : "implemented",
         "version" : "6.4"
@@ -22120,7 +22195,7 @@
           "name" : "Freddy Kellison-Linn"
         }
       ],
-      "sha" : "871e63e6dd2de71f96da62528a82e6b2d92f1200",
+      "sha" : "53b7b346f16cdf1bbec099bbc5c524bb5db2e316",
       "status" : {
         "state" : "accepted"
       },
@@ -22911,9 +22986,10 @@
           "name" : "Xiaodi Wu"
         }
       ],
-      "sha" : "0efedeec7447fb826468683f67d4e7e839fa6ae3",
+      "sha" : "5e1c5c8a6de97a7d586ea7ae1bbd9ec169baa675",
       "status" : {
-        "state" : "accepted"
+        "state" : "implemented",
+        "version" : "Next"
       },
       "summary" : "InlineArray conditionally conforms to Equatable and Hashable when Element does.",
       "title" : "InlineArray: Hashable"
@@ -23037,7 +23113,7 @@
           "name" : "Stephen Canon"
         }
       ],
-      "sha" : "2338d12b21492da42d6325b23edf36a268b25da9",
+      "sha" : "2c04ea9183b34e647ccf307f22d7ba8960cc8010",
       "status" : {
         "end" : "2026-09-04T00:00:00Z",
         "start" : "2026-08-21T00:00:00Z",
@@ -23129,6 +23205,54 @@
       },
       "summary" : "Distributed actors have their identity managed by an associated `DistributedActorSystem`. Today, the system observes the lifecycle of *local* distributed actor instances through the `assignID(_:)` \/ `resignID(_:)` pair, and participates in the *creation* of remote references through `resolve(id:as:)`. There is no way to observe when a remote reference has been deinitialized.",
       "title" : "resignRemoteID for remote distributed actor references"
+    },
+    {
+      "authors" : [
+        {
+          "link" : "https:\/\/github.com\/raiyyan089",
+          "name" : "raiyyan089"
+        }
+      ],
+      "discussions" : [
+        {
+          "link" : "https:\/\/forums.swift.org\/t\/pitch-package-manager-http-proxy-configuration\/88121",
+          "name" : "pitch"
+        },
+        {
+          "link" : "https:\/\/forums.swift.org\/t\/review-se-0549-package-manager-http-proxy-configuration\/89513",
+          "name" : "review"
+        }
+      ],
+      "id" : "SE-0549",
+      "implementation" : [
+        {
+          "account" : "swiftlang",
+          "id" : "10274",
+          "repository" : "swift-package-manager",
+          "type" : "pull"
+        }
+      ],
+      "link" : "0549-swiftpm-proxy-configuration.md",
+      "reviewManagers" : [
+        {
+          "link" : "https:\/\/github.com\/FranzBusch",
+          "name" : "Franz Busch"
+        }
+      ],
+      "sha" : "c738e87ac6d47d450d07e61aa1a2c4e1bff51b16",
+      "status" : {
+        "end" : "2026-09-28T00:00:00Z",
+        "start" : "2026-09-14T00:00:00Z",
+        "state" : "activeReview"
+      },
+      "summary" : "This proposal adds HTTP and HTTPS proxy support for all network operations performed by Swift Package Manager that use its built-in HTTP client. Today, SPM ignores standard proxy environment variables (`http_proxy`, `https_proxy`, `no_proxy`) for these operations, making it impossible to use SPM behind corporate firewalls or in environments that require proxy routing. This proposal introduces a configuration file–based approach that works cross-platform and across invocation contexts (CLI, Xcode, CI).",
+      "title" : "Package Manager HTTP Proxy Configuration",
+      "trackingBugs" : [
+        {
+          "id" : "swiftlang\/swift-package-manager#7470",
+          "link" : "https:\/\/github.com\/swiftlang\/swift-package-manager\/issues\/7470"
+        }
+      ]
     }
   ],
   "schemaVersion" : "1.0.0",

@@ -68,9 +68,10 @@ public final class Project: Sendable {
             // 'Review' is a required field, but currently a fair number of older proposals are missing the
             // field for a variety of reasons. Those issues should be corrected in the proposals themselves.
             // Once corrected, the exemption for the corrected proposal can be removed.
+            // VALIDATION ENHANCEMENT: Many early proposals used the heading 'Decision Notes' instead of 'Review'. The `DiscussionExtractor` allows that heading and does not report a missing discussion error. At some point, it may make sense to update those proposals.
             // Note that some early proposals may not have valid discussions be added and will always need exemption.
             Issue.missingReviewField.code:
-                RangeSet(0001, 0002, 0004, 0020, 0051, 0079, 0100, 0176, 0177, 0188, 0193, 0194, 0196, 0198, 0201, 0203, 0205, 0208, 0209, 0210, 0212, 0213, 0219, 0245, 0247, 0248, 0249, 0250, 0252, 0259, 0263, 0268, 0269, 0273, 0278, 0284, 0289, 0295, 0300, 0312, 0313, 0317, 0318, 0337, 0341, 0343, 0344, 0348, 0350, 0356),
+                RangeSet(0001, 0002, 0004, 0020, 0051, 0079, 0100, 0176, 0177, 0188, 0193, 0194, 0196, 0198, 0201, 0203, 0205, 0208, 0209, 0210, 0212, 0213, 0219, 0245, 0247, 0248, 0249, 0250, 0252, 0259, 0263, 0268, 0269, 0273, 0278, 0284, 0289, 0295, 0300, 0312, 0313, 0317, 0318, 0337, 0350),
 
             // Some older proposals have no implementation version
             Issue.missingOrInvalidImplementedVersion.code:

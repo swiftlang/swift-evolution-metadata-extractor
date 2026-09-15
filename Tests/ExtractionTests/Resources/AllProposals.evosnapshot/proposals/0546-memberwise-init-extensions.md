@@ -89,7 +89,8 @@ extension Post {
 A handwritten initializer that is indistinguishable from the synthesized
 initializer (_i.e._ it has the same argument names and types defined in the
 same order) will now suppress the default, synthesized initializer when
-defined in an unconstrained, same-file extension.
+defined in an unconstrained, same-file extension. This includes both memberwise
+and default `init()` initializers.
 
 ## Source compatibility
 
