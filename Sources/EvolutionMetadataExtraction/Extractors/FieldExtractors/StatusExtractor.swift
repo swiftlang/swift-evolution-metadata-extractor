@@ -259,7 +259,7 @@ struct StatusExtractor: MarkupWalker, ValueExtractor {
 // For nil returns, the caller is reponsible for reporting the issue
 extension Proposal.Status {
     // VALIDATION ENHANCEMENT: Consider normalizing capitalization of statuses and validating correct capitalization
-    public init?(name: String, version: String = "", start: String = "", end: String = "", reason: String = "") {
+    fileprivate init?(name: String, version: String = "", start: String = "", end: String = "", reason: String = "") {
         switch name.lowercased() {
             case "Awaiting Review".lowercased(): self = .awaitingReview
             case "Scheduled For Review".lowercased(): self = .scheduledForReview(start: start, end: end)
