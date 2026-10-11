@@ -21,8 +21,8 @@ let verboseEnabled: Bool = { VERBOSE_ENABLED }()
 
 // MARK: -
 
-public enum ToolVersion {
-    static public let version = "1.1.1"
+package enum ToolVersion {
+    static package let version = "1.1.1"
 }
 
 // MARK: -
@@ -33,19 +33,19 @@ func exitWithFailure() throws {
 
 // MARK: -
 
-public enum ArgumentValidation {
-    
+package enum ArgumentValidation {
+
     // Call first in the `validate()` method of each command
-    public static func validate(verbose: Bool) {
+    package static func validate(verbose: Bool) {
         VERBOSE_ENABLED = verbose
         precondition(verboseEnabled == verbose)
     }
     
-    public static func validateHTTPProxies() {
+    package static func validateHTTPProxies() {
         _ = URLSession.customized // Reads and validates HTTP Proxy environment variables if present
     }
 
-    @Sendable public static func extractionSource(snapshotURL: URL?, proposalURLs: [URL], pullRequest: Int? = nil) throws -> ExtractionJob.Source {
+    @Sendable package static func extractionSource(snapshotURL: URL?, proposalURLs: [URL], pullRequest: Int? = nil) throws -> ExtractionJob.Source {
         if (snapshotURL != nil && !proposalURLs.isEmpty) ||
             (snapshotURL != nil && pullRequest != nil) ||
             (pullRequest != nil && !proposalURLs.isEmpty) {
@@ -62,7 +62,7 @@ public enum ArgumentValidation {
     }
     
     // Transforms file path argument into URL
-    @Sendable public static func proposalURL(_ filePath: String) throws -> URL {
+    @Sendable package static func proposalURL(_ filePath: String) throws -> URL {
         let proposalURL = FileUtilities.expandedAndStandardizedURL(for: filePath)
         guard proposalURL.pathExtension == "md" else {
             throw ValidationError("Proposal file paths must be Markdown files with the path extension '.md'")
@@ -71,7 +71,7 @@ public enum ArgumentValidation {
     }
 
     // Transforms snapshot-path argument into URL
-    @Sendable public static func snapshotURL(_ snapshotPath: String) throws -> URL {
+    @Sendable package static func snapshotURL(_ snapshotPath: String) throws -> URL {
 
         let snapshotURL: URL
         
@@ -114,12 +114,12 @@ public enum ArgumentValidation {
         return snapshotURL
     }
     
-    public enum Extract {
-        
-        public static let defaultFilename = "evolution.json"
-        public static let defaultOutput: ExtractionJob.Output = .metadataJSON(URL(filePath: defaultFilename))
-        
-        static public func validate(forceExtract: [String], source: ExtractionJob.Source) throws -> (forceAll: Bool, forcedExtractionIDs: [String]) {
+    package enum Extract {
+
+        package static let defaultFilename = "evolution.json"
+        package static let defaultOutput: ExtractionJob.Output = .metadataJSON(URL(filePath: defaultFilename))
+
+        static package func validate(forceExtract: [String], source: ExtractionJob.Source) throws -> (forceAll: Bool, forcedExtractionIDs: [String]) {
 
             var forceAll = false
             var forcedExtractionIDs: [String] = []
@@ -155,32 +155,32 @@ public enum ArgumentValidation {
         }
         
         // Transforms --output--path argument into an output value
-        @Sendable public static func output(_ outputPath: String) throws -> ExtractionJob.Output {
+        @Sendable package static func output(_ outputPath: String) throws -> ExtractionJob.Output {
             if outputPath == "none" { .none }
             else { .metadataJSON(FileUtilities.outputURL(for: outputPath, defaultFileName: defaultFilename)) }
         }
     }
     
-    public enum Snapshot {
-        
-        public static let defaultFilename = "Snapshot.evosnapshot"
-        public static let defaultOutput: ExtractionJob.Output = .snapshot(URL(filePath: defaultFilename))
+    package enum Snapshot {
+
+        package static let defaultFilename = "Snapshot.evosnapshot"
+        package static let defaultOutput: ExtractionJob.Output = .snapshot(URL(filePath: defaultFilename))
 
         // Transforms --output--path argument into an output value
-        @Sendable public static func output(_ outputPath: String) throws -> ExtractionJob.Output {
+        @Sendable package static func output(_ outputPath: String) throws -> ExtractionJob.Output {
             if outputPath == "none" { .none }
             else if outputPath == "stdout" { throw ValidationError("The output path 'stdout' is not valid for the snapshot command")}
             else { .snapshot(FileUtilities.outputURL(for: outputPath, defaultFileName: defaultFilename)) }
         }
     }
 
-    public enum Validate {
-        
-        public static let defaultFilename = "ValidationReport.txt"
-        public static let defaultOutput: ExtractionJob.Output = .validationReport(URL.standardOutURL)
-        
+    package enum Validate {
+
+        package static let defaultFilename = "ValidationReport.txt"
+        package static let defaultOutput: ExtractionJob.Output = .validationReport(URL.standardOutURL)
+
         // Transforms --output--path argument into an output value
-        @Sendable public static func output(_ outputPath: String) throws -> ExtractionJob.Output {
+        @Sendable package static func output(_ outputPath: String) throws -> ExtractionJob.Output {
             if outputPath == "none" { .none }
             else { .validationReport(FileUtilities.outputURL(for: outputPath, defaultFileName: defaultFilename)) }
         }

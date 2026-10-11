@@ -16,15 +16,15 @@ import EvolutionMetadataModel
  
  An `ExtractionJob` captures all of the required inputs and potential output locations.
  */
-public struct ExtractionJob: Sendable {
-    public enum Source: Sendable, Codable, Equatable {
+package struct ExtractionJob: Sendable {
+    package enum Source: Sendable, Codable, Equatable {
         case network
         case snapshot(URL)
         case files([URL])
         case pullRequest(Int)
     }
     
-    public enum Output: Sendable, Codable, Equatable {
+    package enum Output: Sendable, Codable, Equatable {
         case metadataJSON(URL)
         case snapshot(URL)
         case validationReport(URL)
@@ -59,7 +59,7 @@ public struct ExtractionJob: Sendable {
         self.jobMetadata = jobMetadata
     }
     
-    public func run() async throws {
+    package func run() async throws {
         // Extract Metadata
         let evolutionMetadata = try await EvolutionMetadataExtractor.extractEvolutionMetadata(for: self)
         
@@ -71,7 +71,7 @@ public struct ExtractionJob: Sendable {
 
     }
     
-    public static func makeExtractionJob(project: Project = Project.default, source: Source, output: Output, ignorePreviousResults: Bool = false, forcedExtractionIDs: [String] = [], extractionDate: Date = Date()) async throws -> ExtractionJob {
+    package static func makeExtractionJob(project: Project = Project.default, source: Source, output: Output, ignorePreviousResults: Bool = false, forcedExtractionIDs: [String] = [], extractionDate: Date = Date()) async throws -> ExtractionJob {
         switch source {
             case .network:
                 try await makeNetworkExtractionJob(project: project, output: output, ignorePreviousResults: ignorePreviousResults, forcedExtractionIDs: forcedExtractionIDs, extractionDate: extractionDate)

@@ -15,7 +15,7 @@ fileprivate typealias Issue = Proposal.Issue
 /**
  Represents a software project with its own set of evolution proposals.
  */
-public final class Project: Sendable {
+package final class Project: Sendable {
     let name: String
     let organization: String
     let repository: String
@@ -50,11 +50,11 @@ public final class Project: Sendable {
             .appending(queryItems: [URLQueryItem(name: "per_page", value: "100")])
     }
 
-    public static var `default`: Project {
+    package static var `default`: Project {
         swift
     }
 
-    public static let swift = Project(
+    package static let swift = Project(
         name: "Swift",
         organization: "swiftlang",
         repository: "swift-evolution",
@@ -93,7 +93,7 @@ public final class Project: Sendable {
         ]
     )
 
-    public static let swiftTesting = Project(
+    package static let swiftTesting = Project(
         name: "Swift Testing",
         organization: "swiftlang",
         repository: "swift-evolution",
@@ -109,7 +109,7 @@ public final class Project: Sendable {
         ]
     )
 
-    public static let foundation = Project(
+    package static let foundation = Project(
         name: "Foundation",
         organization: "swiftlang",
         repository: "swift-foundation",
