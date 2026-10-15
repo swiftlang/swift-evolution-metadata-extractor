@@ -32,9 +32,14 @@ struct EvolutionMetadataExtractor {
 
         let proposals = await extractAllProposalMetadata(from: filteredProposalSpecs, extractionJob: extractionJob)
         
-        verbosePrint("Reused Proposal Count:", reusableProposals.count, terminator: "\n")
-        verbosePrint("Processed Proposal Count:", proposals.count)
-        
+        if verboseEnabled {
+            print("""
+                Reused Proposal Count: \(reusableProposals.count)
+                Processed Proposal Count: \(proposals.count)\(proposals.map(\.proposal).shortListDescription)
+                
+                """)
+        }
+
         // Combine and sort reused and newly extracted proposal metadata
         let sortedRecords = (reusableProposals + proposals).sorted(using: SortDescriptor(\.sortIndex))
         let combinedProposals = sortedRecords.map { $0.proposal }

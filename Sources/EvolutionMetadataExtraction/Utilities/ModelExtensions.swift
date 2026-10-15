@@ -34,7 +34,7 @@ extension EvolutionMetadata {
         var report = """
             Swift Evolution Validation Report
             \(dateString)
-            \(proposalString(proposals.count)) Validated
+            \(proposalString(proposals.count)) Validated\(proposals.shortListDescription)
             ----------\n\n
             """
         let errorProposals = proposals.filter { $0.hasIssues }
@@ -92,6 +92,15 @@ extension Proposal {
 
     private func issuesReport(issues: [Proposal.Issue]) -> String {
         issues.reduce(into: "") { $0 += $1.validationReport(indentLevel: 1) }
+    }
+}
+
+// MARK: -
+
+extension Array where Element == Proposal {
+    // For up to five proposals, return a list of proposal ids in parentheses otherwise an empty string
+    var shortListDescription: String {
+        (1...5).contains(count) ? " (\(map(\.id).sorted().joined(separator: ", ")))" : ""
     }
 }
 
