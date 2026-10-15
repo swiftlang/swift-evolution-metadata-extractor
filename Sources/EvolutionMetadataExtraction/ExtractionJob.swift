@@ -251,7 +251,7 @@ extension ExtractionJob {
     }
     
     private static func writeEvolutionResultsAsJSON(results: EvolutionMetadata, outputURL: URL) throws {
-        verbosePrint(results.validationReport)
+        if verboseEnabled { print(results.validationReport) }
         print("Writing file '\(outputURL.lastPathComponent)' to\n'\(outputURL.absoluteURL.path())'\n")
 
         let jsonData = try results.jsonRepresentation
