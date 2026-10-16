@@ -13,6 +13,10 @@ import PackageDescription
 // Settings to use for all targets
 let swiftSettings: [SwiftSetting] = [
     .enableUpcomingFeature("ExistentialAny"),
+    .enableUpcomingFeature("MemberImportVisibility"),
+    .enableUpcomingFeature("NonisolatedNonsendingByDefault"),
+    .enableUpcomingFeature("InferIsolatedConformances"),
+    .enableUpcomingFeature("ImmutableWeakCaptures"),
 ]
 
 let package = Package(
