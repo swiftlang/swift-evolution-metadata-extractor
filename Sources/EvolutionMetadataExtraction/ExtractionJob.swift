@@ -6,7 +6,7 @@
 // See https://swift.org/LICENSE.txt for license information
 // See https://swift.org/CONTRIBUTORS.txt for the list of Swift project authors
 
-import Foundation
+package import Foundation
 import EvolutionMetadataModel
 
 /* The swift-evolution-extraction tool can perform three tasks:

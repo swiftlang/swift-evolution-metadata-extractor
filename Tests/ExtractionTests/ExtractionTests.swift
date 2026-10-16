@@ -6,7 +6,7 @@
 // See https://swift.org/LICENSE.txt for license information
 // See https://swift.org/CONTRIBUTORS.txt for the list of Swift project authors
 
-import Testing
+public import Testing
 import Foundation
 
 import EvolutionMetadataModel // public interface, @testable not requred
@@ -275,7 +275,7 @@ struct `Extraction Tests` {
 // MARK: - Extensions
 
 extension Proposal: CustomTestStringConvertible {
-    public var testDescription: String { id.isEmpty ? "No ID" : id }
+    var testDescription: String { id.isEmpty ? "No ID" : id }
 }
 
 extension `Extraction Tests`.`Prior Results` {
@@ -291,7 +291,7 @@ extension `Extraction Tests`.`Prior Results` {
             self.forceExtractionIDs = forceExtractionIDs
         }
 
-        public var testDescription: String {
+        var testDescription: String {
             var forceSummary: String
             if ignorePreviousResults {
                 forceSummary = ", force all"
