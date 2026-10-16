@@ -9,7 +9,7 @@
 import Testing
 import Foundation
 
-@testable import EvolutionMetadataModel
+import EvolutionMetadataModel // public interface, @testable not requred
 @testable import EvolutionMetadataExtraction
 
 @Suite
