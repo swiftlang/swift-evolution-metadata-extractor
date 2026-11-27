@@ -12,7 +12,7 @@ Add new items at the end of the relevant section under **Unreleased**.
 - Improve Implemented version validation ([#144])
     - Add stricter validation
     - Report diagnostic messages for common errors
-- Validate that proposal title does not include the proposal ID ([#154])
+- Validate that proposal title does not include the proposal ID ([#155])
 
 ### Fixes
 
@@ -160,4 +160,4 @@ This changelog's format is based on [Keep a Changelog](https://keepachangelog.co
 [#139]: https://github.com/swiftlang/swift-evolution-metadata-extractor/pull/139
 [#141]: https://github.com/swiftlang/swift-evolution-metadata-extractor/pull/141
 [#144]: https://github.com/swiftlang/swift-evolution-metadata-extractor/pull/144
-[#154]: https://github.com/swiftlang/swift-evolution-metadata-extractor/pull/154
+[#155]: https://github.com/swiftlang/swift-evolution-metadata-extractor/pull/155
