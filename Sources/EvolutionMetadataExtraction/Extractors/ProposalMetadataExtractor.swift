@@ -200,6 +200,7 @@ struct DocumentSource: IssueSource {
     let document: Document
     var project: Project { proposalSpec.project }
     var proposalNumber: Int { proposalSpec.number }
+    var proposalID: String { proposalSpec.id }
     init(proposalSpec: ProposalSpec, document: Document) {
         self.proposalSpec = proposalSpec
         self.document = document

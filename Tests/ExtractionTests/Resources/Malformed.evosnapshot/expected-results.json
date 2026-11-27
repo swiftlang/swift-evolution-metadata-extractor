@@ -1383,6 +1383,62 @@
       },
       "summary" : "The Swift and Clang compilers have existing support for leveraging a CAS (Content Addressable Store) to cache compilation outputs and replay them in subsequent builds. This proposal introduces support for configuring compilation caching in SwiftPM on a per-build, per-package, or global basis.",
       "title" : "SwiftPM Support for Compilation Caching"
+    },
+    {
+      "authors" : [
+        {
+          "link" : "https:\/\/github.com\/bkhouri",
+          "name" : "Sam Khouri"
+        }
+      ],
+      "discussions" : [
+        {
+          "link" : "https:\/\/forums.swift.org\/t\/pitch-deprecating-package-products-in-the-package-manifest\/88468",
+          "name" : "pitch"
+        },
+        {
+          "link" : "https:\/\/forums.swift.org\/t\/se-0565-allow-deprecating-package-products\/90664",
+          "name" : "review"
+        }
+      ],
+      "errors" : [
+        {
+          "code" : 12,
+          "kind" : "error",
+          "message" : "Title should not include the proposal ID.",
+          "suggestion" : "Remove 'SE-0565' from the title. Clients of the metadata show the proposal ID next to the title."
+        }
+      ],
+      "id" : "SE-0565",
+      "implementation" : [
+        {
+          "account" : "swiftlang",
+          "id" : "10437",
+          "repository" : "swift-package-manager",
+          "type" : "pull"
+        },
+        {
+          "account" : "swiftlang",
+          "id" : "10438",
+          "repository" : "swift-package-manager",
+          "type" : "pull"
+        }
+      ],
+      "link" : "0565-title-contains-proposal-id.md",
+      "reviewManagers" : [
+        {
+          "link" : "https:\/\/github.com\/0xTim",
+          "name" : "Tim Condon"
+        }
+      ],
+      "sha" : "",
+      "status" : {
+        "end" : "2026-11-25T00:00:00Z",
+        "start" : "2026-11-11T00:00:00Z",
+        "state" : "activeReview"
+      },
+      "summary" : "Package authors currently have no first-class way to signal that a product vended from a Swift package is on a path to removal. Swift Package Manager (SwiftPM) supports rich deprecation semantics for Swift source APIs through `@available(*, deprecated, ...)`, but a `Package.swift` manifest cannot express that same intent for a `.library`, `.executable`, or `.plugin` product.",
+      "title" : "SE-0565: Allow Deprecating Package Products"
     }
   ],
   "schemaVersion" : "1.0.0",

@@ -25,8 +25,15 @@ struct TitleExtractor: ValueExtractor {
 //            if titleElement.level != 1 {
 //            }
             
-            title = titleElement.plainText
-            
+            let titleText = titleElement.plainText
+
+            // Clients of the metadata show the proposal ID next to the title
+            if titleText.contains(source.proposalID) {
+                issues.reportIssue(.titleContainsProposalID(id: source.proposalID), source: source)
+            }
+
+            title = titleText
+
         } else {
             issues.reportIssue(.proposalContainsNoContent, source: source)
         }

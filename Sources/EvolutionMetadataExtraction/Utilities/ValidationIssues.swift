@@ -38,7 +38,16 @@ extension Proposal.Issue {
     // MARK: - Title
     // TODO: title missing = 10
     // TODO: title wrong heading level = 11
-    
+
+    static func titleContainsProposalID(id: String) -> Proposal.Issue {
+        Proposal.Issue(
+            kind: .error,
+            code: 12,
+            message: "Title should not include the proposal ID.",
+            suggestion: "Remove '\(id)' from the title. Clients of the metadata show the proposal ID next to the title."
+        )
+    }
+
     // MARK: - Summary of changes
     // TODO: summary missing = 20
     // TODO: summary wrong heading level = 21
